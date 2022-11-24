@@ -1,0 +1,25 @@
+{
+    "name": "Game.GamePlaySystem",
+    "rootNamespace": "",
+    "references": [
+        "GUID:d9de0f9235619804ca16570f40d54f08",
+        "GUID:fcf417523337d324a9bad53c3c2f1f03",
+        "GUID:734d92eba21c94caba915361bd5ac177",
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:63afb046c8423dd448ae7aba042ea63d",
+        "GUID:d8b63aba1907145bea998dd612889d6b",
+        "GUID:a9ed97d3f2e410d40a470d42f57bf19e",
+        "GUID:e0cd26848372d4e5c891c569017e11f1",
+        "GUID:4adb68376300a5c419520ca0ff94de6a",
+        "GUID:a5baed0c9693541a5bd947d336ec7659"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

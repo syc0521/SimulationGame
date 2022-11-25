@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Game.Core;
+using System;
 using System.Collections.Generic;
 
 namespace Game.GamePlaySystem.StateMachine
@@ -40,12 +41,16 @@ namespace Game.GamePlaySystem.StateMachine
 
         public void ChangeState<T>(params object[] list) where T : IState
         {
-            if (stateDic.ContainsKey(typeof(T)))
+            if (!stateDic.ContainsKey(typeof(T))) return;
+            if (currentState != null)
             {
-                currentState?.OnLeave(list);
-                stateDic[typeof(T)]?.OnEnter(list);
-                currentState = stateDic[typeof(T)];
+                currentState.OnLeave(list);
+                MonoApp.Instance.RemoveUpdateFunc(currentState.OnUpdate);
             }
+
+            stateDic[typeof(T)]?.OnEnter(list);
+            currentState = stateDic[typeof(T)];
+            MonoApp.Instance.AddUpdateFunc(currentState.OnUpdate);
         }
 
         public void UnRegister<T>() where T : IState

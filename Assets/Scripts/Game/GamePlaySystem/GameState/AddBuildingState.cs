@@ -22,8 +22,20 @@ namespace Game.GamePlaySystem.GameState
             float3 cameraPos = float3.zero; // todo 改成比较舒服的位置
             currentBuilding = Object.Instantiate(Config.Instance.GetBuildings()[currentBuildingType], cameraPos, Quaternion.identity);
             MaterialUtil.SetTransparency(currentBuilding, true);
-            EventCenter.DispatchEvent(new PlaceEvent{pos = currentBuilding.transform.position});
+            EventCenter.DispatchEvent(new PlaceEvent { pos = currentBuilding.transform.position });
             EventCenter.AddListener<TouchEvent>(PlaceBuilding);
+        }
+
+        public override void OnUpdate()
+        {
+            UpdateUI();
+        }
+
+        private void UpdateUI()
+        {
+            if (currentBuilding == null) return;
+            var screenPos = Camera.main.WorldToScreenPoint(currentBuilding.transform.position);
+            EventCenter.DispatchEvent(new BuildUIEvent { pos = new Vector3(screenPos[0] - 50, screenPos[1] - 100, 0) });
         }
 
         public override void OnLeave(params object[] list)
@@ -35,7 +47,7 @@ namespace Game.GamePlaySystem.GameState
             Object.Destroy(currentBuilding);
             currentBuilding = null;
         }
-        
+
         /// <summary>
         /// 摆放建筑物，点击位置后移动，需要通知UI位置
         /// 摆放建筑物阶段用传统模式（保证效果），添加后用ECS（保证效率）
@@ -43,7 +55,7 @@ namespace Game.GamePlaySystem.GameState
         private void PlaceBuilding(TouchEvent evt)
         {
             if (currentBuilding == null) return;
-            
+
             var collisionWorld = BuildingManager.Instance.GetCollisionWorld();
             var raycastInput = BuildingManager.Instance.GetOrCreateRaycastInput(new float3(evt.pos, 0));
 
@@ -53,10 +65,8 @@ namespace Game.GamePlaySystem.GameState
                 var entity = hit.Entity;
                 if (entityManager.HasComponent<BuildingPlane>(entity) && !Managers.Get<IInputManager>().IsPointerOverGameObject())
                 {
-                    var blockPos = GetBlockPos(hit.Position, out _);
-                    currentBuilding.transform.position = blockPos;
-                    var screenPos = Camera.main.WorldToScreenPoint(blockPos);
-                    EventCenter.DispatchEvent(new BuildUIEvent { pos = new Vector3(screenPos[0], screenPos[1] - 50, 0) });
+                    currentBuilding.transform.position = GetBlockPos(hit.Position, out _);
+                    UpdateUI();
                 }
             }
         }
@@ -71,7 +81,7 @@ namespace Game.GamePlaySystem.GameState
             World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<AddBlockSystem>().Build(blockPos, currentBuildingType);
             EventCenter.RemoveListener<TouchEvent>(PlaceBuilding);
         }
-        
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private float3 GetBlockPos(float3 pos, out int2 gridPos)
         {

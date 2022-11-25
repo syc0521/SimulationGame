@@ -20,7 +20,8 @@ namespace Game.UI.Module
         {
             if (!UIManager.Instance.HasPanel<ConfirmPanel>())
             {
-                UIManager.Instance.CreatePanel<ConfirmPanel>();
+                var panel = UIManager.Instance.CreatePanel<ConfirmPanel>();
+                panel.ChangeUIPos(obj.pos);
             }
         }
         

@@ -18,7 +18,7 @@ namespace Game.UI
         /// <param name="option">数据</param>
         /// <typeparam name="T">面板类型</typeparam>
         /// <returns>面板</returns>
-        void CreatePanel<T>(BasePanelOption option = null) where T : UIPanel;
+        T CreatePanel<T>(BasePanelOption option = null) where T : UIPanel;
         
         /// <summary>
         /// 销毁面板

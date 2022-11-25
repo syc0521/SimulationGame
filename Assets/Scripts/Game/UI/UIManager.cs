@@ -42,7 +42,7 @@ namespace Game.UI
             return default;
         }
 
-        public void CreatePanel<T>(BasePanelOption option = null) where T : UIPanel
+        public T CreatePanel<T>(BasePanelOption option = null) where T : UIPanel
         {
             Enum.TryParse(typeof(T).Name, out PanelEnum panelEnum);
             var panel = Config.Instance.GetPanel(panelEnum);
@@ -51,6 +51,7 @@ namespace Game.UI
             comp.opt = option;
             panels[typeof(T)] = obj;
             comp.OnCreated();
+            return comp as T;
         }
 
         public bool HasPanel<T>() where T : UIPanel

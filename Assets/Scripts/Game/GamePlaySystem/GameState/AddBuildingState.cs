@@ -55,7 +55,8 @@ namespace Game.GamePlaySystem.GameState
                 {
                     var blockPos = GetBlockPos(hit.Position, out _);
                     currentBuilding.transform.position = blockPos;
-                    EventCenter.DispatchEvent(new BuildUIEvent { pos = new Vector3(evt.pos[0], evt.pos[1], 0) });
+                    var screenPos = Camera.main.WorldToScreenPoint(blockPos);
+                    EventCenter.DispatchEvent(new BuildUIEvent { pos = new Vector3(screenPos[0], screenPos[1] - 50, 0) });
                 }
             }
         }

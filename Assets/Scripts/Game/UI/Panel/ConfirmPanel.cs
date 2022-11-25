@@ -2,6 +2,7 @@
 using Game.Core;
 using Game.Data.Event;
 using Game.GamePlaySystem;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Game.UI.Panel
@@ -24,7 +25,12 @@ namespace Game.UI.Panel
 
         private void RefreshUIPos(BuildUIEvent obj)
         {
-            transform.position = obj.pos;
+            ChangeUIPos(obj.pos);
+        }
+
+        public void ChangeUIPos(Vector3 pos)
+        {
+            transform.position = pos;
         }
 
         private void OnConfirmClicked()

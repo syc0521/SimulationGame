@@ -32,7 +32,7 @@ namespace Game.UI
 
         private void DestroyHandler()
         {
-            EventCenter.DispatchEvent(new BuildEvent{ buildState = BuildState.Delete });
+            
         }
 
         private void SelectHandler()

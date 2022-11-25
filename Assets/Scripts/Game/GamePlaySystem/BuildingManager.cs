@@ -15,10 +15,6 @@ namespace Game.GamePlaySystem
         public Vector3 pos;
     }
     
-    public enum BuildState
-    {
-        Normal, Select, Construct, Place, Rotate, Delete
-    }
     public class BuildingManager : GamePlaySystemBase<BuildingManager>
     {
         public Camera mainCamera;

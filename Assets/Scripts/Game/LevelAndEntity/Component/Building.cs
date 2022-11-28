@@ -8,5 +8,6 @@ namespace Game.LevelAndEntity.Component
     public struct Building : IComponentData
     {
         public float cd;
+        public int type;
     }
 }

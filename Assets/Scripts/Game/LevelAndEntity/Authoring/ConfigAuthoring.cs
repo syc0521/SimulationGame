@@ -1,16 +1,13 @@
-﻿using System.Collections.Generic;
-using Game.Data.ScriptableObject;
+﻿using Game.Data.ScriptableObject;
 using Game.LevelAndEntity.Component;
-using Unity.Collections;
 using Unity.Entities;
-using Unity.Entities.Serialization;
 using UnityEngine;
 
 namespace Game.LevelAndEntity.Authoring
 {
     public class ConfigAuthoring : MonoBehaviour
     {
-        public List<GameObject> list;
+        public BuildingCollection list;
     }
 
     public class ConfigBaker : Baker<ConfigAuthoring>
@@ -19,7 +16,7 @@ namespace Game.LevelAndEntity.Authoring
         {
             AddComponent(new Config());
             var buffer = AddBuffer<PrefabSpawnerBufferElement>();
-            foreach (var item in authoring.list)
+            foreach (var item in authoring.list.buildings)
             {
                 buffer.Add(new PrefabSpawnerBufferElement { prefab = GetEntity(item) });
             }

@@ -11,10 +11,20 @@ namespace Game.Data
         [SerializeField] private Transform uiRoot;
         [SerializeField] private BuildingCollection buildings;
 
+        private PlayerData _playerData;
+        private void Start()
+        {
+            _playerData = new();
+        }
+
         public GameObject GetPanel(PanelEnum type) => panelDef.panels[type];
 
         public Transform GetUIRoot() => uiRoot;
 
         public List<GameObject> GetBuildings() => buildings.buildings;
+
+        public int GetPlayerMoney() => _playerData.money;
+
+        public void ChangePlayerMoney(int money) => _playerData.money += money;
     }
 }

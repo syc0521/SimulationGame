@@ -89,6 +89,15 @@ public partial class @GameControl : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": ""Press"",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Primary Long"",
+                    ""type"": ""Button"",
+                    ""id"": ""eb2ed5a7-4839-4a47-bf08-b77967783f93"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Hold(duration=1,pressPoint=1)"",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -168,6 +177,17 @@ public partial class @GameControl : IInputActionCollection2, IDisposable
                     ""action"": ""SecondaryTouchContact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bb323602-6cbe-4a70-9d75-dce149be6ef4"",
+                    ""path"": ""<Touchscreen>/Press"",
+                    ""interactions"": ""Hold(duration=1,pressPoint=1)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Primary Long"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -183,6 +203,7 @@ public partial class @GameControl : IInputActionCollection2, IDisposable
         m_GamePlay_PrimaryFingerPosition = m_GamePlay.FindAction("PrimaryFingerPosition", throwIfNotFound: true);
         m_GamePlay_SecondaryFingerPosition = m_GamePlay.FindAction("SecondaryFingerPosition", throwIfNotFound: true);
         m_GamePlay_SecondaryTouchContact = m_GamePlay.FindAction("SecondaryTouchContact", throwIfNotFound: true);
+        m_GamePlay_PrimaryLong = m_GamePlay.FindAction("Primary Long", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -249,6 +270,7 @@ public partial class @GameControl : IInputActionCollection2, IDisposable
     private readonly InputAction m_GamePlay_PrimaryFingerPosition;
     private readonly InputAction m_GamePlay_SecondaryFingerPosition;
     private readonly InputAction m_GamePlay_SecondaryTouchContact;
+    private readonly InputAction m_GamePlay_PrimaryLong;
     public struct GamePlayActions
     {
         private @GameControl m_Wrapper;
@@ -260,6 +282,7 @@ public partial class @GameControl : IInputActionCollection2, IDisposable
         public InputAction @PrimaryFingerPosition => m_Wrapper.m_GamePlay_PrimaryFingerPosition;
         public InputAction @SecondaryFingerPosition => m_Wrapper.m_GamePlay_SecondaryFingerPosition;
         public InputAction @SecondaryTouchContact => m_Wrapper.m_GamePlay_SecondaryTouchContact;
+        public InputAction @PrimaryLong => m_Wrapper.m_GamePlay_PrimaryLong;
         public InputActionMap Get() { return m_Wrapper.m_GamePlay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -290,6 +313,9 @@ public partial class @GameControl : IInputActionCollection2, IDisposable
                 @SecondaryTouchContact.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnSecondaryTouchContact;
                 @SecondaryTouchContact.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnSecondaryTouchContact;
                 @SecondaryTouchContact.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnSecondaryTouchContact;
+                @PrimaryLong.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnPrimaryLong;
+                @PrimaryLong.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnPrimaryLong;
+                @PrimaryLong.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnPrimaryLong;
             }
             m_Wrapper.m_GamePlayActionsCallbackInterface = instance;
             if (instance != null)
@@ -315,6 +341,9 @@ public partial class @GameControl : IInputActionCollection2, IDisposable
                 @SecondaryTouchContact.started += instance.OnSecondaryTouchContact;
                 @SecondaryTouchContact.performed += instance.OnSecondaryTouchContact;
                 @SecondaryTouchContact.canceled += instance.OnSecondaryTouchContact;
+                @PrimaryLong.started += instance.OnPrimaryLong;
+                @PrimaryLong.performed += instance.OnPrimaryLong;
+                @PrimaryLong.canceled += instance.OnPrimaryLong;
             }
         }
     }
@@ -328,5 +357,6 @@ public partial class @GameControl : IInputActionCollection2, IDisposable
         void OnPrimaryFingerPosition(InputAction.CallbackContext context);
         void OnSecondaryFingerPosition(InputAction.CallbackContext context);
         void OnSecondaryTouchContact(InputAction.CallbackContext context);
+        void OnPrimaryLong(InputAction.CallbackContext context);
     }
 }

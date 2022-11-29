@@ -1,4 +1,6 @@
-﻿using Game.UI.Panel;
+﻿using Game.Core;
+using Game.Input;
+using Game.UI.Panel;
 
 namespace Game.UI.Module
 {
@@ -6,10 +8,14 @@ namespace Game.UI.Module
     {
         public override void OnCreated()
         {
+            
+        }
+
+        public override void OnStart()
+        {
             if (!UIManager.Instance.HasPanel<MainPanel>())
             {
                 UIManager.Instance.CreatePanel<MainPanel>();
-                
             }
         }
 
@@ -17,5 +23,6 @@ namespace Game.UI.Module
         {
             
         }
+
     }
 }

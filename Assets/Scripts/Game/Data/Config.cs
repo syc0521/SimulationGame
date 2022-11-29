@@ -12,10 +12,6 @@ namespace Game.Data
         [SerializeField] private BuildingCollection buildings;
 
         private PlayerData _playerData;
-        private void Start()
-        {
-            _playerData = new();
-        }
 
         public GameObject GetPanel(PanelEnum type) => panelDef.panels[type];
 

@@ -3,28 +3,36 @@ using Game.Core;
 using Game.Data.Event;
 using Game.GamePlaySystem.StateMachine;
 using Game.Input;
+using Game.LevelAndEntity.Aspects;
 using Game.LevelAndEntity.Component;
-using Game.LevelAndEntity.System;
 using Unity.Entities;
 using Unity.Mathematics;
+using Unity.Transforms;
 using UnityEngine;
-using Config = Game.Data.Config;
 
 namespace Game.GamePlaySystem.GameState
 {
-    public class AddBuildingState : StateBase
+    public class ModifyState : StateBase
     {
         private int currentBuildingType;
         private GameObject currentBuilding;
+        private Entity buildingEntity;
+        
         public override void OnEnter(params object[] list)
         {
-            currentBuildingType = (int)list[0];
-            float3 cameraPos = float3.zero; // todo 改成比较舒服的位置
-            currentBuilding = Object.Instantiate(Config.Instance.GetBuildings()[currentBuildingType], cameraPos, Quaternion.identity);
-            MaterialUtil.SetTransparency(currentBuilding, true);
+            buildingEntity = (Entity)list[0];
+            SelectBuilding(buildingEntity);
             EventCenter.AddListener<TouchEvent>(PlaceBuilding);
         }
 
+        public override void OnLeave(params object[] list)
+        {
+            var transform = World.DefaultGameObjectInjectionWorld.EntityManager.GetAspect<TransformAspect>(buildingEntity);
+            transform.Position = currentBuilding.transform.position;
+            Object.Destroy(currentBuilding);
+            currentBuilding = null;
+        }
+        
         public override void OnUpdate()
         {
             UpdateUI();
@@ -36,21 +44,26 @@ namespace Game.GamePlaySystem.GameState
             var screenPos = Camera.main.WorldToScreenPoint(currentBuilding.transform.position);
             EventCenter.DispatchEvent(new BuildUIEvent { pos = new Vector3(screenPos[0] - 100, screenPos[1] - 100, 0) });
         }
-
-        public override void OnLeave(params object[] list)
-        {
-            if ((bool)list[0]) //可以建造
-            {
-                ConstructBuilding();
-            }
-            Object.Destroy(currentBuilding);
-            currentBuilding = null;
-        }
-
+        
         /// <summary>
-        /// 摆放建筑物，点击位置后移动，需要通知UI位置
-        /// 摆放建筑物阶段用传统模式（保证效果），添加后用ECS（保证效率）
+        /// 选中某个建筑物后的操作，需要给UI层发事件
+        /// 选中后，ecs将模型移动到很远的地方（相当于不渲染模型），原地生成一个透明的GameObject
+        /// 选中后的操作和摆放类似
         /// </summary>
+        private void SelectBuilding(Entity entity)
+        {
+            var entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
+            
+            currentBuildingType = entityManager.GetAspect<BuildingAspect>(entity).BuildingType;
+            var transform = entityManager.GetAspect<TransformAspect>(entity);
+            var buildingPos = transform.Position;
+            var buildingRot = transform.LocalRotation;
+
+            currentBuilding = Object.Instantiate(Data.Config.Instance.GetBuildings()[currentBuildingType], buildingPos, buildingRot);
+            MaterialUtil.SetTransparency(currentBuilding, true);
+            transform.Position = new float3(10000, 10000, 10000);
+        }
+        
         private void PlaceBuilding(TouchEvent evt)
         {
             if (currentBuilding == null) return;
@@ -69,18 +82,7 @@ namespace Game.GamePlaySystem.GameState
                 }
             }
         }
-
-        /// <summary>
-        /// ECS构建建筑物
-        /// </summary>
-        private void ConstructBuilding()
-        {
-            var blockPos = GetBlockPos(currentBuilding.transform.position, out var gridPos);
-            BuildingManager.Instance.GetGrid().SetData(currentBuildingType, gridPos[0], gridPos[1]);
-            World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<AddBlockSystem>().Build(blockPos, currentBuildingType);
-            EventCenter.RemoveListener<TouchEvent>(PlaceBuilding);
-        }
-
+        
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private float3 GetBlockPos(float3 pos, out int2 gridPos)
         {

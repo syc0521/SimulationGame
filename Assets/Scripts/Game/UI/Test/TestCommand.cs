@@ -9,7 +9,7 @@ namespace Game.UI
 {
     public class TestCommand : MonoBehaviour
     {
-        public Button build1, build2, select, destroy1, destroy2;
+        public Button build1, build2, destroy1, destroy2;
 
         private void Start()
         {
@@ -17,7 +17,6 @@ namespace Game.UI
             build1.onClick.AddListener(BuildHandler);
             build2.onClick.AddListener(Build2Handler);
             destroy1.onClick.AddListener(DestroyHandler);
-            select.onClick.AddListener(SelectHandler);
         }
 
         private void BuildHandler()
@@ -33,11 +32,6 @@ namespace Game.UI
         private void DestroyHandler()
         {
             
-        }
-
-        private void SelectHandler()
-        {
-            BuildingManager.Instance.SelectBuilding();
         }
 
         private void OnBuildingSelected(SelectEvent evt)

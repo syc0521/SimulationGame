@@ -30,6 +30,12 @@ namespace Game.UI
             _modules.Init();
         }
 
+        public override void OnStart()
+        {
+            base.OnStart();
+            _modules.Start();
+        }
+
         public override void OnDestroyed()
         {
             _modules.Destroy();

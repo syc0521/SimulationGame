@@ -24,6 +24,14 @@ namespace Game.UI
             }
         }
 
+        public void Start()
+        {
+            foreach (var module in _modules)
+            {
+                module.OnStart();
+            }
+        }
+
         public void Destroy()
         {
             foreach (var module in _modules.ToList())

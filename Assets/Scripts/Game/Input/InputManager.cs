@@ -46,6 +46,11 @@ namespace Game.Input
         public Vector2 pos;
     }
     
+    public struct LongPressEvent : IEvent
+    {
+        public float2 pos;
+    }
+    
     public class InputManager : ManagerBase, IInputManager
     {
         private GameControl _gameControl;
@@ -56,12 +61,7 @@ namespace Game.Input
             _gameControl = new();
             _gameControl.Enable();
         }
-
-        public override void OnDestroyed()
-        {
-            _gameControl.Disable();
-        }
-
+        
         public override void OnStart()
         {
             _gameControl.GamePlay.PrimaryContact.started += SwipeStart;
@@ -70,7 +70,21 @@ namespace Game.Input
 
             _gameControl.GamePlay.SecondaryTouchContact.started += PinchStart;
             _gameControl.GamePlay.SecondaryTouchContact.canceled += PinchEnd;
+            
+            _gameControl.GamePlay.PrimaryLong.performed += LongPress;
+        }
 
+        public override void OnDestroyed()
+        {
+            _gameControl.GamePlay.PrimaryContact.started -= SwipeStart;
+            _gameControl.GamePlay.PrimaryContact.canceled -= SwipeEnd;
+            _gameControl.GamePlay.PrimaryContact.performed -= Touch;
+
+            _gameControl.GamePlay.SecondaryTouchContact.started -= PinchStart;
+            _gameControl.GamePlay.SecondaryTouchContact.canceled -= PinchEnd;
+
+            _gameControl.GamePlay.PrimaryLong.performed -= LongPress;
+            _gameControl.Disable();
         }
 
         public bool IsPointerOverGameObject()
@@ -91,6 +105,14 @@ namespace Game.Input
         private void Touch(InputAction.CallbackContext ctx)
         {
             EventCenter.DispatchEvent(new TouchEvent
+            {
+                pos = _gameControl.GamePlay.PrimaryPosition.ReadValue<Vector2>()
+            });
+        }
+        
+        private void LongPress(InputAction.CallbackContext ctx)
+        {
+            EventCenter.DispatchEvent(new LongPressEvent
             {
                 pos = _gameControl.GamePlay.PrimaryPosition.ReadValue<Vector2>()
             });

@@ -5,12 +5,13 @@ using Unity.Transforms;
 
 namespace Game.LevelAndEntity.Aspects
 {
-    readonly partial struct BuildingAspect : IAspect
+    public readonly partial struct BuildingAspect : IAspect
     {
         private readonly TransformAspect transform;
         private readonly RefRO<Building> building;
 
         public int People => building.ValueRO.type + 1;
+        public int BuildingType => building.ValueRO.type;
 
         public float3 Position
         {

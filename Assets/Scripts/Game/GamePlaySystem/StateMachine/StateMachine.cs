@@ -66,7 +66,7 @@ namespace Game.GamePlaySystem.StateMachine
             }
         }
 
-        public string GetCurrentState() => currentState.GetType().Name;
+        public string GetCurrentState() => currentState?.GetType().Name;
 
         public void Dispose()
         {

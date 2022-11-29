@@ -67,6 +67,15 @@
                     "processors": "",
                     "interactions": "Press",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Primary Long",
+                    "type": "Button",
+                    "id": "eb2ed5a7-4839-4a47-bf08-b77967783f93",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold(duration=1,pressPoint=1)",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -144,6 +153,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "SecondaryTouchContact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bb323602-6cbe-4a70-9d75-dce149be6ef4",
+                    "path": "<Touchscreen>/Press",
+                    "interactions": "Hold(duration=1,pressPoint=1)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Primary Long",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

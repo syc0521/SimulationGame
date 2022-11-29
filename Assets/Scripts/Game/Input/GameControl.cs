@@ -28,10 +28,10 @@ public partial class @GameControl : IInputActionCollection2, IDisposable
             ""id"": ""375bfbc2-de80-474b-8c5e-1f1b75ca10ca"",
             ""actions"": [
                 {
-                    ""name"": ""Left Click"",
-                    ""type"": ""Button"",
+                    ""name"": ""Wheel Scroll"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""f394cc79-2393-4adf-a047-7e1563e4d4b2"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -104,11 +104,11 @@ public partial class @GameControl : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""b5466fc1-2624-444c-9e49-41b5cc54e67d"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""path"": ""<Mouse>/scroll"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Left Click"",
+                    ""action"": ""Wheel Scroll"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -136,6 +136,17 @@ public partial class @GameControl : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""730a6dc9-8004-4608-be93-265130d50989"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Primary Position"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""b21a0ef4-3a64-400a-9ea2-fe47e74e7396"",
                     ""path"": ""<Touchscreen>/primaryTouch/press"",
                     ""interactions"": """",
@@ -147,8 +158,30 @@ public partial class @GameControl : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""52e33742-0142-4f16-b726-11fa13c24719"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Primary Contact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""07e38350-6a8c-4ca2-963f-03e9d585e282"",
                     ""path"": ""<Touchscreen>/touch0/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PrimaryFingerPosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""867e304b-78e3-4f71-ae83-b2874d28bb57"",
+                    ""path"": ""<Mouse>/position"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -188,6 +221,17 @@ public partial class @GameControl : IInputActionCollection2, IDisposable
                     ""action"": ""Primary Long"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3fc1f796-e641-4804-8785-6af37c68bc7c"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Primary Long"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -196,7 +240,7 @@ public partial class @GameControl : IInputActionCollection2, IDisposable
 }");
         // GamePlay
         m_GamePlay = asset.FindActionMap("GamePlay", throwIfNotFound: true);
-        m_GamePlay_LeftClick = m_GamePlay.FindAction("Left Click", throwIfNotFound: true);
+        m_GamePlay_WheelScroll = m_GamePlay.FindAction("Wheel Scroll", throwIfNotFound: true);
         m_GamePlay_RightClick = m_GamePlay.FindAction("Right Click", throwIfNotFound: true);
         m_GamePlay_PrimaryPosition = m_GamePlay.FindAction("Primary Position", throwIfNotFound: true);
         m_GamePlay_PrimaryContact = m_GamePlay.FindAction("Primary Contact", throwIfNotFound: true);
@@ -263,7 +307,7 @@ public partial class @GameControl : IInputActionCollection2, IDisposable
     // GamePlay
     private readonly InputActionMap m_GamePlay;
     private IGamePlayActions m_GamePlayActionsCallbackInterface;
-    private readonly InputAction m_GamePlay_LeftClick;
+    private readonly InputAction m_GamePlay_WheelScroll;
     private readonly InputAction m_GamePlay_RightClick;
     private readonly InputAction m_GamePlay_PrimaryPosition;
     private readonly InputAction m_GamePlay_PrimaryContact;
@@ -275,7 +319,7 @@ public partial class @GameControl : IInputActionCollection2, IDisposable
     {
         private @GameControl m_Wrapper;
         public GamePlayActions(@GameControl wrapper) { m_Wrapper = wrapper; }
-        public InputAction @LeftClick => m_Wrapper.m_GamePlay_LeftClick;
+        public InputAction @WheelScroll => m_Wrapper.m_GamePlay_WheelScroll;
         public InputAction @RightClick => m_Wrapper.m_GamePlay_RightClick;
         public InputAction @PrimaryPosition => m_Wrapper.m_GamePlay_PrimaryPosition;
         public InputAction @PrimaryContact => m_Wrapper.m_GamePlay_PrimaryContact;
@@ -292,9 +336,9 @@ public partial class @GameControl : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_GamePlayActionsCallbackInterface != null)
             {
-                @LeftClick.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnLeftClick;
-                @LeftClick.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnLeftClick;
-                @LeftClick.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnLeftClick;
+                @WheelScroll.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnWheelScroll;
+                @WheelScroll.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnWheelScroll;
+                @WheelScroll.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnWheelScroll;
                 @RightClick.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnRightClick;
                 @RightClick.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnRightClick;
                 @RightClick.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnRightClick;
@@ -320,9 +364,9 @@ public partial class @GameControl : IInputActionCollection2, IDisposable
             m_Wrapper.m_GamePlayActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @LeftClick.started += instance.OnLeftClick;
-                @LeftClick.performed += instance.OnLeftClick;
-                @LeftClick.canceled += instance.OnLeftClick;
+                @WheelScroll.started += instance.OnWheelScroll;
+                @WheelScroll.performed += instance.OnWheelScroll;
+                @WheelScroll.canceled += instance.OnWheelScroll;
                 @RightClick.started += instance.OnRightClick;
                 @RightClick.performed += instance.OnRightClick;
                 @RightClick.canceled += instance.OnRightClick;
@@ -350,7 +394,7 @@ public partial class @GameControl : IInputActionCollection2, IDisposable
     public GamePlayActions @GamePlay => new GamePlayActions(this);
     public interface IGamePlayActions
     {
-        void OnLeftClick(InputAction.CallbackContext context);
+        void OnWheelScroll(InputAction.CallbackContext context);
         void OnRightClick(InputAction.CallbackContext context);
         void OnPrimaryPosition(InputAction.CallbackContext context);
         void OnPrimaryContact(InputAction.CallbackContext context);

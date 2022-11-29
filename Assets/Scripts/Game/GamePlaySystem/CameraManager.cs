@@ -21,6 +21,20 @@ namespace Game.GamePlaySystem
 
             EventCenter.AddListener<PinchStartEvent>(OnPinchStarted);
             EventCenter.AddListener<PinchChangedEvent>(ChangeCameraSize);
+            
+            EventCenter.AddListener<WheelScrollEvent>(WheelChangeCameraSize);
+        }
+
+        public override void OnDestroyed()
+        {
+            EventCenter.RemoveListener<SwipeStartEvent>(OnSwipeStarted);
+            EventCenter.RemoveListener<SwipeChangedEvent>(ChangeCameraPosition);
+
+            EventCenter.RemoveListener<PinchStartEvent>(OnPinchStarted);
+            EventCenter.RemoveListener<PinchChangedEvent>(ChangeCameraSize);
+            
+            EventCenter.RemoveListener<WheelScrollEvent>(WheelChangeCameraSize);
+            base.OnDestroyed();
         }
 
         private void OnSwipeStarted(SwipeStartEvent evt)
@@ -57,6 +71,15 @@ namespace Game.GamePlaySystem
             {
                 mainCam.transform.position += new Vector3(0, (distance - _preDistance) * Time.deltaTime * -0.5f, 0);
                 _preDistance = distance;
+            }
+        }
+        
+        private void WheelChangeCameraSize(WheelScrollEvent evt)
+        {
+            var distance = math.abs(evt.delta);
+            if (distance >= float.Epsilon)
+            {
+                mainCam.transform.position += new Vector3(0, evt.delta * Time.deltaTime * -0.1f, 0);
             }
         }
     }

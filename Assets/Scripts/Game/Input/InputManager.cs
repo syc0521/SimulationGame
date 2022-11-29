@@ -50,6 +50,11 @@ namespace Game.Input
     {
         public float2 pos;
     }
+
+    public struct WheelScrollEvent : IEvent
+    {
+        public float delta;
+    }
     
     public class InputManager : ManagerBase, IInputManager
     {
@@ -72,6 +77,7 @@ namespace Game.Input
             _gameControl.GamePlay.SecondaryTouchContact.canceled += PinchEnd;
             
             _gameControl.GamePlay.PrimaryLong.performed += LongPress;
+            _gameControl.GamePlay.WheelScroll.performed += WheelScroll;
         }
 
         public override void OnDestroyed()
@@ -84,6 +90,7 @@ namespace Game.Input
             _gameControl.GamePlay.SecondaryTouchContact.canceled -= PinchEnd;
 
             _gameControl.GamePlay.PrimaryLong.performed -= LongPress;
+            _gameControl.GamePlay.WheelScroll.performed -= WheelScroll;
             _gameControl.Disable();
         }
 
@@ -98,8 +105,10 @@ namespace Game.Input
                 EventSystem.current.RaycastAll(pointer, raycastResult);
                 return raycastResult.Count > 0;   
             }
-
-            return false;
+            
+            pointer.position = UnityEngine.Input.mousePosition;
+            EventSystem.current.RaycastAll(pointer, raycastResult);
+            return raycastResult.Count > 0;
         }
 
         private void Touch(InputAction.CallbackContext ctx)
@@ -199,6 +208,14 @@ namespace Game.Input
                 }
                 yield return null;
             }
+        }
+        
+        private void WheelScroll(InputAction.CallbackContext ctx)
+        {
+            EventCenter.DispatchEvent(new WheelScrollEvent
+            {
+                delta = _gameControl.GamePlay.WheelScroll.ReadValue<Vector2>()[1]
+            });
         }
     }
 }

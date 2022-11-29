@@ -11,6 +11,7 @@ namespace Game.UI
         private void RegisterModule()
         {
             _modules.Add(new BuildModule());
+            _modules.Add(new MainModule());
 
         }
 

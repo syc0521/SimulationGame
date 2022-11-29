@@ -1,4 +1,6 @@
 ﻿using Game.Data;
+using Game.LevelAndEntity.Aspects;
+using Unity.Burst;
 using Unity.Entities;
 
 namespace Game.LevelAndEntity.System
@@ -14,12 +16,16 @@ namespace Game.LevelAndEntity.System
             ecbSystem = World.GetExistingSystemManaged<EndSimulationEntityCommandBufferSystem>();
         }
 
+        [BurstCompile]
         protected override void OnUpdate()
         {
-            
+            foreach (var data in SystemAPI.Query<DataAspect>())
+            {
+                _gameData.people = data.config.ValueRW.people;
+            }
         }
 
-        public void GetData(out GameData gameData)
+        public void GetData(ref GameData gameData)
         {
             gameData = _gameData;
         }

@@ -18,6 +18,7 @@ namespace Game.LevelAndEntity.System
             
         }
 
+        [BurstCompile]
         public void OnUpdate(ref SystemState state)
         {
             int people = 0;

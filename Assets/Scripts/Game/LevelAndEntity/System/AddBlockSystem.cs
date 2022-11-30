@@ -24,6 +24,8 @@ namespace Game.LevelAndEntity.System
             var ecb = beginSimECBSystem.CreateCommandBuffer();
             var query = GetEntityQuery(typeof(Config));
             var config = query.ToEntityArray(Allocator.Temp);
+            var configEntity = config[0];
+            if (configEntity == Entity.Null) return;
             var buffer = entityManager.GetBuffer<PrefabSpawnerBufferElement>(config[0]);
             Entities.WithAll<AddBuilding>().ForEach((Entity entity, ref AddBuilding addBuilding) =>
             {

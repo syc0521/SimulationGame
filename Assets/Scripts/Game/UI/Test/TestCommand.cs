@@ -1,7 +1,4 @@
-﻿using System;
-using Game.Core;
-using Game.Data.Event;
-using Game.GamePlaySystem;
+﻿using Game.GamePlaySystem;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,19 +6,21 @@ namespace Game.UI
 {
     public class TestCommand : MonoBehaviour
     {
-        public Button build1, build2, destroy1, destroy2;
+        public Button build1, build2, destroy, quit;
 
         private void Start()
         {
-            EventCenter.AddListener<SelectEvent>(OnBuildingSelected);
             build1.onClick.AddListener(BuildHandler);
             build2.onClick.AddListener(Build2Handler);
-            destroy1.onClick.AddListener(DestroyHandler);
+            destroy.onClick.AddListener(DestroyHandler);
+            quit.onClick.AddListener(QuitStateHandler);
+            quit.gameObject.SetActive(false);
         }
 
         private void BuildHandler()
         {
             BuildingManager.Instance.AddBuilding(0);
+            
         }
         
         private void Build2Handler()
@@ -31,13 +30,21 @@ namespace Game.UI
 
         private void DestroyHandler()
         {
-            
+            BuildingManager.Instance.RemoveBuilding();
+            quit.gameObject.SetActive(true);
+            destroy.gameObject.SetActive(false);
+            build1.gameObject.SetActive(false);
+            build2.gameObject.SetActive(false);
         }
 
-        private void OnBuildingSelected(SelectEvent evt)
+        private void QuitStateHandler()
         {
-            Debug.Log(evt.position);
+            BuildingManager.Instance.TransitToNormalState();
+            quit.gameObject.SetActive(false);
+            destroy.gameObject.SetActive(true);
+            build1.gameObject.SetActive(true);
+            build2.gameObject.SetActive(true);
         }
-        
+
     }
 }

@@ -28,12 +28,13 @@ namespace Game.GamePlaySystem
                 new NormalState(),
                 new ModifyState(),
                 new AddBuildingState(),
+                new DestroyState(),
             });
             buildStateMachine.ChangeState<NormalState>();
             EventCenter.AddListener<LongPressEvent>(SelectBuilding);
         }
         
-        public void SelectBuilding(LongPressEvent evt)
+        private void SelectBuilding(LongPressEvent evt)
         {
             var entity = Entity.Null;
             Debug.Log(buildStateMachine.GetCurrentState());
@@ -43,9 +44,6 @@ namespace Game.GamePlaySystem
             }
         }
         
-        /// <summary>
-        /// 添加建筑，生成对应UI
-        /// </summary>
         public void AddBuilding(int type)
         {
             buildStateMachine.ChangeState<AddBuildingState>(type);
@@ -60,18 +58,20 @@ namespace Game.GamePlaySystem
         {
             buildStateMachine.ChangeState<NormalState>(false);
         }
-
-        /// <summary>
-        /// 删除建筑物
-        /// </summary>
+        
         public void RemoveBuilding()
         {
-            
+            buildStateMachine.ChangeState<DestroyState>();
         }
 
         public void RotateBuilding()
         {
             
+        }
+
+        public void TransitToNormalState()
+        {
+            buildStateMachine.ChangeState<NormalState>();
         }
         
         public RaycastInput GetOrCreateRaycastInput(float3 pos)

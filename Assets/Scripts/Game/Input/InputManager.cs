@@ -61,6 +61,9 @@ namespace Game.Input
         private GameControl _gameControl;
         private Coroutine _swipeCoroutine, _pinchCoroutine;
 
+        private bool isSwiping = false;
+        private float2 _startPos;
+
         public override void OnAwake()
         {
             _gameControl = new();
@@ -113,10 +116,19 @@ namespace Game.Input
 
         private void Touch(InputAction.CallbackContext ctx)
         {
-            EventCenter.DispatchEvent(new TouchEvent
+            MonoApp.Instance.StartCoroutine(TouchDetection());
+        }
+
+        private IEnumerator TouchDetection()
+        {
+            yield return new WaitForSeconds(2 / 90.0f);
+            if (!isSwiping)
             {
-                pos = _gameControl.GamePlay.PrimaryPosition.ReadValue<Vector2>()
-            });
+                EventCenter.DispatchEvent(new TouchEvent
+                {
+                    pos = _gameControl.GamePlay.PrimaryPosition.ReadValue<Vector2>()
+                });
+            }
         }
         
         private void LongPress(InputAction.CallbackContext ctx)
@@ -129,6 +141,7 @@ namespace Game.Input
 
         private void SwipeStart(InputAction.CallbackContext ctx)
         {
+            _startPos = _gameControl.GamePlay.PrimaryPosition.ReadValue<Vector2>();
             EventCenter.DispatchEvent(new SwipeStartEvent
             {
                 pos = _gameControl.GamePlay.PrimaryPosition.ReadValue<Vector2>(),
@@ -139,6 +152,7 @@ namespace Game.Input
         
         private void SwipeEnd(InputAction.CallbackContext ctx)
         {
+            isSwiping = false;
             EventCenter.DispatchEvent(new SwipeEndEvent
             {
                 pos = _gameControl.GamePlay.PrimaryPosition.ReadValue<Vector2>(),
@@ -153,10 +167,13 @@ namespace Game.Input
 
         private IEnumerator SwipeDetection(InputAction.CallbackContext ctx)
         {
+            yield return new WaitForSeconds(1 / 90.0f);
+            float2 endPos = _gameControl.GamePlay.PrimaryPosition.ReadValue<Vector2>();
+            isSwiping = math.distance(_startPos, endPos) > 2.0f;
+            
             while (true)
             {
                 if (UnityEngine.Input.touchCount > 1) break;
-                
                 EventCenter.DispatchEvent(new SwipeChangedEvent
                 {
                     pos = _gameControl.GamePlay.PrimaryPosition.ReadValue<Vector2>(),

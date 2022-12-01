@@ -40,6 +40,8 @@ namespace Game.UI
         {
             _modules.Destroy();
             _modules = null;
+            
+            panels.Clear();
         }
 
         public T OpenPanel<T>(BasePanelOption option = null) where T : UIPanel

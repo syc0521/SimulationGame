@@ -1,0 +1,4 @@
+repository "SimGame@simu_game@cloud.cn"
+  path "/"
+    br "/main"
+    co "/main"

@@ -7,6 +7,7 @@ namespace Game.LevelAndEntity.Authoring
     public class BuildingAuthoring : MonoBehaviour
     {
         public int type;
+        public GameObject meshRoot;
         class BuildingBaker : Baker<BuildingAuthoring>
         {
             public override void Bake(BuildingAuthoring authoring)
@@ -15,6 +16,7 @@ namespace Game.LevelAndEntity.Authoring
                 {
                     cd = 10,
                     type = authoring.type,
+                    meshRoot = GetEntity(authoring.meshRoot)
                 });
             }
         }

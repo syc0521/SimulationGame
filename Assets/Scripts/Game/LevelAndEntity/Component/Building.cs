@@ -9,5 +9,6 @@ namespace Game.LevelAndEntity.Component
     {
         public float cd;
         public int type;
+        public Entity meshRoot;
     }
 }

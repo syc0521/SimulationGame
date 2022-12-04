@@ -3,6 +3,8 @@ using Game.LevelAndEntity.Component;
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Entities;
+using Unity.Mathematics;
+using Unity.Transforms;
 
 namespace Game.LevelAndEntity.System
 {
@@ -25,7 +27,7 @@ namespace Game.LevelAndEntity.System
             {
                 people += building.People;
             }
-
+            
             foreach (var data in SystemAPI.Query<DataAspect>())
             {
                 data.config.ValueRW.people = people;

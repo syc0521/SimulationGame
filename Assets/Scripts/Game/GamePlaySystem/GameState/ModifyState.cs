@@ -23,10 +23,13 @@ namespace Game.GamePlaySystem.GameState
             buildingEntity = (Entity)list[0];
             SelectBuilding(buildingEntity);
             EventCenter.AddListener<TouchEvent>(PlaceBuilding);
+            EventCenter.AddListener<RotateEvent>(RotateBuilding);
         }
 
         public override void OnLeave(params object[] list)
         {
+            EventCenter.RemoveListener<TouchEvent>(PlaceBuilding);
+            EventCenter.RemoveListener<RotateEvent>(RotateBuilding);
             var transform = World.DefaultGameObjectInjectionWorld.EntityManager.GetAspect<TransformAspect>(buildingEntity);
             transform.Position = currentBuilding.transform.position;
             Object.Destroy(currentBuilding);
@@ -53,13 +56,15 @@ namespace Game.GamePlaySystem.GameState
         private void SelectBuilding(Entity entity)
         {
             var entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
-            
-            currentBuildingType = entityManager.GetAspect<BuildingAspect>(entity).BuildingType;
+
+            var aspect = entityManager.GetAspect<BuildingAspect>(entity);
+            currentBuildingType = aspect.BuildingType;
             var transform = entityManager.GetAspect<TransformAspect>(entity);
             var buildingPos = transform.Position;
-            var buildingRot = transform.LocalRotation;
+            var buildingRot = entityManager.GetAspect<TransformAspect>(aspect.Mesh).Rotation;
 
-            currentBuilding = Object.Instantiate(Data.Config.Instance.GetBuildings()[currentBuildingType], buildingPos, buildingRot);
+            currentBuilding = Object.Instantiate(Data.Config.Instance.GetBuildings()[currentBuildingType], buildingPos, Quaternion.identity);
+            currentBuilding.transform.GetChild(0).localRotation = buildingRot;
             MaterialUtil.SetTransparency(currentBuilding, true);
             transform.Position = new float3(10000, 10000, 10000);
         }
@@ -89,6 +94,17 @@ namespace Game.GamePlaySystem.GameState
             var xzpos = math.floor(pos.xz);
             gridPos = math.int2(xzpos);
             return new float3(xzpos[0], pos.y, xzpos[1]);
+        }
+
+        private void RotateBuilding(RotateEvent evt)
+        {
+            var objTransform = currentBuilding.transform.GetChild(0);
+            objTransform.Rotate(Vector3.up, 90);
+            var entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
+            var meshRoot = entityManager.GetAspect<BuildingAspect>(buildingEntity).Mesh;
+
+            var transform = entityManager.GetAspect<TransformAspect>(meshRoot);
+            transform.LocalRotation = quaternion.RotateY(math.radians(objTransform.localRotation.eulerAngles[1]));
         }
     }
 }

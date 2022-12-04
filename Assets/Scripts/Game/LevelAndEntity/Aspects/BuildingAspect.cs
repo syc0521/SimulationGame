@@ -12,6 +12,7 @@ namespace Game.LevelAndEntity.Aspects
 
         public int People => building.ValueRO.type + 1;
         public int BuildingType => building.ValueRO.type;
+        public Entity Mesh => building.ValueRO.meshRoot;
 
         public float3 Position
         {

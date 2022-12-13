@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildings:
   - {fileID: 6023954684518593267, guid: 310530d4c0b5ab04ba569a56993389f7, type: 3}
+  - {fileID: 6023954684518593267, guid: 08083f369ff976446b824b7ec5371f3a, type: 3}
   - {fileID: 6023954684518593267, guid: 0c6961d2f33ac354681937fd0e681457, type: 3}

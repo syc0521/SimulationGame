@@ -1,5 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 using Game.Core;
+using Game.Data;
 using Game.Data.Event;
 using Game.GamePlaySystem.StateMachine;
 using Game.Input;
@@ -14,6 +15,8 @@ namespace Game.GamePlaySystem.GameState
 {
     public class ModifyState : StateBase
     {
+        private uint _currentId;
+        private BuildingData _buildingData;
         private int currentBuildingType;
         private GameObject currentBuilding;
         private Entity buildingEntity;
@@ -30,8 +33,12 @@ namespace Game.GamePlaySystem.GameState
         {
             EventCenter.RemoveListener<TouchEvent>(PlaceBuilding);
             EventCenter.RemoveListener<RotateEvent>(RotateBuilding);
+            
             var transform = World.DefaultGameObjectInjectionWorld.EntityManager.GetAspect<TransformAspect>(buildingEntity);
             transform.Position = currentBuilding.transform.position;
+            _buildingData.position = transform.Position.xz;
+            BuildingManager.Instance.SetBuildingData(_currentId, _buildingData);
+            
             Object.Destroy(currentBuilding);
             currentBuilding = null;
         }
@@ -58,6 +65,8 @@ namespace Game.GamePlaySystem.GameState
             var entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
 
             var aspect = entityManager.GetAspect<BuildingAspect>(entity);
+            _currentId = aspect.ID;
+            _buildingData = BuildingManager.Instance.GetBuildingData(_currentId);
             currentBuildingType = aspect.BuildingType;
             var transform = entityManager.GetAspect<TransformAspect>(entity);
             var buildingPos = transform.Position;
@@ -98,6 +107,7 @@ namespace Game.GamePlaySystem.GameState
 
         private void RotateBuilding(RotateEvent evt)
         {
+            _buildingData.rotation = (_buildingData.rotation + 1) % 4;
             var objTransform = currentBuilding.transform.GetChild(0);
             objTransform.Rotate(Vector3.up, 90);
             var entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;

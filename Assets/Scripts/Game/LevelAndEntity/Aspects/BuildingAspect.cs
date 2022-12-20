@@ -9,10 +9,12 @@ namespace Game.LevelAndEntity.Aspects
     {
         private readonly TransformAspect transform;
         private readonly RefRO<Building> building;
+        private readonly RefRO<LevelObject> levelObject;
 
         public int People => building.ValueRO.type + 1;
         public int BuildingType => building.ValueRO.type;
         public Entity Mesh => building.ValueRO.meshRoot;
+        public uint ID => levelObject.ValueRO.id;
 
         public float3 Position
         {

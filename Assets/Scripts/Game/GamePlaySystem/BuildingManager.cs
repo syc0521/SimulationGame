@@ -1,4 +1,5 @@
-﻿using Game.Core;
+﻿using System.Collections.Generic;
+using Game.Core;
 using Game.Data;
 using Game.GamePlaySystem.GameState;
 using Game.GamePlaySystem.StateMachine;
@@ -15,14 +16,17 @@ namespace Game.GamePlaySystem
     public class BuildingManager : GamePlaySystemBase<BuildingManager>
     {
         public Camera mainCamera;
-        
+
+        private Dictionary<uint, BuildingData> _buildingDatas;
         private RaycastInput _raycastInput;
         private bool hasRaycastInput;
         private Grid<int> grid = new(15, 15, -1);
         private StateMachine.StateMachine buildStateMachine;
+        private uint id;
 
         public override void OnStart()
         {
+            _buildingDatas = Managers.Get<ISaveDataManager>().GetBuildings();
             buildStateMachine = new(new IState[]
             {
                 new NormalState(),
@@ -120,5 +124,14 @@ namespace Game.GamePlaySystem
 
             return false;
         }
+
+        public uint GetID()
+        {
+            return id;
+        }
+
+        public void SetBuildingData(uint buildingId, BuildingData data) => _buildingDatas[buildingId] = data;
+
+        public BuildingData GetBuildingData(uint buildingId) => _buildingDatas[buildingId];
     }
 }

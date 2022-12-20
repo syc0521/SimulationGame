@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Game.UI.Module;
 
@@ -10,9 +11,16 @@ namespace Game.UI
 
         private void RegisterModule()
         {
-            _modules.Add(new BuildModule());
             _modules.Add(new MainModule());
+            _modules.Add(new BuildModule());
 
+            /*var typeGamePlayModule = typeof(BaseModule);
+            var result = System.Reflection.Assembly.GetExecutingAssembly().GetTypes()
+                .Where(t => typeGamePlayModule.IsAssignableFrom(t));
+            foreach( var type in result )
+            {
+                _modules.Add((BaseModule)Activator.CreateInstance(type));
+            }*/
         }
 
         public void Init()

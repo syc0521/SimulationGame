@@ -1,5 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 using Game.Core;
+using Game.Data;
 using Game.Data.Event;
 using Game.GamePlaySystem.StateMachine;
 using Game.Input;
@@ -16,11 +17,16 @@ namespace Game.GamePlaySystem.GameState
     {
         private int currentBuildingType;
         private GameObject currentBuilding;
+        private int rotation = 0;
+        private uint currentID = 0;
         public override void OnEnter(params object[] list)
         {
+            currentID = BuildingManager.Instance.GetID();
             currentBuildingType = (int)list[0];
-            float3 cameraPos = float3.zero; // todo 改成比较舒服的位置
-            currentBuilding = Object.Instantiate(Config.Instance.GetBuildings()[currentBuildingType], cameraPos, Quaternion.identity);
+            var ray = Camera.main.ScreenPointToRay(new Vector3(Screen.safeArea.width / 2, Screen.safeArea.height / 2, 0));
+            var point = ray.origin - ray.direction * (ray.origin.y / ray.direction.y);
+
+            currentBuilding = Object.Instantiate(Config.Instance.GetBuildings()[currentBuildingType], GetBlockPos(point, out _), Quaternion.identity);
             MaterialUtil.SetTransparency(currentBuilding, true);
             EventCenter.AddListener<TouchEvent>(PlaceBuilding);
         }
@@ -32,7 +38,7 @@ namespace Game.GamePlaySystem.GameState
 
         private void UpdateUI()
         {
-            if (currentBuilding == null) return;
+            if (currentBuilding == null || Camera.main == null) return;
             var screenPos = Camera.main.WorldToScreenPoint(currentBuilding.transform.position);
             EventCenter.DispatchEvent(new BuildUIEvent { pos = new Vector3(screenPos[0] - 100, screenPos[1] - 100, 0) });
         }
@@ -75,9 +81,18 @@ namespace Game.GamePlaySystem.GameState
         /// </summary>
         private void ConstructBuilding()
         {
-            var blockPos = GetBlockPos(currentBuilding.transform.position, out var gridPos);
+            var pos = currentBuilding.transform.position;
+            BuildingManager.Instance.SetBuildingData(currentID, new BuildingData
+            {
+                level = 1,
+                position = ((float3)pos).xz,
+                rotation = 0,
+                type = currentBuildingType
+            });
+            
+            var blockPos = GetBlockPos(pos, out var gridPos);
             BuildingManager.Instance.GetGrid().SetData(currentBuildingType, gridPos[0], gridPos[1]);
-            World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<AddBlockSystem>().Build(blockPos, currentBuildingType);
+            World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<AddBlockSystem>().Build(blockPos, currentBuildingType, currentID);
             EventCenter.RemoveListener<TouchEvent>(PlaceBuilding);
         }
 

@@ -31,10 +31,14 @@ namespace Game.LevelAndEntity.System
             {
                 var e = ecb.Instantiate(buffer[addBuilding.spawnType].prefab);
                 var position = UniformScaleTransform.FromPosition(addBuilding.spawnPos);
-
-                ecb.SetComponent(e, new Translation()
+                
+                ecb.SetComponent(e, new Translation
                 {
                     Value = position.Position
+                });
+                ecb.AddComponent(e, new LevelObject
+                {
+                    id = addBuilding.id
                 });
                 
                 ecb.DestroyEntity(entity);
@@ -43,11 +47,12 @@ namespace Game.LevelAndEntity.System
             beginSimECBSystem.AddJobHandleForProducer(Dependency);
         }
 
-        public void Build(float3 position, int buildingType)
+        public void Build(float3 position, int buildingType, uint id)
         {
             var newBlock = entityManager.CreateEntity();
             entityManager.AddComponentData(newBlock, new AddBuilding
             {
+                id = id,
                 spawnPos = position,
                 spawnType = buildingType
             });

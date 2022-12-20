@@ -1,4 +1,5 @@
 ﻿using Game.Core;
+using Game.Data;
 using Game.Input;
 using Game.UI;
 using UnityEngine;
@@ -18,10 +19,13 @@ namespace Game
             //初始化管理器
             base.Awake();
             Application.targetFrameRate = 90;
+            
+            Managers.Register<ISaveDataManager, SaveDataManager>();
             Managers.Register<IInputManager, InputManager>();
             Managers.Register<IUIManager, UIManager>();
 
             //开始管理器逻辑
+            Managers.Start<ISaveDataManager>();
             Managers.Start<IInputManager>();
             Managers.Start<IUIManager>();
         }
@@ -31,10 +35,12 @@ namespace Game
         {
             Managers.Unregister<IUIManager>();
             Managers.Unregister<IInputManager>();
+            Managers.Unregister<ISaveDataManager>();
         }
 
         private void Update()
         {
+            Managers.Update<ISaveDataManager>();
             Managers.Update<IInputManager>();
             Managers.Update<IUIManager>();
         }

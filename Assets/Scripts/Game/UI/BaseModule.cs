@@ -2,6 +2,7 @@
 {
     public abstract class BaseModule
     {
+        public BaseModule(){}
         public abstract void OnCreated();
 
         public virtual void OnStart() { }

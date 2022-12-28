@@ -10,11 +10,19 @@ namespace Game.LevelAndEntity.Aspects
         private readonly TransformAspect transform;
         private readonly RefRO<Building> building;
         private readonly RefRO<LevelObject> levelObject;
+        private readonly RefRW<Timer> timer;
 
         public int People => building.ValueRO.type + 1;
         public int BuildingType => building.ValueRO.type;
         public Entity Mesh => building.ValueRO.meshRoot;
         public uint ID => levelObject.ValueRO.id;
+        public float CD => building.ValueRO.cd;
+
+        public float CurrentTime
+        {
+            get => timer.ValueRW.currentTime;
+            set => timer.ValueRW.currentTime = value;
+        }
 
         public float3 Position
         {

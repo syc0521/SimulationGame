@@ -73,3 +73,5 @@ crashlytics-build.properties
 .idea/.idea.ECS/.idea/encodings.xml
 .idea/.idea.ECS/.idea/indexLayout.xml
 .idea/.idea.ECS/.idea/vcs.xml
+.idea/*.*
+.plastic/*.*

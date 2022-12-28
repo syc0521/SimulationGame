@@ -40,6 +40,10 @@ namespace Game.LevelAndEntity.System
                 {
                     id = addBuilding.id
                 });
+                ecb.AddComponent(e, new Timer
+                {
+                    cd = 3
+                });
                 
                 ecb.DestroyEntity(entity);
             }).Schedule();

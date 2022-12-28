@@ -46,6 +46,7 @@ namespace Game.GamePlaySystem
             {
                 buildStateMachine.ChangeState<ModifyState>(entity);
             }
+            
         }
         
         public void AddBuilding(int type)

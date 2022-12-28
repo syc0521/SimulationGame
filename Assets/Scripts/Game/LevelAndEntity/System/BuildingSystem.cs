@@ -23,14 +23,22 @@ namespace Game.LevelAndEntity.System
         public void OnUpdate(ref SystemState state)
         {
             int people = 0;
+            int money = 0;
             foreach (var building in SystemAPI.Query<BuildingAspect>().WithAll<Building>())
             {
                 people += building.People;
+                building.CurrentTime += SystemAPI.Time.DeltaTime;
+                if (building.CurrentTime > building.CD)
+                {
+                    building.CurrentTime = 0;
+                    money++;
+                }
             }
             
             foreach (var data in SystemAPI.Query<DataAspect>())
             {
                 data.config.ValueRW.people = people;
+                data.config.ValueRW.money = money;
             }
         }
         

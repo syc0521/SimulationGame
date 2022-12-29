@@ -128,10 +128,14 @@ namespace Game.GamePlaySystem
 
         public uint GetID()
         {
-            return id;
+            return ++id;
         }
 
-        public void SetBuildingData(uint buildingId, BuildingData data) => _buildingDatas[buildingId] = data;
+        public void SetBuildingData(uint buildingId, BuildingData data)
+        {
+            _buildingDatas[buildingId] = data;
+            Managers.Get<ISaveDataManager>().SaveData();
+        }
 
         public BuildingData GetBuildingData(uint buildingId) => _buildingDatas[buildingId];
     }

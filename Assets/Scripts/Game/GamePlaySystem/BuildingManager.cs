@@ -5,6 +5,7 @@ using Game.GamePlaySystem.GameState;
 using Game.GamePlaySystem.StateMachine;
 using Game.Input;
 using Game.LevelAndEntity.Component;
+using Game.LevelAndEntity.System;
 using Unity.Collections;
 using Unity.Entities;
 using Unity.Mathematics;
@@ -27,6 +28,7 @@ namespace Game.GamePlaySystem
         public override void OnStart()
         {
             _buildingDatas = Managers.Get<ISaveDataManager>().GetBuildings();
+            InitializeBuilding();
             buildStateMachine = new(new IState[]
             {
                 new NormalState(),
@@ -36,6 +38,21 @@ namespace Game.GamePlaySystem
             });
             buildStateMachine.ChangeState<NormalState>();
             EventCenter.AddListener<LongPressEvent>(SelectBuilding);
+        }
+
+        private void InitializeBuilding()
+        {
+            foreach (var (key, data) in _buildingDatas)
+            {
+                if (id > key)
+                {
+                    id = key;
+                }
+
+                World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<AddBlockSystem>().Build(
+                    new float3(data.position[0], 0f, data.position[1]), data.type, key);
+                
+            }
         }
         
         private void SelectBuilding(LongPressEvent evt)

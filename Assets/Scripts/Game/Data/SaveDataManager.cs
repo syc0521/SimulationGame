@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using Game.Core;
 using UnityEngine;
@@ -23,12 +24,16 @@ namespace Game.Data
 
         public void LoadData()
         {
-            var bytes = File.ReadAllBytes(Path);
-            if (bytes.Length == 0)
+            try
             {
-                return;
+                var bytes = File.ReadAllBytes(Path);
+                _playerData = MessagePack.MessagePackSerializer.Deserialize<PlayerData>(bytes);
             }
-            _playerData = MessagePack.MessagePackSerializer.Deserialize<PlayerData>(bytes);
+            catch (FileNotFoundException e)
+            {
+                _playerData = new();
+            }
+            
         }
 
         public Dictionary<uint, BuildingData> GetBuildings()

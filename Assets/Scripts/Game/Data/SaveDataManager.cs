@@ -31,7 +31,12 @@ namespace Game.Data
             }
             catch (FileNotFoundException e)
             {
-                _playerData = new();
+                _playerData = new()
+                {
+                    buildings = new(),
+                    tasks = new()
+                };
+                
             }
             
         }
@@ -40,5 +45,47 @@ namespace Game.Data
         {
             return _playerData.buildings ?? (_playerData.buildings = new());
         }
+
+        public TaskState GetTaskState(uint id)
+        {
+            return _playerData.tasks.ContainsKey(id) ? _playerData.tasks[id].state : TaskState.Error;
+        }
+
+        public void ActivateTask(uint id)
+        {
+            _playerData.tasks[id].SetState(TaskState.Accepted);
+        }
+
+        public bool ChangeTaskState(uint id, TaskState state)
+        {
+            if (_playerData.tasks.ContainsKey(id))
+            {
+                _playerData.tasks[id].SetState(state);
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool ChangeTaskNum(uint id, int num)
+        {
+            if (_playerData.tasks.ContainsKey(id))
+            {
+                _playerData.tasks[id].SetNum(num);
+                return true;
+            }
+            return false;
+        }
+
+        public int GetTaskNum(uint id)
+        {
+            if (_playerData.tasks.ContainsKey(id))
+            {
+                return _playerData.tasks[id].currentNum;
+            }
+            return -1;
+        }
+
+
     }
 }

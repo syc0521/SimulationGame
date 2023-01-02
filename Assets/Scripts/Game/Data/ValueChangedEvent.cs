@@ -1,30 +1,33 @@
 using System;
 
-public class ValueChangedEvent<T>
+namespace Game.Data
 {
-    private Delegate _evt;
-    private T _value;
-
-    public ValueChangedEvent(Action<T> evt, T value = default)
+    public class ValueChangedEvent<T>
     {
-        _evt = evt;
-        _value = value;
-    }
+        private Delegate _evt;
+        private T _value;
 
-    public T Value
-    {
-        set
+        public ValueChangedEvent(Action<T> evt, T value = default)
         {
-            if (_value.Equals(value)) return;
+            _evt = evt;
             _value = value;
-            _evt?.DynamicInvoke(value);
         }
-        get => _value;
-    }
 
-    public void SetEvent(Action<T> action)
-    {
-        _evt = action;
-    }
+        public T Value
+        {
+            set
+            {
+                if (_value.Equals(value)) return;
+                _value = value;
+                _evt?.DynamicInvoke(value);
+            }
+            get => _value;
+        }
 
+        public void SetEvent(Action<T> action)
+        {
+            _evt = action;
+        }
+
+    }
 }

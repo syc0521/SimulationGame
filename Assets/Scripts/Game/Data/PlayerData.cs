@@ -13,6 +13,8 @@ namespace Game.Data
         public int money;
         [Key(1)]
         public Dictionary<uint, BuildingData> buildings;
+        [Key(2)] 
+        public Dictionary<uint, PlayerTaskData> tasks;
     }
 
     [Serializable]
@@ -27,5 +29,21 @@ namespace Game.Data
         public Vector2 position;
         [Key(3)]
         public int rotation; // 0 1 2 3
+    }
+
+    public struct PlayerTaskData
+    {
+        public TaskState state;
+        public int currentNum;
+
+        public void SetState(TaskState taskState)
+        {
+            state = taskState;
+        }
+
+        public void SetNum(int num)
+        {
+            currentNum += num;
+        }
     }
 }

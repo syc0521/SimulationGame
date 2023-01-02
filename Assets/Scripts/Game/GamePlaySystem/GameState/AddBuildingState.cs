@@ -3,6 +3,7 @@ using Game.Core;
 using Game.Data;
 using Game.Data.Event;
 using Game.GamePlaySystem.StateMachine;
+using Game.GamePlaySystem.Task;
 using Game.Input;
 using Game.LevelAndEntity.Component;
 using Game.LevelAndEntity.System;
@@ -94,6 +95,7 @@ namespace Game.GamePlaySystem.GameState
             BuildingManager.Instance.GetGrid().SetData(currentBuildingType, gridPos[0], gridPos[1]);
             World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<AddBlockSystem>().Build(blockPos, currentBuildingType, currentID);
             EventCenter.RemoveListener<TouchEvent>(PlaceBuilding);
+            TaskManager.Instance.TriggerTask(TaskType.AddBuilding, (uint)currentBuildingType, 1);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

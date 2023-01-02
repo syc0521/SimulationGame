@@ -1,0 +1,18 @@
+namespace Game.Data
+{
+    public enum TaskType
+    {
+        AddBuilding = 0,
+        MoveBuilding = 1,
+        GetCurrency = 2,
+    }
+
+    public enum TaskState
+    {
+        NotAccept = 0,
+        Accepted = 1,
+        Finished = 2,
+        Rewarded = 3,
+        Error = -1,
+    }
+}

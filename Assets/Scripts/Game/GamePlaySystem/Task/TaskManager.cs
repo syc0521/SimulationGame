@@ -6,11 +6,11 @@ namespace Game.GamePlaySystem.Task
 {
     public class TaskManager : GamePlaySystemBase<TaskManager>
     {
-        private List<TaskData> tasks;
+        private List<Game.Data.TaskData> tasks;
         public override void OnStart()
         {
             tasks = new();
-            tasks.Add(new TaskData
+            tasks.Add(new Game.Data.TaskData
             {
                 taskID = 0,
                 name = "新手引导1",
@@ -19,7 +19,7 @@ namespace Game.GamePlaySystem.Task
                 targetID = 0,
                 targetNum = 2,
             });
-            tasks.Add(new TaskData
+            tasks.Add(new Game.Data.TaskData
             {
                 taskID = 1,
                 name = "新手引导2",

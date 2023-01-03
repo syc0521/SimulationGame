@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80e14a72067f1ad408ec8d661bc560ce, type: 3}
   m_Name: RewardSetting
   m_EditorClassIdentifier: 
-  templatePath: Assets/QuickSheet/ExcelPlugin/Templates
-  scriptFilePath: Assets/Scripts/Data/Config/
-  editorScriptFilePath: Assets/Configs/Editor/
-  sheetName: 
+  templatePath: QuickSheet/ExcelPlugin/Templates
+  scriptFilePath: Scripts/Game/Data/TableData
+  editorScriptFilePath: Configs/Editor
+  sheetName: Task.xlsx
   workSheetName: Reward
   columnHeaderList:
   - type: 3

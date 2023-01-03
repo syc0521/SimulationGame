@@ -8,10 +8,10 @@ namespace Game.Data
         void SaveData();
         void LoadData();
         Dictionary<uint, BuildingData> GetBuildings();
-        TaskState GetTaskState(uint id);
-        void ActivateTask(uint id);
-        bool ChangeTaskState(uint id, TaskState state);
-        bool ChangeTaskNum(uint id, int num);
-        int GetTaskNum(uint id);
+        TaskState GetTaskState(int id);
+        void ActivateTask(int id);
+        bool ChangeTaskState(int id, TaskState state);
+        bool ChangeTaskNum(int id, int num);
+        int GetTaskNum(int id);
     }
 }

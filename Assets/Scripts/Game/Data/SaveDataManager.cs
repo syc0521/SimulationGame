@@ -36,9 +36,17 @@ namespace Game.Data
                     buildings = new(),
                     tasks = new()
                 };
-                
+                InitializeTask();
             }
-            
+        }
+        
+        private void InitializeTask()
+        {
+            var beginnerTask = Config.Instance.GetTasks().FindAll(item => item.Previousid == -1);
+            foreach (var task in beginnerTask)
+            {
+                ActivateTask(task.Taskid);
+            }
         }
 
         public Dictionary<uint, BuildingData> GetBuildings()
@@ -46,38 +54,45 @@ namespace Game.Data
             return _playerData.buildings ?? (_playerData.buildings = new());
         }
 
-        public TaskState GetTaskState(uint id)
+        public TaskState GetTaskState(int id)
         {
             return _playerData.tasks.ContainsKey(id) ? _playerData.tasks[id].state : TaskState.Error;
         }
 
-        public void ActivateTask(uint id)
+        public void ActivateTask(int id)
         {
-            _playerData.tasks[id].SetState(TaskState.Accepted);
+            _playerData.tasks[id] = new PlayerTaskData
+            {
+                state = TaskState.Accepted
+            };
+            Debug.LogError($"已开启id为{id}的任务");
+            SaveData();
         }
 
-        public bool ChangeTaskState(uint id, TaskState state)
+        public bool ChangeTaskState(int id, TaskState state)
         {
             if (_playerData.tasks.ContainsKey(id))
             {
-                _playerData.tasks[id].SetState(state);
+                _playerData.tasks[id].state = state;
+                SaveData();
                 return true;
             }
 
             return false;
         }
 
-        public bool ChangeTaskNum(uint id, int num)
+        public bool ChangeTaskNum(int id, int num)
         {
             if (_playerData.tasks.ContainsKey(id))
             {
-                _playerData.tasks[id].SetNum(num);
+                _playerData.tasks[id].currentNum += num;
+                SaveData();
                 return true;
             }
             return false;
         }
 
-        public int GetTaskNum(uint id)
+        public int GetTaskNum(int id)
         {
             if (_playerData.tasks.ContainsKey(id))
             {

@@ -95,7 +95,7 @@ namespace Game.GamePlaySystem.GameState
             BuildingManager.Instance.GetGrid().SetData(currentBuildingType, gridPos[0], gridPos[1]);
             World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<AddBlockSystem>().Build(blockPos, currentBuildingType, currentID);
             EventCenter.RemoveListener<TouchEvent>(PlaceBuilding);
-            TaskManager.Instance.TriggerTask(TaskType.AddBuilding, (uint)currentBuildingType, 1);
+            TaskManager.Instance.TriggerTask(TaskType.AddBuilding, currentBuildingType, 1);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

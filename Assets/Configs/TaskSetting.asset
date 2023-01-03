@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: TaskSetting
   m_EditorClassIdentifier: 
   templatePath: QuickSheet/ExcelPlugin/Templates
-  scriptFilePath: Assets/Scripts/Data/Config/
-  editorScriptFilePath: Assets/Configs/Editor/
-  sheetName: 
+  scriptFilePath: Scripts/Game/Data/TableData
+  editorScriptFilePath: Configs/Editor/
+  sheetName: Task.xlsx
   workSheetName: Task
   columnHeaderList:
   - type: 3

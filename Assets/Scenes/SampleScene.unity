@@ -393,6 +393,7 @@ GameObject:
   - component: {fileID: 319385209}
   - component: {fileID: 319385210}
   - component: {fileID: 319385211}
+  - component: {fileID: 319385212}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -469,6 +470,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 674d5e75bcd94abe9c6a47d04ff6b938, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &319385212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319385205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48835ef126c74fa38eecf2c45e5d8ca2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &330585543
@@ -1855,6 +1868,8 @@ MonoBehaviour:
   panelDef: {fileID: 11400000, guid: 87d90c0cfe697dd4d940c6f676f83202, type: 2}
   uiRoot: {fileID: 890482377}
   buildings: {fileID: 11400000, guid: 979b740419de6f74d80193c022f58b32, type: 2}
+  reward: {fileID: 11400000, guid: e7f7d51f264fa294cb38f6b7235d98d6, type: 2}
+  task: {fileID: 11400000, guid: 3c6e562fd7269e24fae8fcce7bd5fd8c, type: 2}
 --- !u!1 &1230545394
 GameObject:
   m_ObjectHideFlags: 0

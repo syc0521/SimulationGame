@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98bdc9dd1735f7f46a7875504f948044, type: 3}
+  m_Name: Task
+  m_EditorClassIdentifier: 
+  SheetName: Assets/Configs/Task.xlsx
+  WorksheetName: Task
+  dataArray:
+  - taskid: 1000
+    name: "\u65B0\u624B\u5F15\u5BFC1"
+    previousid: -1
+    tasktype: 0
+    targetid: 0
+    targetnum: 2
+    reward: 0
+    content: "\u7B2C\u4E00\u4E2A\u4EFB\u52A1"
+  - taskid: 1001
+    name: "\u65B0\u624B\u5F15\u5BFC2"
+    previousid: 0
+    tasktype: 0
+    targetid: 1
+    targetnum: 2
+    reward: 0
+    content: "\u6D4B\u8BD5\u4EFB\u52A1\u94FE"
+  dataList:
+  - taskid: 1000
+    name: "\u65B0\u624B\u5F15\u5BFC1"
+    previousid: -1
+    tasktype: 0
+    targetid: 0
+    targetnum: 2
+    reward: 0
+    content: "\u7B2C\u4E00\u4E2A\u4EFB\u52A1"
+  - taskid: 1001
+    name: "\u65B0\u624B\u5F15\u5BFC2"
+    previousid: 0
+    tasktype: 0
+    targetid: 1
+    targetnum: 2
+    reward: 0
+    content: "\u6D4B\u8BD5\u4EFB\u52A1\u94FE"

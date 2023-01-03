@@ -1,70 +1,55 @@
 using System.Collections.Generic;
 using Game.Core;
 using Game.Data;
+using UnityEngine;
+using TaskData = Game.Data.TableData.TaskData;
 
 namespace Game.GamePlaySystem.Task
 {
+    public static class TaskDecorator
+    {
+        public static TaskState GetTaskState(this TaskData taskData)
+        {
+            return Managers.Get<ISaveDataManager>().GetTaskState(taskData.Taskid);
+        }
+    }
+    
     public class TaskManager : GamePlaySystemBase<TaskManager>
     {
-        private List<Game.Data.TaskData> tasks;
         public override void OnStart()
         {
-            tasks = new();
-            tasks.Add(new Game.Data.TaskData
-            {
-                taskID = 0,
-                name = "新手引导1",
-                previousID = -1,
-                taskType = TaskType.AddBuilding,
-                targetID = 0,
-                targetNum = 2,
-            });
-            tasks.Add(new Game.Data.TaskData
-            {
-                taskID = 1,
-                name = "新手引导2",
-                previousID = 0,
-                taskType = TaskType.AddBuilding,
-                targetID = 1,
-                targetNum = 2,
-            });
+            
         }
 
-        public void InitializeTask()
-        {
-            var beginnerTask = tasks.FindAll(item => item.previousID == -1);
-            foreach (var task in beginnerTask)
-            {
-                ActivateTask(task.taskID);
-            }
-        }
-
-        public void ActivateTask(uint id)
+        private void ActivateTask(int id)
         {
             Managers.Get<ISaveDataManager>().ActivateTask(id);
         }
 
-        public void TriggerTask(TaskType taskType, uint targetID, int targetNum)
+        public void TriggerTask(TaskType taskType, int targetID, int targetNum)
         {
-            var runningTasks = tasks.FindAll(item =>
-                item.TaskState == TaskState.Accepted && item.taskType == taskType && item.targetID == targetID);
+            var runningTasks = Config.Instance.GetTasks().FindAll(item =>
+                item.GetTaskState() == TaskState.Accepted && item.Tasktype == (int)taskType && item.Targetid == targetID);
             foreach (var task in runningTasks)
             {
-                Managers.Get<ISaveDataManager>().ChangeTaskNum(targetID, targetNum);
-                if (Managers.Get<ISaveDataManager>().GetTaskNum(targetID) >= task.targetNum)
+                Managers.Get<ISaveDataManager>().ChangeTaskNum(task.Taskid, targetNum);
+                if (Managers.Get<ISaveDataManager>().GetTaskNum(task.Taskid) >= task.Targetnum)
                 {
-                    Managers.Get<ISaveDataManager>().ChangeTaskState(targetID, TaskState.Finished);
+                    Managers.Get<ISaveDataManager>().ChangeTaskState(task.Taskid, TaskState.Finished);
+                    GetReward(targetID);
                 }
             }
         }
 
-        public void GetReward(uint targetID)
+        public void GetReward(int targetID)
         {
             Managers.Get<ISaveDataManager>().ChangeTaskState(targetID, TaskState.Rewarded);
-            var nextTasks = tasks.FindAll(item => item.previousID == targetID);
+            Debug.LogError($"已领取ID为{targetID}的奖励");
+            
+            var nextTasks = Config.Instance.GetTasks().FindAll(item => item.Previousid == targetID);
             foreach (var task in nextTasks)
             {
-                ActivateTask(task.taskID);
+                ActivateTask(task.Taskid);
             }
         }
     }

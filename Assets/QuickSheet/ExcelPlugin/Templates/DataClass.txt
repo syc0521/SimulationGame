@@ -1,12 +1,15 @@
 using UnityEngine;
 using System.Collections;
 
-///
-/// !!! Machine generated code !!!
-/// !!! DO NOT CHANGE Tabs to Spaces !!!
-/// 
-[System.Serializable]
-public class $ClassName
+namespace Game.Data.TableData
 {
-	$MemberFields
+	///
+	/// !!! Machine generated code !!!
+	/// !!! DO NOT CHANGE Tabs to Spaces !!!
+	/// 
+	[System.Serializable]
+	public class $ClassName
+	{
+		$MemberFields
+	}
 }

@@ -42,7 +42,7 @@ namespace Game.Data
         
         private void InitializeTask()
         {
-            var beginnerTask = Config.Instance.GetTasks().FindAll(item => item.Previousid == -1);
+            var beginnerTask = ConfigTable.Instance.GetTasks().FindAll(item => item.Previousid == -1);
             foreach (var task in beginnerTask)
             {
                 ActivateTask(task.Taskid);

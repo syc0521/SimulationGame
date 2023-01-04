@@ -72,7 +72,7 @@ namespace Game.GamePlaySystem.GameState
             var buildingPos = transform.Position;
             var buildingRot = entityManager.GetAspect<TransformAspect>(aspect.Mesh).Rotation;
 
-            currentBuilding = Object.Instantiate(Data.Config.Instance.GetBuildings()[currentBuildingType], buildingPos, Quaternion.identity);
+            currentBuilding = Object.Instantiate(Data.ConfigTable.Instance.GetBuildings()[currentBuildingType], buildingPos, Quaternion.identity);
             currentBuilding.transform.GetChild(0).localRotation = buildingRot;
             MaterialUtil.SetTransparency(currentBuilding, true);
             transform.Position = new float3(10000, 10000, 10000);

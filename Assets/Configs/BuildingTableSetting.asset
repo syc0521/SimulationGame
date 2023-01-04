@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80e14a72067f1ad408ec8d661bc560ce, type: 3}
+  m_Name: BuildingTableSetting
+  m_EditorClassIdentifier: 
+  templatePath: QuickSheet/ExcelPlugin/Templates
+  scriptFilePath: 
+  editorScriptFilePath: 
+  sheetName: BuildingTable.xlsx
+  workSheetName: Building
+  columnHeaderList:
+  - type: 0
+    name: BuildingID
+    isEnable: 0
+    isArray: 0
+  - type: 0
+    name: ResourcePath
+    isEnable: 0
+    isArray: 0
+  - type: 0
+    name: Name
+    isEnable: 0
+    isArray: 0
+  - type: 0
+    name: BuildingType
+    isEnable: 0
+    isArray: 0
+  - type: 0
+    name: Description
+    isEnable: 0
+    isArray: 0
+  - type: 0
+    name: CurrencyType
+    isEnable: 0
+    isArray: 0
+  - type: 0
+    name: CurrencyCount
+    isEnable: 0
+    isArray: 0
+  excelFilePath: Assets/Configs/BuildingTable.xlsx
+  SheetNames:
+  - Building
+  currentSelectedSheet: 0

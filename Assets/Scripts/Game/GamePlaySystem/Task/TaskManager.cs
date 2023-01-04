@@ -28,7 +28,7 @@ namespace Game.GamePlaySystem.Task
 
         public void TriggerTask(TaskType taskType, int targetID, int targetNum)
         {
-            var runningTasks = Config.Instance.GetTasks().FindAll(item =>
+            var runningTasks = ConfigTable.Instance.GetTasks().FindAll(item =>
                 item.GetTaskState() == TaskState.Accepted && item.Tasktype == (int)taskType && item.Targetid == targetID);
             foreach (var task in runningTasks)
             {
@@ -46,7 +46,7 @@ namespace Game.GamePlaySystem.Task
             Managers.Get<ISaveDataManager>().ChangeTaskState(targetID, TaskState.Rewarded);
             Debug.LogError($"已领取ID为{targetID}的奖励");
             
-            var nextTasks = Config.Instance.GetTasks().FindAll(item => item.Previousid == targetID);
+            var nextTasks = ConfigTable.Instance.GetTasks().FindAll(item => item.Previousid == targetID);
             foreach (var task in nextTasks)
             {
                 ActivateTask(task.Taskid);

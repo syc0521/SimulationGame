@@ -6,13 +6,14 @@ using UnityEngine;
 
 namespace Game.Data
 {
-    public class Config : Singleton<Config>
+    public class ConfigTable : Singleton<ConfigTable>
     {
         [SerializeField] private PanelDef panelDef;
         [SerializeField] private Transform uiRoot;
         [SerializeField] private BuildingCollection buildings;
         [SerializeField] private Reward reward;
         [SerializeField] private Task task;
+        [SerializeField] private Building building;
 
         public GameObject GetPanel(PanelEnum type) => panelDef.panels[type];
 
@@ -23,6 +24,8 @@ namespace Game.Data
         public List<TableData.TaskData> GetTasks() => task.dataList;
 
         public TableData.RewardData GetRewardData(int id) => reward.dataList.Find(item => item.Rewardid == id);
+
+        public List<TableData.BuildingData> GetBuildingData() => building.dataList;
 
     }
 }

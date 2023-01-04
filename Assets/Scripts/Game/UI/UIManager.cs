@@ -53,8 +53,8 @@ namespace Game.UI
         public T CreatePanel<T>(BasePanelOption option = null) where T : UIPanel
         {
             Enum.TryParse(typeof(T).Name, out PanelEnum panelEnum);
-            var panel = Config.Instance.GetPanel(panelEnum);
-            var obj = Object.Instantiate(panel, Config.Instance.GetUIRoot(), true);
+            var panel = ConfigTable.Instance.GetPanel(panelEnum);
+            var obj = Object.Instantiate(panel, ConfigTable.Instance.GetUIRoot(), true);
             var comp = obj.GetComponent<UIPanel>();
             comp.opt = option;
             panels[typeof(T)] = obj;

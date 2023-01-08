@@ -16,7 +16,7 @@ namespace UnityQuickSheet
     /// Base class which draws properties of the created scriptableobject.
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public abstract class BaseEditor<T> : Editor where T : ScriptableObject
+    public abstract class BaseEditor<T> : UnityEditor.Editor where T : ScriptableObject
     {
         protected SerializedObject targetObject;
         protected SerializedProperty spreadsheetProp;

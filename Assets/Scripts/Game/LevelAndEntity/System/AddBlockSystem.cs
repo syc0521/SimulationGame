@@ -1,10 +1,15 @@
-﻿using Game.LevelAndEntity.Component;
+﻿using Game.Core;
+using Game.Data;
+using Game.LevelAndEntity.Component;
+using Game.LevelAndEntity.ResLoader;
 using Unity.Collections;
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Scenes;
 using Unity.Transforms;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 namespace Game.LevelAndEntity.System
 {
@@ -18,7 +23,7 @@ namespace Game.LevelAndEntity.System
             beginSimECBSystem = World.GetExistingSystemManaged<BeginSimulationEntityCommandBufferSystem>();
             entityManager = beginSimECBSystem.EntityManager;
         }
-    
+
         protected override void OnUpdate()
         {
             var ecb = beginSimECBSystem.CreateCommandBuffer();
@@ -26,6 +31,7 @@ namespace Game.LevelAndEntity.System
             var config = query.ToEntityArray(Allocator.Temp);
             var configEntity = config[0];
             if (configEntity == Entity.Null) return;
+
             var buffer = entityManager.GetBuffer<PrefabSpawnerBufferElement>(config[0]);
             Entities.WithAll<AddBuilding>().ForEach((Entity entity, ref AddBuilding addBuilding) =>
             {
@@ -61,6 +67,6 @@ namespace Game.LevelAndEntity.System
                 spawnType = buildingType
             });
         }
-    
+
     }
 }

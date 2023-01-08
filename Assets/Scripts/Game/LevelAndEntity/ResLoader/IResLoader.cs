@@ -1,11 +1,13 @@
-﻿using Game.Core;
+﻿using System;
+using Game.Core;
 using UnityEngine;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 namespace Game.LevelAndEntity.ResLoader
 {
     public interface IResLoader : IManager
     {
-        bool LoadRes(string path, out GameObject obj);
-        bool UnloadRes(string path);
+        void LoadRes(ResEnum type, string path, Action<AsyncOperationHandle<GameObject>> callback);
+        bool UnloadRes(ResEnum type, string path);
     }
 }

@@ -14,5 +14,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SheetName: Assets/Configs/BuildingTable.xlsx
   WorksheetName: Building
-  dataArray: []
-  dataList: []
+  dataArray:
+  - buildingid: 0
+    resourcepath: building_0
+    name: "\u6D4B\u8BD51"
+    buildingtype: 0
+    description: "\u6D4B\u8BD5\u6D4B\u8BD5"
+    currencytype: 0
+    currencycount: 100
+  - buildingid: 1
+    resourcepath: building_1
+    name: "\u6D4B\u8BD51"
+    buildingtype: 0
+    description: "\u6D4B\u8BD5\u6D4B\u8BD5"
+    currencytype: 0
+    currencycount: 100
+  - buildingid: 2
+    resourcepath: building_2
+    name: "\u6D4B\u8BD51"
+    buildingtype: 0
+    description: "\u6D4B\u8BD5\u6D4B\u8BD5"
+    currencytype: 0
+    currencycount: 100
+  dataList:
+  - buildingid: 0
+    resourcepath: building_0
+    name: "\u6D4B\u8BD51"
+    buildingtype: 0
+    description: "\u6D4B\u8BD5\u6D4B\u8BD5"
+    currencytype: 0
+    currencycount: 100
+  - buildingid: 1
+    resourcepath: building_1
+    name: "\u6D4B\u8BD51"
+    buildingtype: 0
+    description: "\u6D4B\u8BD5\u6D4B\u8BD5"
+    currencytype: 0
+    currencycount: 100
+  - buildingid: 2
+    resourcepath: building_2
+    name: "\u6D4B\u8BD51"
+    buildingtype: 0
+    description: "\u6D4B\u8BD5\u6D4B\u8BD5"
+    currencytype: 0
+    currencycount: 100

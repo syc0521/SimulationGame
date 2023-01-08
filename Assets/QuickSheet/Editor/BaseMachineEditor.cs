@@ -18,7 +18,7 @@ namespace UnityQuickSheet
     /// A base class for a spreadsheet import setting.
     /// </summary>
     [CustomEditor(typeof(BaseMachine))]
-    public class BaseMachineEditor : Editor
+    public class BaseMachineEditor : UnityEditor.Editor
     {
         protected BaseMachine machine;
 

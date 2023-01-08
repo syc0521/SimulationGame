@@ -35,6 +35,42 @@ MonoBehaviour:
     m_SerializedLabels:
     - building
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4d9b83d26c1c4cf44a89946685accb1e
+    m_Address: Assets/Res/entity/building/building_0/SimGame_mod_03.obj
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - building
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 310530d4c0b5ab04ba569a56993389f7
+    m_Address: Assets/Res/entity/building/building_0/building_0.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - building
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 08083f369ff976446b824b7ec5371f3a
+    m_Address: Assets/Res/entity/building/building_1/building_1.prefab
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - building
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0d5f6232d1c267e46b4ab0bdb825a4ca
+    m_Address: Assets/Res/entity/building/building_1/SimGame_mod_05.obj
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - building
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0c6961d2f33ac354681937fd0e681457
+    m_Address: Assets/Res/entity/building/building_2/building_2.prefab
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - building
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: beccd0eac5e650e4cb55ce44ef3854aa
+    m_Address: Assets/Res/entity/building/building_2/SimGame_mod_01.obj
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - building
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ef7206bd29055104abb70d185833b540, type: 2}
   m_SchemaSet:

@@ -1870,6 +1870,7 @@ MonoBehaviour:
   buildings: {fileID: 11400000, guid: 979b740419de6f74d80193c022f58b32, type: 2}
   reward: {fileID: 11400000, guid: e7f7d51f264fa294cb38f6b7235d98d6, type: 2}
   task: {fileID: 11400000, guid: 3c6e562fd7269e24fae8fcce7bd5fd8c, type: 2}
+  building: {fileID: 11400000, guid: eed6a688b1ca6ec4e9651215e0b9a2d3, type: 2}
 --- !u!1 &1230545394
 GameObject:
   m_ObjectHideFlags: 0

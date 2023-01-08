@@ -15,7 +15,7 @@ namespace UnityQuickSheet
     /// Editor script class for ExcelSettings scriptable object to hide password of google account.
     /// </summary>
     [CustomEditor(typeof(ExcelSettings))]
-    public class ExcelSettingsEditor : Editor
+    public class ExcelSettingsEditor : UnityEditor.Editor
     {
         ExcelSettings setting;
 

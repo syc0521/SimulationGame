@@ -52,5 +52,11 @@ namespace Game.GamePlaySystem.Task
                 ActivateTask(task.Taskid);
             }
         }
+
+        // 如果任务变动用事件，第一次进游戏获取任务用这个
+        public Dictionary<int, PlayerTaskData> GetPlayerTask()
+        {
+            return Managers.Get<ISaveDataManager>().GetCurrentTasks();
+        }
     }
 }

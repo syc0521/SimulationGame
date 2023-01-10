@@ -46,8 +46,13 @@ namespace Game.UI
 
         public T OpenPanel<T>(BasePanelOption option = null) where T : UIPanel
         {
-            
-            return default;
+            if (HasPanel<T>())
+            {
+                panels[typeof(T)].SetActive(true);
+                return panels[typeof(T)].GetComponent<UIPanel>() as T;
+            }
+
+            return CreatePanel<T>();
         }
 
         public T CreatePanel<T>(BasePanelOption option = null) where T : UIPanel

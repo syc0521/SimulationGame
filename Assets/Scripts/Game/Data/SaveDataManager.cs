@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Game.Core;
 using UnityEngine;
 
@@ -22,7 +23,7 @@ namespace Game.Data
             File.WriteAllBytes(Path, bytes);
         }
 
-        public void LoadData()
+        private void LoadData()
         {
             try
             {
@@ -101,6 +102,16 @@ namespace Game.Data
             return -1;
         }
 
+        public Dictionary<int, PlayerTaskData> GetCurrentTasks()
+        {
+            Dictionary<int, PlayerTaskData> data = new();
+            foreach (var task in _playerData.tasks.Where(
+                         task => task.Value.state is TaskState.Accepted or TaskState.Finished))
+            {
+                data[task.Key] = task.Value;
+            }
 
+            return data;
+        }
     }
 }

@@ -49,9 +49,6 @@ namespace Game.UI.Panel
             nodes.text.text = evt.gameData.people.ToString();
         }
 
-        private void OpenTaskPanel(TaskListData data)
-        {
-            Managers.Get<IUIManager>().OpenPanel<TaskPanel>();
-        }
+        
     }
 }

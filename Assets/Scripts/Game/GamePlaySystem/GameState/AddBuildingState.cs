@@ -26,7 +26,7 @@ namespace Game.GamePlaySystem.GameState
             var ray = Camera.main.ScreenPointToRay(new Vector3(Screen.safeArea.width / 2, Screen.safeArea.height / 2, 0));
             var point = ray.origin - ray.direction * (ray.origin.y / ray.direction.y);
 
-            currentBuilding = Object.Instantiate(ConfigTable.Instance.GetBuildings()[currentBuildingType], GetBlockPos(point, out _), Quaternion.identity);
+            currentBuilding = Object.Instantiate(ConfigTable.Instance.GetBuilding(currentBuildingType), GetBlockPos(point, out _), Quaternion.identity);
             MaterialUtil.SetTransparency(currentBuilding, true);
             EventCenter.AddListener<TouchEvent>(PlaceBuilding);
         }

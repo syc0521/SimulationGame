@@ -19,7 +19,7 @@ namespace Game.Data
 
         public Transform GetUIRoot() => uiRoot;
 
-        public List<GameObject> GetBuildings() => buildings.buildings;
+        public GameObject GetBuilding(int id) => buildings.buildings[id];
 
         public List<TableData.TaskData> GetTasks() => task.dataList;
 

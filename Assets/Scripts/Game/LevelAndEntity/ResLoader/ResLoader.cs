@@ -12,6 +12,7 @@ namespace Game.LevelAndEntity.ResLoader
     public enum ResEnum
     {
         building = 0,
+        sprite = 1,
     }
 
     public class ResLoader : ManagerBase, IResLoader
@@ -22,12 +23,28 @@ namespace Game.LevelAndEntity.ResLoader
         {
             Addressables.LoadAssetAsync<GameObject>(GetAssetPath(type, path)).Completed += callback;
         }
+        
+        public void LoadRes(ResEnum type, string path, Action<AsyncOperationHandle<Sprite>> callback)
+        {
+            Addressables.LoadAssetAsync<Sprite>(GetAssetPath(type, path)).Completed += callback;
+        }
 
         public bool UnloadRes(ResEnum type, string path)
         {
             return false;
         }
 
-        private string GetAssetPath(ResEnum type, string path) => $"{rootPath}{type}/{path}/{path}.prefab";
+        private string GetAssetPath(ResEnum type, string path)
+        {
+            switch (type)
+            {
+                case ResEnum.building:
+                    return $"{rootPath}{type}/{path}/{path}.prefab";
+                case ResEnum.sprite:
+                    return $"{rootPath}ui/dynamic/{path}";
+                default:
+                    return string.Empty;
+            }
+        }
     }
 }

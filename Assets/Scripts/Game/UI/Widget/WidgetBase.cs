@@ -1,12 +1,18 @@
+using System;
 using UnityEngine;
 
 namespace Game.UI.Widget
 {
-    public abstract class WidgetBase : MonoBehaviour
+    public abstract class WidgetBase : MonoBehaviour, IUILifePhase
     {
+        private void Awake()
+        {
+            OnCreated();
+        }
+
         private void Start()
         {
-            OnStart();
+            OnShown();
         }
 
         private void Update()
@@ -14,9 +20,23 @@ namespace Game.UI.Widget
             OnUpdate();
         }
 
-        protected virtual void OnStart() { }
+        private void OnDestroy()
+        {
+            OnDestroyed();
+        }
 
-        protected virtual void OnUpdate() { }
+        public void OnCreated() { }
+
+        public virtual void OnShown() { }
+
+        /// <summary>
+        /// widget没用
+        /// </summary>
+        public void OnHidden() { }
+
+        public virtual void OnUpdate() { }
+        
+        public virtual void OnDestroyed() { }
 
     }
 }

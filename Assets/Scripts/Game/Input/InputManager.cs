@@ -174,11 +174,14 @@ namespace Game.Input
             while (true)
             {
                 if (UnityEngine.Input.touchCount > 1) break;
-                EventCenter.DispatchEvent(new SwipeChangedEvent
+                if (!IsPointerOverGameObject())
                 {
-                    pos = _gameControl.GamePlay.PrimaryPosition.ReadValue<Vector2>(),
-                    time = (float)ctx.startTime
-                });
+                    EventCenter.DispatchEvent(new SwipeChangedEvent
+                    {
+                        pos = _gameControl.GamePlay.PrimaryPosition.ReadValue<Vector2>(),
+                        time = (float)ctx.startTime
+                    });
+                }
                 yield return null;
             }
         }

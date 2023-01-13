@@ -3,6 +3,7 @@ using Game.Core;
 using Game.UI.Component;
 using Game.UI.Panel;
 using Game.UI.Panel.Task;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace Game.UI.Widget
@@ -23,7 +24,7 @@ namespace Game.UI.Widget
             {
                 atlas = AtlasEnum.Task,
                 resName = $"task_{taskListData.id}"
-            });
+            }); // todo 待美术添加资源
 
             id = taskListData.id;
 
@@ -31,8 +32,8 @@ namespace Game.UI.Widget
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            //todo 点击之后打开任务详情面板
-            Managers.Get<IUIManager>().OpenPanel<TaskDetailPanel>(new TaskDetailPanelOption
+            Debug.Log("打开任务面板");
+            UIManager.Instance.OpenPanel<TaskDetailPanel>(new TaskDetailPanelOption
             {
                 taskID = id,
             });

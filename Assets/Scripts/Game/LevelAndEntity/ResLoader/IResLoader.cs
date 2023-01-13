@@ -8,6 +8,7 @@ namespace Game.LevelAndEntity.ResLoader
     public interface IResLoader : IManager
     {
         void LoadRes(ResEnum type, string path, Action<AsyncOperationHandle<GameObject>> callback);
+        void LoadRes(ResEnum type, string path, Action<AsyncOperationHandle<Sprite>> callback);
         bool UnloadRes(ResEnum type, string path);
     }
 }

@@ -13,7 +13,6 @@ namespace Game.UI.Panel
     {
         public int id;
         public TaskState state;
-        public int currentNum;
     }
     public class MainPanel : UIPanel
     {
@@ -22,6 +21,7 @@ namespace Game.UI.Panel
         public override void OnCreated()
         {
             EventCenter.AddListener<DataChangedEvent>(RefreshUI);
+            nodes.task_list.Init();
             InitTask();
         }
 
@@ -39,7 +39,6 @@ namespace Game.UI.Panel
                 {
                     id = task.Key,
                     state = task.Value.state,
-                    currentNum = task.Value.currentNum
                 });
             }
         }

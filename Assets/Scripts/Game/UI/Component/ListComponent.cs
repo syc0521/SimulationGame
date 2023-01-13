@@ -18,7 +18,7 @@ namespace Game.UI.Component
         private List<ListData> _listData;
         private Transform content;
 
-        private void Start()
+        public void Init()
         {
             content = transform.GetChild(0).GetChild(0);
             _objects = new();

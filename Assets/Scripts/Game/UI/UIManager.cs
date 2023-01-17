@@ -21,18 +21,22 @@ namespace Game.UI
     {
         public static IUIManager Instance => Managers.Get<IUIManager>();
         private ModuleCollector _modules;
+        private UISystemCollector _systems;
         private Dictionary<Type, GameObject> panels = new();
 
         public override void OnAwake()
         {
             base.OnAwake();
+            _systems = new();
             _modules = new();
+            _systems.Init();
             _modules.Init();
         }
 
         public override void OnStart()
         {
             base.OnStart();
+            _systems.Start();
             _modules.Start();
         }
 
@@ -40,6 +44,9 @@ namespace Game.UI
         {
             _modules.Destroy();
             _modules = null;
+            
+            _systems.Destroy();
+            _systems = null;
             
             panels.Clear();
         }

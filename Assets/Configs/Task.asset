@@ -19,24 +19,24 @@ MonoBehaviour:
     name: "\u65B0\u624B\u5F15\u5BFC1"
     previousid: -1
     tasktype: 0
-    targetid: 0
-    targetnum: 2
+    targetid: 00000000
+    targetnum: 02000000
     reward: 0
     content: "\u7B2C\u4E00\u4E2A\u4EFB\u52A1"
   - taskid: 1001
     name: "\u65B0\u624B\u5F15\u5BFC2"
     previousid: 0
     tasktype: 0
-    targetid: 1
-    targetnum: 2
+    targetid: 01000000
+    targetnum: 02000000
     reward: 0
     content: "\u6D4B\u8BD5\u4EFB\u52A1\u94FE"
   - taskid: 1002
     name: "\u65B0\u624B\u5F15\u5BFC1-1"
     previousid: -1
     tasktype: 0
-    targetid: 1
-    targetnum: 2
+    targetid: 01000000
+    targetnum: 02000000
     reward: 0
     content: "\u6D4B\u8BD5\u591A\u4E2A\u65B0\u624B\u4EFB\u52A1"
   dataList:
@@ -44,23 +44,23 @@ MonoBehaviour:
     name: "\u65B0\u624B\u5F15\u5BFC1"
     previousid: -1
     tasktype: 0
-    targetid: 0
-    targetnum: 2
+    targetid: 00000000
+    targetnum: 02000000
     reward: 0
     content: "\u7B2C\u4E00\u4E2A\u4EFB\u52A1"
   - taskid: 1001
     name: "\u65B0\u624B\u5F15\u5BFC2"
     previousid: 0
     tasktype: 0
-    targetid: 1
-    targetnum: 2
+    targetid: 01000000
+    targetnum: 02000000
     reward: 0
     content: "\u6D4B\u8BD5\u4EFB\u52A1\u94FE"
   - taskid: 1002
     name: "\u65B0\u624B\u5F15\u5BFC1-1"
     previousid: -1
     tasktype: 0
-    targetid: 1
-    targetnum: 2
+    targetid: 01000000
+    targetnum: 02000000
     reward: 0
     content: "\u6D4B\u8BD5\u591A\u4E2A\u65B0\u624B\u4EFB\u52A1"

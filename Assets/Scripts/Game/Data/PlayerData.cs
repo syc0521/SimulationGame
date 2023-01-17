@@ -38,6 +38,6 @@ namespace Game.Data
         [Key(0)]
         public TaskState state;
         [Key(1)]
-        public int currentNum;
+        public int[] currentNum;
     }
 }

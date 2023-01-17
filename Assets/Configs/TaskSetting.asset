@@ -37,11 +37,11 @@ MonoBehaviour:
   - type: 3
     name: TargetID
     isEnable: 0
-    isArray: 0
+    isArray: 1
   - type: 3
     name: TargetNum
     isEnable: 0
-    isArray: 0
+    isArray: 1
   - type: 3
     name: Reward
     isEnable: 0

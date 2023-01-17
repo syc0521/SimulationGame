@@ -21,12 +21,26 @@ namespace Game.LevelAndEntity.ResLoader
 
         public void LoadRes(ResEnum type, string path, Action<AsyncOperationHandle<GameObject>> callback)
         {
-            Addressables.LoadAssetAsync<GameObject>(GetAssetPath(type, path)).Completed += callback;
+            try
+            {
+                Addressables.LoadAssetAsync<GameObject>(GetAssetPath(type, path)).Completed += callback;
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"获取{path}资源错误！");
+            }
         }
         
-        public void LoadRes(ResEnum type, string path, Action<AsyncOperationHandle<Sprite>> callback)
+        public void LoadRes(ResEnum type, string path, Action<AsyncOperationHandle<Texture2D>> callback)
         {
-            Addressables.LoadAssetAsync<Sprite>(GetAssetPath(type, path)).Completed += callback;
+            try
+            {
+                Addressables.LoadAssetAsync<Texture2D>(GetAssetPath(type, path)).Completed += callback;
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"获取{path}资源错误！");
+            }
         }
 
         public bool UnloadRes(ResEnum type, string path)

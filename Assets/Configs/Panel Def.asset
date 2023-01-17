@@ -18,4 +18,4 @@ MonoBehaviour:
   - panelEnum: 0
     obj: {fileID: 4175337468705133161, guid: bce71e67eb5e01144a0b6ac6d8ac4d74, type: 3}
   - panelEnum: 2
-    obj: {fileID: 4175337468705133161, guid: a105c0cf83d1d3941aaf966c13e6e021, type: 3}
+    obj: {fileID: 4712664157517380074, guid: c6ac96db2b117d447a3b673ef488f85f, type: 3}

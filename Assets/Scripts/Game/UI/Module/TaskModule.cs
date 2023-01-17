@@ -1,5 +1,8 @@
+using Game.Data;
+
 namespace Game.UI.Module
 {
+
     public class TaskModule : BaseModule
     {
         public override void OnCreated()

@@ -1833,7 +1833,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1179562817}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1867,7 +1867,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelDef: {fileID: 11400000, guid: 87d90c0cfe697dd4d940c6f676f83202, type: 2}
   uiRoot: {fileID: 890482377}
-  buildings: {fileID: 11400000, guid: 979b740419de6f74d80193c022f58b32, type: 2}
+  buildings: {fileID: 11400000, guid: a5b5170e91ffa744dad5bed44881bb10, type: 2}
   reward: {fileID: 11400000, guid: e7f7d51f264fa294cb38f6b7235d98d6, type: 2}
   task: {fileID: 11400000, guid: 3c6e562fd7269e24fae8fcce7bd5fd8c, type: 2}
   building: {fileID: 11400000, guid: eed6a688b1ca6ec4e9651215e0b9a2d3, type: 2}

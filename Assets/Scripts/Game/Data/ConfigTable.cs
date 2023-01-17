@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Game.Core;
 using Game.Data.ScriptableObject;
 using Game.Data.TableData;
@@ -21,7 +22,9 @@ namespace Game.Data
 
         public GameObject GetBuilding(int id) => buildings.buildings[id];
 
-        public List<TableData.TaskData> GetTasks() => task.dataList;
+        public List<TaskData> GetTasks() => task.dataList;
+
+        public TaskData GetTask(int id) => task.dataList.Find(item => item.Taskid == id);
 
         public TableData.RewardData GetRewardData(int id) => reward.dataList.Find(item => item.Rewardid == id);
 

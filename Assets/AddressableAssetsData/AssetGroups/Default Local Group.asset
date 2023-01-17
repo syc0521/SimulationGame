@@ -71,6 +71,21 @@ MonoBehaviour:
     m_SerializedLabels:
     - building
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2c0ff595656d47a4ba943284230a9862
+    m_Address: Assets/Res/ui/dynamic/task/task_1000
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f838c1ed2908a914f9bafab3e09fa539
+    m_Address: Assets/Res/ui/dynamic/task/task_1002
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8d751ffe35972804d841fa0a9e3534bc
+    m_Address: Assets/Res/ui/dynamic/task/task_1001
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ef7206bd29055104abb70d185833b540, type: 2}
   m_SchemaSet:

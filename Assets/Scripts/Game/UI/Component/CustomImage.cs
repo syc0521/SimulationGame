@@ -1,5 +1,6 @@
 ﻿using Game.Core;
 using Game.LevelAndEntity.ResLoader;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Game.UI.Component
@@ -10,7 +11,11 @@ namespace Game.UI.Component
         {
             Managers.Get<IResLoader>().LoadRes(ResEnum.sprite, GetAssetPath(atlasSpriteID), handle =>
             {
-                sprite = handle.Result;
+                if (handle.Result != null)
+                {
+                    var s = Sprite.Create(handle.Result, new Rect(0, 0, handle.Result.width, handle.Result.height), Vector2.zero);
+                    sprite = s;
+                }
             });
         }
 

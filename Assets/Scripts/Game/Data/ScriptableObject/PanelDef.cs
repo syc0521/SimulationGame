@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Game.Data.ScriptableObject
@@ -25,12 +26,9 @@ namespace Game.Data.ScriptableObject
 
         public void OnAfterDeserialize()
         {
-            foreach (var item in _panelTemp)
+            foreach (var item in _panelTemp.Where(item => !panels.ContainsKey(item.panelEnum)))
             {
-                if (!panels.ContainsKey(item.panelEnum))
-                {
-                    panels[item.panelEnum] = item.obj;
-                }
+                panels[item.panelEnum] = item.obj;
             }
         }
     }

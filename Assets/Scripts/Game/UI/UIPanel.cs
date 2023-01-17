@@ -8,9 +8,24 @@ namespace Game.UI
     {
         public BasePanelOption opt;
 
+        private void Awake()
+        {
+            OnCreated();
+        }
+
+        private void Start()
+        {
+            OnShown();
+        }
+
         private void Update()
         {
             OnUpdate();
+        }
+
+        private void OnDestroy()
+        {
+            OnDestroyed();
         }
 
         public virtual void OnCreated()
@@ -36,6 +51,11 @@ namespace Game.UI
         public virtual void OnDestroyed()
         {
             
+        }
+
+        protected void CloseSelf()
+        {
+            UIManager.Instance.DestroyPanel(this);
         }
     }
 }

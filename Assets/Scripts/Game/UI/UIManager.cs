@@ -56,10 +56,12 @@ namespace Game.UI
             if (HasPanel<T>())
             {
                 panels[typeof(T)].SetActive(true);
-                return panels[typeof(T)].GetComponent<UIPanel>() as T;
+                var panel = panels[typeof(T)].GetComponent<UIPanel>();
+                panel.OnShown();
+                return panel as T;
             }
 
-            return CreatePanel<T>();
+            return CreatePanel<T>(option);
         }
 
         public T CreatePanel<T>(BasePanelOption option = null) where T : UIPanel
@@ -71,6 +73,7 @@ namespace Game.UI
             comp.opt = option;
             panels[typeof(T)] = obj;
             comp.OnCreated();
+            comp.OnShown();
             return comp as T;
         }
 

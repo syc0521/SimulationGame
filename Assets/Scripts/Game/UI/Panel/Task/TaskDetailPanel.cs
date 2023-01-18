@@ -1,6 +1,7 @@
 
 using Game.Data;
 using Game.UI.Module;
+using Game.UI.UISystem;
 
 namespace Game.UI.Panel.Task
 {
@@ -15,7 +16,11 @@ namespace Game.UI.Panel.Task
         public override void OnCreated()
         {
             nodes.close_btn.onClick.AddListener(ClosePanel);
-            
+        }
+
+        public override void OnShown()
+        {
+            base.OnShown();
             InitData();
         }
 
@@ -37,8 +42,7 @@ namespace Game.UI.Panel.Task
             }
             
             taskID = option.taskID;
-            nodes.task_txt.text =
-                $"{taskID} {ConfigTable.Instance.GetTasks().Find(item => item.Taskid == taskID).Name}";
+            nodes.task_txt.text = $"{taskID} {TaskSystem.Instance.GetTaskData(taskID).name}";
         }
     }
 }

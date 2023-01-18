@@ -4,6 +4,7 @@ using System.Linq;
 using Game.Core;
 using Game.Data;
 using Game.Data.Event;
+using Game.Data.Event.Task;
 using UnityEngine;
 using TaskData = Game.Data.TableData.TaskData;
 
@@ -35,12 +36,16 @@ namespace Game.GamePlaySystem.Task
 
         private void InitData(LoadDataEvent evt)
         {
-            _playerTaskData = Managers.Get<ISaveDataManager>().GetPlayerTasks();
+            Managers.Get<ISaveDataManager>().GetPlayerTasks(ref _playerTaskData);
+            EventCenter.DispatchEvent(new RefreshTaskEvent
+            {
+                playerTask = GetPlayerTask()
+            });
         }
         
         private void InitializeTask(InitializeSaveDataEvent evt)
         {
-            _playerTaskData = Managers.Get<ISaveDataManager>().GetPlayerTasks();
+            Managers.Get<ISaveDataManager>().GetPlayerTasks(ref _playerTaskData);
             var beginnerTask = ConfigTable.Instance.GetTasks().FindAll(item => item.Previousid == -1);
             foreach (var task in beginnerTask)
             {
@@ -52,32 +57,41 @@ namespace Game.GamePlaySystem.Task
         {
             var runningTasks = ConfigTable.Instance.GetTasks().FindAll(item =>
                 item.GetTaskState() == TaskState.Accepted && item.Tasktype == (int)taskType && item.Targetid.Contains(targetID));
+            bool hasTaskFinished = false;
             foreach (var task in runningTasks)
             {
                 SetTaskNum(task.Taskid, targetID, targetNum);
                 
                 if (IsTaskFinished(task.Taskid))
                 {
+                    hasTaskFinished = true;
                     ChangeTaskState(task.Taskid, TaskState.Finished);
-                    GetReward(targetID);
+                    GetReward(task.Taskid);
                 }
+            }
+
+            if (hasTaskFinished)
+            {
+                EventCenter.DispatchEvent(new RefreshTaskEvent
+                {
+                    playerTask = GetPlayerTask()
+                });
             }
         }
 
-        public void GetReward(int targetID)
+        private void GetReward(int taskID)
         {
-            ChangeTaskState(targetID, TaskState.Rewarded);
-            Debug.LogError($"已领取ID为{targetID}的奖励");
+            ChangeTaskState(taskID, TaskState.Rewarded);
+            Debug.LogError($"已领取ID为{taskID}的奖励");
             
-            var nextTasks = ConfigTable.Instance.GetTasks().FindAll(item => item.Previousid == targetID);
+            var nextTasks = ConfigTable.Instance.GetTasks().FindAll(item => item.Previousid == taskID);
             foreach (var task in nextTasks)
             {
                 ActivateTask(task.Taskid);
             }
         }
-
-        // 如果任务变动用事件，第一次进游戏获取任务用这个
-        public Dictionary<int, PlayerTaskData> GetPlayerTask()
+        
+        private Dictionary<int, PlayerTaskData> GetPlayerTask()
         {
             Dictionary<int, PlayerTaskData> data = new();
             foreach (var task in _playerTaskData.Where(

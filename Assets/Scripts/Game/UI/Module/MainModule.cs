@@ -8,15 +8,15 @@ namespace Game.UI.Module
     {
         public override void OnCreated()
         {
-            
-        }
-
-        public override void OnStart()
-        {
             if (!UIManager.Instance.HasPanel<MainPanel>())
             {
                 UIManager.Instance.CreatePanel<MainPanel>();
             }
+        }
+
+        public override void OnStart()
+        {
+            
         }
 
         public override void OnDestroyed()

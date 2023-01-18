@@ -14,7 +14,10 @@ namespace Game.UI.Component
                 if (handle.Result != null)
                 {
                     var s = Sprite.Create(handle.Result, new Rect(0, 0, handle.Result.width, handle.Result.height), Vector2.zero);
-                    sprite = s;
+                    if (this != null)
+                    {
+                        sprite = s;
+                    }
                 }
             });
         }

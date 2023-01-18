@@ -49,9 +49,9 @@ namespace Game.Data
             return _playerData.buildings ?? (_playerData.buildings = new());
         }
         
-        public Dictionary<int, PlayerTaskData> GetPlayerTasks()
+        public void GetPlayerTasks(ref Dictionary<int, PlayerTaskData> taskData)
         {
-            return _playerData.tasks;
+            taskData = _playerData.tasks;
         }
     }
 }

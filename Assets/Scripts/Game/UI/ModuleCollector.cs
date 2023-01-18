@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Game.UI.Module;
+using System.Reflection;
 
 namespace Game.UI
 {
@@ -11,16 +11,17 @@ namespace Game.UI
 
         private void RegisterModule()
         {
-            _modules.Add(new MainModule());
-            _modules.Add(new BuildModule());
-
-            /*var typeGamePlayModule = typeof(BaseModule);
-            var result = System.Reflection.Assembly.GetExecutingAssembly().GetTypes()
-                .Where(t => typeGamePlayModule.IsAssignableFrom(t));
+            var typeGamePlayModule = typeof(BaseModule);
+            var result = Assembly.GetExecutingAssembly().GetTypes().Where(t => typeGamePlayModule.IsAssignableFrom(t));
             foreach( var type in result )
             {
-                _modules.Add((BaseModule)Activator.CreateInstance(type));
-            }*/
+                if (type == typeGamePlayModule)
+                {
+                    continue;
+                }
+                var constructorInfo = type.GetConstructor(new Type[] {});
+                _modules.Add((BaseModule)constructorInfo?.Invoke(new object[] {}));
+            }
         }
 
         public void Init()

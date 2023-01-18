@@ -7,6 +7,6 @@ namespace Game.Data
     {
         void SaveData();
         Dictionary<uint, BuildingData> GetBuildings();
-        Dictionary<int, PlayerTaskData> GetPlayerTasks();
+        void GetPlayerTasks(ref Dictionary<int, PlayerTaskData> taskData);
     }
 }

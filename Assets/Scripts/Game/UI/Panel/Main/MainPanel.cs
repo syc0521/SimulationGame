@@ -3,9 +3,11 @@ using System.Linq;
 using Game.Core;
 using Game.Data;
 using Game.Data.Event;
+using Game.Data.Event.Task;
 using Game.GamePlaySystem.Task;
 using Game.UI.Component;
 using Game.UI.Panel.Task;
+using Game.UI.UISystem;
 using TMPro;
 using UnityEngine;
 
@@ -23,26 +25,21 @@ namespace Game.UI.Panel
         public override void OnCreated()
         {
             EventCenter.AddListener<DataChangedEvent>(RefreshUI);
-        }
-
-        public override void OnShown()
-        {
-            base.OnShown();
-            InitTask();
+            EventCenter.AddListener<RefreshUITaskEvent>(RefreshTask);
         }
 
         public override void OnDestroyed()
         {
             EventCenter.RemoveListener<DataChangedEvent>(RefreshUI);
+            EventCenter.RemoveListener<RefreshUITaskEvent>(RefreshTask);
         }
 
-        private void InitTask()
+        private void RefreshTask(RefreshUITaskEvent evt)
         {
-            var tasks = TaskManager.Instance.GetPlayerTask();
-            foreach (var task in 
-                     tasks.Where(item => item.Value.state is TaskState.Accepted))
+            nodes.task_list.Clear();
+            var tasks = TaskSystem.Instance.GetAllTaskData();
+            foreach (var task in tasks)
             {
-                Debug.Log(task.Value.state);
                 nodes.task_list.AddItem(new TaskListData
                 {
                     id = task.Key,

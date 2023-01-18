@@ -65,8 +65,8 @@ namespace Game.UI.Component
 
         public void Clear()
         {
-            _listData.Clear();
-            _objects.ForEach(Destroy);
+            _listData?.Clear();
+            _objects?.ForEach(Destroy);
         }
     }
 }

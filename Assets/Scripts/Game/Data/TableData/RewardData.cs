@@ -19,12 +19,12 @@ namespace Game.Data.TableData
     public int Rewardtype { get {return rewardtype; } set { rewardtype = value;} }
     
     [SerializeField]
-    int itemid;
-    public int Itemid { get {return itemid; } set { itemid = value;} }
+    int[] itemid = new int[0];
+    public int[] Itemid { get {return itemid; } set { itemid = value;} }
     
     [SerializeField]
-    int count;
-    public int Count { get {return count; } set { count = value;} }
+    int[] count = new int[0];
+    public int[] Count { get {return count; } set { count = value;} }
     
 	}
 }

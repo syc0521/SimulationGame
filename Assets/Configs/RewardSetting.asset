@@ -29,11 +29,11 @@ MonoBehaviour:
   - type: 3
     name: ItemID
     isEnable: 0
-    isArray: 0
+    isArray: 1
   - type: 3
     name: Count
     isEnable: 0
-    isArray: 0
+    isArray: 1
   excelFilePath: Assets/Configs/Task.xlsx
   SheetNames:
   - Task

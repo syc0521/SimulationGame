@@ -14,8 +14,8 @@ namespace Game.Data
     {
         public RewardType type;
         public int rewardID;
-        public int itemID;
-        public int amount;
+        public int[] itemID;
+        public int[] amount;
 
         public RewardData(TableData.RewardData data)
         {

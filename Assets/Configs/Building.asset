@@ -36,6 +36,34 @@ MonoBehaviour:
     description: "\u6D4B\u8BD5\u6D4B\u8BD5"
     currencytype: 0
     currencycount: 100
+  - buildingid: 3
+    resourcepath: building_101
+    name: "\u5B9D\u5854"
+    buildingtype: 0
+    description: "\u5B9D\u5854"
+    currencytype: 0
+    currencycount: 100
+  - buildingid: 4
+    resourcepath: building_201
+    name: "\u9662\u5B50"
+    buildingtype: 0
+    description: "\u9662\u5B50"
+    currencytype: 0
+    currencycount: 100
+  - buildingid: 5
+    resourcepath: building_301
+    name: "\u519C\u7530"
+    buildingtype: 0
+    description: "\u519C\u7530"
+    currencytype: 0
+    currencycount: 100
+  - buildingid: 6
+    resourcepath: building_401
+    name: "\u9A6C\u8F66"
+    buildingtype: 0
+    description: "\u9A6C\u8F66"
+    currencytype: 0
+    currencycount: 100
   dataList:
   - buildingid: 0
     resourcepath: building_0
@@ -56,5 +84,33 @@ MonoBehaviour:
     name: "\u6D4B\u8BD51"
     buildingtype: 0
     description: "\u6D4B\u8BD5\u6D4B\u8BD5"
+    currencytype: 0
+    currencycount: 100
+  - buildingid: 3
+    resourcepath: building_101
+    name: "\u5B9D\u5854"
+    buildingtype: 0
+    description: "\u5B9D\u5854"
+    currencytype: 0
+    currencycount: 100
+  - buildingid: 4
+    resourcepath: building_201
+    name: "\u9662\u5B50"
+    buildingtype: 0
+    description: "\u9662\u5B50"
+    currencytype: 0
+    currencycount: 100
+  - buildingid: 5
+    resourcepath: building_301
+    name: "\u519C\u7530"
+    buildingtype: 0
+    description: "\u519C\u7530"
+    currencytype: 0
+    currencycount: 100
+  - buildingid: 6
+    resourcepath: building_401
+    name: "\u9A6C\u8F66"
+    buildingtype: 0
+    description: "\u9A6C\u8F66"
     currencytype: 0
     currencycount: 100

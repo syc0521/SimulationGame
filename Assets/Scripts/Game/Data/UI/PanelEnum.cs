@@ -3,7 +3,7 @@
     public enum PanelEnum
     {
         MainPanel = 0,
-        StartPanel = 1,
+        BuildingPanel = 1,
         TaskDetailPanel = 2,
         
         //临时

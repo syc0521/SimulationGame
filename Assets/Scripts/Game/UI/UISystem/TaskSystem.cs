@@ -20,6 +20,8 @@ namespace Game.UI.UISystem
         public override void OnDestroyed()
         {
             EventCenter.RemoveListener<RefreshTaskEvent>(RefreshTask);
+            _taskData.Clear();
+            _taskData = null;
             base.OnDestroyed();
         }
 

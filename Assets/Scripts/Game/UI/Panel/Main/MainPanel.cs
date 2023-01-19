@@ -6,10 +6,12 @@ using Game.Data.Event;
 using Game.Data.Event.Task;
 using Game.GamePlaySystem.Task;
 using Game.UI.Component;
+using Game.UI.Panel.Building;
 using Game.UI.Panel.Task;
 using Game.UI.UISystem;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Game.UI.Panel
 {
@@ -24,12 +26,16 @@ namespace Game.UI.Panel
 
         public override void OnCreated()
         {
+            nodes.build_btn.onClick.AddListener(OpenBuildPanel);
+
             EventCenter.AddListener<DataChangedEvent>(RefreshUI);
             EventCenter.AddListener<RefreshUITaskEvent>(RefreshTask);
         }
 
         public override void OnDestroyed()
         {
+            nodes.build_btn.onClick.AddListener(OpenBuildPanel);
+            
             EventCenter.RemoveListener<DataChangedEvent>(RefreshUI);
             EventCenter.RemoveListener<RefreshUITaskEvent>(RefreshTask);
         }
@@ -53,6 +59,11 @@ namespace Game.UI.Panel
             nodes.text.text = evt.gameData.people.ToString();
         }
 
+        private void OpenBuildPanel()
+        {
+            UIManager.Instance.OpenPanel<BuildingPanel>();
+            
+        }
         
     }
 }

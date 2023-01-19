@@ -17,7 +17,7 @@ namespace Game.LevelAndEntity.ResLoader
 
     public class ResLoader : ManagerBase, IResLoader
     {
-        private readonly string rootPath = "Assets/Res/";
+        private readonly string rootPath = "Assets/Res";
 
         public void LoadRes(ResEnum type, string path, Action<AsyncOperationHandle<GameObject>> callback)
         {
@@ -53,9 +53,9 @@ namespace Game.LevelAndEntity.ResLoader
             switch (type)
             {
                 case ResEnum.building:
-                    return $"{rootPath}{type}/{path}/{path}.prefab";
+                    return $"{rootPath}/{type}/{path}/{path}.prefab";
                 case ResEnum.sprite:
-                    return $"{rootPath}ui/dynamic/{path}";
+                    return $"{rootPath}/ui/dynamic/{path}";
                 default:
                     return string.Empty;
             }

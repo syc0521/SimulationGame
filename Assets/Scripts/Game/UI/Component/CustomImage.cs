@@ -24,12 +24,7 @@ namespace Game.UI.Component
 
         private string GetAssetPath(AtlasSpriteID atlasSpriteID)
         {
-            switch (atlasSpriteID.atlas)
-            {
-                case AtlasEnum.Task:
-                    return $"task/{atlasSpriteID.resName}";
-            }
-            return null;
+            return $"{atlasSpriteID.atlas.ToString().ToLower()}/{atlasSpriteID.resName}";
         }
     }
 }

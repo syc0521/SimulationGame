@@ -17,18 +17,18 @@ MonoBehaviour:
   dataArray:
   - rewardid: 0
     rewardtype: 0
-    itemid: 
-    count: 
+    itemid: 00000000
+    count: 64000000
   - rewardid: 1
     rewardtype: 1
-    itemid: 
-    count: 
+    itemid: 02000000
+    count: 01000000
   dataList:
   - rewardid: 0
     rewardtype: 0
-    itemid: 
-    count: 
+    itemid: 00000000
+    count: 64000000
   - rewardid: 1
     rewardtype: 1
-    itemid: 
-    count: 
+    itemid: 02000000
+    count: 01000000

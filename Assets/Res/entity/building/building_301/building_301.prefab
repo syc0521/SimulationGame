@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59dae5aaabd646b7b71e06c9c6f41b21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 2
-  meshRoot: {fileID: 919132149155446097, guid: d9fa92f3acdfa334cb82ed7b409d223c, type: 3}
+  type: 5
+  meshRoot: {fileID: 2264358520981018498}
 --- !u!114 &8021392280205170797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,13 +62,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ShapeType: 0
   m_PrimitiveCenter:
-    x: 0.99327403
-    y: 0.5012675
-    z: 0.50985795
+    x: 0.49909863
+    y: 0.0237255
+    z: 0.5
   m_PrimitiveSize:
-    x: 1.8142321
-    y: 0.97239304
-    z: 0.97347605
+    x: 0.99819726
+    y: 0.047451
+    z: 1
   m_PrimitiveOrientation:
     Value:
       x: -0
@@ -76,15 +76,15 @@ MonoBehaviour:
       z: 0
     RotationOrder: 4
   m_Capsule:
-    Height: 1.8142321
-    Radius: 0.48673803
-    Axis: 0
+    Height: 1
+    Radius: 0.49909863
+    Axis: 2
   m_Cylinder:
-    Height: 1.8142321
-    Radius: 0.48673803
-    Axis: 0
+    Height: 0.047451
+    Radius: 0.5
+    Axis: 1
   m_CylinderSideCount: 20
-  m_SphereRadius: 0.90711606
+  m_SphereRadius: 0.5
   m_MinimumSkinnedVertexWeight: 0.1
   m_ConvexHullGenerationParameters:
     m_SimplificationTolerance: 0.015
@@ -206,8 +206,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad5731dcc13e30d418bca2fdb4cbb375,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ad5731dcc13e30d418bca2fdb4cbb375,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ad5731dcc13e30d418bca2fdb4cbb375,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad5731dcc13e30d418bca2fdb4cbb375,
         type: 3}
@@ -217,7 +227,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ad5731dcc13e30d418bca2fdb4cbb375,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad5731dcc13e30d418bca2fdb4cbb375,
         type: 3}
@@ -267,6 +277,12 @@ PrefabInstance:
 --- !u!4 &1452215989201767736 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ad5731dcc13e30d418bca2fdb4cbb375,
+    type: 3}
+  m_PrefabInstance: {fileID: 1418061870341745363}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2264358520981018498 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ad5731dcc13e30d418bca2fdb4cbb375,
     type: 3}
   m_PrefabInstance: {fileID: 1418061870341745363}
   m_PrefabAsset: {fileID: 0}

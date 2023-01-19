@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59dae5aaabd646b7b71e06c9c6f41b21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 2
-  meshRoot: {fileID: 919132149155446097, guid: d9fa92f3acdfa334cb82ed7b409d223c, type: 3}
+  type: 3
+  meshRoot: {fileID: 8209266803395887730}
 --- !u!114 &8021392280205170797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,13 +62,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ShapeType: 0
   m_PrimitiveCenter:
-    x: 0.99327403
-    y: 0.5012675
-    z: 0.50985795
+    x: 0.99099976
+    y: 1.9104589
+    z: 1.0000057
   m_PrimitiveSize:
-    x: 1.8142321
-    y: 0.97239304
-    z: 0.97347605
+    x: 1.9393775
+    y: 3.7973328
+    z: 1.9497328
   m_PrimitiveOrientation:
     Value:
       x: -0
@@ -76,15 +76,15 @@ MonoBehaviour:
       z: 0
     RotationOrder: 4
   m_Capsule:
-    Height: 1.8142321
-    Radius: 0.48673803
-    Axis: 0
+    Height: 3.7973328
+    Radius: 0.9748664
+    Axis: 1
   m_Cylinder:
-    Height: 1.8142321
-    Radius: 0.48673803
-    Axis: 0
+    Height: 3.7973328
+    Radius: 0.9748664
+    Axis: 1
   m_CylinderSideCount: 20
-  m_SphereRadius: 0.90711606
+  m_SphereRadius: 1.8986664
   m_MinimumSkinnedVertexWeight: 0.1
   m_ConvexHullGenerationParameters:
     m_SimplificationTolerance: 0.015
@@ -206,8 +206,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4e4c521df0d36ce478998bd7b8cefab7,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4e4c521df0d36ce478998bd7b8cefab7,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4e4c521df0d36ce478998bd7b8cefab7,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.58
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4e4c521df0d36ce478998bd7b8cefab7,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0.991
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4e4c521df0d36ce478998bd7b8cefab7,
         type: 3}
@@ -217,7 +232,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 4e4c521df0d36ce478998bd7b8cefab7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4e4c521df0d36ce478998bd7b8cefab7,
         type: 3}
@@ -254,6 +269,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 4e4c521df0d36ce478998bd7b8cefab7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b24812ad1ca5ea547836b0efa566b813, type: 2}
     - target: {fileID: 919132149155446097, guid: 4e4c521df0d36ce478998bd7b8cefab7,
         type: 3}
       propertyPath: m_Name
@@ -264,6 +284,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e4c521df0d36ce478998bd7b8cefab7, type: 3}
+--- !u!1 &8209266803395887730 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4e4c521df0d36ce478998bd7b8cefab7,
+    type: 3}
+  m_PrefabInstance: {fileID: 9019660536066653987}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8838028418649020616 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4e4c521df0d36ce478998bd7b8cefab7,

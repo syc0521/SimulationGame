@@ -16,8 +16,6 @@ namespace Game.GamePlaySystem
 {
     public class BuildingManager : GamePlaySystemBase<BuildingManager>
     {
-        public Camera mainCamera;
-
         private Dictionary<uint, BuildingData> _buildingDatas;
         private RaycastInput _raycastInput;
         private bool hasRaycastInput;
@@ -102,7 +100,7 @@ namespace Game.GamePlaySystem
             {
                 return _raycastInput;
             }
-            var ray = mainCamera.ScreenPointToRay(pos);
+            var ray = CameraManager.Instance.mainCam.ScreenPointToRay(pos);
             _raycastInput = new RaycastInput
             {
                 Start = ray.origin,

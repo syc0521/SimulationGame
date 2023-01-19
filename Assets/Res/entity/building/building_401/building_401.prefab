@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59dae5aaabd646b7b71e06c9c6f41b21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 2
-  meshRoot: {fileID: 919132149155446097, guid: d9fa92f3acdfa334cb82ed7b409d223c, type: 3}
+  type: 6
+  meshRoot: {fileID: 1973468989737588513}
 --- !u!114 &8021392280205170797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,13 +62,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ShapeType: 0
   m_PrimitiveCenter:
-    x: 0.99327403
-    y: 0.5012675
-    z: 0.50985795
+    x: 0.9528555
+    y: 0.5375966
+    z: 0.50481546
   m_PrimitiveSize:
-    x: 1.8142321
-    y: 0.97239304
-    z: 0.97347605
+    x: 1.649253
+    y: 1.0544932
+    z: 0.9614489
   m_PrimitiveOrientation:
     Value:
       x: -0
@@ -76,15 +76,15 @@ MonoBehaviour:
       z: 0
     RotationOrder: 4
   m_Capsule:
-    Height: 1.8142321
-    Radius: 0.48673803
+    Height: 1.649253
+    Radius: 0.5272466
     Axis: 0
   m_Cylinder:
-    Height: 1.8142321
-    Radius: 0.48673803
+    Height: 1.649253
+    Radius: 0.5272466
     Axis: 0
   m_CylinderSideCount: 20
-  m_SphereRadius: 0.90711606
+  m_SphereRadius: 0.8246265
   m_MinimumSkinnedVertexWeight: 0.1
   m_ConvexHullGenerationParameters:
     m_SimplificationTolerance: 0.015
@@ -207,7 +207,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 789f10f915c6d2c40a5d29ff5bb8cb3d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 789f10f915c6d2c40a5d29ff5bb8cb3d,
         type: 3}
@@ -217,7 +217,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 789f10f915c6d2c40a5d29ff5bb8cb3d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 789f10f915c6d2c40a5d29ff5bb8cb3d,
         type: 3}
@@ -267,6 +267,12 @@ PrefabInstance:
 --- !u!4 &1164456736749161883 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 789f10f915c6d2c40a5d29ff5bb8cb3d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1702996481684007536}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1973468989737588513 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 789f10f915c6d2c40a5d29ff5bb8cb3d,
     type: 3}
   m_PrefabInstance: {fileID: 1702996481684007536}
   m_PrefabAsset: {fileID: 0}

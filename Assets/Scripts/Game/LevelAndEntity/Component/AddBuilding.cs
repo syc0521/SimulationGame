@@ -8,5 +8,6 @@ namespace Game.LevelAndEntity.Component
         public uint id;
         public float3 spawnPos;
         public int spawnType;
+        public int rotation;
     }
 }

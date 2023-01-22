@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Game.Core;
 using Game.Data;
 using UnityEngine;
@@ -47,7 +48,11 @@ namespace Game.UI
             
             _systems.Destroy();
             _systems = null;
-            
+
+            foreach (var panel in panels.Values.ToList().Where(panel => panel != null))
+            {
+                panel.GetComponent<UIPanel>()?.OnDestroyed();
+            }
             panels.Clear();
         }
 

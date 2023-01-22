@@ -29,6 +29,7 @@ namespace Game.GamePlaySystem.GameState
             currentBuilding = Object.Instantiate(ConfigTable.Instance.GetBuilding(currentBuildingType), GetBlockPos(point, out _), Quaternion.identity);
             MaterialUtil.SetTransparency(currentBuilding, true);
             EventCenter.AddListener<TouchEvent>(PlaceBuilding);
+            EventCenter.AddListener<RotateEvent>(RotateBuilding);
         }
 
         public override void OnUpdate()
@@ -45,6 +46,7 @@ namespace Game.GamePlaySystem.GameState
 
         public override void OnLeave(params object[] list)
         {
+            EventCenter.RemoveListener<RotateEvent>(RotateBuilding);
             if ((bool)list[0]) //可以建造
             {
                 ConstructBuilding();
@@ -86,15 +88,22 @@ namespace Game.GamePlaySystem.GameState
             {
                 level = 1,
                 position = ((float3)pos).xz,
-                rotation = 0,
+                rotation = rotation,
                 type = currentBuildingType
             });
             
             var blockPos = GetBlockPos(pos, out var gridPos);
             BuildingManager.Instance.GetGrid().SetData(currentBuildingType, gridPos[0], gridPos[1]);
-            World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<AddBlockSystem>().Build(blockPos, currentBuildingType, currentID);
+            World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<AddBlockSystem>().Build(blockPos, currentBuildingType, currentID, rotation);
             EventCenter.RemoveListener<TouchEvent>(PlaceBuilding);
             TaskManager.Instance.TriggerTask(TaskType.AddBuilding, currentBuildingType, 1);
+        }
+        
+        private void RotateBuilding(RotateEvent evt)
+        {
+            rotation = (rotation + 1) % 4;
+            var objTransform = currentBuilding.transform.GetChild(0);
+            objTransform.Rotate(Vector3.up, 90);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

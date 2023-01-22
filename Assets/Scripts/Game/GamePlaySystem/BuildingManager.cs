@@ -25,7 +25,7 @@ namespace Game.GamePlaySystem
 
         public override void OnStart()
         {
-            _buildingDatas = Managers.Get<ISaveDataManager>().GetBuildings();
+            Managers.Get<ISaveDataManager>().GetBuildings(ref _buildingDatas);
             InitializeBuilding();
             buildStateMachine = new(new IState[]
             {
@@ -38,21 +38,28 @@ namespace Game.GamePlaySystem
             EventCenter.AddListener<LongPressEvent>(SelectBuilding);
         }
 
+        public override void OnDestroyed()
+        {
+            buildStateMachine.ChangeState<NormalState>(false);
+            buildStateMachine.Dispose();
+            EventCenter.RemoveListener<LongPressEvent>(SelectBuilding);
+            base.OnDestroyed();
+        }
+
         private void InitializeBuilding()
         {
             foreach (var (key, data) in _buildingDatas)
             {
-                if (id > key)
+                if (id < key)
                 {
                     id = key;
                 }
 
                 World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<AddBlockSystem>().Build(
                     new float3(data.position[0], 0f, data.position[1]), data.type, key);
-                
             }
         }
-        
+
         private void SelectBuilding(LongPressEvent evt)
         {
             var entity = Entity.Null;
@@ -61,14 +68,13 @@ namespace Game.GamePlaySystem
             {
                 buildStateMachine.ChangeState<ModifyState>(entity);
             }
-            
         }
-        
+
         public void AddBuilding(int type)
         {
             buildStateMachine.ChangeState<AddBuildingState>(type);
         }
-        
+
         public void ConstructBuilding()
         {
             buildStateMachine.ChangeState<NormalState>(true);
@@ -78,7 +84,7 @@ namespace Game.GamePlaySystem
         {
             buildStateMachine.ChangeState<NormalState>(false);
         }
-        
+
         public void RemoveBuilding()
         {
             buildStateMachine.ChangeState<DestroyState>();
@@ -86,20 +92,20 @@ namespace Game.GamePlaySystem
 
         public void RotateBuilding()
         {
-            
         }
 
         public void TransitToNormalState()
         {
             buildStateMachine.ChangeState<NormalState>();
         }
-        
+
         public RaycastInput GetOrCreateRaycastInput(float3 pos)
         {
             if (hasRaycastInput)
             {
                 return _raycastInput;
             }
+
             var ray = CameraManager.Instance.mainCam.ScreenPointToRay(pos);
             _raycastInput = new RaycastInput
             {
@@ -125,7 +131,7 @@ namespace Game.GamePlaySystem
         }
 
         public Grid<int> GetGrid() => grid;
-        
+
         private bool DetectBuilding(float2 pos, out Entity entity)
         {
             entity = default;

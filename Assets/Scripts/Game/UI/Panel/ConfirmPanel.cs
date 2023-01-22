@@ -29,7 +29,10 @@ namespace Game.UI.Panel
 
         private void RefreshUIPos(BuildUIEvent obj)
         {
-            ChangeUIPos(obj.pos);
+            if (transform != null)
+            {
+                ChangeUIPos(obj.pos);
+            }
         }
 
         public void ChangeUIPos(Vector3 pos)

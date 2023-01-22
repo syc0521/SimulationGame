@@ -6,7 +6,7 @@ namespace Game.Data
     public interface ISaveDataManager : IManager
     {
         void SaveData();
-        Dictionary<uint, BuildingData> GetBuildings();
+        void GetBuildings(ref Dictionary<uint, BuildingData> buildings);
         void GetPlayerTasks(ref Dictionary<int, PlayerTaskData> taskData);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Game.Core;
 using Game.Data;
+using Game.LevelAndEntity.Aspects;
 using Game.LevelAndEntity.Component;
 using Game.LevelAndEntity.ResLoader;
 using Unity.Collections;
@@ -33,6 +34,7 @@ namespace Game.LevelAndEntity.System
             if (configEntity == Entity.Null) return;
 
             var buffer = entityManager.GetBuffer<PrefabSpawnerBufferElement>(config[0]);
+            
             Entities.WithAll<AddBuilding>().ForEach((Entity entity, ref AddBuilding addBuilding) =>
             {
                 var e = ecb.Instantiate(buffer[addBuilding.spawnType].prefab);
@@ -50,21 +52,41 @@ namespace Game.LevelAndEntity.System
                 {
                     cd = 3
                 });
+                ecb.AddComponent(e, new BuildingRotation
+                {
+                    rotation = addBuilding.rotation
+                });
                 
                 ecb.DestroyEntity(entity);
             }).Schedule();
+            RotateBuilding();
             config.Dispose();
             beginSimECBSystem.AddJobHandleForProducer(Dependency);
         }
 
-        public void Build(float3 position, int buildingType, uint id)
+        private void RotateBuilding()
+        {
+            foreach (var (building, rotation) in SystemAPI.Query<BuildingAspect, BuildingRotation>().WithAll<BuildingRotation>())
+            {
+                var transform = entityManager.GetAspect<TransformAspect>(building.Mesh);
+                transform.LocalRotation = quaternion.RotateY(math.radians(90 * rotation.rotation));
+            }
+            var ecb = beginSimECBSystem.CreateCommandBuffer();
+            Entities.WithAll<BuildingRotation>().ForEach((Entity entity) =>
+            {
+                ecb.RemoveComponent<BuildingRotation>(entity);
+            }).Schedule();
+        }
+
+        public void Build(float3 position, int buildingType, uint id, int rotation = 0)
         {
             var newBlock = entityManager.CreateEntity();
             entityManager.AddComponentData(newBlock, new AddBuilding
             {
                 id = id,
                 spawnPos = position,
-                spawnType = buildingType
+                spawnType = buildingType,
+                rotation = rotation
             });
         }
 

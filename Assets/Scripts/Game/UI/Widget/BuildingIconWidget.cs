@@ -1,6 +1,7 @@
 ﻿using System;
 using Game.UI.Component;
 using Game.UI.Panel.Building;
+using TMPro;
 using UnityEngine.EventSystems;
 
 namespace Game.UI.Widget
@@ -8,6 +9,7 @@ namespace Game.UI.Widget
     public class BuildingIconWidget : WidgetBase, IListWidget, IPointerClickHandler
     {
         public CustomImage icon_img;
+        public TextMeshProUGUI name_txt;
         private int id;
         private Action<int> _clickHandler;
 
@@ -29,6 +31,7 @@ namespace Game.UI.Widget
                 atlas = AtlasEnum.Building,
                 resName = $"icon_building_{buildingListData.id}"
             });
+            name_txt.text = buildingListData.data.name;
 
             id = buildingListData.id;
             _clickHandler = buildingListData.clickHandler;

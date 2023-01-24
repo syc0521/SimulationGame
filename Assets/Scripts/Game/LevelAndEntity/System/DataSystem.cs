@@ -10,13 +10,14 @@ namespace Game.LevelAndEntity.System
 {
     public partial class DataSystem : SystemBase
     {
-        private EndSimulationEntityCommandBufferSystem ecbSystem;
         private EntityManager entityManager;
         private GameData _gameData;
 
-        protected override void OnCreate()
+        protected override void OnStartRunning()
         {
-            ecbSystem = World.GetExistingSystemManaged<EndSimulationEntityCommandBufferSystem>();
+            int money = Managers.Get<ISaveDataManager>().GetMoney();
+            var config = SystemAPI.GetSingleton<Config>();
+            config.money = money;
         }
 
         [BurstCompile]
@@ -31,9 +32,5 @@ namespace Game.LevelAndEntity.System
             }
         }
 
-        public void GetData(ref GameData gameData)
-        {
-            gameData = _gameData;
-        }
     }
 }

@@ -53,5 +53,9 @@ namespace Game.Data
         {
             taskData = _playerData.tasks;
         }
+
+        public int GetMoney() => _playerData.money;
+
+        public void SetMoney(int amount) => _playerData.money = amount;
     }
 }

@@ -8,5 +8,7 @@ namespace Game.Data
         void SaveData();
         void GetBuildings(ref Dictionary<uint, BuildingData> buildings);
         void GetPlayerTasks(ref Dictionary<int, PlayerTaskData> taskData);
+        int GetMoney();
+        void SetMoney(int amount);
     }
 }

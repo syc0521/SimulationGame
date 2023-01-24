@@ -8,23 +8,21 @@ namespace Game.GamePlaySystem
 {
     public class SystemDataManager : GamePlaySystemBase<SystemDataManager>
     {
-        public ValueChangedEvent<int> People { get; private set; }
-        private GameData _gameData;
-        public override void OnStart()
+        public override void OnAwake()
         {
-            People = new(OnPeopleChange);
+            EventCenter.AddListener<DataChangedEvent>(ProcessData);
         }
 
-        public override void OnUpdate()
+        public override void OnDestroyed()
         {
-            var dataSystem = World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<DataSystem>();
-            //dataSystem.GetData(ref _gameData);
-            //People.Value = _gameData.people;
+            EventCenter.RemoveListener<DataChangedEvent>(ProcessData);
+            base.OnDestroyed();
         }
 
-        private void OnPeopleChange(int people)
+        private void ProcessData(DataChangedEvent evt)
         {
-            //EventCenter.DispatchEvent(new DataChangedEvent { gameData = _gameData });
+            Managers.Get<ISaveDataManager>().SetMoney(evt.gameData.money);
+            Managers.Get<ISaveDataManager>().SaveData();
         }
     }
 }

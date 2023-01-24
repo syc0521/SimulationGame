@@ -20,6 +20,10 @@ namespace Game.LevelAndEntity.System
         
         public void OnUpdate(ref SystemState state)
         {
+            //if (state.GetComponentLookup<Config>().IsComponentEnabled())
+            {
+                
+            }
             var config = SystemAPI.GetSingleton<Config>();
             int people = 0;
             int money = config.money;

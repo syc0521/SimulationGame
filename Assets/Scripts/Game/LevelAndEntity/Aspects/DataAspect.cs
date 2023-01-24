@@ -6,5 +6,6 @@ namespace Game.LevelAndEntity.Aspects
     public readonly partial struct DataAspect : IAspect
     {
         public readonly RefRW<Config> config;
+        public readonly Entity self;
     }
 }

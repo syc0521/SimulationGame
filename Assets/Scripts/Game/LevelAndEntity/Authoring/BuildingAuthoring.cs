@@ -1,4 +1,5 @@
-﻿using Game.LevelAndEntity.Component;
+﻿using Game.Data;
+using Game.LevelAndEntity.Component;
 using Unity.Entities;
 using UnityEngine;
 
@@ -14,7 +15,6 @@ namespace Game.LevelAndEntity.Authoring
             {
                 AddComponent(new Building
                 {
-                    cd = 10,
                     type = authoring.type,
                     meshRoot = GetEntity(authoring.meshRoot)
                 });

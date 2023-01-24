@@ -17,100 +17,184 @@ MonoBehaviour:
   dataArray:
   - buildingid: 0
     resourcepath: building_0
-    name: "\u6D4B\u8BD51"
-    buildingtype: 0
-    description: "\u6D4B\u8BD5\u6D4B\u8BD5"
-    currencytype: 0
-    currencycount: 100
+    name: "\u5B9D\u5854\u6D4B\u8BD5\u7248"
+    buildingtype: 3
+    description: "\u5B9D\u5854\u6D4B\u8BD5\u7248"
+    currencytype: 00000000
+    currencycount: e8030000
+    rowcount: 2
+    colcount: 2
+    cd: ffffffff
+    producetype: 2
+    produceid: 0
+    produceamount: 00000000
   - buildingid: 1
     resourcepath: building_1
-    name: "\u6D4B\u8BD51"
+    name: "\u6C11\u5C451"
     buildingtype: 0
-    description: "\u6D4B\u8BD5\u6D4B\u8BD5"
-    currencytype: 0
-    currencycount: 100
+    description: "\u6C11\u5C451"
+    currencytype: 00000000
+    currencycount: 0a000000
+    rowcount: 2
+    colcount: 2
+    cd: 080000000600000004000000
+    producetype: 0
+    produceid: 0
+    produceamount: 14000000280000003c000000
   - buildingid: 2
     resourcepath: building_2
-    name: "\u6D4B\u8BD51"
+    name: "\u6C11\u5C452"
     buildingtype: 0
-    description: "\u6D4B\u8BD5\u6D4B\u8BD5"
-    currencytype: 0
-    currencycount: 100
+    description: "\u6C11\u5C452"
+    currencytype: 00000000
+    currencycount: 0f000000
+    rowcount: 2
+    colcount: 1
+    cd: 090000000700000005000000
+    producetype: 0
+    produceid: 0
+    produceamount: 280000003c00000050000000
   - buildingid: 3
     resourcepath: building_101
     name: "\u5B9D\u5854"
-    buildingtype: 0
+    buildingtype: 3
     description: "\u5B9D\u5854"
-    currencytype: 0
-    currencycount: 100
+    currencytype: 00000000
+    currencycount: e8030000
+    rowcount: 2
+    colcount: 2
+    cd: ffffffff
+    producetype: 2
+    produceid: 0
+    produceamount: 00000000
   - buildingid: 4
     resourcepath: building_201
     name: "\u9662\u5B50"
     buildingtype: 0
     description: "\u9662\u5B50"
-    currencytype: 0
-    currencycount: 100
+    currencytype: 00000000
+    currencycount: bc020000
+    rowcount: 4
+    colcount: 4
+    cd: 100000000d0000000a00000008000000
+    producetype: 0
+    produceid: 0
+    produceamount: 64000000c80000002c01000090010000
   - buildingid: 5
     resourcepath: building_301
     name: "\u519C\u7530"
-    buildingtype: 0
+    buildingtype: 1
     description: "\u519C\u7530"
-    currencytype: 0
-    currencycount: 100
+    currencytype: 00000000
+    currencycount: 05000000
+    rowcount: 1
+    colcount: 1
+    cd: 080000000600000004000000
+    producetype: 1
+    produceid: 100
+    produceamount: 010000000200000003000000
   - buildingid: 6
     resourcepath: building_401
     name: "\u9A6C\u8F66"
-    buildingtype: 0
+    buildingtype: 2
     description: "\u9A6C\u8F66"
-    currencytype: 0
-    currencycount: 100
+    currencytype: 00000000
+    currencycount: 64000000
+    rowcount: 1
+    colcount: 2
+    cd: ffffffff
+    producetype: 2
+    produceid: 0
+    produceamount: 00000000
   dataList:
   - buildingid: 0
     resourcepath: building_0
-    name: "\u6D4B\u8BD51"
-    buildingtype: 0
-    description: "\u6D4B\u8BD5\u6D4B\u8BD5"
-    currencytype: 0
-    currencycount: 100
+    name: "\u5B9D\u5854\u6D4B\u8BD5\u7248"
+    buildingtype: 3
+    description: "\u5B9D\u5854\u6D4B\u8BD5\u7248"
+    currencytype: 00000000
+    currencycount: e8030000
+    rowcount: 2
+    colcount: 2
+    cd: ffffffff
+    producetype: 2
+    produceid: 0
+    produceamount: 00000000
   - buildingid: 1
     resourcepath: building_1
-    name: "\u6D4B\u8BD51"
+    name: "\u6C11\u5C451"
     buildingtype: 0
-    description: "\u6D4B\u8BD5\u6D4B\u8BD5"
-    currencytype: 0
-    currencycount: 100
+    description: "\u6C11\u5C451"
+    currencytype: 00000000
+    currencycount: 0a000000
+    rowcount: 2
+    colcount: 2
+    cd: 080000000600000004000000
+    producetype: 0
+    produceid: 0
+    produceamount: 14000000280000003c000000
   - buildingid: 2
     resourcepath: building_2
-    name: "\u6D4B\u8BD51"
+    name: "\u6C11\u5C452"
     buildingtype: 0
-    description: "\u6D4B\u8BD5\u6D4B\u8BD5"
-    currencytype: 0
-    currencycount: 100
+    description: "\u6C11\u5C452"
+    currencytype: 00000000
+    currencycount: 0f000000
+    rowcount: 2
+    colcount: 1
+    cd: 090000000700000005000000
+    producetype: 0
+    produceid: 0
+    produceamount: 280000003c00000050000000
   - buildingid: 3
     resourcepath: building_101
     name: "\u5B9D\u5854"
-    buildingtype: 0
+    buildingtype: 3
     description: "\u5B9D\u5854"
-    currencytype: 0
-    currencycount: 100
+    currencytype: 00000000
+    currencycount: e8030000
+    rowcount: 2
+    colcount: 2
+    cd: ffffffff
+    producetype: 2
+    produceid: 0
+    produceamount: 00000000
   - buildingid: 4
     resourcepath: building_201
     name: "\u9662\u5B50"
     buildingtype: 0
     description: "\u9662\u5B50"
-    currencytype: 0
-    currencycount: 100
+    currencytype: 00000000
+    currencycount: bc020000
+    rowcount: 4
+    colcount: 4
+    cd: 100000000d0000000a00000008000000
+    producetype: 0
+    produceid: 0
+    produceamount: 64000000c80000002c01000090010000
   - buildingid: 5
     resourcepath: building_301
     name: "\u519C\u7530"
-    buildingtype: 0
+    buildingtype: 1
     description: "\u519C\u7530"
-    currencytype: 0
-    currencycount: 100
+    currencytype: 00000000
+    currencycount: 05000000
+    rowcount: 1
+    colcount: 1
+    cd: 080000000600000004000000
+    producetype: 1
+    produceid: 100
+    produceamount: 010000000200000003000000
   - buildingid: 6
     resourcepath: building_401
     name: "\u9A6C\u8F66"
-    buildingtype: 0
+    buildingtype: 2
     description: "\u9A6C\u8F66"
-    currencytype: 0
-    currencycount: 100
+    currencytype: 00000000
+    currencycount: 64000000
+    rowcount: 1
+    colcount: 2
+    cd: ffffffff
+    producetype: 2
+    produceid: 0
+    produceamount: 00000000

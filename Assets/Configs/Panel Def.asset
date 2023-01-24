@@ -21,3 +21,5 @@ MonoBehaviour:
     obj: {fileID: 4712664157517380074, guid: c6ac96db2b117d447a3b673ef488f85f, type: 3}
   - panelEnum: 1
     obj: {fileID: 4712664157517380074, guid: e6e9ef285528f18468e1a711e4d83314, type: 3}
+  - panelEnum: 3
+    obj: {fileID: 4175337468705133161, guid: 50853ff7ec10c474dbedee92a81bf040, type: 3}

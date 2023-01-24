@@ -5,5 +5,6 @@ namespace Game.LevelAndEntity.Component
     public struct LevelObject : IComponentData
     {
         public uint id;
+        public int level;
     }
 }

@@ -1,5 +1,8 @@
-﻿using Game.Data;
+﻿using Game.Core;
+using Game.Data;
+using Game.Data.Event;
 using Game.LevelAndEntity.Aspects;
+using Game.LevelAndEntity.Component;
 using Unity.Burst;
 using Unity.Entities;
 
@@ -19,9 +22,12 @@ namespace Game.LevelAndEntity.System
         [BurstCompile]
         protected override void OnUpdate()
         {
-            foreach (var data in SystemAPI.Query<DataAspect>())
+            var config = SystemAPI.GetSingleton<Config>();
+            _gameData.people = config.people;
+            _gameData.money = config.money;
+            if (config.dataChanged)
             {
-                _gameData.people = data.config.ValueRW.people;
+                EventCenter.DispatchEvent(new DataChangedEvent { gameData = _gameData });
             }
         }
 

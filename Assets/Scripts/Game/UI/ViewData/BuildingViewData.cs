@@ -6,8 +6,8 @@ namespace Game.UI.ViewData
     {
         public string name;
         public string description;
-        public CurrencyType currencyType;
-        public int currencyCount;
+        public CurrencyType[] currencyType;
+        public int[] currencyCount;
         public bool isUnlock;
     }
 }

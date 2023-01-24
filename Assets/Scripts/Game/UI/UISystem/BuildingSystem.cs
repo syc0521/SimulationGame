@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Game.Core;
 using Game.Data;
 using Game.Data.Common;
@@ -26,13 +27,13 @@ namespace Game.UI.UISystem
 
         private void LoadBuildingData(LoadDataEvent evt)
         {
-            foreach (var item in ConfigTable.Instance.GetBuildingData())
+            foreach (var item in ConfigTable.Instance.GetAllBuildingData())
             {
                 _buildingData[item.Buildingid] = new BuildingViewData
                 {
                     name = item.Name,
                     description = item.Description,
-                    currencyType = (CurrencyType)item.Currencytype,
+                    currencyType = Array.ConvertAll(item.Currencytype, input => (CurrencyType)input),
                     currencyCount = item.Currencycount,
                     isUnlock = true
                 };

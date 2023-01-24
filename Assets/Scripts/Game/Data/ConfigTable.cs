@@ -28,7 +28,9 @@ namespace Game.Data
 
         public TableData.RewardData GetRewardData(int id) => reward.dataList.Find(item => item.Rewardid == id);
 
-        public List<TableData.BuildingData> GetBuildingData() => building.dataList;
+        public List<TableData.BuildingData> GetAllBuildingData() => building.dataList;
+        
+        public TableData.BuildingData GetBuildingData(int id) => building.dataList[id];
 
     }
 }

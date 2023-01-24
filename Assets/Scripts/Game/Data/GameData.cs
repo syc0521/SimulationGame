@@ -3,5 +3,6 @@
     public struct GameData
     {
         public int people;
+        public int money;
     }
 }

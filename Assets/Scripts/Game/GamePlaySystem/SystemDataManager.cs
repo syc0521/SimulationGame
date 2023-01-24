@@ -18,13 +18,13 @@ namespace Game.GamePlaySystem
         public override void OnUpdate()
         {
             var dataSystem = World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<DataSystem>();
-            dataSystem.GetData(ref _gameData);
-            People.Value = _gameData.people;
+            //dataSystem.GetData(ref _gameData);
+            //People.Value = _gameData.people;
         }
 
         private void OnPeopleChange(int people)
         {
-            EventCenter.DispatchEvent(new DataChangedEvent { gameData = _gameData });
+            //EventCenter.DispatchEvent(new DataChangedEvent { gameData = _gameData });
         }
     }
 }

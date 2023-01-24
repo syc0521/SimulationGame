@@ -16,7 +16,7 @@ namespace Game.LevelAndEntity.Aspects
         public int BuildingType => building.ValueRO.type;
         public Entity Mesh => building.ValueRO.meshRoot;
         public uint ID => levelObject.ValueRO.id;
-        public float CD => building.ValueRO.cd;
+        public int Level => levelObject.ValueRO.level; // 等级
 
         public float CurrentTime
         {

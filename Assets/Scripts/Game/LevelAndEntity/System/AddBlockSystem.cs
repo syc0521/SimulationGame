@@ -46,12 +46,10 @@ namespace Game.LevelAndEntity.System
                 });
                 ecb.AddComponent(e, new LevelObject
                 {
-                    id = addBuilding.id
+                    id = addBuilding.id,
+                    level = 1,
                 });
-                ecb.AddComponent(e, new Timer
-                {
-                    cd = 3
-                });
+                ecb.AddComponent(e, new Timer());
                 ecb.AddComponent(e, new BuildingRotation
                 {
                     rotation = addBuilding.rotation

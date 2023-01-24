@@ -46,6 +46,30 @@ MonoBehaviour:
     name: CurrencyCount
     isEnable: 0
     isArray: 0
+  - type: 3
+    name: RowCount
+    isEnable: 0
+    isArray: 0
+  - type: 3
+    name: ColCount
+    isEnable: 0
+    isArray: 0
+  - type: 0
+    name: Cd
+    isEnable: 0
+    isArray: 0
+  - type: 0
+    name: ProduceType
+    isEnable: 0
+    isArray: 0
+  - type: 0
+    name: ProduceID
+    isEnable: 0
+    isArray: 0
+  - type: 0
+    name: ProduceAmount
+    isEnable: 0
+    isArray: 0
   excelFilePath: Assets/Configs/BuildingTable.xlsx
   SheetNames:
   - Building

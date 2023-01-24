@@ -4,6 +4,7 @@ using Game.Core;
 using Game.Data;
 using Game.Data.Event;
 using Game.Data.Event.Task;
+using Game.GamePlaySystem;
 using Game.GamePlaySystem.Task;
 using Game.UI.Component;
 using Game.UI.Panel.Building;
@@ -27,6 +28,7 @@ namespace Game.UI.Panel
         public override void OnCreated()
         {
             nodes.build_btn.onClick.AddListener(OpenBuildPanel);
+            nodes.destroy_btn.onClick.AddListener(DestroyHandler);
 
             EventCenter.AddListener<DataChangedEvent>(RefreshUI);
             EventCenter.AddListener<RefreshUITaskEvent>(RefreshTask);
@@ -56,14 +58,20 @@ namespace Game.UI.Panel
 
         public void RefreshUI(DataChangedEvent evt)
         {
-            nodes.text.text = evt.gameData.people.ToString();
+            nodes.people_txt.text = evt.gameData.people.ToString();
+            nodes.money_txt.text = evt.gameData.money.ToString();
         }
 
         private void OpenBuildPanel()
         {
             UIManager.Instance.OpenPanel<BuildingPanel>();
-            
         }
         
+        private void DestroyHandler()
+        {
+            UIManager.Instance.OpenPanel<DestroyBuildingPanel>();
+            transform.gameObject.SetActive(false);
+        }
+
     }
 }

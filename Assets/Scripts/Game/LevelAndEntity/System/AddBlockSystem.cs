@@ -68,6 +68,7 @@ namespace Game.LevelAndEntity.System
             {
                 var transform = entityManager.GetAspect<TransformAspect>(building.Mesh);
                 transform.LocalRotation = quaternion.RotateY(math.radians(90 * rotation.rotation));
+                Debug.Log(rotation.rotation);
             }
             var ecb = beginSimECBSystem.CreateCommandBuffer();
             Entities.WithAll<BuildingRotation>().ForEach((Entity entity) =>

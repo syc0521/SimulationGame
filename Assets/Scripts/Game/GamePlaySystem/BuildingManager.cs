@@ -19,7 +19,7 @@ namespace Game.GamePlaySystem
         private Dictionary<uint, BuildingData> _buildingDatas;
         private RaycastInput _raycastInput;
         private bool hasRaycastInput;
-        private Grid<int> grid = new(15, 15, -1);
+        private Grid<int> grid = new(20, 20, -1);
         private StateMachine.StateMachine buildStateMachine;
         private uint id;
 

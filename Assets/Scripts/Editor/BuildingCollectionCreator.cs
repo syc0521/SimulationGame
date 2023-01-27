@@ -20,6 +20,7 @@ public class BuildingCollectionCreator : MonoBehaviour
         {
             var buildingObj = (GameObject)AssetDatabase.LoadAssetAtPath(
                 GetAssetPath(ResEnum.building, buildingData.Resourcepath), typeof(GameObject));
+            buildingObj.GetComponent<BuildingAuthoring>().type = buildingData.Buildingid;
             buildingObjs.Add(buildingObj);
         }
         

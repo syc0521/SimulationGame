@@ -16,51 +16,51 @@ MonoBehaviour:
   WorksheetName: Task
   dataArray:
   - taskid: 1000
-    name: "\u65B0\u624B\u5F15\u5BFC1"
+    name: "\u5EFA\u9020\u6C11\u5C45"
     previousid: -1
     tasktype: 0
     targetid: 00000000
-    targetnum: 02000000
+    targetnum: 01000000
     reward: 0
-    content: "\u7B2C\u4E00\u4E2A\u4EFB\u52A1"
+    content: "\u5EFA\u9020\u4E00\u4E2Aid=0\u6C11\u5C45"
   - taskid: 1001
-    name: "\u65B0\u624B\u5F15\u5BFC2"
+    name: "\u94FA\u8BBE\u9053\u8DEF"
     previousid: 1000
-    tasktype: 0
-    targetid: 01000000
+    tasktype: 2
+    targetid: 07000000
     targetnum: 02000000
     reward: 0
-    content: "\u6D4B\u8BD5\u4EFB\u52A1\u94FE"
+    content: "\u94FA\u8BBE\u4E24\u4E2A\u9053\u8DEF"
   - taskid: 1002
-    name: "\u65B0\u624B\u5F15\u5BFC1-1"
-    previousid: -1
-    tasktype: 0
-    targetid: 01000000
-    targetnum: 02000000
+    name: "\u5F00\u57A6\u519C\u7530"
+    previousid: 1001
+    tasktype: 1
+    targetid: 05000000
+    targetnum: 01000000
     reward: 0
-    content: "\u6D4B\u8BD5\u591A\u4E2A\u65B0\u624B\u4EFB\u52A1"
+    content: "\u5F00\u57A6\u519C\u7530"
   dataList:
   - taskid: 1000
-    name: "\u65B0\u624B\u5F15\u5BFC1"
+    name: "\u5EFA\u9020\u6C11\u5C45"
     previousid: -1
     tasktype: 0
     targetid: 00000000
-    targetnum: 02000000
+    targetnum: 01000000
     reward: 0
-    content: "\u7B2C\u4E00\u4E2A\u4EFB\u52A1"
+    content: "\u5EFA\u9020\u4E00\u4E2Aid=0\u6C11\u5C45"
   - taskid: 1001
-    name: "\u65B0\u624B\u5F15\u5BFC2"
+    name: "\u94FA\u8BBE\u9053\u8DEF"
     previousid: 1000
-    tasktype: 0
-    targetid: 01000000
+    tasktype: 2
+    targetid: 07000000
     targetnum: 02000000
     reward: 0
-    content: "\u6D4B\u8BD5\u4EFB\u52A1\u94FE"
+    content: "\u94FA\u8BBE\u4E24\u4E2A\u9053\u8DEF"
   - taskid: 1002
-    name: "\u65B0\u624B\u5F15\u5BFC1-1"
-    previousid: -1
-    tasktype: 0
-    targetid: 01000000
-    targetnum: 02000000
+    name: "\u5F00\u57A6\u519C\u7530"
+    previousid: 1001
+    tasktype: 1
+    targetid: 05000000
+    targetnum: 01000000
     reward: 0
-    content: "\u6D4B\u8BD5\u591A\u4E2A\u65B0\u624B\u4EFB\u52A1"
+    content: "\u5F00\u57A6\u519C\u7530"

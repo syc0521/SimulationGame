@@ -16,45 +16,6 @@ MonoBehaviour:
   WorksheetName: Building
   dataArray:
   - buildingid: 0
-    resourcepath: building_0
-    name: "\u5B9D\u5854\u6D4B\u8BD5\u7248"
-    buildingtype: 3
-    description: "\u5B9D\u5854\u6D4B\u8BD5\u7248"
-    currencytype: 00000000
-    currencycount: e8030000
-    rowcount: 2
-    colcount: 2
-    cd: ffffffff
-    producetype: 2
-    produceid: 0
-    produceamount: 00000000
-  - buildingid: 1
-    resourcepath: building_1
-    name: "\u6C11\u5C451"
-    buildingtype: 0
-    description: "\u6C11\u5C451"
-    currencytype: 00000000
-    currencycount: 0a000000
-    rowcount: 2
-    colcount: 2
-    cd: 080000000600000004000000
-    producetype: 0
-    produceid: 0
-    produceamount: 14000000280000003c000000
-  - buildingid: 2
-    resourcepath: building_2
-    name: "\u6C11\u5C452"
-    buildingtype: 0
-    description: "\u6C11\u5C452"
-    currencytype: 00000000
-    currencycount: 0f000000
-    rowcount: 2
-    colcount: 1
-    cd: 090000000700000005000000
-    producetype: 0
-    produceid: 0
-    produceamount: 280000003c00000050000000
-  - buildingid: 3
     resourcepath: building_101
     name: "\u5B9D\u5854"
     buildingtype: 3
@@ -67,7 +28,7 @@ MonoBehaviour:
     producetype: 2
     produceid: 0
     produceamount: 00000000
-  - buildingid: 4
+  - buildingid: 1
     resourcepath: building_201
     name: "\u9662\u5B50"
     buildingtype: 0
@@ -80,7 +41,7 @@ MonoBehaviour:
     producetype: 0
     produceid: 0
     produceamount: 64000000c80000002c01000090010000
-  - buildingid: 5
+  - buildingid: 2
     resourcepath: building_301
     name: "\u519C\u7530"
     buildingtype: 1
@@ -93,7 +54,7 @@ MonoBehaviour:
     producetype: 1
     produceid: 100
     produceamount: 010000000200000003000000
-  - buildingid: 6
+  - buildingid: 3
     resourcepath: building_401
     name: "\u9A6C\u8F66"
     buildingtype: 2
@@ -106,47 +67,86 @@ MonoBehaviour:
     producetype: 2
     produceid: 0
     produceamount: 00000000
+  - buildingid: 4
+    resourcepath: building_402
+    name: "\u9053\u8DEF"
+    buildingtype: 2
+    description: "\u9053\u8DEF"
+    currencytype: 00000000
+    currencycount: 05000000
+    rowcount: 1
+    colcount: 2
+    cd: ffffffff
+    producetype: 2
+    produceid: 0
+    produceamount: 00000000
+  - buildingid: 5
+    resourcepath: building_403
+    name: "\u6865"
+    buildingtype: 2
+    description: "\u6865"
+    currencytype: 00000000
+    currencycount: 0a000000
+    rowcount: 8
+    colcount: 4
+    cd: ffffffff
+    producetype: 2
+    produceid: 0
+    produceamount: 00000000
+  - buildingid: 6
+    resourcepath: building_202
+    name: "\u6C11\u5C4502"
+    buildingtype: 0
+    description: "\u6C11\u5C4502"
+    currencytype: 00000000
+    currencycount: c8000000
+    rowcount: 2
+    colcount: 4
+    cd: 080000000600000004000000
+    producetype: 0
+    produceid: 0
+    produceamount: 14000000280000003c000000
+  - buildingid: 7
+    resourcepath: building_203
+    name: "\u6C11\u5C4503"
+    buildingtype: 0
+    description: "\u6C11\u5C4503"
+    currencytype: 00000000
+    currencycount: c8000000
+    rowcount: 2
+    colcount: 2
+    cd: 090000000700000005000000
+    producetype: 0
+    produceid: 0
+    produceamount: 280000003c00000050000000
+  - buildingid: 8
+    resourcepath: building_204
+    name: "\u6C11\u5C4504"
+    buildingtype: 0
+    description: "\u6C11\u5C4504"
+    currencytype: 00000000
+    currencycount: c8000000
+    rowcount: 2
+    colcount: 4
+    cd: 080000000600000004000000
+    producetype: 0
+    produceid: 0
+    produceamount: 14000000280000003c000000
+  - buildingid: 9
+    resourcepath: building_205
+    name: "\u6C11\u5C4505"
+    buildingtype: 0
+    description: "\u6C11\u5C4505"
+    currencytype: 00000000
+    currencycount: 90010000
+    rowcount: 3
+    colcount: 4
+    cd: 090000000700000005000000
+    producetype: 0
+    produceid: 0
+    produceamount: 280000003c00000050000000
   dataList:
   - buildingid: 0
-    resourcepath: building_0
-    name: "\u5B9D\u5854\u6D4B\u8BD5\u7248"
-    buildingtype: 3
-    description: "\u5B9D\u5854\u6D4B\u8BD5\u7248"
-    currencytype: 00000000
-    currencycount: e8030000
-    rowcount: 2
-    colcount: 2
-    cd: ffffffff
-    producetype: 2
-    produceid: 0
-    produceamount: 00000000
-  - buildingid: 1
-    resourcepath: building_1
-    name: "\u6C11\u5C451"
-    buildingtype: 0
-    description: "\u6C11\u5C451"
-    currencytype: 00000000
-    currencycount: 0a000000
-    rowcount: 2
-    colcount: 2
-    cd: 080000000600000004000000
-    producetype: 0
-    produceid: 0
-    produceamount: 14000000280000003c000000
-  - buildingid: 2
-    resourcepath: building_2
-    name: "\u6C11\u5C452"
-    buildingtype: 0
-    description: "\u6C11\u5C452"
-    currencytype: 00000000
-    currencycount: 0f000000
-    rowcount: 2
-    colcount: 1
-    cd: 090000000700000005000000
-    producetype: 0
-    produceid: 0
-    produceamount: 280000003c00000050000000
-  - buildingid: 3
     resourcepath: building_101
     name: "\u5B9D\u5854"
     buildingtype: 3
@@ -159,7 +159,7 @@ MonoBehaviour:
     producetype: 2
     produceid: 0
     produceamount: 00000000
-  - buildingid: 4
+  - buildingid: 1
     resourcepath: building_201
     name: "\u9662\u5B50"
     buildingtype: 0
@@ -172,7 +172,7 @@ MonoBehaviour:
     producetype: 0
     produceid: 0
     produceamount: 64000000c80000002c01000090010000
-  - buildingid: 5
+  - buildingid: 2
     resourcepath: building_301
     name: "\u519C\u7530"
     buildingtype: 1
@@ -185,7 +185,7 @@ MonoBehaviour:
     producetype: 1
     produceid: 100
     produceamount: 010000000200000003000000
-  - buildingid: 6
+  - buildingid: 3
     resourcepath: building_401
     name: "\u9A6C\u8F66"
     buildingtype: 2
@@ -198,3 +198,81 @@ MonoBehaviour:
     producetype: 2
     produceid: 0
     produceamount: 00000000
+  - buildingid: 4
+    resourcepath: building_402
+    name: "\u9053\u8DEF"
+    buildingtype: 2
+    description: "\u9053\u8DEF"
+    currencytype: 00000000
+    currencycount: 05000000
+    rowcount: 1
+    colcount: 2
+    cd: ffffffff
+    producetype: 2
+    produceid: 0
+    produceamount: 00000000
+  - buildingid: 5
+    resourcepath: building_403
+    name: "\u6865"
+    buildingtype: 2
+    description: "\u6865"
+    currencytype: 00000000
+    currencycount: 0a000000
+    rowcount: 8
+    colcount: 4
+    cd: ffffffff
+    producetype: 2
+    produceid: 0
+    produceamount: 00000000
+  - buildingid: 6
+    resourcepath: building_202
+    name: "\u6C11\u5C4502"
+    buildingtype: 0
+    description: "\u6C11\u5C4502"
+    currencytype: 00000000
+    currencycount: c8000000
+    rowcount: 2
+    colcount: 4
+    cd: 080000000600000004000000
+    producetype: 0
+    produceid: 0
+    produceamount: 14000000280000003c000000
+  - buildingid: 7
+    resourcepath: building_203
+    name: "\u6C11\u5C4503"
+    buildingtype: 0
+    description: "\u6C11\u5C4503"
+    currencytype: 00000000
+    currencycount: c8000000
+    rowcount: 2
+    colcount: 2
+    cd: 090000000700000005000000
+    producetype: 0
+    produceid: 0
+    produceamount: 280000003c00000050000000
+  - buildingid: 8
+    resourcepath: building_204
+    name: "\u6C11\u5C4504"
+    buildingtype: 0
+    description: "\u6C11\u5C4504"
+    currencytype: 00000000
+    currencycount: c8000000
+    rowcount: 2
+    colcount: 4
+    cd: 080000000600000004000000
+    producetype: 0
+    produceid: 0
+    produceamount: 14000000280000003c000000
+  - buildingid: 9
+    resourcepath: building_205
+    name: "\u6C11\u5C4505"
+    buildingtype: 0
+    description: "\u6C11\u5C4505"
+    currencytype: 00000000
+    currencycount: 90010000
+    rowcount: 3
+    colcount: 4
+    cd: 090000000700000005000000
+    producetype: 0
+    produceid: 0
+    produceamount: 280000003c00000050000000

@@ -17,60 +17,6 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: ce30264d13bfefc45a1f0efeeafd7313
   m_SerializeEntries:
-  - m_GUID: 18a13b8e60cace74db84f6bdadfba98a
-    m_Address: Assets/Res/entity/building/building_0
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - building
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 3bb9138a1dcae4b428a4d262f67e1c69
-    m_Address: Assets/Res/entity/building/building_1
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - building
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: b2346f5fac7d0f64892f7d104873c69a
-    m_Address: Assets/Res/entity/building/building_2
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - building
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 4d9b83d26c1c4cf44a89946685accb1e
-    m_Address: Assets/Res/entity/building/building_0/SimGame_mod_03.obj
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - building
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 310530d4c0b5ab04ba569a56993389f7
-    m_Address: Assets/Res/entity/building/building_0/building_0.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - building
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 08083f369ff976446b824b7ec5371f3a
-    m_Address: Assets/Res/entity/building/building_1/building_1.prefab
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - building
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 0d5f6232d1c267e46b4ab0bdb825a4ca
-    m_Address: Assets/Res/entity/building/building_1/SimGame_mod_05.obj
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - building
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 0c6961d2f33ac354681937fd0e681457
-    m_Address: Assets/Res/entity/building/building_2/building_2.prefab
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - building
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: beccd0eac5e650e4cb55ce44ef3854aa
-    m_Address: Assets/Res/entity/building/building_2/SimGame_mod_01.obj
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - building
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2c0ff595656d47a4ba943284230a9862
     m_Address: Assets/Res/ui/dynamic/task/task_1000
     m_ReadOnly: 0
@@ -89,47 +35,55 @@ MonoBehaviour:
     m_SerializedLabels:
     - sprite
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 0cfb5f17f41132d4ab1d88b82cab2d16
-    m_Address: Assets/Res/ui/dynamic/building/icon_building_5
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - sprite
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: e11483c9dca772e4089ebdc9043299b5
-    m_Address: Assets/Res/ui/dynamic/building/icon_building_3
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - sprite
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 42b36ef27660e154cba6aa3c31c50d88
-    m_Address: Assets/Res/ui/dynamic/building/icon_building_1
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - sprite
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 18e90d09c9f7bb340815d41b341f7fb2
+  - m_GUID: 3d4fcb8fa58a06b47a9e8f5abd017fd0
     m_Address: Assets/Res/ui/dynamic/building/icon_building_2
     m_ReadOnly: 0
-    m_SerializedLabels:
-    - sprite
+    m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 26db594069b7cc4428ecde43a16cc9d9
+  - m_GUID: 7ad7a8d2f189e5c4a8fc48f8a1032ec3
+    m_Address: Assets/Res/ui/dynamic/building/icon_building_5
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4fae4f7c6613e1a43a2d09b0653ad9ee
     m_Address: Assets/Res/ui/dynamic/building/icon_building_4
     m_ReadOnly: 0
-    m_SerializedLabels:
-    - sprite
+    m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d54cfef5d5b34ae49b16bed86606ba7e
+  - m_GUID: 0381b33ebbf7f9f4a82620bcc5d99420
+    m_Address: Assets/Res/ui/dynamic/building/icon_building_9
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5bfd6fae3bc4bbc4193c984503e4bbae
+    m_Address: Assets/Res/ui/dynamic/building/icon_building_8
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 22390aaeeb9d22b4d89be1c07354fb18
+    m_Address: Assets/Res/ui/dynamic/building/icon_building_7
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 168f6f1d84aa3144ab1f1e8f5925e2ad
     m_Address: Assets/Res/ui/dynamic/building/icon_building_6
     m_ReadOnly: 0
-    m_SerializedLabels:
-    - sprite
+    m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 06d0c379f235b6a4da9ac103677d4092
+  - m_GUID: 0cfb5f17f41132d4ab1d88b82cab2d16
+    m_Address: Assets/Res/ui/dynamic/building/icon_building_3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e11483c9dca772e4089ebdc9043299b5
+    m_Address: Assets/Res/ui/dynamic/building/icon_building_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 18e90d09c9f7bb340815d41b341f7fb2
     m_Address: Assets/Res/ui/dynamic/building/icon_building_0
     m_ReadOnly: 0
-    m_SerializedLabels:
-    - sprite
+    m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ef7206bd29055104abb70d185833b540, type: 2}

@@ -59,6 +59,11 @@ namespace Game.UI
             panels.Clear();
         }
 
+        public override void OnUpdate()
+        {
+            _modules.Update();
+        }
+
         public T OpenPanel<T>(BasePanelOption option = null) where T : UIPanel
         {
             if (HasPanel<T>())

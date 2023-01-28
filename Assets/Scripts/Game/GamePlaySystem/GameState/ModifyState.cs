@@ -13,18 +13,20 @@ using UnityEngine;
 
 namespace Game.GamePlaySystem.GameState
 {
-    public class ModifyState : StateBase
+    public class ModifyState : AddBuildingState
     {
         private uint _currentId;
         private BuildingData _buildingData;
         private int currentBuildingType;
-        private GameObject currentBuilding;
         private Entity buildingEntity;
+        private float3 originPos;
+        private int currentRotation = 0;
         
         public override void OnEnter(params object[] list)
         {
             buildingEntity = (Entity)list[0];
             SelectBuilding(buildingEntity);
+
             EventCenter.AddListener<TouchEvent>(PlaceBuilding);
             EventCenter.AddListener<RotateEvent>(RotateBuilding);
         }
@@ -33,28 +35,31 @@ namespace Game.GamePlaySystem.GameState
         {
             EventCenter.RemoveListener<TouchEvent>(PlaceBuilding);
             EventCenter.RemoveListener<RotateEvent>(RotateBuilding);
-            
+
             var transform = World.DefaultGameObjectInjectionWorld.EntityManager.GetAspect<TransformAspect>(buildingEntity);
-            transform.Position = currentBuilding.transform.position;
-            _buildingData.position = transform.Position.xz;
-            BuildingManager.Instance.SetBuildingData(_currentId, _buildingData);
-            
+            if ((bool)list[0])
+            {
+                transform.Position = currentBuilding.transform.position;
+                _buildingData.position = transform.Position.xz;
+                _buildingData.rotation = currentRotation;
+                BuildingManager.Instance.SetBuildingData(_currentId, _buildingData);
+                
+                var entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
+                var entity = entityManager.GetAspect<BuildingAspect>(buildingEntity).self;
+                var buffer = entityManager.GetBuffer<Child>(entity);
+                var meshTrans = entityManager.GetAspect<TransformAspect>(buffer[0].Value);
+                meshTrans.LocalRotation = quaternion.identity;
+                meshTrans.LocalRotation = quaternion.RotateY(math.radians(90 * currentRotation));
+            }
+            else
+            {
+                transform.Position = originPos;
+            }
+
             Object.Destroy(currentBuilding);
             currentBuilding = null;
         }
-        
-        public override void OnUpdate()
-        {
-            UpdateUI();
-        }
 
-        private void UpdateUI()
-        {
-            if (currentBuilding == null) return;
-            var screenPos = Camera.main.WorldToScreenPoint(currentBuilding.transform.position);
-            EventCenter.DispatchEvent(new BuildUIEvent { pos = new Vector3(screenPos[0] - 100, screenPos[1] - 100, 0) });
-        }
-        
         /// <summary>
         /// 选中某个建筑物后的操作，需要给UI层发事件
         /// 选中后，ecs将模型移动到很远的地方（相当于不渲染模型），原地生成一个透明的GameObject
@@ -70,13 +75,18 @@ namespace Game.GamePlaySystem.GameState
             currentBuildingType = aspect.BuildingType;
             var transform = entityManager.GetAspect<TransformAspect>(entity);
             var buildingPos = transform.Position;
-            var buildingRot = entityManager.GetAspect<TransformAspect>(aspect.Mesh).Rotation;
+            originPos = buildingPos;
+            
+            var buffer = entityManager.GetBuffer<Child>(entity);
+            var meshTrans = entityManager.GetAspect<TransformAspect>(buffer[0].Value);
+            var buildingRot = meshTrans.Rotation;
+            currentRotation = _buildingData.rotation;
 
             currentBuilding = Object.Instantiate(ConfigTable.Instance.GetBuilding(currentBuildingType), buildingPos, Quaternion.identity);
             currentBuilding.transform.GetChild(0).localRotation = buildingRot;
             MaterialUtil.SetTransparency(currentBuilding, true);
             transform.Position = new float3(10000, 10000, 10000);
-            
+            EventCenter.DispatchEvent(new BuildUIEvent());
         }
         
         private void PlaceBuilding(TouchEvent evt)
@@ -93,29 +103,16 @@ namespace Game.GamePlaySystem.GameState
                 if (entityManager.HasComponent<BuildingPlane>(entity) && !Managers.Get<IInputManager>().IsPointerOverGameObject())
                 {
                     currentBuilding.transform.position = GetBlockPos(hit.Position, out _);
-                    UpdateUI();
+                    EventCenter.DispatchEvent(new BuildUIEvent());
                 }
             }
-        }
-        
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private float3 GetBlockPos(float3 pos, out int2 gridPos)
-        {
-            var xzpos = math.floor(pos.xz);
-            gridPos = math.int2(xzpos);
-            return new float3(xzpos[0], pos.y, xzpos[1]);
         }
 
         private void RotateBuilding(RotateEvent evt)
         {
-            _buildingData.rotation = (_buildingData.rotation + 1) % 4;
+            currentRotation = (currentRotation + 1) % 4;
             var objTransform = currentBuilding.transform.GetChild(0);
             objTransform.Rotate(Vector3.up, 90);
-            var entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
-            var meshRoot = entityManager.GetAspect<BuildingAspect>(buildingEntity).Mesh;
-
-            var transform = entityManager.GetAspect<TransformAspect>(meshRoot);
-            transform.LocalRotation = quaternion.RotateY(math.radians(objTransform.localRotation.eulerAngles[1]));
         }
     }
 }

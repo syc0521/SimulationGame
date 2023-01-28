@@ -13,7 +13,6 @@ namespace Game.UI.Panel
 
         public override void OnCreated()
         {
-            EventCenter.AddListener<BuildUIEvent>(RefreshUIPos);
             confirm.onClick.AddListener(OnConfirmClicked);
             cancel.onClick.AddListener(OnCancelClicked);
             rotate.onClick.AddListener(OnRotateClicked);
@@ -21,23 +20,14 @@ namespace Game.UI.Panel
         
         public override void OnDestroyed()
         {
-            EventCenter.RemoveListener<BuildUIEvent>(RefreshUIPos);
             confirm.onClick.RemoveListener(OnConfirmClicked);
             cancel.onClick.RemoveListener(OnCancelClicked);
             rotate.onClick.RemoveListener(OnRotateClicked);
         }
 
-        private void RefreshUIPos(BuildUIEvent obj)
+        public override void OnUpdate()
         {
-            if (transform != null)
-            {
-                ChangeUIPos(obj.pos);
-            }
-        }
-
-        public void ChangeUIPos(Vector3 pos)
-        {
-            transform.position = pos;
+            transform.position = BuildingManager.Instance.ScreenPos;
         }
 
         private void OnConfirmClicked()
@@ -54,7 +44,7 @@ namespace Game.UI.Panel
 
         private void OnRotateClicked()
         {
-            EventCenter.DispatchEvent(new RotateEvent());
+            BuildingManager.Instance.RotateBuilding();
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Game.GamePlaySystem.GameState
     public class AddBuildingState : StateBase
     {
         private int currentBuildingType;
-        private GameObject currentBuilding;
+        protected GameObject currentBuilding;
         private int rotation = 0;
         private uint currentID = 0;
         public override void OnEnter(params object[] list)
@@ -28,20 +28,22 @@ namespace Game.GamePlaySystem.GameState
 
             currentBuilding = Object.Instantiate(ConfigTable.Instance.GetBuilding(currentBuildingType), GetBlockPos(point, out _), Quaternion.identity);
             MaterialUtil.SetTransparency(currentBuilding, true);
+            EventCenter.DispatchEvent(new BuildUIEvent());
+
             EventCenter.AddListener<TouchEvent>(PlaceBuilding);
             EventCenter.AddListener<RotateEvent>(RotateBuilding);
         }
 
         public override void OnUpdate()
         {
-            UpdateUI();
+            UpdateScreenPos();
         }
 
-        private void UpdateUI()
+        private void UpdateScreenPos()
         {
             if (currentBuilding == null || Camera.main == null) return;
             var screenPos = Camera.main.WorldToScreenPoint(currentBuilding.transform.position);
-            EventCenter.DispatchEvent(new BuildUIEvent { pos = new Vector3(screenPos[0] - 100, screenPos[1] - 100, 0) });
+            BuildingManager.Instance.ScreenPos = new Vector3(screenPos[0] - 100, screenPos[1] - 100, 0);
         }
 
         public override void OnLeave(params object[] list)
@@ -73,7 +75,8 @@ namespace Game.GamePlaySystem.GameState
                 if (entityManager.HasComponent<BuildingPlane>(entity) && !Managers.Get<IInputManager>().IsPointerOverGameObject())
                 {
                     currentBuilding.transform.position = GetBlockPos(hit.Position, out _);
-                    UpdateUI();
+                    //todo 增加建筑遮挡判定
+                    EventCenter.DispatchEvent(new BuildUIEvent());
                 }
             }
         }
@@ -96,7 +99,7 @@ namespace Game.GamePlaySystem.GameState
             BuildingManager.Instance.GetGrid().SetData(currentBuildingType, gridPos[0], gridPos[1]);
             World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<AddBlockSystem>().Build(blockPos, currentBuildingType, currentID, rotation);
             EventCenter.RemoveListener<TouchEvent>(PlaceBuilding);
-            TaskManager.Instance.TriggerTask(TaskType.AddBuilding, currentBuildingType, 1);
+            TaskManager.Instance.TriggerTask(TaskType.AddBuilding, currentBuildingType);
         }
         
         private void RotateBuilding(RotateEvent evt)
@@ -107,7 +110,7 @@ namespace Game.GamePlaySystem.GameState
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private float3 GetBlockPos(float3 pos, out int2 gridPos)
+        protected float3 GetBlockPos(float3 pos, out int2 gridPos)
         {
             var xzpos = math.floor(pos.xz);
             gridPos = math.int2(xzpos);

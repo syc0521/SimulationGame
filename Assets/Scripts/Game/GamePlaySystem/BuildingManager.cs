@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Game.Core;
 using Game.Data;
+using Game.Data.Event;
 using Game.GamePlaySystem.GameState;
 using Game.GamePlaySystem.StateMachine;
 using Game.Input;
@@ -20,6 +21,7 @@ namespace Game.GamePlaySystem
         private Grid<int> grid = new(20, 20, -1);
         private StateMachine.StateMachine buildStateMachine;
         private uint id;
+        public Vector3 ScreenPos { get; set; }
 
         public override void OnStart()
         {
@@ -53,8 +55,8 @@ namespace Game.GamePlaySystem
                     id = key;
                 }
 
-                World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<AddBlockSystem>().Build(
-                    new float3(data.position[0], 0f, data.position[1]), data.type, key);
+                var system = World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<AddBlockSystem>();
+                system.Build(new float3(data.position[0], 0f, data.position[1]), data.type, key, data.rotation);
             }
         }
 
@@ -86,6 +88,11 @@ namespace Game.GamePlaySystem
         public void RemoveBuilding()
         {
             buildStateMachine.ChangeState<DestroyState>();
+        }
+
+        public void RotateBuilding()
+        {
+            EventCenter.DispatchEvent(new RotateEvent());
         }
 
         public void TransitToNormalState()

@@ -11,6 +11,7 @@ namespace Game.LevelAndEntity.Aspects
         private readonly RefRO<Building> building;
         private readonly RefRO<LevelObject> levelObject;
         private readonly RefRW<Timer> timer;
+        public readonly Entity self;
 
         public int People => building.ValueRO.type + 1;
         public int BuildingType => building.ValueRO.type;

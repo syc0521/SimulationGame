@@ -66,7 +66,8 @@ namespace Game.LevelAndEntity.System
         {
             foreach (var (building, rotation) in SystemAPI.Query<BuildingAspect, BuildingRotation>().WithAll<BuildingRotation>())
             {
-                var transform = entityManager.GetAspect<TransformAspect>(building.Mesh);
+                var buffer = entityManager.GetBuffer<Child>(building.self);
+                var transform = entityManager.GetAspect<TransformAspect>(buffer[0].Value);
                 transform.LocalRotation = quaternion.RotateY(math.radians(90 * rotation.rotation));
                 Debug.Log(rotation.rotation);
             }

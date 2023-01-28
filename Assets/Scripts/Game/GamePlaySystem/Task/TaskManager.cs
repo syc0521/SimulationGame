@@ -53,7 +53,7 @@ namespace Game.GamePlaySystem.Task
             }
         }
 
-        public void TriggerTask(TaskType taskType, int targetID, int targetNum)
+        public void TriggerTask(TaskType taskType, int targetID, int targetNum = 1)
         {
             var runningTasks = ConfigTable.Instance.GetTasks().FindAll(item =>
                 item.GetTaskState() == TaskState.Accepted && item.Tasktype == (int)taskType && item.Targetid.Contains(targetID));

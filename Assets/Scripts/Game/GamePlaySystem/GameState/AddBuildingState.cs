@@ -96,7 +96,18 @@ namespace Game.GamePlaySystem.GameState
             });
             
             var blockPos = GetBlockPos(pos, out var gridPos);
-            BuildingManager.Instance.GetGrid().SetData(currentBuildingType, gridPos[0], gridPos[1]);
+            
+            var data = ConfigTable.Instance.GetBuildingData(currentBuildingType);
+            var grid = BuildingManager.Instance.GetGrid();
+            
+            for (int i = gridPos[0]; i < gridPos[0] + data.Rowcount; i++)
+            {
+                for (int j = gridPos[1]; j < gridPos[1] + data.Colcount; j++)
+                {
+                    grid[i, j] = currentBuildingType;
+                }
+            }
+
             World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<AddBlockSystem>().Build(blockPos, currentBuildingType, currentID, rotation);
             EventCenter.RemoveListener<TouchEvent>(PlaceBuilding);
             TaskManager.Instance.TriggerTask(TaskType.AddBuilding, currentBuildingType);

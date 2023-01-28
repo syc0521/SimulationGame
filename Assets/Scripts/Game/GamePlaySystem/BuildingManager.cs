@@ -159,5 +159,22 @@ namespace Game.GamePlaySystem
         }
 
         public BuildingData GetBuildingData(uint buildingId) => _buildingDatas[buildingId];
+
+        public float3 GetRotationOffset(int dir, int width, int height)
+        {
+            switch (dir)
+            {
+                case 0:
+                    return float3.zero;
+                case 1:
+                    return new float3(0, 0, width);
+                case 2:
+                    return new float3(height, 0, width);
+                case 3:
+                    return new float3(height, 0, 0);
+            }
+            
+            return float3.zero;
+        }
     }
 }

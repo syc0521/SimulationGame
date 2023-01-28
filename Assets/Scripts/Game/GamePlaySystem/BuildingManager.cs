@@ -18,13 +18,15 @@ namespace Game.GamePlaySystem
     public class BuildingManager : GamePlaySystemBase<BuildingManager>
     {
         private Dictionary<uint, BuildingData> _buildingDatas;
-        private Grid<int> grid = new(20, 20, -1);
+        private Grid<int> grid;
         private StateMachine.StateMachine buildStateMachine;
         private uint id;
+        public int col, row;
         public Vector3 ScreenPos { get; set; }
 
         public override void OnStart()
         {
+            grid = new(col, row, -1);
             Managers.Get<ISaveDataManager>().GetBuildings(ref _buildingDatas);
             InitializeBuilding();
             buildStateMachine = new(new IState[]
@@ -162,19 +164,14 @@ namespace Game.GamePlaySystem
 
         public float3 GetRotationOffset(int dir, int width, int height)
         {
-            switch (dir)
+            return dir switch
             {
-                case 0:
-                    return float3.zero;
-                case 1:
-                    return new float3(0, 0, width);
-                case 2:
-                    return new float3(height, 0, width);
-                case 3:
-                    return new float3(height, 0, 0);
-            }
-            
-            return float3.zero;
+                0 => float3.zero,
+                1 => new float3(0, 0, width),
+                2 => new float3(height, 0, width),
+                3 => new float3(height, 0, 0),
+                _ => float3.zero
+            };
         }
     }
 }

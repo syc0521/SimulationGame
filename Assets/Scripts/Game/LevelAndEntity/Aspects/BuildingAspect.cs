@@ -15,7 +15,7 @@ namespace Game.LevelAndEntity.Aspects
 
         public int People => building.ValueRO.type + 1;
         public int BuildingType => building.ValueRO.type;
-        public Entity Mesh => building.ValueRO.meshRoot;
+        public float3 SpawnPos => levelObject.ValueRO.spawnPos;
         public uint ID => levelObject.ValueRO.id;
         public int Level => levelObject.ValueRO.level; // 等级
 

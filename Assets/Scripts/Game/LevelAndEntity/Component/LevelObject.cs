@@ -1,4 +1,5 @@
 ﻿using Unity.Entities;
+using Unity.Mathematics;
 
 namespace Game.LevelAndEntity.Component
 {
@@ -6,5 +7,6 @@ namespace Game.LevelAndEntity.Component
     {
         public uint id;
         public int level;
+        public float3 spawnPos;
     }
 }

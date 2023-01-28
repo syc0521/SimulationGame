@@ -19,6 +19,7 @@ namespace Game.GamePlaySystem.GameState
         protected GameObject currentBuilding;
         private int rotation = 0;
         private uint currentID = 0;
+        private Vector3 spawnPos;
         public override void OnEnter(params object[] list)
         {
             currentID = BuildingManager.Instance.GetID();
@@ -26,7 +27,8 @@ namespace Game.GamePlaySystem.GameState
             var ray = Camera.main.ScreenPointToRay(new Vector3(Screen.safeArea.width / 2, Screen.safeArea.height / 2, 0));
             var point = ray.origin - ray.direction * (ray.origin.y / ray.direction.y);
 
-            currentBuilding = Object.Instantiate(ConfigTable.Instance.GetBuilding(currentBuildingType), GetBlockPos(point, out _), Quaternion.identity);
+            spawnPos = GetBlockPos(point, out _);
+            currentBuilding = Object.Instantiate(ConfigTable.Instance.GetBuilding(currentBuildingType), spawnPos, Quaternion.identity);
             MaterialUtil.SetTransparency(currentBuilding, true);
             EventCenter.DispatchEvent(new BuildUIEvent());
 
@@ -42,7 +44,7 @@ namespace Game.GamePlaySystem.GameState
         private void UpdateScreenPos()
         {
             if (currentBuilding == null || Camera.main == null) return;
-            var screenPos = Camera.main.WorldToScreenPoint(currentBuilding.transform.position);
+            var screenPos = Camera.main.WorldToScreenPoint(spawnPos);
             BuildingManager.Instance.ScreenPos = new Vector3(screenPos[0] - 100, screenPos[1] - 100, 0);
         }
 
@@ -74,7 +76,10 @@ namespace Game.GamePlaySystem.GameState
                 var entity = hit.Entity;
                 if (entityManager.HasComponent<BuildingPlane>(entity) && !Managers.Get<IInputManager>().IsPointerOverGameObject())
                 {
-                    currentBuilding.transform.position = GetBlockPos(hit.Position, out _);
+                    spawnPos = GetBlockPos(hit.Position, out _);
+                    var data = ConfigTable.Instance.GetBuildingData(currentBuildingType);
+                    var offset = BuildingManager.Instance.GetRotationOffset(rotation, data.Colcount, data.Rowcount);
+                    currentBuilding.transform.position = spawnPos + (Vector3)offset;
                     //todo 增加建筑遮挡判定
                     EventCenter.DispatchEvent(new BuildUIEvent());
                 }
@@ -86,7 +91,10 @@ namespace Game.GamePlaySystem.GameState
         /// </summary>
         private void ConstructBuilding()
         {
-            var pos = currentBuilding.transform.position;
+            var data = ConfigTable.Instance.GetBuildingData(currentBuildingType);
+            var offset = BuildingManager.Instance.GetRotationOffset(rotation, data.Colcount, data.Rowcount);
+
+            var pos = currentBuilding.transform.position - (Vector3)offset;
             BuildingManager.Instance.SetBuildingData(currentID, new BuildingData
             {
                 level = 1,
@@ -96,8 +104,6 @@ namespace Game.GamePlaySystem.GameState
             });
             
             var blockPos = GetBlockPos(pos, out var gridPos);
-            
-            var data = ConfigTable.Instance.GetBuildingData(currentBuildingType);
             var grid = BuildingManager.Instance.GetGrid();
             
             for (int i = gridPos[0]; i < gridPos[0] + data.Rowcount; i++)
@@ -116,8 +122,11 @@ namespace Game.GamePlaySystem.GameState
         private void RotateBuilding(RotateEvent evt)
         {
             rotation = (rotation + 1) % 4;
-            var objTransform = currentBuilding.transform.GetChild(0);
+            var objTransform = currentBuilding.transform;
             objTransform.Rotate(Vector3.up, 90);
+            var data = ConfigTable.Instance.GetBuildingData(currentBuildingType);
+            var offset = BuildingManager.Instance.GetRotationOffset(rotation, data.Colcount, data.Rowcount);
+            objTransform.position = spawnPos + (Vector3)offset;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -38,7 +38,7 @@ namespace Game.LevelAndEntity.System
             Entities.WithAll<AddBuilding>().ForEach((Entity entity, ref AddBuilding addBuilding) =>
             {
                 var e = ecb.Instantiate(buffer[addBuilding.spawnType].prefab);
-                var position = UniformScaleTransform.FromPosition(addBuilding.spawnPos);
+                var position = UniformScaleTransform.FromPosition(addBuilding.spawnPos + addBuilding.offset);
                 
                 ecb.SetComponent(e, new Translation
                 {
@@ -48,6 +48,7 @@ namespace Game.LevelAndEntity.System
                 {
                     id = addBuilding.id,
                     level = 1,
+                    spawnPos = addBuilding.spawnPos,
                 });
                 ecb.AddComponent(e, new Timer());
                 ecb.AddComponent(e, new BuildingRotation
@@ -81,13 +82,28 @@ namespace Game.LevelAndEntity.System
         public void Build(float3 position, int buildingType, uint id, int rotation = 0)
         {
             var newBlock = entityManager.CreateEntity();
+            var data = ConfigTable.Instance.GetBuildingData(buildingType);
+            var offset = GetRotationOffset(rotation, data.Colcount, data.Rowcount);
             entityManager.AddComponentData(newBlock, new AddBuilding
             {
                 id = id,
                 spawnPos = position,
                 spawnType = buildingType,
-                rotation = rotation
+                rotation = rotation,
+                offset = offset,
             });
+        }
+        
+        public float3 GetRotationOffset(int dir, int width, int height)
+        {
+            return dir switch
+            {
+                0 => float3.zero,
+                1 => new float3(0, 0, width),
+                2 => new float3(height, 0, width),
+                3 => new float3(height, 0, 0),
+                _ => float3.zero
+            };
         }
 
     }

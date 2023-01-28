@@ -13,8 +13,7 @@ namespace Game.LevelAndEntity.System
             beginSimECBSystem = World.GetExistingSystemManaged<BeginSimulationEntityCommandBufferSystem>();
             entityManager = beginSimECBSystem.EntityManager;
         }
-
-
+        
         protected override void OnUpdate()
         {
             var ecb = beginSimECBSystem.CreateCommandBuffer();
@@ -22,7 +21,8 @@ namespace Game.LevelAndEntity.System
             Entities.WithAll<RemoveBuilding>().ForEach((Entity entity) =>
             {
                 ecb.DestroyEntity(entity);
-            }).WithoutBurst().Run();
+            }).Schedule();
+            beginSimECBSystem.AddJobHandleForProducer(Dependency);
         }
     }
 }

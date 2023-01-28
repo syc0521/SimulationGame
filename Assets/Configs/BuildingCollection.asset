@@ -13,10 +13,13 @@ MonoBehaviour:
   m_Name: BuildingCollection
   m_EditorClassIdentifier: 
   buildings:
-  - {fileID: 6023954684518593267, guid: 310530d4c0b5ab04ba569a56993389f7, type: 3}
-  - {fileID: 6023954684518593267, guid: 08083f369ff976446b824b7ec5371f3a, type: 3}
-  - {fileID: 6023954684518593267, guid: 0c6961d2f33ac354681937fd0e681457, type: 3}
   - {fileID: 6023954684518593267, guid: e329322781515ee4dbeeb1e96b6eee4e, type: 3}
   - {fileID: 6023954684518593267, guid: 84475cbfac0d1d049834b9be463b451b, type: 3}
   - {fileID: 6023954684518593267, guid: 863baa1a227795d46aea7275d762dfb4, type: 3}
   - {fileID: 6023954684518593267, guid: 994f024859a5fd04e9b3df81af1c0b0f, type: 3}
+  - {fileID: 6023954684518593267, guid: 00a2fb45adff02947831fbe26648a7bc, type: 3}
+  - {fileID: 6023954684518593267, guid: e544efc3aa4f4fa4fb60f696491e03e9, type: 3}
+  - {fileID: 6023954684518593267, guid: b4c0d28113c85c04a8cc5025347586c0, type: 3}
+  - {fileID: 6023954684518593267, guid: 65a2fd0341d8b6a4eabc7f0cf50e9af1, type: 3}
+  - {fileID: 6023954684518593267, guid: 592b990f68f5e324c966b8622e446665, type: 3}
+  - {fileID: 6023954684518593267, guid: f675b4cf6ec09164793faaf4e8cb6cb4, type: 3}

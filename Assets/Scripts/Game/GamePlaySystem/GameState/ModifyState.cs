@@ -84,7 +84,7 @@ namespace Game.GamePlaySystem.GameState
             if (currentBuilding == null) return;
 
             var collisionWorld = BuildingManager.Instance.GetCollisionWorld();
-            var raycastInput = BuildingManager.Instance.GetOrCreateRaycastInput(new float3(evt.pos, 0));
+            var raycastInput = BuildingManager.Instance.GetRaycastInput(new float3(evt.pos, 0));
 
             if (collisionWorld.CastRay(raycastInput, out var hit))
             {

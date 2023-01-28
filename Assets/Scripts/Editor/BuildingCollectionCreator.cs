@@ -10,6 +10,8 @@ public class BuildingCollectionCreator : MonoBehaviour
 {
     private static readonly string rootPath = "Assets/Res/entity/";
 
+#if UNITY_EDITOR
+    
     [MenuItem("工具/导入建筑")]
     public static void ImportBuilding()
     {
@@ -28,7 +30,11 @@ public class BuildingCollectionCreator : MonoBehaviour
         collection.buildings.Clear();
         collection.buildings.AddRange(buildingObjs);
 
+        EditorUtility.SetDirty(collection);
+        AssetDatabase.SaveAssets();
+        AssetDatabase.Refresh();
     }
+#endif
     
     private static string GetAssetPath(ResEnum type, string path) => $"{rootPath}{type}/{path}/{path}.prefab";
 

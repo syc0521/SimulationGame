@@ -63,6 +63,7 @@ namespace Game.Input
 
         private bool isSwiping = false;
         private float2 _startPos;
+        private bool _gestureEnable = true;
 
         public override void OnAwake()
         {
@@ -236,6 +237,16 @@ namespace Game.Input
             {
                 delta = _gameControl.GamePlay.WheelScroll.ReadValue<Vector2>()[1]
             });
+        }
+
+        public void EnableGesture()
+        {
+            _gestureEnable = true;
+        }
+
+        public void DisableGesture()
+        {
+            _gestureEnable = false;
         }
     }
 }

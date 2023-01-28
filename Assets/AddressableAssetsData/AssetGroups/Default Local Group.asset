@@ -70,18 +70,18 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 0cfb5f17f41132d4ab1d88b82cab2d16
+  - m_GUID: e11483c9dca772e4089ebdc9043299b5
     m_Address: Assets/Res/ui/dynamic/building/icon_building_3
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: e11483c9dca772e4089ebdc9043299b5
-    m_Address: Assets/Res/ui/dynamic/building/icon_building_1
+  - m_GUID: 06d0c379f235b6a4da9ac103677d4092
+    m_Address: Assets/Res/ui/dynamic/building/icon_building_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 18e90d09c9f7bb340815d41b341f7fb2
-    m_Address: Assets/Res/ui/dynamic/building/icon_building_0
+  - m_GUID: 42b36ef27660e154cba6aa3c31c50d88
+    m_Address: Assets/Res/ui/dynamic/building/icon_building_1
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

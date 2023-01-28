@@ -17,8 +17,6 @@ namespace Game.GamePlaySystem
     public class BuildingManager : GamePlaySystemBase<BuildingManager>
     {
         private Dictionary<uint, BuildingData> _buildingDatas;
-        private RaycastInput _raycastInput;
-        private bool hasRaycastInput;
         private Grid<int> grid = new(20, 20, -1);
         private StateMachine.StateMachine buildStateMachine;
         private uint id;
@@ -90,24 +88,15 @@ namespace Game.GamePlaySystem
             buildStateMachine.ChangeState<DestroyState>();
         }
 
-        public void RotateBuilding()
-        {
-        }
-
         public void TransitToNormalState()
         {
             buildStateMachine.ChangeState<NormalState>();
         }
 
-        public RaycastInput GetOrCreateRaycastInput(float3 pos)
+        public RaycastInput GetRaycastInput(float3 pos)
         {
-            if (hasRaycastInput)
-            {
-                return _raycastInput;
-            }
-
             var ray = CameraManager.Instance.mainCam.ScreenPointToRay(pos);
-            _raycastInput = new RaycastInput
+            return new RaycastInput
             {
                 Start = ray.origin,
                 End = ray.GetPoint(50),
@@ -118,7 +107,6 @@ namespace Game.GamePlaySystem
                     GroupIndex = 0
                 }
             };
-            return _raycastInput;
         }
 
         public CollisionWorld GetCollisionWorld()
@@ -136,7 +124,7 @@ namespace Game.GamePlaySystem
         {
             entity = default;
             var collisionWorld = GetCollisionWorld();
-            var raycastInput = GetOrCreateRaycastInput(new float3(pos, 0));
+            var raycastInput = GetRaycastInput(new float3(pos, 0));
             if (collisionWorld.CastRay(raycastInput, out var hit))
             {
                 var entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
@@ -156,6 +144,11 @@ namespace Game.GamePlaySystem
         {
             _buildingDatas[buildingId] = data;
             Managers.Get<ISaveDataManager>().SaveData();
+        }
+
+        public void RemoveBuildingData(uint buildingId)
+        {
+            _buildingDatas.Remove(buildingId);
         }
 
         public BuildingData GetBuildingData(uint buildingId) => _buildingDatas[buildingId];

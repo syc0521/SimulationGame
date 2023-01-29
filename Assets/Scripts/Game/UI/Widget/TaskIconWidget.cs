@@ -24,7 +24,7 @@ namespace Game.UI.Widget
             {
                 atlas = AtlasEnum.Task,
                 resName = $"task_{taskListData.id}"
-            }); // todo 待美术添加资源
+            });
 
             id = taskListData.id;
 
@@ -32,7 +32,6 @@ namespace Game.UI.Widget
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            Debug.Log("打开任务面板");
             UIManager.Instance.OpenPanel<TaskDetailPanel>(new TaskDetailPanelOption
             {
                 taskID = id,

@@ -88,6 +88,11 @@ namespace Game.GamePlaySystem.Task
             {
                 ActivateTask(task.Taskid);
             }
+            
+            EventCenter.DispatchEvent(new RefreshTaskEvent
+            {
+                playerTask = GetPlayerTask()
+            });
         }
         
         private Dictionary<int, PlayerTaskData> GetPlayerTask()

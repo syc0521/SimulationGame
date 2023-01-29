@@ -26,7 +26,7 @@ MonoBehaviour:
   - taskid: 1001
     name: "\u94FA\u8BBE\u9053\u8DEF"
     previousid: 1000
-    tasktype: 2
+    tasktype: 0
     targetid: 04000000
     targetnum: 02000000
     reward: 0
@@ -34,7 +34,7 @@ MonoBehaviour:
   - taskid: 1002
     name: "\u5F00\u57A6\u519C\u7530"
     previousid: 1001
-    tasktype: 1
+    tasktype: 0
     targetid: 02000000
     targetnum: 01000000
     reward: 0
@@ -51,7 +51,7 @@ MonoBehaviour:
   - taskid: 1001
     name: "\u94FA\u8BBE\u9053\u8DEF"
     previousid: 1000
-    tasktype: 2
+    tasktype: 0
     targetid: 04000000
     targetnum: 02000000
     reward: 0
@@ -59,7 +59,7 @@ MonoBehaviour:
   - taskid: 1002
     name: "\u5F00\u57A6\u519C\u7530"
     previousid: 1001
-    tasktype: 1
+    tasktype: 0
     targetid: 02000000
     targetnum: 01000000
     reward: 0

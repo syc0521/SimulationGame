@@ -1,5 +1,6 @@
 
 using Game.Data;
+using Game.GamePlaySystem.Task;
 using Game.UI.Module;
 using Game.UI.UISystem;
 
@@ -16,6 +17,7 @@ namespace Game.UI.Panel.Task
         public override void OnCreated()
         {
             nodes.close_btn.onClick.AddListener(ClosePanel);
+            nodes.claim_btn.onClick.AddListener(ClaimReward);
         }
 
         public override void OnShown()
@@ -27,6 +29,7 @@ namespace Game.UI.Panel.Task
         public override void OnDestroyed()
         {
             nodes.close_btn.onClick.RemoveListener(ClosePanel);
+            nodes.claim_btn.onClick.RemoveListener(ClaimReward);
         }
 
         private void ClosePanel()
@@ -42,7 +45,16 @@ namespace Game.UI.Panel.Task
             }
             
             taskID = option.taskID;
-            nodes.task_txt.text = $"{taskID} {TaskSystem.Instance.GetTaskData(taskID).name}";
+            var taskData = TaskSystem.Instance.GetTaskData(taskID);
+            nodes.task_txt.text = taskData.name;
+            nodes.detail_txt.text = taskData.content;
+            nodes.claim_btn.gameObject.SetActive(taskData.state is TaskState.Finished);
+        }
+
+        private void ClaimReward()
+        {
+            TaskManager.Instance.GetReward(taskID);
+            CloseSelf();
         }
     }
 }

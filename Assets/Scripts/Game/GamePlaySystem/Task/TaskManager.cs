@@ -66,7 +66,6 @@ namespace Game.GamePlaySystem.Task
                 {
                     hasTaskFinished = true;
                     ChangeTaskState(task.Taskid, TaskState.Finished);
-                    GetReward(task.Taskid);
                 }
             }
 
@@ -79,7 +78,7 @@ namespace Game.GamePlaySystem.Task
             }
         }
 
-        private void GetReward(int taskID)
+        public void GetReward(int taskID)
         {
             ChangeTaskState(taskID, TaskState.Rewarded);
             Debug.LogError($"已领取ID为{taskID}的奖励");

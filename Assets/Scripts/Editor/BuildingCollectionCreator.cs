@@ -24,6 +24,7 @@ public class BuildingCollectionCreator : MonoBehaviour
                 GetAssetPath(ResEnum.building, buildingData.Resourcepath), typeof(GameObject));
             buildingObj.GetComponent<BuildingAuthoring>().type = buildingData.Buildingid;
             buildingObjs.Add(buildingObj);
+            EditorUtility.SetDirty(buildingObj);
         }
         
         var collection = (BuildingCollection)AssetDatabase.LoadAssetAtPath("Assets/Configs/BuildingCollection.asset", typeof(BuildingCollection));

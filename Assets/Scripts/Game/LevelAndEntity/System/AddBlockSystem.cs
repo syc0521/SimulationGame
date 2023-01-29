@@ -44,6 +44,11 @@ namespace Game.LevelAndEntity.System
                 {
                     Value = position.Position
                 });
+                ecb.SetComponent(e, new Rotation
+                {
+                    Value = quaternion.RotateY(math.radians(90 * addBuilding.rotation))
+                });
+                
                 ecb.AddComponent(e, new LevelObject
                 {
                     id = addBuilding.id,
@@ -51,39 +56,18 @@ namespace Game.LevelAndEntity.System
                     spawnPos = addBuilding.spawnPos,
                 });
                 ecb.AddComponent(e, new Timer());
-                ecb.AddComponent(e, new BuildingRotation
-                {
-                    rotation = addBuilding.rotation
-                });
-                
+
                 ecb.DestroyEntity(entity);
             }).Schedule();
-            RotateBuilding();
             config.Dispose();
             beginSimECBSystem.AddJobHandleForProducer(Dependency);
-        }
-
-        private void RotateBuilding()
-        {
-            foreach (var (building, rotation) in SystemAPI.Query<BuildingAspect, BuildingRotation>().WithAll<BuildingRotation>())
-            {
-                var buffer = entityManager.GetBuffer<Child>(building.self);
-                var transform = entityManager.GetAspect<TransformAspect>(buffer[0].Value);
-                transform.LocalRotation = quaternion.RotateY(math.radians(90 * rotation.rotation));
-                Debug.Log(rotation.rotation);
-            }
-            var ecb = beginSimECBSystem.CreateCommandBuffer();
-            Entities.WithAll<BuildingRotation>().ForEach((Entity entity) =>
-            {
-                ecb.RemoveComponent<BuildingRotation>(entity);
-            }).Schedule();
         }
 
         public void Build(float3 position, int buildingType, uint id, int rotation = 0)
         {
             var newBlock = entityManager.CreateEntity();
             var data = ConfigTable.Instance.GetBuildingData(buildingType);
-            var offset = GetRotationOffset(rotation, data.Colcount, data.Rowcount);
+            var offset = GetRotationOffset(rotation, data.Rowcount, data.Colcount);
             entityManager.AddComponentData(newBlock, new AddBuilding
             {
                 id = id,
@@ -100,7 +84,7 @@ namespace Game.LevelAndEntity.System
             {
                 0 => float3.zero,
                 1 => new float3(0, 0, width),
-                2 => new float3(height, 0, width),
+                2 => new float3(width, 0, height),
                 3 => new float3(height, 0, 0),
                 _ => float3.zero
             };

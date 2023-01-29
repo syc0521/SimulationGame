@@ -61,8 +61,8 @@ MonoBehaviour:
     description: "\u9A6C\u8F66"
     currencytype: 00000000
     currencycount: 64000000
-    rowcount: 1
-    colcount: 2
+    rowcount: 2
+    colcount: 1
     cd: ffffffff
     producetype: 2
     produceid: 0
@@ -74,8 +74,8 @@ MonoBehaviour:
     description: "\u9053\u8DEF"
     currencytype: 00000000
     currencycount: 05000000
-    rowcount: 1
-    colcount: 2
+    rowcount: 2
+    colcount: 1
     cd: ffffffff
     producetype: 2
     produceid: 0
@@ -87,8 +87,8 @@ MonoBehaviour:
     description: "\u6865"
     currencytype: 00000000
     currencycount: 0a000000
-    rowcount: 8
-    colcount: 4
+    rowcount: 4
+    colcount: 8
     cd: ffffffff
     producetype: 2
     produceid: 0
@@ -100,8 +100,8 @@ MonoBehaviour:
     description: "\u6C11\u5C4502"
     currencytype: 00000000
     currencycount: c8000000
-    rowcount: 2
-    colcount: 4
+    rowcount: 4
+    colcount: 2
     cd: 080000000600000004000000
     producetype: 0
     produceid: 0
@@ -126,8 +126,8 @@ MonoBehaviour:
     description: "\u6C11\u5C4504"
     currencytype: 00000000
     currencycount: c8000000
-    rowcount: 2
-    colcount: 4
+    rowcount: 4
+    colcount: 2
     cd: 080000000600000004000000
     producetype: 0
     produceid: 0
@@ -139,8 +139,8 @@ MonoBehaviour:
     description: "\u6C11\u5C4505"
     currencytype: 00000000
     currencycount: 90010000
-    rowcount: 3
-    colcount: 4
+    rowcount: 4
+    colcount: 3
     cd: 090000000700000005000000
     producetype: 0
     produceid: 0
@@ -192,8 +192,8 @@ MonoBehaviour:
     description: "\u9A6C\u8F66"
     currencytype: 00000000
     currencycount: 64000000
-    rowcount: 1
-    colcount: 2
+    rowcount: 2
+    colcount: 1
     cd: ffffffff
     producetype: 2
     produceid: 0
@@ -205,8 +205,8 @@ MonoBehaviour:
     description: "\u9053\u8DEF"
     currencytype: 00000000
     currencycount: 05000000
-    rowcount: 1
-    colcount: 2
+    rowcount: 2
+    colcount: 1
     cd: ffffffff
     producetype: 2
     produceid: 0
@@ -218,8 +218,8 @@ MonoBehaviour:
     description: "\u6865"
     currencytype: 00000000
     currencycount: 0a000000
-    rowcount: 8
-    colcount: 4
+    rowcount: 4
+    colcount: 8
     cd: ffffffff
     producetype: 2
     produceid: 0
@@ -231,8 +231,8 @@ MonoBehaviour:
     description: "\u6C11\u5C4502"
     currencytype: 00000000
     currencycount: c8000000
-    rowcount: 2
-    colcount: 4
+    rowcount: 4
+    colcount: 2
     cd: 080000000600000004000000
     producetype: 0
     produceid: 0
@@ -257,8 +257,8 @@ MonoBehaviour:
     description: "\u6C11\u5C4504"
     currencytype: 00000000
     currencycount: c8000000
-    rowcount: 2
-    colcount: 4
+    rowcount: 4
+    colcount: 2
     cd: 080000000600000004000000
     producetype: 0
     produceid: 0
@@ -270,8 +270,8 @@ MonoBehaviour:
     description: "\u6C11\u5C4505"
     currencytype: 00000000
     currencycount: 90010000
-    rowcount: 3
-    colcount: 4
+    rowcount: 4
+    colcount: 3
     cd: 090000000700000005000000
     producetype: 0
     produceid: 0

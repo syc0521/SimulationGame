@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59dae5aaabd646b7b71e06c9c6f41b21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 4
+  type: 1
   meshRoot: {fileID: 9216768553137849300}
 --- !u!114 &8021392280205170797
 MonoBehaviour:

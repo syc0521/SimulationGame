@@ -168,7 +168,7 @@ namespace Game.GamePlaySystem
             {
                 0 => float3.zero,
                 1 => new float3(0, 0, width),
-                2 => new float3(height, 0, width),
+                2 => new float3(width, 0, height),
                 3 => new float3(height, 0, 0),
                 _ => float3.zero
             };

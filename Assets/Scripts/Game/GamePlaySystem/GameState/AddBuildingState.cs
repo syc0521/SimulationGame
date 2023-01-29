@@ -78,7 +78,7 @@ namespace Game.GamePlaySystem.GameState
                 {
                     spawnPos = GetBlockPos(hit.Position, out _);
                     var data = ConfigTable.Instance.GetBuildingData(currentBuildingType);
-                    var offset = BuildingManager.Instance.GetRotationOffset(rotation, data.Colcount, data.Rowcount);
+                    var offset = BuildingManager.Instance.GetRotationOffset(rotation, data.Rowcount, data.Colcount);
                     currentBuilding.transform.position = spawnPos + (Vector3)offset;
                     //todo 增加建筑遮挡判定
                     EventCenter.DispatchEvent(new BuildUIEvent());
@@ -92,7 +92,7 @@ namespace Game.GamePlaySystem.GameState
         private void ConstructBuilding()
         {
             var data = ConfigTable.Instance.GetBuildingData(currentBuildingType);
-            var offset = BuildingManager.Instance.GetRotationOffset(rotation, data.Colcount, data.Rowcount);
+            var offset = BuildingManager.Instance.GetRotationOffset(rotation, data.Rowcount, data.Colcount);
 
             var pos = currentBuilding.transform.position - (Vector3)offset;
             BuildingManager.Instance.SetBuildingData(currentID, new BuildingData
@@ -106,13 +106,13 @@ namespace Game.GamePlaySystem.GameState
             var blockPos = GetBlockPos(pos, out var gridPos);
             var grid = BuildingManager.Instance.GetGrid();
             
-            for (int i = gridPos[0]; i < gridPos[0] + data.Rowcount; i++)
+            /*for (int i = gridPos[0]; i < gridPos[0] + data.Rowcount; i++)
             {
                 for (int j = gridPos[1]; j < gridPos[1] + data.Colcount; j++)
                 {
                     grid[i, j] = currentBuildingType;
                 }
-            }
+            }*/
 
             World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<AddBlockSystem>().Build(blockPos, currentBuildingType, currentID, rotation);
             EventCenter.RemoveListener<TouchEvent>(PlaceBuilding);
@@ -125,7 +125,7 @@ namespace Game.GamePlaySystem.GameState
             var objTransform = currentBuilding.transform;
             objTransform.Rotate(Vector3.up, 90);
             var data = ConfigTable.Instance.GetBuildingData(currentBuildingType);
-            var offset = BuildingManager.Instance.GetRotationOffset(rotation, data.Colcount, data.Rowcount);
+            var offset = BuildingManager.Instance.GetRotationOffset(rotation, data.Rowcount, data.Colcount);
             objTransform.position = spawnPos + (Vector3)offset;
         }
 

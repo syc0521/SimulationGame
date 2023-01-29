@@ -21,6 +21,7 @@ namespace Game.GamePlaySystem.GameState
         private Entity buildingEntity;
         private float3 originPos;
         private int currentRotation = 0;
+        private float3 spawnPos;
         
         public override void OnEnter(params object[] list)
         {
@@ -59,6 +60,18 @@ namespace Game.GamePlaySystem.GameState
             Object.Destroy(currentBuilding);
             currentBuilding = null;
         }
+        
+        public override void OnUpdate()
+        {
+            UpdateScreenPos();
+        }
+
+        private void UpdateScreenPos()
+        {
+            if (currentBuilding == null || Camera.main == null) return;
+            var screenPos = Camera.main.WorldToScreenPoint(spawnPos);
+            BuildingManager.Instance.ScreenPos = new Vector3(screenPos[0] - 100, screenPos[1] - 100, 0);
+        }
 
         /// <summary>
         /// 选中某个建筑物后的操作，需要给UI层发事件
@@ -69,21 +82,21 @@ namespace Game.GamePlaySystem.GameState
         {
             var entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
 
-            var aspect = entityManager.GetAspect<BuildingAspect>(entity);
+            var aspect = entityManager.GetAspect<BuildingAspect>(entity); // 获取ECS建筑信息
             _currentId = aspect.ID;
             _buildingData = BuildingManager.Instance.GetBuildingData(_currentId);
             currentBuildingType = aspect.BuildingType;
+            spawnPos = aspect.SpawnPos;
+            
             var transform = entityManager.GetAspect<TransformAspect>(entity);
             var buildingPos = transform.Position;
             originPos = buildingPos;
             
-            var buffer = entityManager.GetBuffer<Child>(entity);
-            var meshTrans = entityManager.GetAspect<TransformAspect>(buffer[0].Value);
-            var buildingRot = meshTrans.Rotation;
+            var buildingRot = transform.Rotation;
             currentRotation = _buildingData.rotation;
 
             currentBuilding = Object.Instantiate(ConfigTable.Instance.GetBuilding(currentBuildingType), buildingPos, Quaternion.identity);
-            currentBuilding.transform.GetChild(0).localRotation = buildingRot;
+            currentBuilding.transform.localRotation = buildingRot;
             MaterialUtil.SetTransparency(currentBuilding, true);
             transform.Position = new float3(10000, 10000, 10000);
             EventCenter.DispatchEvent(new BuildUIEvent());
@@ -102,7 +115,10 @@ namespace Game.GamePlaySystem.GameState
                 var entity = hit.Entity;
                 if (entityManager.HasComponent<BuildingPlane>(entity) && !Managers.Get<IInputManager>().IsPointerOverGameObject())
                 {
-                    currentBuilding.transform.position = GetBlockPos(hit.Position, out _);
+                    spawnPos = GetBlockPos(hit.Position, out _);
+                    var data = ConfigTable.Instance.GetBuildingData(currentBuildingType);
+                    var offset = BuildingManager.Instance.GetRotationOffset(currentRotation, data.Rowcount, data.Colcount);
+                    currentBuilding.transform.position = spawnPos + offset;
                     EventCenter.DispatchEvent(new BuildUIEvent());
                 }
             }
@@ -111,8 +127,11 @@ namespace Game.GamePlaySystem.GameState
         private void RotateBuilding(RotateEvent evt)
         {
             currentRotation = (currentRotation + 1) % 4;
-            var objTransform = currentBuilding.transform.GetChild(0);
+            var objTransform = currentBuilding.transform;
             objTransform.Rotate(Vector3.up, 90);
+            var data = ConfigTable.Instance.GetBuildingData(currentBuildingType);
+            var offset = BuildingManager.Instance.GetRotationOffset(currentRotation, data.Rowcount, data.Colcount);
+            objTransform.position = spawnPos + offset;
         }
     }
 }

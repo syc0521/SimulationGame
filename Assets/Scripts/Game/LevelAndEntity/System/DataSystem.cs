@@ -23,7 +23,8 @@ namespace Game.LevelAndEntity.System
         [BurstCompile]
         protected override void OnUpdate()
         {
-            var config = SystemAPI.GetSingleton<Config>();
+            if (!SystemAPI.TryGetSingleton(out Config config)) return;
+            
             _gameData.people = config.people;
             _gameData.money = config.money;
             if (config.dataChanged)

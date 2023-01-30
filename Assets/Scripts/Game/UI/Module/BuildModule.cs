@@ -1,5 +1,6 @@
 ﻿using Game.Core;
 using Game.Data.Event;
+using Game.UI.Decorator;
 using Game.UI.Panel;
 
 namespace Game.UI.Module
@@ -9,6 +10,7 @@ namespace Game.UI.Module
         public override void OnCreated()
         {
             EventCenter.AddListener<BuildUIEvent>(ShowConfirmUI);
+            EventCenter.AddListener<DestroyEvent>(ShowDestroyAlert);
         }
         
         public override void OnDestroyed()
@@ -22,6 +24,11 @@ namespace Game.UI.Module
             {
                 UIManager.Instance.OpenPanel<ConfirmPanel>();
             }
+        }
+
+        private void ShowDestroyAlert(DestroyEvent evt)
+        {
+            AlertDecorator.OpenAlertPanel("是否删除该建筑", evt.handler);
         }
         
     }

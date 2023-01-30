@@ -1,6 +1,7 @@
 ﻿using System.Numerics;
 using Game.Core;
 using Game.Data;
+using Game.Data.Event;
 using Game.GamePlaySystem.StateMachine;
 using Game.Input;
 using Game.LevelAndEntity.Aspects;
@@ -22,7 +23,7 @@ namespace Game.GamePlaySystem.GameState
             Managers.Get<ISaveDataManager>().SaveData();
             EventCenter.RemoveListener<TouchEvent>(DeleteBuilding);
         }
-        
+
         private void DeleteBuilding(TouchEvent evt)
         {
             var collisionWorld = BuildingManager.Instance.GetCollisionWorld();
@@ -33,9 +34,15 @@ namespace Game.GamePlaySystem.GameState
                 var entity = hit.Entity;
                 if (entityManager.HasComponent<Building>(entity))
                 {
-                    var buildingAspect = entityManager.GetAspect<BuildingAspect>(entity);
-                    BuildingManager.Instance.RemoveBuildingData(buildingAspect.ID);
-                    entityManager.AddComponent<RemoveBuilding>(entity);
+                    EventCenter.DispatchEvent(new DestroyEvent
+                    {
+                        handler = () =>
+                        {
+                            var buildingAspect = entityManager.GetAspect<BuildingAspect>(entity);
+                            BuildingManager.Instance.RemoveBuildingData(buildingAspect.ID);
+                            entityManager.AddComponent<RemoveBuilding>(entity);
+                        }
+                    });
                 }
             }
         }

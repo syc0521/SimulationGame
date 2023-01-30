@@ -55,11 +55,17 @@ namespace Game.Input
     {
         public float delta;
     }
+
+    public struct MouseRotateEvent : IEvent
+    {
+        public float2 pos;
+        public float time;
+    }
     
     public class InputManager : ManagerBase, IInputManager
     {
         private GameControl _gameControl;
-        private Coroutine _swipeCoroutine, _pinchCoroutine;
+        private Coroutine _swipeCoroutine, _pinchCoroutine, _mouseRotateCoroutine;
 
         private bool isSwiping = false;
         private float2 _startPos;
@@ -82,6 +88,9 @@ namespace Game.Input
             
             _gameControl.GamePlay.PrimaryLong.performed += LongPress;
             _gameControl.GamePlay.WheelScroll.performed += WheelScroll;
+
+            _gameControl.GamePlay.RightClick.started += MouseRotateStart;
+            _gameControl.GamePlay.RightClick.canceled += MouseRotateEnd;
         }
 
         public override void OnDestroyed()
@@ -95,6 +104,10 @@ namespace Game.Input
 
             _gameControl.GamePlay.PrimaryLong.performed -= LongPress;
             _gameControl.GamePlay.WheelScroll.performed -= WheelScroll;
+            
+            _gameControl.GamePlay.RightClick.started -= MouseRotateStart;
+            _gameControl.GamePlay.RightClick.canceled -= MouseRotateEnd;
+
             _gameControl.Disable();
         }
 
@@ -123,7 +136,7 @@ namespace Game.Input
         private IEnumerator TouchDetection()
         {
             yield return new WaitForSeconds(2 / 90.0f);
-            if (!isSwiping)
+            if (!isSwiping && !IsPointerOverGameObject())
             {
                 EventCenter.DispatchEvent(new TouchEvent
                 {
@@ -134,10 +147,13 @@ namespace Game.Input
         
         private void LongPress(InputAction.CallbackContext ctx)
         {
-            EventCenter.DispatchEvent(new LongPressEvent
+            if (!IsPointerOverGameObject())
             {
-                pos = _gameControl.GamePlay.PrimaryPosition.ReadValue<Vector2>()
-            });
+                EventCenter.DispatchEvent(new LongPressEvent
+                {
+                    pos = _gameControl.GamePlay.PrimaryPosition.ReadValue<Vector2>()
+                });
+            }
         }
 
         private void SwipeStart(InputAction.CallbackContext ctx)
@@ -168,7 +184,7 @@ namespace Game.Input
 
         private IEnumerator SwipeDetection(InputAction.CallbackContext ctx)
         {
-            yield return new WaitForSeconds(1 / 90.0f);
+            yield return new WaitForSeconds(2 / 90.0f);
             float2 endPos = _gameControl.GamePlay.PrimaryPosition.ReadValue<Vector2>();
             isSwiping = math.distance(_startPos, endPos) > 2.0f;
             
@@ -183,6 +199,48 @@ namespace Game.Input
                         time = (float)ctx.startTime
                     });
                 }
+                yield return null;
+            }
+        }
+        
+        private void MouseRotateStart(InputAction.CallbackContext ctx)
+        {
+            _startPos = _gameControl.GamePlay.PrimaryPosition.ReadValue<Vector2>();
+            _mouseRotateCoroutine = MonoApp.Instance.StartCoroutine(MouseRotateDetection(ctx));
+        }
+        
+        private void MouseRotateEnd(InputAction.CallbackContext ctx)
+        {
+            isSwiping = false;
+
+            if (_mouseRotateCoroutine != null)
+            {
+                MonoApp.Instance.StopCoroutine(_mouseRotateCoroutine);
+            }
+        }
+        
+        private IEnumerator MouseRotateDetection(InputAction.CallbackContext ctx)
+        {
+            yield return new WaitForSeconds(2 / 90.0f);
+            float2 endPos = _gameControl.GamePlay.PrimaryPosition.ReadValue<Vector2>();
+            isSwiping = math.distance(_startPos, endPos) > 2.0f;
+            
+            while (true)
+            {
+                if (UnityEngine.Input.touchCount > 1) break;
+                endPos = _gameControl.GamePlay.PrimaryPosition.ReadValue<Vector2>();
+                var distance = endPos - _startPos;
+                
+                if (!IsPointerOverGameObject())
+                {
+                    EventCenter.DispatchEvent(new MouseRotateEvent
+                    {
+                        pos = distance,
+                        time = (float)ctx.startTime
+                    });
+                }
+
+                _startPos = _gameControl.GamePlay.PrimaryPosition.ReadValue<Vector2>();
                 yield return null;
             }
         }

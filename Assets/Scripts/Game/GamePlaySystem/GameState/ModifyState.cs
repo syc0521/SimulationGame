@@ -16,7 +16,7 @@ namespace Game.GamePlaySystem.GameState
     public class ModifyState : AddBuildingState
     {
         private uint _currentId;
-        private BuildingData _buildingData;
+        private BuildingData _buildingUserData;
         private int currentBuildingType;
         private Entity buildingEntity;
         private float3 originPos;
@@ -38,13 +38,18 @@ namespace Game.GamePlaySystem.GameState
             EventCenter.RemoveListener<RotateEvent>(RotateBuilding);
 
             var transform = World.DefaultGameObjectInjectionWorld.EntityManager.GetAspect<TransformAspect>(buildingEntity);
+            int2 gridPos;
+            var grid = BuildingManager.Instance.GetGrid();
+            var data = ConfigTable.Instance.GetBuildingData(currentBuildingType);
+            
             if ((bool)list[0])
             {
                 transform.Position = currentBuilding.transform.position;
-                _buildingData.position = transform.Position.xz;
-                _buildingData.rotation = currentRotation;
-                BuildingManager.Instance.SetBuildingData(_currentId, _buildingData);
-                
+                _buildingUserData.position = transform.Position.xz;
+                _buildingUserData.rotation = currentRotation;
+                BuildingManager.Instance.SetBuildingData(_currentId, _buildingUserData);
+                GetBlockPos(currentBuilding.transform.position, out gridPos);
+
                 var entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
                 var entity = entityManager.GetAspect<BuildingAspect>(buildingEntity).self;
                 var buffer = entityManager.GetBuffer<Child>(entity);
@@ -55,6 +60,17 @@ namespace Game.GamePlaySystem.GameState
             else
             {
                 transform.Position = originPos;
+                GetBlockPos(originPos, out gridPos);
+            }
+            
+            var row = currentRotation % 2 == 0 ? data.Rowcount : data.Colcount;
+            var col = currentRotation % 2 == 0 ? data.Colcount : data.Rowcount;
+            for (int i = gridPos[0]; i < gridPos[0] + row; i++)
+            {
+                for (int j = gridPos[1]; j < gridPos[1] + col; j++)
+                {
+                    grid[i, j] = currentBuildingType;
+                }
             }
 
             Object.Destroy(currentBuilding);
@@ -84,16 +100,31 @@ namespace Game.GamePlaySystem.GameState
 
             var aspect = entityManager.GetAspect<BuildingAspect>(entity); // 获取ECS建筑信息
             _currentId = aspect.ID;
-            _buildingData = BuildingManager.Instance.GetBuildingData(_currentId);
+            _buildingUserData = BuildingManager.Instance.GetBuildingData(_currentId);
             currentBuildingType = aspect.BuildingType;
             spawnPos = aspect.SpawnPos;
+            
+            //grid原地设为-1
+            var grid = BuildingManager.Instance.GetGrid();
+            var data = ConfigTable.Instance.GetBuildingData(currentBuildingType);
+
+            GetBlockPos(currentBuilding.transform.position, out var gridPos);
+            var row = currentRotation % 2 == 0 ? data.Rowcount : data.Colcount;
+            var col = currentRotation % 2 == 0 ? data.Colcount : data.Rowcount;
+            for (int i = gridPos[0]; i < gridPos[0] + row; i++)
+            {
+                for (int j = gridPos[1]; j < gridPos[1] + col; j++)
+                {
+                    grid[i, j] = -1;
+                }
+            }
             
             var transform = entityManager.GetAspect<TransformAspect>(entity);
             var buildingPos = transform.Position;
             originPos = buildingPos;
             
             var buildingRot = transform.Rotation;
-            currentRotation = _buildingData.rotation;
+            currentRotation = _buildingUserData.rotation;
 
             currentBuilding = Object.Instantiate(ConfigTable.Instance.GetBuilding(currentBuildingType), buildingPos, Quaternion.identity);
             currentBuilding.transform.localRotation = buildingRot;

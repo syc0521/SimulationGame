@@ -15,10 +15,11 @@ namespace Game.UI
 
     public enum UILayerType
     {
-        Normal = 0,
+        Status = 0,
         Scene = 1,
         Pop = 2,
-        Top = 3,
+        Full = 3,
+        Top = 4,
     }
     
     public class UIManager : ManagerBase, IUIManager

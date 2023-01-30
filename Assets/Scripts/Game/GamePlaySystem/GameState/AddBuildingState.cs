@@ -94,7 +94,8 @@ namespace Game.GamePlaySystem.GameState
             var data = ConfigTable.Instance.GetBuildingData(currentBuildingType);
             var offset = BuildingManager.Instance.GetRotationOffset(rotation, data.Rowcount, data.Colcount);
 
-            var pos = currentBuilding.transform.position - (Vector3)offset;
+            var buildingPos = currentBuilding.transform.position;
+            var pos = buildingPos - (Vector3)offset;
             BuildingManager.Instance.SetBuildingData(currentID, new BuildingData
             {
                 level = 1,
@@ -103,16 +104,19 @@ namespace Game.GamePlaySystem.GameState
                 type = currentBuildingType
             });
             
-            var blockPos = GetBlockPos(pos, out var gridPos);
+            var blockPos = GetBlockPos(pos, out _);
             var grid = BuildingManager.Instance.GetGrid();
-            
-            /*for (int i = gridPos[0]; i < gridPos[0] + data.Rowcount; i++)
+
+            GetBlockPos(buildingPos, out var gridPos);
+            var row = rotation % 2 == 0 ? data.Rowcount : data.Colcount;
+            var col = rotation % 2 == 0 ? data.Colcount : data.Rowcount;
+            for (int i = gridPos[0]; i < gridPos[0] + row; i++)
             {
-                for (int j = gridPos[1]; j < gridPos[1] + data.Colcount; j++)
+                for (int j = gridPos[1]; j < gridPos[1] + col; j++)
                 {
                     grid[i, j] = currentBuildingType;
                 }
-            }*/
+            }
 
             World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<AddBlockSystem>().Build(blockPos, currentBuildingType, currentID, rotation);
             EventCenter.RemoveListener<TouchEvent>(PlaceBuilding);

@@ -173,5 +173,11 @@ namespace Game.GamePlaySystem
                 _ => float3.zero
             };
         }
+
+        public bool CanConstruct()
+        {
+            // todo 判断是否可建造
+            return true;
+        }
     }
 }

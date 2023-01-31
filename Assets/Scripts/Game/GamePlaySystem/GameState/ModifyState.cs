@@ -1,8 +1,7 @@
-﻿using System.Runtime.CompilerServices;
-using Game.Core;
+﻿using Game.Core;
 using Game.Data;
 using Game.Data.Event;
-using Game.GamePlaySystem.StateMachine;
+using Game.GamePlaySystem.BurstUtil;
 using Game.Input;
 using Game.LevelAndEntity.Aspects;
 using Game.LevelAndEntity.Component;
@@ -38,40 +37,23 @@ namespace Game.GamePlaySystem.GameState
             EventCenter.RemoveListener<RotateEvent>(RotateBuilding);
 
             var transform = World.DefaultGameObjectInjectionWorld.EntityManager.GetAspect<TransformAspect>(buildingEntity);
-            int2 gridPos;
-            var grid = BuildingManager.Instance.GetGrid();
-            var data = ConfigTable.Instance.GetBuildingData(currentBuildingType);
-            
             if ((bool)list[0])
             {
                 transform.Position = currentBuilding.transform.position;
                 _buildingUserData.position = transform.Position.xz;
                 _buildingUserData.rotation = currentRotation;
                 BuildingManager.Instance.SetBuildingData(_currentId, _buildingUserData);
-                GetBlockPos(currentBuilding.transform.position, out gridPos);
-
-                var entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
-                var entity = entityManager.GetAspect<BuildingAspect>(buildingEntity).self;
-                var buffer = entityManager.GetBuffer<Child>(entity);
-                var meshTrans = entityManager.GetAspect<TransformAspect>(buffer[0].Value);
-                meshTrans.LocalRotation = quaternion.identity;
-                meshTrans.LocalRotation = quaternion.RotateY(math.radians(90 * currentRotation));
+                
+                transform.LocalRotation = quaternion.identity;
+                transform.LocalRotation = quaternion.RotateY(math.radians(90 * currentRotation));
             }
             else
             {
                 transform.Position = originPos;
-                GetBlockPos(originPos, out gridPos);
             }
-            
-            var row = currentRotation % 2 == 0 ? data.Rowcount : data.Colcount;
-            var col = currentRotation % 2 == 0 ? data.Colcount : data.Rowcount;
-            for (int i = gridPos[0]; i < gridPos[0] + row; i++)
-            {
-                for (int j = gridPos[1]; j < gridPos[1] + col; j++)
-                {
-                    grid[i, j] = currentBuildingType;
-                }
-            }
+
+            float3 pos = (bool)list[0] ? currentBuilding.transform.position : originPos;
+            BuildingManager.Instance.SetGridData(pos, currentRotation, currentBuildingType, currentBuildingType);
 
             Object.Destroy(currentBuilding);
             currentBuilding = null;
@@ -104,23 +86,10 @@ namespace Game.GamePlaySystem.GameState
             currentBuildingType = aspect.BuildingType;
             spawnPos = aspect.SpawnPos;
             
-            //grid原地设为-1
-            var grid = BuildingManager.Instance.GetGrid();
-            var data = ConfigTable.Instance.GetBuildingData(currentBuildingType);
-
-            GetBlockPos(currentBuilding.transform.position, out var gridPos);
-            var row = currentRotation % 2 == 0 ? data.Rowcount : data.Colcount;
-            var col = currentRotation % 2 == 0 ? data.Colcount : data.Rowcount;
-            for (int i = gridPos[0]; i < gridPos[0] + row; i++)
-            {
-                for (int j = gridPos[1]; j < gridPos[1] + col; j++)
-                {
-                    grid[i, j] = -1;
-                }
-            }
-            
             var transform = entityManager.GetAspect<TransformAspect>(entity);
             var buildingPos = transform.Position;
+            BuildingManager.Instance.SetGridData(buildingPos, currentRotation, currentBuildingType);
+
             originPos = buildingPos;
             
             var buildingRot = transform.Rotation;
@@ -146,7 +115,7 @@ namespace Game.GamePlaySystem.GameState
                 var entity = hit.Entity;
                 if (entityManager.HasComponent<BuildingPlane>(entity) && !Managers.Get<IInputManager>().IsPointerOverGameObject())
                 {
-                    spawnPos = GetBlockPos(hit.Position, out _);
+                    spawnPos = BuildingUtils.GetBlockPos(hit.Position);
                     var data = ConfigTable.Instance.GetBuildingData(currentBuildingType);
                     var offset = BuildingManager.Instance.GetRotationOffset(currentRotation, data.Rowcount, data.Colcount);
                     currentBuilding.transform.position = spawnPos + offset;

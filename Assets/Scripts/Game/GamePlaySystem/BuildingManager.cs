@@ -2,6 +2,7 @@
 using Game.Core;
 using Game.Data;
 using Game.Data.Event;
+using Game.GamePlaySystem.BurstUtil;
 using Game.GamePlaySystem.GameState;
 using Game.GamePlaySystem.StateMachine;
 using Game.Input;
@@ -12,13 +13,14 @@ using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Physics;
 using UnityEngine;
+using Grid = Game.Data.Grid;
 
 namespace Game.GamePlaySystem
 {
     public class BuildingManager : GamePlaySystemBase<BuildingManager>
     {
         private Dictionary<uint, BuildingData> _buildingDatas;
-        private Grid<int> grid;
+        private Grid grid;
         private StateMachine.StateMachine buildStateMachine;
         private uint id;
         public int col, row;
@@ -127,8 +129,6 @@ namespace Game.GamePlaySystem
             return collisionWorld;
         }
 
-        public Grid<int> GetGrid() => grid;
-
         private bool DetectBuilding(float2 pos, out Entity entity)
         {
             entity = default;
@@ -174,10 +174,19 @@ namespace Game.GamePlaySystem
             };
         }
 
+        public void SetGridData(float3 pos, int rotation, int type, int value = -1)
+        {
+            var data = ConfigTable.Instance.GetBuildingData(type);
+            var actualRow = rotation % 2 == 0 ? data.Rowcount : data.Colcount;
+            var actualCol = rotation % 2 == 0 ? data.Colcount : data.Rowcount;
+            BuildingUtils.SetGridData(ref grid, pos, actualRow, actualCol, value);
+        }
+
         public bool CanConstruct()
         {
             // todo 判断是否可建造
             return true;
         }
+
     }
 }

@@ -2,11 +2,13 @@
 using Game.Core;
 using Game.Data;
 using Game.Data.Event;
+using Game.GamePlaySystem.BurstUtil;
 using Game.GamePlaySystem.StateMachine;
 using Game.GamePlaySystem.Task;
 using Game.Input;
 using Game.LevelAndEntity.Component;
 using Game.LevelAndEntity.System;
+using Unity.Burst;
 using Unity.Entities;
 using Unity.Mathematics;
 using UnityEngine;
@@ -27,7 +29,7 @@ namespace Game.GamePlaySystem.GameState
             var ray = Camera.main.ScreenPointToRay(new Vector3(Screen.safeArea.width / 2, Screen.safeArea.height / 2, 0));
             var point = ray.origin - ray.direction * (ray.origin.y / ray.direction.y);
 
-            spawnPos = GetBlockPos(point, out _);
+            spawnPos = BuildingUtils.GetBlockPos(point);
             currentBuilding = Object.Instantiate(ConfigTable.Instance.GetBuilding(currentBuildingType), spawnPos, Quaternion.identity);
             MaterialUtil.SetTransparency(currentBuilding, true);
             EventCenter.DispatchEvent(new BuildUIEvent());
@@ -76,7 +78,7 @@ namespace Game.GamePlaySystem.GameState
                 var entity = hit.Entity;
                 if (entityManager.HasComponent<BuildingPlane>(entity) && !Managers.Get<IInputManager>().IsPointerOverGameObject())
                 {
-                    spawnPos = GetBlockPos(hit.Position, out _);
+                    spawnPos = BuildingUtils.GetBlockPos(hit.Position);
                     var data = ConfigTable.Instance.GetBuildingData(currentBuildingType);
                     var offset = BuildingManager.Instance.GetRotationOffset(rotation, data.Rowcount, data.Colcount);
                     currentBuilding.transform.position = spawnPos + (Vector3)offset;
@@ -104,19 +106,8 @@ namespace Game.GamePlaySystem.GameState
                 type = currentBuildingType
             });
             
-            var blockPos = GetBlockPos(pos, out _);
-            var grid = BuildingManager.Instance.GetGrid();
-
-            GetBlockPos(buildingPos, out var gridPos);
-            var row = rotation % 2 == 0 ? data.Rowcount : data.Colcount;
-            var col = rotation % 2 == 0 ? data.Colcount : data.Rowcount;
-            for (int i = gridPos[0]; i < gridPos[0] + row; i++)
-            {
-                for (int j = gridPos[1]; j < gridPos[1] + col; j++)
-                {
-                    grid[i, j] = currentBuildingType;
-                }
-            }
+            var blockPos = BuildingUtils.GetBlockPos(pos);
+            BuildingManager.Instance.SetGridData(buildingPos, rotation, currentBuildingType, currentBuildingType);
 
             World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<AddBlockSystem>().Build(blockPos, currentBuildingType, currentID, rotation);
             EventCenter.RemoveListener<TouchEvent>(PlaceBuilding);
@@ -133,12 +124,5 @@ namespace Game.GamePlaySystem.GameState
             objTransform.position = spawnPos + (Vector3)offset;
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        protected float3 GetBlockPos(float3 pos, out int2 gridPos)
-        {
-            var xzpos = math.floor(pos.xz);
-            gridPos = math.int2(xzpos);
-            return new float3(xzpos[0], pos.y, xzpos[1]);
-        }
     }
 }

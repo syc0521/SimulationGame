@@ -1,5 +1,4 @@
-﻿using System.Numerics;
-using Game.Core;
+﻿using Game.Core;
 using Game.Data;
 using Game.Data.Event;
 using Game.GamePlaySystem.StateMachine;
@@ -8,6 +7,7 @@ using Game.LevelAndEntity.Aspects;
 using Game.LevelAndEntity.Component;
 using Unity.Entities;
 using Unity.Mathematics;
+using Unity.Transforms;
 
 namespace Game.GamePlaySystem.GameState
 {
@@ -41,6 +41,10 @@ namespace Game.GamePlaySystem.GameState
                             var buildingAspect = entityManager.GetAspect<BuildingAspect>(entity);
                             BuildingManager.Instance.RemoveBuildingData(buildingAspect.ID);
                             entityManager.AddComponent<RemoveBuilding>(entity);
+
+                            var transform = entityManager.GetAspect<TransformAspect>(entity);
+                            var buildingUserData = BuildingManager.Instance.GetBuildingData(buildingAspect.ID);
+                            BuildingManager.Instance.SetGridData(transform.Position, buildingUserData.rotation, buildingUserData.type);
                         }
                     });
                 }

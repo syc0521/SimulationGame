@@ -1,5 +1,6 @@
 using System;
 using Game.UI.Component;
+using Game.UI.Widget;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -12,6 +13,7 @@ namespace Game.UI.Panel
         public Button build_btn, destroy_btn;
         public TextMeshProUGUI people_txt, money_txt;
         public ListComponent task_list;
+        public OperateBuildingWidget operate_widget;
 
         private void Awake()
         {

@@ -1,17 +1,12 @@
-﻿using System;
-using Game.Core;
-using Game.Data.Event;
-using Game.GamePlaySystem;
-using UnityEngine;
+﻿using Game.GamePlaySystem;
 using UnityEngine.UI;
 
-namespace Game.UI.Panel
+namespace Game.UI.Widget
 {
-    public class ConfirmPanel : UIPanel
+    public class OperateBuildingWidget : WidgetBase
     {
         public Button confirm, cancel, rotate;
-
-        public override void OnCreated()
+        public override void OnShown()
         {
             confirm.onClick.AddListener(OnConfirmClicked);
             cancel.onClick.AddListener(OnCancelClicked);
@@ -33,18 +28,23 @@ namespace Game.UI.Panel
         private void OnConfirmClicked()
         {
             BuildingManager.Instance.ConstructBuilding();
-            UIManager.Instance.DestroyPanel(this);
+            gameObject.SetActive(false);
         }
 
         private void OnCancelClicked()
         {
             BuildingManager.Instance.DeleteTempBuilding();
-            UIManager.Instance.DestroyPanel(this);
+            gameObject.SetActive(false);
         }
 
         private void OnRotateClicked()
         {
             BuildingManager.Instance.RotateBuilding();
+        }
+
+        public void ShowConfirmButton(bool value)
+        {
+            confirm.gameObject.SetActive(value);
         }
     }
 }

@@ -10,22 +10,12 @@ namespace Game.UI.Module
     {
         public override void OnCreated()
         {
-            EventCenter.AddListener<BuildUIEvent>(ShowConfirmUI);
             EventCenter.AddListener<DestroyEvent>(ShowDestroyAlert);
         }
         
         public override void OnDestroyed()
         {
-            EventCenter.RemoveListener<BuildUIEvent>(ShowConfirmUI);
-        }
-
-        private void ShowConfirmUI(BuildUIEvent obj)
-        {
-            if (!UIManager.Instance.HasPanel<ConfirmPanel>())
-            {
-                UIManager.Instance.OpenPanel<ConfirmPanel>();
-                Debug.Log(obj.canConstruct);
-            }
+            EventCenter.RemoveListener<DestroyEvent>(ShowDestroyAlert);
         }
 
         private void ShowDestroyAlert(DestroyEvent evt)

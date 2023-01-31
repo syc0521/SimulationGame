@@ -32,14 +32,17 @@ namespace Game.UI.Panel
 
             EventCenter.AddListener<DataChangedEvent>(RefreshUI);
             EventCenter.AddListener<RefreshUITaskEvent>(RefreshTask);
+            EventCenter.AddListener<BuildUIEvent>(ShowConfirmUI);
         }
 
         public override void OnDestroyed()
         {
-            nodes.build_btn.onClick.AddListener(OpenBuildPanel);
-            
+            nodes.build_btn.onClick.RemoveListener(OpenBuildPanel);
+            nodes.destroy_btn.onClick.RemoveListener(DestroyHandler);
+
             EventCenter.RemoveListener<DataChangedEvent>(RefreshUI);
             EventCenter.RemoveListener<RefreshUITaskEvent>(RefreshTask);
+            EventCenter.RemoveListener<BuildUIEvent>(ShowConfirmUI);
         }
 
         private void RefreshTask(RefreshUITaskEvent evt)
@@ -71,6 +74,16 @@ namespace Game.UI.Panel
         {
             UIManager.Instance.OpenPanel<DestroyBuildingPanel>();
             transform.gameObject.SetActive(false);
+        }
+        
+        private void ShowConfirmUI(BuildUIEvent obj)
+        {
+            if (!nodes.operate_widget.gameObject.activeInHierarchy)
+            {
+                nodes.operate_widget.gameObject.SetActive(true);
+            }
+            
+            nodes.operate_widget.ShowConfirmButton(obj.canConstruct);
         }
 
     }

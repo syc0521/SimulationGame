@@ -30,6 +30,8 @@ namespace Game.LevelAndEntity.System
             var ecb = beginSimECBSystem.CreateCommandBuffer();
             var query = GetEntityQuery(typeof(Config));
             var config = query.ToEntityArray(Allocator.Temp);
+            if (config.Length <= 0) return;
+
             var configEntity = config[0];
             if (configEntity == Entity.Null) return;
 

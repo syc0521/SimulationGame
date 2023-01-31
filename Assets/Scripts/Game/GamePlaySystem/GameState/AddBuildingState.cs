@@ -32,7 +32,10 @@ namespace Game.GamePlaySystem.GameState
             spawnPos = BuildingUtils.GetBlockPos(point);
             currentBuilding = Object.Instantiate(ConfigTable.Instance.GetBuilding(currentBuildingType), spawnPos, Quaternion.identity);
             MaterialUtil.SetTransparency(currentBuilding, true);
-            EventCenter.DispatchEvent(new BuildUIEvent());
+            EventCenter.DispatchEvent(new BuildUIEvent
+            {
+                canConstruct = BuildingManager.Instance.CanConstruct(spawnPos, rotation, currentBuildingType),
+            });
 
             EventCenter.AddListener<TouchEvent>(PlaceBuilding);
             EventCenter.AddListener<RotateEvent>(RotateBuilding);

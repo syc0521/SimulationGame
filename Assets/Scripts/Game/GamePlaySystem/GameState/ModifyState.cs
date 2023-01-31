@@ -107,7 +107,10 @@ namespace Game.GamePlaySystem.GameState
             currentBuilding.transform.localRotation = buildingRot;
             MaterialUtil.SetTransparency(currentBuilding, true);
             transform.Position = new float3(10000, 10000, 10000);
-            EventCenter.DispatchEvent(new BuildUIEvent());
+            EventCenter.DispatchEvent(new BuildUIEvent
+            {
+                canConstruct = BuildingManager.Instance.CanConstruct(spawnPos, currentRotation, currentBuildingType),
+            });
         }
         
         private void PlaceBuilding(TouchEvent evt)
@@ -127,7 +130,10 @@ namespace Game.GamePlaySystem.GameState
                     var data = ConfigTable.Instance.GetBuildingData(currentBuildingType);
                     var offset = BuildingManager.Instance.GetRotationOffset(currentRotation, data.Rowcount, data.Colcount);
                     currentBuilding.transform.position = spawnPos + offset;
-                    EventCenter.DispatchEvent(new BuildUIEvent());
+                    EventCenter.DispatchEvent(new BuildUIEvent
+                    {
+                        canConstruct = BuildingManager.Instance.CanConstruct(spawnPos, currentRotation, currentBuildingType),
+                    });
                 }
             }
         }

@@ -5,6 +5,7 @@ using Game.LevelAndEntity.Aspects;
 using Game.LevelAndEntity.Component;
 using Unity.Burst;
 using Unity.Entities;
+using UnityEngine;
 
 namespace Game.LevelAndEntity.System
 {
@@ -12,24 +13,37 @@ namespace Game.LevelAndEntity.System
     {
         private EntityManager entityManager;
         private GameData _gameData;
-
-        protected override void OnStartRunning()
-        {
-            int money = Managers.Get<ISaveDataManager>().GetMoney();
-            var config = SystemAPI.GetSingleton<Config>();
-            config.money = money;
-        }
+        private bool dataLoaded = false;
 
         [BurstCompile]
         protected override void OnUpdate()
         {
             if (!SystemAPI.TryGetSingleton(out Config config)) return;
+
+            if (!dataLoaded)
+            {
+                LoadData();
+                dataLoaded = true;
+            }
             
-            _gameData.people = config.people;
-            _gameData.money = config.money;
             if (config.dataChanged)
             {
+                _gameData = new GameData
+                {
+                    people = config.people,
+                    money = config.money,
+                };
                 EventCenter.DispatchEvent(new DataChangedEvent { gameData = _gameData });
+            }
+        }
+
+        private void LoadData()
+        {
+            int money = Managers.Get<ISaveDataManager>().GetMoney();
+            Debug.Log($"LoadData {money}");
+            foreach (var data in SystemAPI.Query<DataAspect>())
+            {
+                data.config.ValueRW.money = money;
             }
         }
 

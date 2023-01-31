@@ -3,6 +3,7 @@ using Game.Data;
 using Game.Data.Event;
 using Game.LevelAndEntity.System;
 using Unity.Entities;
+using UnityEngine;
 
 namespace Game.GamePlaySystem
 {
@@ -21,6 +22,7 @@ namespace Game.GamePlaySystem
 
         private void ProcessData(DataChangedEvent evt)
         {
+            Debug.Log(evt.gameData.money);
             Managers.Get<ISaveDataManager>().SetMoney(evt.gameData.money);
             Managers.Get<ISaveDataManager>().SaveData();
         }

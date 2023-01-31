@@ -60,7 +60,9 @@ namespace Game.GamePlaySystem
                 }
 
                 var system = World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<AddBlockSystem>();
+                var pos = new float3(data.position[0], 0f, data.position[1]);
                 system.Build(new float3(data.position[0], 0f, data.position[1]), data.type, key, data.rotation);
+                SetGridData(pos, data.rotation, data.type, data.type);
             }
         }
 
@@ -182,10 +184,12 @@ namespace Game.GamePlaySystem
             BuildingUtils.SetGridData(ref grid, pos, actualRow, actualCol, value);
         }
 
-        public bool CanConstruct()
+        public bool CanConstruct(float3 pos, int rotation, int type)
         {
-            // todo 判断是否可建造
-            return true;
+            var data = ConfigTable.Instance.GetBuildingData(type);
+            var actualRow = rotation % 2 == 0 ? data.Rowcount : data.Colcount;
+            var actualCol = rotation % 2 == 0 ? data.Colcount : data.Rowcount;
+            return !BuildingUtils.HasBuilding(ref grid, pos, actualRow, actualCol);
         }
 
     }

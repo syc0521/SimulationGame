@@ -2,6 +2,7 @@
 using Game.Data;
 using Game.Data.Event;
 using Game.GamePlaySystem.BurstUtil;
+using Game.GamePlaySystem.StateMachine;
 using Game.Input;
 using Game.LevelAndEntity.Aspects;
 using Game.LevelAndEntity.Component;
@@ -12,10 +13,11 @@ using UnityEngine;
 
 namespace Game.GamePlaySystem.GameState
 {
-    public class ModifyState : AddBuildingState
+    public class ModifyState : StateBase
     {
         private uint _currentId;
         private BuildingData _buildingUserData;
+        private GameObject currentBuilding;
         private int currentBuildingType;
         private Entity buildingEntity;
         private float3 originPos;
@@ -36,24 +38,30 @@ namespace Game.GamePlaySystem.GameState
             EventCenter.RemoveListener<TouchEvent>(PlaceBuilding);
             EventCenter.RemoveListener<RotateEvent>(RotateBuilding);
 
-            var transform = World.DefaultGameObjectInjectionWorld.EntityManager.GetAspect<TransformAspect>(buildingEntity);
+            var entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
+            var aspect = entityManager.GetAspect<BuildingAspect>(buildingEntity);
+            
+            var data = ConfigTable.Instance.GetBuildingData(currentBuildingType);
+            var offset = BuildingManager.Instance.GetRotationOffset(currentRotation, data.Rowcount, data.Colcount);
+            
             if ((bool)list[0])
             {
-                transform.Position = currentBuilding.transform.position;
-                _buildingUserData.position = transform.Position.xz;
+                aspect.Position = currentBuilding.transform.position;
+                _buildingUserData.position = (aspect.Position - offset).xz;
                 _buildingUserData.rotation = currentRotation;
+                aspect.SpawnPos = aspect.Position - offset;
                 BuildingManager.Instance.SetBuildingData(_currentId, _buildingUserData);
                 
-                transform.LocalRotation = quaternion.identity;
-                transform.LocalRotation = quaternion.RotateY(math.radians(90 * currentRotation));
+                aspect.LocalRotation = quaternion.identity;
+                aspect.LocalRotation = quaternion.RotateY(math.radians(90 * currentRotation));
             }
             else
             {
-                transform.Position = originPos;
+                aspect.Position = originPos;
             }
 
-            float3 pos = (bool)list[0] ? currentBuilding.transform.position : originPos;
-            BuildingManager.Instance.SetGridData(pos, currentRotation, currentBuildingType, currentBuildingType);
+            // todo ecs层spawnPos更新
+            BuildingManager.Instance.SetGridData(aspect.SpawnPos, currentRotation, currentBuildingType, currentBuildingType);
 
             Object.Destroy(currentBuilding);
             currentBuilding = null;
@@ -88,7 +96,7 @@ namespace Game.GamePlaySystem.GameState
             
             var transform = entityManager.GetAspect<TransformAspect>(entity);
             var buildingPos = transform.Position;
-            BuildingManager.Instance.SetGridData(buildingPos, currentRotation, currentBuildingType);
+            BuildingManager.Instance.SetGridData(spawnPos, currentRotation, currentBuildingType);
 
             originPos = buildingPos;
             

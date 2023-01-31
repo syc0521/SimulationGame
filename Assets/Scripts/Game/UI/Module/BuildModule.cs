@@ -2,6 +2,7 @@
 using Game.Data.Event;
 using Game.UI.Decorator;
 using Game.UI.Panel;
+using UnityEngine;
 
 namespace Game.UI.Module
 {
@@ -23,6 +24,7 @@ namespace Game.UI.Module
             if (!UIManager.Instance.HasPanel<ConfirmPanel>())
             {
                 UIManager.Instance.OpenPanel<ConfirmPanel>();
+                Debug.Log(obj.canConstruct);
             }
         }
 

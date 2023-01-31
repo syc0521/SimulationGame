@@ -18,7 +18,7 @@ namespace Game.GamePlaySystem.GameState
     public class AddBuildingState : StateBase
     {
         private int currentBuildingType;
-        protected GameObject currentBuilding;
+        private GameObject currentBuilding;
         private int rotation = 0;
         private uint currentID = 0;
         private Vector3 spawnPos;
@@ -81,9 +81,12 @@ namespace Game.GamePlaySystem.GameState
                     spawnPos = BuildingUtils.GetBlockPos(hit.Position);
                     var data = ConfigTable.Instance.GetBuildingData(currentBuildingType);
                     var offset = BuildingManager.Instance.GetRotationOffset(rotation, data.Rowcount, data.Colcount);
-                    currentBuilding.transform.position = spawnPos + (Vector3)offset;
-                    //todo 增加建筑遮挡判定
-                    EventCenter.DispatchEvent(new BuildUIEvent());
+                    var buildingPos = spawnPos + (Vector3)offset;
+                    currentBuilding.transform.position = buildingPos;
+                    EventCenter.DispatchEvent(new BuildUIEvent
+                    {
+                        canConstruct = BuildingManager.Instance.CanConstruct(spawnPos, rotation, currentBuildingType),
+                    });
                 }
             }
         }

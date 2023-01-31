@@ -28,8 +28,8 @@ namespace Game.Data
 
         public int this[int x, int y]
         {
-            get => arr[x * Col + y];
-            set => arr[x * Col + y] = value;
+            get => arr[x * Row + y];
+            set => arr[x * Row + y] = value;
         }
         
         [BurstCompile]

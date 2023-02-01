@@ -26,6 +26,7 @@ namespace Game.GamePlaySystem.GameState
         {
             currentID = BuildingManager.Instance.GetID();
             currentBuildingType = (int)list[0];
+            rotation = 0;
             var ray = Camera.main.ScreenPointToRay(new Vector3(Screen.safeArea.width / 2, Screen.safeArea.height / 2, 0));
             var point = ray.origin - ray.direction * (ray.origin.y / ray.direction.y);
 
@@ -128,6 +129,10 @@ namespace Game.GamePlaySystem.GameState
             var data = ConfigTable.Instance.GetBuildingData(currentBuildingType);
             var offset = BuildingManager.Instance.GetRotationOffset(rotation, data.Rowcount, data.Colcount);
             objTransform.position = spawnPos + (Vector3)offset;
+            EventCenter.DispatchEvent(new BuildUIEvent
+            {
+                canConstruct = BuildingManager.Instance.CanConstruct(spawnPos, rotation, currentBuildingType),
+            });
         }
 
     }

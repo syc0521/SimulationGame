@@ -1,6 +1,9 @@
-﻿using Game.Data;
+﻿using System.Runtime.CompilerServices;
 using Unity.Burst;
+using Unity.Collections;
 using Unity.Mathematics;
+using UnityEngine;
+using Grid = Game.Data.Grid;
 
 namespace Game.GamePlaySystem.BurstUtil
 {
@@ -45,7 +48,7 @@ namespace Game.GamePlaySystem.BurstUtil
             }
         }
 
-        //[BurstCompile]
+        [BurstCompile]
         public static bool HasBuilding(ref Grid grid, in float3 pos, int row, int col)
         {
             GetGridPos_Internal(pos, out var gridPos);
@@ -60,6 +63,50 @@ namespace Game.GamePlaySystem.BurstUtil
                 }
             }
             return false;
+        }
+        
+        //以下为Vector3.Angle用math库替换的版本，用于BurstCompile
+        
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [BurstCompile]
+        public static float Angle(in float3 from, in float3 to)
+        {
+            var num = (float) math.sqrt(math.lengthsq(from) * (double) math.lengthsq(to));
+            return num < 1.0000000036274937E-15 ? 0.0f : (float) math.acos((double) math.clamp(math.dot(from, to) / num, -1f, 1f)) * 57.29578f;
+        }
+        
+        [BurstCompile]
+        public static float SignedAngle(in float3 from, in float3 to, in float3 axis)
+        {
+            float num1 = Angle(from, to);
+            float num2 = (float) ((double) from.y * (double) to.z - (double) from.z * (double) to.y);
+            float num3 = (float) ((double) from.z * (double) to.x - (double) from.x * (double) to.z);
+            float num4 = (float) ((double) from.x * (double) to.y - (double) from.y * (double) to.x);
+            float num5 = math.sign((float) ((double) axis.x * (double) num2 + (double) axis.y * (double) num3 + (double) axis.z * (double) num4));
+            return num1 * num5;
+        }
+
+        public static void BurstTest_UnBurst(ref int[,] testArr, int size)
+        {
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = 0; j < size; j++)
+                {
+                    testArr[j, i] = (int)(Mathf.Sin(i * size + j) * 10);
+                }
+            }
+        }
+        
+        [BurstCompile]
+        public static void BurstTest_Burst(ref NativeArray<int> testArr, int size)
+        {
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = 0; j < size; j++)
+                {
+                    testArr[j* size + i] = (int)(math.sin(i * size + j) * 10);
+                }
+            }
         }
 
     }

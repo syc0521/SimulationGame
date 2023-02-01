@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using Game.Core;
+using Game.GamePlaySystem.BurstUtil;
 using Game.Input;
 using Unity.Mathematics;
 using UnityEngine;
@@ -13,8 +15,8 @@ namespace Game.GamePlaySystem
 
         private float2 _startPosition;
         private float _preDistance;
-        
-        
+
+        private float2 _preDir;
         
         public override void OnStart()
         {
@@ -52,10 +54,13 @@ namespace Game.GamePlaySystem
         /// </summary>
         private void ChangeCameraPosition(SwipeChangedEvent evt)
         {
+            // todo 摄像机相对运动待完善
             var deltaPos = -math.normalize(evt.pos - _startPosition) * (Time.deltaTime * cameraSpeed);
             if (math.length(deltaPos) > float.Epsilon)
             {
-                mainCam.transform.position += new Vector3(deltaPos[0], 0, deltaPos[1] * 0.75f);
+                var camTransform = mainCam.transform;
+                var forward = camTransform.forward;
+                camTransform.position += new Vector3(deltaPos[0] * -forward.y, 0, deltaPos[1] * 0.75f * forward.z);
             }
 
             _startPosition = evt.pos;
@@ -64,6 +69,7 @@ namespace Game.GamePlaySystem
         private void OnPinchStarted(PinchStartEvent evt)
         {
             _preDistance = math.distance(evt.primaryPos, evt.secondaryPos);
+            _preDir = evt.secondaryPos - evt.primaryPos;
         }
 
         /// <summary>
@@ -72,13 +78,21 @@ namespace Game.GamePlaySystem
         private void ChangeCameraSize(PinchChangedEvent evt)
         {
             var distance = math.distance(evt.primaryPos, evt.secondaryPos);
+            var currentDir = evt.secondaryPos - evt.primaryPos;
+            var deltaAngle = BuildingUtils.SignedAngle(new float3(_preDir, 0), new float3(currentDir, 0), Vector3.forward);
+            
+            var camTransform = mainCam.transform;
+            var angle = camTransform.eulerAngles;
+            camTransform.rotation = Quaternion.Euler(angle.x, angle.y + deltaAngle / 2, 0);
+            _preDir = currentDir;
+
             if (math.abs(distance - _preDistance) >= float.Epsilon)
             {
-                mainCam.transform.position += new Vector3(0, (distance - _preDistance) * Time.deltaTime * -0.5f, 0);
-                mainCam.transform.Rotate(Vector3.forward, (distance - _preDistance) / 10, Space.World);
-
+                camTransform.position += new Vector3(0, (distance - _preDistance) * Time.deltaTime * -0.5f, 0);
+                camTransform.rotation *= Quaternion.Euler((distance - _preDistance) * 0.02f, 0, 0);
                 _preDistance = distance;
             }
+            
         }
         
         private void WheelChangeCameraSize(WheelScrollEvent evt)
@@ -105,5 +119,6 @@ namespace Game.GamePlaySystem
             var angle = camTransform.eulerAngles;
             camTransform.rotation = Quaternion.Euler(angle.x, angle.y + evt.pos.x / 2, 0);
         }
+
     }
 }

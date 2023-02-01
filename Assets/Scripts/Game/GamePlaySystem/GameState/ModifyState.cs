@@ -146,6 +146,10 @@ namespace Game.GamePlaySystem.GameState
             var data = ConfigTable.Instance.GetBuildingData(currentBuildingType);
             var offset = BuildingManager.Instance.GetRotationOffset(currentRotation, data.Rowcount, data.Colcount);
             objTransform.position = spawnPos + offset;
+            EventCenter.DispatchEvent(new BuildUIEvent
+            {
+                canConstruct = BuildingManager.Instance.CanConstruct(spawnPos, currentRotation, currentBuildingType),
+            });
         }
     }
 }

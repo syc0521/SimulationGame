@@ -39,12 +39,10 @@ namespace Game.GamePlaySystem.GameState
                         handler = () =>
                         {
                             var buildingAspect = entityManager.GetAspect<BuildingAspect>(entity);
+                            var buildingUserData = BuildingManager.Instance.GetBuildingData(buildingAspect.ID);
+                            BuildingManager.Instance.SetGridData(buildingAspect.Position, buildingUserData.rotation, buildingUserData.type);
                             BuildingManager.Instance.RemoveBuildingData(buildingAspect.ID);
                             entityManager.AddComponent<RemoveBuilding>(entity);
-
-                            var transform = entityManager.GetAspect<TransformAspect>(entity);
-                            var buildingUserData = BuildingManager.Instance.GetBuildingData(buildingAspect.ID);
-                            BuildingManager.Instance.SetGridData(transform.Position, buildingUserData.rotation, buildingUserData.type);
                         }
                     });
                 }

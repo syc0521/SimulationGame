@@ -2,30 +2,35 @@
 using System.IO;
 using Game.Core;
 using Game.Data.Event;
+using UnityEngine;
 
 namespace Game.Data
 {
     public class SaveDataManager : ManagerBase, ISaveDataManager
     {
         private PlayerData _playerData;
-        private const string Path = "D://1.txt";
 
         public override void OnStart()
         {
             LoadData();
         }
 
+        private static string GetPath()
+        {
+            return $"{Application.persistentDataPath}/save.data";
+        }
+
         public void SaveData()
         {
             var bytes = MessagePack.MessagePackSerializer.Serialize(_playerData);
-            File.WriteAllBytes(Path, bytes);
+            File.WriteAllBytes(GetPath(), bytes);
         }
 
         private void LoadData()
         {
             try
             {
-                var bytes = File.ReadAllBytes(Path);
+                var bytes = File.ReadAllBytes(GetPath());
                 _playerData = MessagePack.MessagePackSerializer.Deserialize<PlayerData>(bytes);
             }
             catch (FileNotFoundException e)

@@ -65,32 +65,5 @@ namespace Game.LevelAndEntity.System
             beginSimECBSystem.AddJobHandleForProducer(Dependency);
         }
 
-        public void Build(float3 position, int buildingType, uint id, int rotation = 0)
-        {
-            var newBlock = entityManager.CreateEntity();
-            var data = ConfigTable.Instance.GetBuildingData(buildingType);
-            var offset = GetRotationOffset(rotation, data.Rowcount, data.Colcount);
-            entityManager.AddComponentData(newBlock, new AddBuilding
-            {
-                id = id,
-                spawnPos = position,
-                spawnType = buildingType,
-                rotation = rotation,
-                offset = offset,
-            });
-        }
-        
-        public float3 GetRotationOffset(int dir, int width, int height)
-        {
-            return dir switch
-            {
-                0 => float3.zero,
-                1 => new float3(0, 0, width),
-                2 => new float3(width, 0, height),
-                3 => new float3(height, 0, 0),
-                _ => float3.zero
-            };
-        }
-
     }
 }

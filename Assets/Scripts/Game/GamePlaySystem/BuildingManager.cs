@@ -58,10 +58,9 @@ namespace Game.GamePlaySystem
                 {
                     id = key;
                 }
-
-                var system = World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<AddBlockSystem>();
+                
                 var pos = new float3(data.position[0], 0f, data.position[1]);
-                system.Build(new float3(data.position[0], 0f, data.position[1]), data.type, key, data.rotation);
+                Build(new float3(data.position[0], 0f, data.position[1]), data.type, key, data.rotation);
                 SetGridData(pos, data.rotation, data.type, data.type);
             }
         }
@@ -190,6 +189,22 @@ namespace Game.GamePlaySystem
             var actualRow = rotation % 2 == 0 ? data.Rowcount : data.Colcount;
             var actualCol = rotation % 2 == 0 ? data.Colcount : data.Rowcount;
             return !BuildingUtils.HasBuilding(ref grid, pos, actualRow, actualCol);
+        }
+        
+        public void Build(float3 position, int buildingType, uint id, int rotation = 0)
+        {
+            var entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
+            var newBlock = entityManager.CreateEntity();
+            var data = ConfigTable.Instance.GetBuildingData(buildingType);
+            var offset = GetRotationOffset(rotation, data.Rowcount, data.Colcount);
+            entityManager.AddComponentData(newBlock, new AddBuilding
+            {
+                id = id,
+                spawnPos = position,
+                spawnType = buildingType,
+                rotation = rotation,
+                offset = offset,
+            });
         }
 
     }

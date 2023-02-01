@@ -116,7 +116,7 @@ namespace Game.GamePlaySystem.GameState
             var blockPos = BuildingUtils.GetBlockPos(pos);
             BuildingManager.Instance.SetGridData(buildingPos, rotation, currentBuildingType, currentBuildingType);
 
-            World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<AddBlockSystem>().Build(blockPos, currentBuildingType, currentID, rotation);
+            BuildingManager.Instance.Build(blockPos, currentBuildingType, currentID, rotation);
             EventCenter.RemoveListener<TouchEvent>(PlaceBuilding);
             TaskManager.Instance.TriggerTask(TaskType.AddBuilding, currentBuildingType);
         }

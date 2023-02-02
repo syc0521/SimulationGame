@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Game.Core;
 using Game.Data;
+using Game.LevelAndEntity.ResLoader;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
@@ -15,11 +16,10 @@ namespace Game.UI
 
     public enum UILayerType
     {
-        Status = 0,
-        Scene = 1,
-        Pop = 2,
-        Full = 3,
-        Top = 4,
+        Scene = 0,
+        Pop = 1,
+        Full = 2,
+        Top = 3,
     }
     
     public class UIManager : ManagerBase, IUIManager
@@ -75,20 +75,24 @@ namespace Game.UI
                 return panel as T;
             }
 
-            return CreatePanel<T>(option);
+            CreatePanel<T>(option);
+            return default;
         }
 
-        public T CreatePanel<T>(BasePanelOption option = null) where T : UIPanel
+        private void CreatePanel<T>(BasePanelOption option = null) where T : UIPanel
         {
-            Enum.TryParse(typeof(T).Name, out PanelEnum panelEnum);
-            var panel = ConfigTable.Instance.GetPanel(panelEnum);
-            var obj = Object.Instantiate(panel, ConfigTable.Instance.GetUIRoot(), false);
-            var comp = obj.GetComponent<UIPanel>();
-            comp.opt = option;
-            panels[typeof(T)] = obj;
-            comp.OnCreated();
-            comp.OnShown();
-            return comp as T;
+            UIPanel comp;
+            Managers.Get<IResLoader>().LoadRes(ResEnum.Panel, typeof(T).Name, handle =>
+            {
+                GameObject panel = handle.Result;
+                var data = ConfigTable.Instance.GetUIPanelData(typeof(T).Name);
+                var obj = Object.Instantiate(panel, ConfigTable.Instance.GetUIRoot(data.Layer), false);
+                comp = obj.GetComponent<UIPanel>();
+                comp.opt = option;
+                panels[typeof(T)] = obj;
+                comp.OnCreated();
+                comp.OnShown();
+            });
         }
 
         public bool HasPanel<T>() where T : UIPanel

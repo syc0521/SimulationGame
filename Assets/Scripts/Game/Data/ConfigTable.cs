@@ -9,16 +9,14 @@ namespace Game.Data
 {
     public class ConfigTable : Singleton<ConfigTable>
     {
-        [SerializeField] private PanelDef panelDef;
         [SerializeField] private Transform uiRoot;
         [SerializeField] private BuildingCollection buildings;
         [SerializeField] private Reward reward;
         [SerializeField] private Task task;
         [SerializeField] private Building building;
+        [SerializeField] private UIPanelTable panelTable;
 
-        public GameObject GetPanel(PanelEnum type) => panelDef.panels[type];
-
-        public Transform GetUIRoot() => uiRoot;
+        public Transform GetUIRoot(int layerType) => uiRoot.GetChild(layerType);
 
         public GameObject GetBuilding(int id) => buildings.buildings[id];
 
@@ -31,6 +29,8 @@ namespace Game.Data
         public List<TableData.BuildingData> GetAllBuildingData() => building.dataList;
         
         public TableData.BuildingData GetBuildingData(int id) => building.dataList[id];
+
+        public UIPanelTableData GetUIPanelData(string panelName) => panelTable.dataList.Find(item => item.Name == panelName);
 
     }
 }

@@ -11,14 +11,13 @@ namespace Game.LevelAndEntity.ResLoader
 {
     public enum ResEnum
     {
-        building = 0,
-        sprite = 1,
+        Building = 0,
+        Sprite = 1,
+        Panel = 2,
     }
 
     public class ResLoader : ManagerBase, IResLoader
     {
-        private readonly string rootPath = "Assets/Res";
-
         public void LoadRes(ResEnum type, string path, Action<AsyncOperationHandle<GameObject>> callback)
         {
             try
@@ -52,10 +51,12 @@ namespace Game.LevelAndEntity.ResLoader
         {
             switch (type)
             {
-                case ResEnum.building:
-                    return $"{rootPath}/{type}/{path}/{path}.prefab";
-                case ResEnum.sprite:
-                    return $"{rootPath}/ui/dynamic/{path}";
+                case ResEnum.Building:
+                    return $"{path}/{path}.prefab";
+                case ResEnum.Sprite:
+                    return $"{path}.png";
+                case ResEnum.Panel:
+                    return $"panel/{path}.prefab";
                 default:
                     return string.Empty;
             }

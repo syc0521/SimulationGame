@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Dynamic Sprite
+  m_EditorClassIdentifier: 
+  m_GroupName: Dynamic Sprite
+  m_Data:
+    m_SerializedData: []
+  m_GUID: bb2b1a761562a4f4abd2e852a6bab27b
+  m_SerializeEntries:
+  - m_GUID: e4f8c12ea3d0969439a8d27fda227104
+    m_Address: task
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a7f0df0da6ed92b4aa0b06d619e30e85
+    m_Address: building
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 841f304448334914eb92c0ee5c3c7e3f
+    m_Address: atlas
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: ef7206bd29055104abb70d185833b540, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 8f17b3def6fe233489fa75f5237869e3, type: 2}
+    - {fileID: 11400000, guid: bc982249ff8792f4694f607ff61f180f, type: 2}

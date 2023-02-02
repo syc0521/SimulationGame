@@ -23,7 +23,7 @@ namespace Game.UI.Widget
             icon_img.SetIcon(new AtlasSpriteID
             {
                 atlas = AtlasEnum.Task,
-                resName = $"task_{taskListData.id}"
+                resName = $"icon_task_{taskListData.id}"
             });
 
             id = taskListData.id;

@@ -10,16 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Default Local Group
+  m_Name: UIPanel
   m_EditorClassIdentifier: 
-  m_GroupName: Default Local Group
+  m_GroupName: UIPanel
   m_Data:
     m_SerializedData: []
-  m_GUID: ce30264d13bfefc45a1f0efeeafd7313
-  m_SerializeEntries: []
+  m_GUID: cb5bf968641c1a24aadfaacbdae9e233
+  m_SerializeEntries:
+  - m_GUID: 35d823282f09f344998c1deb1f619e1b
+    m_Address: panel
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - panel
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ef7206bd29055104abb70d185833b540, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 89506717aa0091243b3bc8619a326fd8, type: 2}
-    - {fileID: 11400000, guid: 6d1de28ab108d614f8818000e620d672, type: 2}
+    - {fileID: 11400000, guid: 39aadec443095274688982a3c9df0e73, type: 2}
+    - {fileID: 11400000, guid: 39c7257842f60124d86a6b7a93d43c4a, type: 2}

@@ -21,7 +21,7 @@ public class BuildingCollectionCreator : MonoBehaviour
         foreach (var buildingData in data.dataList)
         {
             var buildingObj = (GameObject)AssetDatabase.LoadAssetAtPath(
-                GetAssetPath(ResEnum.building, buildingData.Resourcepath), typeof(GameObject));
+                GetAssetPath(ResEnum.Building, buildingData.Resourcepath), typeof(GameObject));
             buildingObj.GetComponent<BuildingAuthoring>().type = buildingData.Buildingid;
             buildingObjs.Add(buildingObj);
             EditorUtility.SetDirty(buildingObj);

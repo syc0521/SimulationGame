@@ -59,10 +59,15 @@ namespace Game.UI.Panel
             }
         }
 
-        public void RefreshUI(DataChangedEvent evt)
+        private void RefreshUI(DataChangedEvent evt)
         {
-            nodes.people_txt.text = evt.gameData.people.ToString();
-            nodes.money_txt.text = evt.gameData.money.ToString();
+            RefreshData(evt.gameData);
+        }
+
+        private void RefreshData(GameData data)
+        {
+            nodes.people_txt.text = data.people.ToString();
+            nodes.money_txt.text = data.money.ToString();
         }
 
         private void OpenBuildPanel()
@@ -73,7 +78,6 @@ namespace Game.UI.Panel
         private void DestroyHandler()
         {
             UIManager.Instance.OpenPanel<DestroyBuildingPanel>();
-            transform.gameObject.SetActive(false);
         }
         
         private void ShowConfirmUI(BuildUIEvent obj)

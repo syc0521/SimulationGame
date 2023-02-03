@@ -5,7 +5,6 @@ namespace Game.Input
     public interface IInputManager : IManager
     {
         bool IsPointerOverGameObject();
-        void EnableGesture();
-        void DisableGesture();
+        void SetGestureState(bool enabled);
     }
 }

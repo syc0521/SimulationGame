@@ -136,7 +136,7 @@ namespace Game.Input
         private IEnumerator TouchDetection()
         {
             yield return new WaitForSeconds(2 / 90.0f);
-            if (!isSwiping && !IsPointerOverGameObject())
+            if (!isSwiping && CanSendInteractEvent())
             {
                 EventCenter.DispatchEvent(new TouchEvent
                 {
@@ -147,7 +147,7 @@ namespace Game.Input
         
         private void LongPress(InputAction.CallbackContext ctx)
         {
-            if (!IsPointerOverGameObject())
+            if (CanSendInteractEvent())
             {
                 EventCenter.DispatchEvent(new LongPressEvent
                 {
@@ -159,23 +159,29 @@ namespace Game.Input
         private void SwipeStart(InputAction.CallbackContext ctx)
         {
             _startPos = _gameControl.GamePlay.PrimaryPosition.ReadValue<Vector2>();
-            EventCenter.DispatchEvent(new SwipeStartEvent
+            if (CanSendInteractEvent())
             {
-                pos = _gameControl.GamePlay.PrimaryPosition.ReadValue<Vector2>(),
-                time = (float)ctx.startTime
-            });
+                EventCenter.DispatchEvent(new SwipeStartEvent
+                {
+                    pos = _gameControl.GamePlay.PrimaryPosition.ReadValue<Vector2>(),
+                    time = (float)ctx.startTime
+                });
+            }
             _swipeCoroutine = MonoApp.Instance.StartCoroutine(SwipeDetection(ctx));
         }
         
         private void SwipeEnd(InputAction.CallbackContext ctx)
         {
             isSwiping = false;
-            EventCenter.DispatchEvent(new SwipeEndEvent
+            if (CanSendInteractEvent())
             {
-                pos = _gameControl.GamePlay.PrimaryPosition.ReadValue<Vector2>(),
-                time = (float)ctx.startTime
-            });
-            
+                EventCenter.DispatchEvent(new SwipeEndEvent
+                {
+                    pos = _gameControl.GamePlay.PrimaryPosition.ReadValue<Vector2>(),
+                    time = (float)ctx.startTime
+                });
+            }
+
             if (_swipeCoroutine != null)
             {
                 MonoApp.Instance.StopCoroutine(_swipeCoroutine);
@@ -191,7 +197,7 @@ namespace Game.Input
             while (true)
             {
                 if (UnityEngine.Input.touchCount > 1) break;
-                if (!IsPointerOverGameObject())
+                if (CanSendInteractEvent())
                 {
                     EventCenter.DispatchEvent(new SwipeChangedEvent
                     {
@@ -231,7 +237,7 @@ namespace Game.Input
                 endPos = _gameControl.GamePlay.PrimaryPosition.ReadValue<Vector2>();
                 var distance = endPos - _startPos;
                 
-                if (!IsPointerOverGameObject())
+                if (CanSendInteractEvent())
                 {
                     EventCenter.DispatchEvent(new MouseRotateEvent
                     {
@@ -247,21 +253,27 @@ namespace Game.Input
 
         private void PinchStart(InputAction.CallbackContext ctx)
         {
-            EventCenter.DispatchEvent(new PinchStartEvent
+            if (CanSendInteractEvent())
             {
-                primaryPos = _gameControl.GamePlay.PrimaryFingerPosition.ReadValue<Vector2>(),
-                secondaryPos = _gameControl.GamePlay.SecondaryFingerPosition.ReadValue<Vector2>(),
-            });
+                EventCenter.DispatchEvent(new PinchStartEvent
+                {
+                    primaryPos = _gameControl.GamePlay.PrimaryFingerPosition.ReadValue<Vector2>(),
+                    secondaryPos = _gameControl.GamePlay.SecondaryFingerPosition.ReadValue<Vector2>(),
+                });
+            }
             _pinchCoroutine = MonoApp.Instance.StartCoroutine(PinchDetection());
         }
         
         private void PinchEnd(InputAction.CallbackContext ctx)
         {
-            EventCenter.DispatchEvent(new PinchEndEvent
+            if (CanSendInteractEvent())
             {
-                primaryPos = _gameControl.GamePlay.PrimaryFingerPosition.ReadValue<Vector2>(),
-                secondaryPos = _gameControl.GamePlay.SecondaryFingerPosition.ReadValue<Vector2>(),
-            });
+                EventCenter.DispatchEvent(new PinchEndEvent
+                {
+                    primaryPos = _gameControl.GamePlay.PrimaryFingerPosition.ReadValue<Vector2>(),
+                    secondaryPos = _gameControl.GamePlay.SecondaryFingerPosition.ReadValue<Vector2>(),
+                });
+            }
             
             if (_pinchCoroutine != null)
             {
@@ -273,7 +285,7 @@ namespace Game.Input
         {
             while (true)
             {
-                if (UnityEngine.Input.touchCount == 2)
+                if (UnityEngine.Input.touchCount == 2 && CanSendInteractEvent())
                 {
                     EventCenter.DispatchEvent(new PinchChangedEvent
                     {
@@ -291,20 +303,21 @@ namespace Game.Input
         
         private void WheelScroll(InputAction.CallbackContext ctx)
         {
-            EventCenter.DispatchEvent(new WheelScrollEvent
+            if (_gestureEnable)
             {
-                delta = _gameControl.GamePlay.WheelScroll.ReadValue<Vector2>()[1]
-            });
+                EventCenter.DispatchEvent(new WheelScrollEvent
+                {
+                    delta = _gameControl.GamePlay.WheelScroll.ReadValue<Vector2>()[1]
+                });
+            }
         }
 
-        public void EnableGesture()
+        public void SetGestureState(bool enabled)
         {
-            _gestureEnable = true;
+            _gestureEnable = enabled;
         }
 
-        public void DisableGesture()
-        {
-            _gestureEnable = false;
-        }
+        private bool CanSendInteractEvent() => !IsPointerOverGameObject() && _gestureEnable;
+
     }
 }

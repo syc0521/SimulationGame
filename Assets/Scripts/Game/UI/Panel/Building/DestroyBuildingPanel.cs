@@ -22,7 +22,6 @@ namespace Game.UI.Panel.Building
         private void OnQuitButtonClicked()
         {
             BuildingManager.Instance.TransitToNormalState();
-            UIManager.Instance.OpenPanel<MainPanel>();
             CloseSelf();
         }
     }

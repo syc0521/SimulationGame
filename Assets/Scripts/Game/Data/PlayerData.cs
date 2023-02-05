@@ -15,6 +15,8 @@ namespace Game.Data
         public Dictionary<uint, BuildingData> buildings;
         [Key(2)] 
         public Dictionary<int, PlayerTaskData> tasks;
+        [Key(3)] 
+        public Dictionary<int, int> backpack;
     }
 
     [Serializable]

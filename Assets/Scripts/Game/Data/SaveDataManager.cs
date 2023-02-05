@@ -33,7 +33,7 @@ namespace Game.Data
                 var bytes = File.ReadAllBytes(GetPath());
                 _playerData = MessagePack.MessagePackSerializer.Deserialize<PlayerData>(bytes);
             }
-            catch (FileNotFoundException e)
+            catch (FileNotFoundException)
             {
                 _playerData = new()
                 {

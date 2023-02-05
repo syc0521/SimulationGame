@@ -3,32 +3,12 @@ using Game.Core;
 
 namespace Game.GamePlaySystem
 {
-    public abstract class GamePlaySystemBase<T> : Singleton<T>, ILifePhase where T : GamePlaySystemBase<T>
+    public abstract class GamePlaySystemBase<T> : IGamePlaySystem where T : GamePlaySystemBase<T>
     {
-        protected override void Awake()
-        {
-            base.Awake();
-            OnAwake();
-        }
-
-        private void Start()
-        {
-            OnStart();
-        }
-
-        private void Update()
-        {
-            OnUpdate();
-        }
-
-        private void OnDestroy()
-        {
-            OnDestroyed();
-        }
-
+        public static T Instance { get; private set; }
         public virtual void OnAwake()
         {
-            
+            Instance = this as T;
         }
 
         public virtual void OnStart()

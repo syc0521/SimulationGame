@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 using Game.Core;
+using Game.Data;
 using Game.GamePlaySystem.BurstUtil;
 using Game.Input;
 using Unity.Mathematics;
@@ -10,8 +11,7 @@ namespace Game.GamePlaySystem
 {
     public class CameraManager : GamePlaySystemBase<CameraManager>
     {
-        public Camera mainCam;
-        public float cameraSpeed = 7.5f;
+        public Camera mainCam => Camera.main;
 
         private float2 _startPosition;
         private float _preDistance;
@@ -55,7 +55,8 @@ namespace Game.GamePlaySystem
         private void ChangeCameraPosition(SwipeChangedEvent evt)
         {
             // todo 摄像机相对运动待完善
-            var deltaPos = -math.normalize(evt.pos - _startPosition) * (Time.deltaTime * cameraSpeed);
+            var speed = ConfigTable.Instance.GetGestureConfig().cameraSpeed;
+            var deltaPos = -math.normalize(evt.pos - _startPosition) * (Time.deltaTime * speed);//速度
             if (math.length(deltaPos) > float.Epsilon)
             {
                 var camTransform = mainCam.transform;

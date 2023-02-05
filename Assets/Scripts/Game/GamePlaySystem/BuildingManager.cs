@@ -23,11 +23,13 @@ namespace Game.GamePlaySystem
         private Grid grid;
         private StateMachine.StateMachine buildStateMachine;
         private uint id;
-        public int col, row;
+        private int col, row;
         public Vector3 ScreenPos { get; set; }
 
         public override void OnStart()
         {
+            col = ConfigTable.Instance.GetBuildConfig().col;
+            row = ConfigTable.Instance.GetBuildConfig().row;
             grid = new(col, row, -1);
             Managers.Get<ISaveDataManager>().GetBuildings(ref _buildingDatas);
             InitializeBuilding();

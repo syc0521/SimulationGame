@@ -3,6 +3,7 @@ using Game.Data;
 using Game.Data.Common;
 using Game.Data.Event;
 using Game.Data.Event.Backpack;
+using Game.GamePlaySystem.Backpack;
 using Game.GamePlaySystem.Currency;
 using Game.LevelAndEntity.System;
 using Unity.Entities;
@@ -27,7 +28,6 @@ namespace Game.GamePlaySystem
 
         private void ProcessData(DataChangedEvent evt)
         {
-            Debug.Log(evt.gameData.money);
             Managers.Get<ISaveDataManager>().SaveData();
         }
 
@@ -38,11 +38,10 @@ namespace Game.GamePlaySystem
                 case ProduceType.Currency: // 货币系统
                     CurrencyManager.Instance.SetCurrency((CurrencyType)evt.produceID, evt.count);
                     break;
-                case ProduceType.Item:
-                    // 背包系统
+                case ProduceType.Item: // 背包系统
+                    BackpackManager.Instance.AddBackpackCount(evt.produceID, evt.count);
                     break;
-                case ProduceType.Others:
-                    // 其他
+                case ProduceType.Others: // 其他
                     break;
             }
         }

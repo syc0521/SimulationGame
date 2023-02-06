@@ -3,6 +3,7 @@ using Game.Core;
 using Game.Data;
 using Game.Data.Common;
 using Game.Data.Event;
+using Game.Data.Event.Currency;
 using UnityEngine;
 
 namespace Game.GamePlaySystem.Currency
@@ -31,7 +32,7 @@ namespace Game.GamePlaySystem.Currency
             if (currency.ContainsKey((int)type))
             {
                 currency[(int)type] += count;
-                // todo 发一个事件 通知UI更新数据
+                EventCenter.DispatchEvent(new UpdateCurrencyEvent()); // 通知UI更新数据
             }
             
             Debug.LogError($"货币类型{type}不存在！");

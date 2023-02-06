@@ -2,9 +2,12 @@
 using System.Linq;
 using Game.Core;
 using Game.Data;
+using Game.Data.Common;
 using Game.Data.Event;
+using Game.Data.Event.Currency;
 using Game.Data.Event.Task;
 using Game.GamePlaySystem;
+using Game.GamePlaySystem.Currency;
 using Game.GamePlaySystem.Task;
 using Game.UI.Component;
 using Game.UI.Panel.Building;
@@ -33,6 +36,7 @@ namespace Game.UI.Panel
             EventCenter.AddListener<DataChangedEvent>(RefreshUI);
             EventCenter.AddListener<RefreshUITaskEvent>(RefreshTask);
             EventCenter.AddListener<BuildUIEvent>(ShowConfirmUI);
+            EventCenter.AddListener<UpdateCurrencyEvent>(RefreshCurrency);
         }
 
         public override void OnDestroyed()
@@ -43,6 +47,7 @@ namespace Game.UI.Panel
             EventCenter.RemoveListener<DataChangedEvent>(RefreshUI);
             EventCenter.RemoveListener<RefreshUITaskEvent>(RefreshTask);
             EventCenter.RemoveListener<BuildUIEvent>(ShowConfirmUI);
+            EventCenter.RemoveListener<UpdateCurrencyEvent>(RefreshCurrency);
         }
 
         private void RefreshTask(RefreshUITaskEvent evt)
@@ -67,7 +72,12 @@ namespace Game.UI.Panel
         private void RefreshData(GameData data)
         {
             nodes.people_txt.text = data.people.ToString();
-            nodes.money_txt.text = data.money.ToString();
+        }
+
+        private void RefreshCurrency(UpdateCurrencyEvent evt)
+        {
+            var coin = CurrencyManager.Instance.GetCurrency(CurrencyType.Coin);
+            nodes.money_txt.text = coin.ToString();
         }
 
         private void OpenBuildPanel()

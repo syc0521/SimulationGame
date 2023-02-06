@@ -16,7 +16,7 @@ namespace Game.LevelAndEntity.System
         public void OnCreate(ref SystemState state)
         {
             state.RequireForUpdate<Config>();
-            baseColorQuery = state.GetEntityQuery(ComponentType.ReadOnly<URPMaterialPropertyBaseColor>());
+            //baseColorQuery = state.GetEntityQuery(ComponentType.ReadOnly<URPMaterialPropertyBaseColor>());
         }
     
         [BurstCompile]

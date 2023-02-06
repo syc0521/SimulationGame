@@ -17,6 +17,7 @@ namespace Game.Data
         [SerializeField] private UIPanelTable panelTable;
         [SerializeField] private GestureConfig gestureConfig;
         [SerializeField] private BuildConfig buildConfig;
+        [SerializeField] private BagItem bagItem;
 
         public Transform GetUIRoot(int layerType) => uiRoot.GetChild(layerType);
 
@@ -37,5 +38,7 @@ namespace Game.Data
         public GestureConfig GetGestureConfig() => gestureConfig;
 
         public BuildConfig GetBuildConfig() => buildConfig;
+
+        public BagItemData GetBagItemData(int id) => bagItem.dataList.Find(item => item.ID == id);
     }
 }

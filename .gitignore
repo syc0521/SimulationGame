@@ -75,3 +75,13 @@ crashlytics-build.properties
 .idea/.idea.ECS/.idea/vcs.xml
 .idea/*.*
 .plastic/*.*
+.plastic/preview/version
+.plastic/plastic.workspace
+.plastic/plastic.wktree
+.plastic/plastic.selector
+.plastic/plastic.branchexplorer
+.plastic/plastic.branchexplorer
+.plastic/plastic.selector
+.plastic/plastic.wktree
+.plastic/plastic.workspace
+.plastic/preview/version

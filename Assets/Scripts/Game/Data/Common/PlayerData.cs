@@ -17,6 +17,10 @@ namespace Game.Data
         public Dictionary<int, PlayerTaskData> tasks;
         [Key(3)] 
         public Dictionary<int, int> backpack;
+        [Key(4)]
+        public Dictionary<int, int> currency;
+        [Key(5)]
+        public SettingData settingData;
     }
 
     [Serializable]
@@ -41,5 +45,12 @@ namespace Game.Data
         public TaskState state;
         [Key(1)]
         public int[] currentNum;
+    }
+
+    [Serializable]
+    [MessagePackObject]
+    public class SettingData
+    {
+        
     }
 }

@@ -15,7 +15,6 @@ namespace Game.LevelAndEntity.Authoring
         public override void Bake(CannonBallAuthoring authoring)
         {
             AddComponent<CannonBall>();
-            AddComponent<URPMaterialPropertyBaseColor>();
         }
     }
 }

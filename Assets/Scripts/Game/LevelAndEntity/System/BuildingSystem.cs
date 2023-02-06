@@ -1,4 +1,7 @@
-﻿using Game.Data;
+﻿using Game.Core;
+using Game.Data;
+using Game.Data.Common;
+using Game.Data.Event.Backpack;
 using Game.LevelAndEntity.Aspects;
 using Game.LevelAndEntity.Component;
 using Unity.Burst;
@@ -23,7 +26,6 @@ namespace Game.LevelAndEntity.System
             if (!SystemAPI.TryGetSingleton(out Config config)) return;
 
             int people = 0;
-            int money = config.money;
             bool dataChanged = false;
             foreach (var building in SystemAPI.Query<BuildingAspect>().WithAll<Building>())
             {
@@ -38,7 +40,12 @@ namespace Game.LevelAndEntity.System
                 if (building.CurrentTime > cd)
                 {
                     building.CurrentTime = 0;
-                    money += data.Produceamount[0]; // todo 以后不用钱，改成建筑材料
+                    EventCenter.DispatchEvent(new ProduceEvent
+                    {
+                        produceType = (ProduceType)data.Producetype,
+                        produceID = data.Produceid,
+                        count = data.Produceamount[0]
+                    });
                     dataChanged = true;
                 }
             }
@@ -50,17 +57,10 @@ namespace Game.LevelAndEntity.System
                     data.config.ValueRW.people = people;
                     dataChanged = true;
                 }
-                
-                // todo 换成背包系统
-                if (data.config.ValueRW.money != money)
-                {
-                    data.config.ValueRW.money = money;
-                    dataChanged = true;
-                }
-                
+
                 data.config.ValueRW.dataChanged = dataChanged;
             }
         }
-        
+
     }
 }

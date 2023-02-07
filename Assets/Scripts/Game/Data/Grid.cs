@@ -6,8 +6,7 @@ using Unity.Jobs;
 
 namespace Game.Data
 {
-    [BurstCompile]
-    public struct Grid
+    public struct Grid : IDisposable
     {
         public int Row { get; private set; }
         public int Col { get; private set; }
@@ -23,7 +22,7 @@ namespace Game.Data
 
         public Grid(int col, int row, int data) : this(col, row)
         {
-            Initialize(data);
+            DataUtils.InitializeArray(ref arr, data);
         }
 
         public int this[int x, int y]
@@ -31,25 +30,6 @@ namespace Game.Data
             get => arr[x * Row + y];
             set => arr[x * Row + y] = value;
         }
-        
-        [BurstCompile]
-        public void Initialize(int data)
-        {
-            for (int i = 0; i < Row * Col; i++)
-            {
-                arr[i] = data;
-            }
-            /*var memset = new MemsetNativeArray<T>
-            {
-                Source = arr,
-                Value = data
-            };
-            memset.Run(Row * Col);*/
-        }
-        
-        public void SetData(int data, int x, int y) => this[x, y] = data;
-
-        public int GetData(int x, int y) => this[x, y];
 
         public void Dispose() => arr.Dispose();
     }

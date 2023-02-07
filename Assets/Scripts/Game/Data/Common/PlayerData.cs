@@ -9,8 +9,6 @@ namespace Game.Data
     [MessagePackObject]
     public class PlayerData
     {
-        [Key(0)]
-        public int money;
         [Key(1)]
         public Dictionary<uint, BuildingData> buildings;
         [Key(2)] 

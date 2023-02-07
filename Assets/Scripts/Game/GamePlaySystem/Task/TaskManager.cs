@@ -23,6 +23,7 @@ namespace Game.GamePlaySystem.Task
         private Dictionary<int, PlayerTaskData> _playerTaskData;
         public override void OnAwake()
         {
+            base.OnAwake();
             EventCenter.AddListener<LoadDataEvent>(InitData);
             EventCenter.AddListener<InitializeSaveDataEvent>(InitializeTask);
         }

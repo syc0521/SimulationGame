@@ -61,10 +61,6 @@ namespace Game.Data
             taskData = _playerData.tasks;
         }
 
-        public int GetMoney() => _playerData.money;
-
-        public void SetMoney(int amount) => _playerData.money = amount;
-
         public void GetBackpack(ref Dictionary<int, int> backpack)
         {
             backpack = _playerData.backpack;
@@ -73,6 +69,18 @@ namespace Game.Data
         public void GetCurrency(ref Dictionary<int, int> currency)
         {
             currency = _playerData.currency;
+        }
+
+        public void ResetSaveData()
+        {
+            _playerData = new()
+            {
+                buildings = new(),
+                tasks = new(),
+                backpack = new(),
+                currency = new(){ {0,0},{1,0},{2,0} },
+            };
+            SaveData();
         }
     }
 }

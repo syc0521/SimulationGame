@@ -13,6 +13,7 @@ namespace Game.GamePlaySystem.Currency
         private Dictionary<int, int> currency;
         public override void OnAwake()
         {
+            base.OnAwake();
             EventCenter.AddListener<LoadDataEvent>(InitData);
         }
 
@@ -27,7 +28,7 @@ namespace Game.GamePlaySystem.Currency
             Managers.Get<ISaveDataManager>().GetCurrency(ref currency);
         }
 
-        public void SetCurrency(CurrencyType type, int count)
+        public void AddCurrency(CurrencyType type, int count)
         {
             if (currency.ContainsKey((int)type))
             {
@@ -36,6 +37,18 @@ namespace Game.GamePlaySystem.Currency
             }
             
             Debug.LogError($"货币类型{type}不存在！");
+        }
+
+        public bool ConsumeCurrency(CurrencyType type, int count)
+        {
+            if (currency.ContainsKey((int)type) && currency[(int)type] >= count)
+            {
+                currency[(int)type] -= count;
+                EventCenter.DispatchEvent(new UpdateCurrencyEvent()); // 通知UI更新数据
+                return true;
+            }
+
+            return false;
         }
 
         public int GetCurrency(CurrencyType type)

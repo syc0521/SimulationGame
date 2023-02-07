@@ -39,6 +39,12 @@ namespace Game.UI.Panel
             EventCenter.AddListener<UpdateCurrencyEvent>(RefreshCurrency);
         }
 
+        public override void OnShown()
+        {
+            base.OnShown();
+            RefreshCurrency(default);
+        }
+
         public override void OnDestroyed()
         {
             nodes.build_btn.onClick.RemoveListener(OpenBuildPanel);

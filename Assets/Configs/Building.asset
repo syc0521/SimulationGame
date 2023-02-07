@@ -52,7 +52,7 @@ MonoBehaviour:
     colcount: 1
     cd: 080000000600000004000000
     producetype: 1
-    produceid: 100
+    produceid: 10
     produceamount: 010000000200000003000000
   - buildingid: 3
     resourcepath: building_401
@@ -183,7 +183,7 @@ MonoBehaviour:
     colcount: 1
     cd: 080000000600000004000000
     producetype: 1
-    produceid: 100
+    produceid: 10
     produceamount: 010000000200000003000000
   - buildingid: 3
     resourcepath: building_401

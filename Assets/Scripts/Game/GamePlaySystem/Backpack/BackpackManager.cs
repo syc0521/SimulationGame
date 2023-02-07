@@ -11,6 +11,7 @@ namespace Game.GamePlaySystem.Backpack
         private Dictionary<int, int> backpack;
         public override void OnAwake()
         {
+            base.OnAwake();
             EventCenter.AddListener<LoadDataEvent>(InitData);
         }
 
@@ -32,6 +33,8 @@ namespace Game.GamePlaySystem.Backpack
                 backpack[id] = count;
             }
             backpack[id] += count;
+            
+            Debug.LogError($"{id}物品数量为{backpack[id]}");
         }
 
         public int GetBackpackCount(int id)
@@ -43,6 +46,17 @@ namespace Game.GamePlaySystem.Backpack
             
             Debug.LogError($"背包物品{id}不存在！");
             return 0;
+        }
+
+        public bool ConsumeBackpack(int id, int count)
+        {
+            if (backpack.ContainsKey(id) && backpack[id] > count)
+            {
+                backpack[id] -= count;
+                return true;
+            }
+
+            return false;
         }
 
         public Dictionary<int, int> GetBackpack() => backpack;

@@ -15,6 +15,7 @@ namespace Game.GamePlaySystem
     {
         public override void OnAwake()
         {
+            base.OnAwake();
             EventCenter.AddListener<DataChangedEvent>(ProcessData);
             EventCenter.AddListener<ProduceEvent>(Produce);
         }
@@ -36,7 +37,7 @@ namespace Game.GamePlaySystem
             switch (evt.produceType)
             {
                 case ProduceType.Currency: // 货币系统
-                    CurrencyManager.Instance.SetCurrency((CurrencyType)evt.produceID, evt.count);
+                    CurrencyManager.Instance.AddCurrency((CurrencyType)evt.produceID, evt.count);
                     break;
                 case ProduceType.Item: // 背包系统
                     BackpackManager.Instance.AddBackpackCount(evt.produceID, evt.count);
@@ -44,6 +45,8 @@ namespace Game.GamePlaySystem
                 case ProduceType.Others: // 其他
                     break;
             }
+            
+            Managers.Get<ISaveDataManager>().SaveData();
         }
     }
 }

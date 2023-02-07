@@ -25,6 +25,6 @@ namespace Game.LevelAndEntity.System
                 EventCenter.DispatchEvent(new DataChangedEvent { gameData = _gameData });
             }
         }
-        
+
     }
 }

@@ -52,7 +52,7 @@ namespace Game.LevelAndEntity.System
             
             foreach (var data in SystemAPI.Query<DataAspect>())
             {
-                if (data.config.ValueRW.people != people)
+                if (data.config.ValueRO.people != people)
                 {
                     data.config.ValueRW.people = people;
                     dataChanged = true;

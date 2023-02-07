@@ -2,6 +2,7 @@
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
+using NotImplementedException = System.NotImplementedException;
 
 namespace Game.LevelAndEntity.Aspects
 {
@@ -26,8 +27,8 @@ namespace Game.LevelAndEntity.Aspects
 
         public float3 Position
         {
-            get => transform.Position;
-            set => transform.Position = value;
+            get => transform.WorldPosition;
+            set => transform.WorldPosition = value;
         }
 
         public quaternion LocalRotation
@@ -41,6 +42,6 @@ namespace Game.LevelAndEntity.Aspects
             get => levelObject.ValueRO.spawnPos;
             set => levelObject.ValueRW.spawnPos = value;
         }
-
+        
     }
 }

@@ -87,26 +87,22 @@ namespace Game.GamePlaySystem.GameState
         private void SelectBuilding(Entity entity)
         {
             var entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
-
             var aspect = entityManager.GetAspect<BuildingAspect>(entity); // 获取ECS建筑信息
             _currentId = aspect.ID;
             _buildingUserData = BuildingManager.Instance.GetBuildingData(_currentId);
             currentBuildingType = aspect.BuildingType;
             spawnPos = aspect.SpawnPos;
             
-            var transform = entityManager.GetAspect<TransformAspect>(entity);
-            var buildingPos = transform.Position;
+            var buildingPos = aspect.Position;
             BuildingManager.Instance.SetGridData(spawnPos, currentRotation, currentBuildingType);
 
             originPos = buildingPos;
-            
-            var buildingRot = transform.Rotation;
             currentRotation = _buildingUserData.rotation;
 
             currentBuilding = Object.Instantiate(ConfigTable.Instance.GetBuilding(currentBuildingType), buildingPos, Quaternion.identity);
-            currentBuilding.transform.localRotation = buildingRot;
+            currentBuilding.transform.localRotation = aspect.LocalRotation;
             MaterialUtil.SetTransparency(currentBuilding, true);
-            transform.Position = new float3(10000, 10000, 10000);
+            aspect.Position = new float3(10000, 10000, 10000);
             EventCenter.DispatchEvent(new BuildUIEvent
             {
                 canConstruct = BuildingManager.Instance.CanConstruct(spawnPos, currentRotation, currentBuildingType),

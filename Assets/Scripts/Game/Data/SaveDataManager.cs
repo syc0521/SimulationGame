@@ -80,6 +80,7 @@ namespace Game.Data
                 backpack = new(),
                 currency = new(){ {0,0},{1,0},{2,0} },
             };
+            EventCenter.DispatchEvent(new InitializeSaveDataEvent());
             SaveData();
         }
     }

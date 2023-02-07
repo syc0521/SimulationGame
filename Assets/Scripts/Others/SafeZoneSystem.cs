@@ -45,7 +45,7 @@ namespace Game.LevelAndEntity.System
                 turretActiveFromEntity = turretActiveFromEntity,
                 squaredRadius = radius * radius
             };
-            safeZoneJob.ScheduleParallel();
+            //safeZoneJob.ScheduleParallel<SafeZoneJob>();
         }
     }
 

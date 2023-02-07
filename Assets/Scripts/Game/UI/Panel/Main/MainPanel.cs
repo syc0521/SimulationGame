@@ -32,16 +32,15 @@ namespace Game.UI.Panel
         {
             nodes.build_btn.onClick.AddListener(OpenBuildPanel);
             nodes.destroy_btn.onClick.AddListener(DestroyHandler);
-
-            EventCenter.AddListener<DataChangedEvent>(RefreshUI);
-            EventCenter.AddListener<RefreshUITaskEvent>(RefreshTask);
-            EventCenter.AddListener<BuildUIEvent>(ShowConfirmUI);
-            EventCenter.AddListener<UpdateCurrencyEvent>(RefreshCurrency);
         }
 
         public override void OnShown()
         {
             base.OnShown();
+            EventCenter.AddListener<DataChangedEvent>(RefreshUI);
+            EventCenter.AddListener<RefreshUITaskEvent>(RefreshTask);
+            EventCenter.AddListener<BuildUIEvent>(ShowConfirmUI);
+            EventCenter.AddListener<UpdateCurrencyEvent>(RefreshCurrency);
             RefreshCurrency(default);
         }
 

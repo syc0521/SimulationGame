@@ -31,7 +31,7 @@ namespace Game.LevelAndEntity.System
                 /*LocalToWorldTransformFromEntity = transformFromEntity,
             ECB = ecb*/
             };
-            turretShootJob.Schedule();
+            //turretShootJob.Schedule();
         }
     
         [WithAll(typeof(Shooting))]

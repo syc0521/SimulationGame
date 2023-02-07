@@ -40,17 +40,14 @@ namespace Game.LevelAndEntity.System
             Entities.WithAll<AddBuilding>().ForEach((Entity entity, ref AddBuilding addBuilding) =>
             {
                 var e = ecb.Instantiate(buffer[addBuilding.spawnType].prefab);
-                var position = UniformScaleTransform.FromPosition(addBuilding.spawnPos + addBuilding.offset);
-                
-                ecb.SetComponent(e, new Translation
+
+                ecb.SetComponent(e, new LocalTransform
                 {
-                    Value = position.Position
+                    Position = addBuilding.spawnPos + addBuilding.offset,
+                    Rotation = quaternion.RotateY(math.radians(90 * addBuilding.rotation)),
+                    Scale = 1
                 });
-                ecb.SetComponent(e, new Rotation
-                {
-                    Value = quaternion.RotateY(math.radians(90 * addBuilding.rotation))
-                });
-                
+
                 ecb.AddComponent(e, new LevelObject
                 {
                     id = addBuilding.id,

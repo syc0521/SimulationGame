@@ -9,7 +9,7 @@ namespace Game.GamePlaySystem.Setting
         public override void OnUpdate()
         {
             // 调试用
-            if (UnityEngine.Input.GetKey(KeyCode.F9))
+            if (UnityEngine.Input.GetKeyDown(KeyCode.F9))
             {
                 ResetSaveData();
             }

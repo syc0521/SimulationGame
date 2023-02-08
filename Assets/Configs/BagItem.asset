@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b86d5b22d58a60449bcd3989a451cedd, type: 3}
+  m_Name: BagItem
+  m_EditorClassIdentifier: 
+  SheetName: Assets/Configs/BagItem.xlsx
+  WorksheetName: BagItem
+  dataArray:
+  - id: 0
+    name: "\u6728\u5934"
+    type: 0
+    content: "\u57FA\u7840\u5EFA\u7B51\u6750\u6599"
+  - id: 1
+    name: "\u94C1"
+    type: 0
+    content: "\u8FDB\u9636\u5EFA\u7B51\u6750\u6599"
+  - id: 10
+    name: "\u7CAE\u98DF"
+    type: 1
+    content: "\u7CAE\u98DF"
+  dataList:
+  - id: 0
+    name: "\u6728\u5934"
+    type: 0
+    content: "\u57FA\u7840\u5EFA\u7B51\u6750\u6599"
+  - id: 1
+    name: "\u94C1"
+    type: 0
+    content: "\u8FDB\u9636\u5EFA\u7B51\u6750\u6599"
+  - id: 10
+    name: "\u7CAE\u98DF"
+    type: 1
+    content: "\u7CAE\u98DF"

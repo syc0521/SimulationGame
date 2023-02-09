@@ -10,7 +10,7 @@ namespace Game.UI.Panel
 {
     public class MainPanel_Nodes : MonoBehaviour
     {
-        public Button build_btn, destroy_btn;
+        public Button build_btn, destroy_btn, bag_btn;
         public TextMeshProUGUI people_txt, money_txt;
         public ListComponent task_list;
         public OperateBuildingWidget operate_widget;

@@ -30,6 +30,9 @@ MonoBehaviour:
   - panelid: 4
     name: AlertPanel
     layer: 3
+  - panelid: 5
+    name: BagPanel
+    layer: 1
   dataList:
   - panelid: 0
     name: MainPanel
@@ -46,3 +49,6 @@ MonoBehaviour:
   - panelid: 4
     name: AlertPanel
     layer: 3
+  - panelid: 5
+    name: BagPanel
+    layer: 1

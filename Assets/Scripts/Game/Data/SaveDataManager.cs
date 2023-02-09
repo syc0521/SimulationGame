@@ -35,14 +35,7 @@ namespace Game.Data
             }
             catch (FileNotFoundException)
             {
-                _playerData = new()
-                {
-                    buildings = new(),
-                    tasks = new(),
-                    backpack = new(),
-                    currency = new(){ {0,0},{1,0},{2,0} },
-                };
-                EventCenter.DispatchEvent(new InitializeSaveDataEvent());
+                InitializeSaveData();
             }
             finally
             {
@@ -73,15 +66,20 @@ namespace Game.Data
 
         public void ResetSaveData()
         {
+            InitializeSaveData();
+            SaveData();
+        }
+
+        private void InitializeSaveData()
+        {
             _playerData = new()
             {
                 buildings = new(),
                 tasks = new(),
-                backpack = new(),
+                backpack = new(){ {0,5},{10,5} },
                 currency = new(){ {0,0},{1,0},{2,0} },
             };
             EventCenter.DispatchEvent(new InitializeSaveDataEvent());
-            SaveData();
         }
     }
 }

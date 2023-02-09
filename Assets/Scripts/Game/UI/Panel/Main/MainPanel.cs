@@ -1,21 +1,14 @@
-﻿using System;
-using System.Linq;
-using Game.Core;
+﻿using Game.Core;
 using Game.Data;
 using Game.Data.Common;
 using Game.Data.Event;
 using Game.Data.Event.Currency;
 using Game.Data.Event.Task;
-using Game.GamePlaySystem;
 using Game.GamePlaySystem.Currency;
-using Game.GamePlaySystem.Task;
 using Game.UI.Component;
+using Game.UI.Panel.Bag;
 using Game.UI.Panel.Building;
-using Game.UI.Panel.Task;
 using Game.UI.UISystem;
-using TMPro;
-using UnityEngine;
-using UnityEngine.UI;
 
 namespace Game.UI.Panel
 {
@@ -31,6 +24,7 @@ namespace Game.UI.Panel
         public override void OnCreated()
         {
             nodes.build_btn.onClick.AddListener(OpenBuildPanel);
+            nodes.bag_btn.onClick.AddListener(OpenBagPanel);
             nodes.destroy_btn.onClick.AddListener(DestroyHandler);
         }
 
@@ -47,6 +41,7 @@ namespace Game.UI.Panel
         public override void OnDestroyed()
         {
             nodes.build_btn.onClick.RemoveListener(OpenBuildPanel);
+            nodes.bag_btn.onClick.RemoveListener(OpenBagPanel);
             nodes.destroy_btn.onClick.RemoveListener(DestroyHandler);
 
             EventCenter.RemoveListener<DataChangedEvent>(RefreshUI);
@@ -88,6 +83,11 @@ namespace Game.UI.Panel
         private void OpenBuildPanel()
         {
             UIManager.Instance.OpenPanel<BuildingPanel>();
+        }
+
+        private void OpenBagPanel()
+        {
+            UIManager.Instance.OpenPanel<BagPanel>();
         }
         
         private void DestroyHandler()

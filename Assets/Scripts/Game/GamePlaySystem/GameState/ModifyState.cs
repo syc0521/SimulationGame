@@ -6,6 +6,7 @@ using Game.GamePlaySystem.StateMachine;
 using Game.Input;
 using Game.LevelAndEntity.Aspects;
 using Game.LevelAndEntity.Component;
+using Game.LevelAndEntity.System;
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
@@ -27,6 +28,7 @@ namespace Game.GamePlaySystem.GameState
         public override void OnEnter(params object[] list)
         {
             buildingEntity = (Entity)list[0];
+            World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<AddBlockSystem>().SetGridVisible(true);
             SelectBuilding(buildingEntity);
 
             EventCenter.AddListener<TouchEvent>(PlaceBuilding);
@@ -35,6 +37,7 @@ namespace Game.GamePlaySystem.GameState
 
         public override void OnLeave(params object[] list)
         {
+            World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<AddBlockSystem>().SetGridVisible(false);
             EventCenter.RemoveListener<TouchEvent>(PlaceBuilding);
             EventCenter.RemoveListener<RotateEvent>(RotateBuilding);
 

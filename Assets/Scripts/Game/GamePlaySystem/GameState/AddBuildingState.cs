@@ -33,6 +33,7 @@ namespace Game.GamePlaySystem.GameState
             spawnPos = BuildingUtils.GetBlockPos(point);
             currentBuilding = Object.Instantiate(ConfigTable.Instance.GetBuilding(currentBuildingType), spawnPos, Quaternion.identity);
             MaterialUtil.SetTransparency(currentBuilding, true);
+            World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<AddBlockSystem>().SetGridVisible(true);
             EventCenter.DispatchEvent(new BuildUIEvent
             {
                 canConstruct = BuildingManager.Instance.CanConstruct(spawnPos, rotation, currentBuildingType),
@@ -56,6 +57,7 @@ namespace Game.GamePlaySystem.GameState
 
         public override void OnLeave(params object[] list)
         {
+            World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<AddBlockSystem>().SetGridVisible(false);
             EventCenter.RemoveListener<RotateEvent>(RotateBuilding);
             if ((bool)list[0]) //可以建造
             {

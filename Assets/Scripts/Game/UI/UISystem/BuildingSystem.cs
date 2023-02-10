@@ -33,8 +33,8 @@ namespace Game.UI.UISystem
                 {
                     name = item.Name,
                     description = item.Description,
-                    currencyType = Array.ConvertAll(item.Currencytype, input => (CurrencyType)input),
-                    currencyCount = item.Currencycount,
+                    itemType = item.Currencytype,
+                    itemCount = item.Currencycount,
                     isUnlock = true
                 };
             }

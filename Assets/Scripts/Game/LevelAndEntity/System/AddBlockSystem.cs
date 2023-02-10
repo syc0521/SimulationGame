@@ -61,6 +61,17 @@ namespace Game.LevelAndEntity.System
             config.Dispose();
             beginSimECBSystem.AddJobHandleForProducer(Dependency);
         }
+        
+        public void SetGridVisible(bool b)
+        {
+            var query = GetEntityQuery(new EntityQueryDesc
+            {
+                All = new ComponentType[]{typeof(BuildingPlane)},
+                Options = EntityQueryOptions.IncludeDisabledEntities
+            });
+            var planeEntity = query.GetSingletonEntity();
+            entityManager.SetEnabled(planeEntity, b);
+        }
 
     }
 }

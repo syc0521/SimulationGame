@@ -52,8 +52,8 @@ MonoBehaviour:
     colcount: 1
     cd: 080000000600000004000000
     producetype: 1
-    produceid: 10
-    produceamount: 010000000200000003000000
+    produceid: 0
+    produceamount: 0a000000140000001e000000
   - buildingid: 3
     resourcepath: building_401
     name: "\u9A6C\u8F66"
@@ -86,7 +86,7 @@ MonoBehaviour:
     buildingtype: 2
     description: "\u6865"
     currencytype: 00000000
-    currencycount: 0a000000
+    currencycount: 64000000
     rowcount: 4
     colcount: 8
     cd: ffffffff
@@ -99,7 +99,7 @@ MonoBehaviour:
     buildingtype: 0
     description: "\u6C11\u5C4502"
     currencytype: 00000000
-    currencycount: c8000000
+    currencycount: 14000000
     rowcount: 4
     colcount: 2
     cd: 080000000600000004000000
@@ -112,7 +112,7 @@ MonoBehaviour:
     buildingtype: 0
     description: "\u6C11\u5C4503"
     currencytype: 00000000
-    currencycount: c8000000
+    currencycount: 14000000
     rowcount: 2
     colcount: 2
     cd: 090000000700000005000000
@@ -125,7 +125,7 @@ MonoBehaviour:
     buildingtype: 0
     description: "\u6C11\u5C4504"
     currencytype: 00000000
-    currencycount: c8000000
+    currencycount: 14000000
     rowcount: 4
     colcount: 2
     cd: 080000000600000004000000
@@ -138,7 +138,7 @@ MonoBehaviour:
     buildingtype: 0
     description: "\u6C11\u5C4505"
     currencytype: 00000000
-    currencycount: 90010000
+    currencycount: 28000000
     rowcount: 4
     colcount: 3
     cd: 090000000700000005000000
@@ -183,8 +183,8 @@ MonoBehaviour:
     colcount: 1
     cd: 080000000600000004000000
     producetype: 1
-    produceid: 10
-    produceamount: 010000000200000003000000
+    produceid: 0
+    produceamount: 0a000000140000001e000000
   - buildingid: 3
     resourcepath: building_401
     name: "\u9A6C\u8F66"
@@ -217,7 +217,7 @@ MonoBehaviour:
     buildingtype: 2
     description: "\u6865"
     currencytype: 00000000
-    currencycount: 0a000000
+    currencycount: 64000000
     rowcount: 4
     colcount: 8
     cd: ffffffff
@@ -230,7 +230,7 @@ MonoBehaviour:
     buildingtype: 0
     description: "\u6C11\u5C4502"
     currencytype: 00000000
-    currencycount: c8000000
+    currencycount: 14000000
     rowcount: 4
     colcount: 2
     cd: 080000000600000004000000
@@ -243,7 +243,7 @@ MonoBehaviour:
     buildingtype: 0
     description: "\u6C11\u5C4503"
     currencytype: 00000000
-    currencycount: c8000000
+    currencycount: 14000000
     rowcount: 2
     colcount: 2
     cd: 090000000700000005000000
@@ -256,7 +256,7 @@ MonoBehaviour:
     buildingtype: 0
     description: "\u6C11\u5C4504"
     currencytype: 00000000
-    currencycount: c8000000
+    currencycount: 14000000
     rowcount: 4
     colcount: 2
     cd: 080000000600000004000000
@@ -269,7 +269,7 @@ MonoBehaviour:
     buildingtype: 0
     description: "\u6C11\u5C4505"
     currencytype: 00000000
-    currencycount: 90010000
+    currencycount: 28000000
     rowcount: 4
     colcount: 3
     cd: 090000000700000005000000

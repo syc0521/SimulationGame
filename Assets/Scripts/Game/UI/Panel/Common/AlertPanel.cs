@@ -4,6 +4,7 @@ namespace Game.UI.Panel.Common
 {
     public class AlertPanelOption : BasePanelOption
     {
+        public bool hasCancel;
         public string content;
         public Action clickHandler;
     }
@@ -23,6 +24,7 @@ namespace Game.UI.Panel.Common
         {
             if (opt is not AlertPanelOption option) return;
 
+            nodes.cancel_btn.gameObject.SetActive(option.hasCancel);
             nodes.detail_txt.text = option.content;
             _clickHandler = option.clickHandler;
         }

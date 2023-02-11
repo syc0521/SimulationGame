@@ -1,7 +1,9 @@
 ﻿using System;
 using Game.Data;
 using Game.GamePlaySystem;
+using Game.GamePlaySystem.Backpack;
 using Game.UI.Component;
+using Game.UI.Decorator;
 using Game.UI.UISystem;
 using Game.UI.ViewData;
 
@@ -57,8 +59,18 @@ namespace Game.UI.Panel.Building
 
         private void ClickBuilding(int id)
         {
-            BuildingManager.Instance.AddBuilding(id);
-            CloseSelf();
+            var data = ConfigTable.Instance.GetBuildingData(id);
+            var type = data.Currencytype[0];
+            if (BackpackManager.Instance.GetBackpackCount(type) >= data.Currencycount[0])
+            {
+                BuildingManager.Instance.AddBuilding(id);
+                CloseSelf();
+            }
+            else
+            {
+                AlertDecorator.OpenAlertPanel("建筑材料不足！", false);
+            }
+            
         }
     }
 }

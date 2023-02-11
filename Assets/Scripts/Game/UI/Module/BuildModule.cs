@@ -20,7 +20,7 @@ namespace Game.UI.Module
 
         private void ShowDestroyAlert(DestroyEvent evt)
         {
-            AlertDecorator.OpenAlertPanel("是否删除该建筑", evt.handler);
+            AlertDecorator.OpenAlertPanel("是否删除该建筑", true, evt.handler);
         }
         
     }

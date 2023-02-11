@@ -5,12 +5,13 @@ namespace Game.UI.Decorator
 {
     public static class AlertDecorator
     {
-        public static void OpenAlertPanel(string content, Action handler)
+        public static void OpenAlertPanel(string content, bool hasCancel, Action handler = null)
         {
             UIManager.Instance.OpenPanel<AlertPanel>(new AlertPanelOption
             {
                 content = content,
-                clickHandler = handler
+                clickHandler = handler,
+                hasCancel = hasCancel,
             });
         }
     }

@@ -6,5 +6,6 @@ namespace Game.Data.ScriptableObject
     public class BuildConfig : UnityEngine.ScriptableObject
     {
         public int col, row;
+        public Material buildingMat;
     }
 }

@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using Game.Data;
+using UnityEngine;
 
-namespace Game.GamePlaySystem
+namespace Game.GamePlaySystem.Build
 {
     public static class MaterialUtil
     {
@@ -11,6 +12,7 @@ namespace Game.GamePlaySystem
             var meshList = obj.gameObject.GetComponentsInChildren<MeshRenderer>();
             foreach (var mesh in meshList)
             {
+                mesh.material = ConfigTable.Instance.GetBuildConfig().buildingMat;
                 mesh.material.SetFloat(IsTransparent, isTransparent ? 1 : 0);
             }
         }

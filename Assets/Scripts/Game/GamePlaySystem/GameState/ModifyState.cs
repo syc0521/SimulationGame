@@ -1,6 +1,7 @@
 ﻿using Game.Core;
 using Game.Data;
 using Game.Data.Event;
+using Game.GamePlaySystem.Build;
 using Game.GamePlaySystem.BurstUtil;
 using Game.GamePlaySystem.StateMachine;
 using Game.Input;

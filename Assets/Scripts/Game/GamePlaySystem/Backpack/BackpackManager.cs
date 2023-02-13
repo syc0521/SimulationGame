@@ -34,7 +34,7 @@ namespace Game.GamePlaySystem.Backpack
             }
             backpack[id] += count;
             
-            Debug.LogError($"{id}物品数量为{backpack[id]}");
+            Debug.Log($"{id}物品数量为{backpack[id]}");
         }
 
         public int GetBackpackCount(int id)

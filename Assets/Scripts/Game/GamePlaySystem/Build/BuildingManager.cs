@@ -25,7 +25,7 @@ namespace Game.GamePlaySystem
         private uint id;
         private int col, row;
         public Vector3 ScreenPos { get; set; }
-
+        
         public override void OnStart()
         {
             col = ConfigTable.Instance.GetBuildConfig().col;
@@ -42,6 +42,7 @@ namespace Game.GamePlaySystem
             });
             buildStateMachine.ChangeState<NormalState>();
             EventCenter.AddListener<LongPressEvent>(SelectBuilding);
+            EventCenter.AddListener<StaticBuildingIntlEvent>(InitializeStaticBuilding);
         }
 
         public override void OnDestroyed()
@@ -49,6 +50,8 @@ namespace Game.GamePlaySystem
             buildStateMachine.ChangeState<NormalState>(false);
             buildStateMachine.Dispose();
             EventCenter.RemoveListener<LongPressEvent>(SelectBuilding);
+            EventCenter.RemoveListener<StaticBuildingIntlEvent>(InitializeStaticBuilding);
+
             base.OnDestroyed();
         }
 
@@ -177,6 +180,12 @@ namespace Game.GamePlaySystem
             };
         }
 
+        private void InitializeStaticBuilding(StaticBuildingIntlEvent evt)
+        {
+            // todo 添加静态建筑数据
+            BuildingUtils.SetGridData(ref grid, evt.pos, 4, 4, 100);
+        }
+        
         public void SetGridData(float3 pos, int rotation, int type, int value = -1)
         {
             var data = ConfigTable.Instance.GetBuildingData(type);

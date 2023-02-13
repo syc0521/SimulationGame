@@ -34,6 +34,7 @@ namespace Game.GamePlaySystem.Currency
             {
                 currency[(int)type] += count;
                 EventCenter.DispatchEvent(new UpdateCurrencyEvent()); // 通知UI更新数据
+                return;
             }
             
             Debug.LogError($"货币类型{type}不存在！");

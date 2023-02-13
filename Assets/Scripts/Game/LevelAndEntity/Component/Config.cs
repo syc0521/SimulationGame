@@ -12,7 +12,7 @@ namespace Game.LevelAndEntity.Component
     public struct Config : IComponentData
     {
         public bool dataChanged;
-        public int money;
+        public bool dataLoaded;
         public int people;
     }
 }

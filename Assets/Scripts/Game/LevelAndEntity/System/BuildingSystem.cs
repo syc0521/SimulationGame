@@ -1,6 +1,7 @@
 ﻿using Game.Core;
 using Game.Data;
 using Game.Data.Common;
+using Game.Data.Event;
 using Game.Data.Event.Backpack;
 using Game.LevelAndEntity.Aspects;
 using Game.LevelAndEntity.Component;
@@ -24,7 +25,13 @@ namespace Game.LevelAndEntity.System
         public void OnUpdate(ref SystemState state)
         {
             if (!SystemAPI.TryGetSingleton(out Config config)) return;
-
+            
+            if (!config.dataLoaded)
+            {
+                InitializeStaticBuilding(ref state);
+                config.dataLoaded = true;
+            }
+            
             int people = 0;
             bool dataChanged = false;
             foreach (var building in SystemAPI.Query<BuildingAspect>().WithAll<Building>())
@@ -59,6 +66,18 @@ namespace Game.LevelAndEntity.System
                 }
 
                 data.config.ValueRW.dataChanged = dataChanged;
+            }
+        }
+        
+        
+        private void InitializeStaticBuilding(ref SystemState state)
+        {
+            foreach (var building in SystemAPI.Query<StaticBuildingAspect>().WithAll<StaticBuilding>())
+            {
+                EventCenter.DispatchEvent(new StaticBuildingIntlEvent
+                {
+                    pos = building.Position
+                });
             }
         }
 

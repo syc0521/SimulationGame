@@ -65,6 +65,19 @@ namespace Game.GamePlaySystem.BurstUtil
             return false;
         }
         
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [BurstCompile]
+        public static float Angle(in float2 from, in float2 to)
+        {
+            var num = (float) math.sqrt(math.lengthsq(from) * (double) math.lengthsq(to));
+            return num < 1.0000000036274937E-15 ? 0.0f : (float) math.acos((double) math.clamp(math.dot(from, to) / num, -1f, 1f)) * 57.29578f;
+        }
+        
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [BurstCompile]
+        public static float SignedAngle(in float2 from, in float2 to) => Angle(from, to) * math.sign((float) ((double) from.x * (double) to.y - (double) from.y * (double) to.x));
+
+        
         //以下为Vector3.Angle用math库替换的版本，用于BurstCompile
         
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

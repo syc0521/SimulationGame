@@ -54,14 +54,20 @@ namespace Game.GamePlaySystem
         /// </summary>
         private void ChangeCameraPosition(SwipeChangedEvent evt)
         {
-            // todo 摄像机相对运动待完善
             var speed = ConfigTable.Instance.GetGestureConfig().cameraSpeed;
             var deltaPos = -math.normalize(evt.pos - _startPosition) * (Time.deltaTime * speed);//速度
             if (math.length(deltaPos) > float.Epsilon)
             {
                 var camTransform = mainCam.transform;
-                var forward = camTransform.forward;
-                camTransform.position += new Vector3(deltaPos[0] * -forward.y, 0, deltaPos[1] * 0.75f * forward.z);
+                var forward = (float3)camTransform.forward;
+                var angle = BuildingUtils.SignedAngle(new float2(0, 1), forward.xz);
+                var delta3d = new float3(deltaPos.x, deltaPos.y, 0);
+                var angleDelta = Quaternion.AngleAxis(angle, delta3d) * delta3d;
+                
+                var posY = camTransform.position.y;
+                camTransform.Translate(new Vector3(angleDelta.x, 0, angleDelta.y));
+                var camPos = camTransform.position;
+                camTransform.position = new Vector3(camPos.x, posY, camPos.z);
             }
 
             _startPosition = evt.pos;

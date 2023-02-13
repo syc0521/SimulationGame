@@ -7,6 +7,7 @@ namespace Game.LevelAndEntity.Authoring
     public class StaticBuildingAuthoring : MonoBehaviour
     {
         public int id;
+        public int row, col;
 
         class StaticBuildingBaker : Baker<StaticBuildingAuthoring>
         {
@@ -18,7 +19,9 @@ namespace Game.LevelAndEntity.Authoring
                 });
                 AddComponent(new StaticBuilding
                 {
-                    id = authoring.id
+                    id = authoring.id,
+                    col = authoring.col,
+                    row = authoring.row,
                 });
             }
         }

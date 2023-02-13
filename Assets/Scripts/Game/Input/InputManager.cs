@@ -79,9 +79,10 @@ namespace Game.Input
         
         public override void OnStart()
         {
+            _gameControl.GamePlay.PrimaryContact.canceled += Touch;
+
             _gameControl.GamePlay.PrimaryContact.started += SwipeStart;
             _gameControl.GamePlay.PrimaryContact.canceled += SwipeEnd;
-            _gameControl.GamePlay.PrimaryContact.performed += Touch;
 
             _gameControl.GamePlay.SecondaryTouchContact.started += PinchStart;
             _gameControl.GamePlay.SecondaryTouchContact.canceled += PinchEnd;
@@ -95,9 +96,10 @@ namespace Game.Input
 
         public override void OnDestroyed()
         {
+            _gameControl.GamePlay.PrimaryContact.canceled -= Touch;
+
             _gameControl.GamePlay.PrimaryContact.started -= SwipeStart;
             _gameControl.GamePlay.PrimaryContact.canceled -= SwipeEnd;
-            _gameControl.GamePlay.PrimaryContact.performed -= Touch;
 
             _gameControl.GamePlay.SecondaryTouchContact.started -= PinchStart;
             _gameControl.GamePlay.SecondaryTouchContact.canceled -= PinchEnd;
@@ -130,12 +132,15 @@ namespace Game.Input
 
         private void Touch(InputAction.CallbackContext ctx)
         {
-            MonoApp.Instance.StartCoroutine(TouchDetection());
+            if (!isSwiping && CanSendInteractEvent())
+            {
+                MonoApp.Instance.StartCoroutine(TouchDetection());
+            }
         }
 
         private IEnumerator TouchDetection()
         {
-            yield return new WaitForSeconds(2 / 90.0f);
+            yield return new WaitForSeconds(1 / 90.0f);
             if (!isSwiping && CanSendInteractEvent())
             {
                 EventCenter.DispatchEvent(new TouchEvent

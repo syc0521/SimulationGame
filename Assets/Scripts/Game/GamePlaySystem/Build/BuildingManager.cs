@@ -41,7 +41,6 @@ namespace Game.GamePlaySystem
                 new DestroyState(),
             });
             buildStateMachine.ChangeState<NormalState>();
-            EventCenter.AddListener<LongPressEvent>(SelectBuilding);
             EventCenter.AddListener<StaticBuildingIntlEvent>(InitializeStaticBuilding);
         }
 
@@ -49,7 +48,6 @@ namespace Game.GamePlaySystem
         {
             buildStateMachine.ChangeState<NormalState>(false);
             buildStateMachine.Dispose();
-            EventCenter.RemoveListener<LongPressEvent>(SelectBuilding);
             EventCenter.RemoveListener<StaticBuildingIntlEvent>(InitializeStaticBuilding);
 
             base.OnDestroyed();
@@ -67,16 +65,6 @@ namespace Game.GamePlaySystem
                 var pos = new float3(data.position[0], 0f, data.position[1]);
                 Build(new float3(data.position[0], 0f, data.position[1]), data.type, key, data.rotation);
                 SetGridData(pos, data.rotation, data.type, data.type);
-            }
-        }
-
-        private void SelectBuilding(LongPressEvent evt)
-        {
-            var entity = Entity.Null;
-            Debug.Log(buildStateMachine.GetCurrentState());
-            if (buildStateMachine.GetCurrentState() == "NormalState" && DetectBuilding(evt.pos, out entity))
-            {
-                buildStateMachine.ChangeState<ModifyState>(entity);
             }
         }
 
@@ -110,6 +98,11 @@ namespace Game.GamePlaySystem
             buildStateMachine.ChangeState<NormalState>();
         }
 
+        public void ModifyBuilding(Entity entity)
+        {
+            buildStateMachine.ChangeState<ModifyState>(entity);
+        }
+
         public RaycastInput GetRaycastInput(float3 pos)
         {
             var ray = CameraManager.Instance.mainCam.ScreenPointToRay(pos);
@@ -135,7 +128,7 @@ namespace Game.GamePlaySystem
             return collisionWorld;
         }
 
-        private bool DetectBuilding(float2 pos, out Entity entity)
+        public bool DetectDynamicBuilding(float2 pos, out Entity entity)
         {
             entity = default;
             var collisionWorld = GetCollisionWorld();
@@ -145,6 +138,21 @@ namespace Game.GamePlaySystem
                 var entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
                 entity = hit.Entity;
                 return hit.Entity != Entity.Null && entityManager.HasComponent<Building>(entity);
+            }
+
+            return false;
+        }
+        
+        public bool DetectBuilding(float2 pos, out Entity entity)
+        {
+            entity = default;
+            var collisionWorld = GetCollisionWorld();
+            var raycastInput = GetRaycastInput(new float3(pos, 0));
+            if (collisionWorld.CastRay(raycastInput, out var hit))
+            {
+                var entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
+                entity = hit.Entity;
+                return hit.Entity != Entity.Null && (entityManager.HasComponent<Building>(entity) || entityManager.HasComponent<StaticBuilding>(entity));
             }
 
             return false;
@@ -182,8 +190,7 @@ namespace Game.GamePlaySystem
 
         private void InitializeStaticBuilding(StaticBuildingIntlEvent evt)
         {
-            // todo 添加静态建筑数据
-            BuildingUtils.SetGridData(ref grid, evt.pos, 4, 4, 100);
+            BuildingUtils.SetGridData(ref grid, evt.pos, evt.row, evt.col, evt.id);
         }
         
         public void SetGridData(float3 pos, int rotation, int type, int value = -1)

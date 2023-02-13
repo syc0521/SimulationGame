@@ -56,7 +56,7 @@ public partial class @GameControl : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Primary Contact"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Button"",
                     ""id"": ""94253781-4904-45b5-9c9a-b22a08d16ed9"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",

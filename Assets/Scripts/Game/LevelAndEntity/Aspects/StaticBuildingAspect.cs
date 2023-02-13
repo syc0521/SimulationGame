@@ -12,6 +12,8 @@ namespace Game.LevelAndEntity.Aspects
         private readonly RefRO<StaticBuilding> staticBuilding;
 
         public int ID => staticBuilding.ValueRO.id;
+        public int Row => staticBuilding.ValueRO.row;
+        public int Col => staticBuilding.ValueRO.col;
         
         public float3 Position
         {

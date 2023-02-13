@@ -76,7 +76,10 @@ namespace Game.LevelAndEntity.System
             {
                 EventCenter.DispatchEvent(new StaticBuildingIntlEvent
                 {
-                    pos = building.Position
+                    pos = building.Position,
+                    id = building.ID,
+                    row = building.Row,
+                    col = building.Col,
                 });
             }
         }

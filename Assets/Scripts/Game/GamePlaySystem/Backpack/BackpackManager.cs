@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Game.Core;
 using Game.Data;
 using Game.Data.Event;
+using Game.GamePlaySystem.Task;
 using UnityEngine;
 
 namespace Game.GamePlaySystem.Backpack
@@ -31,6 +32,7 @@ namespace Game.GamePlaySystem.Backpack
             if (!backpack.ContainsKey(id))
             {
                 backpack[id] = count;
+                TaskManager.Instance.TriggerTask(TaskType.GetBagItem, id, count);
             }
             backpack[id] += count;
             

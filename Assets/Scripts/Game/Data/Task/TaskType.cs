@@ -5,6 +5,8 @@ namespace Game.Data
         AddBuilding = 0,
         MoveBuilding = 1,
         GetCurrency = 2,
+        GetBagItem = 3,
+        RotateBuilding = 4,
     }
 
     public enum TaskState

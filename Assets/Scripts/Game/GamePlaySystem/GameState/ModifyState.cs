@@ -4,6 +4,7 @@ using Game.Data.Event;
 using Game.GamePlaySystem.Build;
 using Game.GamePlaySystem.BurstUtil;
 using Game.GamePlaySystem.StateMachine;
+using Game.GamePlaySystem.Task;
 using Game.Input;
 using Game.LevelAndEntity.Aspects;
 using Game.LevelAndEntity.Component;
@@ -25,6 +26,10 @@ namespace Game.GamePlaySystem.GameState
         private float3 originPos;
         private int currentRotation = 0;
         private float3 spawnPos;
+        
+        // 任务系统用
+        private float3 previousPos;
+        private int previousRot;
         
         public override void OnEnter(params object[] list)
         {
@@ -54,6 +59,15 @@ namespace Game.GamePlaySystem.GameState
                 _buildingUserData.position = (aspect.Position - offset).xz;
                 _buildingUserData.rotation = currentRotation;
                 aspect.SpawnPos = aspect.Position - offset;
+                if (previousPos.Equals(aspect.SpawnPos))
+                {
+                    TaskManager.Instance.TriggerTask(TaskType.MoveBuilding, aspect.BuildingType);
+                }
+
+                if (previousRot == currentRotation)
+                {
+                    TaskManager.Instance.TriggerTask(TaskType.RotateBuilding, aspect.BuildingType);
+                }
                 BuildingManager.Instance.SetBuildingData(_currentId, _buildingUserData);
                 
                 aspect.LocalRotation = quaternion.identity;
@@ -96,12 +110,14 @@ namespace Game.GamePlaySystem.GameState
             _buildingUserData = BuildingManager.Instance.GetBuildingData(_currentId);
             currentBuildingType = aspect.BuildingType;
             spawnPos = aspect.SpawnPos;
+            previousPos = aspect.SpawnPos;
             
             var buildingPos = aspect.Position;
             BuildingManager.Instance.SetGridData(spawnPos, currentRotation, currentBuildingType);
 
             originPos = buildingPos;
             currentRotation = _buildingUserData.rotation;
+            previousRot = _buildingUserData.rotation;
 
             currentBuilding = Object.Instantiate(ConfigTable.Instance.GetBuilding(currentBuildingType), buildingPos, Quaternion.identity);
             currentBuilding.transform.localRotation = aspect.LocalRotation;

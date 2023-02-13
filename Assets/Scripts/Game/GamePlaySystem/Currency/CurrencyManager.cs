@@ -4,6 +4,7 @@ using Game.Data;
 using Game.Data.Common;
 using Game.Data.Event;
 using Game.Data.Event.Currency;
+using Game.GamePlaySystem.Task;
 using UnityEngine;
 
 namespace Game.GamePlaySystem.Currency
@@ -33,6 +34,7 @@ namespace Game.GamePlaySystem.Currency
             if (currency.ContainsKey((int)type))
             {
                 currency[(int)type] += count;
+                TaskManager.Instance.TriggerTask(TaskType.GetCurrency, (int)type, count);
                 EventCenter.DispatchEvent(new UpdateCurrencyEvent()); // 通知UI更新数据
                 return;
             }

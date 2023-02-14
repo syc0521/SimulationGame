@@ -113,7 +113,7 @@ namespace Game.Input
             _gameControl.Disable();
         }
 
-        public bool IsPointerOverGameObject()
+        private bool IsPointerOverGameObject()
         {
             PointerEventData pointer = new PointerEventData(EventSystem.current);
             List<RaycastResult> raycastResult = new List<RaycastResult>();
@@ -152,7 +152,7 @@ namespace Game.Input
         
         private void LongPress(InputAction.CallbackContext ctx)
         {
-            if (CanSendInteractEvent())
+            if (!isSwiping && CanSendInteractEvent())
             {
                 EventCenter.DispatchEvent(new LongPressEvent
                 {
@@ -258,7 +258,7 @@ namespace Game.Input
 
         private void PinchStart(InputAction.CallbackContext ctx)
         {
-            if (CanSendInteractEvent())
+            if (!isSwiping && CanSendInteractEvent())
             {
                 EventCenter.DispatchEvent(new PinchStartEvent
                 {
@@ -271,7 +271,7 @@ namespace Game.Input
         
         private void PinchEnd(InputAction.CallbackContext ctx)
         {
-            if (CanSendInteractEvent())
+            if (!isSwiping && CanSendInteractEvent())
             {
                 EventCenter.DispatchEvent(new PinchEndEvent
                 {

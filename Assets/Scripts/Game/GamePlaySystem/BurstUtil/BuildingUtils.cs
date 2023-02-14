@@ -47,11 +47,14 @@ namespace Game.GamePlaySystem.BurstUtil
                 }
             }
         }
-
-        [BurstCompile]
+        
         public static bool HasBuilding(ref Grid grid, in float3 pos, int row, int col)
         {
             GetGridPos_Internal(pos, out var gridPos);
+            if (gridPos.x < 0 || gridPos.y < 0 || gridPos.x > grid.Row || gridPos.y > grid.Col)
+            {
+                return true;
+            }
             for (int i = gridPos[0]; i < gridPos[0] + row; i++)
             {
                 for (int j = gridPos[1]; j < gridPos[1] + col; j++)

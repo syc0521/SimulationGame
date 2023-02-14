@@ -140,7 +140,7 @@ namespace Game.GamePlaySystem.GameState
             {
                 var entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
                 var entity = hit.Entity;
-                if (entityManager.HasComponent<BuildingPlane>(entity) && !Managers.Get<IInputManager>().IsPointerOverGameObject())
+                if (entityManager.HasComponent<BuildingPlane>(entity))
                 {
                     spawnPos = BuildingUtils.GetBlockPos(hit.Position);
                     var data = ConfigTable.Instance.GetBuildingData(currentBuildingType);

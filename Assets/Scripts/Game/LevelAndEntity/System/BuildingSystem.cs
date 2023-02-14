@@ -24,12 +24,12 @@ namespace Game.LevelAndEntity.System
         
         public void OnUpdate(ref SystemState state)
         {
-            if (!SystemAPI.TryGetSingleton(out Config config)) return;
+            if (!SystemAPI.TryGetSingletonRW(out RefRW<Config> config)) return;
             
-            if (!config.dataLoaded)
+            if (!config.ValueRO.dataLoaded)
             {
                 InitializeStaticBuilding(ref state);
-                config.dataLoaded = true;
+                config.ValueRW.dataLoaded = true;
             }
             
             int people = 0;

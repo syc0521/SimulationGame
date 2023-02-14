@@ -36,6 +36,7 @@ namespace Game.UI.Panel
             EventCenter.AddListener<BuildUIEvent>(ShowConfirmUI);
             EventCenter.AddListener<UpdateCurrencyEvent>(RefreshCurrency);
             RefreshCurrency(default);
+            RefreshTask(default);
         }
 
         public override void OnDestroyed()

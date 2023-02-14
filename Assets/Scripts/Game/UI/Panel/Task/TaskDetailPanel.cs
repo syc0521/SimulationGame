@@ -1,7 +1,9 @@
 
+using System.Collections.Generic;
 using Game.Data;
 using Game.GamePlaySystem.Task;
 using Game.UI.Module;
+using Game.UI.Panel.Common;
 using Game.UI.UISystem;
 
 namespace Game.UI.Panel.Task
@@ -53,8 +55,12 @@ namespace Game.UI.Panel.Task
 
         private void ClaimReward()
         {
+            UIManager.Instance.OpenPanel<AlertRewardPanel>(new AlertRewardPanelOption
+            {
+                data = new List<RewardData>(TaskSystem.Instance.GetTaskData(taskID).reward),
+                clickHandler = CloseSelf
+            });
             TaskManager.Instance.GetReward(taskID);
-            CloseSelf();
         }
     }
 }

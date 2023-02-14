@@ -10,8 +10,8 @@ using UnityQuickSheet;
 ///
 public class TaskAssetPostprocessor : AssetPostprocessor 
 {
-    private static readonly string filePath = "Assets/Configs/Task.xlsx";
-    private static readonly string assetFilePath = "Assets/Configs/Task.asset";
+    private static readonly string filePath = "Assets/Configs/RawTable/Task.xlsx";
+    private static readonly string assetFilePath = "Assets/Configs/RawTable/Task.asset";
     private static readonly string sheetName = "Task";
     
     static void OnPostprocessAllAssets (string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths)

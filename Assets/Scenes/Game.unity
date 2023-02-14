@@ -854,13 +854,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiRoot: {fileID: 1164378931}
   buildings: {fileID: 11400000, guid: a5b5170e91ffa744dad5bed44881bb10, type: 2}
-  reward: {fileID: 11400000, guid: e7f7d51f264fa294cb38f6b7235d98d6, type: 2}
-  task: {fileID: 11400000, guid: 3c6e562fd7269e24fae8fcce7bd5fd8c, type: 2}
-  building: {fileID: 11400000, guid: eed6a688b1ca6ec4e9651215e0b9a2d3, type: 2}
-  panelTable: {fileID: 11400000, guid: b6114b963f9e324488f97491e0410f4c, type: 2}
+  reward: {fileID: 11400000, guid: 9224830b04202584aab558e27764f09e, type: 2}
+  task: {fileID: 11400000, guid: 103ebdbc35021cd4b966c1e97cab91a4, type: 2}
+  building: {fileID: 11400000, guid: e3eb4dadc64d69d4a99f97e73d0f86f3, type: 2}
+  panelTable: {fileID: 11400000, guid: 5dbca65ee5f591442a6b987d869a91c2, type: 2}
   gestureConfig: {fileID: 11400000, guid: 370a2262cd51ecd47aa97ed41d0cd2d3, type: 2}
   buildConfig: {fileID: 11400000, guid: 5a2a55414993063459e581289086dcba, type: 2}
-  bagItem: {fileID: 11400000, guid: c2952b4b69cc13b4bb5a0ff490577028, type: 2}
+  bagItem: {fileID: 11400000, guid: 61b39282d0575e04398cf68c956e215a, type: 2}
+  currency: {fileID: 11400000, guid: 226f750594eabae4fb9e8ba18e237a27, type: 2}
 --- !u!1 &1377810132
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 ﻿using System;
 using Game.UI.Component;
 using Game.UI.Panel.Bag;
+using Game.UI.Panel.Common;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -16,15 +17,20 @@ namespace Game.UI.Widget
         private Action<BagItemWidget, int> _clickHandler;
         public void Refresh(ListData data)
         {
-            if (data is not BagListData bagListData)
+            if (data is BagListData bagListData)
             {
-                return;
+                id = bagListData.id;
+                var count = bagListData.data.count;
+                count_txt.text = count > 1 ? count.ToString() : string.Empty;
+                _clickHandler = bagListData.clickHandler; 
             }
-
-            id = bagListData.id;
-            var count = bagListData.data.count;
-            count_txt.text = count > 1 ? count.ToString() : string.Empty;
-            _clickHandler = bagListData.clickHandler; 
+            else if (data is AlertRewardListData alertRewardListData)
+            {
+                id = alertRewardListData.id;
+                var count = alertRewardListData.data.amount;
+                count_txt.text = count > 1 ? count.ToString() : string.Empty;
+                _clickHandler = alertRewardListData.clickHandler; 
+            }
         }
 
         public void OnPointerClick(PointerEventData eventData)

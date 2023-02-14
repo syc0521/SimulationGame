@@ -11,13 +11,14 @@ namespace Game.Data
     {
         [SerializeField] private Transform uiRoot;
         [SerializeField] private BuildingCollection buildings;
-        [SerializeField] private Reward reward;
+        [SerializeField] private RewardGroup reward;
         [SerializeField] private Task task;
         [SerializeField] private Building building;
         [SerializeField] private UIPanelTable panelTable;
         [SerializeField] private GestureConfig gestureConfig;
         [SerializeField] private BuildConfig buildConfig;
         [SerializeField] private BagItem bagItem;
+        [SerializeField] private Currency currency;
 
         public Transform GetUIRoot(int layerType) => uiRoot.GetChild(layerType);
 
@@ -27,7 +28,7 @@ namespace Game.Data
 
         public TaskData GetTask(int id) => task.dataList.Find(item => item.Taskid == id);
 
-        public TableData.RewardData GetRewardData(int id) => reward.dataList.Find(item => item.Rewardid == id);
+        public RewardGroupData GetRewardGroupData(int id) => reward.dataList.Find(item => item.Rewardid == id);
 
         public List<TableData.BuildingData> GetAllBuildingData() => building.dataList;
         
@@ -40,5 +41,7 @@ namespace Game.Data
         public BuildConfig GetBuildConfig() => buildConfig;
 
         public BagItemData GetBagItemData(int id) => bagItem.dataList.Find(item => item.ID == id);
+
+        public CurrencyData GetCurrencyData(int id) => currency.dataList.Find(item => item.ID == id);
     }
 }

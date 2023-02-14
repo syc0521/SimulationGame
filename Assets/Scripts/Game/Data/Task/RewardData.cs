@@ -13,16 +13,7 @@ namespace Game.Data
     public struct RewardData
     {
         public RewardType type;
-        public int rewardID;
-        public int[] itemID;
-        public int[] amount;
-
-        public RewardData(TableData.RewardData data)
-        {
-            rewardID = data.Rewardid;
-            type = (RewardType)data.Rewardtype;
-            itemID = data.Itemid;
-            amount = data.Count;
-        }
+        public int itemID;
+        public int amount;
     }
 }

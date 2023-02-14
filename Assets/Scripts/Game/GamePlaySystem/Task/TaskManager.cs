@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using Game.Core;
 using Game.Data;
+using Game.Data.Common;
 using Game.Data.Event;
 using Game.Data.Event.Task;
+using Game.GamePlaySystem.Backpack;
+using Game.GamePlaySystem.Currency;
 using UnityEngine;
 using TaskData = Game.Data.TableData.TaskData;
 
@@ -81,9 +84,27 @@ namespace Game.GamePlaySystem.Task
 
         public void GetReward(int taskID)
         {
-            ChangeTaskState(taskID, TaskState.Rewarded);
+            var taskData = ConfigTable.Instance.GetTask(taskID);
+            var rewardGroup = ConfigTable.Instance.GetRewardGroupData(taskData.Reward);
+
+            for (int i = 0; i < rewardGroup.Rewardtype.Length; i++)
+            {
+                switch ((RewardType)rewardGroup.Rewardtype[i])
+                {
+                    case RewardType.Currency:
+                        CurrencyManager.Instance.AddCurrency((CurrencyType)rewardGroup.Itemid[i], rewardGroup.Count[i]);
+                        break;
+                    case RewardType.Building:
+                        // todo 建筑解锁机制
+                        break;
+                    case RewardType.Item:
+                        BackpackManager.Instance.AddBackpackCount(rewardGroup.Itemid[i], rewardGroup.Count[i]);
+                        break;
+                }
+            }
             Debug.LogError($"已领取ID为{taskID}的奖励");
-            
+            ChangeTaskState(taskID, TaskState.Rewarded);
+
             var nextTasks = ConfigTable.Instance.GetTasks().FindAll(item => item.Previousid == taskID);
             foreach (var task in nextTasks)
             {

@@ -10,8 +10,8 @@ using UnityQuickSheet;
 ///
 public class UIPanelTableAssetPostprocessor : AssetPostprocessor 
 {
-    private static readonly string filePath = "Assets/Configs/UIPanel.xlsx";
-    private static readonly string assetFilePath = "Assets/Configs/UIPanelTable.asset";
+    private static readonly string filePath = "Assets/Configs/RawTable/UIPanel.xlsx";
+    private static readonly string assetFilePath = "Assets/Configs/RawTable/UIPanelTable.asset";
     private static readonly string sheetName = "UIPanelTable";
     
     static void OnPostprocessAllAssets (string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths)

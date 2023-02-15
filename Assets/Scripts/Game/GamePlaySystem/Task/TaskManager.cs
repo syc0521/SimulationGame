@@ -95,7 +95,7 @@ namespace Game.GamePlaySystem.Task
                         CurrencyManager.Instance.AddCurrency((CurrencyType)rewardGroup.Itemid[i], rewardGroup.Count[i]);
                         break;
                     case RewardType.Building:
-                        // todo 建筑解锁机制
+                        BuildingManager.Instance.UnlockBuilding(rewardGroup.Itemid[i]);
                         break;
                     case RewardType.Item:
                         BackpackManager.Instance.AddBackpackCount(rewardGroup.Itemid[i], rewardGroup.Count[i]);

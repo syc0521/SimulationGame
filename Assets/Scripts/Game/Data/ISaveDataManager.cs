@@ -11,5 +11,6 @@ namespace Game.Data
         void GetPlayerTasks(ref Dictionary<int, PlayerTaskData> taskData);
         void GetBackpack(ref Dictionary<int, int> backpack);
         void GetCurrency(ref Dictionary<int, int> currency);
+        void GetUnlockedBuildings(ref HashSet<int> unlockedBuildings);
     }
 }

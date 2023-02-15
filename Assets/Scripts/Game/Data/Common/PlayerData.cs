@@ -19,6 +19,8 @@ namespace Game.Data
         public Dictionary<int, int> currency;
         [Key(5)]
         public SettingData settingData;
+        [Key(6)] 
+        public HashSet<int> unlockedBuildings;
     }
 
     [Serializable]

@@ -62,5 +62,9 @@ namespace Game.Data.TableData
     int[] produceamount = new int[0];
     public int[] Produceamount { get {return produceamount; } set { produceamount = value;} }
     
+    [SerializeField]
+    bool unlock;
+    public bool Unlock { get {return unlock; } set { unlock = value;} }
+    
 	}
 }

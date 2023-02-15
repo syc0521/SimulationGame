@@ -70,6 +70,10 @@ MonoBehaviour:
     name: ProduceAmount
     isEnable: 0
     isArray: 1
+  - type: 8
+    name: Unlock
+    isEnable: 0
+    isArray: 0
   excelFilePath: Assets/Configs/RawTable/BuildingTable.xlsx
   SheetNames:
   - Building

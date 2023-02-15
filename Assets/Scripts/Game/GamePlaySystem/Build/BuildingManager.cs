@@ -22,8 +22,9 @@ namespace Game.GamePlaySystem
         private Dictionary<uint, BuildingData> _buildingDatas;
         private Grid grid;
         private StateMachine.StateMachine buildStateMachine;
-        private uint id;
+        private uint _internalID;
         private int col, row;
+        private HashSet<int> unlockedBuildings;
         public Vector3 ScreenPos { get; set; }
         
         public override void OnStart()
@@ -41,6 +42,7 @@ namespace Game.GamePlaySystem
                 new DestroyState(),
             });
             buildStateMachine.ChangeState<NormalState>();
+            EventCenter.AddListener<LoadDataEvent>(GetUnlockedBuildings);
             EventCenter.AddListener<StaticBuildingIntlEvent>(InitializeStaticBuilding);
         }
 
@@ -48,18 +50,24 @@ namespace Game.GamePlaySystem
         {
             buildStateMachine.ChangeState<NormalState>(false);
             buildStateMachine.Dispose();
+            EventCenter.RemoveListener<LoadDataEvent>(GetUnlockedBuildings);
             EventCenter.RemoveListener<StaticBuildingIntlEvent>(InitializeStaticBuilding);
 
             base.OnDestroyed();
+        }
+
+        private void GetUnlockedBuildings(LoadDataEvent evt)
+        {
+            Managers.Get<ISaveDataManager>().GetUnlockedBuildings(ref unlockedBuildings);
         }
 
         private void InitializeBuilding()
         {
             foreach (var (key, data) in _buildingDatas)
             {
-                if (id < key)
+                if (_internalID < key)
                 {
-                    id = key;
+                    _internalID = key;
                 }
                 
                 var pos = new float3(data.position[0], 0f, data.position[1]);
@@ -158,10 +166,7 @@ namespace Game.GamePlaySystem
             return false;
         }
 
-        public uint GetID()
-        {
-            return ++id;
-        }
+        public uint GetID() => ++_internalID;
 
         public void SetBuildingData(uint buildingId, BuildingData data)
         {
@@ -209,7 +214,7 @@ namespace Game.GamePlaySystem
             return !BuildingUtils.HasBuilding(ref grid, pos, actualRow, actualCol);
         }
         
-        public void Build(float3 position, int buildingType, uint id, int rotation = 0)
+        public void Build(float3 position, int buildingType, uint buildingId, int rotation = 0)
         {
             var entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
             var newBlock = entityManager.CreateEntity();
@@ -217,12 +222,23 @@ namespace Game.GamePlaySystem
             var offset = GetRotationOffset(rotation, data.Rowcount, data.Colcount);
             entityManager.AddComponentData(newBlock, new AddBuilding
             {
-                id = id,
+                id = buildingId,
                 spawnPos = position,
                 spawnType = buildingType,
                 rotation = rotation,
                 offset = offset,
             });
+        }
+
+        public bool UnlockBuilding(int buildingId)
+        {
+            if (unlockedBuildings.Contains(buildingId))
+            {
+                return false;
+            }
+
+            unlockedBuildings.Add(buildingId);
+            return true;
         }
 
     }

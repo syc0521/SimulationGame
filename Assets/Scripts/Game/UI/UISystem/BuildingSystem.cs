@@ -35,7 +35,8 @@ namespace Game.UI.UISystem
                     description = item.Description,
                     itemType = item.Currencytype,
                     itemCount = item.Currencycount,
-                    isUnlock = true
+                    isUnlock = true,
+                    buildingType = (BuildingType)item.Buildingtype + 1
                 };
             }
         }

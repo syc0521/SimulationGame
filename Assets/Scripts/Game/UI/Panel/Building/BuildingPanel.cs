@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Game.Data;
 using Game.GamePlaySystem;
 using Game.GamePlaySystem.Backpack;
@@ -20,6 +22,11 @@ namespace Game.UI.Panel.Building
     {
         public BuildingPanel_Nodes nodes;
 
+        private List<string> tabTitle = new()
+        {
+            "全部", "房屋", "生产", "装饰", "地标"
+        };
+
         public override void OnCreated()
         {
             nodes.close_btn.onClick.AddListener(ClosePanel);
@@ -28,7 +35,8 @@ namespace Game.UI.Panel.Building
         public override void OnShown()
         {
             base.OnShown();
-            InitBuilding();
+            InitTabBar();
+            InitBuilding(BuildingType.All);
         }
 
         public override void OnDestroyed()
@@ -42,18 +50,21 @@ namespace Game.UI.Panel.Building
             CloseSelf();
         }
 
-        private void InitBuilding()
+        private void InitBuilding(BuildingType type)
         {
             nodes.building_list.Clear();
             var buildingData = BuildingSystem.Instance.GetAllBuildingViewData();
-            foreach (var item in buildingData)
+            foreach (var item in buildingData.Where(data => data.Value.isUnlock))
             {
-                nodes.building_list.AddItem(new BuildingListData
+                if (type == 0 || type == item.Value.buildingType)
                 {
-                    id = item.Key,
-                    data = item.Value,
-                    clickHandler = ClickBuilding
-                });
+                    nodes.building_list.AddItem(new BuildingListData
+                    {
+                        id = item.Key,
+                        data = item.Value,
+                        clickHandler = ClickBuilding
+                    });
+                }
             }
         }
 
@@ -71,6 +82,16 @@ namespace Game.UI.Panel.Building
                 AlertDecorator.OpenAlertPanel("建筑材料不足！", false);
             }
             
+        }
+
+        private void InitTabBar()
+        {
+            nodes.tabBar.SetData(tabTitle, ClickTab);
+        }
+
+        private void ClickTab(int id)
+        {
+            InitBuilding((BuildingType)id);
         }
     }
 }

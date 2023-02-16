@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Game.Data;
 using Game.UI.Component;
 using Game.UI.Widget;
+using UnityEngine;
 
 namespace Game.UI.Panel.Common
 {
@@ -94,6 +95,9 @@ namespace Game.UI.Panel.Common
                     nodes.tip_w.SetDescription(bagItem.Content);
                     break;
             }
+
+            var heightRatio = Screen.height / 1080.0f;
+            nodes.tip_go.position += Vector3.down * 140 * heightRatio;
         }
 
     }

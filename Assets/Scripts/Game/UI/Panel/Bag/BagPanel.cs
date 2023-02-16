@@ -4,6 +4,7 @@ using Game.UI.Component;
 using Game.UI.UISystem;
 using Game.UI.ViewData;
 using Game.UI.Widget;
+using UnityEngine;
 
 namespace Game.UI.Panel.Bag
 {
@@ -67,6 +68,8 @@ namespace Game.UI.Panel.Bag
             nodes.tip_go.gameObject.SetActive(true);
             nodes.tip_w.SetTitle(_backpack[index].name);
             nodes.tip_w.SetDescription(_backpack[index].description);
+            var heightRatio = Screen.height / 1080.0f;
+            nodes.tip_go.position = widget.transform.position + Vector3.down * 140 * heightRatio;
         }
 
         private void CloseTip()

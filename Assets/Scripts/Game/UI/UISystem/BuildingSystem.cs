@@ -4,6 +4,7 @@ using Game.Core;
 using Game.Data;
 using Game.Data.Common;
 using Game.Data.Event;
+using Game.GamePlaySystem;
 using Game.UI.ViewData;
 
 namespace Game.UI.UISystem
@@ -35,7 +36,6 @@ namespace Game.UI.UISystem
                     description = item.Description,
                     itemType = item.Currencytype,
                     itemCount = item.Currencycount,
-                    isUnlock = true,
                     buildingType = (BuildingType)item.Buildingtype + 1
                 };
             }

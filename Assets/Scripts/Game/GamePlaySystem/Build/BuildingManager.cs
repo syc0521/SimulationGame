@@ -26,12 +26,18 @@ namespace Game.GamePlaySystem
         private int col, row;
         private HashSet<int> unlockedBuildings;
         public Vector3 ScreenPos { get; set; }
-        
-        public override void OnStart()
+
+        public override void OnAwake()
         {
+            base.OnAwake();
+            EventCenter.AddListener<LoadDataEvent>(GetUnlockedBuildings);
             col = ConfigTable.Instance.GetBuildConfig().col;
             row = ConfigTable.Instance.GetBuildConfig().row;
             grid = new(col, row, -1);
+        }
+
+        public override void OnStart()
+        {
             Managers.Get<ISaveDataManager>().GetBuildings(ref _buildingDatas);
             InitializeBuilding();
             buildStateMachine = new(new IState[]
@@ -42,7 +48,6 @@ namespace Game.GamePlaySystem
                 new DestroyState(),
             });
             buildStateMachine.ChangeState<NormalState>();
-            EventCenter.AddListener<LoadDataEvent>(GetUnlockedBuildings);
             EventCenter.AddListener<StaticBuildingIntlEvent>(InitializeStaticBuilding);
         }
 
@@ -239,6 +244,11 @@ namespace Game.GamePlaySystem
 
             unlockedBuildings.Add(buildingId);
             return true;
+        }
+
+        public bool CheckBuildingUnlocked(int buildingId)
+        {
+            return unlockedBuildings.Contains(buildingId);
         }
 
     }

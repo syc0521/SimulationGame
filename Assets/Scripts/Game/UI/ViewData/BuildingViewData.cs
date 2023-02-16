@@ -8,7 +8,6 @@ namespace Game.UI.ViewData
         public string description;
         public int[] itemType;
         public int[] itemCount;
-        public bool isUnlock;
         public BuildingType buildingType;
     }
 

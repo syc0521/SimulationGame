@@ -46,5 +46,11 @@ namespace Game.UI.Widget
         {
             button.group = group;
         }
+
+        public void SetOn()
+        {
+            button.isOn = true;
+            OnClick(true);
+        }
     }
 }

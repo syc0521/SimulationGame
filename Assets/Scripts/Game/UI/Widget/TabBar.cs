@@ -7,7 +7,7 @@ namespace Game.UI.Widget
 {
     public class TabBar : WidgetBase
     {
-        private List<TabWidget> _widgets;
+        private List<TabWidget> _widgets = new();
         public GameObject cell;
 
         public void SetData(List<string> tabName, Action<int> clickHandler)
@@ -19,7 +19,13 @@ namespace Game.UI.Widget
                 widget.SetText(tabName[i]);
                 widget.SetClickHandler(i, clickHandler);
                 widget.SetToggleGroup(GetComponent<ToggleGroup>());
+                _widgets.Add(widget);
             }
+        }
+
+        public void SetSelectedIndex(int index)
+        {
+            _widgets[index].SetOn();
         }
     }
 }

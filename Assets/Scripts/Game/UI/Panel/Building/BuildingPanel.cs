@@ -36,7 +36,7 @@ namespace Game.UI.Panel.Building
         {
             base.OnShown();
             InitTabBar();
-            InitBuilding(BuildingType.All);
+            nodes.tabBar.SetSelectedIndex(0);
         }
 
         public override void OnDestroyed()
@@ -54,17 +54,15 @@ namespace Game.UI.Panel.Building
         {
             nodes.building_list.Clear();
             var buildingData = BuildingSystem.Instance.GetAllBuildingViewData();
-            foreach (var item in buildingData.Where(data => data.Value.isUnlock))
+            foreach (var item in buildingData.Where(item => 
+                         (type is BuildingType.All || type == item.Value.buildingType) && BuildingManager.Instance.CheckBuildingUnlocked(item.Key)))
             {
-                if (type == 0 || type == item.Value.buildingType)
+                nodes.building_list.AddItem(new BuildingListData
                 {
-                    nodes.building_list.AddItem(new BuildingListData
-                    {
-                        id = item.Key,
-                        data = item.Value,
-                        clickHandler = ClickBuilding
-                    });
-                }
+                    id = item.Key,
+                    data = item.Value,
+                    clickHandler = ClickBuilding
+                });
             }
         }
 

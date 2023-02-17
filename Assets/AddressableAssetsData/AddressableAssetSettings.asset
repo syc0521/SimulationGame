@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: ce30264d13bfefc45a1f0efeeafd7313
   m_currentHash:
     serializedVersion: 2
-    Hash: 9565c9d00d84af33cd3e61199cd7f7aa
+    Hash: 00000000000000000000000000000000
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_BundleLocalCatalog: 0
@@ -48,6 +48,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0b56d73f17c79d849a5a8af366b77d07, type: 2}
   - {fileID: 11400000, guid: a1e9cad46db53d1498f761c6b06c8510, type: 2}
   - {fileID: 11400000, guid: 0c34482ce88496f40bd08e451894b6bb, type: 2}
+  - {fileID: 11400000, guid: 50122f3d9c409ad438881411121cb0a6, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
     m_CleanupStreamingAssetsAfterBuilds: 1
@@ -92,6 +93,7 @@ MonoBehaviour:
     - building
     - sprite
     - panel
+    - font
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 9e55f011731eeab469157fba1da83106, type: 2}

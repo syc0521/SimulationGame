@@ -15,14 +15,17 @@ public class BuildingCollectionCreator : MonoBehaviour
     [MenuItem("工具/导入建筑")]
     public static void ImportBuilding()
     {
-        var data = (Building)AssetDatabase.LoadAssetAtPath("Assets/Configs/building.asset", typeof(Building));
+        var data = (Building)AssetDatabase.LoadAssetAtPath("Assets/Configs/RawTable/building.asset", typeof(Building));
 
         List<GameObject> buildingObjs = new();
         foreach (var buildingData in data.dataList)
         {
             var buildingObj = (GameObject)AssetDatabase.LoadAssetAtPath(
                 GetAssetPath(ResEnum.Building, buildingData.Resourcepath), typeof(GameObject));
-            buildingObj.GetComponent<BuildingAuthoring>().type = buildingData.Buildingid;
+            var buildingAuthoring = buildingObj.GetComponent<BuildingAuthoring>();
+            buildingAuthoring.type = buildingData.Buildingid;
+            buildingAuthoring.maxPeople = buildingData.People;
+            buildingAuthoring.maxLevel = buildingData.Cd.Length;
             buildingObjs.Add(buildingObj);
             EditorUtility.SetDirty(buildingObj);
         }

@@ -74,6 +74,10 @@ MonoBehaviour:
     name: Unlock
     isEnable: 0
     isArray: 0
+  - type: 3
+    name: People
+    isEnable: 0
+    isArray: 0
   excelFilePath: Assets/Configs/RawTable/BuildingTable.xlsx
   SheetNames:
   - Building

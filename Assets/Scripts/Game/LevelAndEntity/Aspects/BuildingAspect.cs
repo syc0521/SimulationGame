@@ -14,10 +14,12 @@ namespace Game.LevelAndEntity.Aspects
         private readonly RefRW<Timer> timer;
         public readonly Entity self;
 
-        public int People => building.ValueRO.type + 1;
+        public int People => (int)(MaxPeople * ((float)Level / MaxLevel));
         public int BuildingType => building.ValueRO.type;
         public uint ID => levelObject.ValueRO.id;
         public int Level => levelObject.ValueRO.level; // 等级
+        public int MaxLevel => building.ValueRO.maxLevel;
+        public int MaxPeople => building.ValueRO.maxPeople;
 
         public float CurrentTime
         {

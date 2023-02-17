@@ -27,6 +27,18 @@ MonoBehaviour:
     name: "\u7CAE\u98DF"
     type: 1
     content: "\u7CAE\u98DF"
+  - id: 11
+    name: "\u6728\u677F"
+    type: 1
+    content: "\u6728\u677F"
+  - id: 12
+    name: "\u77F3\u5934"
+    type: 1
+    content: "\u77F3\u5934"
+  - id: 13
+    name: "\u7816"
+    type: 1
+    content: "\u7816"
   dataList:
   - id: 0
     name: "\u6728\u5934"
@@ -40,3 +52,15 @@ MonoBehaviour:
     name: "\u7CAE\u98DF"
     type: 1
     content: "\u7CAE\u98DF"
+  - id: 11
+    name: "\u6728\u677F"
+    type: 1
+    content: "\u6728\u677F"
+  - id: 12
+    name: "\u77F3\u5934"
+    type: 1
+    content: "\u77F3\u5934"
+  - id: 13
+    name: "\u7816"
+    type: 1
+    content: "\u7816"

@@ -47,7 +47,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 7
+  maxPeople: 3
   meshRoot: {fileID: 919132149155446097, guid: 4dc270616ae974b408db0bd16f0e5986, type: 3}
+  maxLevel: 3
 --- !u!114 &8021392280205170797
 MonoBehaviour:
   m_ObjectHideFlags: 0

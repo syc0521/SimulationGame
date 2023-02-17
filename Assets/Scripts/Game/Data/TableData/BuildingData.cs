@@ -66,5 +66,9 @@ namespace Game.Data.TableData
     bool unlock;
     public bool Unlock { get {return unlock; } set { unlock = value;} }
     
+    [SerializeField]
+    int people;
+    public int People { get {return people; } set { people = value;} }
+    
 	}
 }

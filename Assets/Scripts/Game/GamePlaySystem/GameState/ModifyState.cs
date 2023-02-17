@@ -59,12 +59,12 @@ namespace Game.GamePlaySystem.GameState
                 _buildingUserData.position = (aspect.Position - offset).xz;
                 _buildingUserData.rotation = currentRotation;
                 aspect.SpawnPos = aspect.Position - offset;
-                if (previousPos.Equals(aspect.SpawnPos))
+                if (!previousPos.Equals(aspect.SpawnPos))
                 {
                     TaskManager.Instance.TriggerTask(TaskType.MoveBuilding, aspect.BuildingType);
                 }
 
-                if (previousRot == currentRotation)
+                if (previousRot != currentRotation)
                 {
                     TaskManager.Instance.TriggerTask(TaskType.RotateBuilding, aspect.BuildingType);
                 }

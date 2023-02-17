@@ -19,9 +19,9 @@ MonoBehaviour:
     resourcepath: building_101
     name: "\u5B9D\u5854"
     buildingtype: 3
-    description: "\u5B9D\u5854"
+    description: "\u5F53\u524D\u7248\u672C\u6700\u8D35\u5EFA\u7B51"
     currencytype: 00000000
-    currencycount: e8030000
+    currencycount: 88130000
     rowcount: 2
     colcount: 2
     cd: ffffffff
@@ -47,7 +47,7 @@ MonoBehaviour:
     resourcepath: building_301
     name: "\u519C\u7530"
     buildingtype: 1
-    description: "\u519C\u7530"
+    description: "\u6682\u65F6\u53EF\u4EE5\u751F\u6210\u5EFA\u7B51\u6750\u6599"
     currencytype: 00000000
     currencycount: 05000000
     rowcount: 1
@@ -55,15 +55,15 @@ MonoBehaviour:
     cd: 080000000600000004000000
     producetype: 1
     produceid: 0
-    produceamount: 0a000000140000001e000000
+    produceamount: 0a0000001400000019000000
     unlock: 1
   - buildingid: 3
     resourcepath: building_401
     name: "\u9A6C\u8F66"
     buildingtype: 2
-    description: "\u9A6C\u8F66"
+    description: "\u88C5\u9970\u54C1"
     currencytype: 00000000
-    currencycount: 64000000
+    currencycount: 2c010000
     rowcount: 2
     colcount: 1
     cd: ffffffff
@@ -91,7 +91,7 @@ MonoBehaviour:
     buildingtype: 2
     description: "\u6865"
     currencytype: 00000000
-    currencycount: 64000000
+    currencycount: e8030000
     rowcount: 4
     colcount: 8
     cd: ffffffff
@@ -101,11 +101,11 @@ MonoBehaviour:
     unlock: 0
   - buildingid: 6
     resourcepath: building_202
-    name: "\u6C11\u5C4502"
+    name: "\u4E2D\u578B\u623F\u5C4B1"
     buildingtype: 0
-    description: "\u6C11\u5C4502"
+    description: "\u4E2D\u578B\u623F\u5C4B1"
     currencytype: 00000000
-    currencycount: 14000000
+    currencycount: 1e000000
     rowcount: 4
     colcount: 2
     cd: 080000000600000004000000
@@ -115,11 +115,11 @@ MonoBehaviour:
     unlock: 0
   - buildingid: 7
     resourcepath: building_203
-    name: "\u6C11\u5C4503"
+    name: "\u5C0F\u578B\u623F\u5C4B"
     buildingtype: 0
-    description: "\u6C11\u5C4503"
+    description: "\u57FA\u7840\u623F\u5C4B"
     currencytype: 00000000
-    currencycount: 14000000
+    currencycount: 96000000
     rowcount: 2
     colcount: 2
     cd: 090000000700000005000000
@@ -129,11 +129,11 @@ MonoBehaviour:
     unlock: 0
   - buildingid: 8
     resourcepath: building_204
-    name: "\u6C11\u5C4504"
+    name: "\u4E2D\u578B\u623F\u5C4B2"
     buildingtype: 0
-    description: "\u6C11\u5C4504"
+    description: "\u4E2D\u578B\u623F\u5C4B2"
     currencytype: 00000000
-    currencycount: 14000000
+    currencycount: 50000000
     rowcount: 4
     colcount: 2
     cd: 080000000600000004000000
@@ -143,11 +143,11 @@ MonoBehaviour:
     unlock: 0
   - buildingid: 9
     resourcepath: building_205
-    name: "\u6C11\u5C4505"
+    name: "\u5927\u578B\u623F\u5C4B"
     buildingtype: 0
-    description: "\u6C11\u5C4505"
+    description: "\u5927\u578B\u623F\u5C4B"
     currencytype: 00000000
-    currencycount: 28000000
+    currencycount: c8000000
     rowcount: 4
     colcount: 3
     cd: 090000000700000005000000
@@ -160,9 +160,9 @@ MonoBehaviour:
     resourcepath: building_101
     name: "\u5B9D\u5854"
     buildingtype: 3
-    description: "\u5B9D\u5854"
+    description: "\u5F53\u524D\u7248\u672C\u6700\u8D35\u5EFA\u7B51"
     currencytype: 00000000
-    currencycount: e8030000
+    currencycount: 88130000
     rowcount: 2
     colcount: 2
     cd: ffffffff
@@ -188,7 +188,7 @@ MonoBehaviour:
     resourcepath: building_301
     name: "\u519C\u7530"
     buildingtype: 1
-    description: "\u519C\u7530"
+    description: "\u6682\u65F6\u53EF\u4EE5\u751F\u6210\u5EFA\u7B51\u6750\u6599"
     currencytype: 00000000
     currencycount: 05000000
     rowcount: 1
@@ -196,15 +196,15 @@ MonoBehaviour:
     cd: 080000000600000004000000
     producetype: 1
     produceid: 0
-    produceamount: 0a000000140000001e000000
+    produceamount: 0a0000001400000019000000
     unlock: 1
   - buildingid: 3
     resourcepath: building_401
     name: "\u9A6C\u8F66"
     buildingtype: 2
-    description: "\u9A6C\u8F66"
+    description: "\u88C5\u9970\u54C1"
     currencytype: 00000000
-    currencycount: 64000000
+    currencycount: 2c010000
     rowcount: 2
     colcount: 1
     cd: ffffffff
@@ -232,7 +232,7 @@ MonoBehaviour:
     buildingtype: 2
     description: "\u6865"
     currencytype: 00000000
-    currencycount: 64000000
+    currencycount: e8030000
     rowcount: 4
     colcount: 8
     cd: ffffffff
@@ -242,11 +242,11 @@ MonoBehaviour:
     unlock: 0
   - buildingid: 6
     resourcepath: building_202
-    name: "\u6C11\u5C4502"
+    name: "\u4E2D\u578B\u623F\u5C4B1"
     buildingtype: 0
-    description: "\u6C11\u5C4502"
+    description: "\u4E2D\u578B\u623F\u5C4B1"
     currencytype: 00000000
-    currencycount: 14000000
+    currencycount: 1e000000
     rowcount: 4
     colcount: 2
     cd: 080000000600000004000000
@@ -256,11 +256,11 @@ MonoBehaviour:
     unlock: 0
   - buildingid: 7
     resourcepath: building_203
-    name: "\u6C11\u5C4503"
+    name: "\u5C0F\u578B\u623F\u5C4B"
     buildingtype: 0
-    description: "\u6C11\u5C4503"
+    description: "\u57FA\u7840\u623F\u5C4B"
     currencytype: 00000000
-    currencycount: 14000000
+    currencycount: 96000000
     rowcount: 2
     colcount: 2
     cd: 090000000700000005000000
@@ -270,11 +270,11 @@ MonoBehaviour:
     unlock: 0
   - buildingid: 8
     resourcepath: building_204
-    name: "\u6C11\u5C4504"
+    name: "\u4E2D\u578B\u623F\u5C4B2"
     buildingtype: 0
-    description: "\u6C11\u5C4504"
+    description: "\u4E2D\u578B\u623F\u5C4B2"
     currencytype: 00000000
-    currencycount: 14000000
+    currencycount: 50000000
     rowcount: 4
     colcount: 2
     cd: 080000000600000004000000
@@ -284,11 +284,11 @@ MonoBehaviour:
     unlock: 0
   - buildingid: 9
     resourcepath: building_205
-    name: "\u6C11\u5C4505"
+    name: "\u5927\u578B\u623F\u5C4B"
     buildingtype: 0
-    description: "\u6C11\u5C4505"
+    description: "\u5927\u578B\u623F\u5C4B"
     currencytype: 00000000
-    currencycount: 28000000
+    currencycount: c8000000
     rowcount: 4
     colcount: 3
     cd: 090000000700000005000000

@@ -21,7 +21,47 @@ MonoBehaviour:
     count: 64000000
   - rewardid: 1
     rewardtype: 01000000
-    itemid: 02000000
+    itemid: 06000000
+    count: 01000000
+  - rewardid: 2
+    rewardtype: 01000000
+    itemid: 07000000
+    count: 01000000
+  - rewardid: 3
+    rewardtype: 01000000
+    itemid: 08000000
+    count: 01000000
+  - rewardid: 4
+    rewardtype: 01000000
+    itemid: 09000000
+    count: 01000000
+  - rewardid: 5
+    rewardtype: 01000000
+    itemid: 03000000
+    count: 01000000
+  - rewardid: 6
+    rewardtype: 01000000
+    itemid: 00000000
+    count: 01000000
+  - rewardid: 7
+    rewardtype: 02000000
+    itemid: 00000000
+    count: dc050000
+  - rewardid: 8
+    rewardtype: 02000000
+    itemid: 00000000
+    count: 50000000
+  - rewardid: 9
+    rewardtype: 02000000
+    itemid: 00000000
+    count: b80b0000
+  - rewardid: 10
+    rewardtype: 01000000
+    itemid: 00000000
+    count: 01000000
+  - rewardid: 11
+    rewardtype: 01000000
+    itemid: 05000000
     count: 01000000
   dataList:
   - rewardid: 0
@@ -30,5 +70,45 @@ MonoBehaviour:
     count: 64000000
   - rewardid: 1
     rewardtype: 01000000
-    itemid: 02000000
+    itemid: 06000000
+    count: 01000000
+  - rewardid: 2
+    rewardtype: 01000000
+    itemid: 07000000
+    count: 01000000
+  - rewardid: 3
+    rewardtype: 01000000
+    itemid: 08000000
+    count: 01000000
+  - rewardid: 4
+    rewardtype: 01000000
+    itemid: 09000000
+    count: 01000000
+  - rewardid: 5
+    rewardtype: 01000000
+    itemid: 03000000
+    count: 01000000
+  - rewardid: 6
+    rewardtype: 01000000
+    itemid: 00000000
+    count: 01000000
+  - rewardid: 7
+    rewardtype: 02000000
+    itemid: 00000000
+    count: dc050000
+  - rewardid: 8
+    rewardtype: 02000000
+    itemid: 00000000
+    count: 50000000
+  - rewardid: 9
+    rewardtype: 02000000
+    itemid: 00000000
+    count: b80b0000
+  - rewardid: 10
+    rewardtype: 01000000
+    itemid: 00000000
+    count: 01000000
+  - rewardid: 11
+    rewardtype: 01000000
+    itemid: 05000000
     count: 01000000

@@ -32,10 +32,10 @@ namespace Game.GamePlaySystem.Backpack
             if (!backpack.ContainsKey(id))
             {
                 backpack[id] = count;
-                TaskManager.Instance.TriggerTask(TaskType.GetBagItem, id, count);
             }
             backpack[id] += count;
-            
+            TaskManager.Instance.TriggerTask(TaskType.GetBagItem, id, count);
+
             Debug.Log($"{id}物品数量为{backpack[id]}");
         }
 

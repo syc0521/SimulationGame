@@ -85,7 +85,7 @@ namespace Game.Data
             {
                 buildings = new(),
                 tasks = new(),
-                backpack = new(){ {0,5},{10,5} },
+                backpack = new(){ {0,50} },
                 currency = new(){ {0,0},{1,0},{2,0} },
                 unlockedBuildings = unlockList.Select(item => item.Buildingid).ToHashSet()
             };

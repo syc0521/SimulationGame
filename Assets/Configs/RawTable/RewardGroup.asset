@@ -20,48 +20,128 @@ MonoBehaviour:
     itemid: 00000000
     count: 64000000
   - rewardid: 1
-    rewardtype: 01000000
-    itemid: 06000000
-    count: 01000000
-  - rewardid: 2
-    rewardtype: 01000000
-    itemid: 07000000
-    count: 01000000
-  - rewardid: 3
-    rewardtype: 01000000
-    itemid: 08000000
-    count: 01000000
-  - rewardid: 4
-    rewardtype: 01000000
-    itemid: 09000000
-    count: 01000000
-  - rewardid: 5
-    rewardtype: 01000000
-    itemid: 03000000
-    count: 01000000
-  - rewardid: 6
-    rewardtype: 01000000
+    rewardtype: 00000000
     itemid: 00000000
-    count: 01000000
-  - rewardid: 7
-    rewardtype: 02000000
+    count: c8000000
+  - rewardid: 2
+    rewardtype: 00000000
+    itemid: 00000000
+    count: 2c010000
+  - rewardid: 3
+    rewardtype: 00000000
+    itemid: 00000000
+    count: f4010000
+  - rewardid: 4
+    rewardtype: 00000000
+    itemid: 00000000
+    count: 20030000
+  - rewardid: 5
+    rewardtype: 00000000
+    itemid: 00000000
+    count: e8030000
+  - rewardid: 6
+    rewardtype: 00000000
     itemid: 00000000
     count: dc050000
-  - rewardid: 8
+  - rewardid: 7
+    rewardtype: 00000000
+    itemid: 00000000
+    count: d0070000
+  - rewardid: 10
     rewardtype: 02000000
     itemid: 00000000
-    count: 50000000
-  - rewardid: 9
+    count: 32000000
+  - rewardid: 11
+    rewardtype: 02000000
+    itemid: 00000000
+    count: 64000000
+  - rewardid: 12
+    rewardtype: 02000000
+    itemid: 00000000
+    count: c8000000
+  - rewardid: 13
+    rewardtype: 02000000
+    itemid: 00000000
+    count: f4010000
+  - rewardid: 14
+    rewardtype: 02000000
+    itemid: 00000000
+    count: e8030000
+  - rewardid: 15
     rewardtype: 02000000
     itemid: 00000000
     count: b80b0000
-  - rewardid: 10
+  - rewardid: 100
     rewardtype: 01000000
     itemid: 00000000
     count: 01000000
-  - rewardid: 11
+  - rewardid: 101
+    rewardtype: 01000000
+    itemid: 01000000
+    count: 01000000
+  - rewardid: 102
+    rewardtype: 01000000
+    itemid: 02000000
+    count: 01000000
+  - rewardid: 103
+    rewardtype: 01000000
+    itemid: 03000000
+    count: 01000000
+  - rewardid: 104
+    rewardtype: 01000000
+    itemid: 04000000
+    count: 01000000
+  - rewardid: 105
     rewardtype: 01000000
     itemid: 05000000
+    count: 01000000
+  - rewardid: 106
+    rewardtype: 01000000
+    itemid: 06000000
+    count: 01000000
+  - rewardid: 107
+    rewardtype: 01000000
+    itemid: 07000000
+    count: 01000000
+  - rewardid: 108
+    rewardtype: 01000000
+    itemid: 08000000
+    count: 01000000
+  - rewardid: 109
+    rewardtype: 01000000
+    itemid: 09000000
+    count: 01000000
+  - rewardid: 110
+    rewardtype: 01000000
+    itemid: 0a000000
+    count: 01000000
+  - rewardid: 111
+    rewardtype: 01000000
+    itemid: 0b000000
+    count: 01000000
+  - rewardid: 112
+    rewardtype: 01000000
+    itemid: 0c000000
+    count: 01000000
+  - rewardid: 113
+    rewardtype: 01000000
+    itemid: 0d000000
+    count: 01000000
+  - rewardid: 114
+    rewardtype: 01000000
+    itemid: 0e000000
+    count: 01000000
+  - rewardid: 115
+    rewardtype: 01000000
+    itemid: 0f000000
+    count: 01000000
+  - rewardid: 116
+    rewardtype: 01000000
+    itemid: 10000000
+    count: 01000000
+  - rewardid: 117
+    rewardtype: 01000000
+    itemid: 11000000
     count: 01000000
   dataList:
   - rewardid: 0
@@ -69,46 +149,126 @@ MonoBehaviour:
     itemid: 00000000
     count: 64000000
   - rewardid: 1
-    rewardtype: 01000000
-    itemid: 06000000
-    count: 01000000
-  - rewardid: 2
-    rewardtype: 01000000
-    itemid: 07000000
-    count: 01000000
-  - rewardid: 3
-    rewardtype: 01000000
-    itemid: 08000000
-    count: 01000000
-  - rewardid: 4
-    rewardtype: 01000000
-    itemid: 09000000
-    count: 01000000
-  - rewardid: 5
-    rewardtype: 01000000
-    itemid: 03000000
-    count: 01000000
-  - rewardid: 6
-    rewardtype: 01000000
+    rewardtype: 00000000
     itemid: 00000000
-    count: 01000000
-  - rewardid: 7
-    rewardtype: 02000000
+    count: c8000000
+  - rewardid: 2
+    rewardtype: 00000000
+    itemid: 00000000
+    count: 2c010000
+  - rewardid: 3
+    rewardtype: 00000000
+    itemid: 00000000
+    count: f4010000
+  - rewardid: 4
+    rewardtype: 00000000
+    itemid: 00000000
+    count: 20030000
+  - rewardid: 5
+    rewardtype: 00000000
+    itemid: 00000000
+    count: e8030000
+  - rewardid: 6
+    rewardtype: 00000000
     itemid: 00000000
     count: dc050000
-  - rewardid: 8
+  - rewardid: 7
+    rewardtype: 00000000
+    itemid: 00000000
+    count: d0070000
+  - rewardid: 10
     rewardtype: 02000000
     itemid: 00000000
-    count: 50000000
-  - rewardid: 9
+    count: 32000000
+  - rewardid: 11
+    rewardtype: 02000000
+    itemid: 00000000
+    count: 64000000
+  - rewardid: 12
+    rewardtype: 02000000
+    itemid: 00000000
+    count: c8000000
+  - rewardid: 13
+    rewardtype: 02000000
+    itemid: 00000000
+    count: f4010000
+  - rewardid: 14
+    rewardtype: 02000000
+    itemid: 00000000
+    count: e8030000
+  - rewardid: 15
     rewardtype: 02000000
     itemid: 00000000
     count: b80b0000
-  - rewardid: 10
+  - rewardid: 100
     rewardtype: 01000000
     itemid: 00000000
     count: 01000000
-  - rewardid: 11
+  - rewardid: 101
+    rewardtype: 01000000
+    itemid: 01000000
+    count: 01000000
+  - rewardid: 102
+    rewardtype: 01000000
+    itemid: 02000000
+    count: 01000000
+  - rewardid: 103
+    rewardtype: 01000000
+    itemid: 03000000
+    count: 01000000
+  - rewardid: 104
+    rewardtype: 01000000
+    itemid: 04000000
+    count: 01000000
+  - rewardid: 105
     rewardtype: 01000000
     itemid: 05000000
+    count: 01000000
+  - rewardid: 106
+    rewardtype: 01000000
+    itemid: 06000000
+    count: 01000000
+  - rewardid: 107
+    rewardtype: 01000000
+    itemid: 07000000
+    count: 01000000
+  - rewardid: 108
+    rewardtype: 01000000
+    itemid: 08000000
+    count: 01000000
+  - rewardid: 109
+    rewardtype: 01000000
+    itemid: 09000000
+    count: 01000000
+  - rewardid: 110
+    rewardtype: 01000000
+    itemid: 0a000000
+    count: 01000000
+  - rewardid: 111
+    rewardtype: 01000000
+    itemid: 0b000000
+    count: 01000000
+  - rewardid: 112
+    rewardtype: 01000000
+    itemid: 0c000000
+    count: 01000000
+  - rewardid: 113
+    rewardtype: 01000000
+    itemid: 0d000000
+    count: 01000000
+  - rewardid: 114
+    rewardtype: 01000000
+    itemid: 0e000000
+    count: 01000000
+  - rewardid: 115
+    rewardtype: 01000000
+    itemid: 0f000000
+    count: 01000000
+  - rewardid: 116
+    rewardtype: 01000000
+    itemid: 10000000
+    count: 01000000
+  - rewardid: 117
+    rewardtype: 01000000
+    itemid: 11000000
     count: 01000000

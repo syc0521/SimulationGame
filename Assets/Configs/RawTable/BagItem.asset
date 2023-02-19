@@ -20,7 +20,7 @@ MonoBehaviour:
     type: 0
     content: "\u57FA\u7840\u5EFA\u7B51\u6750\u6599"
   - id: 1
-    name: "\u94C1"
+    name: "\u77F3\u7816"
     type: 0
     content: "\u8FDB\u9636\u5EFA\u7B51\u6750\u6599"
   - id: 10
@@ -28,24 +28,16 @@ MonoBehaviour:
     type: 1
     content: "\u7CAE\u98DF"
   - id: 11
-    name: "\u6728\u677F"
-    type: 1
-    content: "\u6728\u677F"
-  - id: 12
     name: "\u77F3\u5934"
     type: 1
     content: "\u77F3\u5934"
-  - id: 13
-    name: "\u7816"
-    type: 1
-    content: "\u7816"
   dataList:
   - id: 0
     name: "\u6728\u5934"
     type: 0
     content: "\u57FA\u7840\u5EFA\u7B51\u6750\u6599"
   - id: 1
-    name: "\u94C1"
+    name: "\u77F3\u7816"
     type: 0
     content: "\u8FDB\u9636\u5EFA\u7B51\u6750\u6599"
   - id: 10
@@ -53,14 +45,6 @@ MonoBehaviour:
     type: 1
     content: "\u7CAE\u98DF"
   - id: 11
-    name: "\u6728\u677F"
-    type: 1
-    content: "\u6728\u677F"
-  - id: 12
     name: "\u77F3\u5934"
     type: 1
     content: "\u77F3\u5934"
-  - id: 13
-    name: "\u7816"
-    type: 1
-    content: "\u7816"

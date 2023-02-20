@@ -19,8 +19,8 @@ MonoBehaviour:
     name: "\u4FEE\u5EFA\u6797\u573A"
     previousid: -1
     tasktype: 0
-    targetid: 02000000
-    targetnum: 02000000
+    targetid: 0b000000
+    targetnum: 01000000
     reward: 104
     content: "\u5728\u5B98\u5E9C\u9644\u8FD1\u4FEE\u5EFA\u4E00\u4E2A\u6797\u573A"
   - taskid: 1001
@@ -28,7 +28,7 @@ MonoBehaviour:
     previousid: 1000
     tasktype: 0
     targetid: 04000000
-    targetnum: 02000000
+    targetnum: 01000000
     reward: 107
     content: "\u7528\u9053\u8DEF\u5C06\u6797\u573A\u4E0E\u5B98\u5E9C\u8FDE\u63A5"
   - taskid: 1002
@@ -51,8 +51,8 @@ MonoBehaviour:
     name: "\u5F00\u57A6\u519C\u7530"
     previousid: 1003
     tasktype: 0
-    targetid: 01000000
-    targetnum: 01000000
+    targetid: 02000000
+    targetnum: 02000000
     reward: 0
     content: "\u5F00\u57A6\u4E24\u4E2A\u519C\u7530"
   - taskid: 2002
@@ -60,12 +60,12 @@ MonoBehaviour:
     previousid: 2001
     tasktype: 3
     targetid: 0a000000
-    targetnum: 50000000
+    targetnum: 3c000000
     reward: 106
-    content: "\u83B7\u53D680\u4E2A\u7CAE\u98DF"
+    content: "\u83B7\u53D660\u4E2A\u7CAE\u98DF"
   - taskid: 2003
     name: "\u751F\u4EA7\u6728\u6750"
-    previousid: 2002
+    previousid: 2001
     tasktype: 3
     targetid: 00000000
     targetnum: 64000000
@@ -97,23 +97,23 @@ MonoBehaviour:
     content: "\u5C06\u5EFA\u9020\u7684\u7BF1\u7B06\u4EFB\u610F\u65CB\u8F6C\u4E00\u4E2A"
   - taskid: 2004
     name: "\u4FEE\u5EFA\u91C7\u77F3\u573A"
-    previousid: 1004
+    previousid: 3002
     tasktype: 0
     targetid: 0a000000
     targetnum: 01000000
-    reward: 11
+    reward: 103
     content: "\u4FEE\u5EFA\u4E00\u4E2A\u91C7\u77F3\u573A"
   - taskid: 2005
     name: "\u83B7\u5F97\u77F3\u5934"
     previousid: 2004
     tasktype: 3
     targetid: 0b000000
-    targetnum: 64000000
-    reward: 103
-    content: "\u83B7\u5F97100\u77F3\u5934"
+    targetnum: 32000000
+    reward: 11
+    content: "\u83B7\u5F9750\u77F3\u5934"
   - taskid: 3003
     name: "\u5EFA\u9020\u9A6C\u8F66"
-    previousid: 2005
+    previousid: 2004
     tasktype: 0
     targetid: 03000000
     targetnum: 01000000
@@ -121,7 +121,7 @@ MonoBehaviour:
     content: "\u5EFA\u9020\u4E00\u8F86\u9A6C\u8F66"
   - taskid: 2006
     name: "\u83B7\u5F97\u5EFA\u6750"
-    previousid: 1005
+    previousid: 3002
     tasktype: 3
     targetid: 00000000
     targetnum: c8000000
@@ -129,7 +129,7 @@ MonoBehaviour:
     content: "\u7EE7\u7EED\u4FEE\u7F2E\u5BB6\u56ED\u9700\u8981\u66F4\u591A\u7684\u6728\u6750(\u83B7\u5F97260\u6728\u6750)"
   - taskid: 4001
     name: "\u83B7\u5F97\u91D1\u5E01"
-    previousid: 1005
+    previousid: 3003
     tasktype: 2
     targetid: 00000000
     targetnum: 20030000
@@ -139,7 +139,7 @@ MonoBehaviour:
     name: "\u4FEE\u5EFA\u6C11\u5C45-\u5927\u578B"
     previousid: 2006
     tasktype: 0
-    targetid: 09000000
+    targetid: 08000000
     targetnum: 01000000
     reward: 10
     content: "\u4FEE\u5EFA\u4E00\u4E2A\u5927\u578B\u6C11\u5C45"
@@ -181,7 +181,7 @@ MonoBehaviour:
     tasktype: 0
     targetid: 0c000000
     targetnum: 01000000
-    reward: 0
+    reward: 113
     content: "\u4FEE\u5EFA\u4E00\u4E2A\u7816\u5382"
   - taskid: 2008
     name: "\u83B7\u5F97\u7816\u77F3"
@@ -193,58 +193,34 @@ MonoBehaviour:
     content: "\u83B7\u5F97100\u77F3\u7816\uFF08\u77F3\u5934-\u77F3\u7816\uFF0C\u8FDB\u9636\u5EFA\u7B51\u6750\u6599\uFF09"
   - taskid: 1007
     name: "\u4FEE\u5EFA\u5546\u94FA"
-    previousid: 2008
+    previousid: 2007
     tasktype: 0
-    targetid: 08000000
+    targetid: 0d000000
     targetnum: 01000000
-    reward: 0
+    reward: 115
     content: "\u4FEE\u5EFA\u4E00\u4E2A\u5546\u94FA\uFF08\u6536\u96C6\u7269\u8F6C\u5316\u91D1\u5E01\u3001\u5546\u57CE\uFF09"
   - taskid: 1008
-    name: "\u8D2D\u4E70\u7AF9\u7BA1"
-    previousid: 1020
-    tasktype: 5
-    targetid: 09000000
-    targetnum: f4010000
-    reward: 0
-    content: "\u5728\u5546\u94FA\u8D2D\u4E70500\u7AF9\u7BA1"
-  - taskid: 1009
     name: "\u4FEE\u5EFA\u4E951"
-    previousid: 1021
+    previousid: 1007
     tasktype: 0
-    targetid: 0a000000
-    targetnum: c8000000c800000064000000
-    reward: 0
+    targetid: 0f000000
+    targetnum: 01000000
+    reward: 116
     content: "\u6D88\u8017200\u6728\u5934\uFF0C200\u7816\u77F3\uFF0C100\u7AF9\u7BA1\u4FEE\u5EFA\u4E951"
-  - taskid: 1010
-    name: "\u8D2D\u4E70\u74E6\u7B52"
-    previousid: 1022
-    tasktype: 5
-    targetid: 0b000000
-    targetnum: f4010000
-    reward: 0
-    content: "\u5728\u7816\u7A91\u8D2D\u4E70500\u74E6\u7B52"
-  - taskid: 1011
+  - taskid: 1009
     name: "\u4FEE\u5EFA\u4E952"
-    previousid: 1023
+    previousid: 1008
     tasktype: 0
-    targetid: 0c000000
-    targetnum: c8000000c8000000c8000000
-    reward: 0
+    targetid: 10000000
+    targetnum: 01000000
+    reward: 117
     content: "\u6D88\u8017200\u6728\u5934\uFF0C200\u7816\u77F3\uFF0C200\u74E6\u7B52\u4FEE\u5EFA\u4E952"
-  - taskid: 1012
-    name: "\u8D2D\u4E70\u77F3\u69FD"
-    previousid: 1024
-    tasktype: 5
-    targetid: 0d000000
-    targetnum: 2c010000
-    reward: 0
-    content: "\u5728\u91C7\u77F3\u573A\u8D2D\u4E70300\u77F3\u69FD"
-  - taskid: 1013
+  - taskid: 1010
     name: "\u4FEE\u5EFA\u4E953"
-    previousid: 1025
+    previousid: 2008
     tasktype: 0
-    targetid: 0e000000
-    targetnum: c8000000c8000000c8000000c8000000
+    targetid: 11000000
+    targetnum: 01000000
     reward: 0
     content: "\u6D88\u8017200\u6728\u5934\uFF0C200\u7816\u77F3\uFF0C200\u74E6\u7B52\uFF0C200\u77F3\u69FD\u4FEE\u5EFA\u4E952"
   dataList:
@@ -252,8 +228,8 @@ MonoBehaviour:
     name: "\u4FEE\u5EFA\u6797\u573A"
     previousid: -1
     tasktype: 0
-    targetid: 02000000
-    targetnum: 02000000
+    targetid: 0b000000
+    targetnum: 01000000
     reward: 104
     content: "\u5728\u5B98\u5E9C\u9644\u8FD1\u4FEE\u5EFA\u4E00\u4E2A\u6797\u573A"
   - taskid: 1001
@@ -261,7 +237,7 @@ MonoBehaviour:
     previousid: 1000
     tasktype: 0
     targetid: 04000000
-    targetnum: 02000000
+    targetnum: 01000000
     reward: 107
     content: "\u7528\u9053\u8DEF\u5C06\u6797\u573A\u4E0E\u5B98\u5E9C\u8FDE\u63A5"
   - taskid: 1002
@@ -284,8 +260,8 @@ MonoBehaviour:
     name: "\u5F00\u57A6\u519C\u7530"
     previousid: 1003
     tasktype: 0
-    targetid: 01000000
-    targetnum: 01000000
+    targetid: 02000000
+    targetnum: 02000000
     reward: 0
     content: "\u5F00\u57A6\u4E24\u4E2A\u519C\u7530"
   - taskid: 2002
@@ -293,12 +269,12 @@ MonoBehaviour:
     previousid: 2001
     tasktype: 3
     targetid: 0a000000
-    targetnum: 50000000
+    targetnum: 3c000000
     reward: 106
-    content: "\u83B7\u53D680\u4E2A\u7CAE\u98DF"
+    content: "\u83B7\u53D660\u4E2A\u7CAE\u98DF"
   - taskid: 2003
     name: "\u751F\u4EA7\u6728\u6750"
-    previousid: 2002
+    previousid: 2001
     tasktype: 3
     targetid: 00000000
     targetnum: 64000000
@@ -330,23 +306,23 @@ MonoBehaviour:
     content: "\u5C06\u5EFA\u9020\u7684\u7BF1\u7B06\u4EFB\u610F\u65CB\u8F6C\u4E00\u4E2A"
   - taskid: 2004
     name: "\u4FEE\u5EFA\u91C7\u77F3\u573A"
-    previousid: 1004
+    previousid: 3002
     tasktype: 0
     targetid: 0a000000
     targetnum: 01000000
-    reward: 11
+    reward: 103
     content: "\u4FEE\u5EFA\u4E00\u4E2A\u91C7\u77F3\u573A"
   - taskid: 2005
     name: "\u83B7\u5F97\u77F3\u5934"
     previousid: 2004
     tasktype: 3
     targetid: 0b000000
-    targetnum: 64000000
-    reward: 103
-    content: "\u83B7\u5F97100\u77F3\u5934"
+    targetnum: 32000000
+    reward: 11
+    content: "\u83B7\u5F9750\u77F3\u5934"
   - taskid: 3003
     name: "\u5EFA\u9020\u9A6C\u8F66"
-    previousid: 2005
+    previousid: 2004
     tasktype: 0
     targetid: 03000000
     targetnum: 01000000
@@ -354,7 +330,7 @@ MonoBehaviour:
     content: "\u5EFA\u9020\u4E00\u8F86\u9A6C\u8F66"
   - taskid: 2006
     name: "\u83B7\u5F97\u5EFA\u6750"
-    previousid: 1005
+    previousid: 3002
     tasktype: 3
     targetid: 00000000
     targetnum: c8000000
@@ -362,7 +338,7 @@ MonoBehaviour:
     content: "\u7EE7\u7EED\u4FEE\u7F2E\u5BB6\u56ED\u9700\u8981\u66F4\u591A\u7684\u6728\u6750(\u83B7\u5F97260\u6728\u6750)"
   - taskid: 4001
     name: "\u83B7\u5F97\u91D1\u5E01"
-    previousid: 1005
+    previousid: 3003
     tasktype: 2
     targetid: 00000000
     targetnum: 20030000
@@ -372,7 +348,7 @@ MonoBehaviour:
     name: "\u4FEE\u5EFA\u6C11\u5C45-\u5927\u578B"
     previousid: 2006
     tasktype: 0
-    targetid: 09000000
+    targetid: 08000000
     targetnum: 01000000
     reward: 10
     content: "\u4FEE\u5EFA\u4E00\u4E2A\u5927\u578B\u6C11\u5C45"
@@ -414,7 +390,7 @@ MonoBehaviour:
     tasktype: 0
     targetid: 0c000000
     targetnum: 01000000
-    reward: 0
+    reward: 113
     content: "\u4FEE\u5EFA\u4E00\u4E2A\u7816\u5382"
   - taskid: 2008
     name: "\u83B7\u5F97\u7816\u77F3"
@@ -426,57 +402,33 @@ MonoBehaviour:
     content: "\u83B7\u5F97100\u77F3\u7816\uFF08\u77F3\u5934-\u77F3\u7816\uFF0C\u8FDB\u9636\u5EFA\u7B51\u6750\u6599\uFF09"
   - taskid: 1007
     name: "\u4FEE\u5EFA\u5546\u94FA"
-    previousid: 2008
+    previousid: 2007
     tasktype: 0
-    targetid: 08000000
+    targetid: 0d000000
     targetnum: 01000000
-    reward: 0
+    reward: 115
     content: "\u4FEE\u5EFA\u4E00\u4E2A\u5546\u94FA\uFF08\u6536\u96C6\u7269\u8F6C\u5316\u91D1\u5E01\u3001\u5546\u57CE\uFF09"
   - taskid: 1008
-    name: "\u8D2D\u4E70\u7AF9\u7BA1"
-    previousid: 1020
-    tasktype: 5
-    targetid: 09000000
-    targetnum: f4010000
-    reward: 0
-    content: "\u5728\u5546\u94FA\u8D2D\u4E70500\u7AF9\u7BA1"
-  - taskid: 1009
     name: "\u4FEE\u5EFA\u4E951"
-    previousid: 1021
+    previousid: 1007
     tasktype: 0
-    targetid: 0a000000
-    targetnum: c8000000c800000064000000
-    reward: 0
+    targetid: 0f000000
+    targetnum: 01000000
+    reward: 116
     content: "\u6D88\u8017200\u6728\u5934\uFF0C200\u7816\u77F3\uFF0C100\u7AF9\u7BA1\u4FEE\u5EFA\u4E951"
-  - taskid: 1010
-    name: "\u8D2D\u4E70\u74E6\u7B52"
-    previousid: 1022
-    tasktype: 5
-    targetid: 0b000000
-    targetnum: f4010000
-    reward: 0
-    content: "\u5728\u7816\u7A91\u8D2D\u4E70500\u74E6\u7B52"
-  - taskid: 1011
+  - taskid: 1009
     name: "\u4FEE\u5EFA\u4E952"
-    previousid: 1023
+    previousid: 1008
     tasktype: 0
-    targetid: 0c000000
-    targetnum: c8000000c8000000c8000000
-    reward: 0
+    targetid: 10000000
+    targetnum: 01000000
+    reward: 117
     content: "\u6D88\u8017200\u6728\u5934\uFF0C200\u7816\u77F3\uFF0C200\u74E6\u7B52\u4FEE\u5EFA\u4E952"
-  - taskid: 1012
-    name: "\u8D2D\u4E70\u77F3\u69FD"
-    previousid: 1024
-    tasktype: 5
-    targetid: 0d000000
-    targetnum: 2c010000
-    reward: 0
-    content: "\u5728\u91C7\u77F3\u573A\u8D2D\u4E70300\u77F3\u69FD"
-  - taskid: 1013
+  - taskid: 1010
     name: "\u4FEE\u5EFA\u4E953"
-    previousid: 1025
+    previousid: 2008
     tasktype: 0
-    targetid: 0e000000
-    targetnum: c8000000c8000000c8000000c8000000
+    targetid: 11000000
+    targetnum: 01000000
     reward: 0
     content: "\u6D88\u8017200\u6728\u5934\uFF0C200\u7816\u77F3\uFF0C200\u74E6\u7B52\uFF0C200\u77F3\u69FD\u4FEE\u5EFA\u4E952"

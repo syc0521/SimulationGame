@@ -58,6 +58,7 @@ namespace Game.GamePlaySystem
             EventCenter.RemoveListener<LoadDataEvent>(GetUnlockedBuildings);
             EventCenter.RemoveListener<StaticBuildingIntlEvent>(InitializeStaticBuilding);
 
+            grid.Dispose();
             base.OnDestroyed();
         }
 

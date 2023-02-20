@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b0cedcf012c4e819d4672ac16a58ff0, type: 3}
   m_Name: BuildConfig
   m_EditorClassIdentifier: 
-  col: 20
-  row: 20
+  col: 40
+  row: 40
   buildingMat: {fileID: 2100000, guid: b24812ad1ca5ea547836b0efa566b813, type: 2}

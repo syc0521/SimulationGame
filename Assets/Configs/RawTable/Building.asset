@@ -52,12 +52,12 @@ MonoBehaviour:
     description: "\u53EF\u4EE5\u751F\u4EA7\u7CAE\u98DF"
     currencytype: 00000000
     currencycount: 05000000
-    rowcount: 1
-    colcount: 1
+    rowcount: 2
+    colcount: 2
     cd: 080000000600000004000000
     producetype: 1
-    produceid: 0
-    produceamount: 060000000c0000000f000000
+    produceid: 10
+    produceamount: 04000000080000000a000000
     unlock: 0
     people: 0
   - buildingid: 3
@@ -132,7 +132,7 @@ MonoBehaviour:
     cd: 090000000700000005000000
     producetype: 0
     produceid: 0
-    produceamount: 280000003c00000050000000
+    produceamount: 140000002800000032000000
     unlock: 0
     people: 3
   - buildingid: 8
@@ -177,7 +177,7 @@ MonoBehaviour:
     cd: 080000000600000004000000
     producetype: 1
     produceid: 11
-    produceamount: 04000000080000000a000000
+    produceamount: 060000000c0000000f000000
     unlock: 0
     people: 0
   - buildingid: 11
@@ -187,8 +187,8 @@ MonoBehaviour:
     description: "\u53EF\u4EE5\u751F\u4EA7\u6728\u5934"
     currencytype: 00000000
     currencycount: 32000000
-    rowcount: 6
-    colcount: 6
+    rowcount: 3
+    colcount: 3
     cd: 080000000600000005000000
     producetype: 1
     produceid: 0
@@ -202,8 +202,8 @@ MonoBehaviour:
     description: "\u7816\u5382"
     currencytype: 00000000
     currencycount: 2c010000
-    rowcount: 8
-    colcount: 10
+    rowcount: 4
+    colcount: 5
     cd: 080000000600000004000000
     producetype: 1
     produceid: 1
@@ -215,10 +215,10 @@ MonoBehaviour:
     name: "\u5546\u94FA"
     buildingtype: 4
     description: "\u5546\u94FA"
-    currencytype: 02000000
-    currencycount: f4010000
-    rowcount: 6
-    colcount: 6
+    currencytype: 0b000000
+    currencycount: c8000000
+    rowcount: 4
+    colcount: 4
     cd: ffffffff
     producetype: 2
     produceid: 0
@@ -246,7 +246,7 @@ MonoBehaviour:
     buildingtype: 3
     description: "\u4E951"
     currencytype: 00000000
-    currencycount: 2c010000
+    currencycount: e8030000
     rowcount: 2
     colcount: 2
     cd: ffffffff
@@ -261,7 +261,7 @@ MonoBehaviour:
     buildingtype: 3
     description: "\u4E952"
     currencytype: 00000000
-    currencycount: 90010000
+    currencycount: dc050000
     rowcount: 2
     colcount: 2
     cd: ffffffff
@@ -276,7 +276,7 @@ MonoBehaviour:
     buildingtype: 3
     description: "\u4E953"
     currencytype: 00000000
-    currencycount: f4010000
+    currencycount: 08070000
     rowcount: 2
     colcount: 2
     cd: ffffffff
@@ -323,12 +323,12 @@ MonoBehaviour:
     description: "\u53EF\u4EE5\u751F\u4EA7\u7CAE\u98DF"
     currencytype: 00000000
     currencycount: 05000000
-    rowcount: 1
-    colcount: 1
+    rowcount: 2
+    colcount: 2
     cd: 080000000600000004000000
     producetype: 1
-    produceid: 0
-    produceamount: 060000000c0000000f000000
+    produceid: 10
+    produceamount: 04000000080000000a000000
     unlock: 0
     people: 0
   - buildingid: 3
@@ -403,7 +403,7 @@ MonoBehaviour:
     cd: 090000000700000005000000
     producetype: 0
     produceid: 0
-    produceamount: 280000003c00000050000000
+    produceamount: 140000002800000032000000
     unlock: 0
     people: 3
   - buildingid: 8
@@ -448,7 +448,7 @@ MonoBehaviour:
     cd: 080000000600000004000000
     producetype: 1
     produceid: 11
-    produceamount: 04000000080000000a000000
+    produceamount: 060000000c0000000f000000
     unlock: 0
     people: 0
   - buildingid: 11
@@ -458,8 +458,8 @@ MonoBehaviour:
     description: "\u53EF\u4EE5\u751F\u4EA7\u6728\u5934"
     currencytype: 00000000
     currencycount: 32000000
-    rowcount: 6
-    colcount: 6
+    rowcount: 3
+    colcount: 3
     cd: 080000000600000005000000
     producetype: 1
     produceid: 0
@@ -473,8 +473,8 @@ MonoBehaviour:
     description: "\u7816\u5382"
     currencytype: 00000000
     currencycount: 2c010000
-    rowcount: 8
-    colcount: 10
+    rowcount: 4
+    colcount: 5
     cd: 080000000600000004000000
     producetype: 1
     produceid: 1
@@ -486,10 +486,10 @@ MonoBehaviour:
     name: "\u5546\u94FA"
     buildingtype: 4
     description: "\u5546\u94FA"
-    currencytype: 02000000
-    currencycount: f4010000
-    rowcount: 6
-    colcount: 6
+    currencytype: 0b000000
+    currencycount: c8000000
+    rowcount: 4
+    colcount: 4
     cd: ffffffff
     producetype: 2
     produceid: 0
@@ -517,7 +517,7 @@ MonoBehaviour:
     buildingtype: 3
     description: "\u4E951"
     currencytype: 00000000
-    currencycount: 2c010000
+    currencycount: e8030000
     rowcount: 2
     colcount: 2
     cd: ffffffff
@@ -532,7 +532,7 @@ MonoBehaviour:
     buildingtype: 3
     description: "\u4E952"
     currencytype: 00000000
-    currencycount: 90010000
+    currencycount: dc050000
     rowcount: 2
     colcount: 2
     cd: ffffffff
@@ -547,7 +547,7 @@ MonoBehaviour:
     buildingtype: 3
     description: "\u4E953"
     currencytype: 00000000
-    currencycount: f4010000
+    currencycount: 08070000
     rowcount: 2
     colcount: 2
     cd: ffffffff

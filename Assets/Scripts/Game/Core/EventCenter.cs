@@ -6,16 +6,16 @@ namespace Game.Core
 {
     public static class EventCenter
     {
-        private static readonly Dictionary<Type, List<Delegate>> handlers = new();
+        private static readonly Dictionary<Type, LinkedList<Delegate>> handlers = new();
 
         public static void AddListener<T>(in Action<T> action) where T : struct, IEvent
         {
             var type = typeof(T);
             if (!handlers.ContainsKey(type))
             {
-                handlers[type] = new List<Delegate>(1);
+                handlers[type] = new LinkedList<Delegate>();
             }
-            handlers[type].Add(action);
+            handlers[type].AddLast(action);
         }
     
         public static void RemoveListener<T>(in Action<T> action) where T : struct, IEvent

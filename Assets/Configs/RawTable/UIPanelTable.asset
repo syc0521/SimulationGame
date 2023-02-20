@@ -36,6 +36,21 @@ MonoBehaviour:
   - panelid: 6
     name: AlertRewardPanel
     layer: 3
+  - panelid: 7
+    name: BuildingDetailPanel
+    layer: 1
+  - panelid: 8
+    name: MallPanel
+    layer: 1
+  - panelid: 9
+    name: PausePanel
+    layer: 1
+  - panelid: 10
+    name: StartPanel
+    layer: 2
+  - panelid: 11
+    name: LoadingPanel
+    layer: 2
   dataList:
   - panelid: 0
     name: MainPanel
@@ -58,3 +73,18 @@ MonoBehaviour:
   - panelid: 6
     name: AlertRewardPanel
     layer: 3
+  - panelid: 7
+    name: BuildingDetailPanel
+    layer: 1
+  - panelid: 8
+    name: MallPanel
+    layer: 1
+  - panelid: 9
+    name: PausePanel
+    layer: 1
+  - panelid: 10
+    name: StartPanel
+    layer: 2
+  - panelid: 11
+    name: LoadingPanel
+    layer: 2

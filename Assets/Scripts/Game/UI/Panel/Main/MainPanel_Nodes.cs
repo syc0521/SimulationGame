@@ -14,6 +14,7 @@ namespace Game.UI.Panel
         public TextMeshProUGUI people_txt, money_txt;
         public ListComponent task_list;
         public OperateBuildingWidget operate_widget;
+        public Button pause_btn;
 
         private void Awake()
         {

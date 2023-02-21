@@ -8,6 +8,7 @@ using Game.GamePlaySystem.Currency;
 using Game.UI.Component;
 using Game.UI.Panel.Bag;
 using Game.UI.Panel.Building;
+using Game.UI.Panel.Pause;
 using Game.UI.UISystem;
 
 namespace Game.UI.Panel
@@ -26,6 +27,7 @@ namespace Game.UI.Panel
             nodes.build_btn.onClick.AddListener(OpenBuildPanel);
             nodes.bag_btn.onClick.AddListener(OpenBagPanel);
             nodes.destroy_btn.onClick.AddListener(DestroyHandler);
+            nodes.pause_btn.onClick.AddListener(ShowPausePanel);
         }
 
         public override void OnShown()
@@ -44,6 +46,7 @@ namespace Game.UI.Panel
             nodes.build_btn.onClick.RemoveListener(OpenBuildPanel);
             nodes.bag_btn.onClick.RemoveListener(OpenBagPanel);
             nodes.destroy_btn.onClick.RemoveListener(DestroyHandler);
+            nodes.pause_btn.onClick.RemoveListener(ShowPausePanel);
 
             EventCenter.RemoveListener<DataChangedEvent>(RefreshUI);
             EventCenter.RemoveListener<RefreshUITaskEvent>(RefreshTask);
@@ -104,6 +107,11 @@ namespace Game.UI.Panel
             }
             
             nodes.operate_widget.ShowConfirmButton(obj.canConstruct);
+        }
+
+        private void ShowPausePanel()
+        {
+            UIManager.Instance.OpenPanel<PausePanel>();
         }
 
     }

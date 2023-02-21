@@ -25,7 +25,7 @@ namespace Game.UI.Widget
             OnDestroyed();
         }
 
-        public void OnCreated() { }
+        public virtual void OnCreated() { }
 
         public virtual void OnShown() { }
 

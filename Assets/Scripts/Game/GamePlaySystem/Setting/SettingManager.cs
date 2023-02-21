@@ -19,5 +19,10 @@ namespace Game.GamePlaySystem.Setting
         {
             Managers.Get<ISaveDataManager>().ResetSaveData();
         }
+
+        public void QuitGame()
+        {
+            Application.Quit();
+        }
     }
 }

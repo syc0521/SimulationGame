@@ -53,6 +53,9 @@ namespace Game.Data
     [MessagePackObject]
     public class SettingData
     {
-        
+        [Key(0)]
+        public float bgmVolume;
+        [Key(1)]
+        public float soundVolume;
     }
 }

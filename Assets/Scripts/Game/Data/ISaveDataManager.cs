@@ -14,6 +14,7 @@ namespace Game.Data
         void GetBackpack(ref Dictionary<int, int> backpack);
         void GetCurrency(ref Dictionary<int, int> currency);
         void GetUnlockedBuildings(ref HashSet<int> unlockedBuildings);
+        void GetSettingData(ref SettingData data);
         DateTime GetLastLoginTime();
     }
 }

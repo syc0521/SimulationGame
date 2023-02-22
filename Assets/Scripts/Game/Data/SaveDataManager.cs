@@ -78,6 +78,11 @@ namespace Game.Data
             return _playerData.lastLoginTime;
         }
 
+        public void GetSettingData(ref SettingData data)
+        {
+            data = _playerData.settingData;
+        }
+
         public void ResetSaveData()
         {
             InitializeSaveData();

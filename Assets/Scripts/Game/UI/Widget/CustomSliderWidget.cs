@@ -30,6 +30,16 @@ namespace Game.UI.Widget
             _handler = handler;
         }
 
+        public void RemoveHandler()
+        {
+            _handler = null;
+        }
+
+        public void SetData(float f)
+        {
+            slider.value = f;
+        }
+
         public float GetValue => slider.value;
     }
 }

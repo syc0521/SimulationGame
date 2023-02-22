@@ -18,6 +18,8 @@ namespace Game.UI
         /// <param name="panel">面板</param>
         void DestroyPanel(UIPanel panel);
 
+        void ClosePanel<T>() where T : UIPanel;
+
         /// <summary>
         /// 是否有面板
         /// </summary>

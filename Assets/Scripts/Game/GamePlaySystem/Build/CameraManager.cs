@@ -55,7 +55,7 @@ namespace Game.GamePlaySystem
         private void ChangeCameraPosition(SwipeChangedEvent evt)
         {
             var speed = ConfigTable.Instance.GetGestureConfig().cameraSpeed;
-            var deltaPos = -math.normalize(evt.pos - _startPosition) * (Time.deltaTime * speed);//速度
+            var deltaPos = -(evt.pos - _startPosition) * (Time.deltaTime * speed * 0.025f);//速度
             if (math.length(deltaPos) > float.Epsilon)
             {
                 var camTransform = mainCam.transform;
@@ -87,16 +87,21 @@ namespace Game.GamePlaySystem
             var distance = math.distance(evt.primaryPos, evt.secondaryPos);
             var currentDir = evt.secondaryPos - evt.primaryPos;
             var deltaAngle = BuildingUtils.SignedAngle(new float3(_preDir, 0), new float3(currentDir, 0), Vector3.forward);
+            var deltaDistance = distance - _preDistance;
             
             var camTransform = mainCam.transform;
             var angle = camTransform.eulerAngles;
+            if (deltaDistance * Time.deltaTime * -0.5f is < 2 or > 10)
+            {
+                return;
+            }
             camTransform.rotation = Quaternion.Euler(angle.x, angle.y + deltaAngle / 2, 0);
             _preDir = currentDir;
 
-            if (math.abs(distance - _preDistance) >= float.Epsilon)
+            if (math.abs(deltaDistance) >= float.Epsilon)
             {
-                camTransform.position += new Vector3(0, (distance - _preDistance) * Time.deltaTime * -0.5f, 0);
-                camTransform.rotation *= Quaternion.Euler((distance - _preDistance) * 0.02f, 0, 0);
+                camTransform.position += new Vector3(0, deltaDistance * Time.deltaTime * -0.5f, 0);
+                camTransform.rotation *= Quaternion.Euler(deltaDistance * 0.02f, 0, 0);
                 _preDistance = distance;
             }
             

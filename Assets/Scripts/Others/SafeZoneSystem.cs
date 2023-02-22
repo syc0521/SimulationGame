@@ -16,7 +16,6 @@ namespace Game.LevelAndEntity.System
     
         public void OnCreate(ref SystemState state)
         {
-            state.RequireForUpdate<Config>();
             turretActiveFromEntity = state.GetComponentLookup<Shooting>();
         }
 

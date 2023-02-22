@@ -38,8 +38,6 @@ namespace Game.GamePlaySystem
 
         public override void OnStart()
         {
-            Managers.Get<ISaveDataManager>().GetBuildings(ref _buildingDatas);
-            InitializeBuilding();
             buildStateMachine = new(new IState[]
             {
                 new NormalState(),
@@ -60,6 +58,12 @@ namespace Game.GamePlaySystem
 
             grid.Dispose();
             base.OnDestroyed();
+        }
+
+        public void LoadBuildings()
+        {
+            Managers.Get<ISaveDataManager>().GetBuildings(ref _buildingDatas);
+            InitializeBuilding();
         }
 
         private void GetUnlockedBuildings(LoadDataEvent evt)

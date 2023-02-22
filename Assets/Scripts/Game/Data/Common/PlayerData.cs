@@ -21,6 +21,8 @@ namespace Game.Data
         public SettingData settingData;
         [Key(6)] 
         public HashSet<int> unlockedBuildings;
+        [Key(7)] 
+        public DateTime lastLoginTime;
     }
 
     [Serializable]

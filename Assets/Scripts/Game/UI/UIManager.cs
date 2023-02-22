@@ -141,6 +141,16 @@ namespace Game.UI
                 Managers.Get<IInputManager>().SetGestureState(GetTopLayer() is UILayerType.Scene);
             }
         }
+        
+        public void ClosePanel<T>() where T : UIPanel
+        {
+            if (panelObjects.ContainsKey(typeof(T)))
+            {
+                var panelObj = panelObjects[typeof(T)];
+                var panel = panelObj.GetComponent<UIPanel>();
+                DestroyPanel(panel);
+            }
+        }
 
         private UILayerType GetTopLayer()
         {

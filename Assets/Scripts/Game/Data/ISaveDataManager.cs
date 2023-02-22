@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Game.Core;
 
 namespace Game.Data
 {
     public interface ISaveDataManager : IManager
     {
+        void LoadData();
         void SaveData();
         void ResetSaveData();
         void GetBuildings(ref Dictionary<uint, BuildingData> buildings);
@@ -12,5 +14,6 @@ namespace Game.Data
         void GetBackpack(ref Dictionary<int, int> backpack);
         void GetCurrency(ref Dictionary<int, int> currency);
         void GetUnlockedBuildings(ref HashSet<int> unlockedBuildings);
+        DateTime GetLastLoginTime();
     }
 }

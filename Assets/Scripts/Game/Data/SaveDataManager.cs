@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Game.Core;
@@ -14,7 +15,6 @@ namespace Game.Data
         public override void OnStart()
         {
             Debug.Log(GetPath());
-            LoadData();
         }
 
         private static string GetPath()
@@ -24,11 +24,12 @@ namespace Game.Data
 
         public void SaveData()
         {
+            _playerData.lastLoginTime = DateTime.Now;
             var bytes = MessagePack.MessagePackSerializer.Serialize(_playerData);
             File.WriteAllBytes(GetPath(), bytes);
         }
 
-        private void LoadData()
+        public void LoadData()
         {
             try
             {
@@ -70,6 +71,11 @@ namespace Game.Data
         public void GetUnlockedBuildings(ref HashSet<int> unlockedBuildings)
         {
             unlockedBuildings = _playerData.unlockedBuildings;
+        }
+
+        public DateTime GetLastLoginTime()
+        {
+            return _playerData.lastLoginTime;
         }
 
         public void ResetSaveData()

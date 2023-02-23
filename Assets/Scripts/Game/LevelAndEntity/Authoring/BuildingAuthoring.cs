@@ -12,6 +12,8 @@ namespace Game.LevelAndEntity.Authoring
         public GameObject meshRoot;
         public int maxLevel;
         public int[] cd;
+        public int envValue;
+        public int evaluateScore;
         class BuildingBaker : Baker<BuildingAuthoring>
         {
             public override void Bake(BuildingAuthoring authoring)
@@ -23,6 +25,8 @@ namespace Game.LevelAndEntity.Authoring
                     maxLevel = authoring.maxLevel,
                     meshRoot = GetEntity(authoring.meshRoot),
                     cd = new NativeArray<int>(authoring.cd, Allocator.Persistent),
+                    envValue = authoring.envValue,
+                    evaluateScore = authoring.evaluateScore,
                 });
             }
         }

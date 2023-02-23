@@ -7,6 +7,7 @@ using Game.LevelAndEntity.Aspects;
 using Game.LevelAndEntity.Component;
 using Unity.Burst;
 using Unity.Entities;
+using Unity.Mathematics;
 
 namespace Game.LevelAndEntity.System
 {
@@ -34,11 +35,14 @@ namespace Game.LevelAndEntity.System
             
             int people = 0;
             bool dataChanged = false;
-            float happiness = 1.0f;
+            int envValue = 115;
+            int evaluateScore = 0;
             foreach (var building in SystemAPI.Query<BuildingAspect>().WithAll<Building>())
             {
                 var produceData = ConfigTable.Instance.GetBuildingProduceData(building.BuildingType);
                 people += building.People; //todo 人口=当前人口数*幸福度
+                envValue += building.EnvScore;
+                evaluateScore += building.EvaluateScore;
                 /*
                  建筑评分B(uilding) = 建筑分总和/该等级需要的分数（该分数对玩家不可见）
                  供给度S(upply) = 所有建筑需要物品总和 * 1.5 > 剩余物品 = 100% 取平均值
@@ -65,6 +69,11 @@ namespace Game.LevelAndEntity.System
                     dataChanged = true;
                 }
             }
+
+            float buildRate = math.min(1, evaluateScore / 50.0f);
+            float envRate = math.min(100, envValue) / 100.0f;
+            float supplyRate = 1.0f;
+            float happiness = supplyRate * 0.35f + envRate * 0.4f + buildRate * 0.25f;
 
             people = (int)(people * happiness);
             foreach (var data in SystemAPI.Query<DataAspect>())

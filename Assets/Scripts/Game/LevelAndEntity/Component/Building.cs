@@ -11,6 +11,8 @@ namespace Game.LevelAndEntity.Component
         public int maxPeople;
         public int maxLevel;
         public NativeArray<int> cd;
+        public int envValue;
+        public int evaluateScore;
         public Entity meshRoot;
     }
 }

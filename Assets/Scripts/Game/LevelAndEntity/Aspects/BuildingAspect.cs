@@ -21,6 +21,8 @@ namespace Game.LevelAndEntity.Aspects
         public int MaxLevel => building.ValueRO.maxLevel;
         public int MaxPeople => building.ValueRO.maxPeople;
         public int CurrentCD => building.ValueRO.cd[Level];
+        public int EnvScore => building.ValueRO.envValue;
+        public int EvaluateScore => (int)(building.ValueRO.evaluateScore * math.sqrt(Level));
 
         public float CurrentTime
         {

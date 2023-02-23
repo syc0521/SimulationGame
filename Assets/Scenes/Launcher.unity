@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -503,6 +503,7 @@ MonoBehaviour:
   buildConfig: {fileID: 11400000, guid: 5a2a55414993063459e581289086dcba, type: 2}
   bagItem: {fileID: 11400000, guid: 61b39282d0575e04398cf68c956e215a, type: 2}
   currency: {fileID: 11400000, guid: 226f750594eabae4fb9e8ba18e237a27, type: 2}
+  buildingProduce: {fileID: 11400000, guid: 3a2c2cc2d0f76264ebdc11b6be3192df, type: 2}
 --- !u!114 &1821025937
 MonoBehaviour:
   m_ObjectHideFlags: 0

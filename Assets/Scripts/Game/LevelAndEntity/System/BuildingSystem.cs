@@ -34,12 +34,21 @@ namespace Game.LevelAndEntity.System
             
             int people = 0;
             bool dataChanged = false;
+            float happiness = 1.0f;
             foreach (var building in SystemAPI.Query<BuildingAspect>().WithAll<Building>())
             {
-                var data = ConfigTable.Instance.GetBuildingData(building.BuildingType);
+                var produceData = ConfigTable.Instance.GetBuildingProduceData(building.BuildingType);
                 people += building.People; //todo 人口=当前人口数*幸福度
+                /*
+                 建筑评分B(uilding) = 建筑分总和/该等级需要的分数（该分数对玩家不可见）
+                 供给度S(upply) = 所有建筑需要物品总和 * 1.5 > 剩余物品 = 100% 取平均值
+                 环境分E(nvironment) = min(100, 115+各建筑环境值总和) / 100
+                 幸福度H(appiness) = S * 0.35 + E * 0.4 + B * 0.25
+                 人口P(eople) = 当前人口总数（ECS获取） * H
+                 以上都是min(1,分数)
+                 */
                 building.CurrentTime += SystemAPI.Time.DeltaTime;
-                var cd = data.Cd[building.Level - 1];
+                var cd = building.CurrentCD;
                 if (cd < 0)
                 {
                     continue;
@@ -49,14 +58,15 @@ namespace Game.LevelAndEntity.System
                     building.CurrentTime = 0;
                     EventCenter.DispatchEvent(new ProduceEvent
                     {
-                        produceType = (ProduceType)data.Producetype,
-                        produceID = data.Produceid,
-                        count = data.Produceamount[0]
+                        produceType = (ProduceType)produceData.Producetype,
+                        produceID = produceData.Produceid,
+                        count = produceData.Produceamount[0]
                     });
                     dataChanged = true;
                 }
             }
-            
+
+            people = (int)(people * happiness);
             foreach (var data in SystemAPI.Query<DataAspect>())
             {
                 if (data.config.ValueRO.people != people)

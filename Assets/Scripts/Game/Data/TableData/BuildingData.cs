@@ -51,24 +51,24 @@ namespace Game.Data.TableData
     public int[] Cd { get {return cd; } set { cd = value;} }
     
     [SerializeField]
-    int producetype;
-    public int Producetype { get {return producetype; } set { producetype = value;} }
-    
-    [SerializeField]
-    int produceid;
-    public int Produceid { get {return produceid; } set { produceid = value;} }
-    
-    [SerializeField]
-    int[] produceamount = new int[0];
-    public int[] Produceamount { get {return produceamount; } set { produceamount = value;} }
-    
-    [SerializeField]
     bool unlock;
     public bool Unlock { get {return unlock; } set { unlock = value;} }
     
     [SerializeField]
     int people;
     public int People { get {return people; } set { people = value;} }
+    
+    [SerializeField]
+    int level;
+    public int Level { get {return level; } set { level = value;} }
+    
+    [SerializeField]
+    int basescore;
+    public int Basescore { get {return basescore; } set { basescore = value;} }
+    
+    [SerializeField]
+    int envscore;
+    public int Envscore { get {return envscore; } set { envscore = value;} }
     
 	}
 }

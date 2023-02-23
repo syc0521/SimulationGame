@@ -19,6 +19,7 @@ namespace Game.Data
         [SerializeField] private BuildConfig buildConfig;
         [SerializeField] private BagItem bagItem;
         [SerializeField] private Currency currency;
+        [SerializeField] private BuildingProduce buildingProduce;
 
         public Transform GetUIRoot(int layerType) => uiRoot.GetChild(layerType);
 
@@ -43,5 +44,7 @@ namespace Game.Data
         public BagItemData GetBagItemData(int id) => bagItem.dataList.Find(item => item.ID == id);
 
         public CurrencyData GetCurrencyData(int id) => currency.dataList.Find(item => item.ID == id);
+
+        public BuildingProduceData GetBuildingProduceData(int id) => buildingProduce.dataList[id];
     }
 }

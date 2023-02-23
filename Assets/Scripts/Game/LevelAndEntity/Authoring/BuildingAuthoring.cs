@@ -1,4 +1,5 @@
 ﻿using Game.LevelAndEntity.Component;
+using Unity.Collections;
 using Unity.Entities;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ namespace Game.LevelAndEntity.Authoring
         public int maxPeople;
         public GameObject meshRoot;
         public int maxLevel;
+        public int[] cd;
         class BuildingBaker : Baker<BuildingAuthoring>
         {
             public override void Bake(BuildingAuthoring authoring)
@@ -19,7 +21,8 @@ namespace Game.LevelAndEntity.Authoring
                     type = authoring.type,
                     maxPeople = authoring.maxPeople,
                     maxLevel = authoring.maxLevel,
-                    meshRoot = GetEntity(authoring.meshRoot)
+                    meshRoot = GetEntity(authoring.meshRoot),
+                    cd = new NativeArray<int>(authoring.cd, Allocator.Persistent),
                 });
             }
         }

@@ -10,6 +10,7 @@ namespace Game.LevelAndEntity.Component
         public int type;
         public int maxPeople;
         public int maxLevel;
+        public NativeArray<int> cd;
         public Entity meshRoot;
     }
 }

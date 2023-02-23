@@ -25,7 +25,8 @@ public class BuildingCollectionCreator : MonoBehaviour
             var buildingAuthoring = buildingObj.GetComponent<BuildingAuthoring>();
             buildingAuthoring.type = buildingData.Buildingid;
             buildingAuthoring.maxPeople = buildingData.People;
-            buildingAuthoring.maxLevel = buildingData.Cd.Length;
+            buildingAuthoring.maxLevel = buildingData.Level;
+            buildingAuthoring.cd = buildingData.Cd;
             Debug.Log(buildingObj.transform.GetChild(0).gameObject);
             buildingAuthoring.meshRoot = buildingObj.transform.GetChild(0).gameObject;
             buildingObjs.Add(buildingObj);

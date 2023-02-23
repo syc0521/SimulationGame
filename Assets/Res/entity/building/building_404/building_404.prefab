@@ -50,6 +50,7 @@ MonoBehaviour:
   maxPeople: 0
   meshRoot: {fileID: 7024414925077730664}
   maxLevel: 1
+  cd: ffffffff
 --- !u!114 &8021392280205170797
 MonoBehaviour:
   m_ObjectHideFlags: 0

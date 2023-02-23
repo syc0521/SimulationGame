@@ -121,7 +121,7 @@ namespace Game.GamePlaySystem.GameState
 
             currentBuilding = Object.Instantiate(ConfigTable.Instance.GetBuilding(currentBuildingType), buildingPos, Quaternion.identity);
             currentBuilding.transform.localRotation = aspect.LocalRotation;
-            MaterialUtil.SetTransparency(currentBuilding, true);
+            MaterialUtil.SetTransparency(currentBuilding);
             aspect.Position = new float3(10000, 10000, 10000);
             EventCenter.DispatchEvent(new BuildUIEvent
             {

@@ -1,5 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-using Game.Core;
+﻿using Game.Core;
 using Game.Data;
 using Game.Data.Event;
 using Game.GamePlaySystem.Build;
@@ -9,7 +8,6 @@ using Game.GamePlaySystem.Task;
 using Game.Input;
 using Game.LevelAndEntity.Component;
 using Game.LevelAndEntity.System;
-using Unity.Burst;
 using Unity.Entities;
 using Unity.Mathematics;
 using UnityEngine;
@@ -33,7 +31,7 @@ namespace Game.GamePlaySystem.GameState
 
             spawnPos = BuildingUtils.GetBlockPos(point);
             currentBuilding = Object.Instantiate(ConfigTable.Instance.GetBuilding(currentBuildingType), spawnPos, Quaternion.identity);
-            MaterialUtil.SetTransparency(currentBuilding, true);
+            MaterialUtil.SetTransparency(currentBuilding);
             World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<AddBlockSystem>().SetGridVisible(true);
             EventCenter.DispatchEvent(new BuildUIEvent
             {

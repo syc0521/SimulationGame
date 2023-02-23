@@ -1,19 +1,25 @@
-﻿using Game.Data;
+﻿using Game.Core;
+using Game.Data;
+using Game.LevelAndEntity.ResLoader;
 using UnityEngine;
 
 namespace Game.GamePlaySystem.Build
 {
     public static class MaterialUtil
     {
-        private static readonly int IsTransparent = Shader.PropertyToID("_IsTransparency");
-
-        public static void SetTransparency(GameObject obj, bool isTransparent)
+        public static void SetTransparency(GameObject obj)
         {
             var meshList = obj.gameObject.GetComponentsInChildren<MeshRenderer>();
             foreach (var mesh in meshList)
             {
-                mesh.material = ConfigTable.Instance.GetBuildConfig().buildingMat;
-                mesh.material.SetFloat(IsTransparent, isTransparent ? 1 : 0);
+                var materials = new Material[mesh.materials.Length];
+                for (var i = 0; i < mesh.materials.Length; i++)
+                {
+                    var mat = mesh.materials[i];
+                    var name = mat.name.Replace(" (Instance)", string.Empty);
+                    materials[i] = Managers.Get<IResLoader>().LoadMaterial(name);
+                }
+                mesh.materials = materials;
             }
         }
     }

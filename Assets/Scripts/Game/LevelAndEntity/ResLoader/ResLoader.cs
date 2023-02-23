@@ -14,10 +14,19 @@ namespace Game.LevelAndEntity.ResLoader
         Building = 0,
         Sprite = 1,
         Panel = 2,
+        Material = 3,
     }
 
     public class ResLoader : ManagerBase, IResLoader
     {
+        private Dictionary<string, Material> _materials = new();
+
+        public override void OnStart()
+        {
+            base.OnStart();
+            LoadAllMaterials();
+        }
+
         public void LoadRes(ResEnum type, string path, Action<AsyncOperationHandle<GameObject>> callback)
         {
             try
@@ -42,6 +51,19 @@ namespace Game.LevelAndEntity.ResLoader
             }
         }
 
+        public Material LoadMaterial(string name)
+        {
+            return _materials.ContainsKey(name) ? _materials[name] : null;
+        }
+
+        private void LoadAllMaterials()
+        {
+            Addressables.LoadAssetsAsync<Material>("Material", result =>
+            {
+                _materials[result.name.Replace(" Variant", string.Empty)] = result;
+            });
+        }
+
         public bool UnloadRes(ResEnum type, string path)
         {
             return false;
@@ -57,6 +79,8 @@ namespace Game.LevelAndEntity.ResLoader
                     return $"{path}.png";
                 case ResEnum.Panel:
                     return $"panel/{path}.prefab";
+                case ResEnum.Material:
+                    return $"material/{path} Variant.mat";
                 default:
                     return string.Empty;
             }

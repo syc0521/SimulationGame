@@ -140,7 +140,7 @@ namespace Game.Input
 
         private IEnumerator TouchDetection()
         {
-            yield return new WaitForSeconds(1 / 90.0f);
+            yield return new WaitForSeconds(2 / 90.0f);
             if (!isSwiping && CanSendInteractEvent())
             {
                 EventCenter.DispatchEvent(new TouchEvent
@@ -195,14 +195,18 @@ namespace Game.Input
 
         private IEnumerator SwipeDetection(InputAction.CallbackContext ctx)
         {
-            yield return new WaitForSeconds(2 / 90.0f);
-            float2 endPos = _gameControl.GamePlay.PrimaryPosition.ReadValue<Vector2>();
-            isSwiping = math.distance(_startPos, endPos) > 2.0f;
+            yield return new WaitForSeconds(1 / 90.0f);
             
             while (true)
             {
                 if (UnityEngine.Input.touchCount > 1) break;
-                if (CanSendInteractEvent())
+                float2 endPos = _gameControl.GamePlay.PrimaryPosition.ReadValue<Vector2>();
+                if (math.distance(_startPos, endPos) > 0.3f)
+                {
+                    isSwiping = true;
+                }
+                
+                if (isSwiping && CanSendInteractEvent())
                 {
                     EventCenter.DispatchEvent(new SwipeChangedEvent
                     {
@@ -233,16 +237,20 @@ namespace Game.Input
         private IEnumerator MouseRotateDetection(InputAction.CallbackContext ctx)
         {
             yield return new WaitForSeconds(2 / 90.0f);
-            float2 endPos = _gameControl.GamePlay.PrimaryPosition.ReadValue<Vector2>();
-            isSwiping = math.distance(_startPos, endPos) > 2.0f;
-            
+
             while (true)
             {
                 if (UnityEngine.Input.touchCount > 1) break;
+                float2 endPos = _gameControl.GamePlay.PrimaryPosition.ReadValue<Vector2>();
+                if (math.distance(_startPos, endPos) > 0.3f)
+                {
+                    isSwiping = true;
+                }
+                
                 endPos = _gameControl.GamePlay.PrimaryPosition.ReadValue<Vector2>();
                 var distance = endPos - _startPos;
                 
-                if (CanSendInteractEvent())
+                if (isSwiping && CanSendInteractEvent())
                 {
                     EventCenter.DispatchEvent(new MouseRotateEvent
                     {

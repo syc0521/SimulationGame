@@ -20,7 +20,7 @@ namespace Game.UI.Component
 
         public void Init()
         {
-            content = transform.GetChild(0).GetChild(0);
+            content = transform.childCount > 0 ? transform.GetChild(0).GetChild(0) : transform;
             _objects = new();
             _listData = new();
         }

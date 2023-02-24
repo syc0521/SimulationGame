@@ -119,7 +119,7 @@ MonoBehaviour:
     people: 5
     level: 3
     basescore: 22
-    envscore: -4
+    envscore: 2
   - buildingid: 7
     resourcepath: building_203
     name: "\u5C0F\u578B\u623F\u5C4B"
@@ -134,7 +134,7 @@ MonoBehaviour:
     people: 3
     level: 3
     basescore: 10
-    envscore: -2
+    envscore: 0
   - buildingid: 8
     resourcepath: building_204
     name: "\u5927\u578B\u623F\u5C4B"
@@ -149,7 +149,7 @@ MonoBehaviour:
     people: 5
     level: 3
     basescore: 30
-    envscore: -5
+    envscore: 3
   - buildingid: 9
     resourcepath: building_205
     name: "\u4E2D\u578B\u623F\u5C4B2"
@@ -164,7 +164,7 @@ MonoBehaviour:
     people: 7
     level: 3
     basescore: 25
-    envscore: -4
+    envscore: 2
   - buildingid: 10
     resourcepath: building_302
     name: "\u91C7\u77F3\u573A"
@@ -390,7 +390,7 @@ MonoBehaviour:
     people: 5
     level: 3
     basescore: 22
-    envscore: -4
+    envscore: 2
   - buildingid: 7
     resourcepath: building_203
     name: "\u5C0F\u578B\u623F\u5C4B"
@@ -405,7 +405,7 @@ MonoBehaviour:
     people: 3
     level: 3
     basescore: 10
-    envscore: -2
+    envscore: 0
   - buildingid: 8
     resourcepath: building_204
     name: "\u5927\u578B\u623F\u5C4B"
@@ -420,7 +420,7 @@ MonoBehaviour:
     people: 5
     level: 3
     basescore: 30
-    envscore: -5
+    envscore: 3
   - buildingid: 9
     resourcepath: building_205
     name: "\u4E2D\u578B\u623F\u5C4B2"
@@ -435,7 +435,7 @@ MonoBehaviour:
     people: 7
     level: 3
     basescore: 25
-    envscore: -4
+    envscore: 2
   - buildingid: 10
     resourcepath: building_302
     name: "\u91C7\u77F3\u573A"

@@ -20,7 +20,7 @@ MonoBehaviour:
     layer: 0
   - panelid: 1
     name: BuildingPanel
-    layer: 1
+    layer: 0
   - panelid: 2
     name: TaskDetailPanel
     layer: 1
@@ -57,7 +57,7 @@ MonoBehaviour:
     layer: 0
   - panelid: 1
     name: BuildingPanel
-    layer: 1
+    layer: 0
   - panelid: 2
     name: TaskDetailPanel
     layer: 1

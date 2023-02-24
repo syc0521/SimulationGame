@@ -54,10 +54,10 @@ MonoBehaviour:
     name: ColCount
     isEnable: 0
     isArray: 0
-  - type: 3
+  - type: 5
     name: Cd
     isEnable: 0
-    isArray: 1
+    isArray: 0
   - type: 8
     name: Unlock
     isEnable: 0

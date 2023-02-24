@@ -47,8 +47,8 @@ namespace Game.Data.TableData
     public int Colcount { get {return colcount; } set { colcount = value;} }
     
     [SerializeField]
-    int[] cd = new int[0];
-    public int[] Cd { get {return cd; } set { cd = value;} }
+    float cd;
+    public float Cd { get {return cd; } set { cd = value;} }
     
     [SerializeField]
     bool unlock;

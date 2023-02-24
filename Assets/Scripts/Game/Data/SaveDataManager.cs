@@ -98,7 +98,8 @@ namespace Game.Data
                 tasks = new(),
                 backpack = new(){ {0,50} },
                 currency = new(){ {0,0},{1,0},{2,0} },
-                unlockedBuildings = unlockList.Select(item => item.Buildingid).ToHashSet()
+                unlockedBuildings = unlockList.Select(item => item.Buildingid).ToHashSet(),
+                settingData = new SettingData {bgmVolume = 0.8f, soundVolume = 0.8f},
             };
             EventCenter.DispatchEvent(new InitializeSaveDataEvent());
         }
@@ -120,6 +121,12 @@ namespace Game.Data
                 var unlockList = ConfigTable.Instance.GetAllBuildingData().FindAll(item => item.Unlock);
                 _playerData.unlockedBuildings = unlockList.Select(item => item.Buildingid).ToHashSet();
             }
+
+            _playerData.settingData ??= new SettingData
+            {
+                bgmVolume = 0.8f,
+                soundVolume = 0.8f,
+            };
         }
     }
 }

@@ -24,7 +24,7 @@ MonoBehaviour:
     currencycount: e8030000
     rowcount: 4
     colcount: 4
-    cd: ffffffff
+    cd: -1
     unlock: 0
     people: 0
     level: 1
@@ -39,7 +39,7 @@ MonoBehaviour:
     currencycount: 00000000
     rowcount: 4
     colcount: 4
-    cd: ffffffff
+    cd: -1
     unlock: 0
     people: 0
     level: 1
@@ -54,7 +54,7 @@ MonoBehaviour:
     currencycount: 05000000
     rowcount: 2
     colcount: 2
-    cd: 080000000600000004000000
+    cd: 5
     unlock: 0
     people: 0
     level: 3
@@ -69,7 +69,7 @@ MonoBehaviour:
     currencycount: 50000000
     rowcount: 2
     colcount: 1
-    cd: ffffffff
+    cd: -1
     unlock: 0
     people: 0
     level: 1
@@ -84,7 +84,7 @@ MonoBehaviour:
     currencycount: 05000000
     rowcount: 2
     colcount: 1
-    cd: ffffffff
+    cd: -1
     unlock: 0
     people: 0
     level: 1
@@ -99,7 +99,7 @@ MonoBehaviour:
     currencycount: e8030000
     rowcount: 4
     colcount: 8
-    cd: ffffffff
+    cd: -1
     unlock: 0
     people: 0
     level: 1
@@ -114,7 +114,7 @@ MonoBehaviour:
     currencycount: 64000000
     rowcount: 4
     colcount: 2
-    cd: 080000000700000005000000
+    cd: 8
     unlock: 0
     people: 5
     level: 3
@@ -129,7 +129,7 @@ MonoBehaviour:
     currencycount: 1e000000
     rowcount: 2
     colcount: 2
-    cd: 090000000700000005000000
+    cd: 9
     unlock: 0
     people: 3
     level: 3
@@ -144,7 +144,7 @@ MonoBehaviour:
     currencycount: f0000000
     rowcount: 4
     colcount: 3
-    cd: 090000000700000005000000
+    cd: 9
     unlock: 0
     people: 5
     level: 3
@@ -159,7 +159,7 @@ MonoBehaviour:
     currencycount: 7d000000
     rowcount: 4
     colcount: 2
-    cd: 080000000600000004000000
+    cd: 8
     unlock: 0
     people: 7
     level: 3
@@ -174,7 +174,7 @@ MonoBehaviour:
     currencycount: c8000000
     rowcount: 6
     colcount: 5
-    cd: 080000000600000004000000
+    cd: 6.5
     unlock: 0
     people: 0
     level: 3
@@ -189,7 +189,7 @@ MonoBehaviour:
     currencycount: 32000000
     rowcount: 3
     colcount: 3
-    cd: 080000000600000005000000
+    cd: 6
     unlock: 1
     people: 0
     level: 3
@@ -204,7 +204,7 @@ MonoBehaviour:
     currencycount: 2c010000
     rowcount: 4
     colcount: 5
-    cd: 080000000600000004000000
+    cd: 8
     unlock: 0
     people: 0
     level: 3
@@ -219,7 +219,7 @@ MonoBehaviour:
     currencycount: c8000000
     rowcount: 4
     colcount: 4
-    cd: ffffffff
+    cd: -1
     unlock: 0
     people: 0
     level: 1
@@ -234,7 +234,7 @@ MonoBehaviour:
     currencycount: 0a000000
     rowcount: 2
     colcount: 1
-    cd: ffffffff
+    cd: -1
     unlock: 0
     people: 0
     level: 1
@@ -249,7 +249,7 @@ MonoBehaviour:
     currencycount: e8030000
     rowcount: 2
     colcount: 2
-    cd: ffffffff
+    cd: -1
     unlock: 0
     people: 0
     level: 1
@@ -264,7 +264,7 @@ MonoBehaviour:
     currencycount: dc050000
     rowcount: 2
     colcount: 2
-    cd: ffffffff
+    cd: -1
     unlock: 0
     people: 0
     level: 1
@@ -279,7 +279,7 @@ MonoBehaviour:
     currencycount: 08070000
     rowcount: 2
     colcount: 2
-    cd: ffffffff
+    cd: -1
     unlock: 0
     people: 0
     level: 1
@@ -295,7 +295,7 @@ MonoBehaviour:
     currencycount: e8030000
     rowcount: 4
     colcount: 4
-    cd: ffffffff
+    cd: -1
     unlock: 0
     people: 0
     level: 1
@@ -310,7 +310,7 @@ MonoBehaviour:
     currencycount: 00000000
     rowcount: 4
     colcount: 4
-    cd: ffffffff
+    cd: -1
     unlock: 0
     people: 0
     level: 1
@@ -325,7 +325,7 @@ MonoBehaviour:
     currencycount: 05000000
     rowcount: 2
     colcount: 2
-    cd: 080000000600000004000000
+    cd: 5
     unlock: 0
     people: 0
     level: 3
@@ -340,7 +340,7 @@ MonoBehaviour:
     currencycount: 50000000
     rowcount: 2
     colcount: 1
-    cd: ffffffff
+    cd: -1
     unlock: 0
     people: 0
     level: 1
@@ -355,7 +355,7 @@ MonoBehaviour:
     currencycount: 05000000
     rowcount: 2
     colcount: 1
-    cd: ffffffff
+    cd: -1
     unlock: 0
     people: 0
     level: 1
@@ -370,7 +370,7 @@ MonoBehaviour:
     currencycount: e8030000
     rowcount: 4
     colcount: 8
-    cd: ffffffff
+    cd: -1
     unlock: 0
     people: 0
     level: 1
@@ -385,7 +385,7 @@ MonoBehaviour:
     currencycount: 64000000
     rowcount: 4
     colcount: 2
-    cd: 080000000700000005000000
+    cd: 8
     unlock: 0
     people: 5
     level: 3
@@ -400,7 +400,7 @@ MonoBehaviour:
     currencycount: 1e000000
     rowcount: 2
     colcount: 2
-    cd: 090000000700000005000000
+    cd: 9
     unlock: 0
     people: 3
     level: 3
@@ -415,7 +415,7 @@ MonoBehaviour:
     currencycount: f0000000
     rowcount: 4
     colcount: 3
-    cd: 090000000700000005000000
+    cd: 9
     unlock: 0
     people: 5
     level: 3
@@ -430,7 +430,7 @@ MonoBehaviour:
     currencycount: 7d000000
     rowcount: 4
     colcount: 2
-    cd: 080000000600000004000000
+    cd: 8
     unlock: 0
     people: 7
     level: 3
@@ -445,7 +445,7 @@ MonoBehaviour:
     currencycount: c8000000
     rowcount: 6
     colcount: 5
-    cd: 080000000600000004000000
+    cd: 6.5
     unlock: 0
     people: 0
     level: 3
@@ -460,7 +460,7 @@ MonoBehaviour:
     currencycount: 32000000
     rowcount: 3
     colcount: 3
-    cd: 080000000600000005000000
+    cd: 6
     unlock: 1
     people: 0
     level: 3
@@ -475,7 +475,7 @@ MonoBehaviour:
     currencycount: 2c010000
     rowcount: 4
     colcount: 5
-    cd: 080000000600000004000000
+    cd: 8
     unlock: 0
     people: 0
     level: 3
@@ -490,7 +490,7 @@ MonoBehaviour:
     currencycount: c8000000
     rowcount: 4
     colcount: 4
-    cd: ffffffff
+    cd: -1
     unlock: 0
     people: 0
     level: 1
@@ -505,7 +505,7 @@ MonoBehaviour:
     currencycount: 0a000000
     rowcount: 2
     colcount: 1
-    cd: ffffffff
+    cd: -1
     unlock: 0
     people: 0
     level: 1
@@ -520,7 +520,7 @@ MonoBehaviour:
     currencycount: e8030000
     rowcount: 2
     colcount: 2
-    cd: ffffffff
+    cd: -1
     unlock: 0
     people: 0
     level: 1
@@ -535,7 +535,7 @@ MonoBehaviour:
     currencycount: dc050000
     rowcount: 2
     colcount: 2
-    cd: ffffffff
+    cd: -1
     unlock: 0
     people: 0
     level: 1
@@ -550,7 +550,7 @@ MonoBehaviour:
     currencycount: 08070000
     rowcount: 2
     colcount: 2
-    cd: ffffffff
+    cd: -1
     unlock: 0
     people: 0
     level: 1

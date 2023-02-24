@@ -11,8 +11,9 @@ namespace Game.LevelAndEntity.Component
     
     public struct Config : IComponentData
     {
-        public bool dataChanged;
         public bool dataLoaded;
         public int people;
+        public float envRate;
+        public float happiness;
     }
 }

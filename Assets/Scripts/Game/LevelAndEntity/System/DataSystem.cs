@@ -1,6 +1,5 @@
 ﻿using Game.Core;
 using Game.Data;
-using Game.Data.Event;
 using Game.LevelAndEntity.Aspects;
 using Game.LevelAndEntity.Component;
 using Unity.Entities;
@@ -10,20 +9,23 @@ namespace Game.LevelAndEntity.System
 {
     public partial class DataSystem : SystemBase
     {
-        private GameData _gameData;
 
         protected override void OnUpdate()
         {
-            if (!SystemAPI.TryGetSingleton(out Config config)) return;
 
-            if (config.dataChanged)
+        }
+
+        public GameData GetGameData()
+        {
+            var config = GetEntityQuery(typeof(Config)).GetSingletonEntity();
+            var aspect = World.EntityManager.GetAspect<DataAspect>(config);
+            GameData gameData = new()
             {
-                _gameData = new GameData
-                {
-                    people = config.people,
-                };
-                EventCenter.DispatchEvent(new DataChangedEvent { gameData = _gameData });
-            }
+                people = aspect.config.ValueRO.people,
+                environment = aspect.config.ValueRO.envRate,
+                happiness = aspect.config.ValueRO.happiness,
+            };
+            return gameData;
         }
 
     }

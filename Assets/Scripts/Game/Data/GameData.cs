@@ -3,5 +3,7 @@
     public struct GameData
     {
         public int people;
+        public float happiness;
+        public float environment;
     }
 }

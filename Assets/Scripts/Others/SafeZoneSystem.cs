@@ -26,7 +26,7 @@ namespace Game.LevelAndEntity.System
 
         public void OnUpdate(ref SystemState state)
         {
-            float radius = 20;
+            /*float radius = 20;
             const float renderStep = 20;
 
             for (float angle = 0; angle < 360; angle += renderStep)
@@ -43,12 +43,12 @@ namespace Game.LevelAndEntity.System
             {
                 turretActiveFromEntity = turretActiveFromEntity,
                 squaredRadius = radius * radius
-            };
+            };*/
             //safeZoneJob.ScheduleParallel<SafeZoneJob>();
         }
     }
 
-    [WithAll(typeof(Turret))]
+    //[WithAll(typeof(Turret))]
     [BurstCompile]
     public partial struct SafeZoneJob : IJobEntity
     {

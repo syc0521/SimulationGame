@@ -5,11 +5,14 @@ using Game.Data.Event;
 using Game.Data.Event.Currency;
 using Game.Data.Event.Task;
 using Game.GamePlaySystem.Currency;
+using Game.LevelAndEntity.System;
 using Game.UI.Component;
 using Game.UI.Panel.Bag;
 using Game.UI.Panel.Building;
 using Game.UI.Panel.Pause;
 using Game.UI.UISystem;
+using Unity.Entities;
+using UnityEngine;
 
 namespace Game.UI.Panel
 {
@@ -21,6 +24,8 @@ namespace Game.UI.Panel
     public class MainPanel : UIPanel
     {
         public MainPanel_Nodes nodes;
+        private float _interval = 0.5f;
+        private float _time = 0f;
 
         public override void OnCreated()
         {
@@ -33,7 +38,6 @@ namespace Game.UI.Panel
         public override void OnShown()
         {
             base.OnShown();
-            EventCenter.AddListener<DataChangedEvent>(RefreshUI);
             EventCenter.AddListener<RefreshUITaskEvent>(RefreshTask);
             EventCenter.AddListener<BuildUIEvent>(ShowConfirmUI);
             EventCenter.AddListener<UpdateCurrencyEvent>(RefreshCurrency);
@@ -47,11 +51,21 @@ namespace Game.UI.Panel
             nodes.bag_btn.onClick.RemoveListener(OpenBagPanel);
             nodes.destroy_btn.onClick.RemoveListener(DestroyHandler);
             nodes.pause_btn.onClick.RemoveListener(ShowPausePanel);
-
-            EventCenter.RemoveListener<DataChangedEvent>(RefreshUI);
+            
             EventCenter.RemoveListener<RefreshUITaskEvent>(RefreshTask);
             EventCenter.RemoveListener<BuildUIEvent>(ShowConfirmUI);
             EventCenter.RemoveListener<UpdateCurrencyEvent>(RefreshCurrency);
+        }
+
+        public override void OnUpdate()
+        {
+            base.OnUpdate();
+            _time += Time.deltaTime;
+            if (_time >= _interval)
+            {
+                _time = 0f;
+                RefreshUI();
+            }
         }
 
         private void RefreshTask(RefreshUITaskEvent evt)
@@ -68,14 +82,12 @@ namespace Game.UI.Panel
             }
         }
 
-        private void RefreshUI(DataChangedEvent evt)
+        private void RefreshUI()
         {
-            RefreshData(evt.gameData);
-        }
-
-        private void RefreshData(GameData data)
-        {
+            var data = World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<DataSystem>().GetGameData();
             nodes.people_txt.text = data.people.ToString();
+            nodes.environment_txt.text = string.Format($"{(int)(data.environment * 100)}%");
+            nodes.happiness_txt.text = string.Format($"{(int)(data.happiness * 100)}%");
         }
 
         private void RefreshCurrency(UpdateCurrencyEvent evt)

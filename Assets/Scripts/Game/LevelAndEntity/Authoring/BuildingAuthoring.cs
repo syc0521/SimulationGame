@@ -11,7 +11,7 @@ namespace Game.LevelAndEntity.Authoring
         public int maxPeople;
         public GameObject meshRoot;
         public int maxLevel;
-        public int[] cd;
+        public float cd;
         public int envValue;
         public int evaluateScore;
         class BuildingBaker : Baker<BuildingAuthoring>
@@ -24,7 +24,7 @@ namespace Game.LevelAndEntity.Authoring
                     maxPeople = authoring.maxPeople,
                     maxLevel = authoring.maxLevel,
                     meshRoot = GetEntity(authoring.meshRoot),
-                    cd = new NativeArray<int>(authoring.cd, Allocator.Persistent),
+                    cd = authoring.cd,
                     envValue = authoring.envValue,
                     evaluateScore = authoring.evaluateScore,
                 });

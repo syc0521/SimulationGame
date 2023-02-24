@@ -20,7 +20,7 @@ namespace Game.LevelAndEntity.Aspects
         public int Level => levelObject.ValueRO.level; // 等级
         public int MaxLevel => building.ValueRO.maxLevel;
         public int MaxPeople => building.ValueRO.maxPeople;
-        public int CurrentCD => building.ValueRO.cd[Level];
+        public float CurrentCD => building.ValueRO.cd * (1 - (Level - 1) / (MaxLevel * 2 + 1.0f));
         public int EnvScore => building.ValueRO.envValue;
         public int EvaluateScore => (int)(building.ValueRO.evaluateScore * math.sqrt(Level));
 

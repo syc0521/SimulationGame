@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using Game.Core;
 using Game.Data.Event;
+using Game.Data.FeatureOpen;
 using UnityEngine;
 
 namespace Game.Data
@@ -83,6 +84,11 @@ namespace Game.Data
             data = _playerData.settingData;
         }
 
+        public void GetUnlockedFeatures(ref HashSet<FeatureType> unlockedFeatures)
+        {
+            unlockedFeatures = _playerData.unlockedFeatures;
+        }
+
         public void ResetSaveData()
         {
             InitializeSaveData();
@@ -121,6 +127,8 @@ namespace Game.Data
                 var unlockList = ConfigTable.Instance.GetAllBuildingData().FindAll(item => item.Unlock);
                 _playerData.unlockedBuildings = unlockList.Select(item => item.Buildingid).ToHashSet();
             }
+
+            _playerData.unlockedFeatures ??= new();
 
             _playerData.settingData ??= new SettingData
             {

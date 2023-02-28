@@ -102,8 +102,10 @@ namespace Game.GamePlaySystem.Task
                         break;
                 }
             }
-            Debug.LogError($"已领取ID为{taskID}的奖励");
+            Debug.LogWarning($"已领取ID为{taskID}的奖励");
             ChangeTaskState(taskID, TaskState.Rewarded);
+            
+            // todo 处理FeatureOpen相关
 
             var nextTasks = ConfigTable.Instance.GetTasks().FindAll(item => item.Previousid == taskID);
             foreach (var task in nextTasks)

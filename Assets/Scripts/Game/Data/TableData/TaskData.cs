@@ -42,5 +42,9 @@ namespace Game.Data.TableData
     string content;
     public string Content { get {return content; } set { content = value;} }
     
+    [SerializeField]
+    int featureopen;
+    public int Featureopen { get {return featureopen; } set { featureopen = value;} }
+    
 	}
 }

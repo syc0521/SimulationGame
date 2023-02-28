@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Game.Core;
+using Game.Data.FeatureOpen;
 
 namespace Game.Data
 {
@@ -15,6 +16,7 @@ namespace Game.Data
         void GetCurrency(ref Dictionary<int, int> currency);
         void GetUnlockedBuildings(ref HashSet<int> unlockedBuildings);
         void GetSettingData(ref SettingData data);
+        void GetUnlockedFeatures(ref HashSet<FeatureType> unlockedFeatures);
         DateTime GetLastLoginTime();
     }
 }

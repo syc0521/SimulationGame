@@ -10,52 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 80e14a72067f1ad408ec8d661bc560ce, type: 3}
-  m_Name: TaskSetting
+  m_Name: FeatureOpenSetting
   m_EditorClassIdentifier: 
   templatePath: QuickSheet/ExcelPlugin/Templates
   scriptFilePath: Scripts/Game/Data/TableData
   editorScriptFilePath: Configs/Editor/
-  sheetName: Task.xlsx
-  workSheetName: Task
+  sheetName: FeatureOpen.xlsx
+  workSheetName: FeatureOpen
   columnHeaderList:
   - type: 3
-    name: TaskID
+    name: FeatureID
     isEnable: 0
     isArray: 0
   - type: 1
     name: Name
     isEnable: 0
     isArray: 0
-  - type: 3
-    name: PreviousID
-    isEnable: 0
-    isArray: 0
-  - type: 3
-    name: TaskType
-    isEnable: 0
-    isArray: 0
-  - type: 3
-    name: TargetID
-    isEnable: 0
-    isArray: 1
-  - type: 3
-    name: TargetNum
-    isEnable: 0
-    isArray: 1
-  - type: 3
-    name: Reward
-    isEnable: 0
-    isArray: 0
   - type: 1
-    name: Content
+    name: Description
     isEnable: 0
     isArray: 0
-  - type: 3
-    name: FeatureOpen
-    isEnable: 0
-    isArray: 0
-  excelFilePath: Assets/Configs/RawTable/Task.xlsx
+  excelFilePath: Assets/Configs/RawTable/FeatureOpen.xlsx
   SheetNames:
-  - Task
-  - RewardGroup
+  - FeatureOpen
   currentSelectedSheet: 0

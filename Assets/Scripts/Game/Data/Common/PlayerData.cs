@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Game.Data.FeatureOpen;
 using MessagePack;
 using UnityEngine;
 
@@ -23,6 +24,8 @@ namespace Game.Data
         public HashSet<int> unlockedBuildings;
         [Key(7)] 
         public DateTime lastLoginTime;
+        [Key(8)] 
+        public HashSet<FeatureType> unlockedFeatures;
     }
 
     [Serializable]

@@ -46,13 +46,15 @@ namespace Game.LevelAndEntity.System
                 以上都是min(1,分数)
             */
             NativeArray<int> output = new NativeArray<int>(3, Allocator.Persistent);
-            NativeList<int> produce = new NativeList<int>(state.WorldUpdateAllocator);
+            NativeHashMap<int, int> produce = new(1, state.WorldUpdateAllocator);
+            NativeHashMap<int, int> buildings = new(1, state.WorldUpdateAllocator);
             var deltaTime = SystemAPI.Time.DeltaTime;
             var buildingJob = new BuildingJob
             {
                 output = output,
                 produce = produce,
-                deltaTime = deltaTime
+                deltaTime = deltaTime,
+                buildings = buildings,
             };
 
             buildingJob.Schedule();
@@ -60,12 +62,16 @@ namespace Game.LevelAndEntity.System
 
             foreach (var item in produce)
             {
-                var produceData = ConfigTable.Instance.GetBuildingProduceData(item);
+                var produceData = ConfigTable.Instance.GetBuildingProduceData(item.Key);
                 EventCenter.DispatchEvent(new ProduceEvent
                 {
                     produceType = (ProduceType)produceData.Producetype,
                     produceID = produceData.Produceid,
-                    count = produceData.Produceamount[0]
+                    produceCount = produceData.Produceamount[item.Value],
+                    consumeID = produceData.Consumeid,
+                    consumeCount = produceData.Consumeamount[item.Value],
+                    buildingID = item.Key,
+                    buildingLevel = item.Value,
                 });
             }
             produce.Dispose();
@@ -103,18 +109,20 @@ namespace Game.LevelAndEntity.System
     partial struct BuildingJob : IJobEntity
     {
         public NativeArray<int> output;
-        public NativeList<int> produce;
+        public NativeHashMap<int, int> produce;
+        public NativeHashMap<int, int> buildings;
         public float deltaTime;
         private void Execute(BuildingAspect building)
         {
             output[0] += building.People;
             output[1] += building.EnvScore;
             output[2] += building.EvaluateScore;
+            buildings.Add(building.BuildingType, building.Level);
             building.CurrentTime += deltaTime;
             if (building.CurrentCD > 0 && building.CurrentTime > building.CurrentCD)
             {
                 building.CurrentTime = 0;
-                produce.Add(building.BuildingType);
+                produce.Add(building.BuildingType, building.Level);
             }
         }
     }

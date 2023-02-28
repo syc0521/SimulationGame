@@ -1,4 +1,5 @@
-﻿using Game.GamePlaySystem.Setting;
+﻿using Game.GamePlaySystem;
+using Game.GamePlaySystem.Setting;
 using Game.UI.Decorator;
 
 namespace Game.UI.Panel.Pause
@@ -13,6 +14,7 @@ namespace Game.UI.Panel.Pause
             base.OnCreated();
             nodes.reset_btn.onClick.AddListener(ResetSave);
             nodes.quit_btn.onClick.AddListener(QuitGame);
+            nodes.snap_btn.onClick.AddListener(SnapPhoto);
             nodes.return_btn.onClick.AddListener(ReturnToGame);
             nodes.bgm_slider.SetHandler(SetBGMVolume);
             nodes.sound_slider.SetHandler(SetSoundVolume);
@@ -31,6 +33,7 @@ namespace Game.UI.Panel.Pause
         {
             nodes.reset_btn.onClick.RemoveListener(ResetSave);
             nodes.quit_btn.onClick.RemoveListener(QuitGame);
+            nodes.snap_btn.onClick.RemoveListener(SnapPhoto);
             nodes.return_btn.onClick.RemoveListener(ReturnToGame);
             nodes.bgm_slider.RemoveHandler();
             nodes.sound_slider.RemoveHandler();
@@ -55,7 +58,7 @@ namespace Game.UI.Panel.Pause
 
         private void SnapPhoto()
         {
-            // todo 截屏
+            CameraManager.Instance.TakePhoto();
         }
 
         private void SetBGMVolume(float f)

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Game.Core;
 using Game.Data;
 using Game.Data.Event;
@@ -52,13 +53,27 @@ namespace Game.GamePlaySystem.Backpack
 
         public bool ConsumeBackpack(int id, int count)
         {
-            if (backpack.ContainsKey(id) && backpack[id] > count)
+            if (backpack.ContainsKey(id) && backpack[id] >= count)
             {
                 backpack[id] -= count;
                 return true;
             }
 
             return false;
+        }
+
+        public bool ConsumeBackpack(int[] id, int[] count)
+        {
+            if (id.Where((t, i) => !backpack.ContainsKey(t) || backpack[t] < count[i]).Any())
+            {
+                return false;
+            }
+            
+            for (int i = 0; i < id.Length; i++)
+            {
+                ConsumeBackpack(id[i], count[i]);
+            }
+            return true;
         }
 
         public Dictionary<int, int> GetBackpack() => backpack;

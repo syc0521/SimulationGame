@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Runtime.CompilerServices;
 using Game.Core;
 using Game.Data;
@@ -130,6 +131,48 @@ namespace Game.GamePlaySystem
             var camTransform = mainCam.transform;
             var angle = camTransform.eulerAngles;
             camTransform.rotation = Quaternion.Euler(angle.x, angle.y + evt.pos.x / 2, 0);
+        }
+
+        public void TakePhoto()
+        {
+            int width = Screen.width;
+            int height = Screen.height;
+            var rt = new RenderTexture(width, height, 16);
+            mainCam.targetTexture = rt;
+            RenderTexture.active = rt;
+            mainCam.Render();
+            var photo = new Texture2D(width, height);
+            photo.ReadPixels(new Rect(0, 0, width, height), 0, 0);
+            photo.Apply();
+            mainCam.targetTexture = null;
+            RenderTexture.active = null;
+            UnityEngine.Object.Destroy(rt);
+            SavePhoto(photo);
+        }
+        
+        private void SavePhoto(Texture2D tex)
+        {
+            var path = Application.persistentDataPath;
+            if (tex == null) return;
+            var photo = tex.EncodeToPNG();
+            try
+            {
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
+                File.WriteAllBytes($"{path}/city.png", photo);
+                Debug.Log($"{path}/city.png");
+#if UNITY_ANDROID && !UNITY_EDITOR
+                using AndroidJavaClass jc = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+                using AndroidJavaObject activity = jc.GetStatic<AndroidJavaObject>("currentActivity");
+                activity.Call("SavePhoto");
+#endif
+            }
+            catch (Exception e)
+            {
+                Debug.LogError(e);
+            }
         }
 
     }

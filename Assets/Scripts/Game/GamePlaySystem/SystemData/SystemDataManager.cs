@@ -34,13 +34,29 @@ namespace Game.GamePlaySystem
 
         private void Produce(ProduceEvent evt)
         {
+            if (evt.consumeID == -2) // 房屋消耗走单独的表格
+            {
+                var consumeData = ConfigTable.Instance.GetHouseConsumeData(evt.buildingID, evt.buildingLevel);
+                if (!BackpackManager.Instance.ConsumeBackpack(consumeData.Consumeid, consumeData.Produceamount))
+                {
+                    return;
+                }
+            }
+            else if (evt.consumeID > -1) // 通用消耗逻辑
+            {
+                if (!BackpackManager.Instance.ConsumeBackpack(evt.consumeID, evt.consumeCount))
+                {
+                    return;
+                }
+            }
+            
             switch (evt.produceType)
             {
                 case ProduceType.Currency: // 货币系统
-                    CurrencyManager.Instance.AddCurrency((CurrencyType)evt.produceID, evt.count);
+                    CurrencyManager.Instance.AddCurrency((CurrencyType)evt.produceID, evt.produceCount);
                     break;
                 case ProduceType.Item: // 背包系统
-                    BackpackManager.Instance.AddBackpackCount(evt.produceID, evt.count);
+                    BackpackManager.Instance.AddBackpackCount(evt.produceID, evt.produceCount);
                     break;
                 case ProduceType.Others: // 其他
                     break;

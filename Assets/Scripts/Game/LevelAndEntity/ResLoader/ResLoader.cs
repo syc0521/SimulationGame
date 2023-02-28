@@ -33,7 +33,7 @@ namespace Game.LevelAndEntity.ResLoader
             {
                 Addressables.LoadAssetAsync<GameObject>(GetAssetPath(type, path)).Completed += callback;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 Debug.LogError($"获取{path}资源错误！");
             }
@@ -45,7 +45,7 @@ namespace Game.LevelAndEntity.ResLoader
             {
                 Addressables.LoadAssetAsync<Texture2D>(GetAssetPath(type, path)).Completed += callback;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 Debug.LogError($"获取{path}资源错误！");
             }

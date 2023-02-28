@@ -7,6 +7,10 @@ namespace Game.Data.Event.Backpack
     {
         public ProduceType produceType;
         public int produceID;
-        public int count;
+        public int produceCount;
+        public int consumeID;
+        public int consumeCount;
+        public int buildingID;
+        public int buildingLevel;
     }
 }

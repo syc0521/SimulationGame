@@ -12,11 +12,11 @@ namespace Game.LevelAndEntity.System
     [BurstCompile]
     public partial struct SafeZoneSystem : ISystem
     {
-        public ComponentLookup<Shooting> turretActiveFromEntity;
+        //public ComponentLookup<Shooting> turretActiveFromEntity;
     
         public void OnCreate(ref SystemState state)
         {
-            turretActiveFromEntity = state.GetComponentLookup<Shooting>();
+            //turretActiveFromEntity = state.GetComponentLookup<Shooting>();
         }
 
         public void OnDestroy(ref SystemState state)
@@ -49,7 +49,7 @@ namespace Game.LevelAndEntity.System
     }
 
     //[WithAll(typeof(Turret))]
-    [BurstCompile]
+    /*[BurstCompile]
     public partial struct SafeZoneJob : IJobEntity
     {
         [NativeDisableParallelForRestriction] public ComponentLookup<Shooting> turretActiveFromEntity;
@@ -59,5 +59,5 @@ namespace Game.LevelAndEntity.System
         {
             turretActiveFromEntity.SetComponentEnabled(entity, math.lengthsq(transform.Position) > squaredRadius);
         }
-    }
+    }*/
 }

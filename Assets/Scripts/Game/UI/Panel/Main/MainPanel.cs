@@ -3,6 +3,7 @@ using Game.Data;
 using Game.Data.Common;
 using Game.Data.Event;
 using Game.Data.Event.Currency;
+using Game.Data.Event.FeatureOpen;
 using Game.Data.Event.Task;
 using Game.Data.FeatureOpen;
 using Game.GamePlaySystem.Currency;
@@ -43,7 +44,8 @@ namespace Game.UI.Panel
             EventCenter.AddListener<RefreshUITaskEvent>(RefreshTask);
             EventCenter.AddListener<BuildUIEvent>(ShowConfirmUI);
             EventCenter.AddListener<UpdateCurrencyEvent>(RefreshCurrency);
-            RefreshButtons();
+            EventCenter.AddListener<UnlockFeatureEvent>(RefreshFeatureButtons);
+            RefreshFeatureButtons(default);
             RefreshCurrency(default);
             RefreshTask(default);
         }
@@ -58,6 +60,7 @@ namespace Game.UI.Panel
             EventCenter.RemoveListener<RefreshUITaskEvent>(RefreshTask);
             EventCenter.RemoveListener<BuildUIEvent>(ShowConfirmUI);
             EventCenter.RemoveListener<UpdateCurrencyEvent>(RefreshCurrency);
+            EventCenter.RemoveListener<UnlockFeatureEvent>(RefreshFeatureButtons);
         }
 
         public override void OnUpdate()
@@ -71,9 +74,11 @@ namespace Game.UI.Panel
             }
         }
 
-        private void RefreshButtons()
+        private void RefreshFeatureButtons(UnlockFeatureEvent evt)
         {
             nodes.bag_btn.gameObject.SetActive(FeatureOpenManager.Instance.HasFeature(FeatureType.Backpack));
+            nodes.destroy_btn.gameObject.SetActive(FeatureOpenManager.Instance.HasFeature(FeatureType.Destroy));
+            nodes.operate_widget.RefreshButtons();
         }
 
         private void RefreshTask(RefreshUITaskEvent evt)

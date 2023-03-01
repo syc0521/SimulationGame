@@ -1,4 +1,6 @@
-﻿using Game.GamePlaySystem;
+﻿using Game.Data.FeatureOpen;
+using Game.GamePlaySystem;
+using Game.GamePlaySystem.FeatureOpen;
 using UnityEngine.UI;
 
 namespace Game.UI.Widget
@@ -45,6 +47,11 @@ namespace Game.UI.Widget
         public void ShowConfirmButton(bool value)
         {
             confirm.gameObject.SetActive(value);
+        }
+
+        public void RefreshButtons()
+        {
+            rotate.gameObject.SetActive(FeatureOpenManager.Instance.HasFeature(FeatureType.Rotate));
         }
     }
 }

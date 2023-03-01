@@ -1,6 +1,8 @@
 ﻿using System;
 using Game.Core;
 using Game.Data.Event;
+using Game.Data.FeatureOpen;
+using Game.GamePlaySystem.FeatureOpen;
 using Game.GamePlaySystem.StateMachine;
 using Game.Input;
 using Game.LevelAndEntity.Component;
@@ -25,7 +27,7 @@ namespace Game.GamePlaySystem.GameState
         
         private void ModifyBuilding(LongPressEvent evt)
         {
-            if (BuildingManager.Instance.DetectDynamicBuilding(evt.pos, out var entity))
+            if (BuildingManager.Instance.DetectDynamicBuilding(evt.pos, out var entity) && FeatureOpenManager.Instance.HasFeature(FeatureType.Move))
             {
                 BuildingManager.Instance.ModifyBuilding(entity);
             }

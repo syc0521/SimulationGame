@@ -4,7 +4,9 @@ using Game.Data.Common;
 using Game.Data.Event;
 using Game.Data.Event.Currency;
 using Game.Data.Event.Task;
+using Game.Data.FeatureOpen;
 using Game.GamePlaySystem.Currency;
+using Game.GamePlaySystem.FeatureOpen;
 using Game.LevelAndEntity.System;
 using Game.UI.Component;
 using Game.UI.Panel.Bag;
@@ -41,6 +43,7 @@ namespace Game.UI.Panel
             EventCenter.AddListener<RefreshUITaskEvent>(RefreshTask);
             EventCenter.AddListener<BuildUIEvent>(ShowConfirmUI);
             EventCenter.AddListener<UpdateCurrencyEvent>(RefreshCurrency);
+            RefreshButtons();
             RefreshCurrency(default);
             RefreshTask(default);
         }
@@ -66,6 +69,11 @@ namespace Game.UI.Panel
                 _time = 0f;
                 RefreshUI();
             }
+        }
+
+        private void RefreshButtons()
+        {
+            nodes.bag_btn.gameObject.SetActive(FeatureOpenManager.Instance.HasFeature(FeatureType.Backpack));
         }
 
         private void RefreshTask(RefreshUITaskEvent evt)

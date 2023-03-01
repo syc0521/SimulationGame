@@ -51,6 +51,9 @@ MonoBehaviour:
   - panelid: 11
     name: LoadingPanel
     layer: 2
+  - panelid: 12
+    name: FeatureOpenPanel
+    layer: 3
   dataList:
   - panelid: 0
     name: MainPanel
@@ -88,3 +91,6 @@ MonoBehaviour:
   - panelid: 11
     name: LoadingPanel
     layer: 2
+  - panelid: 12
+    name: FeatureOpenPanel
+    layer: 3

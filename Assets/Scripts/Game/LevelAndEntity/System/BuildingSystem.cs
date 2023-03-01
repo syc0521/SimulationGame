@@ -13,6 +13,7 @@ using Unity.Mathematics;
 namespace Game.LevelAndEntity.System
 {
     [BurstCompile]
+    [UpdateAfter(typeof(AddBlockSystem))]
     public partial struct BuildingSystem : ISystem
     {
         [BurstCompile]
@@ -46,8 +47,8 @@ namespace Game.LevelAndEntity.System
                 以上都是min(1,分数)
             */
             NativeArray<int> output = new NativeArray<int>(3, Allocator.Persistent);
-            NativeHashMap<int, int> produce = new(1, state.WorldUpdateAllocator);
-            NativeHashMap<int, int> buildings = new(1, state.WorldUpdateAllocator);
+            NativeList<int2> produce = new(1, state.WorldUpdateAllocator);
+            NativeList<int2> buildings = new(1, state.WorldUpdateAllocator);
             var deltaTime = SystemAPI.Time.DeltaTime;
             var buildingJob = new BuildingJob
             {
@@ -62,16 +63,16 @@ namespace Game.LevelAndEntity.System
 
             foreach (var item in produce)
             {
-                var produceData = ConfigTable.Instance.GetBuildingProduceData(item.Key);
+                var produceData = ConfigTable.Instance.GetBuildingProduceData(item[0]);
                 EventCenter.DispatchEvent(new ProduceEvent
                 {
                     produceType = (ProduceType)produceData.Producetype,
                     produceID = produceData.Produceid,
-                    produceCount = produceData.Produceamount[item.Value],
+                    produceCount = produceData.Produceamount[item[1] - 1],
                     consumeID = produceData.Consumeid,
-                    consumeCount = produceData.Consumeamount[item.Value],
-                    buildingID = item.Key,
-                    buildingLevel = item.Value,
+                    consumeCount = produceData.Consumeamount[item[1] - 1],
+                    buildingID = item[0],
+                    buildingLevel = item[1],
                 });
             }
             produce.Dispose();
@@ -109,20 +110,20 @@ namespace Game.LevelAndEntity.System
     partial struct BuildingJob : IJobEntity
     {
         public NativeArray<int> output;
-        public NativeHashMap<int, int> produce;
-        public NativeHashMap<int, int> buildings;
+        public NativeList<int2> produce;
+        public NativeList<int2> buildings;
         public float deltaTime;
         private void Execute(BuildingAspect building)
         {
             output[0] += building.People;
             output[1] += building.EnvScore;
             output[2] += building.EvaluateScore;
-            buildings.Add(building.BuildingType, building.Level);
+            buildings.Add(new(building.BuildingType, building.Level));
             building.CurrentTime += deltaTime;
             if (building.CurrentCD > 0 && building.CurrentTime > building.CurrentCD)
             {
                 building.CurrentTime = 0;
-                produce.Add(building.BuildingType, building.Level);
+                produce.Add(new(building.BuildingType, building.Level));
             }
         }
     }

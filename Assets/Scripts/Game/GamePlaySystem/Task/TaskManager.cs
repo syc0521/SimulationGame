@@ -6,8 +6,10 @@ using Game.Data;
 using Game.Data.Common;
 using Game.Data.Event;
 using Game.Data.Event.Task;
+using Game.Data.FeatureOpen;
 using Game.GamePlaySystem.Backpack;
 using Game.GamePlaySystem.Currency;
+using Game.GamePlaySystem.FeatureOpen;
 using UnityEngine;
 using TaskData = Game.Data.TableData.TaskData;
 
@@ -87,6 +89,11 @@ namespace Game.GamePlaySystem.Task
             var taskData = ConfigTable.Instance.GetTask(taskID);
             var rewardGroup = ConfigTable.Instance.GetRewardGroupData(taskData.Reward);
 
+            if (taskData.Featureopen != -1)
+            {
+                FeatureOpenManager.Instance.OpenFeature((FeatureType)taskData.Featureopen);
+            }
+            
             for (int i = 0; i < rewardGroup.Rewardtype.Length; i++)
             {
                 switch ((RewardType)rewardGroup.Rewardtype[i])
@@ -104,8 +111,6 @@ namespace Game.GamePlaySystem.Task
             }
             Debug.LogWarning($"已领取ID为{taskID}的奖励");
             ChangeTaskState(taskID, TaskState.Rewarded);
-            
-            // todo 处理FeatureOpen相关
 
             var nextTasks = ConfigTable.Instance.GetTasks().FindAll(item => item.Previousid == taskID);
             foreach (var task in nextTasks)

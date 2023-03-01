@@ -1,17 +1,8 @@
-﻿using System;
-using Game.Core;
-using Game.Data;
-using Game.LevelAndEntity.Aspects;
-using Game.LevelAndEntity.Component;
-using Game.LevelAndEntity.ResLoader;
+﻿using Game.LevelAndEntity.Component;
 using Unity.Collections;
 using Unity.Entities;
 using Unity.Mathematics;
-using Unity.Scenes;
 using Unity.Transforms;
-using UnityEngine;
-using UnityEngine.AddressableAssets;
-using UnityEngine.ResourceManagement.AsyncOperations;
 
 namespace Game.LevelAndEntity.System
 {
@@ -25,7 +16,7 @@ namespace Game.LevelAndEntity.System
             beginSimECBSystem = World.GetExistingSystemManaged<BeginSimulationEntityCommandBufferSystem>();
             entityManager = beginSimECBSystem.EntityManager;
         }
-
+        
         protected override void OnUpdate()
         {
             var ecb = beginSimECBSystem.CreateCommandBuffer();

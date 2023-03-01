@@ -504,6 +504,8 @@ MonoBehaviour:
   bagItem: {fileID: 11400000, guid: 61b39282d0575e04398cf68c956e215a, type: 2}
   currency: {fileID: 11400000, guid: 226f750594eabae4fb9e8ba18e237a27, type: 2}
   buildingProduce: {fileID: 11400000, guid: 3a2c2cc2d0f76264ebdc11b6be3192df, type: 2}
+  houseConsume: {fileID: 11400000, guid: bd5c656e311733e449750dbd80a56547, type: 2}
+  featureOpen: {fileID: 11400000, guid: 10cb8a4951cb3e447a0cc9cb162417bb, type: 2}
 --- !u!114 &1821025937
 MonoBehaviour:
   m_ObjectHideFlags: 0

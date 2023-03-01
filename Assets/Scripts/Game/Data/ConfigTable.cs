@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Game.Core;
+using Game.Data.FeatureOpen;
 using Game.Data.ScriptableObject;
 using Game.Data.TableData;
 using UnityEngine;
@@ -21,6 +22,7 @@ namespace Game.Data
         [SerializeField] private Currency currency;
         [SerializeField] private BuildingProduce buildingProduce;
         [SerializeField] private HouseConsume houseConsume;
+        [SerializeField] private TableData.FeatureOpen featureOpen;
 
         public Transform GetUIRoot(int layerType) => uiRoot.GetChild(layerType);
 
@@ -50,5 +52,7 @@ namespace Game.Data
 
         public HouseConsumeData GetHouseConsumeData(int id, int level) =>
             houseConsume.dataList.Find(item => item.Buildingid == id && item.Level == level);
+
+        public FeatureOpenData GetFeatureOpenData(FeatureType type) => featureOpen.dataList.Find(item => item.Featureid == (int)type);
     }
 }

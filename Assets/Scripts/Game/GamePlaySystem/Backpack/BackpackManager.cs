@@ -37,7 +37,7 @@ namespace Game.GamePlaySystem.Backpack
             backpack[id] += count;
             TaskManager.Instance.TriggerTask(TaskType.GetBagItem, id, count);
 
-            Debug.Log($"{id}物品数量为{backpack[id]}");
+            //Debug.Log($"{id}物品数量为{backpack[id]}");
         }
 
         public int GetBackpackCount(int id)

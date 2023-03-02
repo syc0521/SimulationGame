@@ -1,4 +1,6 @@
-﻿using Game.Core;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Game.Core;
 using Game.Data;
 using Game.Data.Common;
 using Game.Data.Event;
@@ -77,14 +79,34 @@ namespace Game.LevelAndEntity.System
             }
             produce.Dispose();
 
+            NativeList<int2> consumeItems = new(1, state.WorldUpdateAllocator);
+            foreach (var item in buildings)
+            {
+                var produceData = ConfigTable.Instance.GetBuildingProduceData(item[0]);
+                if (produceData.Consumeid == -2)
+                {
+                    var houseConsume = ConfigTable.Instance.GetHouseConsumeData(item[0], item[1]);
+                    for (int i = 0; i < houseConsume.Consumeid.Length; i++)
+                    {
+                        consumeItems.Add(new(houseConsume.Consumeid[i], (int)(houseConsume.Produceamount[i] * 1.5f)));
+                    }
+                }
+                else if (produceData.Consumeid != -1)
+                {
+                    consumeItems.Add(new(produceData.Consumeid, (int)(produceData.Consumeamount[item[1] - 1] * 1.5f)));
+                }
+            }
+
             float buildRate = math.min(1, output[2] / 50.0f);
             float envRate = math.min(100, output[1] + 115) / 100.0f;
-            float supplyRate = 1.0f;
+            float supplyRate = GetSupplyRate(consumeItems);
             float happiness = supplyRate * 0.35f + envRate * 0.4f + buildRate * 0.25f;
-            
-            config.ValueRW.people = (int)(output[0] * happiness);
+
+            config.ValueRW.people = (int)math.ceil(output[0] * happiness);
             config.ValueRW.envRate = envRate;
             config.ValueRW.happiness = happiness;
+            buildings.Dispose();
+            consumeItems.Dispose();
             output.Dispose();
         }
         
@@ -101,6 +123,25 @@ namespace Game.LevelAndEntity.System
                     col = building.Col,
                 });
             }
+        }
+        
+        private float GetSupplyRate(in NativeList<int2> consumeItems)
+        {
+            Dictionary<int, int> backpack = new(0);
+            Managers.Get<ISaveDataManager>().GetBackpack(ref backpack);
+            
+            var rate = 0f;
+            int count = 0;
+            foreach (var item in consumeItems)
+            {
+                if (backpack.ContainsKey(item[0]))
+                {
+                    rate += math.min(1f, (float)backpack[item[0]] / item[1]);
+                    count++;
+                }
+            }
+            
+            return count > 0 ? rate / count : 1f;
         }
 
     }

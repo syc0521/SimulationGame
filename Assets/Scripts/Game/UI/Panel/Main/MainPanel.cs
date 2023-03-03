@@ -97,7 +97,17 @@ namespace Game.UI.Panel
 
         private void RefreshUI()
         {
-            var data = World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<DataSystem>().GetGameData();
+            var dataSystem = World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<DataSystem>();
+            if (dataSystem == null)
+            {
+                return;
+            }
+            var data = dataSystem.GetGameData();
+            if (data.Equals(default))
+            {
+                return;
+            }
+            
             nodes.people_txt.text = data.people.ToString();
             nodes.environment_txt.text = string.Format($"{(int)(data.environment * 100)}%");
             nodes.happiness_txt.text = string.Format($"{(int)(data.happiness * 100)}%");

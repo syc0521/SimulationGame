@@ -17,7 +17,11 @@ namespace Game.LevelAndEntity.System
 
         public GameData GetGameData()
         {
+            var entityQuery = GetEntityQuery(typeof(Config));
+            if (entityQuery.IsEmpty) return default;
             var config = GetEntityQuery(typeof(Config)).GetSingletonEntity();
+            
+            if (config == Entity.Null) return default;
             var aspect = World.EntityManager.GetAspect<DataAspect>(config);
             GameData gameData = new()
             {

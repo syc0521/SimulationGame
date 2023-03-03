@@ -7,6 +7,8 @@ using Game.GamePlaySystem.BurstUtil;
 using Game.Input;
 using Game.LevelAndEntity.ResLoader;
 using Game.UI;
+using MessagePack;
+using MessagePack.Resolvers;
 using Unity.Collections;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
@@ -85,5 +87,35 @@ namespace Game
             Managers.Update<IGamePlaySystemManager>();
             Managers.Update<IUIManager>();
         }
+        
+        static bool serializerRegistered = false;
+
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+        static void Initialize()
+        {
+            if (!serializerRegistered)
+            {
+                StaticCompositeResolver.Instance.Register(
+                    MessagePack.Resolvers.GeneratedResolver.Instance,
+                    MessagePack.Resolvers.StandardResolver.Instance
+                );
+
+                var option = MessagePackSerializerOptions.Standard.WithResolver(StaticCompositeResolver.Instance);
+
+                MessagePackSerializer.DefaultOptions = option;
+                serializerRegistered = true;
+            }
+        }
+
+#if UNITY_EDITOR
+
+
+        [UnityEditor.InitializeOnLoadMethod]
+        static void EditorInitialize()
+        {
+            Initialize();
+        }
+
+#endif
     }
 }

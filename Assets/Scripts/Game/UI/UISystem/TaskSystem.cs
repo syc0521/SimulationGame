@@ -43,6 +43,7 @@ namespace Game.UI.UISystem
                     targetID = taskTableData.Targetid,
                     targetNum = taskTableData.Targetnum,
                     currentNum = task.Value.currentNum,
+                    type = (TaskType)taskTableData.Tasktype,
                 };
             }
             

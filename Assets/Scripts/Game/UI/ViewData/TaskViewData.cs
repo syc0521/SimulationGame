@@ -12,5 +12,6 @@ namespace Game.UI.ViewData
         public int[] targetID;
         public int[] currentNum;
         public int[] targetNum;
+        public TaskType type;
     }
 }

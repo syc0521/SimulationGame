@@ -25,8 +25,8 @@ namespace Game.UI.Panel.Pause
             base.OnShown();
             _bgmVolume = SettingManager.Instance.BGMVolume;
             _soundVolume = SettingManager.Instance.SoundVolume;
-            nodes.bgm_slider.SetData(_bgmVolume);
-            nodes.sound_slider.SetData(_soundVolume);
+            nodes.bgm_slider.SetValue(_bgmVolume);
+            nodes.sound_slider.SetValue(_soundVolume);
         }
 
         public override void OnDestroyed()

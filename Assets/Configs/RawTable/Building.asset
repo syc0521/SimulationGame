@@ -19,7 +19,7 @@ MonoBehaviour:
     resourcepath: building_101
     name: "\u5B9D\u5854"
     buildingtype: 3
-    description: "\u5F53\u524D\u7248\u672C\u6700\u8D35\u5EFA\u7B51"
+    description: "\u5B9D\u5854"
     currencytype: 00000000
     currencycount: e8030000
     rowcount: 4
@@ -253,7 +253,7 @@ MonoBehaviour:
     unlock: 0
     people: 0
     level: 1
-    basescore: 0
+    basescore: 30
     envscore: 0
   - buildingid: 16
     resourcepath: building_406
@@ -268,7 +268,7 @@ MonoBehaviour:
     unlock: 0
     people: 0
     level: 1
-    basescore: 0
+    basescore: 30
     envscore: 0
   - buildingid: 17
     resourcepath: building_407
@@ -283,14 +283,104 @@ MonoBehaviour:
     unlock: 0
     people: 0
     level: 1
-    basescore: 0
+    basescore: 30
     envscore: 0
+  - buildingid: 18
+    resourcepath: building_408
+    name: "\u68111"
+    buildingtype: 2
+    description: "\u68111"
+    currencytype: 00000000
+    currencycount: 32000000
+    rowcount: 7
+    colcount: 6
+    cd: -1
+    unlock: 0
+    people: 0
+    level: 1
+    basescore: 5
+    envscore: 6
+  - buildingid: 19
+    resourcepath: building_409
+    name: "\u68112"
+    buildingtype: 2
+    description: "\u68112"
+    currencytype: 00000000
+    currencycount: 32000000
+    rowcount: 2
+    colcount: 2
+    cd: -1
+    unlock: 0
+    people: 0
+    level: 1
+    basescore: 5
+    envscore: 6
+  - buildingid: 20
+    resourcepath: building_410
+    name: "\u68113"
+    buildingtype: 2
+    description: "\u68113"
+    currencytype: 00000000
+    currencycount: 32000000
+    rowcount: 1
+    colcount: 1
+    cd: -1
+    unlock: 0
+    people: 0
+    level: 1
+    basescore: 5
+    envscore: 6
+  - buildingid: 21
+    resourcepath: building_411
+    name: "\u68114"
+    buildingtype: 2
+    description: "\u68114"
+    currencytype: 00000000
+    currencycount: 32000000
+    rowcount: 2
+    colcount: 2
+    cd: -1
+    unlock: 0
+    people: 0
+    level: 1
+    basescore: 5
+    envscore: 6
+  - buildingid: 22
+    resourcepath: building_412
+    name: "\u68115"
+    buildingtype: 2
+    description: "\u68115"
+    currencytype: 00000000
+    currencycount: 32000000
+    rowcount: 4
+    colcount: 6
+    cd: -1
+    unlock: 0
+    people: 0
+    level: 1
+    basescore: 5
+    envscore: 6
+  - buildingid: 23
+    resourcepath: building_413
+    name: "\u68116"
+    buildingtype: 2
+    description: "\u68116"
+    currencytype: 00000000
+    currencycount: 32000000
+    rowcount: 4
+    colcount: 6
+    cd: -1
+    unlock: 0
+    people: 0
+    level: 1
+    basescore: 5
+    envscore: 6
   dataList:
   - buildingid: 0
     resourcepath: building_101
     name: "\u5B9D\u5854"
     buildingtype: 3
-    description: "\u5F53\u524D\u7248\u672C\u6700\u8D35\u5EFA\u7B51"
+    description: "\u5B9D\u5854"
     currencytype: 00000000
     currencycount: e8030000
     rowcount: 4
@@ -524,7 +614,7 @@ MonoBehaviour:
     unlock: 0
     people: 0
     level: 1
-    basescore: 0
+    basescore: 30
     envscore: 0
   - buildingid: 16
     resourcepath: building_406
@@ -539,7 +629,7 @@ MonoBehaviour:
     unlock: 0
     people: 0
     level: 1
-    basescore: 0
+    basescore: 30
     envscore: 0
   - buildingid: 17
     resourcepath: building_407
@@ -554,5 +644,95 @@ MonoBehaviour:
     unlock: 0
     people: 0
     level: 1
-    basescore: 0
+    basescore: 30
     envscore: 0
+  - buildingid: 18
+    resourcepath: building_408
+    name: "\u68111"
+    buildingtype: 2
+    description: "\u68111"
+    currencytype: 00000000
+    currencycount: 32000000
+    rowcount: 7
+    colcount: 6
+    cd: -1
+    unlock: 0
+    people: 0
+    level: 1
+    basescore: 5
+    envscore: 6
+  - buildingid: 19
+    resourcepath: building_409
+    name: "\u68112"
+    buildingtype: 2
+    description: "\u68112"
+    currencytype: 00000000
+    currencycount: 32000000
+    rowcount: 2
+    colcount: 2
+    cd: -1
+    unlock: 0
+    people: 0
+    level: 1
+    basescore: 5
+    envscore: 6
+  - buildingid: 20
+    resourcepath: building_410
+    name: "\u68113"
+    buildingtype: 2
+    description: "\u68113"
+    currencytype: 00000000
+    currencycount: 32000000
+    rowcount: 1
+    colcount: 1
+    cd: -1
+    unlock: 0
+    people: 0
+    level: 1
+    basescore: 5
+    envscore: 6
+  - buildingid: 21
+    resourcepath: building_411
+    name: "\u68114"
+    buildingtype: 2
+    description: "\u68114"
+    currencytype: 00000000
+    currencycount: 32000000
+    rowcount: 2
+    colcount: 2
+    cd: -1
+    unlock: 0
+    people: 0
+    level: 1
+    basescore: 5
+    envscore: 6
+  - buildingid: 22
+    resourcepath: building_412
+    name: "\u68115"
+    buildingtype: 2
+    description: "\u68115"
+    currencytype: 00000000
+    currencycount: 32000000
+    rowcount: 4
+    colcount: 6
+    cd: -1
+    unlock: 0
+    people: 0
+    level: 1
+    basescore: 5
+    envscore: 6
+  - buildingid: 23
+    resourcepath: building_413
+    name: "\u68116"
+    buildingtype: 2
+    description: "\u68116"
+    currencytype: 00000000
+    currencycount: 32000000
+    rowcount: 4
+    colcount: 6
+    cd: -1
+    unlock: 0
+    people: 0
+    level: 1
+    basescore: 5
+    envscore: 6

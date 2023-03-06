@@ -141,6 +141,48 @@ MonoBehaviour:
     produceamount: 00000000
     consumeid: -1
     consumeamount: 00000000
+  - id: 18
+    name: "\u68111"
+    producetype: 2
+    produceid: 0
+    produceamount: 00000000
+    consumeid: -1
+    consumeamount: 00000000
+  - id: 19
+    name: "\u68112"
+    producetype: 2
+    produceid: 0
+    produceamount: 00000000
+    consumeid: -1
+    consumeamount: 00000000
+  - id: 20
+    name: "\u68113"
+    producetype: 2
+    produceid: 0
+    produceamount: 00000000
+    consumeid: -1
+    consumeamount: 00000000
+  - id: 21
+    name: "\u68114"
+    producetype: 2
+    produceid: 0
+    produceamount: 00000000
+    consumeid: -1
+    consumeamount: 00000000
+  - id: 22
+    name: "\u68115"
+    producetype: 2
+    produceid: 0
+    produceamount: 00000000
+    consumeid: -1
+    consumeamount: 00000000
+  - id: 23
+    name: "\u68116"
+    producetype: 2
+    produceid: 0
+    produceamount: 00000000
+    consumeid: -1
+    consumeamount: 00000000
   dataList:
   - id: 0
     name: "\u5B9D\u5854"
@@ -263,6 +305,48 @@ MonoBehaviour:
     consumeamount: 00000000
   - id: 17
     name: "\u4E953"
+    producetype: 2
+    produceid: 0
+    produceamount: 00000000
+    consumeid: -1
+    consumeamount: 00000000
+  - id: 18
+    name: "\u68111"
+    producetype: 2
+    produceid: 0
+    produceamount: 00000000
+    consumeid: -1
+    consumeamount: 00000000
+  - id: 19
+    name: "\u68112"
+    producetype: 2
+    produceid: 0
+    produceamount: 00000000
+    consumeid: -1
+    consumeamount: 00000000
+  - id: 20
+    name: "\u68113"
+    producetype: 2
+    produceid: 0
+    produceamount: 00000000
+    consumeid: -1
+    consumeamount: 00000000
+  - id: 21
+    name: "\u68114"
+    producetype: 2
+    produceid: 0
+    produceamount: 00000000
+    consumeid: -1
+    consumeamount: 00000000
+  - id: 22
+    name: "\u68115"
+    producetype: 2
+    produceid: 0
+    produceamount: 00000000
+    consumeid: -1
+    consumeamount: 00000000
+  - id: 23
+    name: "\u68116"
     producetype: 2
     produceid: 0
     produceamount: 00000000

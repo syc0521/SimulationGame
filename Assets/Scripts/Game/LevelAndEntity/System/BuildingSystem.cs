@@ -48,7 +48,7 @@ namespace Game.LevelAndEntity.System
                 人口P(eople) = 当前人口总数（ECS获取） * H
                 以上都是min(1,分数)
             */
-            NativeArray<int> output = new NativeArray<int>(3, Allocator.Persistent);
+            NativeArray<int> output = new NativeArray<int>(3, Allocator.TempJob);
             NativeList<int2> produce = new(1, state.WorldUpdateAllocator);
             NativeList<int2> buildings = new(1, state.WorldUpdateAllocator);
             var deltaTime = SystemAPI.Time.DeltaTime;

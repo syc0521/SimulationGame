@@ -165,7 +165,9 @@ namespace Game.GamePlaySystem
                 Debug.Log($"{path}/city.png");
 #if UNITY_ANDROID && !UNITY_EDITOR
                 using AndroidJavaClass jc = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+                Debug.Log(jc);
                 using AndroidJavaObject activity = jc.GetStatic<AndroidJavaObject>("currentActivity");
+                Debug.Log(activity);
                 activity.Call("SavePhoto");
 #endif
             }

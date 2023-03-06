@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c092eeb918bd0f4c8ee277efb8e5205, type: 3}
+  m_Name: LoadingStep
+  m_EditorClassIdentifier: 
+  SheetName: Assets/Configs/RawTable/LoadingStep.xlsx
+  WorksheetName: LoadingStep
+  dataArray:
+  - stepid: 0
+    name: "\u51C6\u5907"
+    description: "\u51C6\u5907"
+  - stepid: 1
+    name: "\u52A0\u8F7D\u73A9\u5BB6\u5B58\u6863"
+    description: "\u52A0\u8F7D\u73A9\u5BB6\u5B58\u6863"
+  - stepid: 2
+    name: "\u52A0\u8F7D\u5EFA\u7B51\u4FE1\u606F"
+    description: "\u52A0\u8F7D\u5EFA\u7B51"
+  - stepid: 3
+    name: "\u653E\u7F6E\u8BA1\u7B97"
+    description: "\u8BA1\u7B97\u5EFA\u7B51\u4FE1\u606F"
+  - stepid: 4
+    name: "\u52A0\u8F7D\u573A\u666F"
+    description: "\u52A0\u8F7D\u573A\u666F"
+  - stepid: 5
+    name: "\u7ED3\u675F"
+    description: "\u6B63\u5728\u8FDB\u5165\u573A\u666F"
+  dataList:
+  - stepid: 0
+    name: "\u51C6\u5907"
+    description: "\u51C6\u5907"
+  - stepid: 1
+    name: "\u52A0\u8F7D\u73A9\u5BB6\u5B58\u6863"
+    description: "\u52A0\u8F7D\u73A9\u5BB6\u5B58\u6863"
+  - stepid: 2
+    name: "\u52A0\u8F7D\u5EFA\u7B51\u4FE1\u606F"
+    description: "\u52A0\u8F7D\u5EFA\u7B51"
+  - stepid: 3
+    name: "\u653E\u7F6E\u8BA1\u7B97"
+    description: "\u8BA1\u7B97\u5EFA\u7B51\u4FE1\u606F"
+  - stepid: 4
+    name: "\u52A0\u8F7D\u573A\u666F"
+    description: "\u52A0\u8F7D\u573A\u666F"
+  - stepid: 5
+    name: "\u7ED3\u675F"
+    description: "\u6B63\u5728\u8FDB\u5165\u573A\u666F"

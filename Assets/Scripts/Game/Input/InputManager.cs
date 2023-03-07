@@ -266,7 +266,7 @@ namespace Game.Input
 
         private void PinchStart(InputAction.CallbackContext ctx)
         {
-            if (!isSwiping && CanSendInteractEvent())
+            if (CanSendInteractEvent())
             {
                 EventCenter.DispatchEvent(new PinchStartEvent
                 {
@@ -279,8 +279,9 @@ namespace Game.Input
         
         private void PinchEnd(InputAction.CallbackContext ctx)
         {
-            if (!isSwiping && CanSendInteractEvent())
+            if (CanSendInteractEvent())
             {
+                isSwiping = false;
                 EventCenter.DispatchEvent(new PinchEndEvent
                 {
                     primaryPos = _gameControl.GamePlay.PrimaryFingerPosition.ReadValue<Vector2>(),
@@ -300,6 +301,7 @@ namespace Game.Input
             {
                 if (UnityEngine.Input.touchCount == 2 && CanSendInteractEvent())
                 {
+                    isSwiping = true;
                     EventCenter.DispatchEvent(new PinchChangedEvent
                     {
                         primaryPos = _gameControl.GamePlay.PrimaryFingerPosition.ReadValue<Vector2>(),

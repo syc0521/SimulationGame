@@ -82,7 +82,7 @@ MonoBehaviour:
     description: "\u9053\u8DEF"
     currencytype: 00000000
     currencycount: 05000000
-    rowcount: 2
+    rowcount: 1
     colcount: 1
     cd: -1
     unlock: 0
@@ -443,7 +443,7 @@ MonoBehaviour:
     description: "\u9053\u8DEF"
     currencytype: 00000000
     currencycount: 05000000
-    rowcount: 2
+    rowcount: 1
     colcount: 1
     cd: -1
     unlock: 0

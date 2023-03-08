@@ -1,4 +1,5 @@
-﻿using Game.Core;
+﻿using System;
+using Game.Core;
 using Game.Data;
 using Game.Data.Common;
 using Game.Data.Event;
@@ -14,6 +15,7 @@ using Game.UI.Panel.Bag;
 using Game.UI.Panel.Building;
 using Game.UI.Panel.Pause;
 using Game.UI.UISystem;
+using Game.UI.Widget;
 using Unity.Entities;
 using UnityEngine;
 
@@ -38,10 +40,9 @@ namespace Game.UI.Panel
             nodes.pause_btn.onClick.AddListener(ShowPausePanel);
             nodes.closeTip_btn.onClick.AddListener(CloseTip);
             
-            nodes.environment_widget.SetClickHandler(ShowTip);
-            nodes.happiness_widget.SetClickHandler(ShowTip);
-            nodes.money_widget.SetClickHandler(ShowTip);
-            nodes.people_widget.SetClickHandler(ShowTip);
+            nodes.happiness_widget.SetClickHandler(ShowTip, StatusType.Happiness);
+            nodes.money_widget.SetClickHandler(ShowTip, StatusType.Coin);
+            nodes.people_widget.SetClickHandler(ShowTip, StatusType.People);
         }
 
         public override void OnShown()
@@ -116,7 +117,6 @@ namespace Game.UI.Panel
             }
             
             nodes.people_widget.SetText(data.people.ToString());
-            nodes.environment_widget.SetText(string.Format($"{(int)(data.environment * 100)}%"));
             nodes.happiness_widget.SetText(string.Format($"{(int)(data.happiness * 100)}%"));
         }
 
@@ -156,10 +156,25 @@ namespace Game.UI.Panel
             UIManager.Instance.OpenPanel<PausePanel>();
         }
 
-        private void ShowTip(Transform widgetTransform)
+        private void ShowTip(StatusWidget widget)
         {
+            switch (widget.Type)
+            {
+                case StatusType.Happiness:
+                    nodes.tip_w.SetTitle("满意度");
+                    nodes.tip_w.SetDescription("建造建筑，提高供给,可提高满意度");
+                    break;
+                case StatusType.People:
+                    nodes.tip_w.SetTitle("人口");
+                    nodes.tip_w.SetDescription("临安城目前居住的人口，受满意度控制");
+                    break;
+                case StatusType.Coin:
+                    nodes.tip_w.SetTitle("通宝");
+                    nodes.tip_w.SetDescription("宋代的普通货币");
+                    break;
+            }
             nodes.tip_w.gameObject.SetActive(true);
-            nodes.tip_w.transform.position = widgetTransform.position - new Vector3(0, -50);
+            nodes.tip_w.transform.position = widget.transform.position - new Vector3(25, 100);
             nodes.closeTip_btn.gameObject.SetActive(true);
         }
 

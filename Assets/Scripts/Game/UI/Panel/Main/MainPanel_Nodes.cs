@@ -14,7 +14,7 @@ namespace Game.UI.Panel
         public ListComponent task_list;
         public OperateBuildingWidget operate_widget;
         public Button pause_btn;
-        public StatusWidget environment_widget, happiness_widget, people_widget, money_widget;
+        public StatusWidget happiness_widget, people_widget, money_widget;
         public TipWidget tip_w;
         public Button closeTip_btn;
 

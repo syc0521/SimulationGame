@@ -74,6 +74,7 @@ namespace Game.UI.Panel.Pause
         private void ReturnToGame()
         {
             SettingManager.Instance.SetVolume(_bgmVolume, _soundVolume);
+            CloseSelf();
         }
     }
 }

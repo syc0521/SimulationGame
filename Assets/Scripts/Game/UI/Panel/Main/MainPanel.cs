@@ -27,7 +27,7 @@ namespace Game.UI.Panel
     public class MainPanel : UIPanel
     {
         public MainPanel_Nodes nodes;
-        private float _interval = 0.5f;
+        private const float Interval = 0.5f;
         private float _time = 0f;
 
         public override void OnCreated()
@@ -36,6 +36,12 @@ namespace Game.UI.Panel
             nodes.bag_btn.onClick.AddListener(OpenBagPanel);
             nodes.destroy_btn.onClick.AddListener(DestroyHandler);
             nodes.pause_btn.onClick.AddListener(ShowPausePanel);
+            nodes.closeTip_btn.onClick.AddListener(CloseTip);
+            
+            nodes.environment_widget.SetClickHandler(ShowTip);
+            nodes.happiness_widget.SetClickHandler(ShowTip);
+            nodes.money_widget.SetClickHandler(ShowTip);
+            nodes.people_widget.SetClickHandler(ShowTip);
         }
 
         public override void OnShown()
@@ -56,7 +62,8 @@ namespace Game.UI.Panel
             nodes.bag_btn.onClick.RemoveListener(OpenBagPanel);
             nodes.destroy_btn.onClick.RemoveListener(DestroyHandler);
             nodes.pause_btn.onClick.RemoveListener(ShowPausePanel);
-            
+            nodes.closeTip_btn.onClick.RemoveListener(CloseTip);
+
             EventCenter.RemoveListener<RefreshUITaskEvent>(RefreshTask);
             EventCenter.RemoveListener<BuildUIEvent>(ShowConfirmUI);
             EventCenter.RemoveListener<UpdateCurrencyEvent>(RefreshCurrency);
@@ -67,7 +74,7 @@ namespace Game.UI.Panel
         {
             base.OnUpdate();
             _time += Time.deltaTime;
-            if (_time >= _interval)
+            if (_time >= Interval)
             {
                 _time = 0f;
                 RefreshUI();
@@ -108,15 +115,15 @@ namespace Game.UI.Panel
                 return;
             }
             
-            nodes.people_txt.text = data.people.ToString();
-            nodes.environment_txt.text = string.Format($"{(int)(data.environment * 100)}%");
-            nodes.happiness_txt.text = string.Format($"{(int)(data.happiness * 100)}%");
+            nodes.people_widget.SetText(data.people.ToString());
+            nodes.environment_widget.SetText(string.Format($"{(int)(data.environment * 100)}%"));
+            nodes.happiness_widget.SetText(string.Format($"{(int)(data.happiness * 100)}%"));
         }
 
         private void RefreshCurrency(UpdateCurrencyEvent evt)
         {
             var coin = CurrencyManager.Instance.GetCurrency(CurrencyType.Coin);
-            nodes.money_txt.text = coin.ToString();
+            nodes.money_widget.SetText(coin.ToString());
         }
 
         private void OpenBuildPanel()
@@ -147,6 +154,18 @@ namespace Game.UI.Panel
         private void ShowPausePanel()
         {
             UIManager.Instance.OpenPanel<PausePanel>();
+        }
+
+        private void ShowTip(Transform widgetTransform)
+        {
+            nodes.tip_w.gameObject.SetActive(true);
+            nodes.tip_w.transform.position = widgetTransform.position - new Vector3(0, -50);
+            nodes.closeTip_btn.gameObject.SetActive(true);
+        }
+
+        private void CloseTip()
+        {
+            nodes.tip_w.gameObject.SetActive(false);
         }
 
     }

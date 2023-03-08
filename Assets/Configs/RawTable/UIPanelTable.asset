@@ -44,7 +44,7 @@ MonoBehaviour:
     layer: 1
   - panelid: 9
     name: PausePanel
-    layer: 1
+    layer: 3
   - panelid: 10
     name: StartPanel
     layer: 2
@@ -84,7 +84,7 @@ MonoBehaviour:
     layer: 1
   - panelid: 9
     name: PausePanel
-    layer: 1
+    layer: 3
   - panelid: 10
     name: StartPanel
     layer: 2

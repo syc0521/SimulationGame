@@ -45,6 +45,7 @@ namespace Game.LevelAndEntity.System
                     id = addBuilding.id,
                     level = 1,
                     spawnPos = addBuilding.spawnPos,
+                    isStatic = false,
                 });
                 ecb.AddComponent(e, new Timer());
 

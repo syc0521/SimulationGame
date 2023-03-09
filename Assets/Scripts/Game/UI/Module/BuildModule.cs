@@ -11,12 +11,10 @@ namespace Game.UI.Module
         public override void OnCreated()
         {
             EventCenter.AddListener<DestroyEvent>(ShowDestroyAlert);
-            EventCenter.AddListener<OpenBuildingInfoEvent>(OpenBuildingInfo);
         }
         
         public override void OnDestroyed()
         {
-            EventCenter.RemoveListener<OpenBuildingInfoEvent>(OpenBuildingInfo);
             EventCenter.RemoveListener<DestroyEvent>(ShowDestroyAlert);
         }
 
@@ -25,10 +23,5 @@ namespace Game.UI.Module
             AlertDecorator.OpenAlertPanel("是否删除该建筑", true, evt.handler);
         }
 
-        private void OpenBuildingInfo(OpenBuildingInfoEvent evt)
-        {
-            Debug.Log(evt.id);
-        }
-        
     }
 }

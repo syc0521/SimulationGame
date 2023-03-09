@@ -17,6 +17,7 @@ namespace Game.UI.Panel
         public StatusWidget happiness_widget, people_widget, money_widget;
         public TipWidget tip_w;
         public Button closeTip_btn;
+        public BuildingDetailWidget buildingDetail_w;
 
         private void Awake()
         {

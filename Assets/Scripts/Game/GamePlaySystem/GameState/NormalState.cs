@@ -40,7 +40,8 @@ namespace Game.GamePlaySystem.GameState
                 var levelObject = World.DefaultGameObjectInjectionWorld.EntityManager.GetComponentData<LevelObject>(entity);
                 EventCenter.DispatchEvent(new OpenBuildingInfoEvent
                 {
-                    id = (int)levelObject.id
+                    id = (int)levelObject.id,
+                    isStatic = levelObject.isStatic,
                 });
             }
         }

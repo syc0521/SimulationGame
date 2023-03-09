@@ -8,5 +8,6 @@ namespace Game.LevelAndEntity.Component
         public uint id;
         public int level;
         public float3 spawnPos;
+        public bool isStatic;
     }
 }

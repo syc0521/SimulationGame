@@ -7,6 +7,7 @@ using Game.Data.Event.Currency;
 using Game.Data.Event.FeatureOpen;
 using Game.Data.Event.Task;
 using Game.Data.FeatureOpen;
+using Game.GamePlaySystem;
 using Game.GamePlaySystem.Currency;
 using Game.GamePlaySystem.FeatureOpen;
 using Game.LevelAndEntity.System;
@@ -52,6 +53,8 @@ namespace Game.UI.Panel
             EventCenter.AddListener<BuildUIEvent>(ShowConfirmUI);
             EventCenter.AddListener<UpdateCurrencyEvent>(RefreshCurrency);
             EventCenter.AddListener<UnlockFeatureEvent>(RefreshFeatureButtons);
+            EventCenter.AddListener<OpenBuildingInfoEvent>(OpenBuildingInfo);
+
             RefreshFeatureButtons(default);
             RefreshCurrency(default);
             RefreshTask(default);
@@ -69,6 +72,7 @@ namespace Game.UI.Panel
             EventCenter.RemoveListener<BuildUIEvent>(ShowConfirmUI);
             EventCenter.RemoveListener<UpdateCurrencyEvent>(RefreshCurrency);
             EventCenter.RemoveListener<UnlockFeatureEvent>(RefreshFeatureButtons);
+            EventCenter.RemoveListener<OpenBuildingInfoEvent>(OpenBuildingInfo);
         }
 
         public override void OnUpdate()
@@ -181,6 +185,40 @@ namespace Game.UI.Panel
         private void CloseTip()
         {
             nodes.tip_w.gameObject.SetActive(false);
+            nodes.closeTip_btn.gameObject.SetActive(false);
+            nodes.buildingDetail_w.gameObject.SetActive(false);
+        }
+        
+        private void OpenBuildingInfo(OpenBuildingInfoEvent evt)
+        {
+            if (evt.isStatic)
+            {
+                if (evt.id == 1) // todo 打开官府面板
+                {
+                    
+                }
+            }
+            else
+            {
+                var data = BuildingManager.Instance.GetBuildingData((uint)evt.id);
+                var buildingData = ConfigTable.Instance.GetBuildingData(data.type);
+                if (buildingData.Buildingid == 4)
+                {
+                    return;
+                }
+            
+                nodes.buildingDetail_w.SetDefault();
+                nodes.buildingDetail_w.gameObject.SetActive(true);
+                nodes.closeTip_btn.gameObject.SetActive(true);
+            
+                nodes.buildingDetail_w.SetTitle(buildingData.Name);
+                nodes.buildingDetail_w.SetDescription(buildingData.Description);
+                if (buildingData.Level > 1)
+                {
+                    nodes.buildingDetail_w.SetLevel(data.level);
+                    nodes.buildingDetail_w.SetUpgradeState(data.level < buildingData.Level);
+                }
+            }
         }
 
     }

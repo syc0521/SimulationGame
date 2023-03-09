@@ -37,7 +37,7 @@ MonoBehaviour:
     name: AlertRewardPanel
     layer: 3
   - panelid: 7
-    name: BuildingDetailPanel
+    name: GovernmentPanel
     layer: 1
   - panelid: 8
     name: MallPanel
@@ -77,7 +77,7 @@ MonoBehaviour:
     name: AlertRewardPanel
     layer: 3
   - panelid: 7
-    name: BuildingDetailPanel
+    name: GovernmentPanel
     layer: 1
   - panelid: 8
     name: MallPanel

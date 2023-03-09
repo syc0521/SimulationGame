@@ -67,13 +67,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ShapeType: 0
   m_PrimitiveCenter:
-    x: 1.9854876
-    y: 1.0789156
-    z: 4.106564
+    x: 2.075095
+    y: 3.01006
+    z: 1.2612678
   m_PrimitiveSize:
-    x: 3.920031
-    y: 1.9760294
-    z: 7.9240103
+    x: 4.08
+    y: 6.3361073
+    z: 2
   m_PrimitiveOrientation:
     Value:
       x: -0
@@ -81,15 +81,15 @@ MonoBehaviour:
       z: 0
     RotationOrder: 4
   m_Capsule:
-    Height: 7.9240103
-    Radius: 1.9600155
-    Axis: 2
+    Height: 6.3361073
+    Radius: 2.04
+    Axis: 1
   m_Cylinder:
-    Height: 7.9240103
-    Radius: 1.9600155
-    Axis: 2
+    Height: 6.3361073
+    Radius: 2.04
+    Axis: 1
   m_CylinderSideCount: 20
-  m_SphereRadius: 3.9620051
+  m_SphereRadius: 3.1680536
   m_MinimumSkinnedVertexWeight: 0.1
   m_ConvexHullGenerationParameters:
     m_SimplificationTolerance: 0.015
@@ -227,7 +227,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 452f5fdafbdd7a5418cba81f5ea99eff,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 2.04
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 452f5fdafbdd7a5418cba81f5ea99eff,
         type: 3}
@@ -237,7 +237,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 452f5fdafbdd7a5418cba81f5ea99eff,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1.55
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 452f5fdafbdd7a5418cba81f5ea99eff,
         type: 3}

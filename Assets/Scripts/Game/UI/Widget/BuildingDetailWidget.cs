@@ -33,7 +33,7 @@ namespace Game.UI.Widget
         public void SetLevel(int level)
         {
             level_txt.gameObject.SetActive(true);
-            level_txt.text = level.ToString();
+            level_txt.text = $"Lv.{level}";
         }
 
         public void SetProduceAmount(int amount)

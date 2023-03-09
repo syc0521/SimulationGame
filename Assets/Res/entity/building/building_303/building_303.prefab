@@ -67,13 +67,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ShapeType: 0
   m_PrimitiveCenter:
-    x: 1.5016983
-    y: 0.8180372
-    z: 1.4985188
+    x: 3.0033965
+    y: 1.6360744
+    z: 2.7670376
   m_PrimitiveSize:
-    x: 2.7720575
-    y: 1.6235571
-    z: 2.6412904
+    x: 5.544115
+    y: 3.2471142
+    z: 5.282581
   m_PrimitiveOrientation:
     Value:
       x: -0
@@ -81,15 +81,15 @@ MonoBehaviour:
       z: 0
     RotationOrder: 4
   m_Capsule:
-    Height: 2.7720575
-    Radius: 1.3206452
+    Height: 5.544115
+    Radius: 2.6412904
     Axis: 0
   m_Cylinder:
-    Height: 1.6235571
-    Radius: 1.3860288
+    Height: 3.2471142
+    Radius: 2.7720575
     Axis: 1
   m_CylinderSideCount: 20
-  m_SphereRadius: 1.3860288
+  m_SphereRadius: 2.7720575
   m_MinimumSkinnedVertexWeight: 0.1
   m_ConvexHullGenerationParameters:
     m_SimplificationTolerance: 0.015
@@ -227,7 +227,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: c88518c755babd845822972eb8ebf70d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c88518c755babd845822972eb8ebf70d,
         type: 3}
@@ -237,7 +237,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: c88518c755babd845822972eb8ebf70d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: 1.77
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c88518c755babd845822972eb8ebf70d,
         type: 3}
@@ -283,6 +283,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LinChang01
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c88518c755babd845822972eb8ebf70d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

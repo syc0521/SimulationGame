@@ -202,7 +202,7 @@ namespace Game.UI.Panel
             {
                 var data = BuildingManager.Instance.GetBuildingData((uint)evt.id);
                 var buildingData = ConfigTable.Instance.GetBuildingData(data.type);
-                if (buildingData.Buildingid == 4)
+                if (buildingData == null || buildingData.Buildingid == 4)
                 {
                     return;
                 }
@@ -217,6 +217,13 @@ namespace Game.UI.Panel
                 {
                     nodes.buildingDetail_w.SetLevel(data.level);
                     nodes.buildingDetail_w.SetUpgradeState(data.level < buildingData.Level);
+                }
+
+                if (buildingData.Cd > 0)
+                {
+                    var produceData = ConfigTable.Instance.GetBuildingProduceData(data.type);
+                    var itemPerMin = produceData.Produceamount[data.level - 1] / buildingData.Cd * 60.0f;
+                    nodes.buildingDetail_w.SetProduceAmount((int)itemPerMin);
                 }
             }
         }

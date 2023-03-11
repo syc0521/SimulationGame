@@ -17,14 +17,14 @@ MonoBehaviour:
   dataArray:
   - id: 0
     name: "\u901A\u5B9D"
-    content: "\u91D1\u5E01"
+    content: "\u5B8B\u4EE3\u7684\u666E\u901A\u8D27\u5E01"
   - id: 1
     name: "\u94F6\u5B50"
     content: "\u94BB\u77F3"
   dataList:
   - id: 0
     name: "\u901A\u5B9D"
-    content: "\u91D1\u5E01"
+    content: "\u5B8B\u4EE3\u7684\u666E\u901A\u8D27\u5E01"
   - id: 1
     name: "\u94F6\u5B50"
     content: "\u94BB\u77F3"

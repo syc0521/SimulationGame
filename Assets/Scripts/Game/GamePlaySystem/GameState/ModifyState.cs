@@ -34,7 +34,7 @@ namespace Game.GamePlaySystem.GameState
         public override void OnEnter(params object[] list)
         {
             buildingEntity = (Entity)list[0];
-            World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<AddBlockSystem>().SetGridVisible(true);
+            World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<BuildingManagedSystem>().SetGridVisible(true);
             SelectBuilding(buildingEntity);
 
             EventCenter.AddListener<TouchEvent>(PlaceBuilding);
@@ -43,7 +43,7 @@ namespace Game.GamePlaySystem.GameState
 
         public override void OnLeave(params object[] list)
         {
-            World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<AddBlockSystem>().SetGridVisible(false);
+            World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<BuildingManagedSystem>().SetGridVisible(false);
             EventCenter.RemoveListener<TouchEvent>(PlaceBuilding);
             EventCenter.RemoveListener<RotateEvent>(RotateBuilding);
 

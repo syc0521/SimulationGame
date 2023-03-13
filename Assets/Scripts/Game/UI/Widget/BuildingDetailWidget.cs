@@ -1,5 +1,7 @@
-﻿using Game.UI.Component;
+﻿using System;
+using Game.UI.Component;
 using TMPro;
+using UnityEngine.UI;
 
 namespace Game.UI.Widget
 {
@@ -8,6 +10,20 @@ namespace Game.UI.Widget
         public TextMeshProUGUI name_txt, desc_txt;
         public TextMeshProUGUI level_txt, produce_txt;
         public FrameComponent upgrade_frame;
+        public Button upgrade_btn;
+        private Action _handler;
+
+        public override void OnCreated()
+        {
+            base.OnCreated();
+            upgrade_btn.onClick.AddListener(ClickHandler);
+        }
+
+        public override void OnDestroyed()
+        {
+            upgrade_btn.onClick.RemoveListener(ClickHandler);
+            base.OnDestroyed();
+        }
 
         public void SetDefault()
         {
@@ -46,6 +62,16 @@ namespace Game.UI.Widget
         {
             upgrade_frame.gameObject.SetActive(true);
             upgrade_frame.SetFrame(canUpgrade ? 1 : 2);
+        }
+
+        public void SetUpgradeHandler(Action handler)
+        {
+            _handler = handler;
+        }
+
+        private void ClickHandler()
+        {
+            _handler?.Invoke();
         }
     }
 }

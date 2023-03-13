@@ -30,7 +30,7 @@ namespace Game.Data
 
     [Serializable]
     [MessagePackObject]
-    public struct BuildingData
+    public class BuildingData
     {
         [Key(0)]
         public int type;

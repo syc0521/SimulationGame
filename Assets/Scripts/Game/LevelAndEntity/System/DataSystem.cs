@@ -2,6 +2,7 @@
 using Game.Data;
 using Game.LevelAndEntity.Aspects;
 using Game.LevelAndEntity.Component;
+using Unity.Collections;
 using Unity.Entities;
 using UnityEngine;
 

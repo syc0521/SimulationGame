@@ -256,5 +256,19 @@ namespace Game.GamePlaySystem
             return unlockedBuildings.Contains(buildingId);
         }
 
+        public bool UpgradeBuilding(uint buildingId, int newLevel, bool isStatic = false)
+        {
+            var system = World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<BuildingManagedSystem>();
+            system.UpgradeBuilding(buildingId, newLevel, isStatic);
+            _buildingDatas[buildingId].level = newLevel;
+            EventCenter.DispatchEvent(new OpenBuildingInfoEvent
+            {
+                id = (int)buildingId,
+                isStatic = isStatic,
+            });
+            Managers.Get<ISaveDataManager>().SaveData();
+            return true;
+        }
+
     }
 }

@@ -8,10 +8,12 @@ using Game.Data.Event.FeatureOpen;
 using Game.Data.Event.Task;
 using Game.Data.FeatureOpen;
 using Game.GamePlaySystem;
+using Game.GamePlaySystem.Backpack;
 using Game.GamePlaySystem.Currency;
 using Game.GamePlaySystem.FeatureOpen;
 using Game.LevelAndEntity.System;
 using Game.UI.Component;
+using Game.UI.Decorator;
 using Game.UI.Panel.Bag;
 using Game.UI.Panel.Building;
 using Game.UI.Panel.Pause;
@@ -217,6 +219,41 @@ namespace Game.UI.Panel
                 {
                     nodes.buildingDetail_w.SetLevel(data.level);
                     nodes.buildingDetail_w.SetUpgradeState(data.level < buildingData.Level);
+                    nodes.buildingDetail_w.SetUpgradeHandler(UpgradeHandler);
+                    
+                    void UpgradeHandler()
+                    {
+                        if (data.level == buildingData.Level) return;
+
+                        var upgradeData = ConfigTable.Instance.GetBuildingUpgradeData(data.type, data.level + 1);
+                        bool canUpgrade = true;
+                        for (var i = 0; i < upgradeData.Currencyid.Length; i++)
+                        {
+                            var count = CurrencyManager.Instance.GetCurrency((CurrencyType)upgradeData.Currencyid[i]);
+                            if (count < upgradeData.Currencycount[i])
+                            {
+                                canUpgrade = false;
+                            }
+                        }
+
+                        for (var i = 0; i < upgradeData.Itemid.Length; i++)
+                        {
+                            var count = BackpackManager.Instance.GetBackpackCount(upgradeData.Itemid[i]);
+                            if (count < upgradeData.Itemcount[i])
+                            {
+                                canUpgrade = false;
+                            }
+                        }
+
+                        if (canUpgrade)
+                        {
+                            BuildingManager.Instance.UpgradeBuilding((uint)evt.id, data.level + 1, evt.isStatic);
+                        }
+                        else
+                        {
+                            AlertDecorator.OpenAlertPanel("货币或材料不足！", false);
+                        }
+                    }
                 }
 
                 if (buildingData.Cd > 0)

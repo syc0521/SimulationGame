@@ -16,13 +16,13 @@ namespace Game.GamePlaySystem.GameState
     {
         public override void OnEnter(params object[] list)
         {
-            World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<AddBlockSystem>().SetGridVisible(true);
+            World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<BuildingManagedSystem>().SetGridVisible(true);
             EventCenter.AddListener<TouchEvent>(DeleteBuilding);
         }
 
         public override void OnLeave(params object[] list)
         {
-            World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<AddBlockSystem>().SetGridVisible(false);
+            World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<BuildingManagedSystem>().SetGridVisible(false);
             Managers.Get<ISaveDataManager>().SaveData();
             EventCenter.RemoveListener<TouchEvent>(DeleteBuilding);
         }

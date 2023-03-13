@@ -24,6 +24,7 @@ namespace Game.Data
         [SerializeField] private HouseConsume houseConsume;
         [SerializeField] private TableData.FeatureOpen featureOpen;
         [SerializeField] private LoadingStep loadingStep;
+        [SerializeField] private BuildingUpgrade buildingUpgrade;
 
         public Transform GetUIRoot(int layerType) => uiRoot.GetChild(layerType);
 
@@ -57,5 +58,8 @@ namespace Game.Data
         public FeatureOpenData GetFeatureOpenData(FeatureType type) => featureOpen.dataList.Find(item => item.Featureid == (int)type);
 
         public LoadingStepData GetLoadingStepData(int stepID) => loadingStep.dataList.Find(item => item.Stepid == stepID);
+
+        public BuildingUpgradeData GetBuildingUpgradeData(int buildingTypeID, int newLevel) =>
+            buildingUpgrade.dataList.Find(item => item.ID == buildingTypeID && item.Level == newLevel);
     }
 }

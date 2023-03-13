@@ -72,7 +72,7 @@ namespace Game.LevelAndEntity.System
                     produceID = produceData.Produceid,
                     produceCount = produceData.Produceamount[item[1] - 1],
                     consumeID = produceData.Consumeid,
-                    consumeCount = produceData.Consumeamount[item[1] - 1],
+                    consumeCount = produceData.Consumeid > 0 ? produceData.Consumeamount[item[1] - 1] : 0,
                     buildingID = item[0],
                     buildingLevel = item[1],
                 });

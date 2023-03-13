@@ -7,5 +7,6 @@ namespace Game.Data.FeatureOpen
         Backpack = 3,
         Achievement = 4,
         Destroy = 5,
+        Upgrade = 6,
     }
 }

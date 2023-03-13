@@ -218,7 +218,10 @@ namespace Game.UI.Panel
                 if (buildingData.Level > 1)
                 {
                     nodes.buildingDetail_w.SetLevel(data.level);
-                    nodes.buildingDetail_w.SetUpgradeState(data.level < buildingData.Level);
+                    if (FeatureOpenManager.Instance.HasFeature(FeatureType.Upgrade))
+                    {
+                        nodes.buildingDetail_w.SetUpgradeState(data.level < buildingData.Level);
+                    }
                     nodes.buildingDetail_w.SetUpgradeHandler(UpgradeHandler);
                     
                     void UpgradeHandler()

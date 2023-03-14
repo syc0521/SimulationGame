@@ -3,6 +3,7 @@ using Game.Core;
 using Game.Data;
 using Game.Data.Common;
 using Game.Data.Event;
+using Game.Data.Event.Common;
 using Game.Data.Event.Currency;
 using Game.Data.Event.FeatureOpen;
 using Game.Data.Event.Task;
@@ -56,6 +57,7 @@ namespace Game.UI.Panel
             EventCenter.AddListener<UpdateCurrencyEvent>(RefreshCurrency);
             EventCenter.AddListener<UnlockFeatureEvent>(RefreshFeatureButtons);
             EventCenter.AddListener<OpenBuildingInfoEvent>(OpenBuildingInfo);
+            EventCenter.AddListener<FPSEvent>(ShowFPS);
 
             RefreshFeatureButtons(default);
             RefreshCurrency(default);
@@ -75,6 +77,7 @@ namespace Game.UI.Panel
             EventCenter.RemoveListener<UpdateCurrencyEvent>(RefreshCurrency);
             EventCenter.RemoveListener<UnlockFeatureEvent>(RefreshFeatureButtons);
             EventCenter.RemoveListener<OpenBuildingInfoEvent>(OpenBuildingInfo);
+            EventCenter.RemoveListener<FPSEvent>(ShowFPS);
         }
 
         public override void OnUpdate()
@@ -266,6 +269,11 @@ namespace Game.UI.Panel
                     nodes.buildingDetail_w.SetProduceAmount((int)itemPerMin);
                 }
             }
+        }
+
+        private void ShowFPS(FPSEvent evt)
+        {
+            nodes.fps_txt.text = $"FPS: {evt.fps}";
         }
 
     }

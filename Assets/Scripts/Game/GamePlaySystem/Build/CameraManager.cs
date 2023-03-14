@@ -92,17 +92,17 @@ namespace Game.GamePlaySystem
             
             var camTransform = mainCam.transform;
             var angle = camTransform.eulerAngles;
+            camTransform.rotation = Quaternion.Euler(angle.x, angle.y + deltaAngle / 1.5f, 0);
+            _preDir = currentDir;
+
             if (camTransform.position.y + deltaDistance * Time.deltaTime * -0.3f is < 2 or > 10)
             {
                 return;
             }
-            camTransform.rotation = Quaternion.Euler(angle.x, angle.y + deltaAngle / 1.5f, 0);
-            _preDir = currentDir;
-
             if (math.abs(deltaDistance) >= float.Epsilon)
             {
                 camTransform.position += new Vector3(0, deltaDistance * Time.deltaTime * -0.3f, 0);
-                camTransform.rotation *= Quaternion.Euler(deltaDistance * 0.035f, 0, 0);
+                camTransform.rotation *= Quaternion.Euler(-deltaDistance * 0.035f, 0, 0);
                 _preDistance = distance;
             }
             

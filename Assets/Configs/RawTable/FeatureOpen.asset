@@ -30,6 +30,9 @@ MonoBehaviour:
   - featureid: 5
     name: "\u62C6\u9664"
     description: "\u53EF\u4EE5\u62C6\u9664\u4E0D\u7528\u7684\u5EFA\u7B51"
+  - featureid: 6
+    name: "\u5347\u7EA7"
+    description: "\u5347\u7EA7"
   dataList:
   - featureid: 1
     name: "\u79FB\u52A8"
@@ -46,3 +49,6 @@ MonoBehaviour:
   - featureid: 5
     name: "\u62C6\u9664"
     description: "\u53EF\u4EE5\u62C6\u9664\u4E0D\u7528\u7684\u5EFA\u7B51"
+  - featureid: 6
+    name: "\u5347\u7EA7"
+    description: "\u5347\u7EA7"

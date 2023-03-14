@@ -245,8 +245,8 @@ MonoBehaviour:
     name: "\u4E951"
     buildingtype: 3
     description: "\u4E951"
-    currencytype: 00000000
-    currencycount: e8030000
+    currencytype: 0000000001000000
+    currencycount: 58020000f4010000
     rowcount: 2
     colcount: 2
     cd: -1
@@ -260,8 +260,8 @@ MonoBehaviour:
     name: "\u4E952"
     buildingtype: 3
     description: "\u4E952"
-    currencytype: 00000000
-    currencycount: dc050000
+    currencytype: 0000000001000000
+    currencycount: e803000090010000
     rowcount: 2
     colcount: 2
     cd: -1
@@ -275,8 +275,8 @@ MonoBehaviour:
     name: "\u4E953"
     buildingtype: 3
     description: "\u4E953"
-    currencytype: 00000000
-    currencycount: 08070000
+    currencytype: 0000000001000000
+    currencycount: f401000084030000
     rowcount: 2
     colcount: 2
     cd: -1
@@ -606,8 +606,8 @@ MonoBehaviour:
     name: "\u4E951"
     buildingtype: 3
     description: "\u4E951"
-    currencytype: 00000000
-    currencycount: e8030000
+    currencytype: 0000000001000000
+    currencycount: 58020000f4010000
     rowcount: 2
     colcount: 2
     cd: -1
@@ -621,8 +621,8 @@ MonoBehaviour:
     name: "\u4E952"
     buildingtype: 3
     description: "\u4E952"
-    currencytype: 00000000
-    currencycount: dc050000
+    currencytype: 0000000001000000
+    currencycount: e803000090010000
     rowcount: 2
     colcount: 2
     cd: -1
@@ -636,8 +636,8 @@ MonoBehaviour:
     name: "\u4E953"
     buildingtype: 3
     description: "\u4E953"
-    currencytype: 00000000
-    currencycount: 08070000
+    currencytype: 0000000001000000
+    currencycount: f401000084030000
     rowcount: 2
     colcount: 2
     cd: -1

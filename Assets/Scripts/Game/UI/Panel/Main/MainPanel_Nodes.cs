@@ -18,6 +18,7 @@ namespace Game.UI.Panel
         public TipWidget tip_w;
         public Button closeTip_btn;
         public BuildingDetailWidget buildingDetail_w;
+        public TextMeshProUGUI fps_txt;
 
         private void Awake()
         {

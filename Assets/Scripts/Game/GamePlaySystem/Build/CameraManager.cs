@@ -165,7 +165,6 @@ namespace Game.GamePlaySystem
                 Debug.Log($"{path}/city.png");
 #if UNITY_ANDROID && !UNITY_EDITOR
                 using AndroidJavaObject activity = new("com.defaultcompany.ecs.MainActivity");
-                Debug.Log(activity);
                 activity.Call("SavePhoto");
 #endif
             }

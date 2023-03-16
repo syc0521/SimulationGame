@@ -8,8 +8,9 @@ OcclusionCullingSettings:
     smallestOccluder: 5
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: 99c9720ab356a0642a771bea13969a05
+  m_OcclusionCullingData: {fileID: 36300000, guid: 370239578b9030b4ea140c7a06bb3f27,
+    type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -38,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 410087040}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.3054852, g: 0.34053665, b: 0.41221067, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -184,7 +185,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 200
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -211,7 +212,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   m_LocalRotation: {x: 0.3420201, y: 0, z: 0, w: 0.9396927}
-  m_LocalPosition: {x: 52.5, y: 5.5, z: 85}
+  m_LocalPosition: {x: 22, y: 5.5, z: 66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -552,15 +553,40 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4506832569779643454, guid: 3cc8cf5fb306d2d489feb7fa197dc445,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 6190841207967414608, guid: 3cc8cf5fb306d2d489feb7fa197dc445,
         type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6423762310719400099, guid: 3cc8cf5fb306d2d489feb7fa197dc445,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6706936138903510178, guid: 3cc8cf5fb306d2d489feb7fa197dc445,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6706936138903510178, guid: 3cc8cf5fb306d2d489feb7fa197dc445,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6973498433752605150, guid: 3cc8cf5fb306d2d489feb7fa197dc445,
         type: 3}
       propertyPath: m_Name
       value: Terrain01
+      objectReference: {fileID: 0}
+    - target: {fileID: 6973498433752605150, guid: 3cc8cf5fb306d2d489feb7fa197dc445,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6973498433752605151, guid: 3cc8cf5fb306d2d489feb7fa197dc445,
         type: 3}
@@ -585,7 +611,7 @@ PrefabInstance:
     - target: {fileID: 6973498433752605151, guid: 3cc8cf5fb306d2d489feb7fa197dc445,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 40
+      value: 83
       objectReference: {fileID: 0}
     - target: {fileID: 6973498433752605151, guid: 3cc8cf5fb306d2d489feb7fa197dc445,
         type: 3}
@@ -595,7 +621,7 @@ PrefabInstance:
     - target: {fileID: 6973498433752605151, guid: 3cc8cf5fb306d2d489feb7fa197dc445,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 60
+      value: 83
       objectReference: {fileID: 0}
     - target: {fileID: 6973498433752605151, guid: 3cc8cf5fb306d2d489feb7fa197dc445,
         type: 3}

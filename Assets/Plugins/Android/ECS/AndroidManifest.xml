@@ -19,6 +19,16 @@
         android:extractNativeLibs="true"
         android:label="@string/app_name"
         android:supportsRtl="true" >
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.defaultcompany.ecs.provider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
         <activity
             android:name="com.defaultcompany.ecs.MainActivity"
             android:exported="true" >

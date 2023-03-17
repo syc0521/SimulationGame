@@ -37,8 +37,8 @@ MonoBehaviour:
     description: "\u9662\u5B50"
     currencytype: 00000000
     currencycount: 00000000
-    rowcount: 4
-    colcount: 4
+    rowcount: 10
+    colcount: 10
     cd: -1
     unlock: 0
     people: 0
@@ -398,8 +398,8 @@ MonoBehaviour:
     description: "\u9662\u5B50"
     currencytype: 00000000
     currencycount: 00000000
-    rowcount: 4
-    colcount: 4
+    rowcount: 10
+    colcount: 10
     cd: -1
     unlock: 0
     people: 0

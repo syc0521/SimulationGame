@@ -6,5 +6,7 @@ namespace Game.Data.ScriptableObject
     public class GestureConfig : UnityEngine.ScriptableObject
     {
         public float cameraSpeed = 7.5f;
+        public float minHeight = 2;
+        public float maxHeight = 12;
     }
 }

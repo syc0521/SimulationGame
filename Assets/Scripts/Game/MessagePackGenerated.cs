@@ -47,19 +47,21 @@ namespace MessagePack.Resolvers
 
         static GeneratedResolverGetFormatterHelper()
         {
-            lookup = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(11)
+            lookup = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(13)
             {
-                { typeof(global::System.Collections.Generic.Dictionary<int, global::Game.Data.PlayerTaskData>), 0 },
-                { typeof(global::System.Collections.Generic.Dictionary<int, int>), 1 },
-                { typeof(global::System.Collections.Generic.Dictionary<uint, global::Game.Data.BuildingData>), 2 },
-                { typeof(global::System.Collections.Generic.HashSet<global::Game.Data.FeatureOpen.FeatureType>), 3 },
-                { typeof(global::System.Collections.Generic.HashSet<int>), 4 },
-                { typeof(global::Game.Data.FeatureOpen.FeatureType), 5 },
-                { typeof(global::Game.Data.TaskState), 6 },
-                { typeof(global::Game.Data.BuildingData), 7 },
-                { typeof(global::Game.Data.PlayerData), 8 },
-                { typeof(global::Game.Data.PlayerTaskData), 9 },
-                { typeof(global::Game.Data.SettingData), 10 },
+                { typeof(global::System.Collections.Generic.Dictionary<int, global::Game.Data.PlayerAchievementData>), 0 },
+                { typeof(global::System.Collections.Generic.Dictionary<int, global::Game.Data.PlayerTaskData>), 1 },
+                { typeof(global::System.Collections.Generic.Dictionary<int, int>), 2 },
+                { typeof(global::System.Collections.Generic.Dictionary<uint, global::Game.Data.BuildingData>), 3 },
+                { typeof(global::System.Collections.Generic.HashSet<global::Game.Data.FeatureOpen.FeatureType>), 4 },
+                { typeof(global::System.Collections.Generic.HashSet<int>), 5 },
+                { typeof(global::Game.Data.FeatureOpen.FeatureType), 6 },
+                { typeof(global::Game.Data.TaskState), 7 },
+                { typeof(global::Game.Data.BuildingData), 8 },
+                { typeof(global::Game.Data.PlayerAchievementData), 9 },
+                { typeof(global::Game.Data.PlayerData), 10 },
+                { typeof(global::Game.Data.PlayerTaskData), 11 },
+                { typeof(global::Game.Data.SettingData), 12 },
             };
         }
 
@@ -73,17 +75,19 @@ namespace MessagePack.Resolvers
 
             switch (key)
             {
-                case 0: return new global::MessagePack.Formatters.DictionaryFormatter<int, global::Game.Data.PlayerTaskData>();
-                case 1: return new global::MessagePack.Formatters.DictionaryFormatter<int, int>();
-                case 2: return new global::MessagePack.Formatters.DictionaryFormatter<uint, global::Game.Data.BuildingData>();
-                case 3: return new global::MessagePack.Formatters.HashSetFormatter<global::Game.Data.FeatureOpen.FeatureType>();
-                case 4: return new global::MessagePack.Formatters.HashSetFormatter<int>();
-                case 5: return new MessagePack.Formatters.Game.Data.FeatureOpen.FeatureTypeFormatter();
-                case 6: return new MessagePack.Formatters.Game.Data.TaskStateFormatter();
-                case 7: return new MessagePack.Formatters.Game.Data.BuildingDataFormatter();
-                case 8: return new MessagePack.Formatters.Game.Data.PlayerDataFormatter();
-                case 9: return new MessagePack.Formatters.Game.Data.PlayerTaskDataFormatter();
-                case 10: return new MessagePack.Formatters.Game.Data.SettingDataFormatter();
+                case 0: return new global::MessagePack.Formatters.DictionaryFormatter<int, global::Game.Data.PlayerAchievementData>();
+                case 1: return new global::MessagePack.Formatters.DictionaryFormatter<int, global::Game.Data.PlayerTaskData>();
+                case 2: return new global::MessagePack.Formatters.DictionaryFormatter<int, int>();
+                case 3: return new global::MessagePack.Formatters.DictionaryFormatter<uint, global::Game.Data.BuildingData>();
+                case 4: return new global::MessagePack.Formatters.HashSetFormatter<global::Game.Data.FeatureOpen.FeatureType>();
+                case 5: return new global::MessagePack.Formatters.HashSetFormatter<int>();
+                case 6: return new MessagePack.Formatters.Game.Data.FeatureOpen.FeatureTypeFormatter();
+                case 7: return new MessagePack.Formatters.Game.Data.TaskStateFormatter();
+                case 8: return new MessagePack.Formatters.Game.Data.BuildingDataFormatter();
+                case 9: return new MessagePack.Formatters.Game.Data.PlayerAchievementDataFormatter();
+                case 10: return new MessagePack.Formatters.Game.Data.PlayerDataFormatter();
+                case 11: return new MessagePack.Formatters.Game.Data.PlayerTaskDataFormatter();
+                case 12: return new MessagePack.Formatters.Game.Data.SettingDataFormatter();
                 default: return null;
             }
         }
@@ -200,6 +204,12 @@ namespace MessagePack.Formatters.Game.Data
 
         public void Serialize(ref global::MessagePack.MessagePackWriter writer, global::Game.Data.BuildingData value, global::MessagePack.MessagePackSerializerOptions options)
         {
+            if (value == null)
+            {
+                writer.WriteNil();
+                return;
+            }
+
             global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
             writer.WriteArrayHeader(4);
             writer.Write(value.type);
@@ -212,7 +222,7 @@ namespace MessagePack.Formatters.Game.Data
         {
             if (reader.TryReadNil())
             {
-                throw new global::System.InvalidOperationException("typecode is null, struct not supported");
+                return null;
             }
 
             options.Security.DepthStep(ref reader);
@@ -247,6 +257,54 @@ namespace MessagePack.Formatters.Game.Data
         }
     }
 
+    public sealed class PlayerAchievementDataFormatter : global::MessagePack.Formatters.IMessagePackFormatter<global::Game.Data.PlayerAchievementData>
+    {
+
+        public void Serialize(ref global::MessagePack.MessagePackWriter writer, global::Game.Data.PlayerAchievementData value, global::MessagePack.MessagePackSerializerOptions options)
+        {
+            if (value == null)
+            {
+                writer.WriteNil();
+                return;
+            }
+
+            writer.WriteArrayHeader(2);
+            writer.Write(value.complete);
+            writer.Write(value.progress);
+        }
+
+        public global::Game.Data.PlayerAchievementData Deserialize(ref global::MessagePack.MessagePackReader reader, global::MessagePack.MessagePackSerializerOptions options)
+        {
+            if (reader.TryReadNil())
+            {
+                return null;
+            }
+
+            options.Security.DepthStep(ref reader);
+            var length = reader.ReadArrayHeader();
+            var ____result = new global::Game.Data.PlayerAchievementData();
+
+            for (int i = 0; i < length; i++)
+            {
+                switch (i)
+                {
+                    case 0:
+                        ____result.complete = reader.ReadBoolean();
+                        break;
+                    case 1:
+                        ____result.progress = reader.ReadInt32();
+                        break;
+                    default:
+                        reader.Skip();
+                        break;
+                }
+            }
+
+            reader.Depth--;
+            return ____result;
+        }
+    }
+
     public sealed class PlayerDataFormatter : global::MessagePack.Formatters.IMessagePackFormatter<global::Game.Data.PlayerData>
     {
 
@@ -259,7 +317,7 @@ namespace MessagePack.Formatters.Game.Data
             }
 
             global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
-            writer.WriteArrayHeader(9);
+            writer.WriteArrayHeader(10);
             writer.WriteNil();
             global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.Dictionary<uint, global::Game.Data.BuildingData>>(formatterResolver).Serialize(ref writer, value.buildings, options);
             global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.Dictionary<int, global::Game.Data.PlayerTaskData>>(formatterResolver).Serialize(ref writer, value.tasks, options);
@@ -269,6 +327,7 @@ namespace MessagePack.Formatters.Game.Data
             global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.HashSet<int>>(formatterResolver).Serialize(ref writer, value.unlockedBuildings, options);
             global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.DateTime>(formatterResolver).Serialize(ref writer, value.lastLoginTime, options);
             global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.HashSet<global::Game.Data.FeatureOpen.FeatureType>>(formatterResolver).Serialize(ref writer, value.unlockedFeatures, options);
+            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.Dictionary<int, global::Game.Data.PlayerAchievementData>>(formatterResolver).Serialize(ref writer, value.achievementData, options);
         }
 
         public global::Game.Data.PlayerData Deserialize(ref global::MessagePack.MessagePackReader reader, global::MessagePack.MessagePackSerializerOptions options)
@@ -310,6 +369,9 @@ namespace MessagePack.Formatters.Game.Data
                         break;
                     case 8:
                         ____result.unlockedFeatures = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.HashSet<global::Game.Data.FeatureOpen.FeatureType>>(formatterResolver).Deserialize(ref reader, options);
+                        break;
+                    case 9:
+                        ____result.achievementData = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.Dictionary<int, global::Game.Data.PlayerAchievementData>>(formatterResolver).Deserialize(ref reader, options);
                         break;
                     default:
                         reader.Skip();

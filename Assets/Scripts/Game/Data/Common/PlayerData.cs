@@ -26,6 +26,8 @@ namespace Game.Data
         public DateTime lastLoginTime;
         [Key(8)] 
         public HashSet<FeatureType> unlockedFeatures;
+        [Key(9)] 
+        public Dictionary<int, PlayerAchievementData> achievementData;
     }
 
     [Serializable]
@@ -60,5 +62,15 @@ namespace Game.Data
         public float bgmVolume;
         [Key(1)]
         public float soundVolume;
+    }
+
+    [Serializable]
+    [MessagePackObject]
+    public class PlayerAchievementData
+    {
+        [Key(0)] 
+        public bool complete;
+        [Key(1)]
+        public int progress;
     }
 }

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e97663853514ed7b8167b40b0dacf2c, type: 3}
   m_Name: GestureConfig
   m_EditorClassIdentifier: 
-  cameraSpeed: 20
+  cameraSpeed: 21

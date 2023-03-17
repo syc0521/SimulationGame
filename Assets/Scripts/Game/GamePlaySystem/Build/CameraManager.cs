@@ -19,6 +19,9 @@ namespace Game.GamePlaySystem
 
         private float2 _preDir;
         
+        private readonly float minHeight = ConfigTable.Instance.GetGestureConfig().minHeight;
+        private readonly float maxHeight = ConfigTable.Instance.GetGestureConfig().maxHeight;
+        
         public override void OnStart()
         {
             EventCenter.AddListener<SwipeStartEvent>(OnSwipeStarted);
@@ -55,7 +58,8 @@ namespace Game.GamePlaySystem
         /// </summary>
         private void ChangeCameraPosition(SwipeChangedEvent evt)
         {
-            var speed = ConfigTable.Instance.GetGestureConfig().cameraSpeed;
+            var camPosY = mainCam.transform.position.y;
+            var speed = ConfigTable.Instance.GetGestureConfig().cameraSpeed * (camPosY / 5.5f);
             var deltaPos = -(evt.pos - _startPosition) * (Time.deltaTime * speed * 0.025f);//速度
             if (math.length(deltaPos) > float.Epsilon)
             {
@@ -95,7 +99,8 @@ namespace Game.GamePlaySystem
             camTransform.rotation = Quaternion.Euler(angle.x, angle.y + deltaAngle / 1.5f, 0);
             _preDir = currentDir;
 
-            if (camTransform.position.y + deltaDistance * Time.deltaTime * -0.3f is < 2 or > 10)
+            var newPosY = camTransform.position.y + deltaDistance * Time.deltaTime * -0.3f;
+            if (newPosY < minHeight || newPosY > maxHeight)
             {
                 return;
             }
@@ -116,7 +121,8 @@ namespace Game.GamePlaySystem
             if (distance >= float.Epsilon)
             {
                 var delta = evt.delta * Time.deltaTime * -0.1f;
-                if (camTransform.position.y + delta is < 2 or > 10)
+                
+                if (camTransform.position.y + delta < minHeight || camTransform.position.y + delta > maxHeight)
                 {
                     return;
                 }

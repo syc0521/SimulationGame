@@ -25,6 +25,7 @@ namespace Game.Data
         [SerializeField] private TableData.FeatureOpen featureOpen;
         [SerializeField] private LoadingStep loadingStep;
         [SerializeField] private BuildingUpgrade buildingUpgrade;
+        [SerializeField] private TableData.Achievement achievement;
 
         public Transform GetUIRoot(int layerType) => uiRoot.GetChild(layerType);
 
@@ -61,5 +62,7 @@ namespace Game.Data
 
         public BuildingUpgradeData GetBuildingUpgradeData(int buildingTypeID, int newLevel) =>
             buildingUpgrade.dataList.Find(item => item.ID == buildingTypeID && item.Level == newLevel);
+
+        public AchievementData GetAchievementData(int achievementID) => achievement.dataList[achievementID];
     }
 }

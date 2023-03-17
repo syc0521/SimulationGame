@@ -17,6 +17,7 @@ namespace Game.Data
         void GetUnlockedBuildings(ref HashSet<int> unlockedBuildings);
         void GetSettingData(ref SettingData data);
         void GetUnlockedFeatures(ref HashSet<FeatureType> unlockedFeatures);
+        void GetPlayerAchievement(ref Dictionary<int, PlayerAchievementData> playerAchievement);
         DateTime GetLastLoginTime();
     }
 }

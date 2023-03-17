@@ -88,6 +88,11 @@ namespace Game.Data
         {
             unlockedFeatures = _playerData.unlockedFeatures;
         }
+        
+        public void GetPlayerAchievement(ref Dictionary<int, PlayerAchievementData> playerAchievement)
+        {
+            playerAchievement = _playerData.achievementData;
+        }
 
         public void ResetSaveData()
         {
@@ -126,6 +131,14 @@ namespace Game.Data
             {
                 var unlockList = ConfigTable.Instance.GetAllBuildingData().FindAll(item => item.Unlock);
                 _playerData.unlockedBuildings = unlockList.Select(item => item.Buildingid).ToHashSet();
+            }
+            
+            if (_playerData.achievementData == null || _playerData.achievementData.Count == 0)
+            {
+                _playerData.achievementData = new()
+                {
+                    [0] = new PlayerAchievementData { complete = true }
+                };
             }
 
             _playerData.unlockedFeatures ??= new();

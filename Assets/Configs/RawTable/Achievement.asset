@@ -1,0 +1,486 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ef6d68494f3f9041b3e6eb7abbe1ffc, type: 3}
+  m_Name: Achievement
+  m_EditorClassIdentifier: 
+  SheetName: Assets/Configs/RawTable/Achievement.xlsx
+  WorksheetName: Achievement
+  dataArray:
+  - id: 0
+    name: "\u6B22\u8FCE\u6765\u5230\u5B8B\u4EE3"
+    content: "\u521D\u6B21\u8FDB\u5165\u6E38\u620F"
+    type: -1
+    unlockcondition: 1
+    targetid: -1
+    targetnum: -1
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 1
+    name: "\u5EFA\u8BBE5\u4E2A\u5EFA\u7B51"
+    content: "\u5EFA\u8BBE5\u4E2A\u5EFA\u7B51"
+    type: -1
+    unlockcondition: 10
+    targetid: -1
+    targetnum: 5
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 2
+    name: "\u5EFA\u8BBE10\u4E2A\u5EFA\u7B51"
+    content: "\u5EFA\u8BBE10\u4E2A\u5EFA\u7B51"
+    type: 1
+    unlockcondition: 10
+    targetid: -1
+    targetnum: 10
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 3
+    name: "\u5EFA\u8BBE20\u4E2A\u5EFA\u7B51"
+    content: "\u5EFA\u8BBE20\u4E2A\u5EFA\u7B51"
+    type: 2
+    unlockcondition: 10
+    targetid: -1
+    targetnum: 20
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 4
+    name: "\u5EFA\u8BBE40\u4E2A\u5EFA\u7B51"
+    content: "\u5EFA\u8BBE40\u4E2A\u5EFA\u7B51"
+    type: 3
+    unlockcondition: 10
+    targetid: -1
+    targetnum: 40
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 5
+    name: "\u5EFA\u8BBE5\u4E2A\u623F\u5C4B"
+    content: "\u5EFA\u8BBE5\u4E2A\u623F\u5C4B"
+    type: -1
+    unlockcondition: 11
+    targetid: 0
+    targetnum: 5
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 6
+    name: "\u5EFA\u8BBE10\u4E2A\u623F\u5C4B"
+    content: "\u5EFA\u8BBE10\u4E2A\u623F\u5C4B"
+    type: 5
+    unlockcondition: 11
+    targetid: 0
+    targetnum: 10
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 7
+    name: "\u5EFA\u8BBE20\u4E2A\u623F\u5C4B"
+    content: "\u5EFA\u8BBE20\u4E2A\u623F\u5C4B"
+    type: 6
+    unlockcondition: 11
+    targetid: 0
+    targetnum: 20
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 8
+    name: "\u5EFA\u8BBE5\u4E2A\u751F\u4EA7\u5EFA\u7B51"
+    content: "\u5EFA\u8BBE5\u4E2A\u751F\u4EA7\u5EFA\u7B51"
+    type: -1
+    unlockcondition: 11
+    targetid: 1
+    targetnum: 5
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 9
+    name: "\u5EFA\u8BBE10\u4E2A\u751F\u4EA7\u5EFA\u7B51"
+    content: "\u5EFA\u8BBE10\u4E2A\u751F\u4EA7\u5EFA\u7B51"
+    type: 8
+    unlockcondition: 11
+    targetid: 1
+    targetnum: 10
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 10
+    name: "\u5EFA\u8BBE20\u4E2A\u751F\u4EA7\u5EFA\u7B51"
+    content: "\u5EFA\u8BBE20\u4E2A\u751F\u4EA7\u5EFA\u7B51"
+    type: 9
+    unlockcondition: 11
+    targetid: 1
+    targetnum: 20
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 11
+    name: "\u4EBA\u53E3\u8FBE\u523010"
+    content: "\u4EBA\u53E3\u8FBE\u523010"
+    type: -1
+    unlockcondition: 2
+    targetid: -1
+    targetnum: 10
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 12
+    name: "\u4EBA\u53E3\u8FBE\u523020"
+    content: "\u4EBA\u53E3\u8FBE\u523020"
+    type: 11
+    unlockcondition: 2
+    targetid: -1
+    targetnum: 20
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 13
+    name: "\u4EBA\u53E3\u8FBE\u523050"
+    content: "\u4EBA\u53E3\u8FBE\u523050"
+    type: 12
+    unlockcondition: 2
+    targetid: -1
+    targetnum: 50
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 14
+    name: "\u4EBA\u53E3\u8FBE\u5230100"
+    content: "\u4EBA\u53E3\u8FBE\u5230100"
+    type: 13
+    unlockcondition: 2
+    targetid: -1
+    targetnum: 100
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 15
+    name: "\u83B7\u5F97100\u7CAE\u98DF"
+    content: "\u83B7\u5F97100\u7CAE\u98DF"
+    type: -1
+    unlockcondition: 3
+    targetid: 10
+    targetnum: 100
+    requiretask: d1070000
+    rewardgroup: 0
+  - id: 16
+    name: "\u83B7\u5F97500\u7CAE\u98DF"
+    content: "\u83B7\u5F97500\u7CAE\u98DF"
+    type: 15
+    unlockcondition: 3
+    targetid: 10
+    targetnum: 500
+    requiretask: d1070000
+    rewardgroup: 0
+  - id: 17
+    name: "\u83B7\u5F971000\u7CAE\u98DF"
+    content: "\u83B7\u5F971000\u7CAE\u98DF"
+    type: 16
+    unlockcondition: 3
+    targetid: 10
+    targetnum: 1000
+    requiretask: d1070000
+    rewardgroup: 0
+  - id: 18
+    name: "\u83B7\u5F97100\u6728\u6750"
+    content: "\u83B7\u5F97100\u6728\u6750"
+    type: -1
+    unlockcondition: 3
+    targetid: 0
+    targetnum: 100
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 19
+    name: "\u83B7\u5F97500\u6728\u6750"
+    content: "\u83B7\u5F97500\u6728\u6750"
+    type: 18
+    unlockcondition: 3
+    targetid: 0
+    targetnum: 500
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 20
+    name: "\u83B7\u5F971000\u6728\u6750"
+    content: "\u83B7\u5F971000\u6728\u6750"
+    type: 19
+    unlockcondition: 3
+    targetid: 0
+    targetnum: 1000
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 21
+    name: "\u83B7\u5F97100\u77F3\u5934"
+    content: "\u83B7\u5F97100\u77F3\u5934"
+    type: -1
+    unlockcondition: 3
+    targetid: 11
+    targetnum: 100
+    requiretask: d4070000
+    rewardgroup: 0
+  - id: 22
+    name: "\u83B7\u5F97500\u77F3\u5934"
+    content: "\u83B7\u5F97500\u77F3\u5934"
+    type: 21
+    unlockcondition: 3
+    targetid: 11
+    targetnum: 500
+    requiretask: d4070000
+    rewardgroup: 0
+  - id: 23
+    name: "\u83B7\u5F971000\u77F3\u5934"
+    content: "\u83B7\u5F971000\u77F3\u5934"
+    type: 22
+    unlockcondition: 3
+    targetid: 11
+    targetnum: 1000
+    requiretask: d4070000
+    rewardgroup: 0
+  - id: 24
+    name: "\u4FEE\u5EFA\u5B9D\u5854"
+    content: "\u4FEE\u5EFA\u5B9D\u5854"
+    type: -1
+    unlockcondition: 1
+    targetid: -1
+    targetnum: -1
+    requiretask: ee030000
+    rewardgroup: 0
+  - id: 25
+    name: "\u4FEE\u5EFA\u4E09\u4E95"
+    content: "\u4FEE\u5EFA\u4E09\u4E95"
+    type: -1
+    unlockcondition: 1
+    targetid: -1
+    targetnum: -1
+    requiretask: f0030000f1030000f2030000
+    rewardgroup: 0
+  dataList:
+  - id: 0
+    name: "\u6B22\u8FCE\u6765\u5230\u5B8B\u4EE3"
+    content: "\u521D\u6B21\u8FDB\u5165\u6E38\u620F"
+    type: -1
+    unlockcondition: 1
+    targetid: -1
+    targetnum: -1
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 1
+    name: "\u5EFA\u8BBE5\u4E2A\u5EFA\u7B51"
+    content: "\u5EFA\u8BBE5\u4E2A\u5EFA\u7B51"
+    type: -1
+    unlockcondition: 10
+    targetid: -1
+    targetnum: 5
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 2
+    name: "\u5EFA\u8BBE10\u4E2A\u5EFA\u7B51"
+    content: "\u5EFA\u8BBE10\u4E2A\u5EFA\u7B51"
+    type: 1
+    unlockcondition: 10
+    targetid: -1
+    targetnum: 10
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 3
+    name: "\u5EFA\u8BBE20\u4E2A\u5EFA\u7B51"
+    content: "\u5EFA\u8BBE20\u4E2A\u5EFA\u7B51"
+    type: 2
+    unlockcondition: 10
+    targetid: -1
+    targetnum: 20
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 4
+    name: "\u5EFA\u8BBE40\u4E2A\u5EFA\u7B51"
+    content: "\u5EFA\u8BBE40\u4E2A\u5EFA\u7B51"
+    type: 3
+    unlockcondition: 10
+    targetid: -1
+    targetnum: 40
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 5
+    name: "\u5EFA\u8BBE5\u4E2A\u623F\u5C4B"
+    content: "\u5EFA\u8BBE5\u4E2A\u623F\u5C4B"
+    type: -1
+    unlockcondition: 11
+    targetid: 0
+    targetnum: 5
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 6
+    name: "\u5EFA\u8BBE10\u4E2A\u623F\u5C4B"
+    content: "\u5EFA\u8BBE10\u4E2A\u623F\u5C4B"
+    type: 5
+    unlockcondition: 11
+    targetid: 0
+    targetnum: 10
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 7
+    name: "\u5EFA\u8BBE20\u4E2A\u623F\u5C4B"
+    content: "\u5EFA\u8BBE20\u4E2A\u623F\u5C4B"
+    type: 6
+    unlockcondition: 11
+    targetid: 0
+    targetnum: 20
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 8
+    name: "\u5EFA\u8BBE5\u4E2A\u751F\u4EA7\u5EFA\u7B51"
+    content: "\u5EFA\u8BBE5\u4E2A\u751F\u4EA7\u5EFA\u7B51"
+    type: -1
+    unlockcondition: 11
+    targetid: 1
+    targetnum: 5
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 9
+    name: "\u5EFA\u8BBE10\u4E2A\u751F\u4EA7\u5EFA\u7B51"
+    content: "\u5EFA\u8BBE10\u4E2A\u751F\u4EA7\u5EFA\u7B51"
+    type: 8
+    unlockcondition: 11
+    targetid: 1
+    targetnum: 10
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 10
+    name: "\u5EFA\u8BBE20\u4E2A\u751F\u4EA7\u5EFA\u7B51"
+    content: "\u5EFA\u8BBE20\u4E2A\u751F\u4EA7\u5EFA\u7B51"
+    type: 9
+    unlockcondition: 11
+    targetid: 1
+    targetnum: 20
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 11
+    name: "\u4EBA\u53E3\u8FBE\u523010"
+    content: "\u4EBA\u53E3\u8FBE\u523010"
+    type: -1
+    unlockcondition: 2
+    targetid: -1
+    targetnum: 10
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 12
+    name: "\u4EBA\u53E3\u8FBE\u523020"
+    content: "\u4EBA\u53E3\u8FBE\u523020"
+    type: 11
+    unlockcondition: 2
+    targetid: -1
+    targetnum: 20
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 13
+    name: "\u4EBA\u53E3\u8FBE\u523050"
+    content: "\u4EBA\u53E3\u8FBE\u523050"
+    type: 12
+    unlockcondition: 2
+    targetid: -1
+    targetnum: 50
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 14
+    name: "\u4EBA\u53E3\u8FBE\u5230100"
+    content: "\u4EBA\u53E3\u8FBE\u5230100"
+    type: 13
+    unlockcondition: 2
+    targetid: -1
+    targetnum: 100
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 15
+    name: "\u83B7\u5F97100\u7CAE\u98DF"
+    content: "\u83B7\u5F97100\u7CAE\u98DF"
+    type: -1
+    unlockcondition: 3
+    targetid: 10
+    targetnum: 100
+    requiretask: d1070000
+    rewardgroup: 0
+  - id: 16
+    name: "\u83B7\u5F97500\u7CAE\u98DF"
+    content: "\u83B7\u5F97500\u7CAE\u98DF"
+    type: 15
+    unlockcondition: 3
+    targetid: 10
+    targetnum: 500
+    requiretask: d1070000
+    rewardgroup: 0
+  - id: 17
+    name: "\u83B7\u5F971000\u7CAE\u98DF"
+    content: "\u83B7\u5F971000\u7CAE\u98DF"
+    type: 16
+    unlockcondition: 3
+    targetid: 10
+    targetnum: 1000
+    requiretask: d1070000
+    rewardgroup: 0
+  - id: 18
+    name: "\u83B7\u5F97100\u6728\u6750"
+    content: "\u83B7\u5F97100\u6728\u6750"
+    type: -1
+    unlockcondition: 3
+    targetid: 0
+    targetnum: 100
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 19
+    name: "\u83B7\u5F97500\u6728\u6750"
+    content: "\u83B7\u5F97500\u6728\u6750"
+    type: 18
+    unlockcondition: 3
+    targetid: 0
+    targetnum: 500
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 20
+    name: "\u83B7\u5F971000\u6728\u6750"
+    content: "\u83B7\u5F971000\u6728\u6750"
+    type: 19
+    unlockcondition: 3
+    targetid: 0
+    targetnum: 1000
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 21
+    name: "\u83B7\u5F97100\u77F3\u5934"
+    content: "\u83B7\u5F97100\u77F3\u5934"
+    type: -1
+    unlockcondition: 3
+    targetid: 11
+    targetnum: 100
+    requiretask: d4070000
+    rewardgroup: 0
+  - id: 22
+    name: "\u83B7\u5F97500\u77F3\u5934"
+    content: "\u83B7\u5F97500\u77F3\u5934"
+    type: 21
+    unlockcondition: 3
+    targetid: 11
+    targetnum: 500
+    requiretask: d4070000
+    rewardgroup: 0
+  - id: 23
+    name: "\u83B7\u5F971000\u77F3\u5934"
+    content: "\u83B7\u5F971000\u77F3\u5934"
+    type: 22
+    unlockcondition: 3
+    targetid: 11
+    targetnum: 1000
+    requiretask: d4070000
+    rewardgroup: 0
+  - id: 24
+    name: "\u4FEE\u5EFA\u5B9D\u5854"
+    content: "\u4FEE\u5EFA\u5B9D\u5854"
+    type: -1
+    unlockcondition: 1
+    targetid: -1
+    targetnum: -1
+    requiretask: ee030000
+    rewardgroup: 0
+  - id: 25
+    name: "\u4FEE\u5EFA\u4E09\u4E95"
+    content: "\u4FEE\u5EFA\u4E09\u4E95"
+    type: -1
+    unlockcondition: 1
+    targetid: -1
+    targetnum: -1
+    requiretask: f0030000f1030000f2030000
+    rewardgroup: 0

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ValidationCache Version="1" SchemaVersion="110">
+	<ValidationCacheItem File="E:\unity\SimGame\Wwise\SimGame\Virtual Acoustics\Default Work Unit.wwu" DateLow="1679197192" DateHigh="0"/>
+	<ValidationCacheItem File="E:\unity\SimGame\Wwise\SimGame\Triggers\Default Work Unit.wwu" DateLow="1679197192" DateHigh="0"/>
+	<ValidationCacheItem File="E:\unity\SimGame\Wwise\SimGame\Switches\Default Work Unit.wwu" DateLow="1679197192" DateHigh="0"/>
+	<ValidationCacheItem File="E:\unity\SimGame\Wwise\SimGame\States\Default Work Unit.wwu" DateLow="1679197192" DateHigh="0"/>
+	<ValidationCacheItem File="E:\unity\SimGame\Wwise\SimGame\Soundcaster Sessions\Default Work Unit.wwu" DateLow="1679197192" DateHigh="0"/>
+	<ValidationCacheItem File="E:\unity\SimGame\Wwise\SimGame\SoundBanks\Default Work Unit.wwu" DateLow="1679197192" DateHigh="0"/>
+	<ValidationCacheItem File="E:\unity\SimGame\Wwise\SimGame\SimGame.wproj" DateLow="1679197399" DateHigh="0"/>
+	<ValidationCacheItem File="E:\unity\SimGame\Wwise\SimGame\SimGame.Hasee.wsettings" DateLow="1679198732" DateHigh="0"/>
+	<ValidationCacheItem File="E:\unity\SimGame\Wwise\SimGame\Queries\Factory Queries.wwu" DateLow="1679071039" DateHigh="0"/>
+	<ValidationCacheItem File="E:\unity\SimGame\Wwise\SimGame\Queries\Default Work Unit.wwu" DateLow="1679197192" DateHigh="0"/>
+	<ValidationCacheItem File="E:\unity\SimGame\Wwise\SimGame\Presets\Factory Spatial Audio.wwu" DateLow="1679071039" DateHigh="0"/>
+	<ValidationCacheItem File="E:\unity\SimGame\Wwise\SimGame\Presets\Default Work Unit.wwu" DateLow="1679197192" DateHigh="0"/>
+	<ValidationCacheItem File="E:\unity\SimGame\Wwise\SimGame\Modulators\Default Work Unit.wwu" DateLow="1679197192" DateHigh="0"/>
+	<ValidationCacheItem File="E:\unity\SimGame\Wwise\SimGame\Mixing Sessions\Default Work Unit.wwu" DateLow="1679197192" DateHigh="0"/>
+	<ValidationCacheItem File="E:\unity\SimGame\Wwise\SimGame\Metadata\Default Work Unit.wwu" DateLow="1679197192" DateHigh="0"/>
+	<ValidationCacheItem File="E:\unity\SimGame\Wwise\SimGame\Master-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1679197192" DateHigh="0"/>
+	<ValidationCacheItem File="E:\unity\SimGame\Wwise\SimGame\Interactive Music Hierarchy\Default Work Unit.wwu" DateLow="1679197192" DateHigh="0"/>
+	<ValidationCacheItem File="E:\unity\SimGame\Wwise\SimGame\Game Parameters\Default Work Unit.wwu" DateLow="1679197192" DateHigh="0"/>
+	<ValidationCacheItem File="E:\unity\SimGame\Wwise\SimGame\Events\Default Work Unit.wwu" DateLow="1679197192" DateHigh="0"/>
+	<ValidationCacheItem File="E:\unity\SimGame\Wwise\SimGame\Effects\Factory Effects.wwu" DateLow="1679071039" DateHigh="0"/>
+	<ValidationCacheItem File="E:\unity\SimGame\Wwise\SimGame\Effects\Default Work Unit.wwu" DateLow="1679197192" DateHigh="0"/>
+	<ValidationCacheItem File="E:\unity\SimGame\Wwise\SimGame\Dynamic Dialogue\Default Work Unit.wwu" DateLow="1679197192" DateHigh="0"/>
+	<ValidationCacheItem File="E:\unity\SimGame\Wwise\SimGame\Conversion Settings\Factory Conversion Settings.wwu" DateLow="1679071039" DateHigh="0"/>
+	<ValidationCacheItem File="E:\unity\SimGame\Wwise\SimGame\Conversion Settings\Default Work Unit.wwu" DateLow="1679197192" DateHigh="0"/>
+	<ValidationCacheItem File="E:\unity\SimGame\Wwise\SimGame\Control Surface Sessions\Default Work Unit.wwu" DateLow="1679197192" DateHigh="0"/>
+	<ValidationCacheItem File="E:\unity\SimGame\Wwise\SimGame\Audio Devices\Default Work Unit.wwu" DateLow="1679197192" DateHigh="0"/>
+	<ValidationCacheItem File="E:\unity\SimGame\Wwise\SimGame\Attenuations\Default Work Unit.wwu" DateLow="1679197192" DateHigh="0"/>
+	<ValidationCacheItem File="E:\unity\SimGame\Wwise\SimGame\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1679197192" DateHigh="0"/>
+</ValidationCache>

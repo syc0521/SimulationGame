@@ -64,5 +64,7 @@ namespace Game.Data
             buildingUpgrade.dataList.Find(item => item.ID == buildingTypeID && item.Level == newLevel);
 
         public AchievementData GetAchievementData(int achievementID) => achievement.dataList[achievementID];
+
+        public TableData.Achievement GetAchievement() => achievement;
     }
 }

@@ -9,7 +9,19 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{97E3ECE0-57A7-67B2-9351-D7D5459B66B1}">
+		<SoundBank Id="412724365" Type="User" Language="SFX" Hash="{820BC14E-571A-50AD-1EAA-30664220D4F7}">
+			<ShortName>BGM</ShortName>
+			<Path>BGM.bnk</Path>
+			<Media>
+				<File Id="169411153" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>【BGM】关卡二 2.0.wav</ShortName>
+					<Path>Media/169411153.wem</Path>
+					<CachePath>SFX/【BGM】关卡二 2.0_542CF7D5.wem</CachePath>
+					<PrefetchSize>17736</PrefetchSize>
+				</File>
+			</Media>
+		</SoundBank>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{1929DD8B-F562-F358-F92C-139412C6C579}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -21,7 +33,16 @@
 			<Busses>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
+			<StateGroups>
+				<StateGroup Id="2269510986" Name="SceneState">
+					<States>
+						<State Id="702482391" Name="Game"/>
+						<State Id="748895195" Name="None"/>
+						<State Id="1281810935" Name="Start"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{596BB357-B54A-4400-8A75-F14D60B92FCF}</FileHash>
+	<FileHash>{7088A3FB-ADC0-BEB1-8817-02ED73E602E0}</FileHash>
 </SoundBanksInfo>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using Game.Audio;
 using Game.Core;
 using Game.Data;
 using Game.GamePlaySystem;
@@ -21,9 +22,6 @@ namespace Game
     /// </summary>
     public class GameApp : Singleton<GameApp>
     {
-        // todo 游戏成型之后将其作为游戏唯一入口
-        // 目前只是起着管理器的作用
-
         protected override void Awake()
         {
             //初始化管理器
@@ -33,6 +31,7 @@ namespace Game
             Managers.Register<ISaveDataManager, SaveDataManager>();
             Managers.Register<IResLoader, ResLoader>();
             Managers.Register<IInputManager, InputManager>();
+            Managers.Register<IAudioManager, AudioManager>();
             Managers.Register<IGamePlaySystemManager, GamePlaySystemManager>();
             Managers.Register<IUIManager, UIManager>();
 
@@ -40,6 +39,7 @@ namespace Game
             Managers.Start<ISaveDataManager>();
             Managers.Start<IResLoader>();
             Managers.Start<IInputManager>();
+            Managers.Start<IAudioManager>();
             Managers.Start<IGamePlaySystemManager>();
             Managers.Start<IUIManager>();
         }
@@ -67,6 +67,7 @@ namespace Game
             sw.Stop();
             ts = sw.Elapsed;
             Debug.Log($"Burst {ts}");*/
+            //AkSoundEngine.PostEvent("Play_BGM_Title", gameObject);
         }
 
 
@@ -74,6 +75,7 @@ namespace Game
         {
             Managers.Unregister<IUIManager>();
             Managers.Unregister<IGamePlaySystemManager>();
+            Managers.Unregister<IAudioManager>();
             Managers.Unregister<IInputManager>();
             Managers.Unregister<IResLoader>();
             Managers.Unregister<ISaveDataManager>();

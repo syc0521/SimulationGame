@@ -1,7 +1,10 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Game.Core;
 using Game.Data;
+using Game.Data.Achievement;
 using Game.Data.Event;
+using Unity.Mathematics;
 
 namespace Game.GamePlaySystem.Achievement
 {
@@ -24,8 +27,39 @@ namespace Game.GamePlaySystem.Achievement
         private void InitData(LoadDataEvent evt)
         {
             Managers.Get<ISaveDataManager>().GetPlayerAchievement(ref achievementData);
+
+            foreach (var data in ConfigTable.Instance.GetAchievement().dataList.Where(
+                         data => !achievementData.ContainsKey(data.ID) && data.Requiretask[0] == -1 && data.Unlockcondition == -1))
+            {
+                achievementData[data.ID] = new PlayerAchievementData
+                {
+                    complete = false,
+                    progress = 0
+                };
+            }
         }
-        
-        
+
+        public void TriggerAchievement(AchievementType type, int id, int count)
+        {
+            foreach (var (dataId, playerData) in achievementData)
+            {
+                if (playerData.complete) return;
+                
+                var tableData = ConfigTable.Instance.GetAchievementData(dataId);
+                if (tableData.Type == (int)type && tableData.ID == id)
+                {
+                    playerData.progress = math.min(playerData.progress + count, tableData.Targetnum);
+                }
+
+                if (playerData.progress == tableData.Targetnum)
+                {
+                    playerData.complete = true;
+                }
+            }
+        }
+
+        public int GetTotalAchievement => ConfigTable.Instance.GetAchievement().dataList.Count;
+
+        public int GetCompletedAchievement => achievementData.Count;
     }
 }

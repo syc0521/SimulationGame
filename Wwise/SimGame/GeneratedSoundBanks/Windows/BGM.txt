@@ -1,0 +1,6 @@
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	169411153	BGM_Title	E:\unity\SimGame\Wwise\SimGame\.cache\Windows\SFX\【BGM】关卡二 2.0_542CF7D5.wem		\Interactive Music Hierarchy\Default Work Unit\BGM_Title\Title\BGM_Title		17736
+
+Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
+	169411153	BGM_Title	E:\unity\SimGame\Wwise\SimGame\.cache\Windows\SFX\【BGM】关卡二 2.0_542CF7D5.wem	169411153.wem	\Interactive Music Hierarchy\Default Work Unit\BGM_Title\Title\BGM_Title	
+

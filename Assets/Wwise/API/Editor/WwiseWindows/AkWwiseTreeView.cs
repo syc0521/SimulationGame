@@ -880,7 +880,7 @@ public class AkWwiseTreeView : TreeView
 	{
 		if (m_pickerMode != PickerMode.ComponentPicker && StoredSearchString == System.String.Empty)
 		{
-			SaveExpansionStatus();
+			//SaveExpansionStatus();
 		}
 	}
 

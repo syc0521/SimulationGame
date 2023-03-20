@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: fa8c958e4d3f394091a71ef9afaf0226
     GuidInternal: 
-    m_lastTime: -8585224096930296002
+    m_lastTime: -8585223035908580723
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 65b6c14afd8e54408fc6a67f1941cebe
     GuidInternal: 
-    m_lastTime: -8585224096930366188
+    m_lastTime: -8585223035908705559
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -66,39 +66,8 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 7e2f5b25f0b3b14b9024163fcf18e37d
     GuidInternal: 
-    m_lastTime: -8585224021504083164
-    List:
-    - name: BGM
-      guid: cdc073b63be8e14495d8f54c0f07b666
-      id: 412724365
-      PathAndIcons:
-      - ElementName: SoundBanks
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: Default Work Unit
-        ObjectType: 12
-        guid: 7e2f5b25f0b3b14b9024163fcf18e37d
-      - ElementName: BGM
-        ObjectType: 4
-        guid: cdc073b63be8e14495d8f54c0f07b666
-      Path: SoundBanks\Default Work Unit\BGM
-    - name: BGM
-      guid: 25f7e7e64e6bec4fb45d81fd0ef9bcd6
-      id: 412724365
-      PathAndIcons:
-      - ElementName: SoundBanks
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: Default Work Unit
-        ObjectType: 12
-        guid: 7e2f5b25f0b3b14b9024163fcf18e37d
-      - ElementName: BGM
-        ObjectType: 4
-        guid: cdc073b63be8e14495d8f54c0f07b666
-      - ElementName: BGM
-        ObjectType: 7
-        guid: 25f7e7e64e6bec4fb45d81fd0ef9bcd6
-      Path: SoundBanks\Default Work Unit\BGM\BGM
+    m_lastTime: -8585223035908625772
+    List: []
   EventWwu:
   - PhysicalPath: Events\Default Work Unit.wwu
     PathAndIcons:
@@ -111,7 +80,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 4d791ac9ab7442418a081073867afd17
     GuidInternal: 
-    m_lastTime: -8585224025148629114
+    m_lastTime: -8585223035909937679
     List:
     - name: Play_BGM_Title
       guid: ff9d300b39f60a4485ccd132c2a48663
@@ -159,7 +128,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 4cb024bf3b9a3c42b91190ac680a1e66
     GuidInternal: 
-    m_lastTime: -8585224096930621631
+    m_lastTime: -8585223035909927706
     List: []
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
@@ -173,74 +142,8 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 00306243a5724e45b68ea5f8c5330046
     GuidInternal: 
-    m_lastTime: -8585224031963098855
-    List:
-    - name: SceneState
-      guid: 2ea3dd8339a7bc498a5519d2c1fc90b6
-      id: 2269510986
-      PathAndIcons:
-      - ElementName: States
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: Default Work Unit
-        ObjectType: 12
-        guid: 00306243a5724e45b68ea5f8c5330046
-      - ElementName: SceneState
-        ObjectType: 9
-        guid: 2ea3dd8339a7bc498a5519d2c1fc90b6
-      Path: States\Default Work Unit\SceneState
-      values:
-      - name: Game
-        guid: f55c3e2a1344054b93ff413ae35b8555
-        id: 702482391
-        PathAndIcons:
-        - ElementName: States
-          ObjectType: 5
-          guid: 00000000000000000000000000000000
-        - ElementName: Default Work Unit
-          ObjectType: 12
-          guid: 00306243a5724e45b68ea5f8c5330046
-        - ElementName: SceneState
-          ObjectType: 9
-          guid: 2ea3dd8339a7bc498a5519d2c1fc90b6
-        - ElementName: Game
-          ObjectType: 8
-          guid: f55c3e2a1344054b93ff413ae35b8555
-      - name: None
-        guid: a09ba4fa6c4a2b4b9fbd77696acc2673
-        id: 748895195
-        PathAndIcons:
-        - ElementName: States
-          ObjectType: 5
-          guid: 00000000000000000000000000000000
-        - ElementName: Default Work Unit
-          ObjectType: 12
-          guid: 00306243a5724e45b68ea5f8c5330046
-        - ElementName: SceneState
-          ObjectType: 9
-          guid: 2ea3dd8339a7bc498a5519d2c1fc90b6
-        - ElementName: None
-          ObjectType: 8
-          guid: a09ba4fa6c4a2b4b9fbd77696acc2673
-      - name: Start
-        guid: ddd261bb20dd0743abe921e445966c0d
-        id: 1281810935
-        PathAndIcons:
-        - ElementName: States
-          ObjectType: 5
-          guid: 00000000000000000000000000000000
-        - ElementName: Default Work Unit
-          ObjectType: 12
-          guid: 00306243a5724e45b68ea5f8c5330046
-        - ElementName: SceneState
-          ObjectType: 9
-          guid: 2ea3dd8339a7bc498a5519d2c1fc90b6
-        - ElementName: Start
-          ObjectType: 8
-          guid: ddd261bb20dd0743abe921e445966c0d
-      ValueGuids: []
-      ValueIcons: []
-      valuesInternal: []
+    m_lastTime: -8585223035908605819
+    List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
     PathAndIcons:
@@ -253,7 +156,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: f03ad9bda46834428e12ac5d1c04782c
     GuidInternal: 
-    m_lastTime: -8585224096932009162
+    m_lastTime: -8585223035908595849
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
@@ -267,10 +170,10 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: 44b942c2c583ea479022ec45c4948f38
     GuidInternal: 
-    m_lastTime: -8585224096930054248
+    m_lastTime: -8585223035908585872
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 02000000030000000500000006000000080000000c0000000d0000000e0000000f000000100000001200000015000000
+  ExpandedWaapiItemIds: 
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

@@ -54,6 +54,9 @@ MonoBehaviour:
   - panelid: 12
     name: FeatureOpenPanel
     layer: 3
+  - panelid: 13
+    name: AchievementPanel
+    layer: 1
   dataList:
   - panelid: 0
     name: MainPanel
@@ -94,3 +97,6 @@ MonoBehaviour:
   - panelid: 12
     name: FeatureOpenPanel
     layer: 3
+  - panelid: 13
+    name: AchievementPanel
+    layer: 1

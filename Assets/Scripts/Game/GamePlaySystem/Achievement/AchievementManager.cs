@@ -28,8 +28,7 @@ namespace Game.GamePlaySystem.Achievement
         {
             Managers.Get<ISaveDataManager>().GetPlayerAchievement(ref achievementData);
 
-            foreach (var data in ConfigTable.Instance.GetAchievement().dataList.Where(
-                         data => !achievementData.ContainsKey(data.ID) && data.Requiretask[0] == -1 && data.Unlockcondition == -1))
+            foreach (var data in ConfigTable.Instance.GetAchievement().dataList.Where(data => !achievementData.ContainsKey(data.ID)))
             {
                 achievementData[data.ID] = new PlayerAchievementData
                 {
@@ -37,6 +36,7 @@ namespace Game.GamePlaySystem.Achievement
                     progress = 0
                 };
             }
+            Managers.Get<ISaveDataManager>().SaveData();
         }
 
         public void TriggerAchievement(AchievementType type, int id, int count)
@@ -60,6 +60,6 @@ namespace Game.GamePlaySystem.Achievement
 
         public int GetTotalAchievement => ConfigTable.Instance.GetAchievement().dataList.Count;
 
-        public int GetCompletedAchievement => achievementData.Count;
+        public int GetCompletedAchievement => achievementData.Count(item => item.Value.complete);
     }
 }

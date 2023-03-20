@@ -235,7 +235,7 @@ MonoBehaviour:
     name: "\u4FEE\u5EFA\u5B9D\u5854"
     content: "\u4FEE\u5EFA\u5B9D\u5854"
     type: -1
-    unlockcondition: 1
+    unlockcondition: 4
     targetid: -1
     targetnum: -1
     requiretask: ee030000
@@ -244,7 +244,7 @@ MonoBehaviour:
     name: "\u4FEE\u5EFA\u4E09\u4E95"
     content: "\u4FEE\u5EFA\u4E09\u4E95"
     type: -1
-    unlockcondition: 1
+    unlockcondition: 4
     targetid: -1
     targetnum: -1
     requiretask: f0030000f1030000f2030000
@@ -470,7 +470,7 @@ MonoBehaviour:
     name: "\u4FEE\u5EFA\u5B9D\u5854"
     content: "\u4FEE\u5EFA\u5B9D\u5854"
     type: -1
-    unlockcondition: 1
+    unlockcondition: 4
     targetid: -1
     targetnum: -1
     requiretask: ee030000
@@ -479,7 +479,7 @@ MonoBehaviour:
     name: "\u4FEE\u5EFA\u4E09\u4E95"
     content: "\u4FEE\u5EFA\u4E09\u4E95"
     type: -1
-    unlockcondition: 1
+    unlockcondition: 4
     targetid: -1
     targetnum: -1
     requiretask: f0030000f1030000f2030000

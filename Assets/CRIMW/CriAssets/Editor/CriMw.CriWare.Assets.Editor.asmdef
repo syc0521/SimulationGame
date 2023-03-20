@@ -1,0 +1,19 @@
+{
+    "name": "CriMw.CriWare.Assets.Editor",
+    "references": [
+        "CriMw.CriWare.Assets.Runtime",
+        "CriMw.CriWare.Runtime",
+        "CriMw.CriWare.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

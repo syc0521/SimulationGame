@@ -67,7 +67,6 @@ namespace Game
             sw.Stop();
             ts = sw.Elapsed;
             Debug.Log($"Burst {ts}");*/
-            //AkSoundEngine.PostEvent("Play_BGM_Title", gameObject);
         }
 
 

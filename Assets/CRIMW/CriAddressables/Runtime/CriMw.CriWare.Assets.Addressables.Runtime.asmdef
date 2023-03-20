@@ -1,0 +1,35 @@
+{
+    "name": "CriMw.CriWare.Assets.Addressables.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "CriMw.CriWare.Assets.Runtime",
+        "Unity.ResourceManager",
+        "Unity.Addressables",
+        "CriMw.CriWare.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.addressables",
+            "expression": "",
+            "define": "CRI_USE_ADDRESSABLES"
+        },
+        {
+            "name": "com.unity.addressables",
+            "expression": "1.13.1",
+            "define": "ADDRESSABLES_1_13_1_OR_NEWER"
+        },
+        {
+            "name": "com.unity.addressables",
+            "expression": "1.14.2",
+            "define": "ADDRESSABLES_1_14_2_OR_NEWER"
+        }
+    ],
+    "noEngineReferences": false
+}

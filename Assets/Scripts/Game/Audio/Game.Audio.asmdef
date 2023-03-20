@@ -2,8 +2,9 @@
     "name": "Game.Audio",
     "rootNamespace": "",
     "references": [
-        "GUID:623323a3ed3b3c94187015a1cb42026f",
-        "GUID:d9de0f9235619804ca16570f40d54f08"
+        "GUID:d9de0f9235619804ca16570f40d54f08",
+        "GUID:800597811bcc5d848b15e12807d6de45",
+        "GUID:4adb68376300a5c419520ca0ff94de6a"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

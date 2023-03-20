@@ -1,4 +1,6 @@
-﻿using Game.Core;
+﻿using Game.Audio;
+using Game.Core;
+using Game.Data.Event.Audio;
 using Game.Data.Event.Common;
 using Game.Data.Event.FeatureOpen;
 using Game.Input;
@@ -18,6 +20,12 @@ namespace Game.UI.Module
             EventCenter.AddListener<UnlockFeatureEvent>(ShowFeatureOpenPanel);
         }
 
+        public override void OnStart()
+        {
+            base.OnStart();
+            PlayTitleBGM();
+        }
+
         public override void OnDestroyed()
         {
             EventCenter.RemoveListener<LoadSceneFinishedEvent>(ShowMainPanel);
@@ -28,6 +36,7 @@ namespace Game.UI.Module
         {
             UIManager.Instance.ClosePanel<LoadingPanel>();
             UIManager.Instance.OpenPanel<MainPanel>();
+            Managers.Get<IAudioManager>().PlayBGM(BGMType.GamePlay);
         }
 
         private void ShowFeatureOpenPanel(UnlockFeatureEvent evt)
@@ -36,6 +45,11 @@ namespace Game.UI.Module
             {
                 type = evt.type
             });
+        }
+
+        private void PlayTitleBGM()
+        {
+            Managers.Get<IAudioManager>().PlayBGM(BGMType.Title);
         }
 
     }

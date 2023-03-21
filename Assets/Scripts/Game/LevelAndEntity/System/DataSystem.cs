@@ -29,6 +29,7 @@ namespace Game.LevelAndEntity.System
                 people = aspect.config.ValueRO.people,
                 environment = aspect.config.ValueRO.envRate,
                 happiness = aspect.config.ValueRO.happiness,
+                buildingRate = aspect.config.ValueRO.buildingRate,
             };
             return gameData;
         }

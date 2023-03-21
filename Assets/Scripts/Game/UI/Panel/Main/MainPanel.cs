@@ -114,12 +114,7 @@ namespace Game.UI.Panel
 
         private void RefreshUI()
         {
-            var dataSystem = World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<DataSystem>();
-            if (dataSystem == null)
-            {
-                return;
-            }
-            var data = dataSystem.GetGameData();
+            var data = SystemDataManager.Instance.GetGameData();
             if (data.Equals(default))
             {
                 return;
@@ -198,7 +193,7 @@ namespace Game.UI.Panel
         {
             if (evt.isStatic)
             {
-                if (evt.id == 1)
+                if (evt.id == 10001)
                 {
                     UIManager.Instance.OpenPanel<GovernmentPanel>();
                 }

@@ -64,5 +64,11 @@ namespace Game.GamePlaySystem
             
             Managers.Get<ISaveDataManager>().SaveData();
         }
+
+        public GameData GetGameData()
+        {
+            var dataSystem = World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<DataSystem>();
+            return dataSystem?.GetGameData() ?? default;
+        }
     }
 }

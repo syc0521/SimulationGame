@@ -105,6 +105,7 @@ namespace Game.LevelAndEntity.System
             config.ValueRW.people = (int)math.ceil(output[0] * happiness);
             config.ValueRW.envRate = envRate;
             config.ValueRW.happiness = happiness;
+            config.ValueRW.buildingRate = buildRate;
             buildings.Dispose();
             consumeItems.Dispose();
             output.Dispose();

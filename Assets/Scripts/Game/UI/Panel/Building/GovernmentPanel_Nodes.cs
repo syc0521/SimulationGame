@@ -12,5 +12,6 @@ namespace Game.UI.Panel.Building
         public TextMeshProUGUI currentLevel_txt, nextLevel_txt;
         public Button achievement_btn, upgrade_btn;
         public FrameComponent upgrade_frame;
+        public Button back_btn;
     }
 }

@@ -5,5 +5,6 @@
         public int people;
         public float happiness;
         public float environment;
+        public float buildingRate;
     }
 }

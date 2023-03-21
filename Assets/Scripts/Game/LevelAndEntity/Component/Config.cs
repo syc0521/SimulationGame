@@ -15,5 +15,6 @@ namespace Game.LevelAndEntity.Component
         public int people;
         public float envRate;
         public float happiness;
+        public float buildingRate;
     }
 }

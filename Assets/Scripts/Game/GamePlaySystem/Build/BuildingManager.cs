@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Game.Core;
 using Game.Data;
 using Game.Data.Event;
@@ -73,7 +74,8 @@ namespace Game.GamePlaySystem
 
         private void InitializeBuilding()
         {
-            foreach (var (key, data) in _buildingDatas)
+            // 静态建筑只存数据，不生成entity
+            foreach (var (key, data) in _buildingDatas.Where(pair => pair.Key < 10000))
             {
                 if (_internalID < key)
                 {
@@ -205,6 +207,13 @@ namespace Game.GamePlaySystem
 
         private void InitializeStaticBuilding(StaticBuildingIntlEvent evt)
         {
+            if (!_buildingDatas.ContainsKey((uint)evt.id + 10000))
+            {
+                _buildingDatas[(uint)evt.id + 10000] = new BuildingData
+                {
+                    level = 1
+                };
+            }
             BuildingUtils.SetGridData(ref grid, evt.pos, evt.row, evt.col, evt.id);
         }
         
@@ -260,10 +269,7 @@ namespace Game.GamePlaySystem
         {
             var system = World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<BuildingManagedSystem>();
             system.UpgradeBuilding(buildingId, newLevel, isStatic);
-            if (!isStatic)
-            {
-                _buildingDatas[buildingId].level = newLevel;
-            }
+            _buildingDatas[buildingId].level = newLevel;
             EventCenter.DispatchEvent(new OpenBuildingInfoEvent
             {
                 id = (int)buildingId,
@@ -275,9 +281,14 @@ namespace Game.GamePlaySystem
 
         public bool TryGetStaticBuildingLevel(uint buildingId, out int level)
         {
-            var system = World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<BuildingManagedSystem>();
-            level = system.GetStaticBuildingLevel(buildingId);
-            return level != 0;
+            if (_buildingDatas.ContainsKey(buildingId))
+            {
+                level = _buildingDatas[buildingId].level;
+                return true;
+            }
+
+            level = 0;
+            return false;
         }
     }
 }

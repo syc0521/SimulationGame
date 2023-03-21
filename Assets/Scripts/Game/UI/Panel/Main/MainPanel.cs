@@ -198,9 +198,9 @@ namespace Game.UI.Panel
         {
             if (evt.isStatic)
             {
-                if (evt.id == 1) // todo 打开官府面板
+                if (evt.id == 1)
                 {
-                    
+                    UIManager.Instance.OpenPanel<GovernmentPanel>();
                 }
             }
             else

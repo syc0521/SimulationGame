@@ -32,7 +32,6 @@ namespace Game.LevelAndEntity.System
             entityManager.SetEnabled(planeEntity, b);
         }
         
-        
         public void UpgradeBuilding(uint buildingId, int newLevel, bool isStatic = false)
         {
             //var ecb = beginSimECBSystem.CreateCommandBuffer();
@@ -44,6 +43,21 @@ namespace Game.LevelAndEntity.System
                 }
             }).Schedule();
             beginSimECBSystem.AddJobHandleForProducer(Dependency);
+        }
+
+        public int GetStaticBuildingLevel(uint buildingId)
+        {
+            var level = 0;
+            Entities.WithAll<LevelObject>().WithAny<Building, StaticBuilding>().ForEach((Entity entity, ref LevelObject levelObject) =>
+            {
+                if (levelObject.isStatic && levelObject.id == buildingId)
+                {
+                    level = levelObject.level;
+                }
+            }).Schedule();
+            beginSimECBSystem.AddJobHandleForProducer(Dependency);
+            
+            return level;
         }
     }
 }

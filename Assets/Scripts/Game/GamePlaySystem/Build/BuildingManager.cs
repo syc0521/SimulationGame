@@ -260,7 +260,10 @@ namespace Game.GamePlaySystem
         {
             var system = World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<BuildingManagedSystem>();
             system.UpgradeBuilding(buildingId, newLevel, isStatic);
-            _buildingDatas[buildingId].level = newLevel;
+            if (!isStatic)
+            {
+                _buildingDatas[buildingId].level = newLevel;
+            }
             EventCenter.DispatchEvent(new OpenBuildingInfoEvent
             {
                 id = (int)buildingId,
@@ -270,5 +273,11 @@ namespace Game.GamePlaySystem
             return true;
         }
 
+        public bool TryGetStaticBuildingLevel(uint buildingId, out int level)
+        {
+            var system = World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<BuildingManagedSystem>();
+            level = system.GetStaticBuildingLevel(buildingId);
+            return level != 0;
+        }
     }
 }

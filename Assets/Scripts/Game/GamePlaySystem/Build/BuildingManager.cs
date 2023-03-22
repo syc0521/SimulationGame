@@ -211,7 +211,8 @@ namespace Game.GamePlaySystem
             {
                 _buildingDatas[(uint)evt.id + 10000] = new BuildingData
                 {
-                    level = 1
+                    type = evt.id,
+                    level = 1,
                 };
             }
             BuildingUtils.SetGridData(ref grid, evt.pos, evt.row, evt.col, evt.id);

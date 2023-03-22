@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 527f340a44b2424db2f95d24a6903b27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  template: {fileID: 4175337468705133161, guid: 1e27dd1a639a79d40bf0608aa892f0c4,
+  template: {fileID: 7836035322658299859, guid: 29fff4062d61414499a9cbc64425162e,
     type: 3}
 --- !u!1 &316814986294830253
 GameObject:
@@ -1523,6 +1523,7 @@ MonoBehaviour:
   upgrade_btn: {fileID: 5535013081981459893}
   upgrade_frame: {fileID: 7423762105993612508}
   back_btn: {fileID: 6275477914692120549}
+  upgradeItem_list: {fileID: 4076142420145972325}
 --- !u!1 &4744435963835781843
 GameObject:
   m_ObjectHideFlags: 0

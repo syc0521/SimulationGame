@@ -1,4 +1,5 @@
-﻿using Game.UI.Component;
+﻿using System;
+using Game.UI.Component;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,5 +14,11 @@ namespace Game.UI.Panel.Building
         public Button achievement_btn, upgrade_btn;
         public FrameComponent upgrade_frame;
         public Button back_btn;
+        public ListComponent upgradeItem_list;
+
+        private void Awake()
+        {
+            upgradeItem_list.Init();
+        }
     }
 }

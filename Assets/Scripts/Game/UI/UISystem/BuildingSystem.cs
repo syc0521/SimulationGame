@@ -5,6 +5,8 @@ using Game.Data;
 using Game.Data.Common;
 using Game.Data.Event;
 using Game.GamePlaySystem;
+using Game.GamePlaySystem.Backpack;
+using Game.GamePlaySystem.Currency;
 using Game.UI.ViewData;
 
 namespace Game.UI.UISystem
@@ -44,5 +46,27 @@ namespace Game.UI.UISystem
         public Dictionary<int, BuildingViewData> GetAllBuildingViewData() => _buildingData;
         
         public BuildingViewData GetBuildingViewData(int id) => _buildingData.ContainsKey(id) ? _buildingData[id] : null;
+
+        public bool UpgradeBuilding(uint entityId, bool isStatic = false)
+        {
+            var entityData = BuildingManager.Instance.GetBuildingData(entityId);
+            var staticId = entityData.type;
+            var buildingData = ConfigTable.Instance.GetBuildingData(staticId);
+            var newLevel = entityData.level + 1;
+            if (newLevel > buildingData.Level)
+            {
+                return false;
+            }
+
+            var upgradeData = ConfigTable.Instance.GetBuildingUpgradeData(staticId, newLevel);
+            if (BackpackManager.Instance.ConsumeBackpack(upgradeData.Itemid, upgradeData.Itemcount) &&
+                CurrencyManager.Instance.ConsumeCurrency(upgradeData.Currencyid, upgradeData.Currencycount))
+            {
+                BuildingManager.Instance.UpgradeBuilding(entityId, newLevel, isStatic);
+                return true;
+            }
+
+            return false;
+        }
     }
 }

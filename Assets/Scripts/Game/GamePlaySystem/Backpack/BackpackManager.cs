@@ -75,6 +75,11 @@ namespace Game.GamePlaySystem.Backpack
             }
             return true;
         }
+        
+        public bool CheckBackpackItems(int[] id, int[] count)
+        {
+            return !id.Where((t, i) => GetBackpackCount(t) < count[i]).Any();
+        }
 
         public Dictionary<int, int> GetBackpack() => backpack;
     }

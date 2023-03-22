@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Game.Core;
 using Game.Data;
 using Game.Data.Common;
@@ -63,6 +64,20 @@ namespace Game.GamePlaySystem.Currency
 
             Debug.LogError($"货币类型{type}不存在！");
             return 0;
+        }
+
+        public bool ConsumeCurrency(int[] id, int[] count)
+        {
+            if (id.Where((t, i) => !currency.ContainsKey(t) || currency[t] < count[i]).Any())
+            {
+                return false;
+            }
+            
+            for (int i = 0; i < id.Length; i++)
+            {
+                ConsumeCurrency((CurrencyType)id[i], count[i]);
+            }
+            return true;
         }
     }
 }

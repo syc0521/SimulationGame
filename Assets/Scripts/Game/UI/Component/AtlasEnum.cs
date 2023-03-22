@@ -5,6 +5,7 @@
         Common = 0,
         Building = 1,
         Task = 2,
-        BagItem = 3,
+        Item = 3,
+        Currency = 4,
     }
 }

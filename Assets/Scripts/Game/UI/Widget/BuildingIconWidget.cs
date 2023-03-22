@@ -1,6 +1,7 @@
 ﻿using System;
 using Game.UI.Component;
 using Game.UI.Panel.Building;
+using Game.UI.ViewData;
 using TMPro;
 using UnityEngine.EventSystems;
 
@@ -8,7 +9,8 @@ namespace Game.UI.Widget
 {
     public class ConsumeItemListData : ListData
     {
-        public int type;
+        public ConsumeType consumeType;
+        public int id;
         public int amount;
     }
     
@@ -46,7 +48,8 @@ namespace Game.UI.Widget
             {
                 currency_list.AddItem(new ConsumeItemListData
                 {
-                    type = buildingListData.data.itemType[i],
+                    consumeType = ConsumeType.Item,
+                    id = buildingListData.data.itemType[i],
                     amount = buildingListData.data.itemCount[i]
                 });
             }

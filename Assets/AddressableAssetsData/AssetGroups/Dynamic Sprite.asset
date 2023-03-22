@@ -35,6 +35,18 @@ MonoBehaviour:
     m_SerializedLabels:
     - sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9d8a24cbd7047a448998c2e16a45f767
+    m_Address: item
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eea3e45b0af858b4b8e0ca951fc09781
+    m_Address: currency
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - sprite
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ef7206bd29055104abb70d185833b540, type: 2}
   m_SchemaSet:

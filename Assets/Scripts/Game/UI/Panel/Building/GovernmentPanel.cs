@@ -1,6 +1,12 @@
-﻿using Game.GamePlaySystem;
+﻿using Game.Data;
+using Game.Data.TableData;
+using Game.GamePlaySystem;
+using Game.UI.Decorator;
 using Game.UI.Panel.Achievement;
+using Game.UI.UISystem;
 using Game.UI.Utils;
+using Game.UI.ViewData;
+using Game.UI.Widget;
 
 namespace Game.UI.Panel.Building
 {
@@ -8,6 +14,8 @@ namespace Game.UI.Panel.Building
     {
         public GovernmentPanel_Nodes nodes;
         private int _level;
+        private const int EntityId = 10001, StaticId = 1;
+        private BuildingUpgradeData _upgradeData;
 
         public override void OnCreated()
         {
@@ -21,6 +29,13 @@ namespace Game.UI.Panel.Building
         {
             base.OnShown();
             InitData();
+            var maxLevel = ConfigTable.Instance.GetBuildingData(StaticId).Level;
+            var isMaxLevel = _level >= maxLevel;
+            nodes.upgrade_frame.SetFrame(isMaxLevel ? 2 : 1);
+            if (!isMaxLevel)
+            {
+                RenderList();
+            }
         }
 
         public override void OnDestroyed()
@@ -33,7 +48,7 @@ namespace Game.UI.Panel.Building
 
         private void InitData()
         {
-            if (BuildingManager.Instance.TryGetStaticBuildingLevel(10001, out var level))
+            if (BuildingManager.Instance.TryGetStaticBuildingLevel(EntityId, out var level))
             {
                 _level = level;
             }
@@ -48,11 +63,29 @@ namespace Game.UI.Panel.Building
 
             nodes.cityEnv_txt.text = GetEnvRateString(data.environment);
             nodes.cityState_txt.text = GetBuildingRateString(data.buildingRate);
+            _upgradeData = ConfigTable.Instance.GetBuildingUpgradeData(StaticId, _level + 1);
         }
 
         private void RenderList()
         {
-            
+            for (var i = 0; i < _upgradeData.Itemid.Length; i++)
+            {
+                nodes.upgradeItem_list.AddItem(new ConsumeItemListData
+                {
+                    consumeType = ConsumeType.Item,
+                    id = _upgradeData.Itemid[i],
+                    amount = _upgradeData.Itemcount[i]
+                });
+            }
+            for (var i = 0; i < _upgradeData.Currencyid.Length; i++)
+            {
+                nodes.upgradeItem_list.AddItem(new ConsumeItemListData
+                {
+                    consumeType = ConsumeType.Currency,
+                    id = _upgradeData.Currencyid[i],
+                    amount = _upgradeData.Currencycount[i]
+                });
+            }
         }
 
         private void OpenAchievementPanel()
@@ -62,7 +95,12 @@ namespace Game.UI.Panel.Building
 
         private void Upgrade()
         {
-            BuildingManager.Instance.UpgradeBuilding(10001, _level + 1, true);
+            if (!BuildingSystem.Instance.UpgradeBuilding(EntityId, true))
+            {
+                AlertDecorator.OpenAlertPanel("货币或材料不足！", false);
+            }
+
+            OnShown();
         }
 
         private string GetEnvRateString(float rate)

@@ -2,7 +2,9 @@ using System.Collections.Generic;
 using System.Linq;
 using Game.Core;
 using Game.Data;
+using Game.Data.Achievement;
 using Game.Data.Event;
+using Game.GamePlaySystem.Achievement;
 using Game.GamePlaySystem.Task;
 using UnityEngine;
 
@@ -34,21 +36,18 @@ namespace Game.GamePlaySystem.Backpack
             {
                 backpack[id] = count;
             }
-            backpack[id] += count;
+            else
+            {
+                backpack[id] += count;
+            }
+            
+            AchievementManager.Instance.TriggerAchievement(AchievementType.Backpack, id, count);
             TaskManager.Instance.TriggerTask(TaskType.GetBagItem, id, count);
-
-            //Debug.Log($"{id}物品数量为{backpack[id]}");
         }
 
         public int GetBackpackCount(int id)
         {
-            if (backpack.ContainsKey(id))
-            {
-                return backpack[id];
-            }
-            
-            Debug.LogWarning($"背包物品{id}不存在！");
-            return 0;
+            return backpack.ContainsKey(id) ? backpack[id] : 0;
         }
 
         public bool ConsumeBackpack(int id, int count)

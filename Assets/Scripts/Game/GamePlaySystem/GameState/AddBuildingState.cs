@@ -1,6 +1,8 @@
 ﻿using Game.Core;
 using Game.Data;
+using Game.Data.Achievement;
 using Game.Data.Event;
+using Game.GamePlaySystem.Achievement;
 using Game.GamePlaySystem.Build;
 using Game.GamePlaySystem.BurstUtil;
 using Game.GamePlaySystem.StateMachine;
@@ -120,6 +122,9 @@ namespace Game.GamePlaySystem.GameState
             BuildingManager.Instance.Build(blockPos, currentBuildingType, currentID, rotation);
             EventCenter.RemoveListener<TouchEvent>(PlaceBuilding);
             TaskManager.Instance.TriggerTask(TaskType.AddBuilding, currentBuildingType);
+            AchievementManager.Instance.TriggerAchievement(AchievementType.Building, -1, 1);
+            AchievementManager.Instance.TriggerAchievement(AchievementType.BuildingCategory, data.Buildingtype, 1);
+            AchievementManager.Instance.TriggerAchievement(AchievementType.BuildingID, currentBuildingType, 1);
         }
         
         private void RotateBuilding(RotateEvent evt)

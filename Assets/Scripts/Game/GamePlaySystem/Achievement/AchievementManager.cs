@@ -43,15 +43,21 @@ namespace Game.GamePlaySystem.Achievement
         {
             foreach (var (dataId, playerData) in achievementData)
             {
-                if (playerData.complete) return;
+                if (playerData.complete) continue;
                 
                 var tableData = ConfigTable.Instance.GetAchievementData(dataId);
-                if (tableData.Type == (int)type && tableData.ID == id)
+                if (tableData.Type != (int)type) continue;
+                
+                if ((AchievementType)tableData.Type is AchievementType.People) // 人口需要特殊处理
+                {
+                    playerData.progress = math.max(playerData.progress, count);
+                }
+                else if (tableData.Targetid == id)
                 {
                     playerData.progress = math.min(playerData.progress + count, tableData.Targetnum);
                 }
 
-                if (playerData.progress == tableData.Targetnum)
+                if (playerData.progress >= tableData.Targetnum)
                 {
                     playerData.complete = true;
                 }

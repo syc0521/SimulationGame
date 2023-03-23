@@ -128,6 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count_txt: {fileID: 5201827005634068842}
+  icon_img: {fileID: 1295252723140390190}
 --- !u!1 &6852610575248561987
 GameObject:
   m_ObjectHideFlags: 0

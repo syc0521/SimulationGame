@@ -1,8 +1,10 @@
 ﻿using Game.Core;
 using Game.Data;
+using Game.Data.Achievement;
 using Game.Data.Common;
 using Game.Data.Event;
 using Game.Data.Event.Backpack;
+using Game.GamePlaySystem.Achievement;
 using Game.GamePlaySystem.Backpack;
 using Game.GamePlaySystem.Currency;
 using Game.LevelAndEntity.System;
@@ -68,7 +70,16 @@ namespace Game.GamePlaySystem
         public GameData GetGameData()
         {
             var dataSystem = World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<DataSystem>();
-            return dataSystem?.GetGameData() ?? default;
+            if (dataSystem != null)
+            {
+                var gameData = dataSystem.GetGameData();
+                if (!gameData.Equals(default))
+                {
+                    AchievementManager.Instance.TriggerAchievement(AchievementType.People, -1, gameData.people);
+                    return gameData;
+                }
+            }
+            return default;
         }
     }
 }

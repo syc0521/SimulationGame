@@ -68,7 +68,7 @@ namespace Game.UI.Panel.Common
                 {
                     id = i,
                     data = item,
-                    clickHandler = ClickBagItem
+                    clickHandler = ClickBagItem,
                 });
             }
         }

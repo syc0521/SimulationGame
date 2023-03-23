@@ -2,7 +2,9 @@
 using System.Linq;
 using Game.Core;
 using Game.Data;
+using Game.Data.Achievement;
 using Game.Data.Event;
+using Game.GamePlaySystem.Achievement;
 using Game.GamePlaySystem.BurstUtil;
 using Game.GamePlaySystem.GameState;
 using Game.GamePlaySystem.StateMachine;

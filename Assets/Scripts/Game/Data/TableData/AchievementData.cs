@@ -23,12 +23,12 @@ namespace Game.Data.TableData
     public string Content { get {return content; } set { content = value;} }
     
     [SerializeField]
-    int type;
-    public int Type { get {return type; } set { type = value;} }
-    
-    [SerializeField]
     int unlockcondition;
     public int Unlockcondition { get {return unlockcondition; } set { unlockcondition = value;} }
+    
+    [SerializeField]
+    int type;
+    public int Type { get {return type; } set { type = value;} }
     
     [SerializeField]
     int targetid;

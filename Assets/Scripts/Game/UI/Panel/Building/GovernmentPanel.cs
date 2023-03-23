@@ -42,7 +42,7 @@ namespace Game.UI.Panel.Building
         {
             nodes.achievement_btn.onClick.RemoveListener(OpenAchievementPanel);
             nodes.upgrade_btn.onClick.RemoveListener(Upgrade);
-            nodes.back_btn.onClick.RemoveAllListeners();
+            nodes.back_btn.onClick.RemoveListener(CloseSelf);
             base.OnDestroyed();
         }
 

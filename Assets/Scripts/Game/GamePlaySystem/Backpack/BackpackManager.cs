@@ -47,7 +47,7 @@ namespace Game.GamePlaySystem.Backpack
                 return backpack[id];
             }
             
-            Debug.LogError($"背包物品{id}不存在！");
+            Debug.LogWarning($"背包物品{id}不存在！");
             return 0;
         }
 

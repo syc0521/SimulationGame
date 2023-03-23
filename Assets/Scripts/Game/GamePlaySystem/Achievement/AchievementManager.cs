@@ -61,5 +61,7 @@ namespace Game.GamePlaySystem.Achievement
         public int GetTotalAchievement => ConfigTable.Instance.GetAchievement().dataList.Count;
 
         public int GetCompletedAchievement => achievementData.Count(item => item.Value.complete);
+
+        public Dictionary<int, PlayerAchievementData> GetAchievementData => achievementData;
     }
 }

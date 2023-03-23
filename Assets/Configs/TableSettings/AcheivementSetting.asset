@@ -31,11 +31,11 @@ MonoBehaviour:
     isEnable: 0
     isArray: 0
   - type: 3
-    name: Type
+    name: UnlockCondition
     isEnable: 0
     isArray: 0
   - type: 3
-    name: UnlockCondition
+    name: Type
     isEnable: 0
     isArray: 0
   - type: 3

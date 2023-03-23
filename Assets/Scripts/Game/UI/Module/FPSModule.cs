@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Game.Core;
 using Game.Data.Event.Common;
@@ -8,47 +9,40 @@ namespace Game.UI.Module
 {
     public class FPSModule : BaseModule
     {
-        private const int Granularity = 10;
-        private List<double> times;
-        private int counter = 5;
+        private float m_LastUpdateShowTime = 0f;  //上一次更新帧率的时间;  
+        private float m_UpdateShowDeltaTime = 0.6f;//更新帧率的时间间隔;  
+        private int m_FrameUpdate = 0;//帧数;  
+        private float m_FPS = 0;//帧率
         
         public override void OnCreated()
         {
-            times = new List<double>();
+            m_LastUpdateShowTime = Time.realtimeSinceStartup;
         }
 
         public override void OnDestroyed()
         {
-            times.Clear();
-            times = null;
+            m_LastUpdateShowTime = 0f;
         }
 
         public override void OnUpdate()
         {
             base.OnUpdate();
-            if (times == null)
-            {
-                return;
-            }
-            
-            if (counter <= 0)
-            {
-                CalcFPS();
-                counter = Granularity;
-            } 
-
-            times.Add (Time.deltaTime);
-            counter--; 
+            CalcFPS();
         }
 
         private void CalcFPS()
         {
-            double sum = times.Sum();
-            double average = sum / times.Count;
-            double fps = 1 / average;
+            m_FrameUpdate++;
+            if (Time.realtimeSinceStartup - m_LastUpdateShowTime >= m_UpdateShowDeltaTime)
+            {
+                //FPS = 某段时间内的总帧数 / 某段时间
+                m_FPS = m_FrameUpdate / (Time.realtimeSinceStartup - m_LastUpdateShowTime);
+                m_FrameUpdate = 0;
+                m_LastUpdateShowTime = Time.realtimeSinceStartup;
+            }
             EventCenter.DispatchEvent(new FPSEvent
             {
-                fps = (int)fps,
+                fps = Mathf.CeilToInt(m_FPS),
             });
         }
     }

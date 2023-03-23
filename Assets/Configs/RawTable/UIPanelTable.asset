@@ -57,6 +57,9 @@ MonoBehaviour:
   - panelid: 13
     name: AchievementPanel
     layer: 1
+  - panelid: 14
+    name: LogoPanel
+    layer: 2
   dataList:
   - panelid: 0
     name: MainPanel
@@ -100,3 +103,6 @@ MonoBehaviour:
   - panelid: 13
     name: AchievementPanel
     layer: 1
+  - panelid: 14
+    name: LogoPanel
+    layer: 2

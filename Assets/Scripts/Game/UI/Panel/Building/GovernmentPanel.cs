@@ -1,6 +1,7 @@
 ﻿using Game.Data;
 using Game.Data.TableData;
 using Game.GamePlaySystem;
+using Game.GamePlaySystem.Build;
 using Game.UI.Decorator;
 using Game.UI.Panel.Achievement;
 using Game.UI.UISystem;

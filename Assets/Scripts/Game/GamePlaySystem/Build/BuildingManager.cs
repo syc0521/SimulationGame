@@ -2,13 +2,11 @@
 using System.Linq;
 using Game.Core;
 using Game.Data;
-using Game.Data.Achievement;
 using Game.Data.Event;
-using Game.GamePlaySystem.Achievement;
 using Game.GamePlaySystem.BurstUtil;
 using Game.GamePlaySystem.GameState;
 using Game.GamePlaySystem.StateMachine;
-using Game.Input;
+using Game.GamePlaySystem.Task;
 using Game.LevelAndEntity.Component;
 using Game.LevelAndEntity.System;
 using Unity.Collections;
@@ -18,9 +16,9 @@ using Unity.Physics;
 using UnityEngine;
 using Grid = Game.Data.Grid;
 
-namespace Game.GamePlaySystem
+namespace Game.GamePlaySystem.Build
 {
-    public class BuildingManager : GamePlaySystemBase<BuildingManager>
+    public partial class BuildingManager : GamePlaySystemBase<BuildingManager>
     {
         private Dictionary<uint, BuildingData> _buildingDatas;
         private Grid grid;
@@ -47,6 +45,7 @@ namespace Game.GamePlaySystem
                 new ModifyState(),
                 new AddBuildingState(),
                 new DestroyState(),
+                new AddRoadState(),
             });
             buildStateMachine.ChangeState<NormalState>();
             EventCenter.AddListener<StaticBuildingIntlEvent>(InitializeStaticBuilding);
@@ -58,7 +57,7 @@ namespace Game.GamePlaySystem
             buildStateMachine.Dispose();
             EventCenter.RemoveListener<LoadDataEvent>(GetUnlockedBuildings);
             EventCenter.RemoveListener<StaticBuildingIntlEvent>(InitializeStaticBuilding);
-
+            
             grid.Dispose();
             base.OnDestroyed();
         }
@@ -268,18 +267,19 @@ namespace Game.GamePlaySystem
             return unlockedBuildings.Contains(buildingId);
         }
 
-        public bool UpgradeBuilding(uint buildingId, int newLevel, bool isStatic = false)
+        public void UpgradeBuilding(uint buildingId, int newLevel, bool isStatic = false)
         {
             var system = World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<BuildingManagedSystem>();
             system.UpgradeBuilding(buildingId, newLevel, isStatic);
             _buildingDatas[buildingId].level = newLevel;
+            var staticId = _buildingDatas[buildingId].type;
+            TaskManager.Instance.TriggerTask(TaskType.UpgradeBuilding, staticId);
             EventCenter.DispatchEvent(new OpenBuildingInfoEvent
             {
                 id = (int)buildingId,
                 isStatic = isStatic,
             });
             Managers.Get<ISaveDataManager>().SaveData();
-            return true;
         }
 
         public bool TryGetStaticBuildingLevel(uint buildingId, out int level)

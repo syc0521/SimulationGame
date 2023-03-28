@@ -1,4 +1,5 @@
 using Game.GamePlaySystem;
+using Game.GamePlaySystem.Build;
 
 namespace Game.UI.Panel.Building
 {

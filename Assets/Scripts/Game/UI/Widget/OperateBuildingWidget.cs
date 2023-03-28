@@ -1,5 +1,6 @@
 ﻿using Game.Data.FeatureOpen;
 using Game.GamePlaySystem;
+using Game.GamePlaySystem.Build;
 using Game.GamePlaySystem.FeatureOpen;
 using UnityEngine.UI;
 

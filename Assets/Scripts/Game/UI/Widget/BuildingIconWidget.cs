@@ -42,18 +42,21 @@ namespace Game.UI.Widget
             });
             name_txt.text = buildingListData.data.name;
 
-            int itemLength = buildingListData.data.itemType.Length;
-            currency_list.Init();
-            for (int i = 0; i < itemLength; i++)
+            if (buildingListData.id != 4) //不是道路
             {
-                currency_list.AddItem(new ConsumeItemListData
+                int itemLength = buildingListData.data.itemType.Length;
+                currency_list.Init();
+                for (int i = 0; i < itemLength; i++)
                 {
-                    consumeType = ConsumeType.Item,
-                    id = buildingListData.data.itemType[i],
-                    amount = buildingListData.data.itemCount[i]
-                });
+                    currency_list.AddItem(new ConsumeItemListData
+                    {
+                        consumeType = ConsumeType.Item,
+                        id = buildingListData.data.itemType[i],
+                        amount = buildingListData.data.itemCount[i]
+                    });
+                }
             }
-
+            
             id = buildingListData.id;
             _clickHandler = buildingListData.clickHandler;
         }

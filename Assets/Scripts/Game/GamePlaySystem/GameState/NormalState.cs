@@ -2,6 +2,7 @@
 using Game.Core;
 using Game.Data.Event;
 using Game.Data.FeatureOpen;
+using Game.GamePlaySystem.Build;
 using Game.GamePlaySystem.FeatureOpen;
 using Game.GamePlaySystem.StateMachine;
 using Game.Input;

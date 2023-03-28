@@ -8,6 +8,7 @@ using Game.Data.Event;
 using Game.Data.Event.Task;
 using Game.Data.FeatureOpen;
 using Game.GamePlaySystem.Backpack;
+using Game.GamePlaySystem.Build;
 using Game.GamePlaySystem.Currency;
 using Game.GamePlaySystem.FeatureOpen;
 using UnityEngine;

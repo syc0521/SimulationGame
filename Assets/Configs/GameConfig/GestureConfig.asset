@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: GestureConfig
   m_EditorClassIdentifier: 
   cameraSpeed: 21
+  minHeight: 3
+  maxHeight: 15

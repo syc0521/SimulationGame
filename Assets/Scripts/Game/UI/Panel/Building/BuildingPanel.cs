@@ -4,6 +4,7 @@ using System.Linq;
 using Game.Data;
 using Game.GamePlaySystem;
 using Game.GamePlaySystem.Backpack;
+using Game.GamePlaySystem.Build;
 using Game.UI.Component;
 using Game.UI.Decorator;
 using Game.UI.UISystem;
@@ -68,6 +69,13 @@ namespace Game.UI.Panel.Building
 
         private void ClickBuilding(int id)
         {
+            // 道路需要进入道路建造模式
+            if (id == 4)
+            {
+                UIManager.Instance.OpenPanel<RoadBuildingPanel>();
+                return;
+            }
+            
             var data = ConfigTable.Instance.GetBuildingData(id);
             var type = data.Currencytype[0];
             if (BackpackManager.Instance.GetBackpackCount(type) >= data.Currencycount[0])
@@ -79,7 +87,6 @@ namespace Game.UI.Panel.Building
             {
                 AlertDecorator.OpenAlertPanel("建筑材料不足！", false);
             }
-            
         }
 
         private void InitTabBar()

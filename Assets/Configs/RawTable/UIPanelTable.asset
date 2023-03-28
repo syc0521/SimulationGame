@@ -60,6 +60,9 @@ MonoBehaviour:
   - panelid: 14
     name: LogoPanel
     layer: 2
+  - panelid: 15
+    name: RoadBuildingPanel
+    layer: 0
   dataList:
   - panelid: 0
     name: MainPanel
@@ -106,3 +109,6 @@ MonoBehaviour:
   - panelid: 14
     name: LogoPanel
     layer: 2
+  - panelid: 15
+    name: RoadBuildingPanel
+    layer: 0

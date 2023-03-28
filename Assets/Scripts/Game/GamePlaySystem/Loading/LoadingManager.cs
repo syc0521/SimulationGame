@@ -2,6 +2,7 @@
 using Game.Core;
 using Game.Data;
 using Game.Data.Event.Common;
+using Game.GamePlaySystem.Build;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 

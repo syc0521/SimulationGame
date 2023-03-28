@@ -6,6 +6,7 @@ using Game.Data.Common;
 using Game.Data.Event;
 using Game.GamePlaySystem;
 using Game.GamePlaySystem.Backpack;
+using Game.GamePlaySystem.Build;
 using Game.GamePlaySystem.Currency;
 using Game.UI.ViewData;
 

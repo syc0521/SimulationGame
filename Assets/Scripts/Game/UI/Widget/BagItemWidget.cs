@@ -1,10 +1,9 @@
 ﻿using System;
-using Game.Data;
 using Game.UI.Component;
 using Game.UI.Panel.Bag;
 using Game.UI.Panel.Common;
+using Game.UI.Utils;
 using TMPro;
-using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace Game.UI.Widget
@@ -36,7 +35,7 @@ namespace Game.UI.Widget
                 var count = alertRewardListData.data.amount;
                 count_txt.text = count > 1 ? count.ToString() : string.Empty;
                 _clickHandler = alertRewardListData.clickHandler;
-                icon_img.SetIcon(GetRewardIcon(alertRewardListData.data.type, alertRewardListData.data.itemID));
+                icon_img.SetIcon(IconUtility.GetRewardIcon(alertRewardListData.data.type, alertRewardListData.data.itemID));
             }
         }
 
@@ -44,29 +43,6 @@ namespace Game.UI.Widget
         {
             _clickHandler.Invoke(this, id);
         }
-
-        private AtlasSpriteID GetRewardIcon(RewardType type, int itemId)
-        {
-            return type switch
-            {
-                RewardType.Currency => new AtlasSpriteID
-                {
-                    atlas = AtlasEnum.Currency,
-                    resName = $"icon_currency_{itemId}"
-                },
-                RewardType.Building => new AtlasSpriteID
-                {
-                    atlas = AtlasEnum.Building,
-                    resName = $"icon_building_{itemId}"
-                },
-                RewardType.Item => new AtlasSpriteID
-                {
-                    atlas = AtlasEnum.Item,
-                    resName = $"icon_item_{itemId}"
-                },
-                _ => default
-            };
-        }
-
+        
     }
 }

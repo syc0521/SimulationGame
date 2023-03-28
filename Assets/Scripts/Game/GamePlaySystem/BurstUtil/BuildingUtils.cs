@@ -67,7 +67,7 @@ namespace Game.GamePlaySystem.BurstUtil
             }
             return false;
         }
-        
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [BurstCompile]
         public static float Angle(in float2 from, in float2 to)

@@ -2,13 +2,12 @@
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
-using NotImplementedException = System.NotImplementedException;
 
 namespace Game.LevelAndEntity.Aspects
 {
     public readonly partial struct BuildingAspect : IAspect
     {
-        private readonly TransformAspect transform;
+        private readonly RefRW<LocalTransform> transform;
         private readonly RefRO<Building> building;
         private readonly RefRW<LevelObject> levelObject;
         private readonly RefRW<Timer> timer;
@@ -32,14 +31,14 @@ namespace Game.LevelAndEntity.Aspects
 
         public float3 Position
         {
-            get => transform.WorldPosition;
-            set => transform.WorldPosition = value;
+            get => transform.ValueRO.Position;
+            set => transform.ValueRW.Position = value;
         }
 
         public quaternion LocalRotation
         {
-            get => transform.LocalRotation;
-            set => transform.LocalRotation = value;
+            get => transform.ValueRO.Rotation;
+            set => transform.ValueRW.Rotation = value;
         }
 
         public float3 SpawnPos

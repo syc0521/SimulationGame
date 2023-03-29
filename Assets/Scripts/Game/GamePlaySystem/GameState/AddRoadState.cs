@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using Game.Core;
 using Game.Data;
 using Game.Data.Event;
@@ -22,8 +23,8 @@ namespace Game.GamePlaySystem.GameState
         private Stack<(int2[], int2)> _roadStack;
         private Stack<GameObject[]> _roadObjStack;
 
-        private Queue<(int2[], int2)> _roadRedoQueue;
-        private Queue<GameObject[]> _roadRedoObjQueue;
+        private Stack<(int2[], int2)> _roadRedoStack;
+        private Stack<GameObject[]> _roadRedoObjStack;
 
         private GameObject _startObj, _tempStartObj;
 
@@ -31,8 +32,8 @@ namespace Game.GamePlaySystem.GameState
         {
             _roadStack = new(5);
             _roadObjStack = new(5);
-            _roadRedoQueue = new(5);
-            _roadRedoObjQueue = new(5);
+            _roadRedoStack = new(5);
+            _roadRedoObjStack = new(5);
             World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<BuildingManagedSystem>().SetGridVisible(true);
             EventCenter.AddListener<TouchEvent>(PlaceRoad);
         }
@@ -41,12 +42,33 @@ namespace Game.GamePlaySystem.GameState
         {
             World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<BuildingManagedSystem>().SetGridVisible(false);
             EventCenter.RemoveListener<TouchEvent>(PlaceRoad);
-            Object.Destroy(_startObj);
+            if ((bool)list[0])
+            {
+                ConstructRoad();
+            }
+
+            if (_startObj != null)
+            {
+                Object.Destroy(_startObj);
+            }
+            if (_tempStartObj != null)
+            {
+                Object.Destroy(_tempStartObj);
+            }
+            
+            foreach (var obj in _roadObjStack.SelectMany(redoObjs => redoObjs))
+            {
+                Object.Destroy(obj);
+            }
+            foreach (var obj in _roadRedoObjStack.SelectMany(redoObjs => redoObjs))
+            {
+                Object.Destroy(obj);
+            }
             _startObj = null;
             _roadStack.Clear();
             _roadObjStack.Clear();
-            _roadRedoQueue.Clear();
-            _roadRedoObjQueue.Clear();
+            _roadRedoStack.Clear();
+            _roadRedoObjStack.Clear();
         }
 
         private void PlaceRoad(TouchEvent evt)
@@ -86,42 +108,87 @@ namespace Game.GamePlaySystem.GameState
             {
                 _count--;
                 var roadData = _roadStack.Pop();
-                _roadRedoQueue.Enqueue(roadData);
+                _roadRedoStack.Push(roadData);
+                _lastPos = roadData.Item2;
                 var roadObj = _roadObjStack.Pop();
                 foreach (var obj in roadObj)
                 {
                     obj.SetActive(false);
                 }
-                _roadRedoObjQueue.Enqueue(roadObj);
+                _roadRedoObjStack.Push(roadObj);
             }
             else if (_count == 0)
             {
                 _count--;
                 _tempStartObj = _startObj;
+                _startObj.SetActive(false);
                 _startObj = null;
             }
         }
 
         public void RedoRoad()
         {
-            
+            if (_count == -1 && _tempStartObj != null)
+            {
+                _count++;
+                _startObj = _tempStartObj;
+                _startObj.SetActive(true);
+                _tempStartObj = null;
+            }
+            else if (_count >= 0 && _roadRedoStack.Count > 0)
+            {
+                _count++;
+                var roadData = _roadRedoStack.Pop();
+                _roadStack.Push(roadData);
+                _lastPos = roadData.Item2;
+                var roadObj = _roadRedoObjStack.Pop();
+                foreach (var obj in roadObj)
+                {
+                    obj.SetActive(true);
+                }
+                _roadObjStack.Push(roadObj);
+            }
+        }
+
+        /// <summary>
+        /// ECS构建道路（带去重）
+        /// </summary>
+        public void ConstructRoad()
+        {
+            var roadData = _roadStack.SelectMany(items => items.Item1).ToHashSet();
+            foreach (var road in roadData)
+            {
+                var id = BuildingManager.Instance.GetID();
+                BuildingManager.Instance.SetBuildingData(id, new BuildingData
+                {
+                    level = 1,
+                    position = new Vector2(road[0], road[1]),
+                    rotation = 0,
+                    type = 4,
+                });
+                var pos = new float3(road[0], 0, road[1]);
+                BuildingManager.Instance.SetGridData(pos, 0, 4, 4);
+                BuildingManager.Instance.Build(pos, 4, id);
+            }
+            Managers.Get<ISaveDataManager>().SaveData();
         }
 
         private void CreateRoad(int2 pos, int2 lastPos)
         {
-            var road = GetSingleRoad(pos, lastPos);
+            var road = GetSingleRoadData(pos, lastPos);
 
-            if (_roadRedoQueue.Count > 0)
+            if (_roadRedoStack.Count > 0)
             {
-                _roadRedoQueue.Clear();
-                foreach (var obj in _roadRedoObjQueue.SelectMany(redoObjs => redoObjs))
+                _roadRedoStack.Clear();
+                foreach (var obj in _roadRedoObjStack.SelectMany(redoObjs => redoObjs))
                 {
                     Object.Destroy(obj);
                 }
-                _roadRedoObjQueue.Clear();
+                _roadRedoObjStack.Clear();
             }
             
             _roadStack.Push((road, _lastPos));
+            _tempStartObj = null;
             var roadObjs = new GameObject[road.Length];
             for (int i = 0; i < road.Length; i++)
             {
@@ -133,11 +200,11 @@ namespace Game.GamePlaySystem.GameState
             _roadObjStack.Push(roadObjs);
         }
 
-        private int2[] GetSingleRoad(int2 pos, int2 lastPos)
+        private int2[] GetSingleRoadData(int2 pos, int2 lastPos)
         {
             var deltaPos = math.abs(pos - lastPos);
             var length = deltaPos[0] + deltaPos[1];
-            var road = new List<int2>(length);
+            var road = new HashSet<int2>(length);
 
             var startX = lastPos[0];
             var endX = pos[0];
@@ -170,14 +237,25 @@ namespace Game.GamePlaySystem.GameState
                 }
                 road.Add(new int2(pos[0], i));
             }
-
-            road.RemoveAll(item => item.Equals(lastPos));
+            
+            road.RemoveWhere(item => item.Equals(lastPos));
             return road.ToArray();
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private void Swap(ref int a, ref int b)
         {
             (a, b) = (b, a);
+        }
+
+        public bool CanUndo()
+        {
+            return _roadStack.Count > 0;
+        }
+
+        public bool CanRedo()
+        {
+            return _roadRedoStack.Count > 0;
         }
     }
 }

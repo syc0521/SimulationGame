@@ -1,5 +1,4 @@
 ﻿using Game.GamePlaySystem.GameState;
-using Unity.Mathematics;
 
 namespace Game.GamePlaySystem.Build
 {
@@ -24,6 +23,26 @@ namespace Game.GamePlaySystem.Build
             {
                 state.RedoRoad();
             }
+        }
+
+        public bool CanUndoRoad()
+        {
+            if (buildStateMachine.GetCurrentState() is AddRoadState state)
+            {
+                return state.CanUndo();
+            }
+
+            return false;
+        }
+        
+        public bool CanRedoRoad()
+        {
+            if (buildStateMachine.GetCurrentState() is AddRoadState state)
+            {
+                return state.CanRedo();
+            }
+
+            return false;
         }
     }
 }

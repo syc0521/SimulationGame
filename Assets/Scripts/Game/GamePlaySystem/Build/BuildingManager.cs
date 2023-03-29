@@ -184,7 +184,7 @@ namespace Game.GamePlaySystem.Build
         public void SetBuildingData(uint buildingId, BuildingData data)
         {
             _buildingDatas[buildingId] = data;
-            Managers.Get<ISaveDataManager>().SaveData();
+            //Managers.Get<ISaveDataManager>().SaveData();
         }
 
         public void RemoveBuildingData(uint buildingId)

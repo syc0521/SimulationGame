@@ -7,7 +7,7 @@ namespace Game.LevelAndEntity.Aspects
 {
     public readonly partial struct StaticBuildingAspect : IAspect
     {
-        private readonly TransformAspect transform;
+        private readonly RefRW<LocalTransform> transform;
         public readonly Entity self;
         private readonly RefRO<StaticBuilding> staticBuilding;
 
@@ -17,8 +17,8 @@ namespace Game.LevelAndEntity.Aspects
         
         public float3 Position
         {
-            get => transform.WorldPosition;
-            set => transform.WorldPosition = value;
+            get => transform.ValueRO.Position;
+            set => transform.ValueRW.Position = value;
         }
     }
 }

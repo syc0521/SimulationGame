@@ -31,7 +31,7 @@ namespace Game.UI.Panel.Building
         
         private void OnQuitButtonClicked()
         {
-            BuildingManager.Instance.TransitToNormalState();
+            BuildingManager.Instance.ConstructBuilding();
             CloseSelf();
         }
 

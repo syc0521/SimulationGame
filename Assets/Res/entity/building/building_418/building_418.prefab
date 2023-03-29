@@ -49,10 +49,10 @@ MonoBehaviour:
   type: 28
   maxPeople: 0
   meshRoot: {fileID: 1280134086996596248}
-  maxLevel: 0
-  cd: 0
-  envValue: 0
-  evaluateScore: 0
+  maxLevel: 3
+  cd: -1
+  envValue: 10
+  evaluateScore: 15
 --- !u!114 &8021392280205170797
 MonoBehaviour:
   m_ObjectHideFlags: 0

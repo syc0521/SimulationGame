@@ -183,6 +183,55 @@ MonoBehaviour:
     produceamount: 00000000
     consumeid: -1
     consumeamount: 00000000
+  - id: 24
+    name: "\u4EAD\u5B50"
+    producetype: 2
+    produceid: 0
+    produceamount: 00000000
+    consumeid: -1
+    consumeamount: 00000000
+  - id: 25
+    name: "\u724C\u574A"
+    producetype: 2
+    produceid: 0
+    produceamount: 00000000
+    consumeid: -1
+    consumeamount: 00000000
+  - id: 26
+    name: "\u533B\u9662"
+    producetype: 2
+    produceid: 0
+    produceamount: 00000000
+    consumeid: -1
+    consumeamount: 00000000
+  - id: 27
+    name: "\u4E66\u9662"
+    producetype: 2
+    produceid: 0
+    produceamount: 00000000
+    consumeid: -1
+    consumeamount: 00000000
+  - id: 28
+    name: "\u5C0F\u644A"
+    producetype: 2
+    produceid: 0
+    produceamount: 00000000
+    consumeid: -1
+    consumeamount: 00000000
+  - id: 29
+    name: "\u9152\u697C"
+    producetype: 2
+    produceid: 0
+    produceamount: 00000000
+    consumeid: -1
+    consumeamount: 00000000
+  - id: 30
+    name: "\u94C1\u5320\u94FA"
+    producetype: 1
+    produceid: 2
+    produceamount: 050000000a0000000d000000
+    consumeid: -1
+    consumeamount: 00000000
   dataList:
   - id: 0
     name: "\u5B9D\u5854"
@@ -350,5 +399,54 @@ MonoBehaviour:
     producetype: 2
     produceid: 0
     produceamount: 00000000
+    consumeid: -1
+    consumeamount: 00000000
+  - id: 24
+    name: "\u4EAD\u5B50"
+    producetype: 2
+    produceid: 0
+    produceamount: 00000000
+    consumeid: -1
+    consumeamount: 00000000
+  - id: 25
+    name: "\u724C\u574A"
+    producetype: 2
+    produceid: 0
+    produceamount: 00000000
+    consumeid: -1
+    consumeamount: 00000000
+  - id: 26
+    name: "\u533B\u9662"
+    producetype: 2
+    produceid: 0
+    produceamount: 00000000
+    consumeid: -1
+    consumeamount: 00000000
+  - id: 27
+    name: "\u4E66\u9662"
+    producetype: 2
+    produceid: 0
+    produceamount: 00000000
+    consumeid: -1
+    consumeamount: 00000000
+  - id: 28
+    name: "\u5C0F\u644A"
+    producetype: 2
+    produceid: 0
+    produceamount: 00000000
+    consumeid: -1
+    consumeamount: 00000000
+  - id: 29
+    name: "\u9152\u697C"
+    producetype: 2
+    produceid: 0
+    produceamount: 00000000
+    consumeid: -1
+    consumeamount: 00000000
+  - id: 30
+    name: "\u94C1\u5320\u94FA"
+    producetype: 1
+    produceid: 2
+    produceamount: 050000000a0000000d000000
     consumeid: -1
     consumeamount: 00000000

@@ -375,6 +375,111 @@ MonoBehaviour:
     level: 1
     basescore: 5
     envscore: 6
+  - buildingid: 24
+    resourcepath: building_414
+    name: "\u4EAD\u5B50"
+    buildingtype: 2
+    description: "\u4EAD\u5B50"
+    currencytype: 01000000
+    currencycount: 64000000
+    rowcount: 3
+    colcount: 2
+    cd: -1
+    unlock: 0
+    people: 0
+    level: 1
+    basescore: 20
+    envscore: 10
+  - buildingid: 25
+    resourcepath: building_415
+    name: "\u724C\u574A"
+    buildingtype: 2
+    description: "\u724C\u574A"
+    currencytype: 01000000
+    currencycount: 64000000
+    rowcount: 2
+    colcount: 6
+    cd: -1
+    unlock: 0
+    people: 0
+    level: 1
+    basescore: 25
+    envscore: 10
+  - buildingid: 26
+    resourcepath: building_416
+    name: "\u533B\u9662"
+    buildingtype: 4
+    description: "\u533B\u9662"
+    currencytype: 01000000
+    currencycount: 64000000
+    rowcount: 3
+    colcount: 4
+    cd: -1
+    unlock: 0
+    people: 0
+    level: 1
+    basescore: 30
+    envscore: 10
+  - buildingid: 27
+    resourcepath: building_417
+    name: "\u4E66\u9662"
+    buildingtype: 4
+    description: "\u4E66\u9662"
+    currencytype: 01000000
+    currencycount: 64000000
+    rowcount: 6
+    colcount: 10
+    cd: -1
+    unlock: 0
+    people: 0
+    level: 1
+    basescore: 35
+    envscore: 10
+  - buildingid: 28
+    resourcepath: building_418
+    name: "\u5C0F\u644A"
+    buildingtype: 2
+    description: "\u5C0F\u644A"
+    currencytype: 01000000
+    currencycount: 64000000
+    rowcount: 2
+    colcount: 2
+    cd: -1
+    unlock: 0
+    people: 0
+    level: 3
+    basescore: 15
+    envscore: 10
+  - buildingid: 29
+    resourcepath: building_419
+    name: "\u9152\u697C"
+    buildingtype: 4
+    description: "\u9152\u697C"
+    currencytype: 01000000
+    currencycount: 64000000
+    rowcount: 5
+    colcount: 6
+    cd: -1
+    unlock: 0
+    people: 0
+    level: 1
+    basescore: 28
+    envscore: 10
+  - buildingid: 30
+    resourcepath: building_420
+    name: "\u94C1\u5320\u94FA"
+    buildingtype: 4
+    description: "\u94C1\u5320\u94FA"
+    currencytype: 01000000
+    currencycount: 64000000
+    rowcount: 5
+    colcount: 7
+    cd: 8
+    unlock: 0
+    people: 0
+    level: 3
+    basescore: 10
+    envscore: -15
   dataList:
   - buildingid: 0
     resourcepath: building_101
@@ -736,3 +841,108 @@ MonoBehaviour:
     level: 1
     basescore: 5
     envscore: 6
+  - buildingid: 24
+    resourcepath: building_414
+    name: "\u4EAD\u5B50"
+    buildingtype: 2
+    description: "\u4EAD\u5B50"
+    currencytype: 01000000
+    currencycount: 64000000
+    rowcount: 3
+    colcount: 2
+    cd: -1
+    unlock: 0
+    people: 0
+    level: 1
+    basescore: 20
+    envscore: 10
+  - buildingid: 25
+    resourcepath: building_415
+    name: "\u724C\u574A"
+    buildingtype: 2
+    description: "\u724C\u574A"
+    currencytype: 01000000
+    currencycount: 64000000
+    rowcount: 2
+    colcount: 6
+    cd: -1
+    unlock: 0
+    people: 0
+    level: 1
+    basescore: 25
+    envscore: 10
+  - buildingid: 26
+    resourcepath: building_416
+    name: "\u533B\u9662"
+    buildingtype: 4
+    description: "\u533B\u9662"
+    currencytype: 01000000
+    currencycount: 64000000
+    rowcount: 3
+    colcount: 4
+    cd: -1
+    unlock: 0
+    people: 0
+    level: 1
+    basescore: 30
+    envscore: 10
+  - buildingid: 27
+    resourcepath: building_417
+    name: "\u4E66\u9662"
+    buildingtype: 4
+    description: "\u4E66\u9662"
+    currencytype: 01000000
+    currencycount: 64000000
+    rowcount: 6
+    colcount: 10
+    cd: -1
+    unlock: 0
+    people: 0
+    level: 1
+    basescore: 35
+    envscore: 10
+  - buildingid: 28
+    resourcepath: building_418
+    name: "\u5C0F\u644A"
+    buildingtype: 2
+    description: "\u5C0F\u644A"
+    currencytype: 01000000
+    currencycount: 64000000
+    rowcount: 2
+    colcount: 2
+    cd: -1
+    unlock: 0
+    people: 0
+    level: 3
+    basescore: 15
+    envscore: 10
+  - buildingid: 29
+    resourcepath: building_419
+    name: "\u9152\u697C"
+    buildingtype: 4
+    description: "\u9152\u697C"
+    currencytype: 01000000
+    currencycount: 64000000
+    rowcount: 5
+    colcount: 6
+    cd: -1
+    unlock: 0
+    people: 0
+    level: 1
+    basescore: 28
+    envscore: 10
+  - buildingid: 30
+    resourcepath: building_420
+    name: "\u94C1\u5320\u94FA"
+    buildingtype: 4
+    description: "\u94C1\u5320\u94FA"
+    currencytype: 01000000
+    currencycount: 64000000
+    rowcount: 5
+    colcount: 7
+    cd: 8
+    unlock: 0
+    people: 0
+    level: 3
+    basescore: 10
+    envscore: -15

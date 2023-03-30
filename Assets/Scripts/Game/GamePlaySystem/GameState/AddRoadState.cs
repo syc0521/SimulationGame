@@ -96,7 +96,7 @@ namespace Game.GamePlaySystem.GameState
                         _startObj = Object.Instantiate(prefab, new Vector3(spawnPos[0], 0, spawnPos[1]), Quaternion.identity);
                         MaterialUtil.SetTransparency(_startObj);
                     }
-
+                    EventCenter.DispatchEvent(new RoadConstructEvent());
                     _lastPos = spawnPos;
                 }
             }
@@ -116,6 +116,7 @@ namespace Game.GamePlaySystem.GameState
                     obj.SetActive(false);
                 }
                 _roadRedoObjStack.Push(roadObj);
+                EventCenter.DispatchEvent(new RoadConstructEvent());
             }
             else if (_count == 0)
             {
@@ -123,6 +124,7 @@ namespace Game.GamePlaySystem.GameState
                 _tempStartObj = _startObj;
                 _startObj.SetActive(false);
                 _startObj = null;
+                EventCenter.DispatchEvent(new RoadConstructEvent());
             }
         }
 
@@ -134,6 +136,7 @@ namespace Game.GamePlaySystem.GameState
                 _startObj = _tempStartObj;
                 _startObj.SetActive(true);
                 _tempStartObj = null;
+                EventCenter.DispatchEvent(new RoadConstructEvent());
             }
             else if (_count >= 0 && _roadRedoStack.Count > 0)
             {
@@ -147,6 +150,7 @@ namespace Game.GamePlaySystem.GameState
                     obj.SetActive(true);
                 }
                 _roadObjStack.Push(roadObj);
+                EventCenter.DispatchEvent(new RoadConstructEvent());
             }
         }
 

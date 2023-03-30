@@ -11,7 +11,6 @@ namespace Game.Audio
     {
         private CriAtomSource _bgmPlayer;
         private const string Path = "Audio/PC";
-        private bool _firstPlay = true;
         public override void OnAwake()
         {
             base.OnAwake();
@@ -28,24 +27,20 @@ namespace Game.Audio
 
         public void PlayBGM(BGMType type)
         {
-            /*if (!_firstPlay && !_bgmPlayer.IsPaused())
-            {
-                _bgmPlayer.Pause(true);
-            }*/
-            
             _bgmPlayer.cueSheet = $"BGM_{type}";
             _bgmPlayer.cueName = $"BGM_{type}";
             
             _bgmPlayer.Play();
-            /*if (_firstPlay)
-            {
-                _bgmPlayer.Play();
-                _firstPlay = false;
-            }
-            else
-            {
-                _bgmPlayer.Pause(false);
-            }*/
+        }
+        
+        public void AdjustBGMVolume(float volume)
+        {
+            _bgmPlayer.volume = volume;
+        }
+
+        public void AdjustSoundVolume(float volume)
+        {
+            
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using Game.GamePlaySystem;
+﻿using Game.Audio;
+using Game.Core;
+using Game.GamePlaySystem;
 using Game.GamePlaySystem.Setting;
 using Game.UI.Decorator;
 
@@ -42,7 +44,7 @@ namespace Game.UI.Panel.Pause
 
         private void ResetSave()
         {
-            AlertDecorator.OpenAlertPanel("是否重置存档？", true, () =>
+            AlertDecorator.OpenAlertPanel("是否重置存档？(需重启游戏)", true, () =>
             {
                 SettingManager.Instance.ResetSaveData();
             });
@@ -52,6 +54,7 @@ namespace Game.UI.Panel.Pause
         {
             AlertDecorator.OpenAlertPanel("是否退出游戏？", true, () =>
             {
+                SettingManager.Instance.SetVolume(_bgmVolume, _soundVolume);
                 SettingManager.Instance.QuitGame();
             });
         }
@@ -64,11 +67,13 @@ namespace Game.UI.Panel.Pause
         private void SetBGMVolume(float f)
         {
             _bgmVolume = f;
+            Managers.Get<IAudioManager>().AdjustBGMVolume(f);
         }
 
         private void SetSoundVolume(float f)
         {
             _soundVolume = f;
+            Managers.Get<IAudioManager>().AdjustSoundVolume(f);
         }
 
         private void ReturnToGame()

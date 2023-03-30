@@ -7,4 +7,9 @@ namespace Game.Data.Event
     {
         public bool canConstruct;
     }
+
+    public struct RoadConstructEvent : IEvent
+    {
+        
+    }
 }

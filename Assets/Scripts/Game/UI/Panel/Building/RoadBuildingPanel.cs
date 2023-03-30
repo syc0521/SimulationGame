@@ -1,5 +1,8 @@
-﻿using Game.GamePlaySystem;
+﻿using Game.Core;
+using Game.Data.Event;
+using Game.GamePlaySystem;
 using Game.GamePlaySystem.Build;
+using Game.UI.Decorator;
 
 namespace Game.UI.Panel.Building
 {
@@ -10,9 +13,11 @@ namespace Game.UI.Panel.Building
         public override void OnCreated()
         {
             base.OnCreated();
-            nodes.close_btn.onClick.AddListener(OnQuitButtonClicked);
+            nodes.back_btn.onClick.AddListener(BackToSelect);
+            nodes.construct_btn.onClick.AddListener(ConstructRoad);
             nodes.undo_btn.onClick.AddListener(UndoRoad);
             nodes.redo_btn.onClick.AddListener(RedoRoad);
+            EventCenter.AddListener<RoadConstructEvent>(CheckButtonState);
         }
 
         public override void OnShown()
@@ -23,13 +28,32 @@ namespace Game.UI.Panel.Building
 
         public override void OnDestroyed()
         {
-            nodes.close_btn.onClick.RemoveListener(OnQuitButtonClicked);
+            nodes.back_btn.onClick.RemoveListener(BackToSelect);
+            nodes.construct_btn.onClick.RemoveListener(ConstructRoad);
             nodes.undo_btn.onClick.RemoveListener(UndoRoad);
             nodes.redo_btn.onClick.RemoveListener(RedoRoad);
+            EventCenter.RemoveListener<RoadConstructEvent>(CheckButtonState);
             base.OnDestroyed();
         }
+
+        private void BackToSelect()
+        {
+            if (BuildingManager.Instance.CanUndoRoad())
+            {
+                AlertDecorator.OpenAlertPanel("是否放弃建造道路？", true, () =>
+                {
+                    BuildingManager.Instance.DeleteTempBuilding();
+                    CloseSelf();
+                });
+            }
+            else
+            {
+                BuildingManager.Instance.DeleteTempBuilding();
+                CloseSelf();
+            }
+        }
         
-        private void OnQuitButtonClicked()
+        private void ConstructRoad()
         {
             BuildingManager.Instance.ConstructBuilding();
             CloseSelf();
@@ -44,5 +68,13 @@ namespace Game.UI.Panel.Building
         {
             BuildingManager.Instance.RedoRoad();
         }
+
+        private void CheckButtonState(RoadConstructEvent evt)
+        {
+            nodes.undo_btn.interactable = BuildingManager.Instance.CanUndoRoad();
+            nodes.redo_btn.interactable = BuildingManager.Instance.CanRedoRoad();
+            nodes.construct_btn.gameObject.SetActive(BuildingManager.Instance.CanUndoRoad());
+        }
+        
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using Game.Audio;
 using Game.Core;
 using Game.Data;
 using Game.Data.Common;
@@ -132,6 +133,7 @@ namespace Game.UI.Panel
 
         private void OpenBuildPanel()
         {
+            Managers.Get<IAudioManager>().PlaySFX(SFXType.Place);
             UIManager.Instance.OpenPanel<BuildingPanel>();
         }
 

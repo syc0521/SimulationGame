@@ -24,13 +24,20 @@ namespace Game.Audio
     
     public class AudioPool : CustomObjectPool<AudioPoolData>
     {
+        private const int MaxCount = 10;
         protected override void OnCreateItem(AudioPoolData poolObject)
         {
             var audioRoot = Managers.Get<IAudioManager>().AudioRoot;
             var audioObj = new GameObject();
             audioObj.transform.SetParent(audioRoot);
             var component = audioObj.AddComponent<CriAtomSource>();
+            component.SetPlaybackHandler(RecycleAudio);
             poolObject.audioSource = component;
+        }
+
+        protected override void OnRecycleItem(AudioPoolData poolObject)
+        {
+            poolObject.audioSource.gameObject.SetActive(false);
         }
 
         private CriAtomSource CreateAudioSource(string name)
@@ -40,6 +47,7 @@ namespace Game.Audio
             {
                 poolObject.audioSource.cueSheet = "SoundFX";
                 poolObject.audioSource.cueName = name;
+                poolObject.audioSource.volume = Managers.Get<IAudioManager>().SoundVolume;
                 return poolObject.audioSource;
             }
 
@@ -49,8 +57,14 @@ namespace Game.Audio
 
         public CriAtomSource GetAudioSource(string name)
         {
-            var poolObject = GetItem(item => item.audioSource.cueName == name && item.audioSource.IsPaused());
+            var poolObject = GetItem(item => item.audioSource.cueName == name && item.audioSource.status is CriAtomSourceBase.Status.PlayEnd);
             return poolObject == null ? CreateAudioSource(name) : poolObject.audioSource;
+        }
+
+        private void RecycleAudio(CriAtomSource audioSource)
+        {
+            var poolObject = GetItem(item => item.audioSource == audioSource);
+            RecycleItem(poolObject);
         }
     }
 }

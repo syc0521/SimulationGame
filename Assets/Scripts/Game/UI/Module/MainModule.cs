@@ -49,7 +49,7 @@ namespace Game.UI.Module
 
         private void PlayTitleBGM()
         {
-            Managers.Get<IAudioManager>().PlayBGM(BGMType.Title);
+            Managers.Get<IAudioManager>().PlayBGM(BGMType.Title, 0.8f);
         }
 
     }

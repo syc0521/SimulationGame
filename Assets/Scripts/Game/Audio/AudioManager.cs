@@ -13,16 +13,19 @@ namespace Game.Audio
     public class AudioManager : ManagerBase, IAudioManager
     {
         public Transform AudioRoot => _audioRoot;
+        public float SoundVolume => _soundVolume;
         private Transform _audioRoot;
         private CriAtomSource _bgmPlayer;
         private const string Path = "Audio/PC";
         private float _bgmVolume, _soundVolume;
-        private ObjectPool<GameObject> _audioPool;
+        private AudioPool _audioPool;
+        
         public override void OnAwake()
         {
             base.OnAwake();
+            _audioPool = new();
             _audioRoot = GameObject.Find("CRIWARE").transform;
-            EventCenter.AddListener<LoadDataEvent>(LoadVolume);
+            EventCenter.AddListener<LoadDataEvent>(InitializeAudio);
             _bgmPlayer = new GameObject("BGMPlayer").AddComponent<CriAtomSource>();
             _bgmPlayer.transform.SetParent(_audioRoot);
             LoadAudio();
@@ -30,7 +33,7 @@ namespace Game.Audio
 
         public override void OnDestroyed()
         {
-            EventCenter.RemoveListener<LoadDataEvent>(LoadVolume);
+            EventCenter.RemoveListener<LoadDataEvent>(InitializeAudio);
             base.OnDestroyed();
         }
 
@@ -49,10 +52,19 @@ namespace Game.Audio
             _bgmPlayer.volume = _bgmVolume;
             _bgmPlayer.Play();
         }
+        
+        public void PlayBGM(BGMType type, float volume)
+        {
+            _bgmPlayer.cueSheet = $"BGM_{type}";
+            _bgmPlayer.cueName = $"BGM_{type}";
+
+            _bgmPlayer.volume = volume;
+            _bgmPlayer.Play();
+        }
 
         public void PlaySFX(SFXType type)
         {
-            // todo 维护一个音频对象池
+            _audioPool.GetAudioSource(type.ToString()).Play();
         }
         
         public void AdjustBGMVolume(float volume)
@@ -66,7 +78,7 @@ namespace Game.Audio
             _soundVolume = volume;
         }
 
-        private void LoadVolume(LoadDataEvent evt)
+        private void InitializeAudio(LoadDataEvent evt)
         {
             SettingData settingData = new();
             Managers.Get<ISaveDataManager>().GetSettingData(ref settingData);

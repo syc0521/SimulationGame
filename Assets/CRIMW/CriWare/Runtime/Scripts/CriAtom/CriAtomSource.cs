@@ -60,6 +60,10 @@ public class CriAtomSource : CriAtomSourceBase
 		get {return this._cueSheet;}
 		set {this._cueSheet = value;}
 	}
+
+	private float _length;
+	private Action<CriAtomSource> _handler;
+	
 	#endregion
 
 	#region Functions
@@ -74,7 +78,26 @@ public class CriAtomSource : CriAtomSourceBase
 	 */
 	public override CriAtomExPlayback Play()
 	{
-		return this.Play(this.cueName);
+		var playBackData = Play(cueName);
+		CriAtom.GetCueSheet(cueSheet).acb.GetCueInfo(cueName, out var info);
+		_length = info.length;
+		
+		if (cueSheet.Equals("SoundFX"))
+		{
+			StartCoroutine(TickToEnd());
+		}
+		return playBackData;
+	}
+	
+	public void SetPlaybackHandler(Action<CriAtomSource> handler)
+	{
+		_handler = handler;
+	}
+
+	private IEnumerator TickToEnd()
+	{
+		yield return new WaitForSeconds(_length);
+		_handler?.Invoke(this);
 	}
 
 	protected override CriAtomExAcb GetAcb()

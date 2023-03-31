@@ -456,7 +456,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   acfFile: Audio/PC/SimGame.acf
-  cueSheets: []
+  cueSheets:
+  - name: SoundFX
+    acbFile: Audio/PC/SoundFX.acb
+    awbFile: Audio/PC/SoundFX.awb
+    loaderStatus: 0
   dspBusSetting: 
   dontDestroyOnLoad: 0
   dontRemoveExistsCueSheet: 0

@@ -10,7 +10,8 @@ namespace Game.Core
 
     public abstract class CustomObjectPool<T> : IObjectPool<T> where T : PoolObject, new()
     {
-        private List<T> pool = new List<T>();
+        private List<T> pool = new();
+        protected int ObjectCount => pool.Count;
 
         protected T CreateItem()
         {

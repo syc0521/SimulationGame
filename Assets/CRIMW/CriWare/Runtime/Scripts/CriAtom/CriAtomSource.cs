@@ -80,7 +80,7 @@ public class CriAtomSource : CriAtomSourceBase
 	{
 		var playBackData = Play(cueName);
 		CriAtom.GetCueSheet(cueSheet).acb.GetCueInfo(cueName, out var info);
-		_length = info.length;
+		_length = info.length / 10000.0f;
 		
 		if (cueSheet.Equals("SoundFX"))
 		{

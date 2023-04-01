@@ -63,22 +63,6 @@ namespace Game.LevelAndEntity.System
             buildingJob.Schedule();
             state.Dependency.Complete();
 
-            foreach (var item in produce)
-            {
-                var produceData = ConfigTable.Instance.GetBuildingProduceData(item[0]);
-                EventCenter.DispatchEvent(new ProduceEvent
-                {
-                    produceType = (ProduceType)produceData.Producetype,
-                    produceID = produceData.Produceid,
-                    produceCount = produceData.Produceamount[item[1] - 1],
-                    consumeID = produceData.Consumeid,
-                    consumeCount = produceData.Consumeid > 0 ? produceData.Consumeamount[item[1] - 1] : 0,
-                    buildingID = item[0],
-                    buildingLevel = item[1],
-                });
-            }
-            produce.Dispose();
-
             NativeList<int2> consumeItems = new(1, state.WorldUpdateAllocator);
             foreach (var item in buildings)
             {
@@ -101,8 +85,33 @@ namespace Game.LevelAndEntity.System
             float envRate = math.min(100, output[1] + 115) / 100.0f;
             float supplyRate = GetSupplyRate(consumeItems);
             float happiness = supplyRate * 0.35f + envRate * 0.4f + buildRate * 0.25f;
+            int people = (int)math.ceil(output[0] * happiness);
+            
+            foreach (var item in produce)
+            {
+                var produceData = ConfigTable.Instance.GetBuildingProduceData(item[0]);
+                var buildingData = ConfigTable.Instance.GetBuildingData(item[0]);
+                var produceCount = produceData.Produceamount[item[1] - 1];
+                if (buildingData.Buildingtype == 0) // 房子
+                {
+                    var housePeople = (int)math.ceil(buildingData.People * happiness);
+                    produceCount *= housePeople;
+                }
+                
+                EventCenter.DispatchEvent(new ProduceEvent
+                {
+                    produceType = (ProduceType)produceData.Producetype,
+                    produceID = produceData.Produceid,
+                    produceCount = produceCount,
+                    consumeID = produceData.Consumeid,
+                    consumeCount = produceData.Consumeid > 0 ? produceData.Consumeamount[item[1] - 1] : 0,
+                    buildingID = item[0],
+                    buildingLevel = item[1],
+                });
+            }
+            produce.Dispose();
 
-            config.ValueRW.people = (int)math.ceil(output[0] * happiness);
+            config.ValueRW.people = people;
             config.ValueRW.envRate = envRate;
             config.ValueRW.happiness = happiness;
             config.ValueRW.buildingRate = buildRate;

@@ -1,12 +1,8 @@
-using System;
 using CriWare;
 using Game.Core;
 using Game.Data;
 using Game.Data.Event;
-using Game.Data.Event.Audio;
 using UnityEngine;
-using UnityEngine.Pool;
-using Object = UnityEngine.Object;
 
 namespace Game.Audio
 {
@@ -64,7 +60,9 @@ namespace Game.Audio
 
         public void PlaySFX(SFXType type)
         {
-            _audioPool.GetAudioSource(type.ToString()).Play();
+            var source = _audioPool.GetAudioSource(type.ToString());
+            source.gameObject.SetActive(true);
+            source.Play();
         }
         
         public void AdjustBGMVolume(float volume)

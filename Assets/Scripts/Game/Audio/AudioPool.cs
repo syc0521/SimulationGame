@@ -2,6 +2,7 @@
 using CriWare;
 using Game.Core;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace Game.Audio
 {
@@ -38,6 +39,15 @@ namespace Game.Audio
         protected override void OnRecycleItem(AudioPoolData poolObject)
         {
             poolObject.audioSource.gameObject.SetActive(false);
+            if (ObjectCount >= MaxCount)
+            {
+                DestroyItem(poolObject);
+            }
+        }
+
+        protected override void OnDestroyItem(AudioPoolData poolObject)
+        {
+            Object.Destroy(poolObject.audioSource);
         }
 
         private CriAtomSource CreateAudioSource(string name)
@@ -48,6 +58,9 @@ namespace Game.Audio
                 poolObject.audioSource.cueSheet = "SoundFX";
                 poolObject.audioSource.cueName = name;
                 poolObject.audioSource.volume = Managers.Get<IAudioManager>().SoundVolume;
+                var gameObj = poolObject.audioSource.gameObject;
+                gameObj.SetActive(true);
+                gameObj.name = name;
                 return poolObject.audioSource;
             }
 
@@ -57,13 +70,13 @@ namespace Game.Audio
 
         public CriAtomSource GetAudioSource(string name)
         {
-            var poolObject = GetItem(item => item.audioSource.cueName == name && item.audioSource.status is CriAtomSourceBase.Status.PlayEnd);
+            var poolObject = GetItem(item => item.audioSource.cueName == name);
             return poolObject == null ? CreateAudioSource(name) : poolObject.audioSource;
         }
 
         private void RecycleAudio(CriAtomSource audioSource)
         {
-            var poolObject = GetItem(item => item.audioSource == audioSource);
+            var poolObject = GetItem(item => item.audioSource.cueName == audioSource.cueName);
             RecycleItem(poolObject);
         }
     }

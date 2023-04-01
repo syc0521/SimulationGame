@@ -56,10 +56,10 @@ namespace Game.Core
             if (poolObject == null) return;
             poolObject.reference--;
             OnRecycleItem(poolObject);
-            if (poolObject.reference <= 0)
+            /*if (poolObject.reference <= 0)
             {
                 DestroyItem(poolObject);
-            }
+            }*/
         }
 
         protected void DestroyItem(T poolObject)

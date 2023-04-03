@@ -22,5 +22,17 @@ namespace Game.Data.TableData
     string description;
     public string Description { get {return description; } set { description = value;} }
     
+    [SerializeField]
+    float preparetime;
+    public float Preparetime { get {return preparetime; } set { preparetime = value;} }
+    
+    [SerializeField]
+    float runningtime;
+    public float Runningtime { get {return runningtime; } set { runningtime = value;} }
+    
+    [SerializeField]
+    float finishtime;
+    public float Finishtime { get {return finishtime; } set { finishtime = value;} }
+    
 	}
 }

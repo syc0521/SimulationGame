@@ -30,6 +30,18 @@ MonoBehaviour:
     name: Description
     isEnable: 0
     isArray: 0
+  - type: 0
+    name: PrepareTime
+    isEnable: 0
+    isArray: 0
+  - type: 0
+    name: RunningTime
+    isEnable: 0
+    isArray: 0
+  - type: 0
+    name: FinishTime
+    isEnable: 0
+    isArray: 0
   excelFilePath: Assets/Configs/RawTable/LoadingStep.xlsx
   SheetNames:
   - LoadingStep

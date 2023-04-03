@@ -18,51 +18,22 @@ namespace Game.GamePlaySystem.Loading
         private IEnumerator Load()
         {
             //0.给玩家准备提示（假的）
-            SendLoadingEvent(0, LoadingStepState.Prepare);
-            yield return new WaitForSeconds(0.5f);
-            SendLoadingEvent(0, LoadingStepState.Finished);
-            yield return new WaitForSeconds(0.2f);
-            
+            yield return MonoApp.Instance.StartCoroutine(LoadModule(0, null));
+
             //1.加载玩家存档
-            SendLoadingEvent(1, LoadingStepState.Prepare);
-            Managers.Get<ISaveDataManager>().LoadData();
-            yield return new WaitForSeconds(0.5f);
-            SendLoadingEvent(1, LoadingStepState.Finished);
-            yield return new WaitForSeconds(0.3f);
+            yield return MonoApp.Instance.StartCoroutine(LoadModule(1, LoadData()));
 
             //2.加载建筑信息
-            SendLoadingEvent(2, LoadingStepState.Prepare);
-            BuildingManager.Instance.LoadBuildings();
-            yield return new WaitForSeconds(0.4f);
-            SendLoadingEvent(2, LoadingStepState.Running);
-            yield return new WaitForSeconds(0.3f);
-            SendLoadingEvent(2, LoadingStepState.Finished);
-            yield return new WaitForSeconds(0.3f);
-            
-            // todo 3.放置计算
-            SendLoadingEvent(3, LoadingStepState.Prepare);
-            yield return new WaitForSeconds(0.7f);
-            SendLoadingEvent(3, LoadingStepState.Finished);
-            yield return new WaitForSeconds(0.3f);
-            
+            yield return MonoApp.Instance.StartCoroutine(LoadModule(2, LoadBuildings()));
+
+            // 3.放置计算
+            yield return MonoApp.Instance.StartCoroutine(LoadModule(3, CalculateOfflineData()));
+
             //4.加载Scene
-            SendLoadingEvent(4, LoadingStepState.Prepare);
-            yield return new WaitForSeconds(0.3f);
-            var operation = SceneManager.LoadSceneAsync("Game", LoadSceneMode.Additive);
-            while (!operation.isDone)
-            {
-                SendLoadingEvent(4, LoadingStepState.Running);
-                yield return null;
-            }
-            yield return new WaitForSeconds(0.6f);
-            SendLoadingEvent(4, LoadingStepState.Finished);
-            yield return new WaitForSeconds(0.3f);
-            
+            yield return MonoApp.Instance.StartCoroutine(LoadModule(4, LoadScene()));
+
             //5.等1.5秒让场景加载完成
-            SendLoadingEvent(5, LoadingStepState.Running);
-            yield return new WaitForSeconds(0.8f);
-            SendLoadingEvent(5, LoadingStepState.Finished);
-            yield return new WaitForSeconds(0.7f);
+            yield return MonoApp.Instance.StartCoroutine(LoadModule(5, null));
 
             EventCenter.DispatchEvent(new LoadSceneFinishedEvent());
         }
@@ -75,6 +46,55 @@ namespace Game.GamePlaySystem.Loading
                 progress = progress,
                 text = ConfigTable.Instance.GetLoadingStepData(step).Description,
             });
+        }
+
+        private IEnumerator LoadModule(int step, IEnumerator action)
+        {
+            var loadingData = ConfigTable.Instance.GetLoadingStepData(step);
+            
+            SendLoadingEvent(step, LoadingStepState.Prepare);
+            yield return new WaitForSeconds(loadingData.Preparetime);
+            
+            SendLoadingEvent(step, LoadingStepState.Running);
+            if (action != null)
+            {
+                yield return MonoApp.Instance.StartCoroutine(action);
+            }
+            yield return new WaitForSeconds(loadingData.Runningtime);
+            
+            SendLoadingEvent(step, LoadingStepState.Finished);
+            yield return new WaitForSeconds(loadingData.Finishtime);
+            
+            yield return null;
+        }
+
+        private IEnumerator LoadData()
+        {
+            Managers.Get<ISaveDataManager>().LoadData();
+            yield return null;
+        }
+
+        private IEnumerator LoadBuildings()
+        {
+            BuildingManager.Instance.LoadBuildings();
+            yield return null;
+        }
+        
+        private IEnumerator CalculateOfflineData()
+        {
+            SystemDataManager.Instance.CalculateOfflineData();
+            yield return null;
+        }
+        
+        private IEnumerator LoadScene()
+        {
+            var operation = SceneManager.LoadSceneAsync("Game", LoadSceneMode.Additive);
+            while (!operation.isDone)
+            {
+                SendLoadingEvent(4, LoadingStepState.Running);
+                yield return null;
+            }
+            yield return null;
         }
     }
 }

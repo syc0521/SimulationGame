@@ -1,4 +1,5 @@
-﻿using Game.Core;
+﻿using System;
+using Game.Core;
 using Game.Data;
 using Game.Data.Achievement;
 using Game.Data.Common;
@@ -6,6 +7,7 @@ using Game.Data.Event;
 using Game.Data.Event.Backpack;
 using Game.GamePlaySystem.Achievement;
 using Game.GamePlaySystem.Backpack;
+using Game.GamePlaySystem.Build;
 using Game.GamePlaySystem.Currency;
 using Game.LevelAndEntity.System;
 using Unity.Entities;
@@ -80,6 +82,42 @@ namespace Game.GamePlaySystem
                 }
             }
             return default;
+        }
+
+        public void CalculateOfflineData()
+        {
+            // 处理放置生产：离线只能产生10%的收益
+            var userData = BuildingManager.Instance.GetAllBuildingData();
+            var lastLoginTime = Managers.Get<ISaveDataManager>().GetLastLoginTime();
+            var deltaTime = DateTime.Now - lastLoginTime;
+            var deltaMinute = deltaTime.Minutes;
+            foreach (var (_, data) in userData)
+            {
+                var staticId = data.type;
+                var level = data.level;
+                var buildingData = ConfigTable.Instance.GetBuildingData(staticId);
+                
+                if (buildingData.Cd > 0) // 可生产
+                {
+                    var produceData = ConfigTable.Instance.GetBuildingProduceData(staticId);
+                    var itemPerMin = Mathf.CeilToInt(produceData.Produceamount[level - 1] / buildingData.Cd * 60.0f * deltaMinute * 0.1f);
+                    int consumePerMin = 0;
+                    if (produceData.Consumeid > 0)
+                    {
+                        consumePerMin = Mathf.CeilToInt(produceData.Consumeamount[level - 1] / buildingData.Cd * 60.0f * deltaMinute * 0.1f);
+                    }
+                    EventCenter.DispatchEvent(new ProduceEvent
+                    {
+                        produceType = (ProduceType)produceData.Producetype,
+                        produceID = produceData.Produceid,
+                        produceCount = itemPerMin,
+                        consumeID = produceData.Consumeid,
+                        consumeCount = consumePerMin,
+                        buildingID = staticId,
+                        buildingLevel = level,
+                    });
+                }
+            }
         }
     }
 }

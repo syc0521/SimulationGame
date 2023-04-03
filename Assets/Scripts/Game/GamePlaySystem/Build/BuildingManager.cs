@@ -194,6 +194,8 @@ namespace Game.GamePlaySystem.Build
 
         public BuildingData GetBuildingData(uint buildingId) => _buildingDatas[buildingId];
 
+        public Dictionary<uint, BuildingData> GetAllBuildingData() => _buildingDatas;
+
         public float3 GetRotationOffset(int dir, int width, int height)
         {
             return dir switch

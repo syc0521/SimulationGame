@@ -23,6 +23,10 @@ MonoBehaviour:
     name: "\u77F3\u7816"
     type: 0
     content: "\u8FDB\u9636\u5EFA\u7B51\u6750\u6599"
+  - id: 2
+    name: "\u94C1"
+    type: 0
+    content: "\u94C1"
   - id: 10
     name: "\u7CAE\u98DF"
     type: 1
@@ -40,6 +44,10 @@ MonoBehaviour:
     name: "\u77F3\u7816"
     type: 0
     content: "\u8FDB\u9636\u5EFA\u7B51\u6750\u6599"
+  - id: 2
+    name: "\u94C1"
+    type: 0
+    content: "\u94C1"
   - id: 10
     name: "\u7CAE\u98DF"
     type: 1

@@ -61,28 +61,28 @@ MonoBehaviour:
     name: "\u4E2D\u578B\u623F\u5C4B1"
     producetype: 0
     produceid: 0
-    produceamount: 190000002d00000039000000
+    produceamount: 0d000000190000002d000000
     consumeid: -2
     consumeamount: 00000000
   - id: 7
     name: "\u5C0F\u578B\u623F\u5C4B"
     producetype: 0
     produceid: 0
-    produceamount: 140000002800000032000000
+    produceamount: 0a0000001400000019000000
     consumeid: -2
     consumeamount: 00000000
   - id: 8
     name: "\u5927\u578B\u623F\u5C4B"
     producetype: 0
     produceid: 0
-    produceamount: 280000003c00000050000000
+    produceamount: 140000002300000038000000
     consumeid: -2
     consumeamount: 00000000
   - id: 9
     name: "\u4E2D\u578B\u623F\u5C4B2"
     producetype: 0
     produceid: 0
-    produceamount: 14000000280000003c000000
+    produceamount: 0c0000001800000028000000
     consumeid: -2
     consumeamount: 00000000
   - id: 10
@@ -279,28 +279,28 @@ MonoBehaviour:
     name: "\u4E2D\u578B\u623F\u5C4B1"
     producetype: 0
     produceid: 0
-    produceamount: 190000002d00000039000000
+    produceamount: 0d000000190000002d000000
     consumeid: -2
     consumeamount: 00000000
   - id: 7
     name: "\u5C0F\u578B\u623F\u5C4B"
     producetype: 0
     produceid: 0
-    produceamount: 140000002800000032000000
+    produceamount: 0a0000001400000019000000
     consumeid: -2
     consumeamount: 00000000
   - id: 8
     name: "\u5927\u578B\u623F\u5C4B"
     producetype: 0
     produceid: 0
-    produceamount: 280000003c00000050000000
+    produceamount: 140000002300000038000000
     consumeid: -2
     consumeamount: 00000000
   - id: 9
     name: "\u4E2D\u578B\u623F\u5C4B2"
     producetype: 0
     produceid: 0
-    produceamount: 14000000280000003c000000
+    produceamount: 0c0000001800000028000000
     consumeid: -2
     consumeamount: 00000000
   - id: 10

@@ -12,6 +12,7 @@ namespace Game.Data
     public class SaveDataManager : ManagerBase, ISaveDataManager
     {
         private PlayerData _playerData;
+        private DateTime _lastLoginTime;
 
         public override void OnStart()
         {
@@ -36,6 +37,7 @@ namespace Game.Data
             {
                 var bytes = File.ReadAllBytes(GetPath());
                 _playerData = MessagePack.MessagePackSerializer.Deserialize<PlayerData>(bytes);
+                _lastLoginTime = _playerData.lastLoginTime;
             }
             catch (FileNotFoundException)
             {
@@ -76,7 +78,7 @@ namespace Game.Data
 
         public DateTime GetLastLoginTime()
         {
-            return _playerData.lastLoginTime;
+            return _lastLoginTime;
         }
 
         public void GetSettingData(ref SettingData data)

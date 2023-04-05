@@ -18,37 +18,73 @@ MonoBehaviour:
   - stepid: 0
     name: "\u51C6\u5907"
     description: "\u51C6\u5907"
+    preparetime: 0.5
+    runningtime: 0
+    finishtime: 0.2
   - stepid: 1
     name: "\u52A0\u8F7D\u73A9\u5BB6\u5B58\u6863"
     description: "\u52A0\u8F7D\u73A9\u5BB6\u5B58\u6863"
+    preparetime: 0.5
+    runningtime: 0
+    finishtime: 0.3
   - stepid: 2
     name: "\u52A0\u8F7D\u5EFA\u7B51\u4FE1\u606F"
     description: "\u52A0\u8F7D\u5EFA\u7B51"
+    preparetime: 0.4
+    runningtime: 0.3
+    finishtime: 0.3
   - stepid: 3
     name: "\u653E\u7F6E\u8BA1\u7B97"
     description: "\u8BA1\u7B97\u5EFA\u7B51\u4FE1\u606F"
+    preparetime: 0.7
+    runningtime: 0
+    finishtime: 0.3
   - stepid: 4
     name: "\u52A0\u8F7D\u573A\u666F"
     description: "\u52A0\u8F7D\u573A\u666F"
+    preparetime: 0.3
+    runningtime: 0.6
+    finishtime: 0.3
   - stepid: 5
     name: "\u7ED3\u675F"
     description: "\u6B63\u5728\u8FDB\u5165\u573A\u666F"
+    preparetime: 0.8
+    runningtime: 0
+    finishtime: 0.7
   dataList:
   - stepid: 0
     name: "\u51C6\u5907"
     description: "\u51C6\u5907"
+    preparetime: 0.5
+    runningtime: 0
+    finishtime: 0.2
   - stepid: 1
     name: "\u52A0\u8F7D\u73A9\u5BB6\u5B58\u6863"
     description: "\u52A0\u8F7D\u73A9\u5BB6\u5B58\u6863"
+    preparetime: 0.5
+    runningtime: 0
+    finishtime: 0.3
   - stepid: 2
     name: "\u52A0\u8F7D\u5EFA\u7B51\u4FE1\u606F"
     description: "\u52A0\u8F7D\u5EFA\u7B51"
+    preparetime: 0.4
+    runningtime: 0.3
+    finishtime: 0.3
   - stepid: 3
     name: "\u653E\u7F6E\u8BA1\u7B97"
     description: "\u8BA1\u7B97\u5EFA\u7B51\u4FE1\u606F"
+    preparetime: 0.7
+    runningtime: 0
+    finishtime: 0.3
   - stepid: 4
     name: "\u52A0\u8F7D\u573A\u666F"
     description: "\u52A0\u8F7D\u573A\u666F"
+    preparetime: 0.3
+    runningtime: 0.6
+    finishtime: 0.3
   - stepid: 5
     name: "\u7ED3\u675F"
     description: "\u6B63\u5728\u8FDB\u5165\u573A\u666F"
+    preparetime: 0.8
+    runningtime: 0
+    finishtime: 0.7

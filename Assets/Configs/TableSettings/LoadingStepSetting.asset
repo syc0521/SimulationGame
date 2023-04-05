@@ -30,15 +30,15 @@ MonoBehaviour:
     name: Description
     isEnable: 0
     isArray: 0
-  - type: 0
+  - type: 5
     name: PrepareTime
     isEnable: 0
     isArray: 0
-  - type: 0
+  - type: 5
     name: RunningTime
     isEnable: 0
     isArray: 0
-  - type: 0
+  - type: 5
     name: FinishTime
     isEnable: 0
     isArray: 0

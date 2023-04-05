@@ -11,6 +11,7 @@ using Unity.Burst;
 using Unity.Collections;
 using Unity.Entities;
 using Unity.Mathematics;
+using UnityEngine;
 
 namespace Game.LevelAndEntity.System
 {
@@ -102,7 +103,7 @@ namespace Game.LevelAndEntity.System
                 {
                     produceType = (ProduceType)produceData.Producetype,
                     produceID = produceData.Produceid,
-                    produceCount = produceCount,
+                    produceCount = Mathf.CeilToInt(produceCount * happiness),
                     consumeID = produceData.Consumeid,
                     consumeCount = produceData.Consumeid > 0 ? produceData.Consumeamount[item[1] - 1] : 0,
                     buildingID = item[0],

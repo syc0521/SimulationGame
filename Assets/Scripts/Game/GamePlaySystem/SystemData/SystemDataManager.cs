@@ -88,8 +88,8 @@ namespace Game.GamePlaySystem
         {
             // 处理放置生产：离线只能产生10%的收益
             var userData = BuildingManager.Instance.GetAllBuildingData();
-            var lastLoginTime = Managers.Get<ISaveDataManager>().GetLastLoginTime();
-            var deltaTime = DateTime.Now - lastLoginTime;
+            var lastLoginTime = Managers.Get<ISaveDataManager>().GetLastLoginTime().ToUniversalTime();
+            var deltaTime = DateTime.Now.ToUniversalTime() - lastLoginTime;
             var deltaMinute = deltaTime.Minutes;
             foreach (var (_, data) in userData)
             {
@@ -100,19 +100,19 @@ namespace Game.GamePlaySystem
                 if (buildingData.Cd > 0) // 可生产
                 {
                     var produceData = ConfigTable.Instance.GetBuildingProduceData(staticId);
-                    var itemPerMin = Mathf.CeilToInt(produceData.Produceamount[level - 1] / buildingData.Cd * 60.0f * deltaMinute * 0.1f);
-                    int consumePerMin = 0;
+                    var produceCount = Mathf.CeilToInt(produceData.Produceamount[level - 1] / buildingData.Cd * 60.0f * deltaMinute * 0.1f);
+                    int consumeCount = 0;
                     if (produceData.Consumeid > 0)
                     {
-                        consumePerMin = Mathf.CeilToInt(produceData.Consumeamount[level - 1] / buildingData.Cd * 60.0f * deltaMinute * 0.1f);
+                        consumeCount = Mathf.CeilToInt(produceData.Consumeamount[level - 1] / buildingData.Cd * 60.0f * deltaMinute * 0.1f);
                     }
                     EventCenter.DispatchEvent(new ProduceEvent
                     {
                         produceType = (ProduceType)produceData.Producetype,
                         produceID = produceData.Produceid,
-                        produceCount = itemPerMin,
+                        produceCount = produceCount,
                         consumeID = produceData.Consumeid,
-                        consumeCount = consumePerMin,
+                        consumeCount = consumeCount,
                         buildingID = staticId,
                         buildingLevel = level,
                     });

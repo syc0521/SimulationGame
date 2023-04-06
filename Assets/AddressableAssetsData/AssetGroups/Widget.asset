@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Widget
+  m_EditorClassIdentifier: 
+  m_GroupName: Widget
+  m_Data:
+    m_SerializedData: []
+  m_GUID: fe9cb8cd4a7c0ac42a0eb047f6cbd8b6
+  m_SerializeEntries:
+  - m_GUID: 377071675ceca38448bdfdaa5b0f3ab0
+    m_Address: Assets/Res/ui/widget
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - widget
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: ef7206bd29055104abb70d185833b540, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 17f425d4846e8cb43aa7a33cceb38075, type: 2}
+    - {fileID: 11400000, guid: db84a72dcd0a6b548be1286beffb0c73, type: 2}

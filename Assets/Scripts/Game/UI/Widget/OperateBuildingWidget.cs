@@ -1,4 +1,6 @@
-﻿using Game.Data.FeatureOpen;
+﻿using Game.Audio;
+using Game.Core;
+using Game.Data.FeatureOpen;
 using Game.GamePlaySystem;
 using Game.GamePlaySystem.Build;
 using Game.GamePlaySystem.FeatureOpen;
@@ -31,18 +33,21 @@ namespace Game.UI.Widget
         private void OnConfirmClicked()
         {
             BuildingManager.Instance.ConstructBuilding();
+            Managers.Get<IAudioManager>().PlaySFX(SFXType.Place);
             gameObject.SetActive(false);
         }
 
         private void OnCancelClicked()
         {
             BuildingManager.Instance.DeleteTempBuilding();
+            Managers.Get<IAudioManager>().PlaySFX(SFXType.Button);
             gameObject.SetActive(false);
         }
 
         private void OnRotateClicked()
         {
             BuildingManager.Instance.RotateBuilding();
+            Managers.Get<IAudioManager>().PlaySFX(SFXType.Button);
         }
 
         public void ShowConfirmButton(bool value)

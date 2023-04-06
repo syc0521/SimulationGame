@@ -13,7 +13,7 @@ namespace Game.Audio
         private Transform _audioRoot;
         private CriAtomSource _bgmPlayer;
         private const string Path = "Audio/PC";
-        private float _bgmVolume, _soundVolume;
+        private float _bgmVolume = 0.8f, _soundVolume = 0.8f;
         private AudioPool _audioPool;
         
         public override void OnAwake()
@@ -62,6 +62,7 @@ namespace Game.Audio
         {
             var source = _audioPool.GetAudioSource(type.ToString());
             source.gameObject.SetActive(true);
+            source.volume = _soundVolume;
             source.Play();
         }
         

@@ -133,7 +133,6 @@ namespace Game.UI.Panel
 
         private void OpenBuildPanel()
         {
-            Managers.Get<IAudioManager>().PlaySFX(SFXType.Place);
             UIManager.Instance.OpenPanel<BuildingPanel>();
         }
 
@@ -168,7 +167,7 @@ namespace Game.UI.Panel
             {
                 case StatusType.Happiness:
                     nodes.tip_w.SetTitle("满意度");
-                    nodes.tip_w.SetDescription("建造建筑，提高供给,可提高满意度");
+                    nodes.tip_w.SetDescription("建造建筑，提高供给，可提高满意度");
                     break;
                 case StatusType.People:
                     nodes.tip_w.SetTitle("人口");

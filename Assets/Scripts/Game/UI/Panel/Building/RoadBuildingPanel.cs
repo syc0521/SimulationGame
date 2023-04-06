@@ -1,4 +1,5 @@
-﻿using Game.Core;
+﻿using Game.Audio;
+using Game.Core;
 using Game.Data.Event;
 using Game.GamePlaySystem;
 using Game.GamePlaySystem.Build;
@@ -56,6 +57,7 @@ namespace Game.UI.Panel.Building
         private void ConstructRoad()
         {
             BuildingManager.Instance.ConstructBuilding();
+            Managers.Get<IAudioManager>().PlaySFX(SFXType.Place);
             CloseSelf();
         }
 

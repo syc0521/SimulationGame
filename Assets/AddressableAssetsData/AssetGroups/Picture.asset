@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Widget
+  m_Name: Picture
   m_EditorClassIdentifier: 
-  m_GroupName: Widget
+  m_GroupName: Picture
   m_Data:
     m_SerializedData: []
-  m_GUID: fe9cb8cd4a7c0ac42a0eb047f6cbd8b6
+  m_GUID: 4d5937a132f580e45822fd3f62820d78
   m_SerializeEntries:
-  - m_GUID: 377071675ceca38448bdfdaa5b0f3ab0
-    m_Address: widget
+  - m_GUID: 753441269bdd14142ac36e843005275c
+    m_Address: Assets/Res/ui/picture
     m_ReadOnly: 0
     m_SerializedLabels:
-    - widget
+    - sprite
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ef7206bd29055104abb70d185833b540, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 17f425d4846e8cb43aa7a33cceb38075, type: 2}
-    - {fileID: 11400000, guid: db84a72dcd0a6b548be1286beffb0c73, type: 2}
+    - {fileID: 11400000, guid: 09c3baec0cad84d4ebfdca6d176b238f, type: 2}
+    - {fileID: 11400000, guid: 7c1b7fda8646c964996e38df0d809297, type: 2}

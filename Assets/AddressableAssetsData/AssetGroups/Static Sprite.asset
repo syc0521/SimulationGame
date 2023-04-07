@@ -10,39 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Dynamic Sprite
+  m_Name: Static Sprite
   m_EditorClassIdentifier: 
-  m_GroupName: Dynamic Sprite
+  m_GroupName: Static Sprite
   m_Data:
     m_SerializedData: []
-  m_GUID: bb2b1a761562a4f4abd2e852a6bab27b
+  m_GUID: 79fcd8866ac0be346a0f48db0f983b88
   m_SerializeEntries:
-  - m_GUID: e4f8c12ea3d0969439a8d27fda227104
-    m_Address: task
+  - m_GUID: 29d45b21b08f0434a9fa08eb549bc2dd
+    m_Address: static
     m_ReadOnly: 0
     m_SerializedLabels:
     - sprite
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: a7f0df0da6ed92b4aa0b06d619e30e85
-    m_Address: building
+  - m_GUID: acbb20843bd26824ba39fa4970ee8c25
+    m_Address: static
     m_ReadOnly: 0
     m_SerializedLabels:
     - sprite
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 5b6a80aab83f6b94f90b93e9c931e439
-    m_Address: Assets/Res/ui/atlas/dynamic
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - sprite
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 9d8a24cbd7047a448998c2e16a45f767
-    m_Address: item
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - sprite
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: eea3e45b0af858b4b8e0ca951fc09781
-    m_Address: currency
+  - m_GUID: 1eaee135ce037439d925cee5e41ce026
+    m_Address: Assets/Res/ui/static/GUI.png
     m_ReadOnly: 0
     m_SerializedLabels:
     - sprite
@@ -51,5 +39,5 @@ MonoBehaviour:
   m_Settings: {fileID: 11400000, guid: ef7206bd29055104abb70d185833b540, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 8f17b3def6fe233489fa75f5237869e3, type: 2}
-    - {fileID: 11400000, guid: bc982249ff8792f4694f607ff61f180f, type: 2}
+    - {fileID: 11400000, guid: f6cad751b04a7f54cbbe8448ec21251b, type: 2}
+    - {fileID: 11400000, guid: df1d32a0baeea834d865fe16d8ed0500, type: 2}

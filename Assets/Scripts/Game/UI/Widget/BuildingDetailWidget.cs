@@ -10,7 +10,7 @@ namespace Game.UI.Widget
         public TextMeshProUGUI name_txt, desc_txt;
         public TextMeshProUGUI level_txt, produce_txt;
         public FrameComponent upgrade_frame;
-        public Button upgrade_btn;
+        public CustomButton upgrade_btn;
         private Action _handler;
 
         public override void OnCreated()

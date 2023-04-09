@@ -82,7 +82,7 @@ namespace Game.LevelAndEntity.System
                 }
             }
 
-            float buildRate = math.min(1, output[2] / 50.0f);
+            float buildRate = math.min(1, output[2] / ConfigTable.Instance.GetCityEvaluateScore(1));
             float envRate = math.min(100, output[1] + 115) / 100.0f;
             float supplyRate = GetSupplyRate(consumeItems);
             float happiness = supplyRate * 0.35f + envRate * 0.4f + buildRate * 0.25f;

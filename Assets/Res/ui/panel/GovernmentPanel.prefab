@@ -1519,8 +1519,8 @@ MonoBehaviour:
   cityEnv_txt: {fileID: 7509325680570217874}
   currentLevel_txt: {fileID: 4900259054718720364}
   nextLevel_txt: {fileID: 2846235495317450340}
-  achievement_btn: {fileID: 0}
-  upgrade_btn: {fileID: 0}
+  achievement_btn: {fileID: 1174413734569459825}
+  upgrade_btn: {fileID: 292891266246617782}
   upgrade_frame: {fileID: 7423762105993612508}
   back_btn: {fileID: 6275477914692120549}
   upgradeItem_list: {fileID: 4076142420145972325}
@@ -2392,6 +2392,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 785ed97e484bed547b31f47ece6041aa, type: 3}
+--- !u!114 &292891266246617782 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4899047283847564241, guid: 785ed97e484bed547b31f47ece6041aa,
+    type: 3}
+  m_PrefabInstance: {fileID: 5182629981504807271}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 941b4ecad6f34916a6b6b9b065c8f662, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &4279165759130681616 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8975322314931298423, guid: 785ed97e484bed547b31f47ece6041aa,
@@ -2526,6 +2538,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 785ed97e484bed547b31f47ece6041aa, type: 3}
+--- !u!114 &1174413734569459825 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4899047283847564241, guid: 785ed97e484bed547b31f47ece6041aa,
+    type: 3}
+  m_PrefabInstance: {fileID: 6030516292183247776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 941b4ecad6f34916a6b6b9b065c8f662, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &3404284306608368599 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8975322314931298423, guid: 785ed97e484bed547b31f47ece6041aa,

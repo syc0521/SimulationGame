@@ -286,14 +286,20 @@ namespace Game.GamePlaySystem.Build
 
         public bool TryGetStaticBuildingLevel(uint buildingId, out int level)
         {
-            if (_buildingDatas.ContainsKey(buildingId))
+            if (_buildingDatas.TryGetValue(buildingId, out var data))
             {
-                level = _buildingDatas[buildingId].level;
+                level = data.level;
                 return true;
             }
 
             level = 0;
             return false;
+        }
+        
+        public int GetGovernmentLevel()
+        {
+            TryGetStaticBuildingLevel(10001, out var level);
+            return level;
         }
     }
 }

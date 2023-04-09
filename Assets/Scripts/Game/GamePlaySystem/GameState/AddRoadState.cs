@@ -3,10 +3,13 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using Game.Core;
 using Game.Data;
+using Game.Data.Achievement;
 using Game.Data.Event;
+using Game.GamePlaySystem.Achievement;
 using Game.GamePlaySystem.Build;
 using Game.GamePlaySystem.BurstUtil;
 using Game.GamePlaySystem.StateMachine;
+using Game.GamePlaySystem.Task;
 using Game.Input;
 using Game.LevelAndEntity.Component;
 using Game.LevelAndEntity.System;
@@ -27,6 +30,7 @@ namespace Game.GamePlaySystem.GameState
         private Stack<GameObject[]> _roadRedoObjStack;
 
         private GameObject _startObj, _tempStartObj;
+        private const int StaticID = 4;
 
         public override void OnEnter(params object[] list)
         {
@@ -92,9 +96,11 @@ namespace Game.GamePlaySystem.GameState
                     }
                     else if (_count == 0)
                     {
-                        var prefab = ConfigTable.Instance.GetBuilding(4);
+                        CreateRoad(spawnPos, spawnPos);
+
+                        /*var prefab = ConfigTable.Instance.GetBuilding(4);
                         _startObj = Object.Instantiate(prefab, new Vector3(spawnPos[0], 0, spawnPos[1]), Quaternion.identity);
-                        MaterialUtil.SetTransparency(_startObj);
+                        MaterialUtil.SetTransparency(_startObj);*/
                     }
                     EventCenter.DispatchEvent(new RoadConstructEvent());
                     _lastPos = spawnPos;
@@ -174,12 +180,21 @@ namespace Game.GamePlaySystem.GameState
                 BuildingManager.Instance.SetGridData(pos, 0, 4, 4);
                 BuildingManager.Instance.Build(pos, 4, id);
             }
+            
+            TaskManager.Instance.TriggerTask(TaskType.AddBuilding, StaticID);
+            AchievementManager.Instance.TriggerAchievement(AchievementType.Building, -1, 1);
+            AchievementManager.Instance.TriggerAchievement(AchievementType.BuildingCategory, StaticID, 1);
+            AchievementManager.Instance.TriggerAchievement(AchievementType.BuildingID, StaticID, 1);
             Managers.Get<ISaveDataManager>().SaveData();
         }
 
         private void CreateRoad(int2 pos, int2 lastPos)
         {
             var road = GetSingleRoadData(pos, lastPos);
+            if (road.Length == 0)
+            {
+                road = new[] { pos };
+            }
 
             if (_roadRedoStack.Count > 0)
             {

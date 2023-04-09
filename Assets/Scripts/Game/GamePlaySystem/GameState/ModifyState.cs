@@ -93,8 +93,12 @@ namespace Game.GamePlaySystem.GameState
         private void UpdateScreenPos()
         {
             if (currentBuilding == null || Camera.main == null) return;
-            var screenPos = Camera.main.WorldToScreenPoint(spawnPos);
-            BuildingManager.Instance.ScreenPos = new Vector3(screenPos[0] - 100, screenPos[1] - 100, 0);
+            
+            var data = ConfigTable.Instance.GetBuildingData(currentBuildingType);
+            var buildingPos = spawnPos + new float3(data.Rowcount / 2.0f, 0, data.Colcount / 2.0f);
+            
+            var screenPos = Camera.main.WorldToScreenPoint(buildingPos);
+            BuildingManager.Instance.ScreenPos = new Vector3(screenPos[0] - 230, screenPos[1] - 150, 0);
         }
 
         /// <summary>

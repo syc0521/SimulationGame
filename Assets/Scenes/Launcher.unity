@@ -562,6 +562,8 @@ MonoBehaviour:
   loadingStep: {fileID: 11400000, guid: b0a3e5179399af34f85c73c7c4b525df, type: 2}
   buildingUpgrade: {fileID: 11400000, guid: d36353427aea9e14eacdbf0de9a22f33, type: 2}
   achievement: {fileID: 11400000, guid: 9734f1bc76817c740968f30f7242a3cf, type: 2}
+  cityEvaluate: {fileID: 11400000, guid: 0e68b7f00fd31f44d9a95b354f214c93, type: 2}
+  storeItem: {fileID: 11400000, guid: f4baba95ae10bf047998d359c33d8143, type: 2}
 --- !u!114 &1821025937
 MonoBehaviour:
   m_ObjectHideFlags: 0

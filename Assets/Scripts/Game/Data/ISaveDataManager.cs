@@ -11,6 +11,7 @@ namespace Game.Data
         void SaveData();
         void ResetSaveData();
         void GetBuildings(ref Dictionary<uint, BuildingData> buildings);
+        Dictionary<uint, BuildingData> GetBuildings();
         void GetPlayerTasks(ref Dictionary<int, PlayerTaskData> taskData);
         void GetBackpack(ref Dictionary<int, int> backpack);
         void GetCurrency(ref Dictionary<int, int> currency);

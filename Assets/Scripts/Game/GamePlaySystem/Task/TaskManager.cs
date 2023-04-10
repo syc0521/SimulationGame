@@ -143,27 +143,26 @@ namespace Game.GamePlaySystem.Task
 
         public TaskState GetTaskState(int id)
         {
-            return _playerTaskData.ContainsKey(id) ? _playerTaskData[id].state : TaskState.Error;
+            return _playerTaskData.TryGetValue(id, out var value) ? value.state : TaskState.Error;
         }
         
         private void ChangeTaskState(int id, TaskState state)
         {
-            if (_playerTaskData.ContainsKey(id))
+            if (_playerTaskData.TryGetValue(id, out var value))
             {
-                _playerTaskData[id].state = state;
+                value.state = state;
             }
         }
         
         private void SetTaskNum(int taskID, int itemID, int num)
         {
-            if (_playerTaskData.ContainsKey(taskID))
+            if (_playerTaskData.TryGetValue(taskID, out var value))
             {
                 var taskData = ConfigTable.Instance.GetTask(taskID);
                 var index = Array.IndexOf(taskData.Targetid, itemID);
 
                 if (index < 0) return;
-                _playerTaskData[taskID].currentNum[index] += num;
-                
+                value.currentNum[index] += num;
             }
         }
 

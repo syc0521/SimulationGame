@@ -1,4 +1,5 @@
-﻿using Game.LevelAndEntity.Component;
+﻿using Game.LevelAndEntity.Aspects;
+using Game.LevelAndEntity.Component;
 using Unity.Collections;
 using Unity.Entities;
 
@@ -48,14 +49,13 @@ namespace Game.LevelAndEntity.System
         public int GetStaticBuildingLevel(uint buildingId)
         {
             var level = 0;
-            Entities.WithAll<LevelObject>().WithAny<Building, StaticBuilding>().ForEach((Entity entity, ref LevelObject levelObject) =>
+            foreach (var building in SystemAPI.Query<StaticBuildingAspect>().WithAll<StaticBuilding>())
             {
-                if (levelObject.isStatic && levelObject.id == buildingId)
+                if (building.ID == buildingId)
                 {
-                    level = levelObject.level;
+                    level = building.Level;
                 }
-            }).Schedule();
-            beginSimECBSystem.AddJobHandleForProducer(Dependency);
+            }
             
             return level;
         }

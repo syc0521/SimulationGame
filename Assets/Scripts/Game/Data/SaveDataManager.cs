@@ -56,6 +56,11 @@ namespace Game.Data
             buildings = _playerData.buildings;
         }
         
+        public Dictionary<uint, BuildingData> GetBuildings()
+        {
+            return _playerData.buildings;
+        }
+        
         public void GetPlayerTasks(ref Dictionary<int, PlayerTaskData> taskData)
         {
             taskData = _playerData.tasks;

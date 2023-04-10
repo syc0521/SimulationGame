@@ -21,9 +21,9 @@ namespace Game.Core
         public static void RemoveListener<T>(in Action<T> action) where T : struct, IEvent
         {
             var type = typeof(T);
-            if (handlers.ContainsKey(type))
+            if (handlers.TryGetValue(type, out var handler))
             {
-                handlers[type].Remove(action);
+                handler.Remove(action);
             }
         }
 

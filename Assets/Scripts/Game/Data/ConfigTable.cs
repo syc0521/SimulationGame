@@ -27,6 +27,7 @@ namespace Game.Data
         [SerializeField] private BuildingUpgrade buildingUpgrade;
         [SerializeField] private TableData.Achievement achievement;
         [SerializeField] private CityEvaluate cityEvaluate;
+        [SerializeField] private StoreItem storeItem;
 
         public Transform GetUIRoot(int layerType) => uiRoot.GetChild(layerType);
 
@@ -69,5 +70,9 @@ namespace Game.Data
         public TableData.Achievement GetAchievement() => achievement;
         
         public float GetCityEvaluateScore(int level) => cityEvaluate.dataList[level - 1].Score;
+        
+        public StoreItemData GetStoreItemData(int storeItemID) => storeItem.dataList.Find(item => item.ID == storeItemID);
+        
+        public List<StoreItemData> GetStoreData() => storeItem.dataList;
     }
 }

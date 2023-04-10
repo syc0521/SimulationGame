@@ -82,7 +82,8 @@ namespace Game.LevelAndEntity.System
                 }
             }
 
-            float buildRate = math.min(1, output[2] / ConfigTable.Instance.GetCityEvaluateScore(1));
+            var govLevel = state.World.GetExistingSystemManaged<BuildingManagedSystem>().GetStaticBuildingLevel(10001);
+            float buildRate = math.min(1, output[2] / ConfigTable.Instance.GetCityEvaluateScore(govLevel));
             float envRate = math.min(100, output[1] + 115) / 100.0f;
             float supplyRate = GetSupplyRate(consumeItems);
             float happiness = supplyRate * 0.35f + envRate * 0.4f + buildRate * 0.25f;
@@ -124,12 +125,18 @@ namespace Game.LevelAndEntity.System
         
         private void InitializeStaticBuilding(ref SystemState state)
         {
+            var data = Managers.Get<ISaveDataManager>().GetBuildings();
             foreach (var building in SystemAPI.Query<StaticBuildingAspect>().WithAll<StaticBuilding>())
             {
+                if (data.TryGetValue(building.ID, out var value))
+                {
+                    building.Level = value.level;
+                }
+                
                 EventCenter.DispatchEvent(new StaticBuildingIntlEvent
                 {
                     pos = building.Position,
-                    id = building.ID,
+                    id = (int)building.ID - 10000,
                     row = building.Row,
                     col = building.Col,
                 });

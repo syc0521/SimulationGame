@@ -214,7 +214,7 @@ MonoBehaviour:
     resourcepath: building_305
     name: "\u5546\u94FA"
     buildingtype: 4
-    description: "\u5546\u94FA"
+    description: "\u8D2D\u4E70\u7269\u54C1"
     currencytype: 0b000000
     currencycount: c8000000
     rowcount: 6
@@ -439,7 +439,7 @@ MonoBehaviour:
     resourcepath: building_418
     name: "\u5C0F\u644A"
     buildingtype: 2
-    description: "\u5C0F\u644A"
+    description: "\u628A\u4E0D\u7528\u7684\u7269\u54C1\u6362\u6210\u94B1"
     currencytype: 01000000
     currencycount: 64000000
     rowcount: 2
@@ -680,7 +680,7 @@ MonoBehaviour:
     resourcepath: building_305
     name: "\u5546\u94FA"
     buildingtype: 4
-    description: "\u5546\u94FA"
+    description: "\u8D2D\u4E70\u7269\u54C1"
     currencytype: 0b000000
     currencycount: c8000000
     rowcount: 6
@@ -905,7 +905,7 @@ MonoBehaviour:
     resourcepath: building_418
     name: "\u5C0F\u644A"
     buildingtype: 2
-    description: "\u5C0F\u644A"
+    description: "\u628A\u4E0D\u7528\u7684\u7269\u54C1\u6362\u6210\u94B1"
     currencytype: 01000000
     currencycount: 64000000
     rowcount: 2

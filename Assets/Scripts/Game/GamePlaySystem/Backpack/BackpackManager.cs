@@ -44,10 +44,18 @@ namespace Game.GamePlaySystem.Backpack
             AchievementManager.Instance.TriggerAchievement(AchievementType.Backpack, id, count);
             TaskManager.Instance.TriggerTask(TaskType.GetBagItem, id, count);
         }
+        
+        public void AddBackpackCount(int[] id, int[] count)
+        {
+            for (int i = 0; i < id.Length; i++)
+            {
+                AddBackpackCount(id[i], count[i]);
+            }
+        }
 
         public int GetBackpackCount(int id)
         {
-            return backpack.ContainsKey(id) ? backpack[id] : 0;
+            return backpack.TryGetValue(id, out var value) ? value : 0;
         }
 
         public bool ConsumeBackpack(int id, int count)

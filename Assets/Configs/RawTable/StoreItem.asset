@@ -1,0 +1,324 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 051abd58ac036f244b3faf86d24e3509, type: 3}
+  m_Name: StoreItem
+  m_EditorClassIdentifier: 
+  SheetName: Assets/Configs/RawTable/Store.xlsx
+  WorksheetName: StoreItem
+  dataArray:
+  - id: 1000
+    storeid: 1
+    itemtype: 1
+    itemid: 18
+    count: 1
+    consumeid: 00000000
+    consumecount: f4010000
+    currencyid: 00000000
+    currencycount: dc050000
+  - id: 1001
+    storeid: 1
+    itemtype: 1
+    itemid: 19
+    count: 1
+    consumeid: 00000000
+    consumecount: f4010000
+    currencyid: 00000000
+    currencycount: dc050000
+  - id: 1002
+    storeid: 1
+    itemtype: 1
+    itemid: 20
+    count: 1
+    consumeid: 00000000
+    consumecount: f4010000
+    currencyid: 00000000
+    currencycount: dc050000
+  - id: 1003
+    storeid: 1
+    itemtype: 1
+    itemid: 21
+    count: 1
+    consumeid: 00000000
+    consumecount: f4010000
+    currencyid: 00000000
+    currencycount: dc050000
+  - id: 1004
+    storeid: 1
+    itemtype: 1
+    itemid: 22
+    count: 1
+    consumeid: 00000000
+    consumecount: f4010000
+    currencyid: 00000000
+    currencycount: dc050000
+  - id: 1005
+    storeid: 1
+    itemtype: 1
+    itemid: 23
+    count: 1
+    consumeid: 00000000
+    consumecount: f4010000
+    currencyid: 00000000
+    currencycount: dc050000
+  - id: 1006
+    storeid: 1
+    itemtype: 1
+    itemid: 29
+    count: 1
+    consumeid: 0000000001000000
+    consumecount: d007000040060000
+    currencyid: ffffffff
+    currencycount: ffffffff
+  - id: 2001
+    storeid: 2
+    itemtype: 0
+    itemid: 0
+    count: 50
+    consumeid: ffffffff
+    consumecount: ffffffff
+    currencyid: 00000000
+    currencycount: f4010000
+  - id: 2002
+    storeid: 2
+    itemtype: 0
+    itemid: 1
+    count: 50
+    consumeid: ffffffff
+    consumecount: ffffffff
+    currencyid: 00000000
+    currencycount: f4010000
+  - id: 2003
+    storeid: 2
+    itemtype: 0
+    itemid: 2
+    count: 50
+    consumeid: ffffffff
+    consumecount: ffffffff
+    currencyid: 00000000
+    currencycount: f4010000
+  - id: 2004
+    storeid: 2
+    itemtype: 0
+    itemid: 10
+    count: 50
+    consumeid: ffffffff
+    consumecount: ffffffff
+    currencyid: 00000000
+    currencycount: f4010000
+  - id: 2005
+    storeid: 2
+    itemtype: 0
+    itemid: 11
+    count: 50
+    consumeid: ffffffff
+    consumecount: ffffffff
+    currencyid: 00000000
+    currencycount: f4010000
+  - id: 2006
+    storeid: 2
+    itemtype: 0
+    itemid: 0
+    count: 100
+    consumeid: ffffffff
+    consumecount: ffffffff
+    currencyid: 00000000
+    currencycount: e8030000
+  - id: 2007
+    storeid: 2
+    itemtype: 0
+    itemid: 1
+    count: 100
+    consumeid: ffffffff
+    consumecount: ffffffff
+    currencyid: 00000000
+    currencycount: e8030000
+  - id: 2008
+    storeid: 2
+    itemtype: 0
+    itemid: 2
+    count: 100
+    consumeid: ffffffff
+    consumecount: ffffffff
+    currencyid: 00000000
+    currencycount: e8030000
+  - id: 2009
+    storeid: 2
+    itemtype: 0
+    itemid: 10
+    count: 100
+    consumeid: ffffffff
+    consumecount: ffffffff
+    currencyid: 00000000
+    currencycount: e8030000
+  - id: 2010
+    storeid: 2
+    itemtype: 0
+    itemid: 11
+    count: 100
+    consumeid: ffffffff
+    consumecount: ffffffff
+    currencyid: 00000000
+    currencycount: e8030000
+  dataList:
+  - id: 1000
+    storeid: 1
+    itemtype: 1
+    itemid: 18
+    count: 1
+    consumeid: 00000000
+    consumecount: f4010000
+    currencyid: 00000000
+    currencycount: dc050000
+  - id: 1001
+    storeid: 1
+    itemtype: 1
+    itemid: 19
+    count: 1
+    consumeid: 00000000
+    consumecount: f4010000
+    currencyid: 00000000
+    currencycount: dc050000
+  - id: 1002
+    storeid: 1
+    itemtype: 1
+    itemid: 20
+    count: 1
+    consumeid: 00000000
+    consumecount: f4010000
+    currencyid: 00000000
+    currencycount: dc050000
+  - id: 1003
+    storeid: 1
+    itemtype: 1
+    itemid: 21
+    count: 1
+    consumeid: 00000000
+    consumecount: f4010000
+    currencyid: 00000000
+    currencycount: dc050000
+  - id: 1004
+    storeid: 1
+    itemtype: 1
+    itemid: 22
+    count: 1
+    consumeid: 00000000
+    consumecount: f4010000
+    currencyid: 00000000
+    currencycount: dc050000
+  - id: 1005
+    storeid: 1
+    itemtype: 1
+    itemid: 23
+    count: 1
+    consumeid: 00000000
+    consumecount: f4010000
+    currencyid: 00000000
+    currencycount: dc050000
+  - id: 1006
+    storeid: 1
+    itemtype: 1
+    itemid: 29
+    count: 1
+    consumeid: 0000000001000000
+    consumecount: d007000040060000
+    currencyid: ffffffff
+    currencycount: ffffffff
+  - id: 2001
+    storeid: 2
+    itemtype: 0
+    itemid: 0
+    count: 50
+    consumeid: ffffffff
+    consumecount: ffffffff
+    currencyid: 00000000
+    currencycount: f4010000
+  - id: 2002
+    storeid: 2
+    itemtype: 0
+    itemid: 1
+    count: 50
+    consumeid: ffffffff
+    consumecount: ffffffff
+    currencyid: 00000000
+    currencycount: f4010000
+  - id: 2003
+    storeid: 2
+    itemtype: 0
+    itemid: 2
+    count: 50
+    consumeid: ffffffff
+    consumecount: ffffffff
+    currencyid: 00000000
+    currencycount: f4010000
+  - id: 2004
+    storeid: 2
+    itemtype: 0
+    itemid: 10
+    count: 50
+    consumeid: ffffffff
+    consumecount: ffffffff
+    currencyid: 00000000
+    currencycount: f4010000
+  - id: 2005
+    storeid: 2
+    itemtype: 0
+    itemid: 11
+    count: 50
+    consumeid: ffffffff
+    consumecount: ffffffff
+    currencyid: 00000000
+    currencycount: f4010000
+  - id: 2006
+    storeid: 2
+    itemtype: 0
+    itemid: 0
+    count: 100
+    consumeid: ffffffff
+    consumecount: ffffffff
+    currencyid: 00000000
+    currencycount: e8030000
+  - id: 2007
+    storeid: 2
+    itemtype: 0
+    itemid: 1
+    count: 100
+    consumeid: ffffffff
+    consumecount: ffffffff
+    currencyid: 00000000
+    currencycount: e8030000
+  - id: 2008
+    storeid: 2
+    itemtype: 0
+    itemid: 2
+    count: 100
+    consumeid: ffffffff
+    consumecount: ffffffff
+    currencyid: 00000000
+    currencycount: e8030000
+  - id: 2009
+    storeid: 2
+    itemtype: 0
+    itemid: 10
+    count: 100
+    consumeid: ffffffff
+    consumecount: ffffffff
+    currencyid: 00000000
+    currencycount: e8030000
+  - id: 2010
+    storeid: 2
+    itemtype: 0
+    itemid: 11
+    count: 100
+    consumeid: ffffffff
+    consumecount: ffffffff
+    currencyid: 00000000
+    currencycount: e8030000

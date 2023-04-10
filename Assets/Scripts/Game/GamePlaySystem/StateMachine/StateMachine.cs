@@ -33,10 +33,7 @@ namespace Game.GamePlaySystem.StateMachine
         
         private void Register(IState state, Type type)
         {
-            if (!stateDic.ContainsKey(type))
-            {
-                stateDic[type] = state;
-            }
+            stateDic.TryAdd(type, state);
         }
 
         public void ChangeState<T>(params object[] list) where T : IState

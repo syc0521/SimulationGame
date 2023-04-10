@@ -14,5 +14,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SheetName: Assets/Configs/RawTable/BuildingTable.xlsx
   WorksheetName: CityEvaluate
-  dataArray: []
-  dataList: []
+  dataArray:
+  - level: 1
+    score: 120
+  - level: 2
+    score: 300
+  - level: 3
+    score: 600
+  - level: 4
+    score: 1000
+  - level: 5
+    score: 1500
+  dataList:
+  - level: 1
+    score: 120
+  - level: 2
+    score: 300
+  - level: 3
+    score: 600
+  - level: 4
+    score: 1000
+  - level: 5
+    score: 1500

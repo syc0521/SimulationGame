@@ -78,6 +78,10 @@ MonoBehaviour:
     name: EnvScore
     isEnable: 0
     isArray: 0
+  - type: 1
+    name: Story
+    isEnable: 0
+    isArray: 0
   excelFilePath: Assets/Configs/RawTable/BuildingTable.xlsx
   SheetNames:
   - Building

@@ -17,6 +17,7 @@ namespace Game.LevelAndEntity.Authoring
                 {
                     id = (uint)authoring.id + 10000,
                     isStatic = true,
+                    level = 1,
                 });
                 AddComponent(new StaticBuilding
                 {

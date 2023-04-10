@@ -30,6 +30,7 @@ MonoBehaviour:
     level: 1
     basescore: 50
     envscore: 20
+    story: "\u5728\u98CE\u666F\u79C0\u7F8E\u4E4B\u5730\uFF0C\u5B9D\u5854\u5177\u6709\u4E0D\u53EF\u66FF\u4EE3\u7684\u5F15\u9886\u4F5C\u7528"
   - buildingid: 1
     resourcepath: building_201
     name: "\u9662\u5B50"
@@ -45,6 +46,7 @@ MonoBehaviour:
     level: 5
     basescore: 0
     envscore: 0
+    story: "\u5B8B\u4EE3\u519C\u6751\u767E\u59D3\u7684\u6BD4\u8F83\u6734\u5B9E,\u591A\u4E3A\u4F4E\u77EE\u7684\u5C4B\u548C\u74E6\u623F,\u6784\u6210\u4E00\u7EC4\u4F4F\u5B85"
   - buildingid: 2
     resourcepath: building_301
     name: "\u519C\u7530"
@@ -60,6 +62,7 @@ MonoBehaviour:
     level: 3
     basescore: 8
     envscore: -2
+    story: "\u751F\u4EA7\u519C\u4F5C\u7269"
   - buildingid: 3
     resourcepath: building_401
     name: "\u9A6C\u8F66"
@@ -75,6 +78,7 @@ MonoBehaviour:
     level: 1
     basescore: 6
     envscore: 3
+    story: "\u5B8B\u4EE3\u9A6C\u8F66\u591A\u4E3A\u5E73\u6C11\u767E\u59D3\u6240\u4F7F\u7528\uFF0C\u4F5C\u4E3A\u957F\u9014\u4EA4\u901A\u5DE5\u5177"
   - buildingid: 4
     resourcepath: building_402
     name: "\u9053\u8DEF"
@@ -90,6 +94,7 @@ MonoBehaviour:
     level: 1
     basescore: 0
     envscore: 0
+    story: "\u5B8B\u4EE3\u9053\u8DEF\u5341\u5206\u4FBF\u5229\uFF0C\u4EE5\u77F3\u8DEF\u4E3A\u4E3B\uFF0C\u4F9B\u884C\u4EBA\u548C\u8F66\u8F86\u901A\u884C"
   - buildingid: 5
     resourcepath: building_403
     name: "\u6865"
@@ -105,6 +110,7 @@ MonoBehaviour:
     level: 1
     basescore: 35
     envscore: 7
+    story: "\u5B8B\u4EE3\u6865\u6881\u6750\u8D28\u591A\u4E3A\u7816\u3001\u6728\uFF0C\u9020\u578B\u7D20\u7B80\u53E4\u96C5"
   - buildingid: 6
     resourcepath: building_202
     name: "\u4E2D\u578B\u623F\u5C4B1"
@@ -120,6 +126,7 @@ MonoBehaviour:
     level: 3
     basescore: 22
     envscore: 2
+    story: "\u5B8B\u4EE3\u519C\u6751\u767E\u59D3\u7684\u6BD4\u8F83\u6734\u5B9E,\u591A\u4E3A\u4F4E\u77EE\u7684\u5C4B\u548C\u74E6\u623F,\u6784\u6210\u4E00\u7EC4\u4F4F\u5B85"
   - buildingid: 7
     resourcepath: building_203
     name: "\u5C0F\u578B\u623F\u5C4B"
@@ -135,6 +142,7 @@ MonoBehaviour:
     level: 3
     basescore: 10
     envscore: 0
+    story: "\u5B8B\u4EE3\u519C\u6751\u767E\u59D3\u7684\u6BD4\u8F83\u6734\u5B9E,\u591A\u4E3A\u4F4E\u77EE\u7684\u5C4B\u548C\u74E6\u623F,\u6784\u6210\u4E00\u7EC4\u4F4F\u5B85"
   - buildingid: 8
     resourcepath: building_204
     name: "\u5927\u578B\u623F\u5C4B"
@@ -150,6 +158,7 @@ MonoBehaviour:
     level: 3
     basescore: 30
     envscore: 3
+    story: "\u5B8B\u4EE3\u519C\u6751\u767E\u59D3\u7684\u6BD4\u8F83\u6734\u5B9E,\u591A\u4E3A\u4F4E\u77EE\u7684\u5C4B\u548C\u74E6\u623F,\u6784\u6210\u4E00\u7EC4\u4F4F\u5B85"
   - buildingid: 9
     resourcepath: building_205
     name: "\u4E2D\u578B\u623F\u5C4B2"
@@ -165,6 +174,7 @@ MonoBehaviour:
     level: 3
     basescore: 25
     envscore: 2
+    story: "\u5B8B\u4EE3\u519C\u6751\u767E\u59D3\u7684\u6BD4\u8F83\u6734\u5B9E,\u591A\u4E3A\u4F4E\u77EE\u7684\u5C4B\u548C\u74E6\u623F,\u6784\u6210\u4E00\u7EC4\u4F4F\u5B85"
   - buildingid: 10
     resourcepath: building_302
     name: "\u91C7\u77F3\u573A"
@@ -180,6 +190,7 @@ MonoBehaviour:
     level: 3
     basescore: 9
     envscore: -9
+    story: "\u751F\u4EA7\u77F3\u6750"
   - buildingid: 11
     resourcepath: building_303
     name: "\u6797\u573A"
@@ -195,6 +206,7 @@ MonoBehaviour:
     level: 3
     basescore: 7
     envscore: -6
+    story: "\u751F\u4EA7\u6728\u6750"
   - buildingid: 12
     resourcepath: building_304
     name: "\u7816\u5382"
@@ -210,6 +222,7 @@ MonoBehaviour:
     level: 3
     basescore: 10
     envscore: -12
+    story: "\u751F\u4EA7\u7816\u5757"
   - buildingid: 13
     resourcepath: building_305
     name: "\u5546\u94FA"
@@ -225,6 +238,7 @@ MonoBehaviour:
     level: 1
     basescore: 0
     envscore: 0
+    story: "\u751F\u6D3B\u7528\u54C1\uFF0C\u5947\u73CD\u5F02\u5B9D\uFF0C\u5E94\u6709\u5C3D\u6709"
   - buildingid: 14
     resourcepath: building_404
     name: "\u7BF1\u7B06"
@@ -240,6 +254,7 @@ MonoBehaviour:
     level: 1
     basescore: 1
     envscore: 0
+    story: "\u7BF1\u7B06\u53EF\u4EE5\u4FDD\u62A4\u623F\u5C4B\u5BB6\u5BA4"
   - buildingid: 15
     resourcepath: building_405
     name: "\u4E951"
@@ -255,6 +270,7 @@ MonoBehaviour:
     level: 1
     basescore: 30
     envscore: 0
+    story: "\u82CF\u8F7C\u758F\u6D5A\u516D\u4E95\uFF0C\u4F7F\u5F97\u897F\u6E56\u7518\u6C34\uFF0C\u6B86\u904D\u4E00\u57CE"
   - buildingid: 16
     resourcepath: building_406
     name: "\u4E952"
@@ -270,6 +286,7 @@ MonoBehaviour:
     level: 1
     basescore: 30
     envscore: 0
+    story: "\u82CF\u8F7C\u758F\u6D5A\u516D\u4E95\uFF0C\u4F7F\u5F97\u897F\u6E56\u7518\u6C34\uFF0C\u6B86\u904D\u4E00\u57CE"
   - buildingid: 17
     resourcepath: building_407
     name: "\u4E953"
@@ -285,6 +302,7 @@ MonoBehaviour:
     level: 1
     basescore: 30
     envscore: 0
+    story: "\u82CF\u8F7C\u758F\u6D5A\u516D\u4E95\uFF0C\u4F7F\u5F97\u897F\u6E56\u7518\u6C34\uFF0C\u6B86\u904D\u4E00\u57CE"
   - buildingid: 18
     resourcepath: building_408
     name: "\u68111"
@@ -300,6 +318,7 @@ MonoBehaviour:
     level: 1
     basescore: 5
     envscore: 6
+    story: "\u6811\u6728\u53EF\u7528\u6765\u88C5\u70B9\u57CE\u5E02\uFF0C\u6E05\u6D01\u7A7A\u6C14"
   - buildingid: 19
     resourcepath: building_409
     name: "\u68112"
@@ -315,6 +334,7 @@ MonoBehaviour:
     level: 1
     basescore: 5
     envscore: 6
+    story: "\u6811\u6728\u53EF\u7528\u6765\u88C5\u70B9\u57CE\u5E02\uFF0C\u6E05\u6D01\u7A7A\u6C14"
   - buildingid: 20
     resourcepath: building_410
     name: "\u68113"
@@ -330,6 +350,7 @@ MonoBehaviour:
     level: 1
     basescore: 5
     envscore: 6
+    story: "\u6811\u6728\u53EF\u7528\u6765\u88C5\u70B9\u57CE\u5E02\uFF0C\u6E05\u6D01\u7A7A\u6C14"
   - buildingid: 21
     resourcepath: building_411
     name: "\u68114"
@@ -345,6 +366,7 @@ MonoBehaviour:
     level: 1
     basescore: 5
     envscore: 6
+    story: "\u6811\u6728\u53EF\u7528\u6765\u88C5\u70B9\u57CE\u5E02\uFF0C\u6E05\u6D01\u7A7A\u6C14"
   - buildingid: 22
     resourcepath: building_412
     name: "\u68115"
@@ -360,6 +382,7 @@ MonoBehaviour:
     level: 1
     basescore: 5
     envscore: 6
+    story: "\u6811\u6728\u53EF\u7528\u6765\u88C5\u70B9\u57CE\u5E02\uFF0C\u6E05\u6D01\u7A7A\u6C14"
   - buildingid: 23
     resourcepath: building_413
     name: "\u68116"
@@ -375,6 +398,7 @@ MonoBehaviour:
     level: 1
     basescore: 5
     envscore: 6
+    story: "\u6811\u6728\u53EF\u7528\u6765\u88C5\u70B9\u57CE\u5E02\uFF0C\u6E05\u6D01\u7A7A\u6C14"
   - buildingid: 24
     resourcepath: building_414
     name: "\u4EAD\u5B50"
@@ -390,6 +414,7 @@ MonoBehaviour:
     level: 1
     basescore: 20
     envscore: 10
+    story: "\u5B8B\u4EE3\u4EAD\u69AD\u662F\u5C71\u5DDD\u7075\u6C14\u52A8\u8361\u5410\u7EB3\u7684\u4EA4\u70B9\u548C\u7CBE\u795E\u805A\u79EF\u7684\u5904\u6240"
   - buildingid: 25
     resourcepath: building_415
     name: "\u724C\u574A"
@@ -405,6 +430,7 @@ MonoBehaviour:
     level: 1
     basescore: 25
     envscore: 10
+    story: "\u724C\u574A\u662D\u793A\u5BB6\u65CF\u5148\u4EBA\u7684\u9AD8\u5C1A\u7F8E\u5FB7\u548C\u4E30\u529F\u4F1F\u7EE9\uFF0C\u517C\u6709\u796D\u7956\u7684\u529F\u80FD"
   - buildingid: 26
     resourcepath: building_416
     name: "\u533B\u9662"
@@ -420,6 +446,7 @@ MonoBehaviour:
     level: 1
     basescore: 30
     envscore: 10
+    story: "\u6536\u5BB9\u75C5\u4EBA\uFF0C\u8FDB\u884C\u533B\u7597\u6551\u52A9"
   - buildingid: 27
     resourcepath: building_417
     name: "\u4E66\u9662"
@@ -435,6 +462,7 @@ MonoBehaviour:
     level: 1
     basescore: 35
     envscore: 10
+    story: "\u5B8B\u4EE3\u4E66\u9662\u662F\u4E2D\u56FD\u53E4\u4EE3\u7684\u76F8\u5BF9\u72EC\u7ACB\u4E8E\u5B98\u5B66\u4E4B\u5916\u7684\u6559\u80B2\u673A\u6784"
   - buildingid: 28
     resourcepath: building_418
     name: "\u5C0F\u644A"
@@ -450,6 +478,7 @@ MonoBehaviour:
     level: 3
     basescore: 15
     envscore: 10
+    story: "\u5B8B\u4EE3\u201C\u5730\u644A\u7ECF\u6D4E\u201D\u7A7A\u524D\u7E41\u76DB\uFF0C\u53EF\u4F5C\u4E3A\u57CE\u5E02\u6587\u5316\u7684\u6807\u5FD7\u6027\u7279\u70B9"
   - buildingid: 29
     resourcepath: building_419
     name: "\u9152\u697C"
@@ -465,6 +494,7 @@ MonoBehaviour:
     level: 1
     basescore: 28
     envscore: 10
+    story: "\u63D0\u4F9B\u9910\u98DF\u548C\u7F8E\u9152"
   - buildingid: 30
     resourcepath: building_420
     name: "\u94C1\u5320\u94FA"
@@ -480,6 +510,7 @@ MonoBehaviour:
     level: 3
     basescore: 10
     envscore: -15
+    story: "\u751F\u4EA7\u5404\u7C7B\u94C1\u5668,\u6EE1\u8DB3\u8001\u767E\u59D3\u7684\u9700\u6C42"
   dataList:
   - buildingid: 0
     resourcepath: building_101
@@ -496,6 +527,7 @@ MonoBehaviour:
     level: 1
     basescore: 50
     envscore: 20
+    story: "\u5728\u98CE\u666F\u79C0\u7F8E\u4E4B\u5730\uFF0C\u5B9D\u5854\u5177\u6709\u4E0D\u53EF\u66FF\u4EE3\u7684\u5F15\u9886\u4F5C\u7528"
   - buildingid: 1
     resourcepath: building_201
     name: "\u9662\u5B50"
@@ -511,6 +543,7 @@ MonoBehaviour:
     level: 5
     basescore: 0
     envscore: 0
+    story: "\u5B8B\u4EE3\u519C\u6751\u767E\u59D3\u7684\u6BD4\u8F83\u6734\u5B9E,\u591A\u4E3A\u4F4E\u77EE\u7684\u5C4B\u548C\u74E6\u623F,\u6784\u6210\u4E00\u7EC4\u4F4F\u5B85"
   - buildingid: 2
     resourcepath: building_301
     name: "\u519C\u7530"
@@ -526,6 +559,7 @@ MonoBehaviour:
     level: 3
     basescore: 8
     envscore: -2
+    story: "\u751F\u4EA7\u519C\u4F5C\u7269"
   - buildingid: 3
     resourcepath: building_401
     name: "\u9A6C\u8F66"
@@ -541,6 +575,7 @@ MonoBehaviour:
     level: 1
     basescore: 6
     envscore: 3
+    story: "\u5B8B\u4EE3\u9A6C\u8F66\u591A\u4E3A\u5E73\u6C11\u767E\u59D3\u6240\u4F7F\u7528\uFF0C\u4F5C\u4E3A\u957F\u9014\u4EA4\u901A\u5DE5\u5177"
   - buildingid: 4
     resourcepath: building_402
     name: "\u9053\u8DEF"
@@ -556,6 +591,7 @@ MonoBehaviour:
     level: 1
     basescore: 0
     envscore: 0
+    story: "\u5B8B\u4EE3\u9053\u8DEF\u5341\u5206\u4FBF\u5229\uFF0C\u4EE5\u77F3\u8DEF\u4E3A\u4E3B\uFF0C\u4F9B\u884C\u4EBA\u548C\u8F66\u8F86\u901A\u884C"
   - buildingid: 5
     resourcepath: building_403
     name: "\u6865"
@@ -571,6 +607,7 @@ MonoBehaviour:
     level: 1
     basescore: 35
     envscore: 7
+    story: "\u5B8B\u4EE3\u6865\u6881\u6750\u8D28\u591A\u4E3A\u7816\u3001\u6728\uFF0C\u9020\u578B\u7D20\u7B80\u53E4\u96C5"
   - buildingid: 6
     resourcepath: building_202
     name: "\u4E2D\u578B\u623F\u5C4B1"
@@ -586,6 +623,7 @@ MonoBehaviour:
     level: 3
     basescore: 22
     envscore: 2
+    story: "\u5B8B\u4EE3\u519C\u6751\u767E\u59D3\u7684\u6BD4\u8F83\u6734\u5B9E,\u591A\u4E3A\u4F4E\u77EE\u7684\u5C4B\u548C\u74E6\u623F,\u6784\u6210\u4E00\u7EC4\u4F4F\u5B85"
   - buildingid: 7
     resourcepath: building_203
     name: "\u5C0F\u578B\u623F\u5C4B"
@@ -601,6 +639,7 @@ MonoBehaviour:
     level: 3
     basescore: 10
     envscore: 0
+    story: "\u5B8B\u4EE3\u519C\u6751\u767E\u59D3\u7684\u6BD4\u8F83\u6734\u5B9E,\u591A\u4E3A\u4F4E\u77EE\u7684\u5C4B\u548C\u74E6\u623F,\u6784\u6210\u4E00\u7EC4\u4F4F\u5B85"
   - buildingid: 8
     resourcepath: building_204
     name: "\u5927\u578B\u623F\u5C4B"
@@ -616,6 +655,7 @@ MonoBehaviour:
     level: 3
     basescore: 30
     envscore: 3
+    story: "\u5B8B\u4EE3\u519C\u6751\u767E\u59D3\u7684\u6BD4\u8F83\u6734\u5B9E,\u591A\u4E3A\u4F4E\u77EE\u7684\u5C4B\u548C\u74E6\u623F,\u6784\u6210\u4E00\u7EC4\u4F4F\u5B85"
   - buildingid: 9
     resourcepath: building_205
     name: "\u4E2D\u578B\u623F\u5C4B2"
@@ -631,6 +671,7 @@ MonoBehaviour:
     level: 3
     basescore: 25
     envscore: 2
+    story: "\u5B8B\u4EE3\u519C\u6751\u767E\u59D3\u7684\u6BD4\u8F83\u6734\u5B9E,\u591A\u4E3A\u4F4E\u77EE\u7684\u5C4B\u548C\u74E6\u623F,\u6784\u6210\u4E00\u7EC4\u4F4F\u5B85"
   - buildingid: 10
     resourcepath: building_302
     name: "\u91C7\u77F3\u573A"
@@ -646,6 +687,7 @@ MonoBehaviour:
     level: 3
     basescore: 9
     envscore: -9
+    story: "\u751F\u4EA7\u77F3\u6750"
   - buildingid: 11
     resourcepath: building_303
     name: "\u6797\u573A"
@@ -661,6 +703,7 @@ MonoBehaviour:
     level: 3
     basescore: 7
     envscore: -6
+    story: "\u751F\u4EA7\u6728\u6750"
   - buildingid: 12
     resourcepath: building_304
     name: "\u7816\u5382"
@@ -676,6 +719,7 @@ MonoBehaviour:
     level: 3
     basescore: 10
     envscore: -12
+    story: "\u751F\u4EA7\u7816\u5757"
   - buildingid: 13
     resourcepath: building_305
     name: "\u5546\u94FA"
@@ -691,6 +735,7 @@ MonoBehaviour:
     level: 1
     basescore: 0
     envscore: 0
+    story: "\u751F\u6D3B\u7528\u54C1\uFF0C\u5947\u73CD\u5F02\u5B9D\uFF0C\u5E94\u6709\u5C3D\u6709"
   - buildingid: 14
     resourcepath: building_404
     name: "\u7BF1\u7B06"
@@ -706,6 +751,7 @@ MonoBehaviour:
     level: 1
     basescore: 1
     envscore: 0
+    story: "\u7BF1\u7B06\u53EF\u4EE5\u4FDD\u62A4\u623F\u5C4B\u5BB6\u5BA4"
   - buildingid: 15
     resourcepath: building_405
     name: "\u4E951"
@@ -721,6 +767,7 @@ MonoBehaviour:
     level: 1
     basescore: 30
     envscore: 0
+    story: "\u82CF\u8F7C\u758F\u6D5A\u516D\u4E95\uFF0C\u4F7F\u5F97\u897F\u6E56\u7518\u6C34\uFF0C\u6B86\u904D\u4E00\u57CE"
   - buildingid: 16
     resourcepath: building_406
     name: "\u4E952"
@@ -736,6 +783,7 @@ MonoBehaviour:
     level: 1
     basescore: 30
     envscore: 0
+    story: "\u82CF\u8F7C\u758F\u6D5A\u516D\u4E95\uFF0C\u4F7F\u5F97\u897F\u6E56\u7518\u6C34\uFF0C\u6B86\u904D\u4E00\u57CE"
   - buildingid: 17
     resourcepath: building_407
     name: "\u4E953"
@@ -751,6 +799,7 @@ MonoBehaviour:
     level: 1
     basescore: 30
     envscore: 0
+    story: "\u82CF\u8F7C\u758F\u6D5A\u516D\u4E95\uFF0C\u4F7F\u5F97\u897F\u6E56\u7518\u6C34\uFF0C\u6B86\u904D\u4E00\u57CE"
   - buildingid: 18
     resourcepath: building_408
     name: "\u68111"
@@ -766,6 +815,7 @@ MonoBehaviour:
     level: 1
     basescore: 5
     envscore: 6
+    story: "\u6811\u6728\u53EF\u7528\u6765\u88C5\u70B9\u57CE\u5E02\uFF0C\u6E05\u6D01\u7A7A\u6C14"
   - buildingid: 19
     resourcepath: building_409
     name: "\u68112"
@@ -781,6 +831,7 @@ MonoBehaviour:
     level: 1
     basescore: 5
     envscore: 6
+    story: "\u6811\u6728\u53EF\u7528\u6765\u88C5\u70B9\u57CE\u5E02\uFF0C\u6E05\u6D01\u7A7A\u6C14"
   - buildingid: 20
     resourcepath: building_410
     name: "\u68113"
@@ -796,6 +847,7 @@ MonoBehaviour:
     level: 1
     basescore: 5
     envscore: 6
+    story: "\u6811\u6728\u53EF\u7528\u6765\u88C5\u70B9\u57CE\u5E02\uFF0C\u6E05\u6D01\u7A7A\u6C14"
   - buildingid: 21
     resourcepath: building_411
     name: "\u68114"
@@ -811,6 +863,7 @@ MonoBehaviour:
     level: 1
     basescore: 5
     envscore: 6
+    story: "\u6811\u6728\u53EF\u7528\u6765\u88C5\u70B9\u57CE\u5E02\uFF0C\u6E05\u6D01\u7A7A\u6C14"
   - buildingid: 22
     resourcepath: building_412
     name: "\u68115"
@@ -826,6 +879,7 @@ MonoBehaviour:
     level: 1
     basescore: 5
     envscore: 6
+    story: "\u6811\u6728\u53EF\u7528\u6765\u88C5\u70B9\u57CE\u5E02\uFF0C\u6E05\u6D01\u7A7A\u6C14"
   - buildingid: 23
     resourcepath: building_413
     name: "\u68116"
@@ -841,6 +895,7 @@ MonoBehaviour:
     level: 1
     basescore: 5
     envscore: 6
+    story: "\u6811\u6728\u53EF\u7528\u6765\u88C5\u70B9\u57CE\u5E02\uFF0C\u6E05\u6D01\u7A7A\u6C14"
   - buildingid: 24
     resourcepath: building_414
     name: "\u4EAD\u5B50"
@@ -856,6 +911,7 @@ MonoBehaviour:
     level: 1
     basescore: 20
     envscore: 10
+    story: "\u5B8B\u4EE3\u4EAD\u69AD\u662F\u5C71\u5DDD\u7075\u6C14\u52A8\u8361\u5410\u7EB3\u7684\u4EA4\u70B9\u548C\u7CBE\u795E\u805A\u79EF\u7684\u5904\u6240"
   - buildingid: 25
     resourcepath: building_415
     name: "\u724C\u574A"
@@ -871,6 +927,7 @@ MonoBehaviour:
     level: 1
     basescore: 25
     envscore: 10
+    story: "\u724C\u574A\u662D\u793A\u5BB6\u65CF\u5148\u4EBA\u7684\u9AD8\u5C1A\u7F8E\u5FB7\u548C\u4E30\u529F\u4F1F\u7EE9\uFF0C\u517C\u6709\u796D\u7956\u7684\u529F\u80FD"
   - buildingid: 26
     resourcepath: building_416
     name: "\u533B\u9662"
@@ -886,6 +943,7 @@ MonoBehaviour:
     level: 1
     basescore: 30
     envscore: 10
+    story: "\u6536\u5BB9\u75C5\u4EBA\uFF0C\u8FDB\u884C\u533B\u7597\u6551\u52A9"
   - buildingid: 27
     resourcepath: building_417
     name: "\u4E66\u9662"
@@ -901,6 +959,7 @@ MonoBehaviour:
     level: 1
     basescore: 35
     envscore: 10
+    story: "\u5B8B\u4EE3\u4E66\u9662\u662F\u4E2D\u56FD\u53E4\u4EE3\u7684\u76F8\u5BF9\u72EC\u7ACB\u4E8E\u5B98\u5B66\u4E4B\u5916\u7684\u6559\u80B2\u673A\u6784"
   - buildingid: 28
     resourcepath: building_418
     name: "\u5C0F\u644A"
@@ -916,6 +975,7 @@ MonoBehaviour:
     level: 3
     basescore: 15
     envscore: 10
+    story: "\u5B8B\u4EE3\u201C\u5730\u644A\u7ECF\u6D4E\u201D\u7A7A\u524D\u7E41\u76DB\uFF0C\u53EF\u4F5C\u4E3A\u57CE\u5E02\u6587\u5316\u7684\u6807\u5FD7\u6027\u7279\u70B9"
   - buildingid: 29
     resourcepath: building_419
     name: "\u9152\u697C"
@@ -931,6 +991,7 @@ MonoBehaviour:
     level: 1
     basescore: 28
     envscore: 10
+    story: "\u63D0\u4F9B\u9910\u98DF\u548C\u7F8E\u9152"
   - buildingid: 30
     resourcepath: building_420
     name: "\u94C1\u5320\u94FA"
@@ -946,3 +1007,4 @@ MonoBehaviour:
     level: 3
     basescore: 10
     envscore: -15
+    story: "\u751F\u4EA7\u5404\u7C7B\u94C1\u5668,\u6EE1\u8DB3\u8001\u767E\u59D3\u7684\u9700\u6C42"

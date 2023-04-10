@@ -70,5 +70,9 @@ namespace Game.Data.TableData
     int envscore;
     public int Envscore { get {return envscore; } set { envscore = value;} }
     
+    [SerializeField]
+    string story;
+    public string Story { get {return story; } set { story = value;} }
+    
 	}
 }

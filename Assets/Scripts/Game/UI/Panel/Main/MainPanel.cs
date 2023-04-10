@@ -213,7 +213,7 @@ namespace Game.UI.Panel
                 nodes.closeTip_btn.gameObject.SetActive(true);
             
                 nodes.buildingDetail_w.SetTitle(buildingData.Name);
-                nodes.buildingDetail_w.SetDescription(buildingData.Description);
+                nodes.buildingDetail_w.SetDescription(buildingData.Story);
                 if (buildingData.Level > 1)
                 {
                     nodes.buildingDetail_w.SetLevel(data.level);

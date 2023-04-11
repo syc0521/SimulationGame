@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Game.Core;
 using Game.Data;
+using Game.Data.Common;
 using Game.Data.Event.Shop;
 using Game.Data.Shop;
 using Game.GamePlaySystem.Backpack;
@@ -17,6 +18,7 @@ namespace Game.GamePlaySystem.Shop
     {
         private int _seed;
         private List<ShopItemData> _shopData = new();
+        private float _sellRate = 1f;
         public override void OnAwake()
         {
             base.OnAwake();
@@ -35,6 +37,8 @@ namespace Game.GamePlaySystem.Shop
         {
             var dateNow = DateTime.Now;
             _seed = (int)new DateTime(dateNow.Year, dateNow.Month, dateNow.Day).Ticks;
+            Random random = new(_seed);
+            _sellRate = random.Next(8, 12) / 10f;
         }
 
         private void GetData()
@@ -87,8 +91,8 @@ namespace Game.GamePlaySystem.Shop
                 return false;
             }
 
-            if (BackpackManager.Instance.ConsumeBackpack(shopItem.Consumeid, shopItem.Consumecount) &&
-                CurrencyManager.Instance.ConsumeCurrency(shopItem.Currencyid, shopItem.Currencycount))
+            if (BackpackManager.Instance.CheckBackpackItems(shopItem.Consumeid, shopItem.Consumecount) &&
+                CurrencyManager.Instance.CheckCurrency(shopItem.Currencyid, shopItem.Currencycount))
             {
                 switch ((ShopItemType)shopItem.Itemtype)
                 {
@@ -99,6 +103,9 @@ namespace Game.GamePlaySystem.Shop
                         BuildingManager.Instance.UnlockBuilding(shopItem.Itemid);
                         break;
                 }
+
+                BackpackManager.Instance.ConsumeBackpack(shopItem.Consumeid, shopItem.Consumecount);
+                CurrencyManager.Instance.ConsumeCurrency(shopItem.Currencyid, shopItem.Currencycount);
                 
                 EventCenter.DispatchEvent(new BuySuccessEvent
                 {
@@ -107,6 +114,16 @@ namespace Game.GamePlaySystem.Shop
                 });
             }
             return false;
+        }
+
+        public void SellItem(int itemID, int count)
+        {
+            var bagItemData = ConfigTable.Instance.GetBagItemData(itemID);
+            if (BackpackManager.Instance.GetBackpackCount(itemID) >= count)
+            {
+                BackpackManager.Instance.ConsumeBackpack(itemID, count);
+                CurrencyManager.Instance.AddCurrency(CurrencyType.Coin, (int)(bagItemData.Price * count * _sellRate));
+            }
         }
     }
 }

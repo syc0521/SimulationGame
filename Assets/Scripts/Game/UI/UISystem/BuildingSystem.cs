@@ -60,9 +60,11 @@ namespace Game.UI.UISystem
             }
 
             var upgradeData = ConfigTable.Instance.GetBuildingUpgradeData(staticId, newLevel);
-            if (BackpackManager.Instance.ConsumeBackpack(upgradeData.Itemid, upgradeData.Itemcount) &&
-                CurrencyManager.Instance.ConsumeCurrency(upgradeData.Currencyid, upgradeData.Currencycount))
+            if (BackpackManager.Instance.CheckBackpackItems(upgradeData.Itemid, upgradeData.Itemcount) &&
+                CurrencyManager.Instance.CheckCurrency(upgradeData.Currencyid, upgradeData.Currencycount))
             {
+                BackpackManager.Instance.ConsumeBackpack(upgradeData.Itemid, upgradeData.Itemcount);
+                CurrencyManager.Instance.ConsumeCurrency(upgradeData.Currencyid, upgradeData.Currencycount);
                 BuildingManager.Instance.UpgradeBuilding(entityId, newLevel, isStatic);
                 return true;
             }

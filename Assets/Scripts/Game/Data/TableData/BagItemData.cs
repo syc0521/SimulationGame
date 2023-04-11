@@ -26,5 +26,9 @@ namespace Game.Data.TableData
     string content;
     public string Content { get {return content; } set { content = value;} }
     
+    [SerializeField]
+    int price;
+    public int Price { get {return price; } set { price = value;} }
+    
 	}
 }

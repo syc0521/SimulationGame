@@ -67,7 +67,7 @@ namespace Game.GamePlaySystem.Currency
                 return currency[(int)type];
             }
 
-            Debug.LogError($"货币类型{type}不存在！");
+            Debug.LogWarning($"货币类型{type}不存在！");
             return 0;
         }
 
@@ -83,6 +83,11 @@ namespace Game.GamePlaySystem.Currency
                 ConsumeCurrency((CurrencyType)id[i], count[i]);
             }
             return true;
+        }
+        
+        public bool CheckCurrency(int[] id, int[] count)
+        {
+            return !id.Where((t, i) => !currency.ContainsKey(t) || currency[t] < count[i]).Any();
         }
     }
 }

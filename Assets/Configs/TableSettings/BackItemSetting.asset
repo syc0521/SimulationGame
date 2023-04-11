@@ -34,6 +34,10 @@ MonoBehaviour:
     name: Content
     isEnable: 0
     isArray: 0
+  - type: 3
+    name: Price
+    isEnable: 0
+    isArray: 0
   excelFilePath: Assets/Configs/RawTable/BagItem.xlsx
   SheetNames:
   - BagItem

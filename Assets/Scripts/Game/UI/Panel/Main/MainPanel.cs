@@ -194,9 +194,14 @@ namespace Game.UI.Panel
         {
             if (evt.isStatic)
             {
-                if (evt.id == 10001)
+                switch (evt.id)
                 {
-                    UIManager.Instance.OpenPanel<GovernmentPanel>();
+                    case 10001:
+                        UIManager.Instance.OpenPanel<GovernmentPanel>();
+                        break;
+                    case 10013:
+                        // todo 打开商城
+                        break;
                 }
             }
             else

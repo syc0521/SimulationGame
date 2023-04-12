@@ -228,12 +228,12 @@ MonoBehaviour:
     name: "\u5546\u94FA"
     buildingtype: 4
     description: "\u8D2D\u4E70\u7269\u54C1"
-    currencytype: 0b000000
-    currencycount: c8000000
+    currencytype: 00000000
+    currencycount: 32000000
     rowcount: 6
     colcount: 7
     cd: -1
-    unlock: 0
+    unlock: 1
     people: 0
     level: 1
     basescore: 0
@@ -725,12 +725,12 @@ MonoBehaviour:
     name: "\u5546\u94FA"
     buildingtype: 4
     description: "\u8D2D\u4E70\u7269\u54C1"
-    currencytype: 0b000000
-    currencycount: c8000000
+    currencytype: 00000000
+    currencycount: 32000000
     rowcount: 6
     colcount: 7
     cd: -1
-    unlock: 0
+    unlock: 1
     people: 0
     level: 1
     basescore: 0

@@ -14,11 +14,13 @@ using Game.GamePlaySystem.Backpack;
 using Game.GamePlaySystem.Build;
 using Game.GamePlaySystem.Currency;
 using Game.GamePlaySystem.FeatureOpen;
+using Game.GamePlaySystem.Shop;
 using Game.UI.Component;
 using Game.UI.Decorator;
 using Game.UI.Panel.Bag;
 using Game.UI.Panel.Building;
 using Game.UI.Panel.Pause;
+using Game.UI.Panel.Shop;
 using Game.UI.UISystem;
 using Game.UI.Widget;
 using Unity.Entities;
@@ -199,9 +201,6 @@ namespace Game.UI.Panel
                     case 10001:
                         UIManager.Instance.OpenPanel<GovernmentPanel>();
                         break;
-                    case 10013:
-                        // todo 打开商城
-                        break;
                 }
             }
             else
@@ -212,7 +211,13 @@ namespace Game.UI.Panel
                 {
                     return;
                 }
-            
+
+                if (buildingData.Buildingid == 13)
+                {
+                    UIManager.Instance.OpenPanel<MallPanel>();
+                    return;
+                }
+
                 nodes.buildingDetail_w.SetDefault();
                 nodes.buildingDetail_w.gameObject.SetActive(true);
                 nodes.closeTip_btn.gameObject.SetActive(true);

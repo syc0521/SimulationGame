@@ -9,8 +9,12 @@ namespace Game.UI.UISystem
     {
         public List<ShopItemData> GetShopData()
         {
-            return ShopManager.Instance.GetShopItemData(ShopType.BuildingShop, 1)
-                .Concat(ShopManager.Instance.GetShopItemData(ShopType.Mall, 3)).ToList();
+            return ShopManager.Instance.GetShopItemData(ShopType.Mall, 3);
+        }
+
+        public ShopItemData GetDailyShopItem()
+        {
+            return ShopManager.Instance.GetShopItemData(ShopType.BuildingShop, 1)[0];
         }
     }
 }

@@ -72,6 +72,15 @@ MonoBehaviour:
   - id: 1006
     storeid: 1
     itemtype: 1
+    itemid: 24
+    count: 1
+    consumeid: 00000000
+    consumecount: e8030000
+    currencyid: 00000000
+    currencycount: dc050000
+  - id: 1007
+    storeid: 1
+    itemtype: 1
     itemid: 29
     count: 1
     consumeid: 0000000001000000
@@ -224,6 +233,15 @@ MonoBehaviour:
     currencyid: 00000000
     currencycount: dc050000
   - id: 1006
+    storeid: 1
+    itemtype: 1
+    itemid: 24
+    count: 1
+    consumeid: 00000000
+    consumecount: e8030000
+    currencyid: 00000000
+    currencycount: dc050000
+  - id: 1007
     storeid: 1
     itemtype: 1
     itemid: 29

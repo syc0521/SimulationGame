@@ -3,6 +3,7 @@ using Game.Core;
 using Game.UI.Component;
 using Game.UI.Panel;
 using Game.UI.Panel.Task;
+using Game.UI.Utils;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -20,14 +21,8 @@ namespace Game.UI.Widget
                 return;
             }
             
-            icon_img.SetIcon(new AtlasSpriteID
-            {
-                atlas = AtlasEnum.Task,
-                resName = $"icon_task_{taskListData.id}"
-            });
-
+            icon_img.SetIcon(IconUtility.GetTaskIcon(taskListData.id));
             id = taskListData.id;
-
         }
 
         public void OnPointerClick(PointerEventData eventData)

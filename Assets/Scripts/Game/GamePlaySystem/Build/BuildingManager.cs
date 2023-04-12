@@ -266,7 +266,7 @@ namespace Game.GamePlaySystem.Build
 
         public bool CheckBuildingUnlocked(int buildingId)
         {
-            return unlockedBuildings.Contains(buildingId);
+            return ConfigTable.Instance.GetBuildingData(buildingId).Unlock || unlockedBuildings.Contains(buildingId);
         }
 
         public void UpgradeBuilding(uint buildingId, int newLevel, bool isStatic = false)

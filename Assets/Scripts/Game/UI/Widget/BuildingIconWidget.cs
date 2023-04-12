@@ -1,6 +1,7 @@
 ﻿using System;
 using Game.UI.Component;
 using Game.UI.Panel.Building;
+using Game.UI.Utils;
 using Game.UI.ViewData;
 using TMPro;
 using UnityEngine.EventSystems;
@@ -35,11 +36,7 @@ namespace Game.UI.Widget
                 return;
             }
             
-            icon_img.SetIcon(new AtlasSpriteID
-            {
-                atlas = AtlasEnum.Building,
-                resName = $"icon_building_{buildingListData.id}"
-            });
+            icon_img.SetIcon(IconUtility.GetBuildingIcon(buildingListData.id));
             name_txt.text = buildingListData.data.name;
 
             if (buildingListData.id != 4) //不是道路

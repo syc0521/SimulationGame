@@ -21,11 +21,7 @@ namespace Game.UI.Widget
             {
                 id = bagListData.id;
                 var count = bagListData.data.count;
-                icon_img.SetIcon(new AtlasSpriteID
-                {
-                    atlas = AtlasEnum.Item,
-                    resName = $"icon_item_{bagListData.id}"
-                });
+                icon_img.SetIcon(IconUtility.GetItemIcon(bagListData.id));
                 count_txt.text = count > 1 ? count.ToString() : string.Empty;
                 _clickHandler = bagListData.clickHandler; 
             }

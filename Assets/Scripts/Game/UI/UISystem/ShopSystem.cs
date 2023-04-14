@@ -9,6 +9,7 @@ namespace Game.UI.UISystem
     {
         public List<ShopItemData> GetShopData()
         {
+            // todo 跟官府等级走，1级没商城，2-5级读表
             return ShopManager.Instance.GetShopItemData(ShopType.Mall, 3);
         }
 

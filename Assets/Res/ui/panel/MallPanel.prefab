@@ -537,6 +537,7 @@ MonoBehaviour:
   icon_img: {fileID: 8354222666216648245}
   name_txt: {fileID: 3877146861141691851}
   currency_list: {fileID: 7337937178818731938}
+  shop_list: {fileID: 1553363353302726004}
   back_btn: {fileID: 6275477914692120549}
   dailyItem_btn: {fileID: 768689848615256699}
 --- !u!1 &5293095418758033589
@@ -712,7 +713,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u6807\u9898"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 04f634bc527270d4492eacddaaae125e, type: 2}
   m_sharedMaterial: {fileID: 8530618857118137557, guid: 04f634bc527270d4492eacddaaae125e,
@@ -1226,7 +1227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 527f340a44b2424db2f95d24a6903b27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  template: {fileID: 3679510491381659323, guid: ef14062462fb9e84db2534a5a0d57c82,
+  template: {fileID: 4175337468705133161, guid: 1310be81fef86c3488d9358c0a9b4108,
     type: 3}
 --- !u!114 &137464321059009559
 MonoBehaviour:
@@ -1310,7 +1311,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 06d0c379f235b6a4da9ac103677d4092, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0c2a9166393452743bbc7e9d9690d7ea, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

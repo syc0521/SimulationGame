@@ -10,12 +10,13 @@ namespace Game.UI.Panel.Shop
     {
         public CustomImage icon_img;
         public TextMeshProUGUI name_txt;
-        public ListComponent currency_list;
+        public ListComponent currency_list, shop_list;
         public Button back_btn, dailyItem_btn;
 
         private void Awake()
         {
             currency_list.Init();
+            shop_list.Init();
         }
     }
 }

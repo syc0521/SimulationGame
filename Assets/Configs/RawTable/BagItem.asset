@@ -20,49 +20,59 @@ MonoBehaviour:
     type: 0
     content: "\u57FA\u7840\u5EFA\u7B51\u6750\u6599"
     price: 8
+    iconname: wood
   - id: 1
     name: "\u77F3\u7816"
     type: 0
     content: "\u8FDB\u9636\u5EFA\u7B51\u6750\u6599"
     price: 30
+    iconname: brick
   - id: 2
     name: "\u94C1"
     type: 0
     content: "\u94C1"
     price: 50
+    iconname: iron
   - id: 10
     name: "\u7CAE\u98DF"
     type: 1
     content: "\u7CAE\u98DF"
     price: 6
+    iconname: food
   - id: 11
     name: "\u77F3\u5934"
     type: 1
     content: "\u77F3\u5934"
     price: 15
+    iconname: stone
   dataList:
   - id: 0
     name: "\u6728\u5934"
     type: 0
     content: "\u57FA\u7840\u5EFA\u7B51\u6750\u6599"
     price: 8
+    iconname: wood
   - id: 1
     name: "\u77F3\u7816"
     type: 0
     content: "\u8FDB\u9636\u5EFA\u7B51\u6750\u6599"
     price: 30
+    iconname: brick
   - id: 2
     name: "\u94C1"
     type: 0
     content: "\u94C1"
     price: 50
+    iconname: iron
   - id: 10
     name: "\u7CAE\u98DF"
     type: 1
     content: "\u7CAE\u98DF"
     price: 6
+    iconname: food
   - id: 11
     name: "\u77F3\u5934"
     type: 1
     content: "\u77F3\u5934"
     price: 15
+    iconname: stone

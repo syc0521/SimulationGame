@@ -38,7 +38,7 @@ MonoBehaviour:
     name: Price
     isEnable: 0
     isArray: 0
-  - type: 0
+  - type: 1
     name: IconName
     isEnable: 0
     isArray: 0

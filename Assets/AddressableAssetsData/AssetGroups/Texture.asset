@@ -16,13 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 122bf8a0cf06eed4c966d173c4ebded0
-  m_SerializeEntries:
-  - m_GUID: 9dbb46ba7bf97d942a114b068d3b8e83
-    m_Address: texture
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Tex
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ef7206bd29055104abb70d185833b540, type: 2}
   m_SchemaSet:

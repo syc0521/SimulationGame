@@ -181,7 +181,7 @@ namespace Game.UI.Panel
                     break;
             }
             nodes.tip_w.gameObject.SetActive(true);
-            nodes.tip_w.transform.position = widget.transform.position - new Vector3(25, 100);
+            nodes.tip_w.transform.position = widget.transform.position - new Vector3(140, 50);
             nodes.closeTip_btn.gameObject.SetActive(true);
         }
 

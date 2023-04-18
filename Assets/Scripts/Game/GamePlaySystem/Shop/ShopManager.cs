@@ -4,6 +4,7 @@ using System.Linq;
 using Game.Core;
 using Game.Data;
 using Game.Data.Common;
+using Game.Data.Event.Common;
 using Game.Data.Event.Shop;
 using Game.Data.Shop;
 using Game.GamePlaySystem.Backpack;
@@ -82,13 +83,14 @@ namespace Game.GamePlaySystem.Shop
             return shopItemData;
         }
 
-        public bool BuyItem(int itemID)
+        public void BuyItem(int itemID)
         {
             var shopItem = ConfigTable.Instance.GetStoreItemData(itemID);
             if (shopItem == null)
             {
                 Debug.LogError($"ID为{itemID}的商品不存在！");
-                return false;
+                EventCenter.DispatchEvent(new AlertTipEvent {tipText = "购买失败！"});
+                return;
             }
 
             if (BackpackManager.Instance.CheckBackpackItems(shopItem.Consumeid, shopItem.Consumecount) &&
@@ -112,8 +114,9 @@ namespace Game.GamePlaySystem.Shop
                     itemID = shopItem.Itemid,
                     type = (ShopItemType)shopItem.Itemtype,
                 });
+                return;
             }
-            return false;
+            EventCenter.DispatchEvent(new AlertTipEvent {tipText = "购买失败！"});
         }
 
         public void SellItem(int itemID, int count)

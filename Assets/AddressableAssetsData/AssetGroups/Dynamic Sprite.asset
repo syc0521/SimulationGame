@@ -30,7 +30,7 @@ MonoBehaviour:
     - sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5b6a80aab83f6b94f90b93e9c931e439
-    m_Address: Assets/Res/ui/atlas/dynamic
+    m_Address: dynamic
     m_ReadOnly: 0
     m_SerializedLabels:
     - sprite

@@ -23,7 +23,7 @@ MonoBehaviour:
     consumeid: 00000000
     consumecount: f4010000
     currencyid: 00000000
-    currencycount: dc050000
+    currencycount: 78050000
   - id: 1003
     storeid: 1
     itemtype: 1
@@ -32,7 +32,7 @@ MonoBehaviour:
     consumeid: 00000000
     consumecount: f4010000
     currencyid: 00000000
-    currencycount: dc050000
+    currencycount: 40060000
   - id: 1004
     storeid: 1
     itemtype: 1
@@ -41,7 +41,7 @@ MonoBehaviour:
     consumeid: 00000000
     consumecount: f4010000
     currencyid: 00000000
-    currencycount: dc050000
+    currencycount: e2040000
   - id: 1005
     storeid: 1
     itemtype: 1
@@ -50,23 +50,23 @@ MonoBehaviour:
     consumeid: 00000000
     consumecount: f4010000
     currencyid: 00000000
-    currencycount: dc050000
+    currencycount: 08070000
   - id: 1006
     storeid: 1
     itemtype: 1
     itemid: 24
     count: 1
     consumeid: 00000000
-    consumecount: e8030000
+    consumecount: d0070000
     currencyid: 00000000
-    currencycount: dc050000
+    currencycount: f8110000
   - id: 1007
     storeid: 1
     itemtype: 1
     itemid: 29
     count: 1
     consumeid: 0000000001000000
-    consumecount: d007000040060000
+    consumecount: b80b000040060000
     currencyid: ffffffff
     currencycount: ffffffff
   - id: 2001
@@ -168,7 +168,7 @@ MonoBehaviour:
     consumeid: 00000000
     consumecount: f4010000
     currencyid: 00000000
-    currencycount: dc050000
+    currencycount: 78050000
   - id: 1003
     storeid: 1
     itemtype: 1
@@ -177,7 +177,7 @@ MonoBehaviour:
     consumeid: 00000000
     consumecount: f4010000
     currencyid: 00000000
-    currencycount: dc050000
+    currencycount: 40060000
   - id: 1004
     storeid: 1
     itemtype: 1
@@ -186,7 +186,7 @@ MonoBehaviour:
     consumeid: 00000000
     consumecount: f4010000
     currencyid: 00000000
-    currencycount: dc050000
+    currencycount: e2040000
   - id: 1005
     storeid: 1
     itemtype: 1
@@ -195,23 +195,23 @@ MonoBehaviour:
     consumeid: 00000000
     consumecount: f4010000
     currencyid: 00000000
-    currencycount: dc050000
+    currencycount: 08070000
   - id: 1006
     storeid: 1
     itemtype: 1
     itemid: 24
     count: 1
     consumeid: 00000000
-    consumecount: e8030000
+    consumecount: d0070000
     currencyid: 00000000
-    currencycount: dc050000
+    currencycount: f8110000
   - id: 1007
     storeid: 1
     itemtype: 1
     itemid: 29
     count: 1
     consumeid: 0000000001000000
-    consumecount: d007000040060000
+    consumecount: b80b000040060000
     currencyid: ffffffff
     currencycount: ffffffff
   - id: 2001

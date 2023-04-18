@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Game.Data;
 using Game.Data.Shop;
 using Game.GamePlaySystem.Build;
+using Game.GamePlaySystem.Shop;
 using Game.UI.Component;
 using Game.UI.Decorator;
 using Game.UI.UISystem;
@@ -92,7 +93,7 @@ namespace Game.UI.Panel.Shop
             
             AlertDecorator.OpenAlertPanel($"是否购买{buildingData.Name}？", true, () =>
             {
-                
+                ShopManager.Instance.BuyItem(_dailyItem.ShopItemID);
             });
         }
         
@@ -106,8 +107,8 @@ namespace Game.UI.Panel.Shop
                     //name = tableData.
                     shopItemId = itemData.ShopItemID,
                     staticId = tableData.Itemid,
-                    currencyType = tableData.Consumeid,
-                    currencyCount = tableData.Consumecount,
+                    currencyType = tableData.Currencyid,
+                    currencyCount = tableData.Currencycount,
                     clickHandler = BuyShopItem
                 });
             }
@@ -115,7 +116,10 @@ namespace Game.UI.Panel.Shop
         
         private void BuyShopItem(int shopItemId)
         {
-            
+            AlertDecorator.OpenAlertPanel($"是否购买该物品？", true, () =>
+            {
+                ShopManager.Instance.BuyItem(shopItemId);
+            });
         }
     }
 }

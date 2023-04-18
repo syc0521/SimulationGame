@@ -27,10 +27,11 @@ namespace Game.UI.Utils
         
         public static AtlasSpriteID GetItemIcon(int itemId)
         {
+            var itemName = ConfigTable.Instance.GetBagItemData(itemId).Iconname;
             return new AtlasSpriteID
             {
                 atlas = AtlasEnum.Item,
-                resName = $"icon_item_{itemId}"
+                resName = $"icon_item_{itemName}"
             };
         }
         

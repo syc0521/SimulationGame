@@ -30,5 +30,9 @@ namespace Game.Data.TableData
     int price;
     public int Price { get {return price; } set { price = value;} }
     
+    [SerializeField]
+    string iconname;
+    public string Iconname { get {return iconname; } set { iconname = value;} }
+    
 	}
 }

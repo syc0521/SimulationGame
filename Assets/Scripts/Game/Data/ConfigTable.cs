@@ -28,6 +28,7 @@ namespace Game.Data
         [SerializeField] private TableData.Achievement achievement;
         [SerializeField] private CityEvaluate cityEvaluate;
         [SerializeField] private StoreItem storeItem;
+        [SerializeField] private LoadingTips loadingTips;
 
         public Transform GetUIRoot(int layerType) => uiRoot.GetChild(layerType);
 
@@ -74,5 +75,7 @@ namespace Game.Data
         public StoreItemData GetStoreItemData(int storeItemID) => storeItem.dataList.Find(item => item.ID == storeItemID);
         
         public List<StoreItemData> GetStoreData() => storeItem.dataList;
+
+        public List<LoadingTipsData> GetLoadingTipsData() => loadingTips.dataList;
     }
 }

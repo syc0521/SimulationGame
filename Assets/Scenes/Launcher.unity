@@ -564,6 +564,7 @@ MonoBehaviour:
   achievement: {fileID: 11400000, guid: 9734f1bc76817c740968f30f7242a3cf, type: 2}
   cityEvaluate: {fileID: 11400000, guid: 0e68b7f00fd31f44d9a95b354f214c93, type: 2}
   storeItem: {fileID: 11400000, guid: f4baba95ae10bf047998d359c33d8143, type: 2}
+  loadingTips: {fileID: 11400000, guid: ee4cbcf50614b8e488b5a095d375cd81, type: 2}
 --- !u!114 &1821025937
 MonoBehaviour:
   m_ObjectHideFlags: 0

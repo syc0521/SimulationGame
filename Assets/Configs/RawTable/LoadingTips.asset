@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e284dd88ae5e1b84da6f4075822862be, type: 3}
+  m_Name: LoadingTips
+  m_EditorClassIdentifier: 
+  SheetName: Assets/Configs/RawTable/LoadingStep.xlsx
+  WorksheetName: LoadingTips
+  dataArray:
+  - tipid: 0
+    name: "\u6D4B\u8BD5\u52A0\u8F7D\u4E2DTip1"
+  - tipid: 1
+    name: "\u6D4B\u8BD5\u52A0\u8F7D\u4E2DTip2"
+  - tipid: 2
+    name: "\u6D4B\u8BD5\u52A0\u8F7D\u4E2DTip3"
+  - tipid: 3
+    name: "\u6D4B\u8BD5\u52A0\u8F7D\u4E2DTip4"
+  - tipid: 4
+    name: "\u6D4B\u8BD5\u52A0\u8F7D\u4E2DTip5"
+  - tipid: 5
+    name: "\u6D4B\u8BD5\u52A0\u8F7D\u4E2DTip6"
+  - tipid: 6
+    name: "\u6D4B\u8BD5\u52A0\u8F7D\u4E2DTip7"
+  - tipid: 7
+    name: "\u6D4B\u8BD5\u52A0\u8F7D\u4E2DTip8"
+  - tipid: 8
+    name: "\u6D4B\u8BD5\u52A0\u8F7D\u4E2DTip9"
+  - tipid: 9
+    name: "\u6D4B\u8BD5\u52A0\u8F7D\u4E2DTip10"
+  dataList:
+  - tipid: 0
+    name: "\u6D4B\u8BD5\u52A0\u8F7D\u4E2DTip1"
+  - tipid: 1
+    name: "\u6D4B\u8BD5\u52A0\u8F7D\u4E2DTip2"
+  - tipid: 2
+    name: "\u6D4B\u8BD5\u52A0\u8F7D\u4E2DTip3"
+  - tipid: 3
+    name: "\u6D4B\u8BD5\u52A0\u8F7D\u4E2DTip4"
+  - tipid: 4
+    name: "\u6D4B\u8BD5\u52A0\u8F7D\u4E2DTip5"
+  - tipid: 5
+    name: "\u6D4B\u8BD5\u52A0\u8F7D\u4E2DTip6"
+  - tipid: 6
+    name: "\u6D4B\u8BD5\u52A0\u8F7D\u4E2DTip7"
+  - tipid: 7
+    name: "\u6D4B\u8BD5\u52A0\u8F7D\u4E2DTip8"
+  - tipid: 8
+    name: "\u6D4B\u8BD5\u52A0\u8F7D\u4E2DTip9"
+  - tipid: 9
+    name: "\u6D4B\u8BD5\u52A0\u8F7D\u4E2DTip10"

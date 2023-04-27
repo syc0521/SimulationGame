@@ -1,19 +1,13 @@
-﻿using System;
-using System.Diagnostics;
-using Game.Audio;
+﻿using Game.Audio;
 using Game.Core;
 using Game.Data;
 using Game.GamePlaySystem;
-using Game.GamePlaySystem.BurstUtil;
 using Game.Input;
 using Game.LevelAndEntity.ResLoader;
 using Game.UI;
 using MessagePack;
 using MessagePack.Resolvers;
-using Unity.Collections;
 using UnityEngine;
-using Debug = UnityEngine.Debug;
-using Grid = Game.Data.Grid;
 
 namespace Game
 {
@@ -43,32 +37,6 @@ namespace Game
             Managers.Start<IGamePlaySystemManager>();
             Managers.Start<IUIManager>();
         }
-
-        private void Start()
-        {
-            /*Stopwatch sw = new Stopwatch();
-            var testArr = new int[100, 100];
-            sw.Start();
-            for (int i = 0; i < 10000; i++)
-            {
-                BuildingUtils.BurstTest_UnBurst(ref testArr, 100);
-            }
-            sw.Stop();
-            TimeSpan ts = sw.Elapsed;
-            Debug.Log($"UnBurst {ts}");
-            
-            sw = new Stopwatch();
-            var testNativeArr = new NativeArray<int>(10000, Allocator.TempJob);
-            sw.Start();
-            for (int i = 0; i < 10000; i++)
-            {
-                BuildingUtils.BurstTest_Burst(ref testNativeArr, 100);
-            }
-            sw.Stop();
-            ts = sw.Elapsed;
-            Debug.Log($"Burst {ts}");*/
-        }
-
 
         private void OnDestroy()
         {

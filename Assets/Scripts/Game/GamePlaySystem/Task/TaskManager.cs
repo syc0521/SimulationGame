@@ -128,7 +128,7 @@ namespace Game.GamePlaySystem.Task
             return data;
         }
         
-        private void ActivateTask(int id)
+        public void ActivateTask(int id)
         {
             var itemCount = ConfigTable.Instance.GetTask(id).Targetid.Length;
             _playerTaskData[id] = new PlayerTaskData

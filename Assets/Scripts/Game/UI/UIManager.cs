@@ -21,6 +21,7 @@ namespace Game.UI
         Pop = 1,
         Full = 2,
         Top = 3,
+        GM = 4,
     }
     
     public class UIManager : ManagerBase, IUIManager
@@ -109,12 +110,15 @@ namespace Game.UI
                 comp.opt = option;
                 panelObjects[typeof(T)] = obj;
 
-                if (panels[(UILayerType)data.Layer].TryPeek(out var panel)) // 该层级被覆盖的面板要被隐藏
+                if ((UILayerType)data.Layer is not UILayerType.GM)
                 {
-                    panel.gameObject.SetActive(false);
+                    if (panels[(UILayerType)data.Layer].TryPeek(out var panel)) // 该层级被覆盖的面板要被隐藏
+                    {
+                        panel.gameObject.SetActive(false);
+                    }
+                    panels[(UILayerType)data.Layer].Push(comp);
                 }
-                panels[(UILayerType)data.Layer].Push(comp);
-                
+
                 comp.OnCreated();
                 comp.OnShown();
             });
@@ -130,11 +134,16 @@ namespace Game.UI
             if (panelObjects.ContainsKey(panel.GetType()))
             {
                 var data = ConfigTable.Instance.GetUIPanelData(panel.GetType().Name);
-                panels[(UILayerType)data.Layer].Pop();
-                if (panels[(UILayerType)data.Layer].TryPeek(out var lastPanel)) // 该层级被覆盖的面板要显示
+
+                if ((UILayerType)data.Layer is not UILayerType.GM)
                 {
-                    lastPanel.gameObject.SetActive(true);
+                    panels[(UILayerType)data.Layer].Pop();
+                    if (panels[(UILayerType)data.Layer].TryPeek(out var lastPanel)) // 该层级被覆盖的面板要显示
+                    {
+                        lastPanel.gameObject.SetActive(true);
+                    }
                 }
+                
                 panel.OnDestroyed();
                 Object.Destroy(panel.gameObject);
                 panelObjects.Remove(panel.GetType());

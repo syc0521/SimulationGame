@@ -52,6 +52,23 @@ namespace Game.GamePlaySystem.GM
                     });
                 }
             }
+
+            foreach (var commandList in _commandDic.Values)
+            {
+                commandList.Sort((a,b) => b.priority - a.priority);
+            }
+        }
+
+        public List<string> GetGMCategory() => _commandDic.Keys.ToList();
+
+        public List<string> GetGMNames(string type)
+        {
+            return _commandDic[type].Select(item => item.name).ToList();
+        }
+
+        public Type GetGMType(string type, int index)
+        {
+            return _commandDic[type][index].type;
         }
     }
 }

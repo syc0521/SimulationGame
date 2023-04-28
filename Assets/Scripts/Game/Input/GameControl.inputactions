@@ -76,6 +76,15 @@
                     "processors": "",
                     "interactions": "Hold(duration=1,pressPoint=1)",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "GM",
+                    "type": "Button",
+                    "id": "3bb325ce-fb99-4c12-9443-911a155ea4ac",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -208,6 +217,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Primary Long",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e5def688-60af-482c-a8fe-7be068983c1e",
+                    "path": "<Keyboard>/f2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GM",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

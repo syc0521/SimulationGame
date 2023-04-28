@@ -63,6 +63,16 @@ namespace Game.UI.Component
             _objects[index].GetComponent<IListWidget>().Refresh(data);
         }
 
+        public IListWidget GetListObject(int index)
+        {
+            if (index < 0 || index >= _listData.Count)
+            {
+                return null;
+            }
+
+            return _objects[index].GetComponent<IListWidget>();
+        }
+
         public void Clear()
         {
             _listData?.Clear();

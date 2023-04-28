@@ -61,6 +61,11 @@ namespace Game.Input
         public float2 pos;
         public float time;
     }
+
+    public struct OpenGMEvent : IEvent
+    {
+        
+    }
     
     public class InputManager : ManagerBase, IInputManager
     {
@@ -92,6 +97,8 @@ namespace Game.Input
 
             _gameControl.GamePlay.RightClick.started += MouseRotateStart;
             _gameControl.GamePlay.RightClick.canceled += MouseRotateEnd;
+            
+            _gameControl.GamePlay.GM.started += OpenGM;
         }
 
         public override void OnDestroyed()
@@ -109,6 +116,8 @@ namespace Game.Input
             
             _gameControl.GamePlay.RightClick.started -= MouseRotateStart;
             _gameControl.GamePlay.RightClick.canceled -= MouseRotateEnd;
+            
+            _gameControl.GamePlay.GM.started -= OpenGM;
 
             _gameControl.Disable();
         }
@@ -333,6 +342,11 @@ namespace Game.Input
         }
 
         private bool CanSendInteractEvent() => !IsPointerOverGameObject() && _gestureEnable;
+
+        private void OpenGM(InputAction.CallbackContext ctx)
+        {
+            EventCenter.DispatchEvent(new OpenGMEvent());
+        }
 
     }
 }

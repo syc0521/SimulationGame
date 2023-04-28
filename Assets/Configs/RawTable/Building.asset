@@ -33,9 +33,9 @@ MonoBehaviour:
     story: "\u5728\u98CE\u666F\u79C0\u7F8E\u4E4B\u5730\uFF0C\u5B9D\u5854\u5177\u6709\u4E0D\u53EF\u66FF\u4EE3\u7684\u5F15\u9886\u4F5C\u7528"
   - buildingid: 1
     resourcepath: building_201
-    name: "\u9662\u5B50"
+    name: "\u5B98\u5E9C"
     buildingtype: 0
-    description: "\u9662\u5B50"
+    description: "\u5B98\u5E9C"
     currencytype: 00000000
     currencycount: 00000000
     rowcount: 10
@@ -46,7 +46,7 @@ MonoBehaviour:
     level: 5
     basescore: 0
     envscore: 0
-    story: "\u5B8B\u4EE3\u519C\u6751\u767E\u59D3\u7684\u6BD4\u8F83\u6734\u5B9E,\u591A\u4E3A\u4F4E\u77EE\u7684\u5C4B\u548C\u74E6\u623F,\u6784\u6210\u4E00\u7EC4\u4F4F\u5B85"
+    story: "\u5B98\u5E9C"
   - buildingid: 2
     resourcepath: building_301
     name: "\u519C\u7530"
@@ -530,9 +530,9 @@ MonoBehaviour:
     story: "\u5728\u98CE\u666F\u79C0\u7F8E\u4E4B\u5730\uFF0C\u5B9D\u5854\u5177\u6709\u4E0D\u53EF\u66FF\u4EE3\u7684\u5F15\u9886\u4F5C\u7528"
   - buildingid: 1
     resourcepath: building_201
-    name: "\u9662\u5B50"
+    name: "\u5B98\u5E9C"
     buildingtype: 0
-    description: "\u9662\u5B50"
+    description: "\u5B98\u5E9C"
     currencytype: 00000000
     currencycount: 00000000
     rowcount: 10
@@ -543,7 +543,7 @@ MonoBehaviour:
     level: 5
     basescore: 0
     envscore: 0
-    story: "\u5B8B\u4EE3\u519C\u6751\u767E\u59D3\u7684\u6BD4\u8F83\u6734\u5B9E,\u591A\u4E3A\u4F4E\u77EE\u7684\u5C4B\u548C\u74E6\u623F,\u6784\u6210\u4E00\u7EC4\u4F4F\u5B85"
+    story: "\u5B98\u5E9C"
   - buildingid: 2
     resourcepath: building_301
     name: "\u519C\u7530"

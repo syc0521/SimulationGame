@@ -23,7 +23,7 @@ MonoBehaviour:
     consumeid: -1
     consumeamount: 00000000
   - id: 1
-    name: "\u9662\u5B50"
+    name: "\u5B98\u5E9C"
     producetype: 2
     produceid: 0
     produceamount: 00000000
@@ -241,7 +241,7 @@ MonoBehaviour:
     consumeid: -1
     consumeamount: 00000000
   - id: 1
-    name: "\u9662\u5B50"
+    name: "\u5B98\u5E9C"
     producetype: 2
     produceid: 0
     produceamount: 00000000

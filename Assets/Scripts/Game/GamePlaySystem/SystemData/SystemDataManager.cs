@@ -9,6 +9,7 @@ using Game.GamePlaySystem.Achievement;
 using Game.GamePlaySystem.Backpack;
 using Game.GamePlaySystem.Build;
 using Game.GamePlaySystem.Currency;
+using Game.GamePlaySystem.Task;
 using Game.LevelAndEntity.System;
 using Unity.Entities;
 using UnityEngine;
@@ -77,6 +78,7 @@ namespace Game.GamePlaySystem
                 var gameData = dataSystem.GetGameData();
                 if (!gameData.Equals(default))
                 {
+                    TaskManager.Instance.TriggerTask(TaskType.GetEvaluateScore, 0, (int)(gameData.buildingRate * 10));
                     AchievementManager.Instance.TriggerAchievement(AchievementType.People, -1, gameData.people);
                     return gameData;
                 }

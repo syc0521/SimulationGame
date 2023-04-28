@@ -26,13 +26,25 @@ MonoBehaviour:
     description: "\u53EF\u4EE5\u67E5\u770B\u76EE\u524D\u62E5\u6709\u7684\u7269\u54C1"
   - featureid: 4
     name: "\u6210\u5C31"
-    description: "\u6210\u5C31"
+    description: "\u53EF\u4EE5\u67E5\u770B\u76EE\u524D\u83B7\u5F97\u7684\u6210\u5C31"
   - featureid: 5
     name: "\u62C6\u9664"
     description: "\u53EF\u4EE5\u62C6\u9664\u4E0D\u7528\u7684\u5EFA\u7B51"
   - featureid: 6
     name: "\u5347\u7EA7"
-    description: "\u5347\u7EA7"
+    description: "\u53EF\u4EE5\u5347\u7EA7\u5EFA\u7B51"
+  - featureid: 7
+    name: "\u5B98\u5E9C"
+    description: "\u67E5\u770B\u5F53\u524D\u57CE\u5E02\u4FE1\u606F"
+  - featureid: 101
+    name: "\u7B2C\u4E00\u7AE0"
+    description: "\u7B2C\u4E00\u7AE0"
+  - featureid: 102
+    name: "\u7B2C\u4E8C\u7AE0"
+    description: "\u7B2C\u4E8C\u7AE0"
+  - featureid: 103
+    name: "\u7B2C\u4E09\u7AE0"
+    description: "\u7B2C\u4E09\u7AE0"
   dataList:
   - featureid: 1
     name: "\u79FB\u52A8"
@@ -45,10 +57,22 @@ MonoBehaviour:
     description: "\u53EF\u4EE5\u67E5\u770B\u76EE\u524D\u62E5\u6709\u7684\u7269\u54C1"
   - featureid: 4
     name: "\u6210\u5C31"
-    description: "\u6210\u5C31"
+    description: "\u53EF\u4EE5\u67E5\u770B\u76EE\u524D\u83B7\u5F97\u7684\u6210\u5C31"
   - featureid: 5
     name: "\u62C6\u9664"
     description: "\u53EF\u4EE5\u62C6\u9664\u4E0D\u7528\u7684\u5EFA\u7B51"
   - featureid: 6
     name: "\u5347\u7EA7"
-    description: "\u5347\u7EA7"
+    description: "\u53EF\u4EE5\u5347\u7EA7\u5EFA\u7B51"
+  - featureid: 7
+    name: "\u5B98\u5E9C"
+    description: "\u67E5\u770B\u5F53\u524D\u57CE\u5E02\u4FE1\u606F"
+  - featureid: 101
+    name: "\u7B2C\u4E00\u7AE0"
+    description: "\u7B2C\u4E00\u7AE0"
+  - featureid: 102
+    name: "\u7B2C\u4E8C\u7AE0"
+    description: "\u7B2C\u4E8C\u7AE0"
+  - featureid: 103
+    name: "\u7B2C\u4E09\u7AE0"
+    description: "\u7B2C\u4E09\u7AE0"

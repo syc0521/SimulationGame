@@ -8,6 +8,7 @@ namespace Game.Data
         GetBagItem = 3,
         RotateBuilding = 4,
         UpgradeBuilding = 5,
+        GetEvaluateScore = 6,
     }
 
     public enum TaskState

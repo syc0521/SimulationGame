@@ -8,5 +8,6 @@ namespace Game.Data.ScriptableObject
         public float cameraSpeed = 7.5f;
         public float minHeight = 2;
         public float maxHeight = 12;
+        public Vector2 xLimit, zLimit;
     }
 }

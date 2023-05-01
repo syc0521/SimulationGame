@@ -23,6 +23,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 911024241590213582, guid: 739b7fe484a00d14cb73ac54267e9f09,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 911024241590213582, guid: 739b7fe484a00d14cb73ac54267e9f09,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1005308536772712952, guid: 739b7fe484a00d14cb73ac54267e9f09,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -158,6 +168,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3769076990150631506, guid: 739b7fe484a00d14cb73ac54267e9f09,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3769076990150631506, guid: 739b7fe484a00d14cb73ac54267e9f09,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3769076990150631506, guid: 739b7fe484a00d14cb73ac54267e9f09,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4158381134613320486, guid: 739b7fe484a00d14cb73ac54267e9f09,
         type: 3}
       propertyPath: m_text
@@ -173,6 +198,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -270
       objectReference: {fileID: 0}
+    - target: {fileID: 5494009174967954057, guid: 739b7fe484a00d14cb73ac54267e9f09,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5623081224697473364, guid: 739b7fe484a00d14cb73ac54267e9f09,
+        type: 3}
+      propertyPath: m_Name
+      value: TaskSlider
+      objectReference: {fileID: 0}
     - target: {fileID: 5629710197140881644, guid: 739b7fe484a00d14cb73ac54267e9f09,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -183,10 +218,25 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 5709957574437835827, guid: 739b7fe484a00d14cb73ac54267e9f09,
+        type: 3}
+      propertyPath: m_Value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709957574437835827, guid: 739b7fe484a00d14cb73ac54267e9f09,
+        type: 3}
+      propertyPath: m_Colors.m_ColorMultiplier
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8194380411794329775, guid: 739b7fe484a00d14cb73ac54267e9f09,
         type: 3}
       propertyPath: m_Name
       value: TaskSlider
+      objectReference: {fileID: 0}
+    - target: {fileID: 8238595972788028898, guid: 739b7fe484a00d14cb73ac54267e9f09,
+        type: 3}
+      propertyPath: m_text
+      value: 1/1
       objectReference: {fileID: 0}
     - target: {fileID: 8364821987211031308, guid: 739b7fe484a00d14cb73ac54267e9f09,
         type: 3}
@@ -217,6 +267,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 8988475604695175417, guid: 739b7fe484a00d14cb73ac54267e9f09,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

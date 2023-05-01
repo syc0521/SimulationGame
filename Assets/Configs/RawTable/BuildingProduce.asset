@@ -16,7 +16,7 @@ MonoBehaviour:
   WorksheetName: BuildingProduce
   dataArray:
   - id: 0
-    name: "\u5B9D\u5854"
+    name: "\u516D\u548C\u5854"
     producetype: 2
     produceid: 0
     produceamount: 00000000
@@ -58,28 +58,28 @@ MonoBehaviour:
     consumeid: -1
     consumeamount: 00000000
   - id: 6
-    name: "\u4E2D\u578B\u623F\u5C4B1"
+    name: "\u5E9C\u5B85"
     producetype: 0
     produceid: 0
     produceamount: 0b000000170000002a000000
     consumeid: -2
     consumeamount: 00000000
   - id: 7
-    name: "\u5C0F\u578B\u623F\u5C4B"
+    name: "\u671B\u706B\u697C"
     producetype: 0
     produceid: 0
     produceamount: 090000001200000018000000
     consumeid: -2
     consumeamount: 00000000
   - id: 8
-    name: "\u5927\u578B\u623F\u5C4B"
+    name: "\u5B85\u9662"
     producetype: 0
     produceid: 0
     produceamount: 120000002000000032000000
     consumeid: -2
     consumeamount: 00000000
   - id: 9
-    name: "\u4E2D\u578B\u623F\u5C4B2"
+    name: "\u74E6\u623F"
     producetype: 0
     produceid: 0
     produceamount: 0c0000001800000028000000
@@ -121,70 +121,70 @@ MonoBehaviour:
     consumeid: -1
     consumeamount: 00000000
   - id: 15
-    name: "\u4E951"
+    name: "\u76F8\u56FD\u4E95"
     producetype: 2
     produceid: 0
     produceamount: 00000000
     consumeid: -1
     consumeamount: 00000000
   - id: 16
-    name: "\u4E952"
+    name: "\u65B9\u4E95"
     producetype: 2
     produceid: 0
     produceamount: 00000000
     consumeid: -1
     consumeamount: 00000000
   - id: 17
-    name: "\u4E953"
+    name: "\u91D1\u725B\u4E95"
     producetype: 2
     produceid: 0
     produceamount: 00000000
     consumeid: -1
     consumeamount: 00000000
   - id: 18
-    name: "\u68111"
+    name: "\u743C\u6811"
     producetype: 2
     produceid: 0
     produceamount: 00000000
     consumeid: -1
     consumeamount: 00000000
   - id: 19
-    name: "\u68112"
+    name: "\u6811\u679D"
     producetype: 2
     produceid: 0
     produceamount: 00000000
     consumeid: -1
     consumeamount: 00000000
   - id: 20
-    name: "\u68113"
+    name: "\u67AF\u679D"
     producetype: 2
     produceid: 0
     produceamount: 00000000
     consumeid: -1
     consumeamount: 00000000
   - id: 21
-    name: "\u68114"
+    name: "\u677E\u67CF"
     producetype: 2
     produceid: 0
     produceamount: 00000000
     consumeid: -1
     consumeamount: 00000000
   - id: 22
-    name: "\u68115"
+    name: "\u73E0\u6811"
     producetype: 2
     produceid: 0
     produceamount: 00000000
     consumeid: -1
     consumeamount: 00000000
   - id: 23
-    name: "\u68116"
+    name: "\u51E4\u6797"
     producetype: 2
     produceid: 0
     produceamount: 00000000
     consumeid: -1
     consumeamount: 00000000
   - id: 24
-    name: "\u4EAD\u5B50"
+    name: "\u4EAD\u69AD"
     producetype: 2
     produceid: 0
     produceamount: 00000000
@@ -198,7 +198,7 @@ MonoBehaviour:
     consumeid: -1
     consumeamount: 00000000
   - id: 26
-    name: "\u533B\u9662"
+    name: "\u5B89\u4E50\u574A"
     producetype: 2
     produceid: 0
     produceamount: 00000000
@@ -230,11 +230,18 @@ MonoBehaviour:
     producetype: 1
     produceid: 2
     produceamount: 050000000a0000000d000000
+    consumeid: -1
+    consumeamount: 00000000
+  - id: 31
+    name: "\u4E09\u6F6D\u5370\u6708"
+    producetype: 2
+    produceid: 0
+    produceamount: 00000000
     consumeid: -1
     consumeamount: 00000000
   dataList:
   - id: 0
-    name: "\u5B9D\u5854"
+    name: "\u516D\u548C\u5854"
     producetype: 2
     produceid: 0
     produceamount: 00000000
@@ -276,28 +283,28 @@ MonoBehaviour:
     consumeid: -1
     consumeamount: 00000000
   - id: 6
-    name: "\u4E2D\u578B\u623F\u5C4B1"
+    name: "\u5E9C\u5B85"
     producetype: 0
     produceid: 0
     produceamount: 0b000000170000002a000000
     consumeid: -2
     consumeamount: 00000000
   - id: 7
-    name: "\u5C0F\u578B\u623F\u5C4B"
+    name: "\u671B\u706B\u697C"
     producetype: 0
     produceid: 0
     produceamount: 090000001200000018000000
     consumeid: -2
     consumeamount: 00000000
   - id: 8
-    name: "\u5927\u578B\u623F\u5C4B"
+    name: "\u5B85\u9662"
     producetype: 0
     produceid: 0
     produceamount: 120000002000000032000000
     consumeid: -2
     consumeamount: 00000000
   - id: 9
-    name: "\u4E2D\u578B\u623F\u5C4B2"
+    name: "\u74E6\u623F"
     producetype: 0
     produceid: 0
     produceamount: 0c0000001800000028000000
@@ -339,70 +346,70 @@ MonoBehaviour:
     consumeid: -1
     consumeamount: 00000000
   - id: 15
-    name: "\u4E951"
+    name: "\u76F8\u56FD\u4E95"
     producetype: 2
     produceid: 0
     produceamount: 00000000
     consumeid: -1
     consumeamount: 00000000
   - id: 16
-    name: "\u4E952"
+    name: "\u65B9\u4E95"
     producetype: 2
     produceid: 0
     produceamount: 00000000
     consumeid: -1
     consumeamount: 00000000
   - id: 17
-    name: "\u4E953"
+    name: "\u91D1\u725B\u4E95"
     producetype: 2
     produceid: 0
     produceamount: 00000000
     consumeid: -1
     consumeamount: 00000000
   - id: 18
-    name: "\u68111"
+    name: "\u743C\u6811"
     producetype: 2
     produceid: 0
     produceamount: 00000000
     consumeid: -1
     consumeamount: 00000000
   - id: 19
-    name: "\u68112"
+    name: "\u6811\u679D"
     producetype: 2
     produceid: 0
     produceamount: 00000000
     consumeid: -1
     consumeamount: 00000000
   - id: 20
-    name: "\u68113"
+    name: "\u67AF\u679D"
     producetype: 2
     produceid: 0
     produceamount: 00000000
     consumeid: -1
     consumeamount: 00000000
   - id: 21
-    name: "\u68114"
+    name: "\u677E\u67CF"
     producetype: 2
     produceid: 0
     produceamount: 00000000
     consumeid: -1
     consumeamount: 00000000
   - id: 22
-    name: "\u68115"
+    name: "\u73E0\u6811"
     producetype: 2
     produceid: 0
     produceamount: 00000000
     consumeid: -1
     consumeamount: 00000000
   - id: 23
-    name: "\u68116"
+    name: "\u51E4\u6797"
     producetype: 2
     produceid: 0
     produceamount: 00000000
     consumeid: -1
     consumeamount: 00000000
   - id: 24
-    name: "\u4EAD\u5B50"
+    name: "\u4EAD\u69AD"
     producetype: 2
     produceid: 0
     produceamount: 00000000
@@ -416,7 +423,7 @@ MonoBehaviour:
     consumeid: -1
     consumeamount: 00000000
   - id: 26
-    name: "\u533B\u9662"
+    name: "\u5B89\u4E50\u574A"
     producetype: 2
     produceid: 0
     produceamount: 00000000
@@ -448,5 +455,12 @@ MonoBehaviour:
     producetype: 1
     produceid: 2
     produceamount: 050000000a0000000d000000
+    consumeid: -1
+    consumeamount: 00000000
+  - id: 31
+    name: "\u4E09\u6F6D\u5370\u6708"
+    producetype: 2
+    produceid: 0
+    produceamount: 00000000
     consumeid: -1
     consumeamount: 00000000

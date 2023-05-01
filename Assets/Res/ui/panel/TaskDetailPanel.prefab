@@ -293,7 +293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 527f340a44b2424db2f95d24a6903b27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  template: {fileID: 7304031008229721263, guid: cf45d437a8bf85a498bf513674a4a50b,
+  template: {fileID: 6551711088077045076, guid: cf45d437a8bf85a498bf513674a4a50b,
     type: 3}
 --- !u!114 &5613619897558113035
 MonoBehaviour:

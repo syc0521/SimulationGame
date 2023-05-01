@@ -16,23 +16,23 @@ MonoBehaviour:
   WorksheetName: CityEvaluate
   dataArray:
   - level: 1
-    score: 120
+    score: 100
   - level: 2
-    score: 300
+    score: 200
   - level: 3
-    score: 600
+    score: 400
   - level: 4
-    score: 1000
+    score: 800
   - level: 5
     score: 1500
   dataList:
   - level: 1
-    score: 120
+    score: 100
   - level: 2
-    score: 300
+    score: 200
   - level: 3
-    score: 600
+    score: 400
   - level: 4
-    score: 1000
+    score: 800
   - level: 5
     score: 1500

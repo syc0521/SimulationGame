@@ -10,6 +10,7 @@ using Game.Data.Shop;
 using Game.GamePlaySystem.Backpack;
 using Game.GamePlaySystem.Build;
 using Game.GamePlaySystem.Currency;
+using Game.GamePlaySystem.Task;
 using UnityEngine;
 using Random = System.Random;
 
@@ -100,9 +101,11 @@ namespace Game.GamePlaySystem.Shop
                 {
                     case ShopItemType.BagItem:
                         BackpackManager.Instance.AddBackpackCount(shopItem.Itemid, shopItem.Count);
+                        TaskManager.Instance.TriggerTask(TaskType.BuyItem, 0);
                         break;
                     case ShopItemType.Building:
                         BuildingManager.Instance.UnlockBuilding(shopItem.Itemid);
+                        TaskManager.Instance.TriggerTask(TaskType.BuyDailyItem, 0);
                         break;
                 }
 

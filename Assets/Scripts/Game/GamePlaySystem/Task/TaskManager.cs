@@ -58,7 +58,14 @@ namespace Game.GamePlaySystem.Task
             bool hasTaskFinished = false;
             foreach (var task in runningTasks)
             {
-                SetTaskNum(task.Taskid, targetID, targetNum);
+                if (taskType is TaskType.People or TaskType.GetEvaluateScore)
+                {
+                    SetTaskNum(task.Taskid, targetID, targetNum);
+                }
+                else
+                {
+                    AddTaskNum(task.Taskid, targetID, targetNum);
+                }
                 
                 if (IsTaskFinished(task.Taskid))
                 {
@@ -116,7 +123,7 @@ namespace Game.GamePlaySystem.Task
             });
         }
         
-        private Dictionary<int, PlayerTaskData> GetPlayerTask()
+        public Dictionary<int, PlayerTaskData> GetPlayerTask()
         {
             Dictionary<int, PlayerTaskData> data = new();
             foreach (var task in _playerTaskData.Where(
@@ -154,7 +161,7 @@ namespace Game.GamePlaySystem.Task
             }
         }
         
-        private void SetTaskNum(int taskID, int itemID, int num)
+        private void AddTaskNum(int taskID, int itemID, int num)
         {
             if (_playerTaskData.TryGetValue(taskID, out var value))
             {
@@ -163,6 +170,18 @@ namespace Game.GamePlaySystem.Task
 
                 if (index < 0) return;
                 value.currentNum[index] += num;
+            }
+        }
+        
+        private void SetTaskNum(int taskID, int itemID, int num)
+        {
+            if (_playerTaskData.TryGetValue(taskID, out var value))
+            {
+                var taskData = ConfigTable.Instance.GetTask(taskID);
+                var index = Array.IndexOf(taskData.Targetid, itemID);
+
+                if (index < 0) return;
+                value.currentNum[index] = num;
             }
         }
 

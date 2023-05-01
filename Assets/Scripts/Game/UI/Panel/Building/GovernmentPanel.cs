@@ -118,8 +118,9 @@ namespace Game.UI.Panel.Building
         {
             return rate switch
             {
-                >= 0.8f => "繁荣",
-                >= 0.5f => "较好",
+                >= 0.9f => "繁荣",
+                >= 0.7f => "较好",
+                >= 0.4f => "一般",
                 _ => "破败"
             };
         }

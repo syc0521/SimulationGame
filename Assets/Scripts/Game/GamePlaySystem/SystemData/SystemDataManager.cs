@@ -78,7 +78,8 @@ namespace Game.GamePlaySystem
                 var gameData = dataSystem.GetGameData();
                 if (!gameData.Equals(default))
                 {
-                    TaskManager.Instance.TriggerTask(TaskType.GetEvaluateScore, 0, (int)(gameData.buildingRate * 10));
+                    TaskManager.Instance.TriggerTask(TaskType.GetEvaluateScore, 0, (int)(gameData.buildingRate * 100));
+                    TaskManager.Instance.TriggerTask(TaskType.People, 0, gameData.people);
                     AchievementManager.Instance.TriggerAchievement(AchievementType.People, -1, gameData.people);
                     return gameData;
                 }

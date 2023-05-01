@@ -15,3 +15,5 @@ MonoBehaviour:
   cameraSpeed: 21
   minHeight: 3
   maxHeight: 15
+  xLimit: {x: 15, y: 150}
+  zLimit: {x: 5, y: 150}

@@ -59,7 +59,8 @@ namespace Game.GamePlaySystem
         private void ChangeCameraPosition(SwipeChangedEvent evt)
         {
             var camPosY = mainCam.transform.position.y;
-            var speed = ConfigTable.Instance.GetGestureConfig().cameraSpeed * (camPosY / 5.5f);
+            var config = ConfigTable.Instance.GetGestureConfig();
+            var speed = config.cameraSpeed * (camPosY / 5.5f);
             var deltaPos = -(evt.pos - _startPosition) * (Time.deltaTime * speed * 0.025f);//速度
             if (math.length(deltaPos) > float.Epsilon)
             {
@@ -69,10 +70,18 @@ namespace Game.GamePlaySystem
                 var delta3d = new float3(deltaPos.x, deltaPos.y, 0);
                 var angleDelta = Quaternion.AngleAxis(angle, delta3d) * delta3d;
                 
-                var posY = camTransform.position.y;
-                camTransform.Translate(new Vector3(angleDelta.x, 0, angleDelta.y));
                 var camPos = camTransform.position;
-                camTransform.position = new Vector3(camPos.x, posY, camPos.z);
+                var delta = new Vector3(angleDelta.x, 0, angleDelta.y);
+                var newCamPos = camPos + delta;
+                var posY = camPos.y;
+                
+                if (newCamPos.x > config.xLimit[0] && newCamPos.x < config.xLimit[1] &&
+                    newCamPos.z > config.zLimit[0] && newCamPos.z < config.zLimit[1])
+                {
+                    camTransform.Translate(new Vector3(angleDelta.x, 0, angleDelta.y));
+                    camPos = camTransform.position;
+                    camTransform.position = new Vector3(camPos.x, posY, camPos.z);
+                }
             }
 
             _startPosition = evt.pos;
@@ -136,7 +145,7 @@ namespace Game.GamePlaySystem
         {
             var camTransform = mainCam.transform;
             var angle = camTransform.eulerAngles;
-            camTransform.rotation = Quaternion.Euler(angle.x, angle.y + evt.pos.x / 2, 0);
+            camTransform.rotation = Quaternion.Euler(angle.x, angle.y + evt.pos.x / 3, 0);
         }
 
         public void TakePhoto()

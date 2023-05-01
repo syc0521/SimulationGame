@@ -1,3 +1,5 @@
+using Game.Core;
+using Game.Data.Event.Task;
 using Game.Data.GM;
 using Game.GamePlaySystem.Task;
 
@@ -10,6 +12,10 @@ namespace Game.GamePlaySystem.GM
         public void Run()
         {
             TaskManager.Instance.ActivateTask(taskId);
+            EventCenter.DispatchEvent(new RefreshTaskEvent
+            {
+                playerTask = TaskManager.Instance.GetPlayerTask()
+            });
         }
     }
     
@@ -20,6 +26,10 @@ namespace Game.GamePlaySystem.GM
         public void Run()
         {
             TaskManager.Instance.GetReward(taskId);
+            EventCenter.DispatchEvent(new RefreshTaskEvent
+            {
+                playerTask = TaskManager.Instance.GetPlayerTask()
+            });
         }
     }
 }

@@ -17,18 +17,18 @@ MonoBehaviour:
   dataArray:
   - buildingid: 0
     resourcepath: building_101
-    name: "\u5B9D\u5854"
+    name: "\u516D\u548C\u5854"
     buildingtype: 3
     description: "\u5B9D\u5854"
-    currencytype: 00000000
-    currencycount: e8030000
+    currencytype: 0000000002000000
+    currencycount: 88130000b80b0000
     rowcount: 4
     colcount: 4
     cd: -1
     unlock: 0
     people: 0
     level: 1
-    basescore: 50
+    basescore: 100
     envscore: 20
     story: "\u5728\u98CE\u666F\u79C0\u7F8E\u4E4B\u5730\uFF0C\u5B9D\u5854\u5177\u6709\u4E0D\u53EF\u66FF\u4EE3\u7684\u5F15\u9886\u4F5C\u7528"
   - buildingid: 1
@@ -113,7 +113,7 @@ MonoBehaviour:
     story: "\u5B8B\u4EE3\u6865\u6881\u6750\u8D28\u591A\u4E3A\u7816\u3001\u6728\uFF0C\u9020\u578B\u7D20\u7B80\u53E4\u96C5"
   - buildingid: 6
     resourcepath: building_202
-    name: "\u4E2D\u578B\u623F\u5C4B1"
+    name: "\u5E9C\u5B85"
     buildingtype: 0
     description: "\u4E2D\u578B\u623F\u5C4B1"
     currencytype: 00000000
@@ -129,7 +129,7 @@ MonoBehaviour:
     story: "\u5B8B\u4EE3\u519C\u6751\u767E\u59D3\u7684\u6BD4\u8F83\u6734\u5B9E,\u591A\u4E3A\u4F4E\u77EE\u7684\u5C4B\u548C\u74E6\u623F,\u6784\u6210\u4E00\u7EC4\u4F4F\u5B85"
   - buildingid: 7
     resourcepath: building_203
-    name: "\u5C0F\u578B\u623F\u5C4B"
+    name: "\u671B\u706B\u697C"
     buildingtype: 0
     description: "\u57FA\u7840\u623F\u5C4B"
     currencytype: 00000000
@@ -145,7 +145,7 @@ MonoBehaviour:
     story: "\u5B8B\u4EE3\u519C\u6751\u767E\u59D3\u7684\u6BD4\u8F83\u6734\u5B9E,\u591A\u4E3A\u4F4E\u77EE\u7684\u5C4B\u548C\u74E6\u623F,\u6784\u6210\u4E00\u7EC4\u4F4F\u5B85"
   - buildingid: 8
     resourcepath: building_204
-    name: "\u5927\u578B\u623F\u5C4B"
+    name: "\u5B85\u9662"
     buildingtype: 0
     description: "\u5927\u578B\u623F\u5C4B"
     currencytype: 00000000
@@ -161,7 +161,7 @@ MonoBehaviour:
     story: "\u5B8B\u4EE3\u519C\u6751\u767E\u59D3\u7684\u6BD4\u8F83\u6734\u5B9E,\u591A\u4E3A\u4F4E\u77EE\u7684\u5C4B\u548C\u74E6\u623F,\u6784\u6210\u4E00\u7EC4\u4F4F\u5B85"
   - buildingid: 9
     resourcepath: building_205
-    name: "\u4E2D\u578B\u623F\u5C4B2"
+    name: "\u74E6\u623F"
     buildingtype: 0
     description: "\u4E2D\u578B\u623F\u5C4B2"
     currencytype: 00000000
@@ -233,7 +233,7 @@ MonoBehaviour:
     rowcount: 6
     colcount: 7
     cd: -1
-    unlock: 1
+    unlock: 0
     people: 0
     level: 1
     basescore: 0
@@ -257,9 +257,9 @@ MonoBehaviour:
     story: "\u7BF1\u7B06\u53EF\u4EE5\u4FDD\u62A4\u623F\u5C4B\u5BB6\u5BA4"
   - buildingid: 15
     resourcepath: building_405
-    name: "\u4E951"
+    name: "\u76F8\u56FD\u4E95"
     buildingtype: 3
-    description: "\u4E951"
+    description: "\u76F8\u56FD\u4E95"
     currencytype: 0000000001000000
     currencycount: 58020000f4010000
     rowcount: 2
@@ -273,9 +273,9 @@ MonoBehaviour:
     story: "\u82CF\u8F7C\u758F\u6D5A\u516D\u4E95\uFF0C\u4F7F\u5F97\u897F\u6E56\u7518\u6C34\uFF0C\u6B86\u904D\u4E00\u57CE"
   - buildingid: 16
     resourcepath: building_406
-    name: "\u4E952"
+    name: "\u65B9\u4E95"
     buildingtype: 3
-    description: "\u4E952"
+    description: "\u65B9\u4E95"
     currencytype: 0000000001000000
     currencycount: e803000090010000
     rowcount: 2
@@ -289,9 +289,9 @@ MonoBehaviour:
     story: "\u82CF\u8F7C\u758F\u6D5A\u516D\u4E95\uFF0C\u4F7F\u5F97\u897F\u6E56\u7518\u6C34\uFF0C\u6B86\u904D\u4E00\u57CE"
   - buildingid: 17
     resourcepath: building_407
-    name: "\u4E953"
+    name: "\u91D1\u725B\u4E95"
     buildingtype: 3
-    description: "\u4E953"
+    description: "\u91D1\u725B\u4E95"
     currencytype: 0000000001000000
     currencycount: f401000084030000
     rowcount: 2
@@ -305,9 +305,9 @@ MonoBehaviour:
     story: "\u82CF\u8F7C\u758F\u6D5A\u516D\u4E95\uFF0C\u4F7F\u5F97\u897F\u6E56\u7518\u6C34\uFF0C\u6B86\u904D\u4E00\u57CE"
   - buildingid: 18
     resourcepath: building_408
-    name: "\u68111"
+    name: "\u743C\u6811"
     buildingtype: 2
-    description: "\u68111"
+    description: "\u743C\u6811"
     currencytype: 00000000
     currencycount: 32000000
     rowcount: 2
@@ -321,9 +321,9 @@ MonoBehaviour:
     story: "\u6811\u6728\u53EF\u7528\u6765\u88C5\u70B9\u57CE\u5E02\uFF0C\u6E05\u6D01\u7A7A\u6C14"
   - buildingid: 19
     resourcepath: building_409
-    name: "\u68112"
+    name: "\u6811\u679D"
     buildingtype: 2
-    description: "\u68112"
+    description: "\u6811\u679D"
     currencytype: 00000000
     currencycount: 32000000
     rowcount: 2
@@ -337,9 +337,9 @@ MonoBehaviour:
     story: "\u6811\u6728\u53EF\u7528\u6765\u88C5\u70B9\u57CE\u5E02\uFF0C\u6E05\u6D01\u7A7A\u6C14"
   - buildingid: 20
     resourcepath: building_410
-    name: "\u68113"
+    name: "\u67AF\u679D"
     buildingtype: 2
-    description: "\u68113"
+    description: "\u67AF\u679D"
     currencytype: 00000000
     currencycount: 32000000
     rowcount: 1
@@ -353,9 +353,9 @@ MonoBehaviour:
     story: "\u6811\u6728\u53EF\u7528\u6765\u88C5\u70B9\u57CE\u5E02\uFF0C\u6E05\u6D01\u7A7A\u6C14"
   - buildingid: 21
     resourcepath: building_411
-    name: "\u68114"
+    name: "\u677E\u67CF"
     buildingtype: 2
-    description: "\u68114"
+    description: "\u677E\u67CF"
     currencytype: 00000000
     currencycount: 32000000
     rowcount: 2
@@ -369,9 +369,9 @@ MonoBehaviour:
     story: "\u6811\u6728\u53EF\u7528\u6765\u88C5\u70B9\u57CE\u5E02\uFF0C\u6E05\u6D01\u7A7A\u6C14"
   - buildingid: 22
     resourcepath: building_412
-    name: "\u68115"
+    name: "\u73E0\u6811"
     buildingtype: 2
-    description: "\u68115"
+    description: "\u73E0\u6811"
     currencytype: 00000000
     currencycount: 32000000
     rowcount: 3
@@ -385,9 +385,9 @@ MonoBehaviour:
     story: "\u6811\u6728\u53EF\u7528\u6765\u88C5\u70B9\u57CE\u5E02\uFF0C\u6E05\u6D01\u7A7A\u6C14"
   - buildingid: 23
     resourcepath: building_413
-    name: "\u68116"
+    name: "\u51E4\u6797"
     buildingtype: 2
-    description: "\u68116"
+    description: "\u51E4\u6797"
     currencytype: 00000000
     currencycount: 32000000
     rowcount: 4
@@ -401,7 +401,7 @@ MonoBehaviour:
     story: "\u6811\u6728\u53EF\u7528\u6765\u88C5\u70B9\u57CE\u5E02\uFF0C\u6E05\u6D01\u7A7A\u6C14"
   - buildingid: 24
     resourcepath: building_414
-    name: "\u4EAD\u5B50"
+    name: "\u4EAD\u69AD"
     buildingtype: 2
     description: "\u4EAD\u5B50"
     currencytype: 01000000
@@ -433,7 +433,7 @@ MonoBehaviour:
     story: "\u724C\u574A\u662D\u793A\u5BB6\u65CF\u5148\u4EBA\u7684\u9AD8\u5C1A\u7F8E\u5FB7\u548C\u4E30\u529F\u4F1F\u7EE9\uFF0C\u517C\u6709\u796D\u7956\u7684\u529F\u80FD"
   - buildingid: 26
     resourcepath: building_416
-    name: "\u533B\u9662"
+    name: "\u5B89\u4E50\u574A"
     buildingtype: 4
     description: "\u533B\u9662"
     currencytype: 01000000
@@ -511,21 +511,37 @@ MonoBehaviour:
     basescore: 10
     envscore: -15
     story: "\u751F\u4EA7\u5404\u7C7B\u94C1\u5668,\u6EE1\u8DB3\u8001\u767E\u59D3\u7684\u9700\u6C42"
+  - buildingid: 31
+    resourcepath: building_421
+    name: "\u4E09\u6F6D\u5370\u6708"
+    buildingtype: 3
+    description: "\u4E09\u6F6D\u5370\u6708"
+    currencytype: 0b00000001000000
+    currencycount: a00f0000d0070000
+    rowcount: 8
+    colcount: 8
+    cd: -1
+    unlock: 0
+    people: 0
+    level: 1
+    basescore: 100
+    envscore: 20
+    story: "\u4E09\u6F6D\u5370\u6708\u662F\u897F\u6E56\u4E2D\u6700\u5927\u7684\u5C9B\u5C7F\uFF0C\u98CE\u666F\u79C0\u4E3D\u3001\u666F\u8272\u6E05\u5E7D"
   dataList:
   - buildingid: 0
     resourcepath: building_101
-    name: "\u5B9D\u5854"
+    name: "\u516D\u548C\u5854"
     buildingtype: 3
     description: "\u5B9D\u5854"
-    currencytype: 00000000
-    currencycount: e8030000
+    currencytype: 0000000002000000
+    currencycount: 88130000b80b0000
     rowcount: 4
     colcount: 4
     cd: -1
     unlock: 0
     people: 0
     level: 1
-    basescore: 50
+    basescore: 100
     envscore: 20
     story: "\u5728\u98CE\u666F\u79C0\u7F8E\u4E4B\u5730\uFF0C\u5B9D\u5854\u5177\u6709\u4E0D\u53EF\u66FF\u4EE3\u7684\u5F15\u9886\u4F5C\u7528"
   - buildingid: 1
@@ -610,7 +626,7 @@ MonoBehaviour:
     story: "\u5B8B\u4EE3\u6865\u6881\u6750\u8D28\u591A\u4E3A\u7816\u3001\u6728\uFF0C\u9020\u578B\u7D20\u7B80\u53E4\u96C5"
   - buildingid: 6
     resourcepath: building_202
-    name: "\u4E2D\u578B\u623F\u5C4B1"
+    name: "\u5E9C\u5B85"
     buildingtype: 0
     description: "\u4E2D\u578B\u623F\u5C4B1"
     currencytype: 00000000
@@ -626,7 +642,7 @@ MonoBehaviour:
     story: "\u5B8B\u4EE3\u519C\u6751\u767E\u59D3\u7684\u6BD4\u8F83\u6734\u5B9E,\u591A\u4E3A\u4F4E\u77EE\u7684\u5C4B\u548C\u74E6\u623F,\u6784\u6210\u4E00\u7EC4\u4F4F\u5B85"
   - buildingid: 7
     resourcepath: building_203
-    name: "\u5C0F\u578B\u623F\u5C4B"
+    name: "\u671B\u706B\u697C"
     buildingtype: 0
     description: "\u57FA\u7840\u623F\u5C4B"
     currencytype: 00000000
@@ -642,7 +658,7 @@ MonoBehaviour:
     story: "\u5B8B\u4EE3\u519C\u6751\u767E\u59D3\u7684\u6BD4\u8F83\u6734\u5B9E,\u591A\u4E3A\u4F4E\u77EE\u7684\u5C4B\u548C\u74E6\u623F,\u6784\u6210\u4E00\u7EC4\u4F4F\u5B85"
   - buildingid: 8
     resourcepath: building_204
-    name: "\u5927\u578B\u623F\u5C4B"
+    name: "\u5B85\u9662"
     buildingtype: 0
     description: "\u5927\u578B\u623F\u5C4B"
     currencytype: 00000000
@@ -658,7 +674,7 @@ MonoBehaviour:
     story: "\u5B8B\u4EE3\u519C\u6751\u767E\u59D3\u7684\u6BD4\u8F83\u6734\u5B9E,\u591A\u4E3A\u4F4E\u77EE\u7684\u5C4B\u548C\u74E6\u623F,\u6784\u6210\u4E00\u7EC4\u4F4F\u5B85"
   - buildingid: 9
     resourcepath: building_205
-    name: "\u4E2D\u578B\u623F\u5C4B2"
+    name: "\u74E6\u623F"
     buildingtype: 0
     description: "\u4E2D\u578B\u623F\u5C4B2"
     currencytype: 00000000
@@ -730,7 +746,7 @@ MonoBehaviour:
     rowcount: 6
     colcount: 7
     cd: -1
-    unlock: 1
+    unlock: 0
     people: 0
     level: 1
     basescore: 0
@@ -754,9 +770,9 @@ MonoBehaviour:
     story: "\u7BF1\u7B06\u53EF\u4EE5\u4FDD\u62A4\u623F\u5C4B\u5BB6\u5BA4"
   - buildingid: 15
     resourcepath: building_405
-    name: "\u4E951"
+    name: "\u76F8\u56FD\u4E95"
     buildingtype: 3
-    description: "\u4E951"
+    description: "\u76F8\u56FD\u4E95"
     currencytype: 0000000001000000
     currencycount: 58020000f4010000
     rowcount: 2
@@ -770,9 +786,9 @@ MonoBehaviour:
     story: "\u82CF\u8F7C\u758F\u6D5A\u516D\u4E95\uFF0C\u4F7F\u5F97\u897F\u6E56\u7518\u6C34\uFF0C\u6B86\u904D\u4E00\u57CE"
   - buildingid: 16
     resourcepath: building_406
-    name: "\u4E952"
+    name: "\u65B9\u4E95"
     buildingtype: 3
-    description: "\u4E952"
+    description: "\u65B9\u4E95"
     currencytype: 0000000001000000
     currencycount: e803000090010000
     rowcount: 2
@@ -786,9 +802,9 @@ MonoBehaviour:
     story: "\u82CF\u8F7C\u758F\u6D5A\u516D\u4E95\uFF0C\u4F7F\u5F97\u897F\u6E56\u7518\u6C34\uFF0C\u6B86\u904D\u4E00\u57CE"
   - buildingid: 17
     resourcepath: building_407
-    name: "\u4E953"
+    name: "\u91D1\u725B\u4E95"
     buildingtype: 3
-    description: "\u4E953"
+    description: "\u91D1\u725B\u4E95"
     currencytype: 0000000001000000
     currencycount: f401000084030000
     rowcount: 2
@@ -802,9 +818,9 @@ MonoBehaviour:
     story: "\u82CF\u8F7C\u758F\u6D5A\u516D\u4E95\uFF0C\u4F7F\u5F97\u897F\u6E56\u7518\u6C34\uFF0C\u6B86\u904D\u4E00\u57CE"
   - buildingid: 18
     resourcepath: building_408
-    name: "\u68111"
+    name: "\u743C\u6811"
     buildingtype: 2
-    description: "\u68111"
+    description: "\u743C\u6811"
     currencytype: 00000000
     currencycount: 32000000
     rowcount: 2
@@ -818,9 +834,9 @@ MonoBehaviour:
     story: "\u6811\u6728\u53EF\u7528\u6765\u88C5\u70B9\u57CE\u5E02\uFF0C\u6E05\u6D01\u7A7A\u6C14"
   - buildingid: 19
     resourcepath: building_409
-    name: "\u68112"
+    name: "\u6811\u679D"
     buildingtype: 2
-    description: "\u68112"
+    description: "\u6811\u679D"
     currencytype: 00000000
     currencycount: 32000000
     rowcount: 2
@@ -834,9 +850,9 @@ MonoBehaviour:
     story: "\u6811\u6728\u53EF\u7528\u6765\u88C5\u70B9\u57CE\u5E02\uFF0C\u6E05\u6D01\u7A7A\u6C14"
   - buildingid: 20
     resourcepath: building_410
-    name: "\u68113"
+    name: "\u67AF\u679D"
     buildingtype: 2
-    description: "\u68113"
+    description: "\u67AF\u679D"
     currencytype: 00000000
     currencycount: 32000000
     rowcount: 1
@@ -850,9 +866,9 @@ MonoBehaviour:
     story: "\u6811\u6728\u53EF\u7528\u6765\u88C5\u70B9\u57CE\u5E02\uFF0C\u6E05\u6D01\u7A7A\u6C14"
   - buildingid: 21
     resourcepath: building_411
-    name: "\u68114"
+    name: "\u677E\u67CF"
     buildingtype: 2
-    description: "\u68114"
+    description: "\u677E\u67CF"
     currencytype: 00000000
     currencycount: 32000000
     rowcount: 2
@@ -866,9 +882,9 @@ MonoBehaviour:
     story: "\u6811\u6728\u53EF\u7528\u6765\u88C5\u70B9\u57CE\u5E02\uFF0C\u6E05\u6D01\u7A7A\u6C14"
   - buildingid: 22
     resourcepath: building_412
-    name: "\u68115"
+    name: "\u73E0\u6811"
     buildingtype: 2
-    description: "\u68115"
+    description: "\u73E0\u6811"
     currencytype: 00000000
     currencycount: 32000000
     rowcount: 3
@@ -882,9 +898,9 @@ MonoBehaviour:
     story: "\u6811\u6728\u53EF\u7528\u6765\u88C5\u70B9\u57CE\u5E02\uFF0C\u6E05\u6D01\u7A7A\u6C14"
   - buildingid: 23
     resourcepath: building_413
-    name: "\u68116"
+    name: "\u51E4\u6797"
     buildingtype: 2
-    description: "\u68116"
+    description: "\u51E4\u6797"
     currencytype: 00000000
     currencycount: 32000000
     rowcount: 4
@@ -898,7 +914,7 @@ MonoBehaviour:
     story: "\u6811\u6728\u53EF\u7528\u6765\u88C5\u70B9\u57CE\u5E02\uFF0C\u6E05\u6D01\u7A7A\u6C14"
   - buildingid: 24
     resourcepath: building_414
-    name: "\u4EAD\u5B50"
+    name: "\u4EAD\u69AD"
     buildingtype: 2
     description: "\u4EAD\u5B50"
     currencytype: 01000000
@@ -930,7 +946,7 @@ MonoBehaviour:
     story: "\u724C\u574A\u662D\u793A\u5BB6\u65CF\u5148\u4EBA\u7684\u9AD8\u5C1A\u7F8E\u5FB7\u548C\u4E30\u529F\u4F1F\u7EE9\uFF0C\u517C\u6709\u796D\u7956\u7684\u529F\u80FD"
   - buildingid: 26
     resourcepath: building_416
-    name: "\u533B\u9662"
+    name: "\u5B89\u4E50\u574A"
     buildingtype: 4
     description: "\u533B\u9662"
     currencytype: 01000000
@@ -1008,3 +1024,19 @@ MonoBehaviour:
     basescore: 10
     envscore: -15
     story: "\u751F\u4EA7\u5404\u7C7B\u94C1\u5668,\u6EE1\u8DB3\u8001\u767E\u59D3\u7684\u9700\u6C42"
+  - buildingid: 31
+    resourcepath: building_421
+    name: "\u4E09\u6F6D\u5370\u6708"
+    buildingtype: 3
+    description: "\u4E09\u6F6D\u5370\u6708"
+    currencytype: 0b00000001000000
+    currencycount: a00f0000d0070000
+    rowcount: 8
+    colcount: 8
+    cd: -1
+    unlock: 0
+    people: 0
+    level: 1
+    basescore: 100
+    envscore: 20
+    story: "\u4E09\u6F6D\u5370\u6708\u662F\u897F\u6E56\u4E2D\u6700\u5927\u7684\u5C9B\u5C7F\uFF0C\u98CE\u666F\u79C0\u4E3D\u3001\u666F\u8272\u6E05\u5E7D"

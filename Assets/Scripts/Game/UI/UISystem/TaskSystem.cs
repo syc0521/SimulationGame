@@ -37,7 +37,8 @@ namespace Game.UI.UISystem
                 _taskData[task.Key] = new TaskViewData
                 {
                     name = taskTableData.Name,
-                    reward = GetRewardData(ConfigTable.Instance.GetRewardGroupData(taskTableData.Reward)),
+                    reward = taskTableData.Reward == -1 ? null : 
+                        GetRewardData(ConfigTable.Instance.GetRewardGroupData(taskTableData.Reward)),
                     content = taskTableData.Content,
                     state = task.Value.state,
                     targetID = taskTableData.Targetid,

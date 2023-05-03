@@ -434,7 +434,7 @@ MonoBehaviour:
   - buildingid: 26
     resourcepath: building_416
     name: "\u5B89\u4E50\u574A"
-    buildingtype: 4
+    buildingtype: 3
     description: "\u533B\u9662"
     currencytype: 01000000
     currencycount: 64000000
@@ -450,7 +450,7 @@ MonoBehaviour:
   - buildingid: 27
     resourcepath: building_417
     name: "\u4E66\u9662"
-    buildingtype: 4
+    buildingtype: 3
     description: "\u4E66\u9662"
     currencytype: 01000000
     currencycount: 64000000
@@ -482,7 +482,7 @@ MonoBehaviour:
   - buildingid: 29
     resourcepath: building_419
     name: "\u9152\u697C"
-    buildingtype: 4
+    buildingtype: 3
     description: "\u9152\u697C"
     currencytype: 01000000
     currencycount: 64000000
@@ -947,7 +947,7 @@ MonoBehaviour:
   - buildingid: 26
     resourcepath: building_416
     name: "\u5B89\u4E50\u574A"
-    buildingtype: 4
+    buildingtype: 3
     description: "\u533B\u9662"
     currencytype: 01000000
     currencycount: 64000000
@@ -963,7 +963,7 @@ MonoBehaviour:
   - buildingid: 27
     resourcepath: building_417
     name: "\u4E66\u9662"
-    buildingtype: 4
+    buildingtype: 3
     description: "\u4E66\u9662"
     currencytype: 01000000
     currencycount: 64000000
@@ -995,7 +995,7 @@ MonoBehaviour:
   - buildingid: 29
     resourcepath: building_419
     name: "\u9152\u697C"
-    buildingtype: 4
+    buildingtype: 3
     description: "\u9152\u697C"
     currencytype: 01000000
     currencycount: 64000000

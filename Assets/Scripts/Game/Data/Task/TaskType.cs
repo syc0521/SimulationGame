@@ -14,6 +14,7 @@ namespace Game.Data
         BuyDailyItem = 9,
         SellItem = 10,
         SellToGetCurrency = 11,
+        CountBuilding = 12,
     }
 
     public enum TaskState

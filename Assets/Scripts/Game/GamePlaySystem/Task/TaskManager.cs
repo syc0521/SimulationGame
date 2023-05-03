@@ -58,7 +58,7 @@ namespace Game.GamePlaySystem.Task
             bool hasTaskFinished = false;
             foreach (var task in runningTasks)
             {
-                if (taskType is TaskType.People or TaskType.GetEvaluateScore)
+                if (taskType is TaskType.People or TaskType.GetEvaluateScore or TaskType.CountBuilding)
                 {
                     SetTaskNum(task.Taskid, targetID, targetNum);
                 }

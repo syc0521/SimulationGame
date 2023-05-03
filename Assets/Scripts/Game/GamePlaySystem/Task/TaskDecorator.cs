@@ -20,6 +20,7 @@ namespace Game.GamePlaySystem.Task
                 TaskType.UpgradeBuilding => ConfigTable.Instance.GetBuildingData(id).Name,
                 TaskType.GetCurrency => ConfigTable.Instance.GetCurrencyData(id).Name,
                 TaskType.GetBagItem => ConfigTable.Instance.GetBagItemData(id).Name,
+                TaskType.CountBuilding => ConfigTable.Instance.GetBuildingData(id).Buildingtype.ToString(),
                 TaskType.GetEvaluateScore => "城市面貌",
                 TaskType.People => "人口",
                 TaskType.BuyItem => "购买",

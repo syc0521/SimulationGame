@@ -126,6 +126,7 @@ namespace Game.GamePlaySystem.GameState
             BuildingManager.Instance.Build(blockPos, currentBuildingType, currentID, rotation);
             EventCenter.RemoveListener<TouchEvent>(PlaceBuilding);
             TaskManager.Instance.TriggerTask(TaskType.AddBuilding, currentBuildingType);
+            TaskManager.Instance.TriggerTask(TaskType.CountBuilding, data.Buildingtype);
             AchievementManager.Instance.TriggerAchievement(AchievementType.Building, -1, 1);
             AchievementManager.Instance.TriggerAchievement(AchievementType.BuildingCategory, data.Buildingtype, 1);
             AchievementManager.Instance.TriggerAchievement(AchievementType.BuildingID, currentBuildingType, 1);

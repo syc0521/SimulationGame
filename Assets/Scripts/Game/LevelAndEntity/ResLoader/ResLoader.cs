@@ -15,11 +15,13 @@ namespace Game.LevelAndEntity.ResLoader
         Sprite = 1,
         Panel = 2,
         Material = 3,
+        Picture = 4,
     }
 
     public class ResLoader : ManagerBase, IResLoader
     {
         private Dictionary<string, Material> _materials = new();
+        private Dictionary<(ResEnum, string), AsyncOperationHandle> _handles = new();
 
         public override void OnStart()
         {
@@ -31,7 +33,9 @@ namespace Game.LevelAndEntity.ResLoader
         {
             try
             {
-                Addressables.LoadAssetAsync<GameObject>(GetAssetPath(type, path)).Completed += callback;
+                var handle = Addressables.LoadAssetAsync<GameObject>(GetAssetPath(type, path));
+                _handles[(type, path)] = handle;
+                handle.Completed += callback;
             }
             catch (Exception)
             {
@@ -43,7 +47,9 @@ namespace Game.LevelAndEntity.ResLoader
         {
             try
             {
-                Addressables.LoadAssetAsync<Texture2D>(GetAssetPath(type, path)).Completed += callback;
+                var handle = Addressables.LoadAssetAsync<Texture2D>(GetAssetPath(type, path));
+                _handles[(type, path)] = handle;
+                handle.Completed += callback;
             }
             catch (Exception)
             {
@@ -53,7 +59,7 @@ namespace Game.LevelAndEntity.ResLoader
 
         public Material LoadMaterial(string name)
         {
-            return _materials.ContainsKey(name) ? _materials[name] : null;
+            return _materials.TryGetValue(name, out var material) ? material : null;
         }
 
         private void LoadAllMaterials()
@@ -66,24 +72,22 @@ namespace Game.LevelAndEntity.ResLoader
 
         public bool UnloadRes(ResEnum type, string path)
         {
-            return false;
+            Addressables.ReleaseInstance(_handles[(type, path)]);
+            _handles.Remove((type, path));
+            return true;
         }
 
         private string GetAssetPath(ResEnum type, string path)
         {
-            switch (type)
+            return type switch
             {
-                case ResEnum.Building:
-                    return $"{path}/{path}.prefab";
-                case ResEnum.Sprite:
-                    return $"{path}.png";
-                case ResEnum.Panel:
-                    return $"panel/{path}.prefab";
-                case ResEnum.Material:
-                    return $"material/{path} Variant.mat";
-                default:
-                    return string.Empty;
-            }
+                ResEnum.Building => $"{path}/{path}.prefab",
+                ResEnum.Sprite => $"{path}.png",
+                ResEnum.Picture => $"picture/{path}.png",
+                ResEnum.Panel => $"panel/{path}.prefab",
+                ResEnum.Material => $"material/{path} Variant.mat",
+                _ => string.Empty
+            };
         }
     }
 }

@@ -92,22 +92,26 @@ namespace Game.GamePlaySystem.Task
             {
                 FeatureOpenManager.Instance.OpenFeature((FeatureType)taskData.Featureopen);
             }
-            
-            for (int i = 0; i < rewardGroup.Rewardtype.Length; i++)
+
+            if (taskData.Reward != -1)
             {
-                switch ((RewardType)rewardGroup.Rewardtype[i])
+                for (int i = 0; i < rewardGroup.Rewardtype.Length; i++)
                 {
-                    case RewardType.Currency:
-                        CurrencyManager.Instance.AddCurrency((CurrencyType)rewardGroup.Itemid[i], rewardGroup.Count[i]);
-                        break;
-                    case RewardType.Building:
-                        BuildingManager.Instance.UnlockBuilding(rewardGroup.Itemid[i]);
-                        break;
-                    case RewardType.Item:
-                        BackpackManager.Instance.AddBackpackCount(rewardGroup.Itemid[i], rewardGroup.Count[i]);
-                        break;
+                    switch ((RewardType)rewardGroup.Rewardtype[i])
+                    {
+                        case RewardType.Currency:
+                            CurrencyManager.Instance.AddCurrency((CurrencyType)rewardGroup.Itemid[i], rewardGroup.Count[i]);
+                            break;
+                        case RewardType.Building:
+                            BuildingManager.Instance.UnlockBuilding(rewardGroup.Itemid[i]);
+                            break;
+                        case RewardType.Item:
+                            BackpackManager.Instance.AddBackpackCount(rewardGroup.Itemid[i], rewardGroup.Count[i]);
+                            break;
+                    }
                 }
             }
+            
             Debug.LogWarning($"已领取ID为{taskID}的奖励");
             ChangeTaskState(taskID, TaskState.Rewarded);
 

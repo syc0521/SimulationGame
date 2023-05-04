@@ -83,7 +83,7 @@ MonoBehaviour:
     resourcepath: building_402
     name: "\u9053\u8DEF"
     buildingtype: 2
-    description: "\u9053\u8DEF"
+    description: "\u4F9B\u884C\u4EBA\u548C\u8F66\u8F86\u901A\u884C"
     currencytype: 00000000
     currencycount: 05000000
     rowcount: 1
@@ -115,7 +115,7 @@ MonoBehaviour:
     resourcepath: building_202
     name: "\u5E9C\u5B85"
     buildingtype: 0
-    description: "\u4E2D\u578B\u623F\u5C4B1"
+    description: "\u8EAB\u4EFD\u8F83\u9AD8\u4EBA\u7269\u4F4F\u5C45\u4E4B\u5730"
     currencytype: 00000000
     currencycount: 64000000
     rowcount: 4
@@ -133,7 +133,7 @@ MonoBehaviour:
     buildingtype: 0
     description: "\u57FA\u7840\u623F\u5C4B"
     currencytype: 00000000
-    currencycount: 1e000000
+    currencycount: 7d000000
     rowcount: 2
     colcount: 2
     cd: 9
@@ -163,9 +163,9 @@ MonoBehaviour:
     resourcepath: building_205
     name: "\u74E6\u623F"
     buildingtype: 0
-    description: "\u4E2D\u578B\u623F\u5C4B2"
+    description: "\u57FA\u7840\u623F\u5C4B"
     currencytype: 00000000
-    currencycount: 7d000000
+    currencycount: 1e000000
     rowcount: 4
     colcount: 2
     cd: 8
@@ -596,7 +596,7 @@ MonoBehaviour:
     resourcepath: building_402
     name: "\u9053\u8DEF"
     buildingtype: 2
-    description: "\u9053\u8DEF"
+    description: "\u4F9B\u884C\u4EBA\u548C\u8F66\u8F86\u901A\u884C"
     currencytype: 00000000
     currencycount: 05000000
     rowcount: 1
@@ -628,7 +628,7 @@ MonoBehaviour:
     resourcepath: building_202
     name: "\u5E9C\u5B85"
     buildingtype: 0
-    description: "\u4E2D\u578B\u623F\u5C4B1"
+    description: "\u8EAB\u4EFD\u8F83\u9AD8\u4EBA\u7269\u4F4F\u5C45\u4E4B\u5730"
     currencytype: 00000000
     currencycount: 64000000
     rowcount: 4
@@ -646,7 +646,7 @@ MonoBehaviour:
     buildingtype: 0
     description: "\u57FA\u7840\u623F\u5C4B"
     currencytype: 00000000
-    currencycount: 1e000000
+    currencycount: 7d000000
     rowcount: 2
     colcount: 2
     cd: 9
@@ -676,9 +676,9 @@ MonoBehaviour:
     resourcepath: building_205
     name: "\u74E6\u623F"
     buildingtype: 0
-    description: "\u4E2D\u578B\u623F\u5C4B2"
+    description: "\u57FA\u7840\u623F\u5C4B"
     currencytype: 00000000
-    currencycount: 7d000000
+    currencycount: 1e000000
     rowcount: 4
     colcount: 2
     cd: 8

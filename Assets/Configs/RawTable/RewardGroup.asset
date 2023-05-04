@@ -143,6 +143,62 @@ MonoBehaviour:
     rewardtype: 01000000
     itemid: 11000000
     count: 01000000
+  - rewardid: 118
+    rewardtype: 01000000
+    itemid: 12000000
+    count: 01000000
+  - rewardid: 119
+    rewardtype: 01000000
+    itemid: 13000000
+    count: 01000000
+  - rewardid: 120
+    rewardtype: 01000000
+    itemid: 14000000
+    count: 01000000
+  - rewardid: 121
+    rewardtype: 01000000
+    itemid: 15000000
+    count: 01000000
+  - rewardid: 122
+    rewardtype: 01000000
+    itemid: 16000000
+    count: 01000000
+  - rewardid: 123
+    rewardtype: 01000000
+    itemid: 17000000
+    count: 01000000
+  - rewardid: 124
+    rewardtype: 01000000
+    itemid: 18000000
+    count: 01000000
+  - rewardid: 125
+    rewardtype: 01000000
+    itemid: 19000000
+    count: 01000000
+  - rewardid: 126
+    rewardtype: 01000000
+    itemid: 1a000000
+    count: 01000000
+  - rewardid: 127
+    rewardtype: 01000000
+    itemid: 1b000000
+    count: 01000000
+  - rewardid: 128
+    rewardtype: 01000000
+    itemid: 1c000000
+    count: 01000000
+  - rewardid: 129
+    rewardtype: 01000000
+    itemid: 1d000000
+    count: 01000000
+  - rewardid: 130
+    rewardtype: 01000000
+    itemid: 1e000000
+    count: 01000000
+  - rewardid: 131
+    rewardtype: 01000000
+    itemid: 1f000000
+    count: 01000000
   dataList:
   - rewardid: 0
     rewardtype: 00000000
@@ -271,4 +327,60 @@ MonoBehaviour:
   - rewardid: 117
     rewardtype: 01000000
     itemid: 11000000
+    count: 01000000
+  - rewardid: 118
+    rewardtype: 01000000
+    itemid: 12000000
+    count: 01000000
+  - rewardid: 119
+    rewardtype: 01000000
+    itemid: 13000000
+    count: 01000000
+  - rewardid: 120
+    rewardtype: 01000000
+    itemid: 14000000
+    count: 01000000
+  - rewardid: 121
+    rewardtype: 01000000
+    itemid: 15000000
+    count: 01000000
+  - rewardid: 122
+    rewardtype: 01000000
+    itemid: 16000000
+    count: 01000000
+  - rewardid: 123
+    rewardtype: 01000000
+    itemid: 17000000
+    count: 01000000
+  - rewardid: 124
+    rewardtype: 01000000
+    itemid: 18000000
+    count: 01000000
+  - rewardid: 125
+    rewardtype: 01000000
+    itemid: 19000000
+    count: 01000000
+  - rewardid: 126
+    rewardtype: 01000000
+    itemid: 1a000000
+    count: 01000000
+  - rewardid: 127
+    rewardtype: 01000000
+    itemid: 1b000000
+    count: 01000000
+  - rewardid: 128
+    rewardtype: 01000000
+    itemid: 1c000000
+    count: 01000000
+  - rewardid: 129
+    rewardtype: 01000000
+    itemid: 1d000000
+    count: 01000000
+  - rewardid: 130
+    rewardtype: 01000000
+    itemid: 1e000000
+    count: 01000000
+  - rewardid: 131
+    rewardtype: 01000000
+    itemid: 1f000000
     count: 01000000

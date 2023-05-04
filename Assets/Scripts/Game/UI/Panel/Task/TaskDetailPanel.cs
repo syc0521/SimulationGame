@@ -72,12 +72,20 @@ namespace Game.UI.Panel.Task
 
         private void ClaimReward()
         {
-            UIManager.Instance.OpenPanel<AlertRewardPanel>(new AlertRewardPanelOption
-            {
-                data = new List<RewardData>(TaskSystem.Instance.GetTaskData(taskID).reward),
-                clickHandler = CloseSelf
-            });
+            var reward = TaskSystem.Instance.GetTaskData(taskID).reward;
             TaskManager.Instance.GetReward(taskID);
+            if (reward is { Count: > 0 })
+            {
+                UIManager.Instance.OpenPanel<AlertRewardPanel>(new AlertRewardPanelOption
+                {
+                    data = new List<RewardData>(reward),
+                    clickHandler = CloseSelf
+                });
+            }
+            else
+            {
+                CloseSelf();
+            }
         }
     }
 }

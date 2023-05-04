@@ -37,7 +37,7 @@ MonoBehaviour:
     name: "\u4FEE\u5EFA\u6C11\u5C45"
     previousid: 1001
     tasktype: 0
-    targetid: 07000000
+    targetid: 09000000
     targetnum: 01000000
     reward: 102
     content: "\u5EFA\u9020\u4E00\u4E2A\u74E6\u623F"
@@ -64,7 +64,7 @@ MonoBehaviour:
     name: "\u79FB\u52A8\u5EFA\u7B51"
     previousid: 1004
     tasktype: 1
-    targetid: 07000000
+    targetid: 09000000
     targetnum: 01000000
     reward: 114
     content: "\u957F\u6309\u79FB\u52A8\u4E00\u4E2A\u623F\u5C4B"
@@ -100,7 +100,7 @@ MonoBehaviour:
     name: "\u5347\u7EA7\u623F\u5C4B"
     previousid: 1008
     tasktype: 5
-    targetid: 07000000
+    targetid: 09000000
     targetnum: 02000000
     reward: -1
     content: "\u5347\u7EA7\u4E24\u680B\u623F\u5C4B"
@@ -425,7 +425,7 @@ MonoBehaviour:
     name: "\u4FEE\u5EFA\u6C11\u5C45"
     previousid: 1001
     tasktype: 0
-    targetid: 07000000
+    targetid: 09000000
     targetnum: 01000000
     reward: 102
     content: "\u5EFA\u9020\u4E00\u4E2A\u74E6\u623F"
@@ -452,7 +452,7 @@ MonoBehaviour:
     name: "\u79FB\u52A8\u5EFA\u7B51"
     previousid: 1004
     tasktype: 1
-    targetid: 07000000
+    targetid: 09000000
     targetnum: 01000000
     reward: 114
     content: "\u957F\u6309\u79FB\u52A8\u4E00\u4E2A\u623F\u5C4B"
@@ -488,7 +488,7 @@ MonoBehaviour:
     name: "\u5347\u7EA7\u623F\u5C4B"
     previousid: 1008
     tasktype: 5
-    targetid: 07000000
+    targetid: 09000000
     targetnum: 02000000
     reward: -1
     content: "\u5347\u7EA7\u4E24\u680B\u623F\u5C4B"

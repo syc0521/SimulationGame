@@ -181,10 +181,7 @@ namespace Game.GamePlaySystem.GameState
                 BuildingManager.Instance.Build(pos, 4, id);
             }
             
-            //TaskManager.Instance.TriggerTask(TaskType.AddBuilding, StaticID);
-            //AchievementManager.Instance.TriggerAchievement(AchievementType.Building, -1, 1);
-            //AchievementManager.Instance.TriggerAchievement(AchievementType.BuildingCategory, StaticID, 1);
-            //AchievementManager.Instance.TriggerAchievement(AchievementType.BuildingID, StaticID, 1);
+            TaskManager.Instance.TriggerTask(TaskType.AddBuilding, StaticID);
             Managers.Get<ISaveDataManager>().SaveData();
         }
 

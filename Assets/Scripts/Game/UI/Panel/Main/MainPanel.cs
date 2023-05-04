@@ -97,7 +97,7 @@ namespace Game.UI.Panel
         private void RefreshFeatureButtons(UnlockFeatureEvent evt)
         {
             nodes.bag_btn.gameObject.SetActive(FeatureOpenManager.Instance.HasFeature(FeatureType.Backpack));
-            nodes.destroy_btn.gameObject.SetActive(FeatureOpenManager.Instance.HasFeature(FeatureType.Destroy));
+            nodes.destroy_btn.gameObject.SetActive(FeatureOpenManager.Instance.HasFeature(FeatureType.Move));
             nodes.operate_widget.RefreshButtons();
         }
 

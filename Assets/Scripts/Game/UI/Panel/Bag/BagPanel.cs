@@ -66,6 +66,7 @@ namespace Game.UI.Panel.Bag
         private void ClickBagItem(BagItemWidget widget, int index)
         {
             nodes.tip_go.gameObject.SetActive(true);
+            nodes.closeTip_btn.gameObject.SetActive(true);
             nodes.tip_w.SetTitle(_backpack[index].name);
             nodes.tip_w.SetDescription(_backpack[index].description);
             var heightRatio = Screen.height / 1080.0f;

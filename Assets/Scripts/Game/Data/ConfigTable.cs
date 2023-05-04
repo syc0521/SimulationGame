@@ -29,6 +29,7 @@ namespace Game.Data
         [SerializeField] private CityEvaluate cityEvaluate;
         [SerializeField] private StoreItem storeItem;
         [SerializeField] private LoadingTips loadingTips;
+        [SerializeField] private LoadingPicture loadingPicture;
 
         public Transform GetUIRoot(int layerType) => uiRoot.GetChild(layerType);
 
@@ -77,5 +78,8 @@ namespace Game.Data
         public List<StoreItemData> GetStoreData() => storeItem.dataList;
 
         public List<LoadingTipsData> GetLoadingTipsData() => loadingTips.dataList;
+
+        public List<LoadingPictureData> GetAllLoadingPictures() => loadingPicture.dataList;
+
     }
 }

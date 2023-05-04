@@ -15,7 +15,7 @@ namespace Game.UI.Panel.FeatureOpen
         public override void OnCreated()
         {
             base.OnCreated();
-            nodes.close_btn.onClick.AddListener(CloseSelf);
+            nodes.close_btn.onClick.AddListener(Close);
         }
 
         public override void OnShown()
@@ -27,7 +27,7 @@ namespace Game.UI.Panel.FeatureOpen
 
         public override void OnDestroyed()
         {
-            nodes.close_btn.onClick.RemoveListener(CloseSelf);
+            nodes.close_btn.onClick.RemoveListener(Close);
             base.OnDestroyed();
         }
 
@@ -36,6 +36,11 @@ namespace Game.UI.Panel.FeatureOpen
             var featureData = ConfigTable.Instance.GetFeatureOpenData(type);
             nodes.name_txt.text = featureData.Name;
             nodes.detail_txt.text = featureData.Description;
+        }
+
+        private void Close()
+        {
+            CloseSelf();
         }
     }
 }

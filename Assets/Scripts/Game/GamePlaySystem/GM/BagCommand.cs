@@ -14,4 +14,16 @@ namespace Game.GamePlaySystem.GM
             BackpackManager.Instance.AddBackpackCount(itemId, count);
         }
     }
+    
+    [GMAttr(type = "背包", name = "添加背包测试物品", priority = 2)]
+    public class AddBagItemTestCommand : ICommand
+    {
+        public void Run()
+        {
+            BackpackManager.Instance.AddBackpackCount(0, 500);
+            BackpackManager.Instance.AddBackpackCount(1, 500);
+            BackpackManager.Instance.AddBackpackCount(10, 500);
+            BackpackManager.Instance.AddBackpackCount(11, 500);
+        }
+    }
 }

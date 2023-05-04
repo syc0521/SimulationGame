@@ -9,7 +9,17 @@ namespace Game.UI.Component
     {
         public void SetIcon(AtlasSpriteID atlasSpriteID)
         {
-            Managers.Get<IResLoader>().LoadRes(ResEnum.Sprite, GetAssetPath(atlasSpriteID), handle =>
+            LoadSprite(ResEnum.Sprite, GetAssetPath(atlasSpriteID));
+        }
+
+        public void SetPicture(string picName)
+        {
+            LoadSprite(ResEnum.Picture, picName);
+        }
+
+        private void LoadSprite(ResEnum resEnum, string spriteName)
+        {
+            Managers.Get<IResLoader>().LoadRes(resEnum, spriteName, handle =>
             {
                 if (handle.Result != null)
                 {

@@ -1,15 +1,39 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Game.Core;
 using Game.Data;
 using Game.Data.Event.Common;
+using Game.Data.TableData;
 using Game.GamePlaySystem.Build;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 namespace Game.GamePlaySystem.Loading
 {
     public class LoadingManager : GamePlaySystemBase<LoadingManager>
     {
+        private LoadingPictureData _loadingPictureData;
+        
+        public override void OnAwake()
+        {
+            base.OnAwake();
+            RandomLoadingPic();
+        }
+
+        private void RandomLoadingPic()
+        {
+            var picData = ConfigTable.Instance.GetAllLoadingPictures();
+            System.Random random = new((int)DateTime.Now.Ticks);
+            var index = random.Next(0, picData.Count);
+            _loadingPictureData = picData[index];
+        }
+
+        public LoadingPictureData GetLoadingPic()
+        {
+            return _loadingPictureData;
+        }
+
         public void StartLoadingGame()
         {
             MonoApp.Instance.StartCoroutine(Load());

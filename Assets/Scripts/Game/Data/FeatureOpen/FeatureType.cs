@@ -1,3 +1,5 @@
+using System;
+
 namespace Game.Data.FeatureOpen
 {
     public enum FeatureType
@@ -7,6 +9,7 @@ namespace Game.Data.FeatureOpen
         Rotate = 2,
         Backpack = 3,
         Achievement = 4,
+        [Obsolete]
         Destroy = 5,
         Upgrade = 6,
         Government = 7,

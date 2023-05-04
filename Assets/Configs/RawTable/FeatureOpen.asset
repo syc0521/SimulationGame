@@ -16,8 +16,8 @@ MonoBehaviour:
   WorksheetName: FeatureOpen
   dataArray:
   - featureid: 1
-    name: "\u79FB\u52A8"
-    description: "\u957F\u6309\u5EFA\u9020\u5EFA\u7B51\u53EF\u4EE5\u79FB\u52A8"
+    name: "\u4FEE\u6539\u5EFA\u7B51"
+    description: "\u53EF\u4EE5\u79FB\u52A8\u6216\u62C6\u9664\u5EFA\u7B51"
   - featureid: 2
     name: "\u65CB\u8F6C"
     description: "\u5EFA\u9020\u6216\u4FEE\u6539\u6A21\u5F0F\u4E0B\u53EF\u4EE5\u65CB\u8F6C\u5EFA\u7B51"
@@ -28,14 +28,20 @@ MonoBehaviour:
     name: "\u6210\u5C31"
     description: "\u53EF\u4EE5\u67E5\u770B\u76EE\u524D\u83B7\u5F97\u7684\u6210\u5C31"
   - featureid: 5
-    name: "\u62C6\u9664"
-    description: "\u53EF\u4EE5\u62C6\u9664\u4E0D\u7528\u7684\u5EFA\u7B51"
+    name: "\u62C6\u9664\uFF08\u5DF2\u5E9F\u5F03\uFF09"
+    description: "\u53EF\u4EE5\u62C6\u9664\u4E0D\u7528\u7684\u5EFA\u7B51\uFF08\u5DF2\u5E9F\u5F03\uFF09"
   - featureid: 6
     name: "\u5347\u7EA7"
     description: "\u53EF\u4EE5\u5347\u7EA7\u5EFA\u7B51"
   - featureid: 7
     name: "\u5B98\u5E9C"
     description: "\u67E5\u770B\u5F53\u524D\u57CE\u5E02\u4FE1\u606F"
+  - featureid: 8
+    name: "\u5546\u57CE"
+    description: "\u53EF\u4EE5\u8D2D\u4E70\u7269\u54C1"
+  - featureid: 9
+    name: "\u51FA\u552E"
+    description: "\u53EF\u4EE5\u51FA\u552E\u7269\u54C1"
   - featureid: 101
     name: "\u7B2C\u4E00\u7AE0"
     description: "\u7B2C\u4E00\u7AE0"
@@ -47,8 +53,8 @@ MonoBehaviour:
     description: "\u7B2C\u4E09\u7AE0"
   dataList:
   - featureid: 1
-    name: "\u79FB\u52A8"
-    description: "\u957F\u6309\u5EFA\u9020\u5EFA\u7B51\u53EF\u4EE5\u79FB\u52A8"
+    name: "\u4FEE\u6539\u5EFA\u7B51"
+    description: "\u53EF\u4EE5\u79FB\u52A8\u6216\u62C6\u9664\u5EFA\u7B51"
   - featureid: 2
     name: "\u65CB\u8F6C"
     description: "\u5EFA\u9020\u6216\u4FEE\u6539\u6A21\u5F0F\u4E0B\u53EF\u4EE5\u65CB\u8F6C\u5EFA\u7B51"
@@ -59,14 +65,20 @@ MonoBehaviour:
     name: "\u6210\u5C31"
     description: "\u53EF\u4EE5\u67E5\u770B\u76EE\u524D\u83B7\u5F97\u7684\u6210\u5C31"
   - featureid: 5
-    name: "\u62C6\u9664"
-    description: "\u53EF\u4EE5\u62C6\u9664\u4E0D\u7528\u7684\u5EFA\u7B51"
+    name: "\u62C6\u9664\uFF08\u5DF2\u5E9F\u5F03\uFF09"
+    description: "\u53EF\u4EE5\u62C6\u9664\u4E0D\u7528\u7684\u5EFA\u7B51\uFF08\u5DF2\u5E9F\u5F03\uFF09"
   - featureid: 6
     name: "\u5347\u7EA7"
     description: "\u53EF\u4EE5\u5347\u7EA7\u5EFA\u7B51"
   - featureid: 7
     name: "\u5B98\u5E9C"
     description: "\u67E5\u770B\u5F53\u524D\u57CE\u5E02\u4FE1\u606F"
+  - featureid: 8
+    name: "\u5546\u57CE"
+    description: "\u53EF\u4EE5\u8D2D\u4E70\u7269\u54C1"
+  - featureid: 9
+    name: "\u51FA\u552E"
+    description: "\u53EF\u4EE5\u51FA\u552E\u7269\u54C1"
   - featureid: 101
     name: "\u7B2C\u4E00\u7AE0"
     description: "\u7B2C\u4E00\u7AE0"

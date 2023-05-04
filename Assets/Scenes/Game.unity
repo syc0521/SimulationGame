@@ -8,9 +8,8 @@ OcclusionCullingSettings:
     smallestOccluder: 5
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 99c9720ab356a0642a771bea13969a05
-  m_OcclusionCullingData: {fileID: 36300000, guid: 370239578b9030b4ea140c7a06bb3f27,
-    type: 2}
+  m_SceneGUID: 00000000000000000000000000000000
+  m_OcclusionCullingData: {fileID: 0}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -263,8 +262,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 400
+  near clip plane: 0.1
+  far clip plane: 2000
   field of view: 60.000004
   orthographic: 0
   orthographic size: 5
@@ -322,8 +321,8 @@ MonoBehaviour:
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 1
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
+  m_Antialiasing: 2
+  m_AntialiasingQuality: 1
   m_StopNaN: 0
   m_Dithering: 0
   m_ClearDepth: 1
@@ -748,6 +747,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -88.947
       objectReference: {fileID: 0}
+    - target: {fileID: -5217978706621872809, guid: 065c2f1b6b6de514e9ff7a4a89ef1edb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -70.21
+      objectReference: {fileID: 0}
+    - target: {fileID: -5217978706621872809, guid: 065c2f1b6b6de514e9ff7a4a89ef1edb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 37.44
+      objectReference: {fileID: 0}
     - target: {fileID: -475480664197006075, guid: 065c2f1b6b6de514e9ff7a4a89ef1edb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -792,6 +801,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Terrain03
+      objectReference: {fileID: 0}
+    - target: {fileID: 5811517544658636179, guid: 065c2f1b6b6de514e9ff7a4a89ef1edb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -70.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5811517544658636179, guid: 065c2f1b6b6de514e9ff7a4a89ef1edb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 5811517544658636179, guid: 065c2f1b6b6de514e9ff7a4a89ef1edb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 30.95
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

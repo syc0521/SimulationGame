@@ -33,7 +33,7 @@ MonoBehaviour:
     name: "\u519C\u7530"
     producetype: 1
     produceid: 10
-    produceamount: 030000000700000009000000
+    produceamount: 030000000600000008000000
     consumeid: -1
     consumeamount: 00000000
   - id: 3
@@ -258,7 +258,7 @@ MonoBehaviour:
     name: "\u519C\u7530"
     producetype: 1
     produceid: 10
-    produceamount: 030000000700000009000000
+    produceamount: 030000000600000008000000
     consumeid: -1
     consumeamount: 00000000
   - id: 3

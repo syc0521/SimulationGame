@@ -7,4 +7,9 @@ namespace Game.Data.Event
         public int id;
         public bool isStatic;
     }
+
+    public struct OpenBuildingDetailEvent : IEvent
+    {
+        public int id;
+    }
 }

@@ -30,6 +30,8 @@ namespace Game.Data
         [SerializeField] private StoreItem storeItem;
         [SerializeField] private LoadingTips loadingTips;
         [SerializeField] private LoadingPicture loadingPicture;
+        public Camera MainUICam;
+        public Canvas MainCanvas;
 
         public Transform GetUIRoot(int layerType) => uiRoot.GetChild(layerType);
 

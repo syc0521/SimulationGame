@@ -86,7 +86,7 @@ namespace Game.UI.Panel.Loading
             while (_fadeValue < 1.0f)
             {
                 nodes.image.material.SetFloat(Value, _fadeValue);
-                _fadeValue += Time.deltaTime / 8.0f;
+                _fadeValue += Time.deltaTime / 7.0f;
                 yield return new WaitForEndOfFrame();
             }
             yield return null;

@@ -89,5 +89,10 @@ namespace Game.GamePlaySystem.Currency
         {
             return !id.Where((t, i) => !currency.ContainsKey(t) || currency[t] < count[i]).Any();
         }
+        
+        public bool CheckCurrency(int id, int count)
+        {
+            return currency.ContainsKey(id) && currency[id] >= count;
+        }
     }
 }

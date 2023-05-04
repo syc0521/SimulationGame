@@ -1,4 +1,5 @@
 ﻿using Game.GamePlaySystem.Backpack;
+using Game.GamePlaySystem.Currency;
 using Game.UI.Component;
 using Game.UI.Utils;
 using Game.UI.ViewData;
@@ -19,7 +20,10 @@ namespace Game.UI.Widget
                 icon.SetIcon(type is ConsumeType.Currency ? IconUtility.GetCurrencyIcon(itemListData.id)
                     : IconUtility.GetItemIcon(itemListData.id));
                 price.text = itemListData.amount.ToString();
-                price.color = BackpackManager.Instance.GetBackpackCount(itemListData.id) >= itemListData.amount ? Color.white : Color.red;
+                var hasEnough = type is ConsumeType.Currency
+                    ? CurrencyManager.Instance.CheckCurrency(itemListData.id, itemListData.amount)
+                    : BackpackManager.Instance.CheckBackpackItem(itemListData.id, itemListData.amount);
+                price.color = hasEnough ? Color.white : Color.red;
             }
         }
     }

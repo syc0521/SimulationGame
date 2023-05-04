@@ -13,6 +13,8 @@ namespace Game.Data.FeatureOpen
         Destroy = 5,
         Upgrade = 6,
         Government = 7,
+        Mall = 8,
+        ItemSell = 9,
         
         // 控制任务章节
         Chapter1 = 101,

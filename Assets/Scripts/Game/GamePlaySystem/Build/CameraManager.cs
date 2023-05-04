@@ -3,6 +3,7 @@ using System.IO;
 using System.Runtime.CompilerServices;
 using Game.Core;
 using Game.Data;
+using Game.Data.Event.Common;
 using Game.GamePlaySystem.BurstUtil;
 using Game.Input;
 using Unity.Mathematics;
@@ -24,6 +25,8 @@ namespace Game.GamePlaySystem
         
         public override void OnStart()
         {
+            EventCenter.AddListener<LoadSceneFinishedEvent>(ChangeUICam);
+
             EventCenter.AddListener<SwipeStartEvent>(OnSwipeStarted);
             EventCenter.AddListener<SwipeChangedEvent>(ChangeCameraPosition);
 
@@ -36,6 +39,9 @@ namespace Game.GamePlaySystem
 
         public override void OnDestroyed()
         {
+            EventCenter.RemoveListener<LoadSceneFinishedEvent>(ChangeUICam);
+
+            
             EventCenter.RemoveListener<SwipeStartEvent>(OnSwipeStarted);
             EventCenter.RemoveListener<SwipeChangedEvent>(ChangeCameraPosition);
 
@@ -46,6 +52,13 @@ namespace Game.GamePlaySystem
             EventCenter.RemoveListener<MouseRotateEvent>(MouseRotateCamera);
             
             base.OnDestroyed();
+        }
+
+        private void ChangeUICam(LoadSceneFinishedEvent evt)
+        {
+            ConfigTable.Instance.MainUICam.gameObject.SetActive(false);
+            var cam = mainCam.transform.GetChild(0).GetComponent<Camera>();
+            ConfigTable.Instance.MainCanvas.worldCamera = cam;
         }
 
         private void OnSwipeStarted(SwipeStartEvent evt)

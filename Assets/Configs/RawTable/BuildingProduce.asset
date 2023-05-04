@@ -68,7 +68,7 @@ MonoBehaviour:
     name: "\u671B\u706B\u697C"
     producetype: 0
     produceid: 0
-    produceamount: 090000001200000018000000
+    produceamount: 0c0000001800000028000000
     consumeid: -2
     consumeamount: 00000000
   - id: 8
@@ -82,7 +82,7 @@ MonoBehaviour:
     name: "\u74E6\u623F"
     producetype: 0
     produceid: 0
-    produceamount: 0c0000001800000028000000
+    produceamount: 090000001200000018000000
     consumeid: -2
     consumeamount: 00000000
   - id: 10
@@ -293,7 +293,7 @@ MonoBehaviour:
     name: "\u671B\u706B\u697C"
     producetype: 0
     produceid: 0
-    produceamount: 090000001200000018000000
+    produceamount: 0c0000001800000028000000
     consumeid: -2
     consumeamount: 00000000
   - id: 8
@@ -307,7 +307,7 @@ MonoBehaviour:
     name: "\u74E6\u623F"
     producetype: 0
     produceid: 0
-    produceamount: 0c0000001800000028000000
+    produceamount: 090000001200000018000000
     consumeid: -2
     consumeamount: 00000000
   - id: 10

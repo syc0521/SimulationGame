@@ -59,7 +59,7 @@ namespace Game.UI.Panel
             EventCenter.AddListener<BuildUIEvent>(ShowConfirmUI);
             EventCenter.AddListener<UpdateCurrencyEvent>(RefreshCurrency);
             EventCenter.AddListener<UnlockFeatureEvent>(RefreshFeatureButtons);
-            EventCenter.AddListener<OpenBuildingInfoEvent>(OpenBuildingInfo);
+            EventCenter.AddListener<OpenBuildingDetailEvent>(OpenBuildingInfo);
             EventCenter.AddListener<FPSEvent>(ShowFPS);
 
             RefreshFeatureButtons(default);
@@ -79,7 +79,7 @@ namespace Game.UI.Panel
             EventCenter.RemoveListener<BuildUIEvent>(ShowConfirmUI);
             EventCenter.RemoveListener<UpdateCurrencyEvent>(RefreshCurrency);
             EventCenter.RemoveListener<UnlockFeatureEvent>(RefreshFeatureButtons);
-            EventCenter.RemoveListener<OpenBuildingInfoEvent>(OpenBuildingInfo);
+            EventCenter.RemoveListener<OpenBuildingDetailEvent>(OpenBuildingInfo);
             EventCenter.RemoveListener<FPSEvent>(ShowFPS);
         }
 
@@ -192,61 +192,39 @@ namespace Game.UI.Panel
             nodes.buildingDetail_w.gameObject.SetActive(false);
         }
         
-        private void OpenBuildingInfo(OpenBuildingInfoEvent evt)
+        private void OpenBuildingInfo(OpenBuildingDetailEvent evt)
         {
-            if (evt.isStatic)
-            {
-                switch (evt.id)
-                {
-                    case 10001:
-                        UIManager.Instance.OpenPanel<GovernmentPanel>();
-                        break;
-                }
-            }
-            else
-            {
-                var data = BuildingManager.Instance.GetBuildingData((uint)evt.id);
-                var buildingData = ConfigTable.Instance.GetBuildingData(data.type);
-                if (buildingData == null || buildingData.Buildingid == 4)
-                {
-                    return;
-                }
+            var data = BuildingManager.Instance.GetBuildingData((uint)evt.id);
+            var buildingData = ConfigTable.Instance.GetBuildingData(data.type);
 
-                if (buildingData.Buildingid == 13)
-                {
-                    UIManager.Instance.OpenPanel<MallPanel>();
-                    return;
-                }
-
-                nodes.buildingDetail_w.SetDefault();
-                nodes.buildingDetail_w.gameObject.SetActive(true);
-                nodes.closeTip_btn.gameObject.SetActive(true);
+            nodes.buildingDetail_w.SetDefault();
+            nodes.buildingDetail_w.gameObject.SetActive(true);
+            nodes.closeTip_btn.gameObject.SetActive(true);
             
-                nodes.buildingDetail_w.SetTitle(buildingData.Name);
-                nodes.buildingDetail_w.SetDescription(buildingData.Story);
-                if (buildingData.Level > 1)
+            nodes.buildingDetail_w.SetTitle(buildingData.Name);
+            nodes.buildingDetail_w.SetDescription(buildingData.Story);
+            if (buildingData.Level > 1)
+            {
+                nodes.buildingDetail_w.SetLevel(data.level);
+                if (FeatureOpenManager.Instance.HasFeature(FeatureType.Upgrade))
                 {
-                    nodes.buildingDetail_w.SetLevel(data.level);
-                    if (FeatureOpenManager.Instance.HasFeature(FeatureType.Upgrade))
-                    {
-                        nodes.buildingDetail_w.SetUpgradeState(data.level < buildingData.Level);
-                    }
+                    nodes.buildingDetail_w.SetUpgradeState(data.level < buildingData.Level);
+                }
                     
-                    nodes.buildingDetail_w.SetUpgradeHandler(() =>
-                    {
-                        if (!BuildingSystem.Instance.UpgradeBuilding((uint)evt.id, evt.isStatic))
-                        {
-                            AlertDecorator.OpenAlertPanel("货币或材料不足！", false);
-                        }
-                    });
-                }
-
-                if (buildingData.Cd > 0)
+                nodes.buildingDetail_w.SetUpgradeHandler(() =>
                 {
-                    var produceData = ConfigTable.Instance.GetBuildingProduceData(data.type);
-                    var itemPerMin = produceData.Produceamount[data.level - 1] / buildingData.Cd * 60.0f;
-                    nodes.buildingDetail_w.SetProduceAmount((int)itemPerMin);
-                }
+                    if (!BuildingSystem.Instance.UpgradeBuilding((uint)evt.id))
+                    {
+                        AlertDecorator.OpenAlertPanel("货币或材料不足！", false);
+                    }
+                });
+            }
+
+            if (buildingData.Cd > 0)
+            {
+                var produceData = ConfigTable.Instance.GetBuildingProduceData(data.type);
+                var itemPerMin = produceData.Produceamount[data.level - 1] / buildingData.Cd * 60.0f;
+                nodes.buildingDetail_w.SetProduceAmount((int)itemPerMin);
             }
         }
 

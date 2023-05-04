@@ -76,6 +76,7 @@ namespace Game.UI.Panel.Bag
         private void CloseTip()
         {
             nodes.tip_go.gameObject.SetActive(false);
+            nodes.closeTip_btn.gameObject.SetActive(false);
         }
     }
 }

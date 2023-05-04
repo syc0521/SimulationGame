@@ -90,7 +90,7 @@ namespace Game.GamePlaySystem.Backpack
         
         public bool CheckBackpackItem(int id, int count)
         {
-            return GetBackpackCount(id) > count;
+            return GetBackpackCount(id) >= count;
         }
 
         public Dictionary<int, int> GetBackpack() => backpack;

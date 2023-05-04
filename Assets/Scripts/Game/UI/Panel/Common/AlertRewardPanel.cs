@@ -50,6 +50,7 @@ namespace Game.UI.Panel.Common
         private void CloseTip()
         {
             nodes.tip_go.gameObject.SetActive(false);
+            nodes.closeTip_btn.gameObject.SetActive(false);
         }
 
         private void ClickConfirm()
@@ -76,6 +77,7 @@ namespace Game.UI.Panel.Common
         private void ClickBagItem(BagItemWidget widget, int index)
         {
             nodes.tip_go.gameObject.SetActive(true);
+            nodes.closeTip_btn.gameObject.SetActive(true);
             var data = _rewardData[index];
             switch (data.type)
             {

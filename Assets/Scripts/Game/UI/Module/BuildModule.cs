@@ -46,9 +46,12 @@ namespace Game.UI.Module
                 return;
             }
             
-            if (evt is { isStatic: true, id: 10001 } && FeatureOpenManager.Instance.HasFeature(FeatureType.Government)) // 官府
+            if (evt is { isStatic: true, id: 10001 }) // 官府
             {
-                UIManager.Instance.OpenPanel<GovernmentPanel>();
+                if (FeatureOpenManager.Instance.HasFeature(FeatureType.Government))
+                {
+                    UIManager.Instance.OpenPanel<GovernmentPanel>();
+                }
                 return;
             }
             

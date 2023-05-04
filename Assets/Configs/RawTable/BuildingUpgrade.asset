@@ -68,7 +68,7 @@ MonoBehaviour:
     itemid: 00000000
     itemcount: c8000000
     currencyid: 00000000
-    currencycount: c8000000
+    currencycount: 90010000
   - id: 9
     level: 3
     itemid: 01000000
@@ -201,7 +201,7 @@ MonoBehaviour:
     itemid: 00000000
     itemcount: c8000000
     currencyid: 00000000
-    currencycount: c8000000
+    currencycount: 90010000
   - id: 9
     level: 3
     itemid: 01000000

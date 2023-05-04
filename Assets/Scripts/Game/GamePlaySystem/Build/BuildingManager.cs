@@ -295,11 +295,10 @@ namespace Game.GamePlaySystem.Build
             level = 0;
             return false;
         }
-        
-        public int GetGovernmentLevel()
+
+        public int CountBuildingType(int type)
         {
-            TryGetStaticBuildingLevel(10001, out var level);
-            return level;
+            return _buildingDatas.Values.Count(data => ConfigTable.Instance.GetBuildingData(data.type).Buildingtype == type);
         }
     }
 }

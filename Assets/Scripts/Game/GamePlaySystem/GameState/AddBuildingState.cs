@@ -62,6 +62,11 @@ namespace Game.GamePlaySystem.GameState
 
         public override void OnLeave(params object[] list)
         {
+            var world = World.DefaultGameObjectInjectionWorld;
+            if (world == null)
+            {
+                return;
+            }
             World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<BuildingManagedSystem>().SetGridVisible(false);
             EventCenter.RemoveListener<RotateEvent>(RotateBuilding);
             if ((bool)list[0]) //可以建造
@@ -126,7 +131,8 @@ namespace Game.GamePlaySystem.GameState
             BuildingManager.Instance.Build(blockPos, currentBuildingType, currentID, rotation);
             EventCenter.RemoveListener<TouchEvent>(PlaceBuilding);
             TaskManager.Instance.TriggerTask(TaskType.AddBuilding, currentBuildingType);
-            TaskManager.Instance.TriggerTask(TaskType.CountBuilding, data.Buildingtype);
+            TaskManager.Instance.TriggerTask(TaskType.CountBuilding, data.Buildingtype, 
+                BuildingManager.Instance.CountBuildingType(data.Buildingtype));
             AchievementManager.Instance.TriggerAchievement(AchievementType.Building, -1, 1);
             AchievementManager.Instance.TriggerAchievement(AchievementType.BuildingCategory, data.Buildingtype, 1);
             AchievementManager.Instance.TriggerAchievement(AchievementType.BuildingID, currentBuildingType, 1);

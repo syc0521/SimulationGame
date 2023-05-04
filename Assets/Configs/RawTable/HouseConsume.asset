@@ -16,123 +16,123 @@ MonoBehaviour:
   WorksheetName: HouseConsume
   dataArray:
   - buildingid: 6
-    name: "\u4E2D\u578B\u623F\u5C4B1"
+    name: "\u5E9C\u5B85"
     level: 1
     consumeid: 0a000000
     produceamount: 04000000
   - buildingid: 6
-    name: "\u4E2D\u578B\u623F\u5C4B1"
+    name: "\u5E9C\u5B85"
     level: 2
     consumeid: 0a000000
     produceamount: 08000000
   - buildingid: 6
-    name: "\u4E2D\u578B\u623F\u5C4B1"
+    name: "\u5E9C\u5B85"
     level: 3
     consumeid: 0a000000
     produceamount: 0b000000
   - buildingid: 7
-    name: "\u5C0F\u578B\u623F\u5C4B"
+    name: "\u671B\u706B\u697C"
     level: 1
     consumeid: 0a000000
     produceamount: 02000000
   - buildingid: 7
-    name: "\u5C0F\u578B\u623F\u5C4B"
+    name: "\u671B\u706B\u697C"
     level: 2
     consumeid: 0a000000
     produceamount: 04000000
   - buildingid: 7
-    name: "\u5C0F\u578B\u623F\u5C4B"
+    name: "\u671B\u706B\u697C"
     level: 3
     consumeid: 0a000000
     produceamount: 07000000
   - buildingid: 8
-    name: "\u5927\u578B\u623F\u5C4B"
+    name: "\u5B85\u9662"
     level: 1
     consumeid: 0a000000
     produceamount: 07000000
   - buildingid: 8
-    name: "\u5927\u578B\u623F\u5C4B"
+    name: "\u5B85\u9662"
     level: 2
     consumeid: 0a000000
     produceamount: 0a000000
   - buildingid: 8
-    name: "\u5927\u578B\u623F\u5C4B"
+    name: "\u5B85\u9662"
     level: 3
     consumeid: 0a000000
     produceamount: 0f000000
   - buildingid: 9
-    name: "\u4E2D\u578B\u623F\u5C4B2"
+    name: "\u74E6\u623F"
     level: 1
     consumeid: 0a000000
     produceamount: 05000000
   - buildingid: 9
-    name: "\u4E2D\u578B\u623F\u5C4B2"
+    name: "\u74E6\u623F"
     level: 2
     consumeid: 0a000000
     produceamount: 08000000
   - buildingid: 9
-    name: "\u4E2D\u578B\u623F\u5C4B2"
+    name: "\u74E6\u623F"
     level: 3
     consumeid: 0a000000
     produceamount: 0d000000
   dataList:
   - buildingid: 6
-    name: "\u4E2D\u578B\u623F\u5C4B1"
+    name: "\u5E9C\u5B85"
     level: 1
     consumeid: 0a000000
     produceamount: 04000000
   - buildingid: 6
-    name: "\u4E2D\u578B\u623F\u5C4B1"
+    name: "\u5E9C\u5B85"
     level: 2
     consumeid: 0a000000
     produceamount: 08000000
   - buildingid: 6
-    name: "\u4E2D\u578B\u623F\u5C4B1"
+    name: "\u5E9C\u5B85"
     level: 3
     consumeid: 0a000000
     produceamount: 0b000000
   - buildingid: 7
-    name: "\u5C0F\u578B\u623F\u5C4B"
+    name: "\u671B\u706B\u697C"
     level: 1
     consumeid: 0a000000
     produceamount: 02000000
   - buildingid: 7
-    name: "\u5C0F\u578B\u623F\u5C4B"
+    name: "\u671B\u706B\u697C"
     level: 2
     consumeid: 0a000000
     produceamount: 04000000
   - buildingid: 7
-    name: "\u5C0F\u578B\u623F\u5C4B"
+    name: "\u671B\u706B\u697C"
     level: 3
     consumeid: 0a000000
     produceamount: 07000000
   - buildingid: 8
-    name: "\u5927\u578B\u623F\u5C4B"
+    name: "\u5B85\u9662"
     level: 1
     consumeid: 0a000000
     produceamount: 07000000
   - buildingid: 8
-    name: "\u5927\u578B\u623F\u5C4B"
+    name: "\u5B85\u9662"
     level: 2
     consumeid: 0a000000
     produceamount: 0a000000
   - buildingid: 8
-    name: "\u5927\u578B\u623F\u5C4B"
+    name: "\u5B85\u9662"
     level: 3
     consumeid: 0a000000
     produceamount: 0f000000
   - buildingid: 9
-    name: "\u4E2D\u578B\u623F\u5C4B2"
+    name: "\u74E6\u623F"
     level: 1
     consumeid: 0a000000
     produceamount: 05000000
   - buildingid: 9
-    name: "\u4E2D\u578B\u623F\u5C4B2"
+    name: "\u74E6\u623F"
     level: 2
     consumeid: 0a000000
     produceamount: 08000000
   - buildingid: 9
-    name: "\u4E2D\u578B\u623F\u5C4B2"
+    name: "\u74E6\u623F"
     level: 3
     consumeid: 0a000000
     produceamount: 0d000000

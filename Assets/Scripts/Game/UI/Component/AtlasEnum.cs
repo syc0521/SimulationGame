@@ -7,5 +7,6 @@
         Task = 2,
         Item = 3,
         Currency = 4,
+        Feature = 5,
     }
 }

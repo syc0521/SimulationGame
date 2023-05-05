@@ -52,5 +52,14 @@ namespace Game.UI.Utils
                 resName = $"icon_task_{taskId}"
             };
         }
+        
+        public static AtlasSpriteID GetFeatureIcon(int featureId)
+        {
+            return new AtlasSpriteID
+            {
+                atlas = AtlasEnum.Feature,
+                resName = $"icon_feature_{featureId}"
+            };
+        }
     }
 }

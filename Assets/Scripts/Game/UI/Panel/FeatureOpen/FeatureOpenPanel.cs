@@ -1,5 +1,6 @@
 ﻿using Game.Data;
 using Game.Data.FeatureOpen;
+using Game.UI.Utils;
 
 namespace Game.UI.Panel.FeatureOpen
 {
@@ -34,6 +35,7 @@ namespace Game.UI.Panel.FeatureOpen
         private void ShowFeature(FeatureType type)
         {
             var featureData = ConfigTable.Instance.GetFeatureOpenData(type);
+            nodes.icon_img.SetIcon(IconUtility.GetFeatureIcon((int)type));
             nodes.name_txt.text = featureData.Name;
             nodes.detail_txt.text = featureData.Description;
         }

@@ -29,12 +29,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - sprite
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 1eaee135ce037439d925cee5e41ce026
-    m_Address: Assets/Res/ui/static/GUI.png
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - sprite
-    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ef7206bd29055104abb70d185833b540, type: 2}
   m_SchemaSet:

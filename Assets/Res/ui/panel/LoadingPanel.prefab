@@ -35,7 +35,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -140, y: -80}
+  m_AnchoredPosition: {x: -140, y: -160}
   m_SizeDelta: {x: 66, y: 600}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &8962907728867303492
@@ -247,7 +247,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 58.07}
+  m_AnchoredPosition: {x: 0, y: 110}
   m_SizeDelta: {x: 1500, y: 60}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &1502161675145814713
@@ -306,8 +306,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 34
+  m_fontSizeBase: 34
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -456,7 +456,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: -200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &666223377379381613
 CanvasRenderer:
@@ -532,7 +532,7 @@ PrefabInstance:
     - target: {fileID: 1301126174107261966, guid: 2f05f712bb2d1ad49b3e06d199e4ca3a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 125
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1622236535761588486, guid: 2f05f712bb2d1ad49b3e06d199e4ca3a,
         type: 3}

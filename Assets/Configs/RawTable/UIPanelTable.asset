@@ -66,6 +66,9 @@ MonoBehaviour:
   - panelid: 16
     name: GMPanel
     layer: 4
+  - panelid: 17
+    name: ItemSellPanel
+    layer: 1
   dataList:
   - panelid: 0
     name: MainPanel
@@ -118,3 +121,6 @@ MonoBehaviour:
   - panelid: 16
     name: GMPanel
     layer: 4
+  - panelid: 17
+    name: ItemSellPanel
+    layer: 1

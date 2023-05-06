@@ -46,6 +46,12 @@ namespace Game.UI.Module
                 return;
             }
             
+            if (buildingData.Buildingid == 28 && FeatureOpenManager.Instance.HasFeature(FeatureType.ItemSell)) // 小摊
+            {
+                UIManager.Instance.OpenPanel<ItemSellPanel>();
+                return;
+            }
+            
             if (evt is { isStatic: true, id: 10001 }) // 官府
             {
                 if (FeatureOpenManager.Instance.HasFeature(FeatureType.Government))

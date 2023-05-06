@@ -5,5 +5,6 @@ namespace Game.UI.ViewData
         public string name;
         public int count;
         public string description;
+        public bool canSell;
     }
 }

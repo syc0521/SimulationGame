@@ -24,6 +24,7 @@ MonoBehaviour:
     consumecount: f4010000
     currencyid: 00000000
     currencycount: 78050000
+    name: "\u7269\u54C1"
   - id: 1003
     storeid: 1
     itemtype: 1
@@ -33,6 +34,7 @@ MonoBehaviour:
     consumecount: f4010000
     currencyid: 00000000
     currencycount: 40060000
+    name: "\u7269\u54C1"
   - id: 1004
     storeid: 1
     itemtype: 1
@@ -42,6 +44,7 @@ MonoBehaviour:
     consumecount: f4010000
     currencyid: 00000000
     currencycount: e2040000
+    name: "\u7269\u54C1"
   - id: 1005
     storeid: 1
     itemtype: 1
@@ -51,6 +54,7 @@ MonoBehaviour:
     consumecount: f4010000
     currencyid: 00000000
     currencycount: 08070000
+    name: "\u7269\u54C1"
   - id: 1006
     storeid: 1
     itemtype: 1
@@ -60,6 +64,7 @@ MonoBehaviour:
     consumecount: d0070000
     currencyid: 00000000
     currencycount: f8110000
+    name: "\u7269\u54C1"
   - id: 1007
     storeid: 1
     itemtype: 1
@@ -69,6 +74,7 @@ MonoBehaviour:
     consumecount: b80b000040060000
     currencyid: ffffffff
     currencycount: ffffffff
+    name: "\u7269\u54C1"
   - id: 2001
     storeid: 2
     itemtype: 0
@@ -78,6 +84,7 @@ MonoBehaviour:
     consumecount: ffffffff
     currencyid: 00000000
     currencycount: f4010000
+    name: "\u6728\u5934"
   - id: 2002
     storeid: 2
     itemtype: 0
@@ -86,7 +93,8 @@ MonoBehaviour:
     consumeid: ffffffff
     consumecount: ffffffff
     currencyid: 00000000
-    currencycount: f4010000
+    currencycount: 08070000
+    name: "\u77F3\u7816"
   - id: 2003
     storeid: 2
     itemtype: 0
@@ -95,16 +103,18 @@ MonoBehaviour:
     consumeid: ffffffff
     consumecount: ffffffff
     currencyid: 00000000
-    currencycount: f4010000
+    currencycount: b80b0000
+    name: "\u94C1"
   - id: 2004
     storeid: 2
     itemtype: 0
     itemid: 10
-    count: 50
+    count: 80
     consumeid: ffffffff
     consumecount: ffffffff
     currencyid: 00000000
-    currencycount: f4010000
+    currencycount: 58020000
+    name: "\u7CAE\u98DF"
   - id: 2005
     storeid: 2
     itemtype: 0
@@ -113,7 +123,8 @@ MonoBehaviour:
     consumeid: ffffffff
     consumecount: ffffffff
     currencyid: 00000000
-    currencycount: f4010000
+    currencycount: 84030000
+    name: "\u77F3\u5934"
   - id: 2006
     storeid: 2
     itemtype: 0
@@ -122,7 +133,8 @@ MonoBehaviour:
     consumeid: ffffffff
     consumecount: ffffffff
     currencyid: 00000000
-    currencycount: e8030000
+    currencycount: b6030000
+    name: "\u6728\u5934"
   - id: 2007
     storeid: 2
     itemtype: 0
@@ -131,7 +143,8 @@ MonoBehaviour:
     consumeid: ffffffff
     consumecount: ffffffff
     currencyid: 00000000
-    currencycount: e8030000
+    currencycount: ac0d0000
+    name: "\u77F3\u7816"
   - id: 2008
     storeid: 2
     itemtype: 0
@@ -140,7 +153,8 @@ MonoBehaviour:
     consumeid: ffffffff
     consumecount: ffffffff
     currencyid: 00000000
-    currencycount: e8030000
+    currencycount: e0150000
+    name: "\u94C1"
   - id: 2009
     storeid: 2
     itemtype: 0
@@ -149,7 +163,8 @@ MonoBehaviour:
     consumeid: ffffffff
     consumecount: ffffffff
     currencyid: 00000000
-    currencycount: e8030000
+    currencycount: ee020000
+    name: "\u7CAE\u98DF"
   - id: 2010
     storeid: 2
     itemtype: 0
@@ -158,7 +173,8 @@ MonoBehaviour:
     consumeid: ffffffff
     consumecount: ffffffff
     currencyid: 00000000
-    currencycount: e8030000
+    currencycount: a4060000
+    name: "\u77F3\u5934"
   dataList:
   - id: 1000
     storeid: 1
@@ -169,6 +185,7 @@ MonoBehaviour:
     consumecount: f4010000
     currencyid: 00000000
     currencycount: 78050000
+    name: "\u7269\u54C1"
   - id: 1003
     storeid: 1
     itemtype: 1
@@ -178,6 +195,7 @@ MonoBehaviour:
     consumecount: f4010000
     currencyid: 00000000
     currencycount: 40060000
+    name: "\u7269\u54C1"
   - id: 1004
     storeid: 1
     itemtype: 1
@@ -187,6 +205,7 @@ MonoBehaviour:
     consumecount: f4010000
     currencyid: 00000000
     currencycount: e2040000
+    name: "\u7269\u54C1"
   - id: 1005
     storeid: 1
     itemtype: 1
@@ -196,6 +215,7 @@ MonoBehaviour:
     consumecount: f4010000
     currencyid: 00000000
     currencycount: 08070000
+    name: "\u7269\u54C1"
   - id: 1006
     storeid: 1
     itemtype: 1
@@ -205,6 +225,7 @@ MonoBehaviour:
     consumecount: d0070000
     currencyid: 00000000
     currencycount: f8110000
+    name: "\u7269\u54C1"
   - id: 1007
     storeid: 1
     itemtype: 1
@@ -214,6 +235,7 @@ MonoBehaviour:
     consumecount: b80b000040060000
     currencyid: ffffffff
     currencycount: ffffffff
+    name: "\u7269\u54C1"
   - id: 2001
     storeid: 2
     itemtype: 0
@@ -223,6 +245,7 @@ MonoBehaviour:
     consumecount: ffffffff
     currencyid: 00000000
     currencycount: f4010000
+    name: "\u6728\u5934"
   - id: 2002
     storeid: 2
     itemtype: 0
@@ -231,7 +254,8 @@ MonoBehaviour:
     consumeid: ffffffff
     consumecount: ffffffff
     currencyid: 00000000
-    currencycount: f4010000
+    currencycount: 08070000
+    name: "\u77F3\u7816"
   - id: 2003
     storeid: 2
     itemtype: 0
@@ -240,16 +264,18 @@ MonoBehaviour:
     consumeid: ffffffff
     consumecount: ffffffff
     currencyid: 00000000
-    currencycount: f4010000
+    currencycount: b80b0000
+    name: "\u94C1"
   - id: 2004
     storeid: 2
     itemtype: 0
     itemid: 10
-    count: 50
+    count: 80
     consumeid: ffffffff
     consumecount: ffffffff
     currencyid: 00000000
-    currencycount: f4010000
+    currencycount: 58020000
+    name: "\u7CAE\u98DF"
   - id: 2005
     storeid: 2
     itemtype: 0
@@ -258,7 +284,8 @@ MonoBehaviour:
     consumeid: ffffffff
     consumecount: ffffffff
     currencyid: 00000000
-    currencycount: f4010000
+    currencycount: 84030000
+    name: "\u77F3\u5934"
   - id: 2006
     storeid: 2
     itemtype: 0
@@ -267,7 +294,8 @@ MonoBehaviour:
     consumeid: ffffffff
     consumecount: ffffffff
     currencyid: 00000000
-    currencycount: e8030000
+    currencycount: b6030000
+    name: "\u6728\u5934"
   - id: 2007
     storeid: 2
     itemtype: 0
@@ -276,7 +304,8 @@ MonoBehaviour:
     consumeid: ffffffff
     consumecount: ffffffff
     currencyid: 00000000
-    currencycount: e8030000
+    currencycount: ac0d0000
+    name: "\u77F3\u7816"
   - id: 2008
     storeid: 2
     itemtype: 0
@@ -285,7 +314,8 @@ MonoBehaviour:
     consumeid: ffffffff
     consumecount: ffffffff
     currencyid: 00000000
-    currencycount: e8030000
+    currencycount: e0150000
+    name: "\u94C1"
   - id: 2009
     storeid: 2
     itemtype: 0
@@ -294,7 +324,8 @@ MonoBehaviour:
     consumeid: ffffffff
     consumecount: ffffffff
     currencyid: 00000000
-    currencycount: e8030000
+    currencycount: ee020000
+    name: "\u7CAE\u98DF"
   - id: 2010
     storeid: 2
     itemtype: 0
@@ -303,4 +334,5 @@ MonoBehaviour:
     consumeid: ffffffff
     consumecount: ffffffff
     currencyid: 00000000
-    currencycount: e8030000
+    currencycount: a4060000
+    name: "\u77F3\u5934"

@@ -20,6 +20,7 @@ namespace Game.UI.Panel.Shop
         public string name;
         public int[] currencyType;
         public int[] currencyCount;
+        public int itemCount;
         public Action<int> clickHandler;
     }
     
@@ -104,11 +105,12 @@ namespace Game.UI.Panel.Shop
                 var tableData = ConfigTable.Instance.GetStoreItemData(itemData.ShopItemID);
                 nodes.shop_list.AddItem(new ShopListData
                 {
-                    //name = tableData.
+                    name = tableData.Name,
                     shopItemId = itemData.ShopItemID,
                     staticId = tableData.Itemid,
                     currencyType = tableData.Currencyid,
                     currencyCount = tableData.Currencycount,
+                    itemCount = tableData.Count,
                     clickHandler = BuyShopItem
                 });
             }

@@ -15,6 +15,7 @@ namespace Game.UI.Panel.Building
         public FrameComponent upgrade_frame;
         public Button back_btn;
         public ListComponent upgradeItem_list;
+        public GameObject achievement_go;
 
         private void Awake()
         {

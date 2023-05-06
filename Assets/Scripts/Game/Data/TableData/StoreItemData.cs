@@ -46,5 +46,13 @@ namespace Game.Data.TableData
     int[] currencycount = new int[0];
     public int[] Currencycount { get {return currencycount; } set { currencycount = value;} }
     
+    [SerializeField]
+    string name;
+    public string Name { get {return name; } set { name = value;} }
+    
+    [SerializeField]
+    int requirelevel;
+    public int Requirelevel { get {return requirelevel; } set { requirelevel = value;} }
+    
 	}
 }

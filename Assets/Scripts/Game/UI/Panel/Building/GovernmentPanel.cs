@@ -1,7 +1,9 @@
 ﻿using Game.Data;
+using Game.Data.FeatureOpen;
 using Game.Data.TableData;
 using Game.GamePlaySystem;
 using Game.GamePlaySystem.Build;
+using Game.GamePlaySystem.FeatureOpen;
 using Game.UI.Decorator;
 using Game.UI.Panel.Achievement;
 using Game.UI.UISystem;
@@ -29,6 +31,7 @@ namespace Game.UI.Panel.Building
         public override void OnShown()
         {
             base.OnShown();
+            nodes.achievement_go.SetActive(FeatureOpenManager.Instance.HasFeature(FeatureType.Achievement));
             InitData();
             var maxLevel = ConfigTable.Instance.GetBuildingData(StaticId).Level;
             var isMaxLevel = _level >= maxLevel;

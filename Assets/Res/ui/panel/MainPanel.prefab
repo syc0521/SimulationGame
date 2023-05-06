@@ -221,6 +221,10 @@ MonoBehaviour:
   closeTip_btn: {fileID: 2711538242803477631}
   buildingDetail_w: {fileID: 81634455140788703}
   fps_txt: {fileID: 2715036402855622804}
+  status_go: {fileID: 5124637218396666578}
+  task_go: {fileID: 1162307565853444374}
+  operator_go: {fileID: 882095528203475857}
+  pause_go: {fileID: 2403201541094272082}
 --- !u!1 &882095528203475857
 GameObject:
   m_ObjectHideFlags: 0

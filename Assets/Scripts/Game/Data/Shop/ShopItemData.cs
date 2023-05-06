@@ -4,5 +4,6 @@
     {
         public int ShopItemID;
         public ShopType ShopType;
+        public int requireLevel;
     }
 }

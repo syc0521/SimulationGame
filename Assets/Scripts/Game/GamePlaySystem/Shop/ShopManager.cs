@@ -50,7 +50,8 @@ namespace Game.GamePlaySystem.Shop
                 _shopData.Add(new ShopItemData
                 {
                     ShopItemID = itemData.ID,
-                    ShopType = (ShopType)itemData.Storeid
+                    ShopType = (ShopType)itemData.Storeid,
+                    requireLevel = itemData.Requirelevel,
                 });
             }
         }
@@ -59,7 +60,8 @@ namespace Game.GamePlaySystem.Shop
         {
             var random = new Random(_seed);
             var shopItemData = new List<ShopItemData>();
-            var tmpData = _shopData.Where(item => item.ShopType == type).ToList();
+            BuildingManager.Instance.TryGetStaticBuildingLevel(10001, out var level);
+            var tmpData = _shopData.Where(item => item.ShopType == type && level >= item.requireLevel).ToList();
             var shopItemCount = tmpData.Count;
             var randomNumberHistory = new List<int>(15);
             
@@ -97,13 +99,16 @@ namespace Game.GamePlaySystem.Shop
             if (BackpackManager.Instance.CheckBackpackItems(shopItem.Consumeid, shopItem.Consumecount) &&
                 CurrencyManager.Instance.CheckCurrency(shopItem.Currencyid, shopItem.Currencycount))
             {
+                RewardType rewardType = RewardType.Item;
                 switch ((ShopItemType)shopItem.Itemtype)
                 {
                     case ShopItemType.BagItem:
+                        rewardType = RewardType.Item;
                         BackpackManager.Instance.AddBackpackCount(shopItem.Itemid, shopItem.Count);
                         TaskManager.Instance.TriggerTask(TaskType.BuyItem, 0);
                         break;
                     case ShopItemType.Building:
+                        rewardType = RewardType.Building;
                         BuildingManager.Instance.UnlockBuilding(shopItem.Itemid);
                         TaskManager.Instance.TriggerTask(TaskType.BuyDailyItem, 0);
                         break;
@@ -111,11 +116,16 @@ namespace Game.GamePlaySystem.Shop
 
                 BackpackManager.Instance.ConsumeBackpack(shopItem.Consumeid, shopItem.Consumecount);
                 CurrencyManager.Instance.ConsumeCurrency(shopItem.Currencyid, shopItem.Currencycount);
-                
+
+                var rewardData = new RewardData
+                {
+                    type = rewardType,
+                    itemID = shopItem.Itemid,
+                    amount = shopItem.Count,
+                };
                 EventCenter.DispatchEvent(new BuySuccessEvent
                 {
-                    itemID = shopItem.Itemid,
-                    type = (ShopItemType)shopItem.Itemtype,
+                    RewardData = rewardData
                 });
                 return;
             }

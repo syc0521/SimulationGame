@@ -12,7 +12,7 @@ namespace Game.UI.Widget
     public class ShopIconWidget : WidgetBase, IListWidget, IPointerClickHandler
     {
         public CustomImage icon_img;
-        public TextMeshProUGUI name_txt;
+        public TextMeshProUGUI name_txt, count_txt;
         public ListComponent currency_list;
         private int id;
         private Action<int> _clickHandler;
@@ -32,6 +32,10 @@ namespace Game.UI.Widget
             
             icon_img.SetIcon(IconUtility.GetItemIcon(shopListData.staticId));
             name_txt.text = shopListData.name;
+            if (shopListData.itemCount > 1)
+            {
+                count_txt.text = shopListData.itemCount.ToString();
+            }
 
             int itemLength = shopListData.currencyType.Length;
             currency_list.Init();

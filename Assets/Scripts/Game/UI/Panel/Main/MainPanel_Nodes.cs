@@ -20,6 +20,8 @@ namespace Game.UI.Panel
         public BuildingDetailWidget buildingDetail_w;
         public TextMeshProUGUI fps_txt;
 
+        public GameObject status_go, task_go, operator_go, pause_go;
+
         private void Awake()
         {
             task_list.Init();

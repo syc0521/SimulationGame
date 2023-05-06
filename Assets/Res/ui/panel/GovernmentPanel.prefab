@@ -593,7 +593,6 @@ RectTransform:
   - {fileID: 1976431759204875038}
   - {fileID: 4509583104285326308}
   - {fileID: 4531758671732095757}
-  - {fileID: 3404284306608368599}
   m_Father: {fileID: 5215048301270410558}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1524,6 +1523,7 @@ MonoBehaviour:
   upgrade_frame: {fileID: 7423762105993612508}
   back_btn: {fileID: 6275477914692120549}
   upgradeItem_list: {fileID: 4076142420145972325}
+  achievement_go: {fileID: 4744435963835781843}
 --- !u!1 &4744435963835781843
 GameObject:
   m_ObjectHideFlags: 0
@@ -1536,7 +1536,7 @@ GameObject:
   - component: {fileID: 1275500255721584598}
   - component: {fileID: 1953117456089495239}
   m_Layer: 5
-  m_Name: CityAchievement
+  m_Name: CityAchievement@go
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1553,7 +1553,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3404284306608368599}
   m_Father: {fileID: 7323370505125186760}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2416,7 +2417,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 7323370505125186760}
+    m_TransformParent: {fileID: 4531758671732095757}
     m_Modifications:
     - target: {fileID: 2350498088660823164, guid: 785ed97e484bed547b31f47ece6041aa,
         type: 3}
@@ -2511,12 +2512,12 @@ PrefabInstance:
     - target: {fileID: 8975322314931298423, guid: 785ed97e484bed547b31f47ece6041aa,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 120
+      value: 240
       objectReference: {fileID: 0}
     - target: {fileID: 8975322314931298423, guid: 785ed97e484bed547b31f47ece6041aa,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8975322314931298423, guid: 785ed97e484bed547b31f47ece6041aa,
         type: 3}

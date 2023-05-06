@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Game.Core;
 using Game.Data;
+using Game.Data.Event;
 using Game.GamePlaySystem;
 using Game.GamePlaySystem.Backpack;
 using Game.GamePlaySystem.Build;
@@ -81,6 +83,7 @@ namespace Game.UI.Panel.Building
             if (BackpackManager.Instance.GetBackpackCount(type) >= data.Currencycount[0])
             {
                 BuildingManager.Instance.AddBuilding(id);
+                EventCenter.DispatchEvent(new ShowHUDEvent { HUDType = HUDType.Build });
                 CloseSelf();
             }
             else

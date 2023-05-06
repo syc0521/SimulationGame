@@ -45,6 +45,24 @@ MonoBehaviour:
     content: "\u77F3\u5934"
     price: 15
     iconname: stone
+  - id: 101
+    name: "\u5347\u7EA7\u8BB8\u53EF\u8BC1"
+    type: 2
+    content: "\u5347\u7EA7\u8BB8\u53EF\u8BC1"
+    price: 0
+    iconname: null
+  - id: 102
+    name: "\u5347\u7EA7\u8BB8\u53EF\u8BC1"
+    type: 2
+    content: "\u5347\u7EA7\u8BB8\u53EF\u8BC1"
+    price: 0
+    iconname: null
+  - id: 103
+    name: "\u5347\u7EA7\u8BB8\u53EF\u8BC1"
+    type: 2
+    content: "\u5347\u7EA7\u8BB8\u53EF\u8BC1"
+    price: 0
+    iconname: null
   dataList:
   - id: 0
     name: "\u6728\u5934"
@@ -76,3 +94,21 @@ MonoBehaviour:
     content: "\u77F3\u5934"
     price: 15
     iconname: stone
+  - id: 101
+    name: "\u5347\u7EA7\u8BB8\u53EF\u8BC1"
+    type: 2
+    content: "\u5347\u7EA7\u8BB8\u53EF\u8BC1"
+    price: 0
+    iconname: null
+  - id: 102
+    name: "\u5347\u7EA7\u8BB8\u53EF\u8BC1"
+    type: 2
+    content: "\u5347\u7EA7\u8BB8\u53EF\u8BC1"
+    price: 0
+    iconname: null
+  - id: 103
+    name: "\u5347\u7EA7\u8BB8\u53EF\u8BC1"
+    type: 2
+    content: "\u5347\u7EA7\u8BB8\u53EF\u8BC1"
+    price: 0
+    iconname: null

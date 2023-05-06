@@ -1,5 +1,6 @@
 ﻿using Game.Audio;
 using Game.Core;
+using Game.Data.Event;
 using Game.Data.FeatureOpen;
 using Game.GamePlaySystem;
 using Game.GamePlaySystem.Build;
@@ -33,6 +34,7 @@ namespace Game.UI.Widget
         private void OnConfirmClicked()
         {
             BuildingManager.Instance.ConstructBuilding();
+            EventCenter.DispatchEvent(new ShowHUDEvent { HUDType = HUDType.All });
             Managers.Get<IAudioManager>().PlaySFX(SFXType.Place);
             gameObject.SetActive(false);
         }
@@ -40,6 +42,7 @@ namespace Game.UI.Widget
         private void OnCancelClicked()
         {
             BuildingManager.Instance.DeleteTempBuilding();
+            EventCenter.DispatchEvent(new ShowHUDEvent { HUDType = HUDType.All });
             Managers.Get<IAudioManager>().PlaySFX(SFXType.Button);
             gameObject.SetActive(false);
         }

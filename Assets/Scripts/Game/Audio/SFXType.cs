@@ -4,5 +4,6 @@
     {
         Place = 0,
         Button = 1,
+        Button_Effect = 2,
     }
 }

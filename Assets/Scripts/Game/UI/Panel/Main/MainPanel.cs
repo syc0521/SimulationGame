@@ -33,7 +33,7 @@ namespace Game.UI.Panel
         public int id;
         public TaskState state;
     }
-    public class MainPanel : UIPanel
+    public partial class MainPanel : UIPanel
     {
         public MainPanel_Nodes nodes;
         private const float Interval = 0.5f;
@@ -61,6 +61,7 @@ namespace Game.UI.Panel
             EventCenter.AddListener<UnlockFeatureEvent>(RefreshFeatureButtons);
             EventCenter.AddListener<OpenBuildingDetailEvent>(OpenBuildingInfo);
             EventCenter.AddListener<FPSEvent>(ShowFPS);
+            EventCenter.AddListener<ShowHUDEvent>(ChangeHUDStatus);
 
             RefreshFeatureButtons(default);
             RefreshCurrency(default);
@@ -81,6 +82,7 @@ namespace Game.UI.Panel
             EventCenter.RemoveListener<UnlockFeatureEvent>(RefreshFeatureButtons);
             EventCenter.RemoveListener<OpenBuildingDetailEvent>(OpenBuildingInfo);
             EventCenter.RemoveListener<FPSEvent>(ShowFPS);
+            EventCenter.RemoveListener<ShowHUDEvent>(ChangeHUDStatus);
         }
 
         public override void OnUpdate()

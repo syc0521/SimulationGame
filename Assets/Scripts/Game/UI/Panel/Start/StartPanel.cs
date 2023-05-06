@@ -1,14 +1,18 @@
-﻿using Game.Audio;
+﻿using DG.Tweening;
+using Game.Audio;
 using Game.Core;
 using Game.Data.Event.Common;
 using Game.GamePlaySystem.Loading;
 using Game.UI.Panel.Loading;
+using UnityEngine;
 
 namespace Game.UI.Panel.Start
 {
     public class StartPanel : UIPanel
     {
         public StartPanel_Nodes nodes;
+        private static readonly int FaceDilate = Shader.PropertyToID("_FaceDilate");
+
         public override void OnCreated()
         {
             base.OnCreated();
@@ -16,15 +20,23 @@ namespace Game.UI.Panel.Start
             EventCenter.AddListener<LoadSceneFinishedEvent>(Close);
         }
 
+        public override void OnShown()
+        {
+            base.OnShown();
+            nodes.tip_text.materialForRendering.DOFloat(0.2f, FaceDilate, 1.2f).SetLoops(-1, LoopType.Yoyo);
+        }
+
         public override void OnDestroyed()
         {
             base.OnDestroyed();
             nodes.start_btn.onClick.RemoveListener(StartGame);
+            nodes.tip_text.materialForRendering.SetFloat(FaceDilate, 0f);
             EventCenter.AddListener<LoadSceneFinishedEvent>(Close);
         }
 
         private void StartGame()
         {
+            Managers.Get<IAudioManager>().PlaySFX(SFXType.Button_Effect);
             UIManager.Instance.OpenPanel<LoadingPanel>();
         }
 

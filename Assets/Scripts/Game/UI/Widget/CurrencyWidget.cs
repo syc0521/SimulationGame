@@ -26,5 +26,10 @@ namespace Game.UI.Widget
                 price.color = hasEnough ? Color.white : Color.red;
             }
         }
+
+        public void SetAmount(int amount)
+        {
+            price.text = amount.ToString();
+        }
     }
 }

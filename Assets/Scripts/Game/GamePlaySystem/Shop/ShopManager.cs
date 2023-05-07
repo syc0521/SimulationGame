@@ -138,8 +138,23 @@ namespace Game.GamePlaySystem.Shop
             if (BackpackManager.Instance.GetBackpackCount(itemID) >= count)
             {
                 BackpackManager.Instance.ConsumeBackpack(itemID, count);
-                CurrencyManager.Instance.AddCurrency(CurrencyType.Coin, (int)(bagItemData.Price * count * _sellRate));
+                var amount = (int)(bagItemData.Price * count * _sellRate);
+                CurrencyManager.Instance.AddCurrency(CurrencyType.Coin, amount);
+                TaskManager.Instance.TriggerTask(TaskType.SellItem, 0, count);
+                TaskManager.Instance.TriggerTask(TaskType.SellToGetCurrency, 0, amount);
+                var rewardData = new RewardData
+                {
+                    type = RewardType.Currency,
+                    itemID = 0,
+                    amount = amount,
+                };
+                EventCenter.DispatchEvent(new SellEvent
+                {
+                    RewardData = rewardData
+                });
             }
         }
+
+        public float GetSellRate() => _sellRate;
     }
 }

@@ -55,7 +55,14 @@ namespace Game.UI.Panel.Shop
 
         private void ClickBagItem(BagItemWidget widget, int index)
         {
-            // todo 打开选择数量界面
+            var data = nodes.bag_list.GetData(index);
+            if (data is BagListData bagListData)
+            {
+                UIManager.Instance.OpenPanel<SellDetailPanel>(new SellDetailPanelOption
+                {
+                    itemID = bagListData.id,
+                });
+            }
         }
 
     }

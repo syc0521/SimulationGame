@@ -24,8 +24,15 @@ namespace Game.GamePlaySystem.Shop
         public override void OnAwake()
         {
             base.OnAwake();
-            GetRandomSeed();
             GetData();
+        }
+
+        public override void OnStart()
+        {
+            base.OnStart();
+            _seed = SystemDataManager.Instance.GetRandomSeed();
+            Random random = new(_seed);
+            _sellRate = random.Next(8, 12) / 10f;
         }
 
         public override void OnDestroyed()
@@ -33,14 +40,6 @@ namespace Game.GamePlaySystem.Shop
             _shopData.Clear();
             _shopData = null;
             base.OnDestroyed();
-        }
-
-        private void GetRandomSeed()
-        {
-            var dateNow = DateTime.Now;
-            _seed = (int)new DateTime(dateNow.Year, dateNow.Month, dateNow.Day).Ticks;
-            Random random = new(_seed);
-            _sellRate = random.Next(8, 12) / 10f;
         }
 
         private void GetData()

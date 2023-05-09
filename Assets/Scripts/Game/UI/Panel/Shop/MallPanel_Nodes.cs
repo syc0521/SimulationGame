@@ -12,6 +12,7 @@ namespace Game.UI.Panel.Shop
         public TextMeshProUGUI name_txt;
         public ListComponent currency_list, shop_list;
         public Button back_btn, dailyItem_btn;
+        public GameObject finished_go;
 
         private void Awake()
         {

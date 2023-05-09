@@ -12,6 +12,13 @@ namespace Game.UI.Widget
     {
         public CustomImage icon;
         public TextMeshProUGUI price;
+
+        public override void OnDestroyed()
+        {
+            icon.OnDestroyed();
+            base.OnDestroyed();
+        }
+
         public void Refresh(ListData data)
         {
             if (data is ConsumeItemListData itemListData)

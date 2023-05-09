@@ -38,6 +38,7 @@ namespace Game.UI.Panel.Shop
             nodes.reduce_btn.onClick.RemoveListener(Reduce);
             nodes.sell_btn.onClick.RemoveListener(Sell);
             nodes.amount_input.onValueChanged.RemoveListener(ChangeCount);
+            nodes.icon_img.OnDestroyed();
             base.OnDestroyed();
         }
 

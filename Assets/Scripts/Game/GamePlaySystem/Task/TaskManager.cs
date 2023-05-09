@@ -18,11 +18,20 @@ namespace Game.GamePlaySystem.Task
     public class TaskManager : GamePlaySystemBase<TaskManager>
     {
         private Dictionary<int, PlayerTaskData> _playerTaskData;
+        private int _seed;
+        private List<int> _dailyTasks = new();
+
         public override void OnAwake()
         {
             base.OnAwake();
             EventCenter.AddListener<LoadDataEvent>(InitData);
             EventCenter.AddListener<InitializeSaveDataEvent>(InitializeTask);
+        }
+
+        public override void OnStart()
+        {
+            base.OnStart();
+            _seed = SystemDataManager.Instance.GetRandomSeed();
         }
 
         public override void OnDestroyed()
@@ -39,6 +48,7 @@ namespace Game.GamePlaySystem.Task
             {
                 playerTask = GetPlayerTask()
             });
+            InitDailyTask();
         }
         
         private void InitializeTask(InitializeSaveDataEvent evt)
@@ -50,6 +60,43 @@ namespace Game.GamePlaySystem.Task
                 ActivateTask(task.Taskid);
             }
         }
+
+        private void InitDailyTask()
+        {
+            var lastLoginTime = Managers.Get<ISaveDataManager>().GetLastLoginTime();
+            if (!IsSameDay(lastLoginTime))
+            {
+                var previousDailyTask = _playerTaskData.Keys.Where(id => id >= 5000).ToList();
+                foreach (var taskId in previousDailyTask)
+                {
+                    _playerTaskData.Remove(taskId);
+                }
+                Managers.Get<ISaveDataManager>().SaveData();
+            }
+
+            System.Random random = new(_seed);
+            var tasks = ConfigTable.Instance.GetTasks().Where(item => item.Taskid >= 5000).ToList();
+            var dailyTaskCount = tasks.Count;
+            var randomNumberHistory = new List<int>(15);
+            for (int i = 0; i < 3; i++)
+            {
+                var index = random.Next(0, dailyTaskCount);
+                while (randomNumberHistory.Contains(index))
+                {
+                    index = random.Next(0, dailyTaskCount);
+                }
+                randomNumberHistory.Add(index);
+                _dailyTasks.Add(tasks[index].Taskid);
+            }
+        }
+
+        private bool IsSameDay(DateTime loginTime)
+        {
+            var nowTime = DateTime.Now;
+            return nowTime.Year == loginTime.Year && nowTime.Month == loginTime.Month && nowTime.Day == loginTime.Day;
+        }
+
+        public List<int> GetDailyTask() => _dailyTasks;
 
         public void TriggerTask(TaskType taskType, int targetID, int targetNum = 1)
         {
@@ -147,7 +194,7 @@ namespace Game.GamePlaySystem.Task
                 state = TaskState.Accepted,
                 currentNum = new int[itemCount],
             };
-            Debug.LogWarning($"已开启id为{id}的任务");
+            Debug.Log($"已开启id为{id}的任务");
             Managers.Get<ISaveDataManager>().SaveData();
             
         }

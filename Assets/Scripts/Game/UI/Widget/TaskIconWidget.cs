@@ -17,6 +17,12 @@ namespace Game.UI.Widget
         public Image finish_img;
         private int id;
 
+        public override void OnDestroyed()
+        {
+            icon_img.OnDestroyed();
+            base.OnDestroyed();
+        }
+
         public void Refresh(ListData data)
         {
             if (data is not TaskListData taskListData)

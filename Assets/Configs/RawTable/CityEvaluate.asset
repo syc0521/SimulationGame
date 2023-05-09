@@ -18,9 +18,9 @@ MonoBehaviour:
   - level: 1
     score: 115
   - level: 2
-    score: 200
+    score: 240
   - level: 3
-    score: 400
+    score: 500
   - level: 4
     score: 800
   - level: 5
@@ -29,9 +29,9 @@ MonoBehaviour:
   - level: 1
     score: 115
   - level: 2
-    score: 200
+    score: 240
   - level: 3
-    score: 400
+    score: 500
   - level: 4
     score: 800
   - level: 5

@@ -18,9 +18,11 @@ namespace Game.GamePlaySystem
 {
     public class SystemDataManager : GamePlaySystemBase<SystemDataManager>
     {
+        private int _seed;
         public override void OnAwake()
         {
             base.OnAwake();
+            InitRandomSeed();
             EventCenter.AddListener<DataChangedEvent>(ProcessData);
             EventCenter.AddListener<ProduceEvent>(Produce);
         }
@@ -31,6 +33,14 @@ namespace Game.GamePlaySystem
             EventCenter.RemoveListener<ProduceEvent>(Produce);
             base.OnDestroyed();
         }
+        
+        private void InitRandomSeed()
+        {
+            var dateNow = DateTime.Now;
+            _seed = (int)new DateTime(dateNow.Year, dateNow.Month, dateNow.Day).Ticks;
+        }
+
+        public int GetRandomSeed() => _seed;
 
         private void ProcessData(DataChangedEvent evt)
         {

@@ -15,6 +15,13 @@ namespace Game.UI.Widget
 
         private int id;
         private Action<BagItemWidget, int> _clickHandler;
+
+        public override void OnDestroyed()
+        {
+            icon_img.OnDestroyed();
+            base.OnDestroyed();
+        }
+
         public void Refresh(ListData data)
         {
             if (data is BagListData bagListData)

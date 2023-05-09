@@ -1,6 +1,7 @@
 ﻿using System;
 using Game.Core;
 using UnityEngine;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 namespace Game.UI
 {

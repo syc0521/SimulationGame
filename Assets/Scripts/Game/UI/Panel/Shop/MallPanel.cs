@@ -49,6 +49,7 @@ namespace Game.UI.Panel.Shop
         {
             nodes.back_btn.onClick.RemoveListener(CloseSelf);
             nodes.dailyItem_btn.onClick.RemoveListener(BuyDailyItem);
+            nodes.icon_img.OnDestroyed();
             base.OnDestroyed();
         }
 
@@ -62,6 +63,10 @@ namespace Game.UI.Panel.Shop
         {
             var shopData = ConfigTable.Instance.GetStoreItemData(_dailyItem.ShopItemID);
             var buildingData = ConfigTable.Instance.GetBuildingData(shopData.Itemid);
+            var isUnlock = BuildingManager.Instance.CheckBuildingUnlocked(shopData.Itemid);
+            
+            nodes.currency_list.gameObject.SetActive(!isUnlock);
+            nodes.finished_go.SetActive(isUnlock);
             nodes.name_txt.text = buildingData.Name;
             nodes.icon_img.SetIcon(IconUtility.GetBuildingIcon(shopData.Itemid));
             nodes.dailyItem_btn.interactable = !BuildingManager.Instance.CheckBuildingUnlocked(shopData.Itemid);

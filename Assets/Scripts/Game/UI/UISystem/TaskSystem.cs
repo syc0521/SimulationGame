@@ -2,6 +2,7 @@
 using System.Linq;
 using Game.Core;
 using Game.Data;
+using Game.Data.Event.Common;
 using Game.Data.Event.Task;
 using Game.Data.TableData;
 using Game.GamePlaySystem.Task;
@@ -12,16 +13,19 @@ namespace Game.UI.UISystem
     public class TaskSystem : UISystemBase<TaskSystem>
     {
         private Dictionary<int, TaskViewData> _taskData = new();
+        private Dictionary<int, DailyTaskViewData> _dailyTaskData = new();
 
         public override void OnAwake()
         {
             base.OnAwake();
             EventCenter.AddListener<RefreshTaskEvent>(RefreshTask);
+            EventCenter.AddListener<LoadSceneFinishedEvent>(InitDailyTaskData);
         }
 
         public override void OnDestroyed()
         {
             EventCenter.RemoveListener<RefreshTaskEvent>(RefreshTask);
+            EventCenter.RemoveListener<LoadSceneFinishedEvent>(InitDailyTaskData);
             _taskData.Clear();
             _taskData = null;
             base.OnDestroyed();
@@ -64,5 +68,21 @@ namespace Game.UI.UISystem
             }));
             return rewardData;
         }
+
+        private void InitDailyTaskData(LoadSceneFinishedEvent evt)
+        {
+            var taskIds = TaskManager.Instance.GetDailyTask();
+            foreach (var taskId in taskIds)
+            {
+                var taskData = ConfigTable.Instance.GetTask(taskId);
+                _dailyTaskData[taskId] = new DailyTaskViewData
+                {
+                    name = taskData.Name,
+                    desc = taskData.Content,
+                };
+            }
+        }
+
+        public Dictionary<int, DailyTaskViewData> GetDailyTaskData() => _dailyTaskData;
     }
 }

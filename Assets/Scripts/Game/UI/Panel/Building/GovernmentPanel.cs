@@ -104,7 +104,7 @@ namespace Game.UI.Panel.Building
                 AlertDecorator.OpenAlertPanel("货币或材料不足！", false);
             }
 
-            OnShown();
+            CloseSelf();
         }
 
         private string GetEnvRateString(float rate)

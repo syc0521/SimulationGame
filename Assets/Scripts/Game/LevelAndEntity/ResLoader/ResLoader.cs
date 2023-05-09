@@ -77,6 +77,11 @@ namespace Game.LevelAndEntity.ResLoader
             return true;
         }
 
+        public void UnloadRes(AsyncOperationHandle handle)
+        {
+            Addressables.ReleaseInstance(handle);
+        }
+
         private string GetAssetPath(ResEnum type, string path)
         {
             return type switch

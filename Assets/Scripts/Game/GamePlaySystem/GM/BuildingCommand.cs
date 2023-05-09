@@ -1,3 +1,4 @@
+using System.Linq;
 using Game.Data;
 using Game.Data.GM;
 using Game.GamePlaySystem.Build;
@@ -20,8 +21,9 @@ namespace Game.GamePlaySystem.GM
     {
         public void Run()
         {
+            var blackList = new[]{ 1, 19, 20 };
             var buildingData = ConfigTable.Instance.GetAllBuildingData();
-            foreach (var data in buildingData)
+            foreach (var data in buildingData.Where(item => !blackList.Contains(item.Buildingid)))
             {
                 BuildingManager.Instance.UnlockBuilding(data.Buildingid);
             }

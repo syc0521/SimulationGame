@@ -11,5 +11,6 @@ namespace Game.LevelAndEntity.ResLoader
         void LoadRes(ResEnum type, string path, Action<AsyncOperationHandle<Texture2D>> callback);
         Material LoadMaterial(string name);
         bool UnloadRes(ResEnum type, string path);
+        void UnloadRes(AsyncOperationHandle handle);
     }
 }

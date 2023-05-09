@@ -26,6 +26,7 @@ namespace Game.UI.Widget
         public override void OnDestroyed()
         {
             _clickHandler = null;
+            icon_img.OnDestroyed();
             base.OnDestroyed();
         }
 

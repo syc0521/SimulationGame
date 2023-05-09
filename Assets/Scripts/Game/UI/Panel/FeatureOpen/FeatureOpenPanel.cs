@@ -29,6 +29,7 @@ namespace Game.UI.Panel.FeatureOpen
         public override void OnDestroyed()
         {
             nodes.close_btn.onClick.RemoveListener(Close);
+            nodes.icon_img.OnDestroyed();
             base.OnDestroyed();
         }
 

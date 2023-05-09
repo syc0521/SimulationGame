@@ -6,6 +6,7 @@ using Game.Data;
 using Game.Input;
 using Game.LevelAndEntity.ResLoader;
 using UnityEngine;
+using UnityEngine.ResourceManagement.AsyncOperations;
 using Object = UnityEngine.Object;
 
 namespace Game.UI
@@ -29,7 +30,7 @@ namespace Game.UI
         public static IUIManager Instance => Managers.Get<IUIManager>();
         private ModuleCollector _modules;
         private UISystemCollector _systems;
-        private Dictionary<Type, GameObject> panelObjects = new();
+        private Dictionary<Type, Stack<(GameObject, AsyncOperationHandle<GameObject>)>> panelObjects = new();
         private Dictionary<UILayerType, Stack<UIPanel>> panels = new();
 
         public override void OnAwake()
@@ -61,9 +62,16 @@ namespace Game.UI
             _systems.Destroy();
             _systems = null;
 
-            foreach (var panel in panelObjects.Values.ToList().Where(panel => panel != null))
+            foreach (var stack in panelObjects.Values.ToList().Where(panel => panel != null))
             {
-                panel.GetComponent<UIPanel>()?.OnDestroyed();
+                foreach (var item in stack)
+                {
+                    if (item.Item1 != null)
+                    {
+                        item.Item1.GetComponent<UIPanel>()?.OnDestroyed();
+                    }
+                    Managers.Get<IResLoader>().UnloadRes(item.Item2);
+                }
             }
             panelObjects.Clear();
             
@@ -86,13 +94,13 @@ namespace Game.UI
             var data = ConfigTable.Instance.GetUIPanelData(typeof(T).Name);
             Managers.Get<IInputManager>().SetGestureState((UILayerType)data.Layer is UILayerType.Scene);
 
-            if (HasPanel<T>())
+            /*if (HasPanel<T>())
             {
                 panelObjects[typeof(T)].SetActive(true);
                 var panel = panelObjects[typeof(T)].GetComponent<UIPanel>();
                 panel.OnShown();
                 return panel as T;
-            }
+            }*/
 
             CreatePanel<T>(option);
             return default;
@@ -108,7 +116,12 @@ namespace Game.UI
                 var obj = Object.Instantiate(objResult, ConfigTable.Instance.GetUIRoot(data.Layer), false);
                 comp = obj.GetComponent<UIPanel>();
                 comp.opt = option;
-                panelObjects[typeof(T)] = obj;
+
+                if (!panelObjects.ContainsKey(typeof(T)))
+                {
+                    panelObjects[typeof(T)] = new();
+                }
+                panelObjects[typeof(T)].Push((obj, handle));
 
                 if ((UILayerType)data.Layer is not UILayerType.GM)
                 {
@@ -145,8 +158,17 @@ namespace Game.UI
                 }
                 
                 panel.OnDestroyed();
+
+                var panelList = panelObjects[panel.GetType()];
+                var item = panelList.Pop();
+                
                 Object.Destroy(panel.gameObject);
-                panelObjects.Remove(panel.GetType());
+                Managers.Get<IResLoader>().UnloadRes(item.Item2);
+
+                if (panelList.Count <= 0)
+                {
+                    panelObjects.Remove(panel.GetType());
+                }
                 Managers.Get<IInputManager>().SetGestureState(GetTopLayer() is UILayerType.Scene);
             }
         }
@@ -155,8 +177,9 @@ namespace Game.UI
         {
             if (panelObjects.ContainsKey(typeof(T)))
             {
-                var panelObj = panelObjects[typeof(T)];
-                var panel = panelObj.GetComponent<UIPanel>();
+                var panelList = panelObjects[typeof(T)];
+                var item = panelList.Peek();
+                var panel = item.Item1.GetComponent<UIPanel>();
                 DestroyPanel(panel);
             }
         }

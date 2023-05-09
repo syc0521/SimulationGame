@@ -50,7 +50,7 @@ namespace Game.UI.Panel.Loading
             EventCenter.RemoveListener<LoadingEvent>(ShowLoadingProgress);
             EventCenter.RemoveListener<LoadSceneFinishedEvent>(StopShowTips);
             nodes.image.material.SetFloat(Value, 0f);
-            Managers.Get<IResLoader>().UnloadRes(ResEnum.Picture, $"loading{_picData.Picid:D2}");
+            nodes.image.OnDestroyed();
             base.OnDestroyed();
         }
 

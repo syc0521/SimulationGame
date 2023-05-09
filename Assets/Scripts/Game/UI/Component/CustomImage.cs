@@ -1,12 +1,29 @@
 ﻿using Game.Core;
 using Game.LevelAndEntity.ResLoader;
 using UnityEngine;
+using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.UI;
 
 namespace Game.UI.Component
 {
     public class CustomImage : Image
     {
+        private AsyncOperationHandle<Texture2D> _handle;
+
+        protected override void OnDestroy()
+        {
+            Destroy(sprite);
+            base.OnDestroy();
+        }
+
+        public void OnDestroyed()
+        {
+            if (_handle.IsValid())
+            {
+                Managers.Get<IResLoader>().UnloadRes(_handle);
+            }
+        }
+
         public void SetIcon(AtlasSpriteID atlasSpriteID)
         {
             LoadSprite(ResEnum.Sprite, GetAssetPath(atlasSpriteID));
@@ -23,6 +40,7 @@ namespace Game.UI.Component
             {
                 if (handle.Result != null)
                 {
+                    _handle = handle;
                     var s = Sprite.Create(handle.Result, new Rect(0, 0, handle.Result.width, handle.Result.height), Vector2.zero);
                     if (this != null)
                     {

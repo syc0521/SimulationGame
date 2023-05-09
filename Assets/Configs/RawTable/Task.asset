@@ -310,7 +310,7 @@ MonoBehaviour:
     targetid: 00000000
     targetnum: 01000000
     reward: -1
-    content: "\u4FEE\u5EFA\u5730\u6807\u9152\u697C"
+    content: "\u4FEE\u5EFA\u9152\u697C"
     featureopen: -1
   - taskid: 1210
     name: "\u4FEE\u5EFA\u4E09\u6F6D\u6620\u6708"
@@ -707,7 +707,7 @@ MonoBehaviour:
     targetid: 00000000
     targetnum: 01000000
     reward: -1
-    content: "\u4FEE\u5EFA\u5730\u6807\u9152\u697C"
+    content: "\u4FEE\u5EFA\u9152\u697C"
     featureopen: -1
   - taskid: 1210
     name: "\u4FEE\u5EFA\u4E09\u6F6D\u6620\u6708"

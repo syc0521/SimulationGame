@@ -2101,7 +2101,7 @@ PrefabInstance:
     - target: {fileID: 5355643640612350928, guid: 287d4cc7764986f46bde69222848427b,
         type: 3}
       propertyPath: m_Pivot.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5355643640612350928, guid: 287d4cc7764986f46bde69222848427b,
         type: 3}
@@ -2116,7 +2116,7 @@ PrefabInstance:
     - target: {fileID: 5355643640612350928, guid: 287d4cc7764986f46bde69222848427b,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5355643640612350928, guid: 287d4cc7764986f46bde69222848427b,
         type: 3}
@@ -2126,7 +2126,7 @@ PrefabInstance:
     - target: {fileID: 5355643640612350928, guid: 287d4cc7764986f46bde69222848427b,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5355643640612350928, guid: 287d4cc7764986f46bde69222848427b,
         type: 3}
@@ -2141,7 +2141,7 @@ PrefabInstance:
     - target: {fileID: 5355643640612350928, guid: 287d4cc7764986f46bde69222848427b,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 500
+      value: 550
       objectReference: {fileID: 0}
     - target: {fileID: 5355643640612350928, guid: 287d4cc7764986f46bde69222848427b,
         type: 3}
@@ -2181,7 +2181,7 @@ PrefabInstance:
     - target: {fileID: 5355643640612350928, guid: 287d4cc7764986f46bde69222848427b,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 830
+      value: -100
       objectReference: {fileID: 0}
     - target: {fileID: 5355643640612350928, guid: 287d4cc7764986f46bde69222848427b,
         type: 3}
@@ -2202,6 +2202,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5401186556569245387, guid: 287d4cc7764986f46bde69222848427b,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 5401186556569245387, guid: 287d4cc7764986f46bde69222848427b,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8166040596917467727, guid: 287d4cc7764986f46bde69222848427b,
         type: 3}

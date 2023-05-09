@@ -197,7 +197,8 @@ namespace Game.UI.Panel
         private void OpenBuildingInfo(OpenBuildingDetailEvent evt)
         {
             var data = BuildingManager.Instance.GetBuildingData((uint)evt.id);
-            var buildingData = ConfigTable.Instance.GetBuildingData(data.type);
+            var staticId = data.type;
+            var buildingData = ConfigTable.Instance.GetBuildingData(staticId);
 
             nodes.buildingDetail_w.SetDefault();
             nodes.buildingDetail_w.gameObject.SetActive(true);
@@ -211,6 +212,12 @@ namespace Game.UI.Panel
                 if (FeatureOpenManager.Instance.HasFeature(FeatureType.Upgrade))
                 {
                     nodes.buildingDetail_w.SetUpgradeState(data.level < buildingData.Level);
+                    var newLevel = data.level + 1;
+                    if (newLevel <= buildingData.Level)
+                    {
+                        var upgradeData = ConfigTable.Instance.GetBuildingUpgradeData(staticId, newLevel);
+                        nodes.buildingDetail_w.SetCurrency(upgradeData);
+                    }
                 }
                     
                 nodes.buildingDetail_w.SetUpgradeHandler(() =>

@@ -9,8 +9,7 @@ namespace Game.Data.FeatureOpen
         Rotate = 2,
         Backpack = 3,
         Achievement = 4,
-        [Obsolete]
-        Destroy = 5,
+        DailyTask = 5,
         Upgrade = 6,
         Government = 7,
         Mall = 8,

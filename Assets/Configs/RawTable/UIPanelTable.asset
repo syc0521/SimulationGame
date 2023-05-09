@@ -72,6 +72,12 @@ MonoBehaviour:
   - panelid: 18
     name: SellDetailPanel
     layer: 3
+  - panelid: 19
+    name: DailyTaskPanel
+    layer: 1
+  - panelid: 20
+    name: AlertUpgradePanel
+    layer: 3
   dataList:
   - panelid: 0
     name: MainPanel
@@ -129,4 +135,10 @@ MonoBehaviour:
     layer: 1
   - panelid: 18
     name: SellDetailPanel
+    layer: 3
+  - panelid: 19
+    name: DailyTaskPanel
+    layer: 1
+  - panelid: 20
+    name: AlertUpgradePanel
     layer: 3

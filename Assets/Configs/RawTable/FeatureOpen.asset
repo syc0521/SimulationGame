@@ -28,8 +28,8 @@ MonoBehaviour:
     name: "\u6210\u5C31"
     description: "\u53EF\u4EE5\u67E5\u770B\u76EE\u524D\u83B7\u5F97\u7684\u6210\u5C31"
   - featureid: 5
-    name: "\u62C6\u9664\uFF08\u5DF2\u5E9F\u5F03\uFF09"
-    description: "\u53EF\u4EE5\u62C6\u9664\u4E0D\u7528\u7684\u5EFA\u7B51\uFF08\u5DF2\u5E9F\u5F03\uFF09"
+    name: "\u6BCF\u65E5\u4EFB\u52A1"
+    description: "\u627F\u63A5\u6BCF\u65E5\u4EFB\u52A1"
   - featureid: 6
     name: "\u5347\u7EA7"
     description: "\u53EF\u4EE5\u5347\u7EA7\u5EFA\u7B51"
@@ -47,7 +47,7 @@ MonoBehaviour:
     description: "\u7B2C\u4E00\u7AE0"
   - featureid: 102
     name: "\u7B2C\u4E8C\u7AE0"
-    description: "\u7B2C\u4E8C\u7AE0"
+    description: "\u82CF\u8F7C\u758F\u6D5A\u516D\u4E95\uFF0C\u4F7F\u5F97\u897F\u6E56\u7518\u6C34\uFF0C\u6B86\u904D\u4E00\u57CE"
   - featureid: 103
     name: "\u7B2C\u4E09\u7AE0"
     description: "\u7B2C\u4E09\u7AE0"
@@ -65,8 +65,8 @@ MonoBehaviour:
     name: "\u6210\u5C31"
     description: "\u53EF\u4EE5\u67E5\u770B\u76EE\u524D\u83B7\u5F97\u7684\u6210\u5C31"
   - featureid: 5
-    name: "\u62C6\u9664\uFF08\u5DF2\u5E9F\u5F03\uFF09"
-    description: "\u53EF\u4EE5\u62C6\u9664\u4E0D\u7528\u7684\u5EFA\u7B51\uFF08\u5DF2\u5E9F\u5F03\uFF09"
+    name: "\u6BCF\u65E5\u4EFB\u52A1"
+    description: "\u627F\u63A5\u6BCF\u65E5\u4EFB\u52A1"
   - featureid: 6
     name: "\u5347\u7EA7"
     description: "\u53EF\u4EE5\u5347\u7EA7\u5EFA\u7B51"
@@ -84,7 +84,7 @@ MonoBehaviour:
     description: "\u7B2C\u4E00\u7AE0"
   - featureid: 102
     name: "\u7B2C\u4E8C\u7AE0"
-    description: "\u7B2C\u4E8C\u7AE0"
+    description: "\u82CF\u8F7C\u758F\u6D5A\u516D\u4E95\uFF0C\u4F7F\u5F97\u897F\u6E56\u7518\u6C34\uFF0C\u6B86\u904D\u4E00\u57CE"
   - featureid: 103
     name: "\u7B2C\u4E09\u7AE0"
     description: "\u7B2C\u4E09\u7AE0"

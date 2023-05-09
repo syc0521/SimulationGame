@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Game.Data.FeatureOpen;
 using Game.Data.GM;
 using Game.GamePlaySystem.FeatureOpen;
@@ -21,9 +22,15 @@ namespace Game.GamePlaySystem.GM
     {
         public void Run()
         {
+            var blackList = new[]{ FeatureType.Chapter1, FeatureType.Chapter2, FeatureType.Chapter3 };
+
             foreach (var item in Enum.GetValues(typeof(FeatureType)))
             {
-                FeatureOpenManager.Instance.OpenFeature((FeatureType)item);
+                var feature = (FeatureType)item;
+                if (!blackList.Contains(feature))
+                {
+                    FeatureOpenManager.Instance.OpenFeature((FeatureType)item);
+                }
             }
         }
     }

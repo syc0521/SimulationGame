@@ -4,6 +4,7 @@ using Game.UI.Panel.Bag;
 using Game.UI.Panel.Common;
 using Game.UI.Utils;
 using TMPro;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace Game.UI.Widget
@@ -12,6 +13,7 @@ namespace Game.UI.Widget
     {
         public TextMeshProUGUI count_txt;
         public CustomImage icon_img;
+        public GameObject count_go;
 
         private int id;
         private Action<BagItemWidget, int> _clickHandler;
@@ -30,6 +32,7 @@ namespace Game.UI.Widget
                 var count = bagListData.data.count;
                 icon_img.SetIcon(IconUtility.GetItemIcon(bagListData.id));
                 count_txt.text = count > 1 ? count.ToString() : string.Empty;
+                count_go.SetActive(count > 1);
                 _clickHandler = bagListData.clickHandler; 
             }
             else if (data is AlertRewardListData alertRewardListData)
@@ -37,6 +40,7 @@ namespace Game.UI.Widget
                 id = alertRewardListData.id;
                 var count = alertRewardListData.data.amount;
                 count_txt.text = count > 1 ? count.ToString() : string.Empty;
+                count_go.SetActive(count > 1);
                 _clickHandler = alertRewardListData.clickHandler;
                 icon_img.SetIcon(IconUtility.GetRewardIcon(alertRewardListData.data.type, alertRewardListData.data.itemID));
             }

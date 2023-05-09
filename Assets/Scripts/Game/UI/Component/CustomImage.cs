@@ -12,7 +12,10 @@ namespace Game.UI.Component
 
         protected override void OnDestroy()
         {
-            Destroy(sprite);
+            if (string.IsNullOrEmpty(sprite.name))
+            {
+                Destroy(sprite);
+            }
             base.OnDestroy();
         }
 

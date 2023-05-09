@@ -20,10 +20,11 @@ namespace Game.GamePlaySystem.GM
     {
         public void Run()
         {
-            BackpackManager.Instance.AddBackpackCount(0, 500);
-            BackpackManager.Instance.AddBackpackCount(1, 500);
-            BackpackManager.Instance.AddBackpackCount(10, 500);
-            BackpackManager.Instance.AddBackpackCount(11, 500);
+            BackpackManager.Instance.AddBackpackCount(0, 5000);
+            BackpackManager.Instance.AddBackpackCount(1, 5000);
+            BackpackManager.Instance.AddBackpackCount(2, 5000);
+            BackpackManager.Instance.AddBackpackCount(10, 5000);
+            BackpackManager.Instance.AddBackpackCount(11, 5000);
         }
     }
 }

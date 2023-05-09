@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.30548397, g: 0.34166813, b: 0.41211325, a: 1}
+  m_IndirectSpecularColor: {r: 0.3059265, g: 0.34272993, b: 0.413352, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -597,6 +597,10 @@ MonoBehaviour:
   - name: SoundFX
     acbFile: Audio/PC/SoundFX.acb
     awbFile: Audio/PC/SoundFX.awb
+    loaderStatus: 0
+  - name: Ambient
+    acbFile: Audio/PC/Ambient.acb
+    awbFile: Audio/PC/Ambient.awb
     loaderStatus: 0
   dspBusSetting: 
   dontDestroyOnLoad: 0

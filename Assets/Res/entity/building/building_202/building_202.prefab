@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 6
-  maxPeople: 5
+  maxPeople: 6
   meshRoot: {fileID: 8507498155796017819}
   maxLevel: 3
   cd: 8

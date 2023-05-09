@@ -422,8 +422,8 @@ MonoBehaviour:
     description: "\u724C\u574A"
     currencytype: 01000000
     currencycount: 64000000
-    rowcount: 2
-    colcount: 6
+    rowcount: 7
+    colcount: 2
     cd: -1
     unlock: 0
     people: 0
@@ -438,8 +438,8 @@ MonoBehaviour:
     description: "\u533B\u9662"
     currencytype: 01000000
     currencycount: 64000000
-    rowcount: 3
-    colcount: 4
+    rowcount: 5
+    colcount: 3
     cd: -1
     unlock: 0
     people: 0
@@ -454,8 +454,8 @@ MonoBehaviour:
     description: "\u4E66\u9662"
     currencytype: 01000000
     currencycount: 64000000
-    rowcount: 6
-    colcount: 10
+    rowcount: 10
+    colcount: 6
     cd: -1
     unlock: 0
     people: 0
@@ -486,8 +486,8 @@ MonoBehaviour:
     description: "\u9152\u697C"
     currencytype: 01000000
     currencycount: 64000000
-    rowcount: 5
-    colcount: 6
+    rowcount: 6
+    colcount: 5
     cd: -1
     unlock: 0
     people: 0
@@ -502,8 +502,8 @@ MonoBehaviour:
     description: "\u94C1\u5320\u94FA"
     currencytype: 01000000
     currencycount: 64000000
-    rowcount: 5
-    colcount: 7
+    rowcount: 6
+    colcount: 5
     cd: 8
     unlock: 0
     people: 0
@@ -935,8 +935,8 @@ MonoBehaviour:
     description: "\u724C\u574A"
     currencytype: 01000000
     currencycount: 64000000
-    rowcount: 2
-    colcount: 6
+    rowcount: 7
+    colcount: 2
     cd: -1
     unlock: 0
     people: 0
@@ -951,8 +951,8 @@ MonoBehaviour:
     description: "\u533B\u9662"
     currencytype: 01000000
     currencycount: 64000000
-    rowcount: 3
-    colcount: 4
+    rowcount: 5
+    colcount: 3
     cd: -1
     unlock: 0
     people: 0
@@ -967,8 +967,8 @@ MonoBehaviour:
     description: "\u4E66\u9662"
     currencytype: 01000000
     currencycount: 64000000
-    rowcount: 6
-    colcount: 10
+    rowcount: 10
+    colcount: 6
     cd: -1
     unlock: 0
     people: 0
@@ -999,8 +999,8 @@ MonoBehaviour:
     description: "\u9152\u697C"
     currencytype: 01000000
     currencycount: 64000000
-    rowcount: 5
-    colcount: 6
+    rowcount: 6
+    colcount: 5
     cd: -1
     unlock: 0
     people: 0
@@ -1015,8 +1015,8 @@ MonoBehaviour:
     description: "\u94C1\u5320\u94FA"
     currencytype: 01000000
     currencycount: 64000000
-    rowcount: 5
-    colcount: 7
+    rowcount: 6
+    colcount: 5
     cd: 8
     unlock: 0
     people: 0

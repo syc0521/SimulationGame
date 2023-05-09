@@ -52,7 +52,7 @@ MonoBehaviour:
   maxLevel: 3
   cd: 9
   envValue: 0
-  evaluateScore: 10
+  evaluateScore: 18
 --- !u!114 &8021392280205170797
 MonoBehaviour:
   m_ObjectHideFlags: 0

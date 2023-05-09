@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Runtime.CompilerServices;
+using Game.Audio;
 using Game.Core;
 using Game.Data;
 using Game.Data.Event.Common;
@@ -19,10 +20,12 @@ namespace Game.GamePlaySystem
         private float _preDistance;
 
         private float2 _preDir;
+        private bool _isEntered;
         
         private readonly float minHeight = ConfigTable.Instance.GetGestureConfig().minHeight;
         private readonly float maxHeight = ConfigTable.Instance.GetGestureConfig().maxHeight;
-        
+        private readonly float2 Center = new(100, 100);
+
         public override void OnStart()
         {
             EventCenter.AddListener<LoadSceneFinishedEvent>(ChangeUICam);
@@ -41,7 +44,6 @@ namespace Game.GamePlaySystem
         {
             EventCenter.RemoveListener<LoadSceneFinishedEvent>(ChangeUICam);
 
-            
             EventCenter.RemoveListener<SwipeStartEvent>(OnSwipeStarted);
             EventCenter.RemoveListener<SwipeChangedEvent>(ChangeCameraPosition);
 
@@ -54,11 +56,23 @@ namespace Game.GamePlaySystem
             base.OnDestroyed();
         }
 
+        public override void OnUpdate()
+        {
+            if (_isEntered)
+            {
+                var pos = mainCam.transform.position;
+                var xzPos = new float2(pos.x, pos.z);
+                var dis = math.distance(xzPos, Center);
+                Managers.Get<IAudioManager>().AdjustAmbientVolume(dis * 0.00565f + 0.15f); // 0.8/141.4
+            }
+        }
+
         private void ChangeUICam(LoadSceneFinishedEvent evt)
         {
             ConfigTable.Instance.MainUICam.gameObject.SetActive(false);
             var cam = mainCam.transform.GetChild(0).GetComponent<Camera>();
             ConfigTable.Instance.MainCanvas.worldCamera = cam;
+            _isEntered = true;
         }
 
         private void OnSwipeStarted(SwipeStartEvent evt)

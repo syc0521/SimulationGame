@@ -12,5 +12,6 @@ namespace Game.Audio
         void PlaySFX(SFXType type);
         void AdjustBGMVolume(float volume);
         void AdjustSoundVolume(float volume);
+        void AdjustAmbientVolume(float volume);
     }
 }

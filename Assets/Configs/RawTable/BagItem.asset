@@ -50,19 +50,7 @@ MonoBehaviour:
     type: 2
     content: "\u5347\u7EA7\u8BB8\u53EF\u8BC1"
     price: 0
-    iconname: null
-  - id: 102
-    name: "\u5347\u7EA7\u8BB8\u53EF\u8BC1"
-    type: 2
-    content: "\u5347\u7EA7\u8BB8\u53EF\u8BC1"
-    price: 0
-    iconname: null
-  - id: 103
-    name: "\u5347\u7EA7\u8BB8\u53EF\u8BC1"
-    type: 2
-    content: "\u5347\u7EA7\u8BB8\u53EF\u8BC1"
-    price: 0
-    iconname: null
+    iconname: ticket
   dataList:
   - id: 0
     name: "\u6728\u5934"
@@ -99,16 +87,4 @@ MonoBehaviour:
     type: 2
     content: "\u5347\u7EA7\u8BB8\u53EF\u8BC1"
     price: 0
-    iconname: null
-  - id: 102
-    name: "\u5347\u7EA7\u8BB8\u53EF\u8BC1"
-    type: 2
-    content: "\u5347\u7EA7\u8BB8\u53EF\u8BC1"
-    price: 0
-    iconname: null
-  - id: 103
-    name: "\u5347\u7EA7\u8BB8\u53EF\u8BC1"
-    type: 2
-    content: "\u5347\u7EA7\u8BB8\u53EF\u8BC1"
-    price: 0
-    iconname: null
+    iconname: ticket

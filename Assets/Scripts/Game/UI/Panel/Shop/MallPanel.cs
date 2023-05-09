@@ -70,24 +70,31 @@ namespace Game.UI.Panel.Shop
             nodes.name_txt.text = buildingData.Name;
             nodes.icon_img.SetIcon(IconUtility.GetBuildingIcon(shopData.Itemid));
             nodes.dailyItem_btn.interactable = !BuildingManager.Instance.CheckBuildingUnlocked(shopData.Itemid);
-            
-            for (var i = 0; i < shopData.Consumeid.Length; i++)
+
+            if (shopData.Consumeid[0] != -1)
             {
-                nodes.currency_list.AddItem(new ConsumeItemListData
+                for (var i = 0; i < shopData.Consumeid.Length; i++)
                 {
-                    consumeType = ConsumeType.Item,
-                    id = shopData.Consumeid[i],
-                    amount = shopData.Consumecount[i]
-                });
+                    nodes.currency_list.AddItem(new ConsumeItemListData
+                    {
+                        consumeType = ConsumeType.Item,
+                        id = shopData.Consumeid[i],
+                        amount = shopData.Consumecount[i]
+                    });
+                }
             }
-            for (var i = 0; i < shopData.Currencyid.Length; i++)
+
+            if (shopData.Currencyid[0] != -1)
             {
-                nodes.currency_list.AddItem(new ConsumeItemListData
+                for (var i = 0; i < shopData.Currencyid.Length; i++)
                 {
-                    consumeType = ConsumeType.Currency,
-                    id = shopData.Currencyid[i],
-                    amount = shopData.Currencycount[i]
-                });
+                    nodes.currency_list.AddItem(new ConsumeItemListData
+                    {
+                        consumeType = ConsumeType.Currency,
+                        id = shopData.Currencyid[i],
+                        amount = shopData.Currencycount[i]
+                    });
+                }
             }
         }
 

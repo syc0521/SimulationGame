@@ -23,7 +23,7 @@ namespace Game.UI.Component
         {
             if (_handle.IsValid())
             {
-                Managers.Get<IResLoader>().UnloadRes(_handle);
+                Managers.Get<IResLoader>()?.UnloadRes(_handle);
             }
         }
 

@@ -1,3 +1,4 @@
+using DG.Tweening;
 using Game.Data.Event;
 
 namespace Game.UI.Panel
@@ -6,9 +7,23 @@ namespace Game.UI.Panel
     {
         private void ChangeHUDStatus(ShowHUDEvent evt)
         {
-            switch (evt.HUDType)
+            ChangeHUDStatus(evt.HUDType);
+        }
+
+        private void ChangeHUDStatus(HUDType type)
+        {
+            switch (type)
             {
                 case HUDType.All:
+                    if (!nodes.operator_go.activeInHierarchy && nodes.task_go.activeInHierarchy)
+                    {
+                        PlayOperatorInAnim();
+                    }
+                    else if (!nodes.task_go.activeInHierarchy)
+                    {
+                        PlayStatusInAnim();
+                    }
+                    
                     nodes.operator_go.SetActive(true);
                     nodes.task_go.SetActive(true);
                     nodes.status_go.SetActive(true);
@@ -19,7 +34,39 @@ namespace Game.UI.Panel
                     nodes.task_go.SetActive(false);
                     nodes.status_go.SetActive(false);
                     break;
+                case HUDType.Detail:
+                    PlayOperatorOutAnim();
+                    break;
             }
+        }
+
+        private void PlayOperatorInAnim()
+        {
+            _animation["MainPanel_OperatorIn"].clip.SampleAnimation(gameObject, 0f);
+            _animation.Play("MainPanel_OperatorIn");
+        }
+        
+        private void PlayOperatorOutAnim()
+        {
+            var length = _animation["MainPanel_OperatorOut"].clip.length;
+            _animation["MainPanel_OperatorOut"].clip.SampleAnimation(gameObject, 0f);
+            _animation.Play("MainPanel_OperatorOut");
+            DOTween.Sequence().AppendInterval(length).AppendCallback(() =>
+            {
+                nodes.operator_go.SetActive(false);
+            });
+        }
+
+        private void PlayStatusInAnim()
+        {
+            _animation["MainPanel_StatusIn"].clip.SampleAnimation(gameObject, 0f);
+            _animation.Play("MainPanel_StatusIn");
+        }
+
+        private void PlayIntroAnim()
+        {
+            _animation["MainPanel_Intro"].clip.SampleAnimation(gameObject, 0f);
+            _animation.Play("MainPanel_Intro");
         }
     }
 }

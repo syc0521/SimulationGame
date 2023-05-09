@@ -47,12 +47,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 9
-  maxPeople: 7
+  maxPeople: 3
   meshRoot: {fileID: 6288000979709588692}
   maxLevel: 3
   cd: 8
   envValue: 2
-  evaluateScore: 25
+  evaluateScore: 10
 --- !u!114 &8021392280205170797
 MonoBehaviour:
   m_ObjectHideFlags: 0

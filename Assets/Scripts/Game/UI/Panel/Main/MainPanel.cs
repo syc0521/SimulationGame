@@ -38,6 +38,7 @@ namespace Game.UI.Panel
         public MainPanel_Nodes nodes;
         private const float Interval = 0.5f;
         private float _time = 0f;
+        private Animation _animation;
 
         public override void OnCreated()
         {
@@ -50,6 +51,7 @@ namespace Game.UI.Panel
             nodes.happiness_widget.SetClickHandler(ShowTip, StatusType.Happiness);
             nodes.money_widget.SetClickHandler(ShowTip, StatusType.Coin);
             nodes.people_widget.SetClickHandler(ShowTip, StatusType.People);
+            _animation = GetComponent<Animation>();
         }
 
         public override void OnShown()
@@ -63,6 +65,7 @@ namespace Game.UI.Panel
             EventCenter.AddListener<FPSEvent>(ShowFPS);
             EventCenter.AddListener<ShowHUDEvent>(ChangeHUDStatus);
 
+            PlayIntroAnim();
             RefreshFeatureButtons(default);
             RefreshCurrency(default);
             RefreshTask(default);
@@ -189,6 +192,7 @@ namespace Game.UI.Panel
 
         private void CloseTip()
         {
+            ChangeHUDStatus(HUDType.All);
             nodes.tip_w.gameObject.SetActive(false);
             nodes.closeTip_btn.gameObject.SetActive(false);
             nodes.buildingDetail_w.gameObject.SetActive(false);
@@ -200,6 +204,7 @@ namespace Game.UI.Panel
             var staticId = data.type;
             var buildingData = ConfigTable.Instance.GetBuildingData(staticId);
 
+            ChangeHUDStatus(HUDType.Detail);
             nodes.buildingDetail_w.SetDefault();
             nodes.buildingDetail_w.gameObject.SetActive(true);
             nodes.closeTip_btn.gameObject.SetActive(true);

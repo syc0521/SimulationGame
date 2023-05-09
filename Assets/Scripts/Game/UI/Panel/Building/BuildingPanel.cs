@@ -11,6 +11,7 @@ using Game.UI.Component;
 using Game.UI.Decorator;
 using Game.UI.UISystem;
 using Game.UI.ViewData;
+using UnityEngine;
 
 namespace Game.UI.Panel.Building
 {
@@ -24,6 +25,7 @@ namespace Game.UI.Panel.Building
     public class BuildingPanel : UIPanel
     {
         public BuildingPanel_Nodes nodes;
+        private Animation _animation;
 
         private List<string> tabTitle = new()
         {
@@ -38,6 +40,8 @@ namespace Game.UI.Panel.Building
         public override void OnShown()
         {
             base.OnShown();
+            _animation.clip.SampleAnimation(gameObject, 0);
+            _animation.Play();
             InitTabBar();
             nodes.tabBar.SetSelectedIndex(0);
         }

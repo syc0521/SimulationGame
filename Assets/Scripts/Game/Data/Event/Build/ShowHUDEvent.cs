@@ -6,6 +6,7 @@ namespace Game.Data.Event
     {
         All = 0,
         Build = 1,
+        Detail = 2,
     }
     
     public struct ShowHUDEvent : IEvent

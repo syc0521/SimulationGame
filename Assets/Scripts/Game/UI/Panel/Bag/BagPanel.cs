@@ -21,6 +21,7 @@ namespace Game.UI.Panel.Bag
         
         public override void OnCreated()
         {
+            base.OnCreated();
             nodes.close_btn.onClick.AddListener(ClosePanel);
             nodes.closeTip_btn.onClick.AddListener(CloseTip);
         }

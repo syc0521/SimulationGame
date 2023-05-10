@@ -12,10 +12,7 @@ namespace Game.GamePlaySystem.GM
         public void Run()
         {
             TaskManager.Instance.ActivateTask(taskId);
-            EventCenter.DispatchEvent(new RefreshTaskEvent
-            {
-                playerTask = TaskManager.Instance.GetPlayerTask()
-            });
+            TaskManager.Instance.RefreshTask();
         }
     }
     
@@ -26,10 +23,7 @@ namespace Game.GamePlaySystem.GM
         public void Run()
         {
             TaskManager.Instance.GetReward(taskId);
-            EventCenter.DispatchEvent(new RefreshTaskEvent
-            {
-                playerTask = TaskManager.Instance.GetPlayerTask()
-            });
+            TaskManager.Instance.RefreshTask();
         }
     }
 }

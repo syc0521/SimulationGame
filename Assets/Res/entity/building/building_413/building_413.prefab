@@ -51,7 +51,7 @@ MonoBehaviour:
   meshRoot: {fileID: 6319939700437983145}
   maxLevel: 1
   cd: -1
-  envValue: 6
+  envValue: 5
   evaluateScore: 5
 --- !u!114 &8021392280205170797
 MonoBehaviour:

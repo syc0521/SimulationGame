@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 3015815555865143738}
   - component: {fileID: 2839915029728374079}
   - component: {fileID: 3513828529399542389}
+  - component: {fileID: 8529326904177029240}
   m_Layer: 5
   m_Name: operator_right
   m_TagString: Untagged
@@ -201,6 +202,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 2
   m_VerticalFit: 0
+--- !u!225 &8529326904177029240
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4315552125554668389}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &4712664157517380074
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,6 +226,7 @@ GameObject:
   - component: {fileID: 2624692873678795946}
   - component: {fileID: 5482931918154549100}
   - component: {fileID: 5096045026432667832}
+  - component: {fileID: 4865300567101850747}
   m_Layer: 5
   m_Name: RoadBuildingPanel
   m_TagString: Untagged
@@ -279,6 +293,22 @@ MonoBehaviour:
   redo_btn: {fileID: 281001528581182326}
   back_btn: {fileID: 238434084658268888}
   construct_btn: {fileID: 8600047724915500447}
+--- !u!111 &4865300567101850747
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4712664157517380074}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 86a4d1fff48699a459caea218df71258, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 86a4d1fff48699a459caea218df71258, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &6685144846683930659
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,6 +441,7 @@ GameObject:
   - component: {fileID: 1908144729577733233}
   - component: {fileID: 4017479292221692612}
   - component: {fileID: 3606037386453627896}
+  - component: {fileID: 5530321723786364417}
   m_Layer: 5
   m_Name: operator_left
   m_TagString: Untagged
@@ -480,6 +511,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 2
   m_VerticalFit: 0
+--- !u!225 &5530321723786364417
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7008715005450418386}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &7824997433782765597
 GameObject:
   m_ObjectHideFlags: 0

@@ -38,20 +38,20 @@ namespace Game.UI.Panel
         public MainPanel_Nodes nodes;
         private const float Interval = 0.5f;
         private float _time = 0f;
-        private Animation _animation;
 
         public override void OnCreated()
         {
+            base.OnCreated();
             nodes.build_btn.onClick.AddListener(OpenBuildPanel);
             nodes.bag_btn.onClick.AddListener(OpenBagPanel);
             nodes.destroy_btn.onClick.AddListener(DestroyHandler);
             nodes.pause_btn.onClick.AddListener(ShowPausePanel);
             nodes.closeTip_btn.onClick.AddListener(CloseTip);
-            
+            nodes.fps_btn.onClick.AddListener(TriggerGMPanel);
+
             nodes.happiness_widget.SetClickHandler(ShowTip, StatusType.Happiness);
             nodes.money_widget.SetClickHandler(ShowTip, StatusType.Coin);
             nodes.people_widget.SetClickHandler(ShowTip, StatusType.People);
-            _animation = GetComponent<Animation>();
         }
 
         public override void OnShown()
@@ -78,6 +78,7 @@ namespace Game.UI.Panel
             nodes.destroy_btn.onClick.RemoveListener(DestroyHandler);
             nodes.pause_btn.onClick.RemoveListener(ShowPausePanel);
             nodes.closeTip_btn.onClick.RemoveListener(CloseTip);
+            nodes.fps_btn.onClick.RemoveListener(TriggerGMPanel);
 
             EventCenter.RemoveListener<RefreshUITaskEvent>(RefreshTask);
             EventCenter.RemoveListener<BuildUIEvent>(ShowConfirmUI);

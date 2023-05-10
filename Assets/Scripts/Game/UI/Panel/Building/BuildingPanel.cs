@@ -25,7 +25,6 @@ namespace Game.UI.Panel.Building
     public class BuildingPanel : UIPanel
     {
         public BuildingPanel_Nodes nodes;
-        private Animation _animation;
 
         private List<string> tabTitle = new()
         {
@@ -36,14 +35,12 @@ namespace Game.UI.Panel.Building
         {
             base.OnCreated();
             nodes.close_btn.onClick.AddListener(ClosePanel);
-            _animation = GetComponent<Animation>();
         }
 
         public override void OnShown()
         {
             base.OnShown();
-            _animation.clip.SampleAnimation(gameObject, 0);
-            _animation.Play();
+            PlayAnimation();
             InitTabBar();
             nodes.tabBar.SetSelectedIndex(0);
         }

@@ -20,7 +20,7 @@ namespace Game.GamePlaySystem.Task
                 TaskType.UpgradeBuilding => ConfigTable.Instance.GetBuildingData(id).Name,
                 TaskType.GetCurrency => ConfigTable.Instance.GetCurrencyData(id).Name,
                 TaskType.GetBagItem => ConfigTable.Instance.GetBagItemData(id).Name,
-                TaskType.CountBuilding => ConfigTable.Instance.GetBuildingData(id).Buildingtype.ToString(),
+                TaskType.CountBuilding => GetBuildingTypeDesc(id),
                 TaskType.GetEvaluateScore => "城市面貌",
                 TaskType.People => "人口",
                 TaskType.BuyItem => "购买",
@@ -28,6 +28,19 @@ namespace Game.GamePlaySystem.Task
                 TaskType.SellItem => "出售",
                 TaskType.SellToGetCurrency => ConfigTable.Instance.GetCurrencyData(id).Name,
                 _ => string.Empty
+            };
+        }
+
+        private static string GetBuildingTypeDesc(int type)
+        {
+            return type switch
+            {
+                -1 => "建筑",
+                0 => "住宅",
+                1 => "生产建筑",
+                2 => "装饰",
+                3 => "地标",
+                _ => string.Empty,
             };
         }
     }

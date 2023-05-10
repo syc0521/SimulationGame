@@ -16,6 +16,7 @@ namespace Game.UI.Panel.Common
 
         public override void OnCreated()
         {
+            base.OnCreated();
             nodes.confirm_btn.onClick.AddListener(ClickConfirm);
             nodes.cancel_btn.onClick.AddListener(ClickCancel);
         }

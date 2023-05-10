@@ -49,7 +49,7 @@ MonoBehaviour:
   type: 7
   maxPeople: 3
   meshRoot: {fileID: 4771427772988660971}
-  maxLevel: 3
+  maxLevel: 1
   cd: 9
   envValue: 0
   evaluateScore: 18

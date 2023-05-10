@@ -21,6 +21,7 @@ namespace Game.UI.Panel
         public TextMeshProUGUI fps_txt;
 
         public GameObject status_go, task_go, operator_go, pause_go;
+        public Button fps_btn;
 
         private void Awake()
         {

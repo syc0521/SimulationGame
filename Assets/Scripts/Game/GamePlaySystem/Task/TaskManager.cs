@@ -174,7 +174,7 @@ namespace Game.GamePlaySystem.Task
             });
         }
         
-        public Dictionary<int, PlayerTaskData> GetPlayerTask()
+        private Dictionary<int, PlayerTaskData> GetPlayerTask()
         {
             Dictionary<int, PlayerTaskData> data = new();
             foreach (var task in _playerTaskData.Where(

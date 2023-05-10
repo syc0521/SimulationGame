@@ -112,6 +112,11 @@ namespace Game.UI.Panel.GM
 
         private void Run()
         {
+            if (_currentType == null)
+            {
+                return;
+            }
+            
             var constructorInfo = _currentType.GetConstructor(new Type[] {});
             var obj = constructorInfo?.Invoke(new object[] { });
             for (var i = 0; i < _currentType.GetFields().Length; i++)

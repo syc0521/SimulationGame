@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 4593103532228049364}
   - component: {fileID: 7899894953470143600}
   m_Layer: 5
-  m_Name: completion@txt
+  m_Name: desc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -452,8 +452,8 @@ GameObject:
   - component: {fileID: 4712664157517380075}
   - component: {fileID: 2624692873678795946}
   - component: {fileID: 8175335672491203389}
-  - component: {fileID: 2741697361357696385}
-  - component: {fileID: 4251867759240742596}
+  - component: {fileID: 6017174902348408364}
+  - component: {fileID: 5942069330803765377}
   m_Layer: 5
   m_Name: DailyTaskPanel
   m_TagString: Untagged
@@ -521,7 +521,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2741697361357696385
+--- !u!114 &6017174902348408364
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -530,11 +530,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4712664157517380074}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc9e9717b1eb4f42a151a707554af217, type: 3}
+  m_Script: {fileID: 11500000, guid: c17948be462545dfa6447a2494e03295, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodes: {fileID: 4251867759240742596}
---- !u!114 &4251867759240742596
+  nodes: {fileID: 5942069330803765377}
+--- !u!114 &5942069330803765377
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -543,11 +543,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4712664157517380074}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 443f5689223d4397aaeb46355dd728e5, type: 3}
+  m_Script: {fileID: 11500000, guid: 8b90debdc312417cb20642dcf1af395b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  completion_txt: {fileID: 7899894953470143600}
-  achievement_list: {fileID: 1553363353302726004}
+  task_list: {fileID: 1553363353302726004}
   back_btn: {fileID: 6275477914692120549}
 --- !u!1 &5293095418758033589
 GameObject:

@@ -1,4 +1,5 @@
 ﻿using System;
+using Game.UI.Panel.Building;
 using Game.UI.Panel.Common;
 
 namespace Game.UI.Decorator
@@ -12,6 +13,16 @@ namespace Game.UI.Decorator
                 content = content,
                 clickHandler = handler,
                 hasCancel = hasCancel,
+            });
+        }
+
+        public static void OpenAlertUpgradePanel(int staticId, int curLevel, bool isGov = false)
+        {
+            UIManager.Instance.OpenPanel<AlertUpgradePanel>(new AlertUpgradePanelOption
+            {
+                staticId = staticId,
+                currentLevel = curLevel,
+                isGov = isGov
             });
         }
     }

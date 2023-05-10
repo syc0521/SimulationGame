@@ -71,6 +71,30 @@ MonoBehaviour:
     rewardtype: 02000000
     itemid: 00000000
     count: b80b0000
+  - rewardid: 16
+    rewardtype: 02000000
+    itemid: 01000000
+    count: c8000000
+  - rewardid: 17
+    rewardtype: 02000000
+    itemid: 02000000
+    count: c8000000
+  - rewardid: 18
+    rewardtype: 02000000
+    itemid: 0a000000
+    count: c8000000
+  - rewardid: 19
+    rewardtype: 02000000
+    itemid: 0b000000
+    count: c8000000
+  - rewardid: 20
+    rewardtype: 02000000
+    itemid: 02000000
+    count: 64000000
+  - rewardid: 99
+    rewardtype: 02000000
+    itemid: 64000000
+    count: 01000000
   - rewardid: 100
     rewardtype: 01000000
     itemid: 00000000
@@ -199,6 +223,14 @@ MonoBehaviour:
     rewardtype: 01000000
     itemid: 1f000000
     count: 01000000
+  - rewardid: 200
+    rewardtype: 000000000200000002000000
+    itemid: 000000000100000002000000
+    count: e80300006400000064000000
+  - rewardid: 201
+    rewardtype: 0100000001000000
+    itemid: 000000001f000000
+    count: 0100000001000000
   dataList:
   - rewardid: 0
     rewardtype: 00000000
@@ -256,6 +288,30 @@ MonoBehaviour:
     rewardtype: 02000000
     itemid: 00000000
     count: b80b0000
+  - rewardid: 16
+    rewardtype: 02000000
+    itemid: 01000000
+    count: c8000000
+  - rewardid: 17
+    rewardtype: 02000000
+    itemid: 02000000
+    count: c8000000
+  - rewardid: 18
+    rewardtype: 02000000
+    itemid: 0a000000
+    count: c8000000
+  - rewardid: 19
+    rewardtype: 02000000
+    itemid: 0b000000
+    count: c8000000
+  - rewardid: 20
+    rewardtype: 02000000
+    itemid: 02000000
+    count: 64000000
+  - rewardid: 99
+    rewardtype: 02000000
+    itemid: 64000000
+    count: 01000000
   - rewardid: 100
     rewardtype: 01000000
     itemid: 00000000
@@ -384,3 +440,11 @@ MonoBehaviour:
     rewardtype: 01000000
     itemid: 1f000000
     count: 01000000
+  - rewardid: 200
+    rewardtype: 000000000200000002000000
+    itemid: 000000000100000002000000
+    count: e80300006400000064000000
+  - rewardid: 201
+    rewardtype: 0100000001000000
+    itemid: 000000001f000000
+    count: 0100000001000000

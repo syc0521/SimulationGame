@@ -125,26 +125,20 @@ MonoBehaviour:
     currencycount: 70170000
   - id: 1
     level: 2
-    itemid: 000000000a000000
-    itemcount: c80000002c010000
+    itemid: 000000000a00000063000000
+    itemcount: c80000002c01000001000000
     currencyid: 00000000
     currencycount: d0070000
   - id: 1
     level: 3
-    itemid: 000000000b000000
-    itemcount: f4010000c8000000
+    itemid: 0a0000000b00000063000000
+    itemcount: bc020000f401000001000000
     currencyid: 00000000
-    currencycount: a00f0000
+    currencycount: 70170000
   - id: 1
     level: 4
-    itemid: 0b00000001000000
-    itemcount: 5802000090010000
-    currencyid: 00000000
-    currencycount: 10270000
-  - id: 1
-    level: 5
-    itemid: 01000000
-    itemcount: e8030000
+    itemid: 0b0000000200000063000000
+    itemcount: dc0500005802000001000000
     currencyid: 00000000
     currencycount: 204e0000
   dataList:
@@ -258,25 +252,19 @@ MonoBehaviour:
     currencycount: 70170000
   - id: 1
     level: 2
-    itemid: 000000000a000000
-    itemcount: c80000002c010000
+    itemid: 000000000a00000063000000
+    itemcount: c80000002c01000001000000
     currencyid: 00000000
     currencycount: d0070000
   - id: 1
     level: 3
-    itemid: 000000000b000000
-    itemcount: f4010000c8000000
+    itemid: 0a0000000b00000063000000
+    itemcount: bc020000f401000001000000
     currencyid: 00000000
-    currencycount: a00f0000
+    currencycount: 70170000
   - id: 1
     level: 4
-    itemid: 0b00000001000000
-    itemcount: 5802000090010000
-    currencyid: 00000000
-    currencycount: 10270000
-  - id: 1
-    level: 5
-    itemid: 01000000
-    itemcount: e8030000
+    itemid: 0b0000000200000063000000
+    itemcount: dc0500005802000001000000
     currencyid: 00000000
     currencycount: 204e0000

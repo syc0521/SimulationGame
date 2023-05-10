@@ -68,8 +68,8 @@ MonoBehaviour:
     name: "\u671B\u706B\u697C"
     producetype: 0
     produceid: 0
-    produceamount: 0c0000001800000028000000
-    consumeid: -2
+    produceamount: 08000000
+    consumeid: -1
     consumeamount: 00000000
   - id: 8
     name: "\u5B85\u9662"
@@ -293,8 +293,8 @@ MonoBehaviour:
     name: "\u671B\u706B\u697C"
     producetype: 0
     produceid: 0
-    produceamount: 0c0000001800000028000000
-    consumeid: -2
+    produceamount: 08000000
+    consumeid: -1
     consumeamount: 00000000
   - id: 8
     name: "\u5B85\u9662"

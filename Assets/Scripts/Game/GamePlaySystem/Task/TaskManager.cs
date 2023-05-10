@@ -199,6 +199,14 @@ namespace Game.GamePlaySystem.Task
             
         }
 
+        public void RefreshTask()
+        {
+            EventCenter.DispatchEvent(new RefreshTaskEvent
+            {
+                playerTask = GetPlayerTask()
+            });
+        }
+
         public TaskState GetTaskState(int id)
         {
             return _playerTaskData.TryGetValue(id, out var value) ? value.state : TaskState.Error;

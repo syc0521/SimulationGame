@@ -30,21 +30,6 @@ MonoBehaviour:
     level: 3
     consumeid: 0a000000
     produceamount: 0b000000
-  - buildingid: 7
-    name: "\u671B\u706B\u697C"
-    level: 1
-    consumeid: 0a000000
-    produceamount: 02000000
-  - buildingid: 7
-    name: "\u671B\u706B\u697C"
-    level: 2
-    consumeid: 0a000000
-    produceamount: 04000000
-  - buildingid: 7
-    name: "\u671B\u706B\u697C"
-    level: 3
-    consumeid: 0a000000
-    produceamount: 07000000
   - buildingid: 8
     name: "\u5B85\u9662"
     level: 1
@@ -91,21 +76,6 @@ MonoBehaviour:
     level: 3
     consumeid: 0a000000
     produceamount: 0b000000
-  - buildingid: 7
-    name: "\u671B\u706B\u697C"
-    level: 1
-    consumeid: 0a000000
-    produceamount: 02000000
-  - buildingid: 7
-    name: "\u671B\u706B\u697C"
-    level: 2
-    consumeid: 0a000000
-    produceamount: 04000000
-  - buildingid: 7
-    name: "\u671B\u706B\u697C"
-    level: 3
-    consumeid: 0a000000
-    produceamount: 07000000
   - buildingid: 8
     name: "\u5B85\u9662"
     level: 1

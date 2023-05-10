@@ -103,6 +103,10 @@ namespace Game.UI.Panel.Building
             {
                 AlertDecorator.OpenAlertPanel("货币或材料不足！", false);
             }
+            else
+            {
+                AlertDecorator.OpenAlertUpgradePanel(StaticId, _level, true);
+            }
 
             CloseSelf();
         }

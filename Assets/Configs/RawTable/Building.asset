@@ -28,9 +28,9 @@ MonoBehaviour:
     unlock: 0
     people: 0
     level: 1
-    basescore: 100
+    basescore: 99
     envscore: 20
-    story: "\u5728\u98CE\u666F\u79C0\u7F8E\u4E4B\u5730\uFF0C\u5B9D\u5854\u5177\u6709\u4E0D\u53EF\u66FF\u4EE3\u7684\u5F15\u9886\u4F5C\u7528"
+    story: "\u5728\u98CE\u666F\u79C0\u7F8E\u7684\u897F\u6E56\uFF0C\u516D\u548C\u5854\u5177\u6709\u4E0D\u53EF\u66FF\u4EE3\u7684\u5F15\u9886\u4F5C\u7528"
   - buildingid: 1
     resourcepath: building_201
     name: "\u5B98\u5E9C"
@@ -43,7 +43,7 @@ MonoBehaviour:
     cd: -1
     unlock: 0
     people: 0
-    level: 5
+    level: 4
     basescore: 0
     envscore: 0
     story: "\u5B98\u5E9C"
@@ -131,7 +131,7 @@ MonoBehaviour:
     resourcepath: building_203
     name: "\u671B\u706B\u697C"
     buildingtype: 0
-    description: "\u4E2D\u7EA7\u623F\u5C4B"
+    description: "\u89C2\u6D4B\u706B\u60C5\uFF0C\u4EE5\u5907\u4E0D\u65F6\u4E4B\u9700"
     currencytype: 00000000
     currencycount: 7d000000
     rowcount: 2
@@ -139,10 +139,10 @@ MonoBehaviour:
     cd: 9
     unlock: 0
     people: 3
-    level: 3
+    level: 1
     basescore: 18
     envscore: 0
-    story: "\u5B8B\u4EE3\u519C\u6751\u767E\u59D3\u7684\u623F\u5C4B\u6BD4\u8F83\u6734\u5B9E,\u591A\u4E3A\u4F4E\u77EE\u7684\u5C4B\u548C\u74E6\u623F"
+    story: "\u671B\u706B\u697C\u662F\u4E2D\u56FD\u6700\u65E9\u7684\u6D88\u9632\u7AD9\uFF0C\u9A7B\u624E\u767E\u4F59\u540D\u58EB\u5175"
   - buildingid: 8
     resourcepath: building_204
     name: "\u5B85\u9662"
@@ -316,8 +316,8 @@ MonoBehaviour:
     unlock: 0
     people: 0
     level: 1
-    basescore: 5
-    envscore: 6
+    basescore: 3
+    envscore: 3
     story: "\u6811\u6728\u53EF\u7528\u6765\u88C5\u70B9\u57CE\u5E02\uFF0C\u6E05\u6D01\u7A7A\u6C14"
   - buildingid: 19
     resourcepath: building_409
@@ -332,8 +332,8 @@ MonoBehaviour:
     unlock: 0
     people: 0
     level: 1
-    basescore: 5
-    envscore: 6
+    basescore: 0
+    envscore: 2
     story: "\u6811\u6728\u53EF\u7528\u6765\u88C5\u70B9\u57CE\u5E02\uFF0C\u6E05\u6D01\u7A7A\u6C14"
   - buildingid: 20
     resourcepath: building_410
@@ -348,8 +348,8 @@ MonoBehaviour:
     unlock: 0
     people: 0
     level: 1
-    basescore: 5
-    envscore: 6
+    basescore: 0
+    envscore: 0
     story: "\u6811\u6728\u53EF\u7528\u6765\u88C5\u70B9\u57CE\u5E02\uFF0C\u6E05\u6D01\u7A7A\u6C14"
   - buildingid: 21
     resourcepath: building_411
@@ -364,8 +364,8 @@ MonoBehaviour:
     unlock: 0
     people: 0
     level: 1
-    basescore: 5
-    envscore: 6
+    basescore: 4
+    envscore: 5
     story: "\u6811\u6728\u53EF\u7528\u6765\u88C5\u70B9\u57CE\u5E02\uFF0C\u6E05\u6D01\u7A7A\u6C14"
   - buildingid: 22
     resourcepath: building_412
@@ -380,8 +380,8 @@ MonoBehaviour:
     unlock: 0
     people: 0
     level: 1
-    basescore: 5
-    envscore: 6
+    basescore: 3
+    envscore: 4
     story: "\u6811\u6728\u53EF\u7528\u6765\u88C5\u70B9\u57CE\u5E02\uFF0C\u6E05\u6D01\u7A7A\u6C14"
   - buildingid: 23
     resourcepath: building_413
@@ -397,13 +397,13 @@ MonoBehaviour:
     people: 0
     level: 1
     basescore: 5
-    envscore: 6
+    envscore: 5
     story: "\u6811\u6728\u53EF\u7528\u6765\u88C5\u70B9\u57CE\u5E02\uFF0C\u6E05\u6D01\u7A7A\u6C14"
   - buildingid: 24
     resourcepath: building_414
     name: "\u4EAD\u69AD"
     buildingtype: 2
-    description: "\u4EAD\u5B50"
+    description: "\u4EAD\u69AD"
     currencytype: 0000000001000000
     currencycount: f401000064000000
     rowcount: 3
@@ -413,7 +413,7 @@ MonoBehaviour:
     people: 0
     level: 1
     basescore: 20
-    envscore: 10
+    envscore: 16
     story: "\u5B8B\u4EE3\u4EAD\u69AD\u662F\u5C71\u5DDD\u7075\u6C14\u52A8\u8361\u5410\u7EB3\u7684\u4EA4\u70B9\u548C\u7CBE\u795E\u805A\u79EF\u7684\u5904\u6240"
   - buildingid: 25
     resourcepath: building_415
@@ -428,16 +428,16 @@ MonoBehaviour:
     unlock: 0
     people: 0
     level: 1
-    basescore: 25
-    envscore: 10
+    basescore: 28
+    envscore: 7
     story: "\u724C\u574A\u662D\u793A\u5BB6\u65CF\u5148\u4EBA\u7684\u9AD8\u5C1A\u7F8E\u5FB7\u548C\u4E30\u529F\u4F1F\u7EE9\uFF0C\u517C\u6709\u796D\u7956\u7684\u529F\u80FD"
   - buildingid: 26
     resourcepath: building_416
     name: "\u5B89\u4E50\u574A"
     buildingtype: 3
     description: "\u533B\u9662"
-    currencytype: 01000000
-    currencycount: 64000000
+    currencytype: 0b00000001000000
+    currencycount: e803000020030000
     rowcount: 5
     colcount: 3
     cd: -1
@@ -445,23 +445,23 @@ MonoBehaviour:
     people: 0
     level: 1
     basescore: 30
-    envscore: 10
+    envscore: 6
     story: "\u6536\u5BB9\u75C5\u4EBA\uFF0C\u8FDB\u884C\u533B\u7597\u6551\u52A9"
   - buildingid: 27
     resourcepath: building_417
     name: "\u4E66\u9662"
     buildingtype: 3
     description: "\u4E66\u9662"
-    currencytype: 01000000
-    currencycount: 64000000
+    currencytype: 0000000001000000
+    currencycount: d0070000e8030000
     rowcount: 10
     colcount: 6
     cd: -1
     unlock: 0
     people: 0
     level: 1
-    basescore: 35
-    envscore: 10
+    basescore: 38
+    envscore: 14
     story: "\u5B8B\u4EE3\u4E66\u9662\u662F\u4E2D\u56FD\u53E4\u4EE3\u7684\u76F8\u5BF9\u72EC\u7ACB\u4E8E\u5B98\u5B66\u4E4B\u5916\u7684\u6559\u80B2\u673A\u6784"
   - buildingid: 28
     resourcepath: building_418
@@ -477,7 +477,7 @@ MonoBehaviour:
     people: 0
     level: 3
     basescore: 15
-    envscore: 10
+    envscore: 5
     story: "\u5B8B\u4EE3\u201C\u5730\u644A\u7ECF\u6D4E\u201D\u7A7A\u524D\u7E41\u76DB\uFF0C\u53EF\u4F5C\u4E3A\u57CE\u5E02\u6587\u5316\u7684\u6807\u5FD7\u6027\u7279\u70B9"
   - buildingid: 29
     resourcepath: building_419
@@ -493,12 +493,12 @@ MonoBehaviour:
     people: 0
     level: 1
     basescore: 28
-    envscore: 10
+    envscore: 4
     story: "\u63D0\u4F9B\u9910\u98DF\u3001\u7F8E\u9152\uFF0C\u4E5F\u53EF\u4EE5\u5B8C\u6210\u6BCF\u65E5\u4EFB\u52A1"
   - buildingid: 30
     resourcepath: building_420
     name: "\u94C1\u5320\u94FA"
-    buildingtype: 4
+    buildingtype: 1
     description: "\u94C1\u5320\u94FA"
     currencytype: 01000000
     currencycount: 64000000
@@ -525,7 +525,7 @@ MonoBehaviour:
     people: 0
     level: 1
     basescore: 100
-    envscore: 20
+    envscore: 25
     story: "\u4E09\u6F6D\u5370\u6708\u662F\u897F\u6E56\u4E2D\u6700\u5927\u7684\u5C9B\u5C7F\uFF0C\u98CE\u666F\u79C0\u4E3D\u3001\u666F\u8272\u6E05\u5E7D"
   dataList:
   - buildingid: 0
@@ -541,9 +541,9 @@ MonoBehaviour:
     unlock: 0
     people: 0
     level: 1
-    basescore: 100
+    basescore: 99
     envscore: 20
-    story: "\u5728\u98CE\u666F\u79C0\u7F8E\u4E4B\u5730\uFF0C\u5B9D\u5854\u5177\u6709\u4E0D\u53EF\u66FF\u4EE3\u7684\u5F15\u9886\u4F5C\u7528"
+    story: "\u5728\u98CE\u666F\u79C0\u7F8E\u7684\u897F\u6E56\uFF0C\u516D\u548C\u5854\u5177\u6709\u4E0D\u53EF\u66FF\u4EE3\u7684\u5F15\u9886\u4F5C\u7528"
   - buildingid: 1
     resourcepath: building_201
     name: "\u5B98\u5E9C"
@@ -556,7 +556,7 @@ MonoBehaviour:
     cd: -1
     unlock: 0
     people: 0
-    level: 5
+    level: 4
     basescore: 0
     envscore: 0
     story: "\u5B98\u5E9C"
@@ -644,7 +644,7 @@ MonoBehaviour:
     resourcepath: building_203
     name: "\u671B\u706B\u697C"
     buildingtype: 0
-    description: "\u4E2D\u7EA7\u623F\u5C4B"
+    description: "\u89C2\u6D4B\u706B\u60C5\uFF0C\u4EE5\u5907\u4E0D\u65F6\u4E4B\u9700"
     currencytype: 00000000
     currencycount: 7d000000
     rowcount: 2
@@ -652,10 +652,10 @@ MonoBehaviour:
     cd: 9
     unlock: 0
     people: 3
-    level: 3
+    level: 1
     basescore: 18
     envscore: 0
-    story: "\u5B8B\u4EE3\u519C\u6751\u767E\u59D3\u7684\u623F\u5C4B\u6BD4\u8F83\u6734\u5B9E,\u591A\u4E3A\u4F4E\u77EE\u7684\u5C4B\u548C\u74E6\u623F"
+    story: "\u671B\u706B\u697C\u662F\u4E2D\u56FD\u6700\u65E9\u7684\u6D88\u9632\u7AD9\uFF0C\u9A7B\u624E\u767E\u4F59\u540D\u58EB\u5175"
   - buildingid: 8
     resourcepath: building_204
     name: "\u5B85\u9662"
@@ -829,8 +829,8 @@ MonoBehaviour:
     unlock: 0
     people: 0
     level: 1
-    basescore: 5
-    envscore: 6
+    basescore: 3
+    envscore: 3
     story: "\u6811\u6728\u53EF\u7528\u6765\u88C5\u70B9\u57CE\u5E02\uFF0C\u6E05\u6D01\u7A7A\u6C14"
   - buildingid: 19
     resourcepath: building_409
@@ -845,8 +845,8 @@ MonoBehaviour:
     unlock: 0
     people: 0
     level: 1
-    basescore: 5
-    envscore: 6
+    basescore: 0
+    envscore: 2
     story: "\u6811\u6728\u53EF\u7528\u6765\u88C5\u70B9\u57CE\u5E02\uFF0C\u6E05\u6D01\u7A7A\u6C14"
   - buildingid: 20
     resourcepath: building_410
@@ -861,8 +861,8 @@ MonoBehaviour:
     unlock: 0
     people: 0
     level: 1
-    basescore: 5
-    envscore: 6
+    basescore: 0
+    envscore: 0
     story: "\u6811\u6728\u53EF\u7528\u6765\u88C5\u70B9\u57CE\u5E02\uFF0C\u6E05\u6D01\u7A7A\u6C14"
   - buildingid: 21
     resourcepath: building_411
@@ -877,8 +877,8 @@ MonoBehaviour:
     unlock: 0
     people: 0
     level: 1
-    basescore: 5
-    envscore: 6
+    basescore: 4
+    envscore: 5
     story: "\u6811\u6728\u53EF\u7528\u6765\u88C5\u70B9\u57CE\u5E02\uFF0C\u6E05\u6D01\u7A7A\u6C14"
   - buildingid: 22
     resourcepath: building_412
@@ -893,8 +893,8 @@ MonoBehaviour:
     unlock: 0
     people: 0
     level: 1
-    basescore: 5
-    envscore: 6
+    basescore: 3
+    envscore: 4
     story: "\u6811\u6728\u53EF\u7528\u6765\u88C5\u70B9\u57CE\u5E02\uFF0C\u6E05\u6D01\u7A7A\u6C14"
   - buildingid: 23
     resourcepath: building_413
@@ -910,13 +910,13 @@ MonoBehaviour:
     people: 0
     level: 1
     basescore: 5
-    envscore: 6
+    envscore: 5
     story: "\u6811\u6728\u53EF\u7528\u6765\u88C5\u70B9\u57CE\u5E02\uFF0C\u6E05\u6D01\u7A7A\u6C14"
   - buildingid: 24
     resourcepath: building_414
     name: "\u4EAD\u69AD"
     buildingtype: 2
-    description: "\u4EAD\u5B50"
+    description: "\u4EAD\u69AD"
     currencytype: 0000000001000000
     currencycount: f401000064000000
     rowcount: 3
@@ -926,7 +926,7 @@ MonoBehaviour:
     people: 0
     level: 1
     basescore: 20
-    envscore: 10
+    envscore: 16
     story: "\u5B8B\u4EE3\u4EAD\u69AD\u662F\u5C71\u5DDD\u7075\u6C14\u52A8\u8361\u5410\u7EB3\u7684\u4EA4\u70B9\u548C\u7CBE\u795E\u805A\u79EF\u7684\u5904\u6240"
   - buildingid: 25
     resourcepath: building_415
@@ -941,16 +941,16 @@ MonoBehaviour:
     unlock: 0
     people: 0
     level: 1
-    basescore: 25
-    envscore: 10
+    basescore: 28
+    envscore: 7
     story: "\u724C\u574A\u662D\u793A\u5BB6\u65CF\u5148\u4EBA\u7684\u9AD8\u5C1A\u7F8E\u5FB7\u548C\u4E30\u529F\u4F1F\u7EE9\uFF0C\u517C\u6709\u796D\u7956\u7684\u529F\u80FD"
   - buildingid: 26
     resourcepath: building_416
     name: "\u5B89\u4E50\u574A"
     buildingtype: 3
     description: "\u533B\u9662"
-    currencytype: 01000000
-    currencycount: 64000000
+    currencytype: 0b00000001000000
+    currencycount: e803000020030000
     rowcount: 5
     colcount: 3
     cd: -1
@@ -958,23 +958,23 @@ MonoBehaviour:
     people: 0
     level: 1
     basescore: 30
-    envscore: 10
+    envscore: 6
     story: "\u6536\u5BB9\u75C5\u4EBA\uFF0C\u8FDB\u884C\u533B\u7597\u6551\u52A9"
   - buildingid: 27
     resourcepath: building_417
     name: "\u4E66\u9662"
     buildingtype: 3
     description: "\u4E66\u9662"
-    currencytype: 01000000
-    currencycount: 64000000
+    currencytype: 0000000001000000
+    currencycount: d0070000e8030000
     rowcount: 10
     colcount: 6
     cd: -1
     unlock: 0
     people: 0
     level: 1
-    basescore: 35
-    envscore: 10
+    basescore: 38
+    envscore: 14
     story: "\u5B8B\u4EE3\u4E66\u9662\u662F\u4E2D\u56FD\u53E4\u4EE3\u7684\u76F8\u5BF9\u72EC\u7ACB\u4E8E\u5B98\u5B66\u4E4B\u5916\u7684\u6559\u80B2\u673A\u6784"
   - buildingid: 28
     resourcepath: building_418
@@ -990,7 +990,7 @@ MonoBehaviour:
     people: 0
     level: 3
     basescore: 15
-    envscore: 10
+    envscore: 5
     story: "\u5B8B\u4EE3\u201C\u5730\u644A\u7ECF\u6D4E\u201D\u7A7A\u524D\u7E41\u76DB\uFF0C\u53EF\u4F5C\u4E3A\u57CE\u5E02\u6587\u5316\u7684\u6807\u5FD7\u6027\u7279\u70B9"
   - buildingid: 29
     resourcepath: building_419
@@ -1006,12 +1006,12 @@ MonoBehaviour:
     people: 0
     level: 1
     basescore: 28
-    envscore: 10
+    envscore: 4
     story: "\u63D0\u4F9B\u9910\u98DF\u3001\u7F8E\u9152\uFF0C\u4E5F\u53EF\u4EE5\u5B8C\u6210\u6BCF\u65E5\u4EFB\u52A1"
   - buildingid: 30
     resourcepath: building_420
     name: "\u94C1\u5320\u94FA"
-    buildingtype: 4
+    buildingtype: 1
     description: "\u94C1\u5320\u94FA"
     currencytype: 01000000
     currencycount: 64000000
@@ -1038,5 +1038,5 @@ MonoBehaviour:
     people: 0
     level: 1
     basescore: 100
-    envscore: 20
+    envscore: 25
     story: "\u4E09\u6F6D\u5370\u6708\u662F\u897F\u6E56\u4E2D\u6700\u5927\u7684\u5C9B\u5C7F\uFF0C\u98CE\u666F\u79C0\u4E3D\u3001\u666F\u8272\u6E05\u5E7D"

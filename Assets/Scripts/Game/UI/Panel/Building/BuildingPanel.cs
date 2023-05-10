@@ -34,7 +34,9 @@ namespace Game.UI.Panel.Building
 
         public override void OnCreated()
         {
+            base.OnCreated();
             nodes.close_btn.onClick.AddListener(ClosePanel);
+            _animation = GetComponent<Animation>();
         }
 
         public override void OnShown()

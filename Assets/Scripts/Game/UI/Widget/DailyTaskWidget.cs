@@ -46,6 +46,7 @@ namespace Game.UI.Widget
         private void AcceptTask()
         {
             TaskManager.Instance.ActivateTask(_taskId);
+            TaskManager.Instance.RefreshTask();
             state_frame.SetFrame(2);
         }
     }

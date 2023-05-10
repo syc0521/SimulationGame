@@ -8,6 +8,7 @@ using Game.UI.Decorator;
 using Game.UI.Panel;
 using Game.UI.Panel.Building;
 using Game.UI.Panel.Shop;
+using Game.UI.Panel.Task;
 using UnityEngine;
 
 namespace Game.UI.Module
@@ -49,6 +50,12 @@ namespace Game.UI.Module
             if (buildingData.Buildingid == 28 && FeatureOpenManager.Instance.HasFeature(FeatureType.ItemSell)) // 小摊
             {
                 UIManager.Instance.OpenPanel<ItemSellPanel>();
+                return;
+            }
+            
+            if (buildingData.Buildingid == 29 && FeatureOpenManager.Instance.HasFeature(FeatureType.DailyTask)) // 任务
+            {
+                UIManager.Instance.OpenPanel<DailyTaskPanel>();
                 return;
             }
             

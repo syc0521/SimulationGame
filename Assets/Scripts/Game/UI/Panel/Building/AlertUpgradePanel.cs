@@ -22,6 +22,7 @@ namespace Game.UI.Panel.Building
         public override void OnShown()
         {
             base.OnShown();
+            PlayAnimation();
             ShowUpgradeInfo();
         }
 

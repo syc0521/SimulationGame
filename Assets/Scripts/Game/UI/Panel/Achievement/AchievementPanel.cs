@@ -25,6 +25,7 @@ namespace Game.UI.Panel.Achievement
         public override void OnShown()
         {
             base.OnShown();
+            PlayAnimation();
             RenderList();
             var currentNum = AchievementManager.Instance.GetCompletedAchievement;
             var totalNum = AchievementManager.Instance.GetTotalAchievement;

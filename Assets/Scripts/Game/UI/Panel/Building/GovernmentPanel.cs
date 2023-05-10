@@ -31,6 +31,7 @@ namespace Game.UI.Panel.Building
         public override void OnShown()
         {
             base.OnShown();
+            PlayAnimation();
             nodes.achievement_go.SetActive(FeatureOpenManager.Instance.HasFeature(FeatureType.Achievement));
             InitData();
             var maxLevel = ConfigTable.Instance.GetBuildingData(StaticId).Level;

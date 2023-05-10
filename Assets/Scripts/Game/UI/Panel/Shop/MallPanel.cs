@@ -40,6 +40,7 @@ namespace Game.UI.Panel.Shop
         public override void OnShown()
         {
             base.OnShown();
+            PlayAnimation();
             GetData();
             ShowDailyItem();
             ShowShopItem();

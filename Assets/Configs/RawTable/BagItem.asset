@@ -45,7 +45,7 @@ MonoBehaviour:
     content: "\u77F3\u5934"
     price: 15
     iconname: stone
-  - id: 101
+  - id: 99
     name: "\u5347\u7EA7\u8BB8\u53EF\u8BC1"
     type: 2
     content: "\u5347\u7EA7\u8BB8\u53EF\u8BC1"
@@ -82,7 +82,7 @@ MonoBehaviour:
     content: "\u77F3\u5934"
     price: 15
     iconname: stone
-  - id: 101
+  - id: 99
     name: "\u5347\u7EA7\u8BB8\u53EF\u8BC1"
     type: 2
     content: "\u5347\u7EA7\u8BB8\u53EF\u8BC1"

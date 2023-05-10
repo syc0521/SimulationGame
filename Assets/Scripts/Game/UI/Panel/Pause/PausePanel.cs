@@ -25,6 +25,7 @@ namespace Game.UI.Panel.Pause
         public override void OnShown()
         {
             base.OnShown();
+            PlayAnimation();
             _bgmVolume = SettingManager.Instance.BGMVolume;
             _soundVolume = SettingManager.Instance.SoundVolume;
             nodes.bgm_slider.SetValue(_bgmVolume);

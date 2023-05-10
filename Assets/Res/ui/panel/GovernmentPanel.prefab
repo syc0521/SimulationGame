@@ -1421,6 +1421,7 @@ GameObject:
   - component: {fileID: 8175335672491203389}
   - component: {fileID: 3065318425888456012}
   - component: {fileID: 8923470634468892488}
+  - component: {fileID: 1226803063580111147}
   m_Layer: 5
   m_Name: GovernmentPanel
   m_TagString: Untagged
@@ -1524,6 +1525,22 @@ MonoBehaviour:
   back_btn: {fileID: 6275477914692120549}
   upgradeItem_list: {fileID: 4076142420145972325}
   achievement_go: {fileID: 4744435963835781843}
+--- !u!111 &1226803063580111147
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4712664157517380074}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 835f6ed6fa9389844bf91b39975f2a48, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 835f6ed6fa9389844bf91b39975f2a48, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &4744435963835781843
 GameObject:
   m_ObjectHideFlags: 0
@@ -1842,6 +1859,7 @@ GameObject:
   - component: {fileID: 5215048301270410558}
   - component: {fileID: 189462613149920884}
   - component: {fileID: 3077765058298690274}
+  - component: {fileID: 4585058633775925930}
   m_Layer: 5
   m_Name: background
   m_TagString: Untagged
@@ -1912,6 +1930,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &4585058633775925930
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6300984821578864526}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &7376425854622967434
 GameObject:
   m_ObjectHideFlags: 0

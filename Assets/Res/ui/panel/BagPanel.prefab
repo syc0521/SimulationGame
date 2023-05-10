@@ -439,6 +439,7 @@ GameObject:
   - component: {fileID: 8175335672491203389}
   - component: {fileID: 3645792935627648505}
   - component: {fileID: 4209286400246079238}
+  - component: {fileID: 6160023508548053383}
   m_Layer: 5
   m_Name: BagPanel
   m_TagString: Untagged
@@ -537,6 +538,22 @@ MonoBehaviour:
   bag_list: {fileID: 7388508319269811747}
   tip_go: {fileID: 1610566596247080881}
   tip_w: {fileID: 8090839916413759854}
+--- !u!111 &6160023508548053383
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4712664157517380074}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: fafa08d375961ff4d8a073f19b2286f2, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: fafa08d375961ff4d8a073f19b2286f2, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &6300984821578864526
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,6 +565,7 @@ GameObject:
   - component: {fileID: 5215048301270410558}
   - component: {fileID: 189462613149920884}
   - component: {fileID: 3077765058298690274}
+  - component: {fileID: 9012986131355537393}
   m_Layer: 5
   m_Name: background
   m_TagString: Untagged
@@ -573,11 +591,11 @@ RectTransform:
   m_Father: {fileID: 4712664157517380075}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 759.78015, y: 0}
-  m_SizeDelta: {x: 820.4395, y: 1080}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 820, y: 1080}
+  m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &189462613149920884
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -616,6 +634,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &9012986131355537393
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6300984821578864526}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &7698210056563520048
 GameObject:
   m_ObjectHideFlags: 0

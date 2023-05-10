@@ -23,6 +23,7 @@ namespace Game.UI.Panel.Common
 
         public override void OnShown()
         {
+            PlayAnimation();
             if (opt is not AlertPanelOption option) return;
 
             nodes.cancel_btn.gameObject.SetActive(option.hasCancel);

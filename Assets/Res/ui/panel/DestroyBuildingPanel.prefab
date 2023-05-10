@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8705322713720098938}
   - component: {fileID: 2298852667225142593}
   - component: {fileID: 4942361324651526925}
+  - component: {fileID: 3096962576898354322}
   m_Layer: 5
   m_Name: DestroyBuildingPanel
   m_TagString: Untagged
@@ -65,6 +66,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quit_btn: {fileID: 7101448764440769187}
+--- !u!111 &3096962576898354322
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4175337468705133161}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 26f6f73aa0dbf334f9b1e1f6e8a382f3, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 26f6f73aa0dbf334f9b1e1f6e8a382f3, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1001 &2409851907850074482
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -201,8 +218,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2350498088660823164, guid: 785ed97e484bed547b31f47ece6041aa,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1817788782081170893}
   m_SourcePrefab: {fileID: 100100000, guid: 785ed97e484bed547b31f47ece6041aa, type: 3}
+--- !u!1 &139371912956450062 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2350498088660823164, guid: 785ed97e484bed547b31f47ece6041aa,
+    type: 3}
+  m_PrefabInstance: {fileID: 2409851907850074482}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &1817788782081170893
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139371912956450062}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!224 &6773206707363289349 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8975322314931298423, guid: 785ed97e484bed547b31f47ece6041aa,
@@ -215,7 +254,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 2409851907850074482}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 139371912956450062}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 941b4ecad6f34916a6b6b9b065c8f662, type: 3}

@@ -29,6 +29,7 @@ namespace Game.UI.Panel.Bag
         public override void OnShown()
         {
             base.OnShown();
+            PlayAnimation();
             InitData();
             InitBagList();
         }

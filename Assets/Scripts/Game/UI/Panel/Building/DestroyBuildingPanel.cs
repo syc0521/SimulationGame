@@ -14,6 +14,12 @@ namespace Game.UI.Panel.Building
             nodes.quit_btn.onClick.AddListener(OnQuitButtonClicked);
         }
 
+        public override void OnShown()
+        {
+            base.OnShown();
+            PlayAnimation();
+        }
+
         public override void OnDestroyed()
         {
             nodes.quit_btn.onClick.RemoveListener(OnQuitButtonClicked);

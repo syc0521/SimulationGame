@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 8175335672491203389}
   - component: {fileID: 4545944400988782546}
   - component: {fileID: 9202786013414840338}
+  - component: {fileID: 3801783203909887024}
   m_Layer: 5
   m_Name: PausePanel
   m_TagString: Untagged
@@ -246,6 +247,22 @@ MonoBehaviour:
   quit_btn: {fileID: 8362505717817981335}
   reset_btn: {fileID: 7755673344626211889}
   return_btn: {fileID: 5245765225444894284}
+--- !u!111 &3801783203909887024
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4712664157517380074}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 835f6ed6fa9389844bf91b39975f2a48, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 835f6ed6fa9389844bf91b39975f2a48, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &6300984821578864526
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,6 +274,7 @@ GameObject:
   - component: {fileID: 5215048301270410558}
   - component: {fileID: 189462613149920884}
   - component: {fileID: 3077765058298690274}
+  - component: {fileID: 4397435271305450114}
   m_Layer: 5
   m_Name: background
   m_TagString: Untagged
@@ -324,6 +342,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &4397435271305450114
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6300984821578864526}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &7125752373862196200
 GameObject:
   m_ObjectHideFlags: 0

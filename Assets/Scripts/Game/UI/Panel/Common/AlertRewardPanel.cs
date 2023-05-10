@@ -34,6 +34,7 @@ namespace Game.UI.Panel.Common
         
         public override void OnShown()
         {
+            PlayAnimation();
             if (opt is not AlertRewardPanelOption option) return;
             _clickHandler = option.clickHandler;
             _rewardData = option.data;

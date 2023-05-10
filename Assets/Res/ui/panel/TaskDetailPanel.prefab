@@ -334,6 +334,7 @@ GameObject:
   - component: {fileID: 2624692873678795946}
   - component: {fileID: 8175335672491203389}
   - component: {fileID: 8849839329390256639}
+  - component: {fileID: 1257397398260163673}
   m_Layer: 5
   m_Name: TaskDetailPanel
   m_TagString: Untagged
@@ -431,6 +432,22 @@ MonoBehaviour:
   task_txt: {fileID: 613523961749498984}
   detail_txt: {fileID: 1633644960631836826}
   completion_list: {fileID: 2212224310036588355}
+--- !u!111 &1257397398260163673
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4712664157517380074}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 835f6ed6fa9389844bf91b39975f2a48, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 835f6ed6fa9389844bf91b39975f2a48, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &5466027739579155201
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,6 +595,7 @@ GameObject:
   - component: {fileID: 5215048301270410558}
   - component: {fileID: 189462613149920884}
   - component: {fileID: 3077765058298690274}
+  - component: {fileID: 2270494204250161276}
   m_Layer: 5
   m_Name: background
   m_TagString: Untagged
@@ -647,6 +665,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &2270494204250161276
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6300984821578864526}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &8309285673339820452
 PrefabInstance:
   m_ObjectHideFlags: 0

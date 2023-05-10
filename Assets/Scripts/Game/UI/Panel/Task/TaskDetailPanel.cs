@@ -26,6 +26,7 @@ namespace Game.UI.Panel.Task
         private int taskID;
         public override void OnCreated()
         {
+            base.OnCreated();
             nodes.close_btn.onClick.AddListener(ClosePanel);
             nodes.claim_btn.onClick.AddListener(ClaimReward);
         }

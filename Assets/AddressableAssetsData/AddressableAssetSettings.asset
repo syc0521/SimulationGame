@@ -50,11 +50,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0c34482ce88496f40bd08e451894b6bb, type: 2}
   - {fileID: 11400000, guid: 50122f3d9c409ad438881411121cb0a6, type: 2}
   - {fileID: 11400000, guid: d97142327cc7fa144a39486e13cc4e0d, type: 2}
-  - {fileID: 11400000, guid: ff49c431f88911d4cb9709b75f5debaa, type: 2}
   - {fileID: 11400000, guid: 98af3af159057a94bad4648a5fa50836, type: 2}
   - {fileID: 11400000, guid: 4c7204af6b906d74286a46f4d8612ffd, type: 2}
   - {fileID: 11400000, guid: fade4b722be6f8642b98634cf8004450, type: 2}
-  - {fileID: 11400000, guid: 0c30e6563eb912d4b9a6406f6f83cf8a, type: 2}
+  - {fileID: 11400000, guid: 0374c9b5e0ab96f48a838c98b8052aea, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
     m_CleanupStreamingAssetsAfterBuilds: 1
@@ -103,6 +102,7 @@ MonoBehaviour:
     - Material
     - Tex
     - widget
+    - Animation
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 9e55f011731eeab469157fba1da83106, type: 2}

@@ -28,6 +28,7 @@ namespace Game.UI.Panel.Shop
         public override void OnShown()
         {
             base.OnShown();
+            PlayAnimation();
             InitData();
             ShowItem();
         }

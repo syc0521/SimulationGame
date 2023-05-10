@@ -575,6 +575,7 @@ GameObject:
   - component: {fileID: 8175335672491203389}
   - component: {fileID: 3266355809856275312}
   - component: {fileID: 1209371666457015756}
+  - component: {fileID: 4826381495659765411}
   m_Layer: 5
   m_Name: ItemSellPanel
   m_TagString: Untagged
@@ -669,6 +670,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   close_btn: {fileID: 4329250212366005636}
   bag_list: {fileID: 7388508319269811747}
+--- !u!111 &4826381495659765411
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4712664157517380074}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 835f6ed6fa9389844bf91b39975f2a48, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 835f6ed6fa9389844bf91b39975f2a48, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &6300984821578864526
 GameObject:
   m_ObjectHideFlags: 0
@@ -680,6 +697,7 @@ GameObject:
   - component: {fileID: 5215048301270410558}
   - component: {fileID: 189462613149920884}
   - component: {fileID: 3077765058298690274}
+  - component: {fileID: 5689980752619795712}
   m_Layer: 5
   m_Name: background
   m_TagString: Untagged
@@ -748,6 +766,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &5689980752619795712
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6300984821578864526}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &7698210056563520048
 GameObject:
   m_ObjectHideFlags: 0

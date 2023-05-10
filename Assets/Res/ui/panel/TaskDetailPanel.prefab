@@ -441,9 +441,9 @@ Animation:
   m_GameObject: {fileID: 4712664157517380074}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 835f6ed6fa9389844bf91b39975f2a48, type: 2}
+  m_Animation: {fileID: 7400000, guid: 5391fecf865945f4297b90fd02e13243, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: 835f6ed6fa9389844bf91b39975f2a48, type: 2}
+  - {fileID: 7400000, guid: 5391fecf865945f4297b90fd02e13243, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -689,6 +689,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: reward@btn
+      objectReference: {fileID: 0}
+    - target: {fileID: 2350498088660823164, guid: 785ed97e484bed547b31f47ece6041aa,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3616798340662435841, guid: 785ed97e484bed547b31f47ece6041aa,
         type: 3}

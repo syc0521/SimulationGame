@@ -26,6 +26,7 @@ namespace Game.UI.Panel.Task
         public override void OnShown()
         {
             base.OnShown();
+            PlayAnimation();
             GetDailyTask();
         }
 

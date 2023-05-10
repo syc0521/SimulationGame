@@ -22,6 +22,7 @@ namespace Game.UI.Panel.FeatureOpen
         public override void OnShown()
         {
             base.OnShown();
+            PlayAnimation();
             if (opt is not FeatureOpenPanelOption option) return;
             ShowFeature(option.type);
         }

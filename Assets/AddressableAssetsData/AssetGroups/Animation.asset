@@ -10,16 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Texture
+  m_Name: Animation
   m_EditorClassIdentifier: 
-  m_GroupName: Texture
+  m_GroupName: Animation
   m_Data:
     m_SerializedData: []
-  m_GUID: 122bf8a0cf06eed4c966d173c4ebded0
-  m_SerializeEntries: []
+  m_GUID: aa82686bb55f1444e810f59184970097
+  m_SerializeEntries:
+  - m_GUID: 7895518c3e1f5d04282ce607dbae21d2
+    m_Address: animation
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Animation
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ef7206bd29055104abb70d185833b540, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: eb73fd2455b5e204290b34c93ccf1a86, type: 2}
-    - {fileID: 11400000, guid: fca8c14afa3e48a47863e06c3cf68c61, type: 2}
+    - {fileID: 11400000, guid: 6bcc4240c2c75b14d8daac49bbff0c85, type: 2}
+    - {fileID: 11400000, guid: a51908ebddc76c247b0085699e197e2b, type: 2}

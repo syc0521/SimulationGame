@@ -66,7 +66,7 @@ namespace Game.UI.Panel.Task
                 nodes.completion_list.AddItem(new TaskDetailData
                 {
                     name = taskData.type.GetTaskTargetName(taskData.targetID[i]),
-                    current = taskData.currentNum[i],
+                    current = taskData.currentNum[i] > taskData.targetNum[i] ? taskData.targetNum[i] : taskData.currentNum[i],
                     amount = taskData.targetNum[i],
                 });
             }

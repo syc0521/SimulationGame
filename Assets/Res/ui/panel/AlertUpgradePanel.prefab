@@ -728,6 +728,7 @@ MonoBehaviour:
   nextLevel_txt: {fileID: 8363921448925128959}
   currentProduction_txt: {fileID: 7614849531732980696}
   nextProduction_txt: {fileID: 7156660155888265870}
+  production_go: {fileID: 2928459002483675657}
 --- !u!111 &7202542820457025712
 Animation:
   m_ObjectHideFlags: 0

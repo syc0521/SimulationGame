@@ -10,5 +10,6 @@ namespace Game.UI.Panel.Building
         public TextMeshProUGUI title_txt;
         public TextMeshProUGUI currentLevel_txt, nextLevel_txt;
         public TextMeshProUGUI currentProduction_txt, nextProduction_txt;
+        public GameObject production_go;
     }
 }

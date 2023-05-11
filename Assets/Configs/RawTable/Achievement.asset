@@ -232,13 +232,13 @@ MonoBehaviour:
     requiretask: ffffffff
     rewardgroup: 0
   - id: 24
-    name: "\u4FEE\u5EFA\u5B9D\u5854"
-    content: "\u4FEE\u5EFA\u5B9D\u5854"
+    name: "\u4FEE\u5EFA\u516D\u548C\u5854"
+    content: "\u4FEE\u5EFA\u516D\u548C\u5854"
     unlockcondition: -1
     type: 4
     targetid: -1
     targetnum: -1
-    requiretask: ee030000
+    requiretask: bb040000
     rewardgroup: 0
   - id: 25
     name: "\u4FEE\u5EFA\u4E09\u4E95"
@@ -248,6 +248,69 @@ MonoBehaviour:
     targetid: -1
     targetnum: -1
     requiretask: 50040000
+    rewardgroup: 0
+  - id: 26
+    name: "\u4FEE\u5EFA\u4E09\u6F6D\u6620\u6708"
+    content: "\u4FEE\u5EFA\u4E09\u6F6D\u6620\u6708"
+    unlockcondition: -1
+    type: 4
+    targetid: -1
+    targetnum: -1
+    requiretask: ba040000
+    rewardgroup: 0
+  - id: 27
+    name: "\u83B7\u5F97100\u77F3\u7816"
+    content: "\u83B7\u5F97100\u77F3\u7816"
+    unlockcondition: -1
+    type: 3
+    targetid: 1
+    targetnum: 100
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 28
+    name: "\u83B7\u5F97500\u77F3\u7816"
+    content: "\u83B7\u5F97500\u77F3\u7816"
+    unlockcondition: 27
+    type: 3
+    targetid: 1
+    targetnum: 500
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 29
+    name: "\u83B7\u5F971000\u77F3\u7816"
+    content: "\u83B7\u5F971000\u77F3\u7816"
+    unlockcondition: 28
+    type: 3
+    targetid: 1
+    targetnum: 1000
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 30
+    name: "\u83B7\u5F97100\u94C1\u6750"
+    content: "\u83B7\u5F97100\u94C1\u6750"
+    unlockcondition: -1
+    type: 3
+    targetid: 2
+    targetnum: 100
+    requiretask: b0040000
+    rewardgroup: 0
+  - id: 31
+    name: "\u83B7\u5F97500\u94C1\u6750"
+    content: "\u83B7\u5F97500\u94C1\u6750"
+    unlockcondition: 30
+    type: 3
+    targetid: 2
+    targetnum: 500
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 32
+    name: "\u83B7\u5F971000\u94C1\u6750"
+    content: "\u83B7\u5F971000\u94C1\u6750"
+    unlockcondition: 31
+    type: 3
+    targetid: 2
+    targetnum: 1000
+    requiretask: ffffffff
     rewardgroup: 0
   dataList:
   - id: 0
@@ -467,13 +530,13 @@ MonoBehaviour:
     requiretask: ffffffff
     rewardgroup: 0
   - id: 24
-    name: "\u4FEE\u5EFA\u5B9D\u5854"
-    content: "\u4FEE\u5EFA\u5B9D\u5854"
+    name: "\u4FEE\u5EFA\u516D\u548C\u5854"
+    content: "\u4FEE\u5EFA\u516D\u548C\u5854"
     unlockcondition: -1
     type: 4
     targetid: -1
     targetnum: -1
-    requiretask: ee030000
+    requiretask: bb040000
     rewardgroup: 0
   - id: 25
     name: "\u4FEE\u5EFA\u4E09\u4E95"
@@ -483,4 +546,67 @@ MonoBehaviour:
     targetid: -1
     targetnum: -1
     requiretask: 50040000
+    rewardgroup: 0
+  - id: 26
+    name: "\u4FEE\u5EFA\u4E09\u6F6D\u6620\u6708"
+    content: "\u4FEE\u5EFA\u4E09\u6F6D\u6620\u6708"
+    unlockcondition: -1
+    type: 4
+    targetid: -1
+    targetnum: -1
+    requiretask: ba040000
+    rewardgroup: 0
+  - id: 27
+    name: "\u83B7\u5F97100\u77F3\u7816"
+    content: "\u83B7\u5F97100\u77F3\u7816"
+    unlockcondition: -1
+    type: 3
+    targetid: 1
+    targetnum: 100
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 28
+    name: "\u83B7\u5F97500\u77F3\u7816"
+    content: "\u83B7\u5F97500\u77F3\u7816"
+    unlockcondition: 27
+    type: 3
+    targetid: 1
+    targetnum: 500
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 29
+    name: "\u83B7\u5F971000\u77F3\u7816"
+    content: "\u83B7\u5F971000\u77F3\u7816"
+    unlockcondition: 28
+    type: 3
+    targetid: 1
+    targetnum: 1000
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 30
+    name: "\u83B7\u5F97100\u94C1\u6750"
+    content: "\u83B7\u5F97100\u94C1\u6750"
+    unlockcondition: -1
+    type: 3
+    targetid: 2
+    targetnum: 100
+    requiretask: b0040000
+    rewardgroup: 0
+  - id: 31
+    name: "\u83B7\u5F97500\u94C1\u6750"
+    content: "\u83B7\u5F97500\u94C1\u6750"
+    unlockcondition: 30
+    type: 3
+    targetid: 2
+    targetnum: 500
+    requiretask: ffffffff
+    rewardgroup: 0
+  - id: 32
+    name: "\u83B7\u5F971000\u94C1\u6750"
+    content: "\u83B7\u5F971000\u94C1\u6750"
+    unlockcondition: 31
+    type: 3
+    targetid: 2
+    targetnum: 1000
+    requiretask: ffffffff
     rewardgroup: 0

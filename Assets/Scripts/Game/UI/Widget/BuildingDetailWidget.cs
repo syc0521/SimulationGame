@@ -79,23 +79,29 @@ namespace Game.UI.Widget
             for (var i = 0; i < data.Itemid.Length; i++)
             {
                 var item = data.Itemid[i];
-                currency_list.AddItem(new ConsumeItemListData
+                if (item >= 0)
                 {
-                    id = item,
-                    amount = data.Itemcount[i],
-                    consumeType = ConsumeType.Item,
-                });
+                    currency_list.AddItem(new ConsumeItemListData
+                    {
+                        id = item,
+                        amount = data.Itemcount[i],
+                        consumeType = ConsumeType.Item,
+                    });
+                }
             }
             
             for (var i = 0; i < data.Currencyid.Length; i++)
             {
                 var item = data.Currencyid[i];
-                currency_list.AddItem(new ConsumeItemListData
+                if (item >= 0)
                 {
-                    id = item,
-                    amount = data.Currencycount[i],
-                    consumeType = ConsumeType.Currency,
-                });
+                    currency_list.AddItem(new ConsumeItemListData
+                    {
+                        id = item,
+                        amount = data.Currencycount[i],
+                        consumeType = ConsumeType.Currency,
+                    });
+                }
             }
         }
 

@@ -93,7 +93,7 @@ MonoBehaviour:
     count: 64000000
   - rewardid: 99
     rewardtype: 02000000
-    itemid: 64000000
+    itemid: 63000000
     count: 01000000
   - rewardid: 100
     rewardtype: 01000000
@@ -226,7 +226,7 @@ MonoBehaviour:
   - rewardid: 200
     rewardtype: 000000000200000002000000
     itemid: 000000000100000002000000
-    count: e80300006400000064000000
+    count: 580200003200000032000000
   - rewardid: 201
     rewardtype: 0100000001000000
     itemid: 000000001f000000
@@ -310,7 +310,7 @@ MonoBehaviour:
     count: 64000000
   - rewardid: 99
     rewardtype: 02000000
-    itemid: 64000000
+    itemid: 63000000
     count: 01000000
   - rewardid: 100
     rewardtype: 01000000
@@ -443,7 +443,7 @@ MonoBehaviour:
   - rewardid: 200
     rewardtype: 000000000200000002000000
     itemid: 000000000100000002000000
-    count: e80300006400000064000000
+    count: 580200003200000032000000
   - rewardid: 201
     rewardtype: 0100000001000000
     itemid: 000000001f000000

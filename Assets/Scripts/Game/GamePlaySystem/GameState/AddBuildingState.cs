@@ -133,6 +133,8 @@ namespace Game.GamePlaySystem.GameState
             TaskManager.Instance.TriggerTask(TaskType.AddBuilding, currentBuildingType);
             TaskManager.Instance.TriggerTask(TaskType.CountBuilding, data.Buildingtype, 
                 BuildingManager.Instance.CountBuildingType(data.Buildingtype));
+            TaskManager.Instance.TriggerTask(TaskType.CountBuilding, -1, BuildingManager.Instance.CountBuildingType(-1));
+            
             AchievementManager.Instance.TriggerAchievement(AchievementType.Building, -1, 1);
             AchievementManager.Instance.TriggerAchievement(AchievementType.BuildingCategory, data.Buildingtype, 1);
             AchievementManager.Instance.TriggerAchievement(AchievementType.BuildingID, currentBuildingType, 1);

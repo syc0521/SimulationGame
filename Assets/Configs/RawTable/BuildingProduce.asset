@@ -33,7 +33,7 @@ MonoBehaviour:
     name: "\u519C\u7530"
     producetype: 1
     produceid: 10
-    produceamount: 050000000a0000000d000000
+    produceamount: 050000000800000009000000
     consumeid: -1
     consumeamount: 00000000
   - id: 3
@@ -61,7 +61,7 @@ MonoBehaviour:
     name: "\u5E9C\u5B85"
     producetype: 0
     produceid: 0
-    produceamount: 0b000000170000002a000000
+    produceamount: 0b0000001800000028000000
     consumeid: -2
     consumeamount: 00000000
   - id: 7
@@ -75,7 +75,7 @@ MonoBehaviour:
     name: "\u5B85\u9662"
     producetype: 0
     produceid: 0
-    produceamount: 120000002000000032000000
+    produceamount: 0c000000160000002b000000
     consumeid: -2
     consumeamount: 00000000
   - id: 9
@@ -258,7 +258,7 @@ MonoBehaviour:
     name: "\u519C\u7530"
     producetype: 1
     produceid: 10
-    produceamount: 050000000a0000000d000000
+    produceamount: 050000000800000009000000
     consumeid: -1
     consumeamount: 00000000
   - id: 3
@@ -286,7 +286,7 @@ MonoBehaviour:
     name: "\u5E9C\u5B85"
     producetype: 0
     produceid: 0
-    produceamount: 0b000000170000002a000000
+    produceamount: 0b0000001800000028000000
     consumeid: -2
     consumeamount: 00000000
   - id: 7
@@ -300,7 +300,7 @@ MonoBehaviour:
     name: "\u5B85\u9662"
     producetype: 0
     produceid: 0
-    produceamount: 120000002000000032000000
+    produceamount: 0c000000160000002b000000
     consumeid: -2
     consumeamount: 00000000
   - id: 9

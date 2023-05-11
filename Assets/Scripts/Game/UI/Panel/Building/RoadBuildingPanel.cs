@@ -26,6 +26,7 @@ namespace Game.UI.Panel.Building
             base.OnShown();
             PlayAnimation();
             BuildingManager.Instance.ConstructRoad();
+            CheckButtonState(default);
         }
 
         public override void OnDestroyed()

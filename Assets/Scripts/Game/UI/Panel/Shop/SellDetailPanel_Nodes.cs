@@ -2,6 +2,7 @@ using Game.UI.Component;
 using Game.UI.Widget;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Game.UI.Panel.Shop
 {
@@ -14,5 +15,6 @@ namespace Game.UI.Panel.Shop
         public CustomImage icon_img;
         public TMP_InputField amount_input;
         public CurrencyWidget currency_w;
+        public Button close_btn;
     }
 }

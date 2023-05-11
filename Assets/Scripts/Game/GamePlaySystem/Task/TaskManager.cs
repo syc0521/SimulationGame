@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using Game.Core;
 using Game.Data;
+using Game.Data.Achievement;
 using Game.Data.Common;
 using Game.Data.Event;
 using Game.Data.Event.Task;
 using Game.Data.FeatureOpen;
+using Game.GamePlaySystem.Achievement;
 using Game.GamePlaySystem.Backpack;
 using Game.GamePlaySystem.Build;
 using Game.GamePlaySystem.Currency;
@@ -161,6 +163,7 @@ namespace Game.GamePlaySystem.Task
             
             Debug.LogWarning($"已领取ID为{taskID}的奖励");
             ChangeTaskState(taskID, TaskState.Rewarded);
+            AchievementManager.Instance.TriggerAchievement(AchievementType.Task, taskID, 1);
 
             var nextTasks = ConfigTable.Instance.GetTasks().FindAll(item => item.Previousid == taskID);
             foreach (var task in nextTasks)
@@ -188,12 +191,21 @@ namespace Game.GamePlaySystem.Task
         
         public void ActivateTask(int id)
         {
-            var itemCount = ConfigTable.Instance.GetTask(id).Targetid.Length;
+            var taskData = ConfigTable.Instance.GetTask(id);
+            var itemCount = taskData.Targetid.Length;
             _playerTaskData[id] = new PlayerTaskData
             {
                 state = TaskState.Accepted,
                 currentNum = new int[itemCount],
             };
+
+            if ((TaskType)taskData.Tasktype is TaskType.CountBuilding)
+            {
+                foreach (var targetId in taskData.Targetid)
+                {
+                    TriggerTask(TaskType.CountBuilding, targetId, BuildingManager.Instance.CountBuildingType(targetId));
+                }
+            }
             Debug.Log($"已开启id为{id}的任务");
             Managers.Get<ISaveDataManager>().SaveData();
             

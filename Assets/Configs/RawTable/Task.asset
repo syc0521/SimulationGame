@@ -170,7 +170,7 @@ MonoBehaviour:
     featureopen: -1
   - taskid: 2102
     name: "\u751F\u4EA7\u7816\u77F3"
-    previousid: 2102
+    previousid: 2101
     tasktype: 3
     targetid: 01000000
     targetnum: 2c010000
@@ -179,7 +179,7 @@ MonoBehaviour:
     featureopen: -1
   - taskid: 2103
     name: "\u751F\u4EA7\u6728\u6750"
-    previousid: 2103
+    previousid: 2102
     tasktype: 3
     targetid: 00000000
     targetnum: e8030000
@@ -188,7 +188,7 @@ MonoBehaviour:
     featureopen: -1
   - taskid: 2104
     name: "\u83B7\u5F97\u91D1\u5E01"
-    previousid: 2104
+    previousid: 2103
     tasktype: 2
     targetid: 00000000
     targetnum: a00f0000
@@ -262,7 +262,7 @@ MonoBehaviour:
     name: "\u521D\u5177\u89C4\u6A21"
     previousid: 2302
     tasktype: 12
-    targetid: 00000000
+    targetid: ffffffff
     targetnum: 1e000000
     reward: -1
     content: "\u57CE\u5E02\u5185\u670930\u4E2A\u5EFA\u7B51"
@@ -398,7 +398,7 @@ MonoBehaviour:
     previousid: 9999
     tasktype: 2
     targetid: 00000000
-    targetnum: e8030000
+    targetnum: c4090000
     reward: 11
     content: "\u5B98\u5E9C\u9700\u8981\u4E00\u5B9A\u7684\u8D44\u91D1\u4FDD\u8BC1\u8FD0\u8F6C"
     featureopen: -1
@@ -421,13 +421,13 @@ MonoBehaviour:
     content: "\u751F\u4EA7\u4E00\u5B9A\u7CAE\u98DF\u7ED9\u5C45\u6C11\u7528"
     featureopen: -1
   - taskid: 5009
-    name: "\u751F\u4EA7\u94C1"
+    name: "\u751F\u4EA7\u94C1\u6750"
     previousid: 9999
     tasktype: 3
     targetid: 02000000
     targetnum: 64000000
     reward: 16
-    content: "\u751F\u4EA7\u4E00\u5B9A\u94C1\u7ED9\u5C45\u6C11\u7528"
+    content: "\u751F\u4EA7\u4E00\u5B9A\u94C1\u6750\u7ED9\u5C45\u6C11\u7528"
     featureopen: -1
   dataList:
   - taskid: 1000
@@ -585,7 +585,7 @@ MonoBehaviour:
     featureopen: -1
   - taskid: 2102
     name: "\u751F\u4EA7\u7816\u77F3"
-    previousid: 2102
+    previousid: 2101
     tasktype: 3
     targetid: 01000000
     targetnum: 2c010000
@@ -594,7 +594,7 @@ MonoBehaviour:
     featureopen: -1
   - taskid: 2103
     name: "\u751F\u4EA7\u6728\u6750"
-    previousid: 2103
+    previousid: 2102
     tasktype: 3
     targetid: 00000000
     targetnum: e8030000
@@ -603,7 +603,7 @@ MonoBehaviour:
     featureopen: -1
   - taskid: 2104
     name: "\u83B7\u5F97\u91D1\u5E01"
-    previousid: 2104
+    previousid: 2103
     tasktype: 2
     targetid: 00000000
     targetnum: a00f0000
@@ -677,7 +677,7 @@ MonoBehaviour:
     name: "\u521D\u5177\u89C4\u6A21"
     previousid: 2302
     tasktype: 12
-    targetid: 00000000
+    targetid: ffffffff
     targetnum: 1e000000
     reward: -1
     content: "\u57CE\u5E02\u5185\u670930\u4E2A\u5EFA\u7B51"
@@ -813,7 +813,7 @@ MonoBehaviour:
     previousid: 9999
     tasktype: 2
     targetid: 00000000
-    targetnum: e8030000
+    targetnum: c4090000
     reward: 11
     content: "\u5B98\u5E9C\u9700\u8981\u4E00\u5B9A\u7684\u8D44\u91D1\u4FDD\u8BC1\u8FD0\u8F6C"
     featureopen: -1
@@ -836,11 +836,11 @@ MonoBehaviour:
     content: "\u751F\u4EA7\u4E00\u5B9A\u7CAE\u98DF\u7ED9\u5C45\u6C11\u7528"
     featureopen: -1
   - taskid: 5009
-    name: "\u751F\u4EA7\u94C1"
+    name: "\u751F\u4EA7\u94C1\u6750"
     previousid: 9999
     tasktype: 3
     targetid: 02000000
     targetnum: 64000000
     reward: 16
-    content: "\u751F\u4EA7\u4E00\u5B9A\u94C1\u7ED9\u5C45\u6C11\u7528"
+    content: "\u751F\u4EA7\u4E00\u5B9A\u94C1\u6750\u7ED9\u5C45\u6C11\u7528"
     featureopen: -1

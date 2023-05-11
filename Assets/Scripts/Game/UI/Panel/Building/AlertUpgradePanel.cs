@@ -40,6 +40,7 @@ namespace Game.UI.Panel.Building
             nodes.title_txt.text = buildingData.Name;
             nodes.currentLevel_txt.text = $"{StringUtility.ConvertNumberToString(option.currentLevel)}级";
             nodes.nextLevel_txt.text = $"{StringUtility.ConvertNumberToString(option.currentLevel + 1)}级";
+            nodes.production_go.SetActive(!option.isGov);
 
             if (!option.isGov)
             {

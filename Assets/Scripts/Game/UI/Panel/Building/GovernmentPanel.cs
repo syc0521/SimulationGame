@@ -100,6 +100,8 @@ namespace Game.UI.Panel.Building
 
         private void Upgrade()
         {
+            CloseSelf();
+
             if (!BuildingSystem.Instance.UpgradeBuilding(EntityId, true))
             {
                 AlertDecorator.OpenAlertPanel("货币或材料不足！", false);
@@ -108,8 +110,6 @@ namespace Game.UI.Panel.Building
             {
                 AlertDecorator.OpenAlertUpgradePanel(StaticId, _level, true);
             }
-
-            CloseSelf();
         }
 
         private string GetEnvRateString(float rate)

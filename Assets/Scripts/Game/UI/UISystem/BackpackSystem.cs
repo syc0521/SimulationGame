@@ -17,12 +17,16 @@ namespace Game.UI.UISystem
             foreach (var item in data)
             {
                 var tableItem = ConfigTable.Instance.GetBagItemData(item.Key);
-                backpackData[item.Key] = new BackpackViewData
+                if (tableItem != null)
                 {
-                    count = item.Value,
-                    name = tableItem.Name,
-                    description = tableItem.Content
-                };
+                    backpackData[item.Key] = new BackpackViewData
+                    {
+                        count = item.Value,
+                        name = tableItem.Name,
+                        description = tableItem.Content,
+                        canSell = tableItem.Cansell,
+                    };
+                }
             }
 
             return backpackData;

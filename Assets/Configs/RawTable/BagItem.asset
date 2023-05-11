@@ -21,36 +21,42 @@ MonoBehaviour:
     content: "\u57FA\u7840\u5EFA\u7B51\u6750\u6599"
     price: 8
     iconname: wood
+    cansell: 1
   - id: 1
     name: "\u77F3\u7816"
     type: 0
     content: "\u8FDB\u9636\u5EFA\u7B51\u6750\u6599"
     price: 30
     iconname: brick
+    cansell: 1
   - id: 2
     name: "\u94C1"
     type: 0
     content: "\u94C1"
     price: 50
     iconname: iron
+    cansell: 1
   - id: 10
     name: "\u7CAE\u98DF"
     type: 1
     content: "\u7CAE\u98DF"
     price: 6
     iconname: food
+    cansell: 1
   - id: 11
     name: "\u77F3\u5934"
     type: 1
     content: "\u77F3\u5934"
     price: 15
     iconname: stone
+    cansell: 1
   - id: 99
     name: "\u5347\u7EA7\u8BB8\u53EF\u8BC1"
     type: 2
-    content: "\u5347\u7EA7\u8BB8\u53EF\u8BC1"
+    content: "\u53EF\u4EE5\u5347\u7EA7\u5B98\u5E9C"
     price: 0
     iconname: ticket
+    cansell: 0
   dataList:
   - id: 0
     name: "\u6728\u5934"
@@ -58,33 +64,39 @@ MonoBehaviour:
     content: "\u57FA\u7840\u5EFA\u7B51\u6750\u6599"
     price: 8
     iconname: wood
+    cansell: 1
   - id: 1
     name: "\u77F3\u7816"
     type: 0
     content: "\u8FDB\u9636\u5EFA\u7B51\u6750\u6599"
     price: 30
     iconname: brick
+    cansell: 1
   - id: 2
     name: "\u94C1"
     type: 0
     content: "\u94C1"
     price: 50
     iconname: iron
+    cansell: 1
   - id: 10
     name: "\u7CAE\u98DF"
     type: 1
     content: "\u7CAE\u98DF"
     price: 6
     iconname: food
+    cansell: 1
   - id: 11
     name: "\u77F3\u5934"
     type: 1
     content: "\u77F3\u5934"
     price: 15
     iconname: stone
+    cansell: 1
   - id: 99
     name: "\u5347\u7EA7\u8BB8\u53EF\u8BC1"
     type: 2
-    content: "\u5347\u7EA7\u8BB8\u53EF\u8BC1"
+    content: "\u53EF\u4EE5\u5347\u7EA7\u5B98\u5E9C"
     price: 0
     iconname: ticket
+    cansell: 0

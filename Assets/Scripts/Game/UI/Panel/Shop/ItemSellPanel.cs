@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Game.UI.Panel.Bag;
 using Game.UI.UISystem;
 using Game.UI.ViewData;
@@ -43,7 +44,7 @@ namespace Game.UI.Panel.Shop
         private void InitBagList()
         {
             nodes.bag_list.Clear();
-            foreach (var item in _backpack)
+            foreach (var item in _backpack.Where(item => item.Value.canSell))
             {
                 nodes.bag_list.AddItem(new BagListData
                 {
@@ -54,16 +55,12 @@ namespace Game.UI.Panel.Shop
             }
         }
 
-        private void ClickBagItem(BagItemWidget widget, int index)
+        private void ClickBagItem(BagItemWidget widget, int id)
         {
-            var data = nodes.bag_list.GetData(index);
-            if (data is BagListData bagListData)
+            UIManager.Instance.OpenPanel<SellDetailPanel>(new SellDetailPanelOption
             {
-                UIManager.Instance.OpenPanel<SellDetailPanel>(new SellDetailPanelOption
-                {
-                    itemID = bagListData.id,
-                });
-            }
+                itemID = id,
+            });
         }
 
     }

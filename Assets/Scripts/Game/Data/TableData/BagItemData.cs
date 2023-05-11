@@ -34,5 +34,9 @@ namespace Game.Data.TableData
     string iconname;
     public string Iconname { get {return iconname; } set { iconname = value;} }
     
+    [SerializeField]
+    bool cansell;
+    public bool Cansell { get {return cansell; } set { cansell = value;} }
+    
 	}
 }

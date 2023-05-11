@@ -28,6 +28,7 @@ namespace Game.UI.Panel.Common
 
         public override void OnCreated()
         {
+            base.OnCreated();
             nodes.confirm_btn.onClick.AddListener(ClickConfirm);
             nodes.closeTip_btn.onClick.AddListener(CloseTip);
         }

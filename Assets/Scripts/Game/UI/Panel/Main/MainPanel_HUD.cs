@@ -42,8 +42,13 @@ namespace Game.UI.Panel
 
         private void PlayOperatorInAnim()
         {
+            var length = _animation["MainPanel_OperatorIn"].clip.length;
             _animation["MainPanel_OperatorIn"].clip.SampleAnimation(gameObject, 0f);
             _animation.Play("MainPanel_OperatorIn");
+            DOTween.Sequence().AppendInterval(length).AppendCallback(() =>
+            {
+                nodes.operator_go.SetActive(true);
+            });
         }
         
         private void PlayOperatorOutAnim()

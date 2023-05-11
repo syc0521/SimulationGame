@@ -276,11 +276,6 @@ namespace Game.GamePlaySystem.Build
             _buildingDatas[buildingId].level = newLevel;
             var staticId = _buildingDatas[buildingId].type;
             TaskManager.Instance.TriggerTask(TaskType.UpgradeBuilding, staticId);
-            EventCenter.DispatchEvent(new OpenBuildingInfoEvent
-            {
-                id = (int)buildingId,
-                isStatic = isStatic,
-            });
             Managers.Get<ISaveDataManager>().SaveData();
         }
 
@@ -298,7 +293,13 @@ namespace Game.GamePlaySystem.Build
 
         public int CountBuildingType(int type)
         {
-            return _buildingDatas.Values.Count(data => ConfigTable.Instance.GetBuildingData(data.type).Buildingtype == type);
+            if (type == -1)
+            {
+                return _buildingDatas.Values.Count(data => data.type != 4 && data.type != 1);
+            }
+
+            return _buildingDatas.Values.Count(data => ConfigTable.Instance.GetBuildingData(data.type).Buildingtype == type
+                                                       && data.type != 4 && data.type != 1);
         }
     }
 }

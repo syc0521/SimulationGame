@@ -212,8 +212,8 @@ MonoBehaviour:
     name: "\u7816\u5382"
     buildingtype: 1
     description: "\u7816\u5382"
-    currencytype: 00000000
-    currencycount: 2c010000
+    currencytype: 000000000b000000
+    currencycount: 2c01000032000000
     rowcount: 8
     colcount: 8
     cd: 8
@@ -725,8 +725,8 @@ MonoBehaviour:
     name: "\u7816\u5382"
     buildingtype: 1
     description: "\u7816\u5382"
-    currencytype: 00000000
-    currencycount: 2c010000
+    currencytype: 000000000b000000
+    currencycount: 2c01000032000000
     rowcount: 8
     colcount: 8
     cd: 8

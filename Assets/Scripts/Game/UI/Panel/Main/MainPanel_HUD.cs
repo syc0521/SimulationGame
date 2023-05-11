@@ -35,6 +35,7 @@ namespace Game.UI.Panel
                     nodes.status_go.SetActive(false);
                     break;
                 case HUDType.Detail:
+                    PlayDetailInAnim();
                     PlayOperatorOutAnim();
                     break;
             }
@@ -72,6 +73,15 @@ namespace Game.UI.Panel
         {
             _animation["MainPanel_Intro"].clip.SampleAnimation(gameObject, 0f);
             _animation.Play("MainPanel_Intro");
+        }
+        
+        private void PlayDetailInAnim()
+        {
+            _animation["MainPanel_DetailIn"].clip.SampleAnimation(gameObject, 0f);
+            DOTween.Sequence().AppendInterval(0.1f).AppendCallback(() =>
+            {
+                _animation.Play("MainPanel_DetailIn");
+            });
         }
     }
 }

@@ -18,8 +18,23 @@ namespace Game.GamePlaySystem.Build
                     var mat = mesh.materials[i];
                     var name = mat.name.Replace(" (Instance)", string.Empty);
                     materials[i] = Managers.Get<IResLoader>().LoadMaterial(name);
+                    materials[i].color = new Color(1, 1, 1, 170 / 255f);
                 }
                 mesh.materials = materials;
+            }
+        }
+
+        public static void SetColor(GameObject obj, bool canConstruct = true)
+        {
+            var meshList = obj.gameObject.GetComponentsInChildren<MeshRenderer>();
+            var errorColor = new Color(245 / 255f, 36 / 255f, 36 / 255f, 170 / 255f);
+            var normalColor = new Color(1, 1, 1, 170 / 255f);
+            foreach (var mesh in meshList)
+            {
+                foreach (var mat in mesh.materials)
+                {
+                    mat.color = canConstruct ? normalColor : errorColor;
+                }
             }
         }
     }

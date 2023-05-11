@@ -126,10 +126,12 @@ namespace Game.GamePlaySystem.GameState
             currentBuilding = Object.Instantiate(ConfigTable.Instance.GetBuilding(currentBuildingType), buildingPos, Quaternion.identity);
             currentBuilding.transform.localRotation = aspect.LocalRotation;
             MaterialUtil.SetTransparency(currentBuilding);
+            var canConstruct = BuildingManager.Instance.CanConstruct(spawnPos, currentRotation, currentBuildingType);
+            MaterialUtil.SetColor(currentBuilding, canConstruct);
             aspect.Position = new float3(10000, 10000, 10000);
             EventCenter.DispatchEvent(new BuildUIEvent
             {
-                canConstruct = BuildingManager.Instance.CanConstruct(spawnPos, currentRotation, currentBuildingType),
+                canConstruct = canConstruct,
             });
         }
         
@@ -150,9 +152,11 @@ namespace Game.GamePlaySystem.GameState
                     var data = ConfigTable.Instance.GetBuildingData(currentBuildingType);
                     var offset = BuildingManager.Instance.GetRotationOffset(currentRotation, data.Rowcount, data.Colcount);
                     currentBuilding.transform.position = spawnPos + offset;
+                    var canConstruct = BuildingManager.Instance.CanConstruct(spawnPos, currentRotation, currentBuildingType);
+                    MaterialUtil.SetColor(currentBuilding, canConstruct);
                     EventCenter.DispatchEvent(new BuildUIEvent
                     {
-                        canConstruct = BuildingManager.Instance.CanConstruct(spawnPos, currentRotation, currentBuildingType),
+                        canConstruct = canConstruct,
                     });
                 }
             }

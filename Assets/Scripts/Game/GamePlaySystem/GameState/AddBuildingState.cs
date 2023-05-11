@@ -34,10 +34,12 @@ namespace Game.GamePlaySystem.GameState
             spawnPos = BuildingUtils.GetBlockPos(point);
             currentBuilding = Object.Instantiate(ConfigTable.Instance.GetBuilding(currentBuildingType), spawnPos, Quaternion.identity);
             MaterialUtil.SetTransparency(currentBuilding);
+            var canConstruct = BuildingManager.Instance.CanConstruct(spawnPos, rotation, currentBuildingType);
+            MaterialUtil.SetColor(currentBuilding, canConstruct);
             World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<BuildingManagedSystem>().SetGridVisible(true);
             EventCenter.DispatchEvent(new BuildUIEvent
             {
-                canConstruct = BuildingManager.Instance.CanConstruct(spawnPos, rotation, currentBuildingType),
+                canConstruct = canConstruct,
             });
 
             EventCenter.AddListener<TouchEvent>(PlaceBuilding);
@@ -99,9 +101,11 @@ namespace Game.GamePlaySystem.GameState
                     var offset = BuildingManager.Instance.GetRotationOffset(rotation, data.Rowcount, data.Colcount);
                     var buildingPos = spawnPos + (Vector3)offset;
                     currentBuilding.transform.position = buildingPos;
+                    var canConstruct = BuildingManager.Instance.CanConstruct(spawnPos, rotation, currentBuildingType);
+                    MaterialUtil.SetColor(currentBuilding, canConstruct);
                     EventCenter.DispatchEvent(new BuildUIEvent
                     {
-                        canConstruct = BuildingManager.Instance.CanConstruct(spawnPos, rotation, currentBuildingType),
+                        canConstruct = canConstruct,
                     });
                 }
             }

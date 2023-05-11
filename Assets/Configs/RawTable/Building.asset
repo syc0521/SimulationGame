@@ -215,7 +215,7 @@ MonoBehaviour:
     currencytype: 000000000b000000
     currencycount: 2c01000032000000
     rowcount: 8
-    colcount: 8
+    colcount: 10
     cd: 8
     unlock: 0
     people: 0
@@ -728,7 +728,7 @@ MonoBehaviour:
     currencytype: 000000000b000000
     currencycount: 2c01000032000000
     rowcount: 8
-    colcount: 8
+    colcount: 10
     cd: 8
     unlock: 0
     people: 0

@@ -1,4 +1,5 @@
 ﻿using System;
+using DG.Tweening;
 using Game.Audio;
 using Game.Core;
 using Game.Data;
@@ -187,7 +188,13 @@ namespace Game.UI.Panel
                     break;
             }
             nodes.tip_w.gameObject.SetActive(true);
-            nodes.tip_w.transform.position = widget.transform.position - new Vector3(140, 50);
+            var finalPos = widget.transform.position - new Vector3(160, 50);
+            var initPos = finalPos + new Vector3(0, 40);
+            var canvasGroup = nodes.tip_w.GetComponent<CanvasGroup>();
+            canvasGroup.alpha = 0f;
+            DOTween.To(() => canvasGroup.alpha, x => canvasGroup.alpha = x, 1, 0.15f);
+            nodes.tip_w.transform.position = initPos;
+            nodes.tip_w.transform.DOMove(finalPos, 0.15f);
             nodes.closeTip_btn.gameObject.SetActive(true);
         }
 
@@ -205,9 +212,9 @@ namespace Game.UI.Panel
             var staticId = data.type;
             var buildingData = ConfigTable.Instance.GetBuildingData(staticId);
 
-            ChangeHUDStatus(HUDType.Detail);
             nodes.buildingDetail_w.SetDefault();
             nodes.buildingDetail_w.gameObject.SetActive(true);
+            ChangeHUDStatus(HUDType.Detail);
             nodes.closeTip_btn.gameObject.SetActive(true);
             
             nodes.buildingDetail_w.SetTitle(buildingData.Name);

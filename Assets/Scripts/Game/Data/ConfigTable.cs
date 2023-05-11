@@ -5,6 +5,7 @@ using Game.Data.FeatureOpen;
 using Game.Data.ScriptableObject;
 using Game.Data.TableData;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Game.Data
 {
@@ -32,6 +33,7 @@ namespace Game.Data
         [SerializeField] private LoadingPicture loadingPicture;
         public Camera MainUICam;
         public Canvas MainCanvas;
+        public Image BlackScreen;
 
         public Transform GetUIRoot(int layerType) => uiRoot.GetChild(layerType);
 

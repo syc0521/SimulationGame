@@ -4620,11 +4620,11 @@ MonoBehaviour:
   m_ShapeType: 0
   m_PrimitiveCenter:
     x: 5.6499987
-    y: 1.1915886
+    y: 0.86
     z: 5.2752976
   m_PrimitiveSize:
     x: 11.35708
-    y: 2.3700051
+    y: 1.5650991
     z: 10.664326
   m_PrimitiveOrientation:
     Value:
@@ -4637,7 +4637,7 @@ MonoBehaviour:
     Radius: 5.332163
     Axis: 0
   m_Cylinder:
-    Height: 2.3700051
+    Height: 1.5650991
     Radius: 5.67854
     Axis: 1
   m_CylinderSideCount: 20

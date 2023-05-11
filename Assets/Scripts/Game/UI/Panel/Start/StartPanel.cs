@@ -3,6 +3,7 @@ using DG.Tweening.Core;
 using DG.Tweening.Plugins.Options;
 using Game.Audio;
 using Game.Core;
+using Game.Data;
 using Game.Data.Event.Common;
 using Game.GamePlaySystem.Loading;
 using Game.UI.Panel.Loading;
@@ -26,6 +27,7 @@ namespace Game.UI.Panel.Start
         public override void OnShown()
         {
             base.OnShown();
+            ConfigTable.Instance.BlackScreen.gameObject.SetActive(false);
             _anim = nodes.tip_text.materialForRendering.DOFloat(0.2f, FaceDilate, 1.2f).SetLoops(-1, LoopType.Yoyo);
         }
 

@@ -16,7 +16,7 @@ namespace Game.UI.Module
     {
         public override void OnCreated()
         {
-            UIManager.Instance.OpenPanel<StartPanel>();
+            UIManager.Instance.OpenPanel<LogoPanel>();
             EventCenter.AddListener<LoadSceneFinishedEvent>(ShowMainPanel);
             EventCenter.AddListener<UnlockFeatureEvent>(ShowFeatureOpenPanel);
             EventCenter.AddListener<OpenGMEvent>(ShowGMPanel);

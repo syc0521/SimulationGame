@@ -21,6 +21,7 @@ namespace Game.UI.Panel.Start
         {
             base.OnCreated();
             nodes.start_btn.onClick.AddListener(StartGame);
+            nodes.tip_text.materialForRendering.SetFloat(FaceDilate, 0f);
             EventCenter.AddListener<LoadSceneFinishedEvent>(Close);
         }
 
@@ -34,11 +35,11 @@ namespace Game.UI.Panel.Start
 
         public override void OnDestroyed()
         {
-            base.OnDestroyed();
             nodes.start_btn.onClick.RemoveListener(StartGame);
             _anim.Pause();
             nodes.tip_text.materialForRendering.SetFloat(FaceDilate, 0f);
             EventCenter.AddListener<LoadSceneFinishedEvent>(Close);
+            base.OnDestroyed();
         }
 
         private void StartGame()
@@ -49,6 +50,8 @@ namespace Game.UI.Panel.Start
 
         private void Close(LoadSceneFinishedEvent evt)
         {
+            _anim.Pause();
+            nodes.tip_text.materialForRendering.SetFloat(FaceDilate, 0f);
             CloseSelf();
         }
     }

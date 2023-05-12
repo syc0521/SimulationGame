@@ -16,6 +16,7 @@ namespace Game.UI.Panel.Shop
         
         public override void OnCreated()
         {
+            base.OnCreated();
             nodes.close_btn.onClick.AddListener(ClosePanel);
         }
         

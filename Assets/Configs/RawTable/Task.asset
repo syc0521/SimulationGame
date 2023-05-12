@@ -291,7 +291,7 @@ MonoBehaviour:
     tasktype: 5
     targetid: 01000000
     targetnum: 01000000
-    reward: -1
+    reward: 130
     content: "\u5347\u7EA7\u5B98\u5E9C\u52303\u7EA7"
     featureopen: 103
   - taskid: 1200
@@ -309,7 +309,7 @@ MonoBehaviour:
     tasktype: 0
     targetid: 1d000000
     targetnum: 01000000
-    reward: 26
+    reward: 126
     content: "\u4FEE\u5EFA\u9152\u697C"
     featureopen: 5
   - taskid: 1202
@@ -318,7 +318,7 @@ MonoBehaviour:
     tasktype: 0
     targetid: 1a000000
     targetnum: 01000000
-    reward: 27
+    reward: 127
     content: "\u4FEE\u5EFA\u5730\u6807\u5B89\u4E50\u574A"
     featureopen: -1
   - taskid: 1203
@@ -706,7 +706,7 @@ MonoBehaviour:
     tasktype: 5
     targetid: 01000000
     targetnum: 01000000
-    reward: -1
+    reward: 130
     content: "\u5347\u7EA7\u5B98\u5E9C\u52303\u7EA7"
     featureopen: 103
   - taskid: 1200
@@ -724,7 +724,7 @@ MonoBehaviour:
     tasktype: 0
     targetid: 1d000000
     targetnum: 01000000
-    reward: 26
+    reward: 126
     content: "\u4FEE\u5EFA\u9152\u697C"
     featureopen: 5
   - taskid: 1202
@@ -733,7 +733,7 @@ MonoBehaviour:
     tasktype: 0
     targetid: 1a000000
     targetnum: 01000000
-    reward: 27
+    reward: 127
     content: "\u4FEE\u5EFA\u5730\u6807\u5B89\u4E50\u574A"
     featureopen: -1
   - taskid: 1203

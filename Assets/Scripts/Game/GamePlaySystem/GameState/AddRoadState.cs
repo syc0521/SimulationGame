@@ -68,7 +68,10 @@ namespace Game.GamePlaySystem.GameState
             {
                 Object.Destroy(obj);
             }
+            _count = -1;
+            _lastPos = new(0, 0);
             _startObj = null;
+            _tempStartObj = null;
             _roadStack.Clear();
             _roadObjStack.Clear();
             _roadRedoStack.Clear();

@@ -36,14 +36,14 @@ namespace Game.UI.Panel.Building
         {
             base.OnCreated();
             nodes.close_btn.onClick.AddListener(ClosePanel);
+            InitTabBar();
+            nodes.tabBar.SetSelectedIndex(0);
         }
 
         public override void OnShown()
         {
             base.OnShown();
             PlayAnimation();
-            InitTabBar();
-            nodes.tabBar.SetSelectedIndex(0);
         }
 
         public override void OnDestroyed()

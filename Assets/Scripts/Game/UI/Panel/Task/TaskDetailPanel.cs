@@ -48,7 +48,6 @@ namespace Game.UI.Panel.Task
 
         private void ClosePanel()
         {
-            Managers.Get<IAudioManager>().PlaySFX(SFXType.Button2);
             CloseSelf();
         }
 

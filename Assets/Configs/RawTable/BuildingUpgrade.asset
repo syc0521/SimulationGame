@@ -20,23 +20,23 @@ MonoBehaviour:
     itemid: ffffffff
     itemcount: ffffffff
     currencyid: 00000000
-    currencycount: c8000000
+    currencycount: b4000000
   - id: 2
     level: 3
     itemid: 00000000
-    itemcount: 64000000
+    itemcount: 78000000
     currencyid: 00000000
     currencycount: bc020000
   - id: 6
     level: 2
     itemid: 00000000
-    itemcount: c8000000
+    itemcount: 96000000
     currencyid: 00000000
     currencycount: b0040000
   - id: 6
     level: 3
     itemid: 01000000
-    itemcount: c8000000
+    itemcount: fa000000
     currencyid: 00000000
     currencycount: c4090000
   - id: 7
@@ -44,7 +44,7 @@ MonoBehaviour:
     itemid: 00000000
     itemcount: c8000000
     currencyid: 00000000
-    currencycount: 20030000
+    currencycount: 48030000
   - id: 7
     level: 3
     itemid: 01000000
@@ -54,13 +54,13 @@ MonoBehaviour:
   - id: 8
     level: 2
     itemid: 00000000
-    itemcount: c8000000
+    itemcount: f0000000
     currencyid: 00000000
-    currencycount: 78050000
+    currencycount: aa050000
   - id: 8
     level: 3
     itemid: 01000000
-    itemcount: c8000000
+    itemcount: 40010000
     currencyid: 00000000
     currencycount: b80b0000
   - id: 9
@@ -68,13 +68,13 @@ MonoBehaviour:
     itemid: 00000000
     itemcount: 64000000
     currencyid: 00000000
-    currencycount: 58020000
+    currencycount: cc010000
   - id: 9
     level: 3
     itemid: 01000000
     itemcount: c8000000
     currencyid: 00000000
-    currencycount: b0040000
+    currencycount: 14050000
   - id: 10
     level: 2
     itemid: 01000000
@@ -159,23 +159,23 @@ MonoBehaviour:
     itemid: ffffffff
     itemcount: ffffffff
     currencyid: 00000000
-    currencycount: c8000000
+    currencycount: b4000000
   - id: 2
     level: 3
     itemid: 00000000
-    itemcount: 64000000
+    itemcount: 78000000
     currencyid: 00000000
     currencycount: bc020000
   - id: 6
     level: 2
     itemid: 00000000
-    itemcount: c8000000
+    itemcount: 96000000
     currencyid: 00000000
     currencycount: b0040000
   - id: 6
     level: 3
     itemid: 01000000
-    itemcount: c8000000
+    itemcount: fa000000
     currencyid: 00000000
     currencycount: c4090000
   - id: 7
@@ -183,7 +183,7 @@ MonoBehaviour:
     itemid: 00000000
     itemcount: c8000000
     currencyid: 00000000
-    currencycount: 20030000
+    currencycount: 48030000
   - id: 7
     level: 3
     itemid: 01000000
@@ -193,13 +193,13 @@ MonoBehaviour:
   - id: 8
     level: 2
     itemid: 00000000
-    itemcount: c8000000
+    itemcount: f0000000
     currencyid: 00000000
-    currencycount: 78050000
+    currencycount: aa050000
   - id: 8
     level: 3
     itemid: 01000000
-    itemcount: c8000000
+    itemcount: 40010000
     currencyid: 00000000
     currencycount: b80b0000
   - id: 9
@@ -207,13 +207,13 @@ MonoBehaviour:
     itemid: 00000000
     itemcount: 64000000
     currencyid: 00000000
-    currencycount: 58020000
+    currencycount: cc010000
   - id: 9
     level: 3
     itemid: 01000000
     itemcount: c8000000
     currencyid: 00000000
-    currencycount: b0040000
+    currencycount: 14050000
   - id: 10
     level: 2
     itemid: 01000000

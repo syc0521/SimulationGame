@@ -154,6 +154,7 @@ namespace Game.UI
                     if (panels[(UILayerType)data.Layer].TryPeek(out var lastPanel)) // 该层级被覆盖的面板要显示
                     {
                         lastPanel.gameObject.SetActive(true);
+                        lastPanel.OnShown();
                     }
                 }
                 

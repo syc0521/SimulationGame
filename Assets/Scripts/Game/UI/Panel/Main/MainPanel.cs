@@ -23,6 +23,7 @@ using Game.UI.Panel.Building;
 using Game.UI.Panel.Pause;
 using Game.UI.Panel.Shop;
 using Game.UI.UISystem;
+using Game.UI.Utils;
 using Game.UI.Widget;
 using Unity.Entities;
 using UnityEngine;
@@ -255,6 +256,15 @@ namespace Game.UI.Panel
             if (buildingData.Cd > 0)
             {
                 var produceData = ConfigTable.Instance.GetBuildingProduceData(data.type);
+                var produceType = (ProduceType)produceData.Producetype;
+                if (produceType is ProduceType.Currency)
+                {
+                    nodes.buildingDetail_w.SetItem(IconUtility.GetCurrencyIcon(produceData.Produceid));
+                }
+                else if (produceType is ProduceType.Item)
+                {
+                    nodes.buildingDetail_w.SetItem(IconUtility.GetItemIcon(produceData.Produceid));
+                }
                 var itemPerMin = produceData.Produceamount[data.level - 1] / buildingData.Cd * 60.0f;
                 nodes.buildingDetail_w.SetProduceAmount((int)itemPerMin);
             }

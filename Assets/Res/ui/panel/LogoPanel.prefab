@@ -98,7 +98,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 100}
-  m_SizeDelta: {x: 1000, y: 50}
+  m_SizeDelta: {x: 1200, y: 50}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &3704284415818998821
 CanvasRenderer:
@@ -130,8 +130,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Powered by "CRIWARE". CRIWARE is a trademark of CRI Middleware Co., Ltd.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 04f634bc527270d4492eacddaaae125e, type: 2}
-  m_sharedMaterial: {fileID: 8530618857118137557, guid: 04f634bc527270d4492eacddaaae125e,
+  m_fontAsset: {fileID: 11400000, guid: 9eb4f8049bcd0434484fcfa2394c4d45, type: 2}
+  m_sharedMaterial: {fileID: 320412238593898066, guid: 9eb4f8049bcd0434484fcfa2394c4d45,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}

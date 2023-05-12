@@ -14,6 +14,7 @@ namespace Game.UI.Widget
         public FrameComponent upgrade_frame;
         public CustomButton upgrade_btn;
         public ListComponent currency_list;
+        public CustomImage item_img;
         private Action _handler;
 
         public override void OnCreated()
@@ -72,6 +73,11 @@ namespace Game.UI.Widget
         public void SetUpgradeHandler(Action handler)
         {
             _handler = handler;
+        }
+
+        public void SetItem(AtlasSpriteID atlasSpriteID)
+        {
+            item_img.SetIcon(atlasSpriteID);
         }
 
         public void SetCurrency(BuildingUpgradeData data)

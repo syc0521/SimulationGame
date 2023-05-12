@@ -16,15 +16,15 @@ MonoBehaviour:
   WorksheetName: LoadingPicture
   dataArray:
   - picid: 1
-    name: "\u5B8B \xB7 \u6E05\u660E\u4E0A\u6CB3\u56FE"
+    name: "\u5B8B \xB7 \u5343\u91CC\u6C5F\u5C71\u56FE"
   - picid: 2
-    name: "\u5B8B \xB7 \u6E05\u660E\u4E0A\u6CB3\u56FE"
+    name: "\u5B8B \xB7 \u5343\u91CC\u6C5F\u5C71\u56FE"
   - picid: 3
-    name: "\u5B8B \xB7 \u6E05\u660E\u4E0A\u6CB3\u56FE"
+    name: "\u5B8B \xB7 \u5343\u91CC\u6C5F\u5C71\u56FE"
   dataList:
   - picid: 1
-    name: "\u5B8B \xB7 \u6E05\u660E\u4E0A\u6CB3\u56FE"
+    name: "\u5B8B \xB7 \u5343\u91CC\u6C5F\u5C71\u56FE"
   - picid: 2
-    name: "\u5B8B \xB7 \u6E05\u660E\u4E0A\u6CB3\u56FE"
+    name: "\u5B8B \xB7 \u5343\u91CC\u6C5F\u5C71\u56FE"
   - picid: 3
-    name: "\u5B8B \xB7 \u6E05\u660E\u4E0A\u6CB3\u56FE"
+    name: "\u5B8B \xB7 \u5343\u91CC\u6C5F\u5C71\u56FE"

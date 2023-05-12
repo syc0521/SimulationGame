@@ -3,32 +3,7 @@ guid: f9a3c90845e36a647bb198a9593784d3
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Qiang01
-    second: {fileID: 2100000, guid: bb76890bf732f00459768fc389fad839, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Stone01
-    second: {fileID: 2100000, guid: bd4586fab6905b443b3e706def4eab3a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Stone02
-    second: {fileID: 2100000, guid: 6e27cb8bd35d0e24db0bf3ed6d2317fe, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Stone03
-    second: {fileID: 2100000, guid: e6a5b4ee638a9894f921305042933129, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Wood01
-    second: {fileID: 2100000, guid: 91fc7cbe15be838439f947e6f76fa0fa, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -60,7 +35,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 100
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1

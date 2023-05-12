@@ -44,13 +44,13 @@ MonoBehaviour:
     description: "\u53EF\u4EE5\u51FA\u552E\u7269\u54C1"
   - featureid: 101
     name: "\u7B2C\u4E00\u7AE0"
-    description: "\u7B2C\u4E00\u7AE0"
+    description: "\u5347\u7EA7\u5B98\u5E9C\uFF0C\u91CD\u6E29\u82CF\u8F7C\u8425\u5EFA\u4E4B\u8DEF"
   - featureid: 102
     name: "\u7B2C\u4E8C\u7AE0"
     description: "\u82CF\u8F7C\u758F\u6D5A\u516D\u4E95\uFF0C\u4F7F\u5F97\u897F\u6E56\u7518\u6C34\uFF0C\u6B86\u904D\u4E00\u57CE"
   - featureid: 103
     name: "\u7B2C\u4E09\u7AE0"
-    description: "\u7B2C\u4E09\u7AE0"
+    description: "\u82CF\u8F7C\u5728\u676D\u8425\u5EFA\u516D\u548C\u5854\u3001\u4E09\u6F6D\u6620\u6708\u7B49\u5EFA\u7B51"
   dataList:
   - featureid: 1
     name: "\u4FEE\u6539\u5EFA\u7B51"
@@ -81,10 +81,10 @@ MonoBehaviour:
     description: "\u53EF\u4EE5\u51FA\u552E\u7269\u54C1"
   - featureid: 101
     name: "\u7B2C\u4E00\u7AE0"
-    description: "\u7B2C\u4E00\u7AE0"
+    description: "\u5347\u7EA7\u5B98\u5E9C\uFF0C\u91CD\u6E29\u82CF\u8F7C\u8425\u5EFA\u4E4B\u8DEF"
   - featureid: 102
     name: "\u7B2C\u4E8C\u7AE0"
     description: "\u82CF\u8F7C\u758F\u6D5A\u516D\u4E95\uFF0C\u4F7F\u5F97\u897F\u6E56\u7518\u6C34\uFF0C\u6B86\u904D\u4E00\u57CE"
   - featureid: 103
     name: "\u7B2C\u4E09\u7AE0"
-    description: "\u7B2C\u4E09\u7AE0"
+    description: "\u82CF\u8F7C\u5728\u676D\u8425\u5EFA\u516D\u548C\u5854\u3001\u4E09\u6F6D\u6620\u6708\u7B49\u5EFA\u7B51"

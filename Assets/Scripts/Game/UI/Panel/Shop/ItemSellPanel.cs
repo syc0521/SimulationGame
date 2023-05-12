@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
+using Game.Audio;
+using Game.Core;
 using Game.UI.Panel.Bag;
 using Game.UI.UISystem;
 using Game.UI.ViewData;
@@ -33,6 +35,7 @@ namespace Game.UI.Panel.Shop
         
         private void ClosePanel()
         {
+            Managers.Get<IAudioManager>().PlaySFX(SFXType.Button2);
             CloseSelf();
         }
 

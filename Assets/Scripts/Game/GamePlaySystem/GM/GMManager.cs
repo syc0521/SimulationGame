@@ -55,7 +55,7 @@ namespace Game.GamePlaySystem.GM
 
             foreach (var commandList in _commandDic.Values)
             {
-                commandList.Sort((a,b) => b.priority - a.priority);
+                commandList.Sort((a,b) => a.priority - b.priority);
             }
         }
 

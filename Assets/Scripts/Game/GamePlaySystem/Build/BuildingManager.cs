@@ -301,5 +301,27 @@ namespace Game.GamePlaySystem.Build
             return _buildingDatas.Values.Count(data => ConfigTable.Instance.GetBuildingData(data.type).Buildingtype == type
                                                        && data.type != 4 && data.type != 1);
         }
+
+        public void QuickBuild(int staticId, int x, int z, int rotation)
+        {
+            var data = ConfigTable.Instance.GetBuildingData(staticId);
+            var offset = GetRotationOffset(rotation, data.Rowcount, data.Colcount);
+
+            var pos = new Vector3(x, 0, z);
+            var buildingPos = pos + (Vector3)offset;
+
+            var currentID = GetID();
+            SetBuildingData(currentID, new BuildingData
+            {
+                level = 1,
+                position = new Vector2(x, z),
+                rotation = rotation,
+                type = staticId,
+            });
+            
+            SetGridData(buildingPos, rotation, staticId, staticId);
+            var blockPos = BuildingUtils.GetBlockPos(pos);
+            Build(blockPos, staticId, currentID, rotation);
+        }
     }
 }

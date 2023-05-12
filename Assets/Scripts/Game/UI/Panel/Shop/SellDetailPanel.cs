@@ -23,7 +23,7 @@ namespace Game.UI.Panel.Shop
             nodes.reduce_btn.onClick.AddListener(Reduce);
             nodes.sell_btn.onClick.AddListener(Sell);
             nodes.amount_input.onValueChanged.AddListener(ChangeCount);
-            nodes.close_btn.onClick.AddListener(CloseSelf);
+            nodes.close_btn.onClick.AddListener(Close);
         }
 
         public override void OnShown()
@@ -41,8 +41,13 @@ namespace Game.UI.Panel.Shop
             nodes.sell_btn.onClick.RemoveListener(Sell);
             nodes.amount_input.onValueChanged.RemoveListener(ChangeCount);
             nodes.icon_img.OnDestroyed();
-            nodes.close_btn.onClick.RemoveListener(CloseSelf);
+            nodes.close_btn.onClick.RemoveListener(Close);
             base.OnDestroyed();
+        }
+        
+        private void Close()
+        {
+            CloseSelf();
         }
 
         private void InitData()

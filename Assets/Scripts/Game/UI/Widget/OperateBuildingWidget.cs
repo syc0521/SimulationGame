@@ -43,14 +43,14 @@ namespace Game.UI.Widget
         {
             BuildingManager.Instance.DeleteTempBuilding();
             EventCenter.DispatchEvent(new ShowHUDEvent { HUDType = HUDType.All });
-            Managers.Get<IAudioManager>().PlaySFX(SFXType.Button);
+            Managers.Get<IAudioManager>().PlaySFX(SFXType.Button2);
             gameObject.SetActive(false);
         }
 
         private void OnRotateClicked()
         {
             BuildingManager.Instance.RotateBuilding();
-            Managers.Get<IAudioManager>().PlaySFX(SFXType.Button);
+            Managers.Get<IAudioManager>().PlaySFX(SFXType.Rotate);
         }
 
         public void ShowConfirmButton(bool value)

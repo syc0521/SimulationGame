@@ -3,7 +3,9 @@ using Game.Core;
 using Game.Data.Event.Audio;
 using Game.Data.Event.Common;
 using Game.Data.Event.FeatureOpen;
+using Game.GamePlaySystem.Setting;
 using Game.Input;
+using Game.UI.Decorator;
 using Game.UI.Panel;
 using Game.UI.Panel.FeatureOpen;
 using Game.UI.Panel.GM;
@@ -20,12 +22,7 @@ namespace Game.UI.Module
             EventCenter.AddListener<LoadSceneFinishedEvent>(ShowMainPanel);
             EventCenter.AddListener<UnlockFeatureEvent>(ShowFeatureOpenPanel);
             EventCenter.AddListener<OpenGMEvent>(ShowGMPanel);
-        }
-
-        public override void OnStart()
-        {
-            base.OnStart();
-            PlayTitleBGM();
+            EventCenter.AddListener<ClearSaveEvent>(ClearSave);
         }
 
         public override void OnDestroyed()
@@ -33,6 +30,7 @@ namespace Game.UI.Module
             EventCenter.RemoveListener<LoadSceneFinishedEvent>(ShowMainPanel);
             EventCenter.RemoveListener<UnlockFeatureEvent>(ShowFeatureOpenPanel);
             EventCenter.RemoveListener<OpenGMEvent>(ShowGMPanel);
+            EventCenter.RemoveListener<ClearSaveEvent>(ClearSave);
         }
 
         private void ShowMainPanel(LoadSceneFinishedEvent evt)
@@ -50,14 +48,17 @@ namespace Game.UI.Module
             });
         }
 
-        private void PlayTitleBGM()
-        {
-            Managers.Get<IAudioManager>().PlayBGM(BGMType.Title, 0.8f);
-        }
-        
         private void ShowGMPanel(OpenGMEvent evt)
         {
             UIManager.Instance.OpenPanel<GMPanel>();
+        }
+
+        private void ClearSave(ClearSaveEvent evt)
+        {
+            AlertDecorator.OpenAlertPanel("是否重置存档？(需重启游戏)", true, () =>
+            {
+                SettingManager.Instance.ResetSaveData();
+            });
         }
 
     }

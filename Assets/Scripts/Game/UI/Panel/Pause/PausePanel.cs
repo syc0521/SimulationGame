@@ -79,6 +79,7 @@ namespace Game.UI.Panel.Pause
 
         private void ReturnToGame()
         {
+            Managers.Get<IAudioManager>().PlaySFX(SFXType.Button2);
             SettingManager.Instance.SetVolume(_bgmVolume, _soundVolume);
             CloseSelf();
         }

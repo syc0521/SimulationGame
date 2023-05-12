@@ -1,4 +1,6 @@
 ﻿using System;
+using Game.Audio;
+using Game.Core;
 using Game.UI.Component;
 using Game.UI.Panel.Building;
 using Game.UI.Panel.Shop;
@@ -57,6 +59,7 @@ namespace Game.UI.Widget
         public void OnPointerClick(PointerEventData eventData)
         {
             _clickHandler?.Invoke(id);
+            Managers.Get<IAudioManager>().PlaySFX(SFXType.Button2);
         }
     }
 }

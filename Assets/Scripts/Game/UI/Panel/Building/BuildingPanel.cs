@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Game.Audio;
 using Game.Core;
 using Game.Data;
 using Game.Data.Event;
@@ -102,6 +103,7 @@ namespace Game.UI.Panel.Building
 
         private void ClickTab(int id)
         {
+            Managers.Get<IAudioManager>().PlaySFX(SFXType.Button2);
             InitBuilding((BuildingType)id);
         }
     }

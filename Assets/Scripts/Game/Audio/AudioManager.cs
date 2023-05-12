@@ -11,8 +11,9 @@ namespace Game.Audio
     {
         public Transform AudioRoot => _audioRoot;
         public float SoundVolume => _soundVolume;
+        public float BGMVolume => _bgmVolume;
         private Transform _audioRoot;
-        private CriAtomSource _bgmPlayer, _ambientPlayer;
+        private CriAtomSource _bgmPlayer, _ambientPlayer, _cityAmbPlayer;
         private const string Path = "Audio/PC";
         private float _bgmVolume = 0.8f, _soundVolume = 0.8f;
         private AudioPool _audioPool;
@@ -29,6 +30,8 @@ namespace Game.Audio
             _bgmPlayer.transform.SetParent(_audioRoot);
             _ambientPlayer = new GameObject("AmbientPlayer").AddComponent<CriAtomSource>();
             _ambientPlayer.transform.SetParent(_audioRoot);
+            _cityAmbPlayer = new GameObject("CityAmbientPlayer").AddComponent<CriAtomSource>();
+            _cityAmbPlayer.transform.SetParent(_audioRoot);
             LoadAudio();
         }
 
@@ -91,6 +94,11 @@ namespace Game.Audio
             _ambientPlayer.volume = volume;
         }
 
+        public void AdjustCityAmbVolume(float volume)
+        {
+            _cityAmbPlayer.volume = volume;
+        }
+
         private void InitializeAudio(LoadDataEvent evt)
         {
             SettingData settingData = new();
@@ -105,6 +113,11 @@ namespace Game.Audio
             _ambientPlayer.cueSheet = "Ambient";
             _ambientPlayer.cueName = "ambient";
             _ambientPlayer.Play();
+            
+            _cityAmbPlayer.volume = 0f;
+            _cityAmbPlayer.cueSheet = "Ambient";
+            _cityAmbPlayer.cueName = "CityAmbient";
+            _cityAmbPlayer.Play();
         }
     }
 }

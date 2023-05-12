@@ -142,16 +142,19 @@ namespace Game.UI.Panel
 
         private void OpenBuildPanel()
         {
+            Managers.Get<IAudioManager>().PlaySFX(SFXType.Button);
             UIManager.Instance.OpenPanel<BuildingPanel>();
         }
 
         private void OpenBagPanel()
         {
+            Managers.Get<IAudioManager>().PlaySFX(SFXType.Button);
             UIManager.Instance.OpenPanel<BagPanel>();
         }
         
         private void DestroyHandler()
         {
+            Managers.Get<IAudioManager>().PlaySFX(SFXType.Button);
             UIManager.Instance.OpenPanel<DestroyBuildingPanel>();
         }
         
@@ -167,6 +170,7 @@ namespace Game.UI.Panel
 
         private void ShowPausePanel()
         {
+            Managers.Get<IAudioManager>().PlaySFX(SFXType.Button);
             UIManager.Instance.OpenPanel<PausePanel>();
         }
 

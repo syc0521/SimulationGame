@@ -1,5 +1,7 @@
 
 using System.Collections.Generic;
+using Game.Audio;
+using Game.Core;
 using Game.Data;
 using Game.GamePlaySystem.Task;
 using Game.UI.Component;
@@ -46,6 +48,7 @@ namespace Game.UI.Panel.Task
 
         private void ClosePanel()
         {
+            Managers.Get<IAudioManager>().PlaySFX(SFXType.Button2);
             CloseSelf();
         }
 
@@ -81,7 +84,7 @@ namespace Game.UI.Panel.Task
                 UIManager.Instance.OpenPanel<AlertRewardPanel>(new AlertRewardPanelOption
                 {
                     data = new List<RewardData>(reward),
-                    clickHandler = CloseSelf
+                    clickHandler = ClosePanel
                 });
             }
             else

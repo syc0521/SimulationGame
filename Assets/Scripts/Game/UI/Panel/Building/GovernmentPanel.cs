@@ -1,4 +1,6 @@
-﻿using Game.Data;
+﻿using Game.Audio;
+using Game.Core;
+using Game.Data;
 using Game.Data.FeatureOpen;
 using Game.Data.TableData;
 using Game.GamePlaySystem;
@@ -25,7 +27,7 @@ namespace Game.UI.Panel.Building
             base.OnCreated();
             nodes.achievement_btn.onClick.AddListener(OpenAchievementPanel);
             nodes.upgrade_btn.onClick.AddListener(Upgrade);
-            nodes.back_btn.onClick.AddListener(CloseSelf);
+            nodes.back_btn.onClick.AddListener(Close);
         }
 
         public override void OnShown()
@@ -47,8 +49,14 @@ namespace Game.UI.Panel.Building
         {
             nodes.achievement_btn.onClick.RemoveListener(OpenAchievementPanel);
             nodes.upgrade_btn.onClick.RemoveListener(Upgrade);
-            nodes.back_btn.onClick.RemoveListener(CloseSelf);
+            nodes.back_btn.onClick.RemoveListener(Close);
             base.OnDestroyed();
+        }
+        
+        private void Close()
+        {
+            Managers.Get<IAudioManager>().PlaySFX(SFXType.Button2);
+            CloseSelf();
         }
 
         private void InitData()

@@ -27,6 +27,7 @@ namespace Game.UI.Panel.Start
         public override void OnShown()
         {
             base.OnShown();
+            Managers.Get<IAudioManager>().PlayBGM(BGMType.Title, 0.8f);
             ConfigTable.Instance.BlackScreen.gameObject.SetActive(false);
             _anim = nodes.tip_text.materialForRendering.DOFloat(0.2f, FaceDilate, 1.2f).SetLoops(-1, LoopType.Yoyo);
         }

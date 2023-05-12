@@ -60,10 +60,14 @@ namespace Game.GamePlaySystem
         {
             if (_isEntered)
             {
+                var bgmVolume = Managers.Get<IAudioManager>().BGMVolume;
                 var pos = mainCam.transform.position;
                 var xzPos = new float2(pos.x, pos.z);
                 var dis = math.distance(xzPos, Center);
-                Managers.Get<IAudioManager>().AdjustAmbientVolume(dis * 0.00565f + 0.15f); // 0.8/141.4
+                Managers.Get<IAudioManager>().AdjustAmbientVolume((dis * 0.00565f + 0.15f) * bgmVolume); // 0.8/141.4
+
+                var cityVolume = Mathf.InverseLerp(15.5f, 6f, pos.y) * 0.7f * bgmVolume;
+                Managers.Get<IAudioManager>().AdjustCityAmbVolume(cityVolume);
             }
         }
 

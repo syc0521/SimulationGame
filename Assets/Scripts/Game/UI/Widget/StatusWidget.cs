@@ -1,4 +1,6 @@
 ﻿using System;
+using Game.Audio;
+using Game.Core;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -33,6 +35,7 @@ namespace Game.UI.Widget
         public void OnPointerClick(PointerEventData eventData)
         {
             _handler?.Invoke(this);
+            Managers.Get<IAudioManager>().PlaySFX(SFXType.Button2);
         }
     }
 }

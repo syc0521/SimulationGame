@@ -46,12 +46,14 @@ namespace Game.UI.Panel.Building
                 AlertDecorator.OpenAlertPanel("是否放弃建造道路？", true, () =>
                 {
                     BuildingManager.Instance.DeleteTempBuilding();
+                    Managers.Get<IAudioManager>().PlaySFX(SFXType.Button2);
                     CloseSelf();
                 });
             }
             else
             {
                 BuildingManager.Instance.DeleteTempBuilding();
+                Managers.Get<IAudioManager>().PlaySFX(SFXType.Button2);
                 CloseSelf();
             }
         }
@@ -65,11 +67,13 @@ namespace Game.UI.Panel.Building
 
         private void UndoRoad()
         {
+            Managers.Get<IAudioManager>().PlaySFX(SFXType.Button2);
             BuildingManager.Instance.UndoRoad();
         }
 
         private void RedoRoad()
         {
+            Managers.Get<IAudioManager>().PlaySFX(SFXType.Button2);
             BuildingManager.Instance.RedoRoad();
         }
 

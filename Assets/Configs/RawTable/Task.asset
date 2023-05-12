@@ -30,27 +30,27 @@ MonoBehaviour:
     tasktype: 0
     targetid: 04000000
     targetnum: 01000000
-    reward: 109
+    reward: 102
     content: "\u7528\u9053\u8DEF\u5C06\u6797\u573A\u4E0E\u5B98\u5E9C\u8FDE\u63A5"
     featureopen: -1
   - taskid: 1002
-    name: "\u4FEE\u5EFA\u6C11\u5C45"
-    previousid: 1001
-    tasktype: 0
-    targetid: 09000000
-    targetnum: 01000000
-    reward: 102
-    content: "\u5EFA\u9020\u4E00\u4E2A\u74E6\u623F"
-    featureopen: -1
-  - taskid: 1003
     name: "\u5F00\u57A6\u519C\u7530"
-    previousid: 1002
+    previousid: 1001
     tasktype: 0
     targetid: 02000000
     targetnum: 02000000
-    reward: -1
+    reward: 109
     content: "\u5F00\u57A6\u4E24\u4E2A\u519C\u7530"
     featureopen: 3
+  - taskid: 1003
+    name: "\u4FEE\u5EFA\u6C11\u5C45"
+    previousid: 1002
+    tasktype: 0
+    targetid: 09000000
+    targetnum: 01000000
+    reward: -1
+    content: "\u5EFA\u9020\u4E00\u4E2A\u74E6\u623F"
+    featureopen: 101
   - taskid: 1004
     name: "\u751F\u4EA7\u6728\u6750"
     previousid: 1003
@@ -293,7 +293,7 @@ MonoBehaviour:
     targetnum: 01000000
     reward: -1
     content: "\u5347\u7EA7\u5B98\u5E9C\u52303\u7EA7"
-    featureopen: -1
+    featureopen: 103
   - taskid: 1200
     name: "\u4FEE\u5EFA\u94C1\u5320\u94FA"
     previousid: 1105
@@ -445,27 +445,27 @@ MonoBehaviour:
     tasktype: 0
     targetid: 04000000
     targetnum: 01000000
-    reward: 109
+    reward: 102
     content: "\u7528\u9053\u8DEF\u5C06\u6797\u573A\u4E0E\u5B98\u5E9C\u8FDE\u63A5"
     featureopen: -1
   - taskid: 1002
-    name: "\u4FEE\u5EFA\u6C11\u5C45"
-    previousid: 1001
-    tasktype: 0
-    targetid: 09000000
-    targetnum: 01000000
-    reward: 102
-    content: "\u5EFA\u9020\u4E00\u4E2A\u74E6\u623F"
-    featureopen: -1
-  - taskid: 1003
     name: "\u5F00\u57A6\u519C\u7530"
-    previousid: 1002
+    previousid: 1001
     tasktype: 0
     targetid: 02000000
     targetnum: 02000000
-    reward: -1
+    reward: 109
     content: "\u5F00\u57A6\u4E24\u4E2A\u519C\u7530"
     featureopen: 3
+  - taskid: 1003
+    name: "\u4FEE\u5EFA\u6C11\u5C45"
+    previousid: 1002
+    tasktype: 0
+    targetid: 09000000
+    targetnum: 01000000
+    reward: -1
+    content: "\u5EFA\u9020\u4E00\u4E2A\u74E6\u623F"
+    featureopen: 101
   - taskid: 1004
     name: "\u751F\u4EA7\u6728\u6750"
     previousid: 1003
@@ -708,7 +708,7 @@ MonoBehaviour:
     targetnum: 01000000
     reward: -1
     content: "\u5347\u7EA7\u5B98\u5E9C\u52303\u7EA7"
-    featureopen: -1
+    featureopen: 103
   - taskid: 1200
     name: "\u4FEE\u5EFA\u94C1\u5320\u94FA"
     previousid: 1105

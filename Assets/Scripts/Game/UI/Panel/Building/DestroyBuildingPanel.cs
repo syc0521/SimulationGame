@@ -1,3 +1,5 @@
+using Game.Audio;
+using Game.Core;
 using Game.GamePlaySystem;
 using Game.GamePlaySystem.Build;
 
@@ -29,6 +31,7 @@ namespace Game.UI.Panel.Building
         private void OnQuitButtonClicked()
         {
             BuildingManager.Instance.TransitToNormalState();
+            Managers.Get<IAudioManager>().PlaySFX(SFXType.Button2);
             CloseSelf();
         }
     }

@@ -1,4 +1,5 @@
 ﻿using System;
+using Game.Audio;
 using Game.Core;
 using Game.Data;
 using Game.UI.Component;
@@ -37,6 +38,7 @@ namespace Game.UI.Widget
 
         public void OnPointerClick(PointerEventData eventData)
         {
+            Managers.Get<IAudioManager>().PlaySFX(SFXType.Button2);
             UIManager.Instance.OpenPanel<TaskDetailPanel>(new TaskDetailPanelOption
             {
                 taskID = id,

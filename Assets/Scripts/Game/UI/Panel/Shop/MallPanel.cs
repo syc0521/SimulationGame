@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using Game.Audio;
+using Game.Core;
 using Game.Data;
 using Game.Data.Shop;
 using Game.GamePlaySystem.Build;
@@ -33,7 +35,7 @@ namespace Game.UI.Panel.Shop
         public override void OnCreated()
         {
             base.OnCreated();
-            nodes.back_btn.onClick.AddListener(CloseSelf);
+            nodes.back_btn.onClick.AddListener(Close);
             nodes.dailyItem_btn.onClick.AddListener(BuyDailyItem);
         }
 
@@ -48,10 +50,16 @@ namespace Game.UI.Panel.Shop
 
         public override void OnDestroyed()
         {
-            nodes.back_btn.onClick.RemoveListener(CloseSelf);
+            nodes.back_btn.onClick.RemoveListener(Close);
             nodes.dailyItem_btn.onClick.RemoveListener(BuyDailyItem);
             nodes.icon_img.OnDestroyed();
             base.OnDestroyed();
+        }
+        
+        private void Close()
+        {
+            Managers.Get<IAudioManager>().PlaySFX(SFXType.Button2);
+            CloseSelf();
         }
 
         private void GetData()

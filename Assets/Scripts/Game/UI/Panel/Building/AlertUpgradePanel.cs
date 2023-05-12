@@ -1,3 +1,5 @@
+using Game.Audio;
+using Game.Core;
 using Game.Data;
 using Game.UI.Utils;
 
@@ -16,20 +18,27 @@ namespace Game.UI.Panel.Building
         public override void OnCreated()
         {
             base.OnCreated();
-            nodes.close_btn.onClick.AddListener(CloseSelf);
+            nodes.close_btn.onClick.AddListener(Close);
         }
 
         public override void OnShown()
         {
             base.OnShown();
+            Managers.Get<IAudioManager>().PlaySFX(SFXType.Upgrade);
             PlayAnimation();
             ShowUpgradeInfo();
         }
 
         public override void OnDestroyed()
         {
-            nodes.close_btn.onClick.RemoveListener(CloseSelf);
+            nodes.close_btn.onClick.RemoveListener(Close);
             base.OnDestroyed();
+        }
+        
+        private void Close()
+        {
+            Managers.Get<IAudioManager>().PlaySFX(SFXType.Button2);
+            CloseSelf();
         }
 
         private void ShowUpgradeInfo()

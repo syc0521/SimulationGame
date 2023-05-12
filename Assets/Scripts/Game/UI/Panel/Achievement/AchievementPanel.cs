@@ -1,4 +1,6 @@
-﻿using Game.Data;
+﻿using Game.Audio;
+using Game.Core;
+using Game.Data;
 using Game.GamePlaySystem.Achievement;
 using Game.GamePlaySystem.Task;
 using Game.UI.Component;
@@ -19,7 +21,7 @@ namespace Game.UI.Panel.Achievement
         public override void OnCreated()
         {
             base.OnCreated();
-            nodes.back_btn.onClick.AddListener(CloseSelf);
+            nodes.back_btn.onClick.AddListener(Close);
         }
 
         public override void OnShown()
@@ -34,8 +36,14 @@ namespace Game.UI.Panel.Achievement
 
         public override void OnDestroyed()
         {
-            nodes.back_btn.onClick.RemoveListener(CloseSelf);
+            nodes.back_btn.onClick.RemoveListener(Close);
             base.OnDestroyed();
+        }
+
+        private void Close()
+        {
+            Managers.Get<IAudioManager>().PlaySFX(SFXType.Button2);
+            CloseSelf();
         }
 
         private void RenderList()

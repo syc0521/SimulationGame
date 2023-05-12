@@ -1,4 +1,6 @@
-﻿using Game.Data;
+﻿using Game.Audio;
+using Game.Core;
+using Game.Data;
 using Game.Data.FeatureOpen;
 using Game.UI.Utils;
 
@@ -22,6 +24,7 @@ namespace Game.UI.Panel.FeatureOpen
         public override void OnShown()
         {
             base.OnShown();
+            Managers.Get<IAudioManager>().PlaySFX(SFXType.FeatureOpen);
             PlayAnimation();
             if (opt is not FeatureOpenPanelOption option) return;
             ShowFeature(option.type);
@@ -44,6 +47,7 @@ namespace Game.UI.Panel.FeatureOpen
 
         private void Close()
         {
+            Managers.Get<IAudioManager>().PlaySFX(SFXType.Button2);
             CloseSelf();
         }
     }

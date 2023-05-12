@@ -1,4 +1,5 @@
-﻿using Game.Core;
+﻿using Game.Audio;
+using Game.Core;
 using Game.Data;
 using Game.Data.Event;
 using Game.Data.FeatureOpen;
@@ -41,6 +42,7 @@ namespace Game.UI.Module
                 return;
             }
 
+            Managers.Get<IAudioManager>().PlaySFX(SFXType.Button2);
             if (buildingData.Buildingid == 13 && FeatureOpenManager.Instance.HasFeature(FeatureType.Mall)) // 商城
             {
                 UIManager.Instance.OpenPanel<MallPanel>();

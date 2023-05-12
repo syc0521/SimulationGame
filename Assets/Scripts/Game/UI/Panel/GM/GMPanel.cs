@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
+using Game.Audio;
 using Game.Core;
 using Game.Data;
 using Game.GamePlaySystem.GM;
@@ -35,7 +36,7 @@ namespace Game.UI.Panel.GM
         public override void OnCreated()
         {
             base.OnCreated();
-            nodes.close_btn.onClick.AddListener(CloseSelf);
+            nodes.close_btn.onClick.AddListener(Close);
             nodes.run_btn.onClick.AddListener(Run);
             _gmCategory = GMManager.Instance.GetGMCategory();
         }
@@ -49,8 +50,14 @@ namespace Game.UI.Panel.GM
         public override void OnDestroyed()
         {
             nodes.run_btn.onClick.RemoveListener(Run);
-            nodes.close_btn.onClick.RemoveListener(CloseSelf);
+            nodes.close_btn.onClick.RemoveListener(Close);
             base.OnDestroyed();
+        }
+        
+        private void Close()
+        {
+            Managers.Get<IAudioManager>().PlaySFX(SFXType.Button2);
+            CloseSelf();
         }
 
         private void InitGMCategory()

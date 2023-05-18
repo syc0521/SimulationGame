@@ -116,6 +116,7 @@ namespace Game.UI.Panel.Shop
             AlertDecorator.OpenAlertPanel($"是否购买{buildingData.Name}？", true, () =>
             {
                 ShopManager.Instance.BuyItem(_dailyItem.ShopItemID);
+                ShowDailyItem();
             });
         }
         

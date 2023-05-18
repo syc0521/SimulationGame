@@ -72,7 +72,7 @@ namespace Game.Input
         private GameControl _gameControl;
         private Coroutine _swipeCoroutine, _pinchCoroutine, _mouseRotateCoroutine;
 
-        private bool isSwiping = false;
+        private bool _isSwiping = false, _isHolding = false;
         private float2 _startPos;
         private bool _gestureEnable = true;
 
@@ -92,6 +92,7 @@ namespace Game.Input
             _gameControl.GamePlay.SecondaryTouchContact.started += PinchStart;
             _gameControl.GamePlay.SecondaryTouchContact.canceled += PinchEnd;
             
+            _gameControl.GamePlay.PrimaryLong.canceled += LongStop;
             _gameControl.GamePlay.PrimaryLong.performed += LongPress;
             _gameControl.GamePlay.WheelScroll.performed += WheelScroll;
 
@@ -110,7 +111,8 @@ namespace Game.Input
 
             _gameControl.GamePlay.SecondaryTouchContact.started -= PinchStart;
             _gameControl.GamePlay.SecondaryTouchContact.canceled -= PinchEnd;
-
+            
+            _gameControl.GamePlay.PrimaryLong.canceled -= LongStop;
             _gameControl.GamePlay.PrimaryLong.performed -= LongPress;
             _gameControl.GamePlay.WheelScroll.performed -= WheelScroll;
             
@@ -141,7 +143,7 @@ namespace Game.Input
 
         private void Touch(InputAction.CallbackContext ctx)
         {
-            if (!isSwiping && CanSendInteractEvent())
+            if (!_isSwiping && !_isHolding && CanSendInteractEvent())
             {
                 MonoApp.Instance.StartCoroutine(TouchDetection());
             }
@@ -150,7 +152,7 @@ namespace Game.Input
         private IEnumerator TouchDetection()
         {
             yield return new WaitForSeconds(2 / 90.0f);
-            if (!isSwiping && CanSendInteractEvent())
+            if (!_isSwiping && CanSendInteractEvent())
             {
                 EventCenter.DispatchEvent(new TouchEvent
                 {
@@ -158,15 +160,24 @@ namespace Game.Input
                 });
             }
         }
-        
+
         private void LongPress(InputAction.CallbackContext ctx)
         {
-            if (!isSwiping && CanSendInteractEvent())
+            if (!_isSwiping && CanSendInteractEvent())
             {
+                _isHolding = true;
                 EventCenter.DispatchEvent(new LongPressEvent
                 {
                     pos = _gameControl.GamePlay.PrimaryPosition.ReadValue<Vector2>()
                 });
+            }
+        }
+        
+        private void LongStop(InputAction.CallbackContext ctx)
+        {
+            if (!_isSwiping && CanSendInteractEvent())
+            {
+                _isHolding = false;
             }
         }
 
@@ -186,7 +197,7 @@ namespace Game.Input
         
         private void SwipeEnd(InputAction.CallbackContext ctx)
         {
-            isSwiping = false;
+            _isSwiping = false;
             if (CanSendInteractEvent())
             {
                 EventCenter.DispatchEvent(new SwipeEndEvent
@@ -212,10 +223,10 @@ namespace Game.Input
                 float2 endPos = _gameControl.GamePlay.PrimaryPosition.ReadValue<Vector2>();
                 if (math.distance(_startPos, endPos) > 0.3f)
                 {
-                    isSwiping = true;
+                    _isSwiping = true;
                 }
                 
-                if (isSwiping && CanSendInteractEvent())
+                if (_isSwiping && CanSendInteractEvent())
                 {
                     EventCenter.DispatchEvent(new SwipeChangedEvent
                     {
@@ -235,7 +246,7 @@ namespace Game.Input
         
         private void MouseRotateEnd(InputAction.CallbackContext ctx)
         {
-            isSwiping = false;
+            _isSwiping = false;
 
             if (_mouseRotateCoroutine != null)
             {
@@ -253,13 +264,13 @@ namespace Game.Input
                 float2 endPos = _gameControl.GamePlay.PrimaryPosition.ReadValue<Vector2>();
                 if (math.distance(_startPos, endPos) > 0.3f)
                 {
-                    isSwiping = true;
+                    _isSwiping = true;
                 }
                 
                 endPos = _gameControl.GamePlay.PrimaryPosition.ReadValue<Vector2>();
                 var distance = endPos - _startPos;
                 
-                if (isSwiping && CanSendInteractEvent())
+                if (_isSwiping && CanSendInteractEvent())
                 {
                     EventCenter.DispatchEvent(new MouseRotateEvent
                     {
@@ -290,7 +301,7 @@ namespace Game.Input
         {
             if (CanSendInteractEvent())
             {
-                isSwiping = false;
+                _isSwiping = false;
                 EventCenter.DispatchEvent(new PinchEndEvent
                 {
                     primaryPos = _gameControl.GamePlay.PrimaryFingerPosition.ReadValue<Vector2>(),
@@ -310,7 +321,7 @@ namespace Game.Input
             {
                 if (UnityEngine.Input.touchCount == 2 && CanSendInteractEvent())
                 {
-                    isSwiping = true;
+                    _isSwiping = true;
                     EventCenter.DispatchEvent(new PinchChangedEvent
                     {
                         primaryPos = _gameControl.GamePlay.PrimaryFingerPosition.ReadValue<Vector2>(),
